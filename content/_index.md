@@ -1,6 +1,6 @@
 ---
-description: The last theme you'll ever need. Maybe.
-featured_image: /images/gohugo-default-sample-hero-image.jpg
-title: 'Ananke: a Hugo Theme'
+description: Welcome to NixVir.  We offer a wide range of research tools and data analysis services to provide your organization with actionable insights.  Our specialty is outdoor recreation, but we work across a wide range of industries.  Our approach is pragmatic, cost effective, and emphasizes efficiency and parsimony over flash.  We'll work with you from start to finish to help you reach your research goals within your budget.  Contact us to learn more.
+featured_image: /images/mtnsky.jpg
+title: NixVir 
 ---
-Welcome to my blog with some of my work in progress. I've been working on this book idea. You can read some of the chapters below.
+
