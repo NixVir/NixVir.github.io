@@ -1,5 +1,6 @@
 title = "NixVir"
-baseURL = "/"
+baseURL = "http://www.nixvir.com/"
+googleAnalytics = "UA-138721263-2"
 languageCode = "en-us"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 theme = "gohugo-theme-ananke"
@@ -8,7 +9,7 @@ MetaDataFormat = "yaml"
 DefaultContentLanguage = "en"
 SectionPagesMenu = "main"
 Paginate = 3 # this is set low for demonstrating with dummy content. Set to a higher number
-googleAnalytics = "UA-138721263-2"
+
 enableRobotsTXT = true
 
 [sitemap]
