@@ -1,5 +1,5 @@
 title = "NixVir"
-baseURL = "http://www.nixvir.com/"
+baseURL = "http://confident-jang-4183f9.netlify.com/"
 googleAnalytics = "UA-138721263-2"
 languageCode = "en-us"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
