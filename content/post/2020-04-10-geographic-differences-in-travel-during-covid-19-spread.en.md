@@ -15,4 +15,5 @@ Why complete recovery in the U.S. will be so difficult given enourmous geographi
 
 <i>Stay-at-home orders have nearly halted travel for most Americans, but people in Florida, the Southeast and other places that waited to enact such orders have continued to travel widely, potentially exposing more people as the coronavirus outbreak accelerates, according to an analysis of cellphone location data by The New York Times.</i>
 
-https://www.nytimes.com/interactive/2020/04/02/us/coronavirus-social-distancing.html
+Click <a href="https://www.nytimes.com/interactive/2020/04/02/us/coronavirus-social-distancing.htm">here</a> to read the full article.
+
