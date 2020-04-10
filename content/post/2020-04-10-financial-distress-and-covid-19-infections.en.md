@@ -1,7 +1,7 @@
 ---
 title: Financial Distress and COVID-19 Infections
 author: Federal Reserve Bank of Saint Louis
-date: '2020-04-10'
+date: '2020-04-09'
 categories:
   - COVID-19
 tags:

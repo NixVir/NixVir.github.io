@@ -10,8 +10,8 @@ tags:
 description: ''
 featured_image: '/images/COVID-19-and-Travel.png'
 ---
-{{< figure src="/images/COVID-19-and-Travel.png" >}}
-Why complete recovery in the U.S. will be so difficult given enourmous geographic variability in adopting containment measures. This from the New York Times: 
+![Big regional variation in compliance with social distancing](https://static01.nyt.com/images/2020/04/02/us/virus-distancing-promo/virus-distancing-promo-facebookJumbo-v5.jpg)
+Complete recovery in the U.S. will be very protracted and sporadic given enourmous geographic variability in adopting containment measures. This from the New York Times: 
 
 "*Stay-at-home orders have nearly halted travel for most Americans, but people in Florida, the Southeast and other places that waited to enact such orders have continued to travel widely, potentially exposing more people as the coronavirus outbreak accelerates, according to an analysis of cellphone location data by The New York Times.*"
 
