@@ -8,7 +8,7 @@ categories:
 tags:
   - COVID-19
 description: ''
-featured_image: '/images/COVID-19-and-Travel.jpg'
+featured_image: '/images/COVID-19-and-Travel.png'
 ---
 Why complete recovery in the U.S. will be so difficult given enourmous geographic variability adopting containment measures. From the New York Times: 
 
