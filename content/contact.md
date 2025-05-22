@@ -11,5 +11,5 @@ type: page
 
 Please take a moment to provide us with your name, contact email, and a brief description of your research needs. 
 
-{{< form-contact action="https://formspree.io/nate@nixvir.com"  >}}
+{{< form-contact action="https://formspree.io/f/xzzrqvde"  >}}
 
