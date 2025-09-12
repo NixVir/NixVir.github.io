@@ -1,6 +1,6 @@
 title = "NixVir"
 baseURL = "https://confident-jang-4183f9.netlify.app/"
-googleAnalytics = "UA-138721263-2"
+googleAnalytics = "G-E2QD5PNRWE"
 languageCode = "en-us"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 theme = "gohugo-theme-ananke"
@@ -33,3 +33,8 @@ enableRobotsTXT = true
   background_color_class = "bg-black"
   featured_image = "/images/mtnsky.jpg"
   recent_posts_number = 3
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
