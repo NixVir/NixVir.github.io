@@ -4,3 +4,10 @@
 .Ruserdata
 .DS_Store
 public/
+.Renviron
+
+# Private documentation
+SITE_MAINTENANCE_GUIDE.md
+README.md
+.Renviron
+scripts/
