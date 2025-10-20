@@ -3,4 +3,4 @@ description: Welcome to NixVir.  We offer a wide range of research tools and dat
 featured_image: /images/mtnsky.jpg
 title: NixVir 
 ---
-<a href="http://confident-jang-4183f9.netlify.com/contact/">Contact us to learn more.</a>
+<a href="/contact/">Contact us to learn more.</a>
