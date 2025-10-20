@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Economic Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .metric-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+        h4 { margin: 0 0 10px 0; color: #333; }
+        .value { font-size: 1.8em; font-weight: bold; color: #2c3e50; }
+        .period { color: #7f8c8d; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <h1>Economic & Market Dashboard</h1>
+    <p>Last updated: <span id="last-update">Loading...</span></p>
+    
+    <div class="dashboard-grid">
+        <div class="metric-card">
+            <h4>Consumer Confidence</h4>
+            <div id="consumer-confidence">Loading...</div>
+        </div>
+        <div class="metric-card">
+            <h4>S&P 500 (SPY)</h4>
+            <div id="sp500">Loading...</div>
+        </div>
+        <div class="metric-card">
+            <h4>CPI</h4>
+            <div id="cpi">Loading...</div>
+        </div>
+        <div class="metric-card">
+            <h4>Fed Funds Rate</h4>
+            <div id="fed-rate">Loading...</div>
+        </div>
+        <div class="metric-card">
+            <h4>Unemployment Rate</h4>
+            <div id="unemployment">Loading...</div>
+        </div>
+        <div class="metric-card">
+            <h4>Employment (000s)</h4>
+            <div id="employment">Loading...</div>
+        </div>
+    </div>
+
+    <script>
+    async function loadDashboard() {
+        try {
+            const response = await fetch("/data/dashboard.json");
+            const data = await response.json();
+            
+            console.log("Full data:", data);
+            
+            document.getElementById("last-update").textContent = 
+                new Date(data.updated).toLocaleString();
+            
+            // Consumer Confidence
+            if(data.consumer_confidence && data.consumer_confidence.length > 0) {
+                const cc = data.consumer_confidence[data.consumer_confidence.length - 1];
+                document.getElementById("consumer-confidence").innerHTML = 
+                    `<div class="value">${Number(cc.value).toFixed(1)}</div>
+                     <div class="period">${cc.date}</div>`;
+            }
+            
+            // S&P 500
+            if(data.markets) {
+                const sp = data.markets.find(m => m.symbol === "SPY");
+                if (sp) {
+                    document.getElementById("sp500").innerHTML = 
+                        `<div class="value">$${Number(sp.close).toFixed(2)}</div>
+                         <div class="period">${sp.date}</div>`;
+                }
+            }
+            
+            // CPI
+            if(data.cpi && data.cpi.value) {
+                document.getElementById("cpi").innerHTML = 
+                    `<div class="value">${Number(data.cpi.value).toFixed(1)}</div>
+                     <div class="period">${data.cpi.period}</div>`;
+            }
+            
+            // Fed Rate - Handle as array/dataframe
+            if(data.fed_funds_rate) {
+                let fedData = data.fed_funds_rate;
+                // If its an array, get first element
+                if(Array.isArray(fedData) && fedData.length > 0) {
+                    fedData = fedData[0];
+                }
+                // Now extract value and date
+                if(fedData.value !== undefined) {
+                    document.getElementById("fed-rate").innerHTML = 
+                        `<div class="value">${Number(fedData.value).toFixed(2)}%</div>
+                         <div class="period">${fedData.date}</div>`;
+                }
+            }
+            
+            // Unemployment - Handle as array/dataframe
+            if(data.unemployment) {
+                let unempData = data.unemployment;
+                // If its an array, get first element
+                if(Array.isArray(unempData) && unempData.length > 0) {
+                    unempData = unempData[0];
+                }
+                // Now extract value and date
+                if(unempData.value !== undefined) {
+                    document.getElementById("unemployment").innerHTML = 
+                        `<div class="value">${Number(unempData.value).toFixed(1)}%</div>
+                         <div class="period">${unempData.date}</div>`;
+                }
+            }
+            
+            // Employment
+            if(data.employment && data.employment.value) {
+                document.getElementById("employment").innerHTML = 
+                    `<div class="value">${Number(data.employment.value).toLocaleString()}</div>
+                     <div class="period">${data.employment.period}</div>`;
+            }
+        } catch (error) {
+            console.error("Failed to load dashboard:", error);
+            document.getElementById("last-update").textContent = "Error loading data";
+        }
+    }
+    
+    loadDashboard();
+    setInterval(loadDashboard, 300000);
+    </script>
+</body>
+</html>

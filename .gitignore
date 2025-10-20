@@ -5,6 +5,7 @@
 .DS_Store
 public/
 .Renviron
+resources/_gen/
 
 # Private documentation
 SITE_MAINTENANCE_GUIDE.md
