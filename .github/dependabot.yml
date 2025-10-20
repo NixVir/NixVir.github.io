@@ -1,0 +1,9 @@
+version: 2
+updates:
+  # Disable Dependabot for theme directory
+  # The theme is managed as a Hugo module and doesn't use npm dependencies
+  - package-ecosystem: "npm"
+    directory: "/themes/gohugo-theme-ananke/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 0
