@@ -18,7 +18,7 @@ enableRobotsTXT = true
 
 [params]
   logo = "/images/nixvirlogo.png"
-  favicon = ""
+  favicon = "/favicon.ico"
   description = "NixVir provides market research and data analysis services specializing in outdoor recreation, snowsports industry trends, and actionable insights for informed business decisions."
   author = "Nate Fristoe"
   facebook = ""
