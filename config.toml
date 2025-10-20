@@ -19,7 +19,8 @@ enableRobotsTXT = true
 [params]
   logo = "/images/nixvirlogo.png"
   favicon = ""
-  description = "NixVir"
+  description = "NixVir provides market research and data analysis services specializing in outdoor recreation, snowsports industry trends, and actionable insights for informed business decisions."
+  author = "Nate Fristoe"
   facebook = ""
   twitter = ""
   instagram = ""
@@ -40,3 +41,18 @@ enableRobotsTXT = true
 
 [pagination]
   pagerSize = 3
+
+# Image optimization
+[imaging]
+  quality = 85
+  resampleFilter = "Lanczos"
+
+# Minification for better performance
+[minify]
+  minifyOutput = true
+  [minify.tdewolff.html]
+    keepWhitespace = false
+  [minify.tdewolff.css]
+    keepCSS2 = false
+  [minify.tdewolff.js]
+    keepVarNames = false
