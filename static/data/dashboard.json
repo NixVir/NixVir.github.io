@@ -1,89 +1,89 @@
 {
-  "updated": "2025-10-21 14:04:50",
+  "updated": "2025-10-21 20:06:19",
   "consumer_confidence": [
     {
       "date": "2024-09-01",
       "series_id": "UMCSENT",
       "value": 70.3,
-      "realtime_start": "2025-10-19",
-      "realtime_end": "2025-10-19"
+      "realtime_start": "2025-09-27",
+      "realtime_end": "2025-09-27"
     },
     {
       "date": "2024-10-01",
       "series_id": "UMCSENT",
       "value": 70.5,
-      "realtime_start": "2025-10-19",
-      "realtime_end": "2025-10-19"
+      "realtime_start": "2025-09-27",
+      "realtime_end": "2025-09-27"
     },
     {
       "date": "2024-11-01",
       "series_id": "UMCSENT",
       "value": 71.8,
-      "realtime_start": "2025-10-19",
-      "realtime_end": "2025-10-19"
+      "realtime_start": "2025-09-27",
+      "realtime_end": "2025-09-27"
     },
     {
       "date": "2024-12-01",
       "series_id": "UMCSENT",
       "value": 74.0,
-      "realtime_start": "2025-10-19",
-      "realtime_end": "2025-10-19"
+      "realtime_start": "2025-09-27",
+      "realtime_end": "2025-09-27"
     },
     {
       "date": "2025-01-01",
       "series_id": "UMCSENT",
       "value": 71.7,
-      "realtime_start": "2025-10-19",
-      "realtime_end": "2025-10-19"
+      "realtime_start": "2025-09-27",
+      "realtime_end": "2025-09-27"
     },
     {
       "date": "2025-02-01",
       "series_id": "UMCSENT",
       "value": 64.7,
-      "realtime_start": "2025-10-19",
-      "realtime_end": "2025-10-19"
+      "realtime_start": "2025-09-27",
+      "realtime_end": "2025-09-27"
     },
     {
       "date": "2025-03-01",
       "series_id": "UMCSENT",
       "value": 57.0,
-      "realtime_start": "2025-10-19",
-      "realtime_end": "2025-10-19"
+      "realtime_start": "2025-09-27",
+      "realtime_end": "2025-09-27"
     },
     {
       "date": "2025-04-01",
       "series_id": "UMCSENT",
       "value": 52.2,
-      "realtime_start": "2025-10-19",
-      "realtime_end": "2025-10-19"
+      "realtime_start": "2025-09-27",
+      "realtime_end": "2025-09-27"
     },
     {
       "date": "2025-05-01",
       "series_id": "UMCSENT",
       "value": 52.2,
-      "realtime_start": "2025-10-19",
-      "realtime_end": "2025-10-19"
+      "realtime_start": "2025-09-27",
+      "realtime_end": "2025-09-27"
     },
     {
       "date": "2025-06-01",
       "series_id": "UMCSENT",
       "value": 60.7,
-      "realtime_start": "2025-10-19",
-      "realtime_end": "2025-10-19"
+      "realtime_start": "2025-09-27",
+      "realtime_end": "2025-09-27"
     },
     {
       "date": "2025-07-01",
       "series_id": "UMCSENT",
       "value": 61.7,
-      "realtime_start": "2025-10-19",
-      "realtime_end": "2025-10-19"
+      "realtime_start": "2025-09-27",
+      "realtime_end": "2025-09-27"
     },
     {
       "date": "2025-08-01",
       "series_id": "UMCSENT",
       "value": 58.2,
-      "realtime_start": "2025-10-19",
-      "realtime_end": "2025-10-19"
+      "realtime_start": "2025-09-27",
+      "realtime_end": "2025-09-27"
     }
   ],
   "fed_funds_rate": [
@@ -177,85 +177,85 @@
       "date": "2024-09-01",
       "series_id": "UNRATE",
       "value": 4.1,
-      "realtime_start": "2025-10-19",
-      "realtime_end": "2025-10-19"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2024-10-01",
       "series_id": "UNRATE",
       "value": 4.1,
-      "realtime_start": "2025-10-19",
-      "realtime_end": "2025-10-19"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2024-11-01",
       "series_id": "UNRATE",
       "value": 4.2,
-      "realtime_start": "2025-10-19",
-      "realtime_end": "2025-10-19"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2024-12-01",
       "series_id": "UNRATE",
       "value": 4.1,
-      "realtime_start": "2025-10-19",
-      "realtime_end": "2025-10-19"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2025-01-01",
       "series_id": "UNRATE",
       "value": 4.0,
-      "realtime_start": "2025-10-19",
-      "realtime_end": "2025-10-19"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2025-02-01",
       "series_id": "UNRATE",
       "value": 4.1,
-      "realtime_start": "2025-10-19",
-      "realtime_end": "2025-10-19"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2025-03-01",
       "series_id": "UNRATE",
       "value": 4.2,
-      "realtime_start": "2025-10-19",
-      "realtime_end": "2025-10-19"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2025-04-01",
       "series_id": "UNRATE",
       "value": 4.2,
-      "realtime_start": "2025-10-19",
-      "realtime_end": "2025-10-19"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2025-05-01",
       "series_id": "UNRATE",
       "value": 4.2,
-      "realtime_start": "2025-10-19",
-      "realtime_end": "2025-10-19"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2025-06-01",
       "series_id": "UNRATE",
       "value": 4.1,
-      "realtime_start": "2025-10-19",
-      "realtime_end": "2025-10-19"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2025-07-01",
       "series_id": "UNRATE",
       "value": 4.2,
-      "realtime_start": "2025-10-19",
-      "realtime_end": "2025-10-19"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2025-08-01",
       "series_id": "UNRATE",
       "value": 4.3,
-      "realtime_start": "2025-10-19",
-      "realtime_end": "2025-10-19"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     }
   ],
   "cpi": {
