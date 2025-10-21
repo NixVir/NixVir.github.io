@@ -157,19 +157,26 @@ def update_dashboard():
         dashboard_data['unemployment'] = unemployment
         print_safe(f"  OK Latest: {unemployment[-1]['value']}% ({len(unemployment)} data points)")
 
-    # Simplified CPI and Employment (using existing data as fallback)
-    print_safe("\nUsing existing CPI and Employment data...")
-    try:
-        with open('static/data/dashboard.json', 'r') as f:
-            existing = json.load(f)
-            if 'cpi' in existing:
-                dashboard_data['cpi'] = existing['cpi']
-            if 'employment' in existing:
-                dashboard_data['employment'] = existing['employment']
-            if 'wages' in existing:
-                dashboard_data['wages'] = existing['wages']
-    except:
-        pass
+    # 5. CPI (Consumer Price Index)
+    print_safe("\nFetching CPI...")
+    cpi_data = fetch_fred_data('CPIAUCSL', limit=12)
+    if cpi_data:
+        dashboard_data['cpi'] = cpi_data
+        print_safe(f"  OK Latest: {cpi_data[-1]['value']} ({len(cpi_data)} data points)")
+
+    # 6. Employment (Total Nonfarm Payroll)
+    print_safe("\nFetching Employment...")
+    employment_data = fetch_fred_data('PAYEMS', limit=12)
+    if employment_data:
+        dashboard_data['employment'] = employment_data
+        print_safe(f"  OK Latest: {employment_data[-1]['value']} thousand ({len(employment_data)} data points)")
+
+    # 7. Average Hourly Earnings (Wages)
+    print_safe("\nFetching Wages...")
+    wages_data = fetch_fred_data('CES0500000003', limit=12)
+    if wages_data:
+        dashboard_data['wages'] = wages_data
+        print_safe(f"  OK Latest: ${wages_data[-1]['value']} ({len(wages_data)} data points)")
 
     # Write to file
     output_path = 'static/data/dashboard.json'

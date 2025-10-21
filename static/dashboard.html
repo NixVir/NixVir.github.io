@@ -179,11 +179,24 @@
                 }
             }
             
-            // CPI
-            if(data.cpi && data.cpi.value) {
-                document.getElementById("cpi").innerHTML = 
-                    `<div class="value">${Number(data.cpi.value).toFixed(1)}</div>
-                     <div class="period">${data.cpi.period}</div>`;
+            // CPI - Handle as array (new format) or object (old format)
+            if(data.cpi) {
+                if(Array.isArray(data.cpi) && data.cpi.length > 0) {
+                    const latestCpi = data.cpi[data.cpi.length - 1];
+                    document.getElementById("cpi").innerHTML =
+                        `<div class="value">${Number(latestCpi.value).toFixed(1)}</div>
+                         <div class="period">${latestCpi.date}</div>`;
+
+                    // Create sparkline
+                    const cpiLabels = data.cpi.map(d => d.date);
+                    const cpiValues = data.cpi.map(d => d.value);
+                    createSparkline('sparkline-cpi', cpiLabels, cpiValues, '#9b59b6');
+                } else if(data.cpi.value) {
+                    // Handle old single object format
+                    document.getElementById("cpi").innerHTML =
+                        `<div class="value">${Number(data.cpi.value).toFixed(1)}</div>
+                         <div class="period">${data.cpi.period}</div>`;
+                }
             }
             
             // Fed Rate - Handle as array/dataframe
@@ -230,11 +243,24 @@
                 }
             }
             
-            // Employment
-            if(data.employment && data.employment.value) {
-                document.getElementById("employment").innerHTML = 
-                    `<div class="value">${Number(data.employment.value).toLocaleString()}</div>
-                     <div class="period">${data.employment.period}</div>`;
+            // Employment - Handle as array (new format) or object (old format)
+            if(data.employment) {
+                if(Array.isArray(data.employment) && data.employment.length > 0) {
+                    const latestEmp = data.employment[data.employment.length - 1];
+                    document.getElementById("employment").innerHTML =
+                        `<div class="value">${Number(latestEmp.value).toLocaleString()}</div>
+                         <div class="period">${latestEmp.date}</div>`;
+
+                    // Create sparkline
+                    const empLabels = data.employment.map(d => d.date);
+                    const empValues = data.employment.map(d => d.value);
+                    createSparkline('sparkline-emp', empLabels, empValues, '#1abc9c');
+                } else if(data.employment.value) {
+                    // Handle old single object format
+                    document.getElementById("employment").innerHTML =
+                        `<div class="value">${Number(data.employment.value).toLocaleString()}</div>
+                         <div class="period">${data.employment.period}</div>`;
+                }
             }
         } catch (error) {
             console.error("Failed to load dashboard:", error);
