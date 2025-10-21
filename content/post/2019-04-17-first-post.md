@@ -1,13 +1,18 @@
 ---
-title: Demographic Trends to Watch
+title: Generational Spending Trends
 author: Nate Fristoe
-date: '2019-04-17'
-slug: demographic-trends
+date: '2025-10-21'
+slug: generational-spending-trends
 categories:
-  - demographics
+  - consumer spending
+  - economics
 tags:
-  - demographics
-description: ''
-featured_image: '/images/FT_19.04.11_PAADemographics_Inequality.png'
+  - consumer trends
+  - generations
+description: 'Bank of America study reveals spending growth patterns across generations'
+featured_image: '/images/Exhibit6_BOA_Study_Oct_2025.png'
 ---
-The Pew Charitable Trust highlights six demographic trends shaping the U.S. and the world in 2019.  The rise of Generation Z, low illegal immigration, and continued income inequality are some of the trends highlighted.  [Click here to read the article.](https://www.pewresearch.org/fact-tank/2019/04/11/6-demographic-trends-shaping-the-u-s-and-the-world-in-2019)
+
+![Generational Spending Growth](/images/Exhibit6_BOA_Study_Oct_2025.png)
+
+Bank of America study shows all generations, aside from Gen Z, have seen a softening in their spending growth over 2025, however the rate of growth is weakest for Millennial and Gen X households. [Click here for full article.](https://institute.bankofamerica.com/content/dam/economic-insights/consumer-checkpoint-october-2025.pdf)
