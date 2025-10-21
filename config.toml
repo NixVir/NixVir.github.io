@@ -5,6 +5,9 @@ languageCode = "en-us"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 theme = "gohugo-theme-ananke"
 
+# Only show posts from "post" section on homepage
+mainSections = ["post"]
+
 MetaDataFormat = "yaml"
 DefaultContentLanguage = "en"
 SectionPagesMenu = "main"
