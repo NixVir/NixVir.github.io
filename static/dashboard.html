@@ -19,7 +19,16 @@
         h4 { margin: 0 0 10px 0; color: #333; }
         .value { font-size: 1.8em; font-weight: bold; color: #2c3e50; }
         .period { color: #7f8c8d; font-size: 0.9em; }
+        .sparkline-container {
+            height: 50px;
+            margin-top: 10px;
+        }
+        canvas.sparkline {
+            width: 100% !important;
+            height: 50px !important;
+        }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
     <h1>Economic & Market Dashboard</h1>
@@ -29,55 +38,144 @@
         <div class="metric-card">
             <h4>Consumer Confidence</h4>
             <div id="consumer-confidence">Loading...</div>
+            <div class="sparkline-container">
+                <canvas id="sparkline-cc" class="sparkline"></canvas>
+            </div>
         </div>
         <div class="metric-card">
             <h4>S&P 500 (SPY)</h4>
             <div id="sp500">Loading...</div>
+            <div class="sparkline-container">
+                <canvas id="sparkline-spy" class="sparkline"></canvas>
+            </div>
         </div>
         <div class="metric-card">
             <h4>CPI</h4>
             <div id="cpi">Loading...</div>
+            <div class="sparkline-container">
+                <canvas id="sparkline-cpi" class="sparkline"></canvas>
+            </div>
         </div>
         <div class="metric-card">
             <h4>Fed Funds Rate</h4>
             <div id="fed-rate">Loading...</div>
+            <div class="sparkline-container">
+                <canvas id="sparkline-fed" class="sparkline"></canvas>
+            </div>
         </div>
         <div class="metric-card">
             <h4>Unemployment Rate</h4>
             <div id="unemployment">Loading...</div>
+            <div class="sparkline-container">
+                <canvas id="sparkline-unemp" class="sparkline"></canvas>
+            </div>
         </div>
         <div class="metric-card">
             <h4>Employment (000s)</h4>
             <div id="employment">Loading...</div>
+            <div class="sparkline-container">
+                <canvas id="sparkline-emp" class="sparkline"></canvas>
+            </div>
         </div>
     </div>
 
     <script>
+    // Helper function to create sparkline charts
+    function createSparkline(canvasId, labels, values, color = '#3498db') {
+        const ctx = document.getElementById(canvasId);
+        if (!ctx) return;
+
+        // Destroy existing chart if it exists
+        if (ctx.chart) {
+            ctx.chart.destroy();
+        }
+
+        ctx.chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: values,
+                    borderColor: color,
+                    borderWidth: 2,
+                    fill: false,
+                    pointRadius: 0,
+                    pointHoverRadius: 3,
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false,
+                        displayColors: false,
+                        callbacks: {
+                            title: function(context) {
+                                return context[0].label;
+                            },
+                            label: function(context) {
+                                return context.parsed.y.toFixed(2);
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: { display: false },
+                    y: { display: false }
+                },
+                interaction: {
+                    mode: 'index',
+                    intersect: false
+                }
+            }
+        });
+    }
+
     async function loadDashboard() {
         try {
             const response = await fetch("/data/dashboard.json");
             const data = await response.json();
-            
+
             console.log("Full data:", data);
-            
-            document.getElementById("last-update").textContent = 
+
+            document.getElementById("last-update").textContent =
                 new Date(data.updated).toLocaleString();
             
             // Consumer Confidence
             if(data.consumer_confidence && data.consumer_confidence.length > 0) {
                 const cc = data.consumer_confidence[data.consumer_confidence.length - 1];
-                document.getElementById("consumer-confidence").innerHTML = 
+                document.getElementById("consumer-confidence").innerHTML =
                     `<div class="value">${Number(cc.value).toFixed(1)}</div>
                      <div class="period">${cc.date}</div>`;
+
+                // Create sparkline
+                const ccLabels = data.consumer_confidence.map(d => d.date);
+                const ccValues = data.consumer_confidence.map(d => d.value);
+                createSparkline('sparkline-cc', ccLabels, ccValues, '#3498db');
             }
             
             // S&P 500
             if(data.markets) {
                 const sp = data.markets.find(m => m.symbol === "SPY");
                 if (sp) {
-                    document.getElementById("sp500").innerHTML = 
-                        `<div class="value">$${Number(sp.close).toFixed(2)}</div>
-                         <div class="period">${sp.date}</div>`;
+                    // Handle both old and new data formats
+                    const currentClose = sp.current_close || sp.close;
+                    const currentDate = sp.current_date || sp.date;
+
+                    document.getElementById("sp500").innerHTML =
+                        `<div class="value">$${Number(currentClose).toFixed(2)}</div>
+                         <div class="period">${currentDate}</div>`;
+
+                    // Create sparkline if historical data available
+                    if (sp.history && sp.history.length > 0) {
+                        const spLabels = sp.history.map(d => d.date);
+                        const spValues = sp.history.map(d => d.close);
+                        createSparkline('sparkline-spy', spLabels, spValues, '#27ae60');
+                    }
                 }
             }
             
@@ -91,13 +189,20 @@
             // Fed Rate - Handle as array/dataframe
             if(data.fed_funds_rate) {
                 let fedData = data.fed_funds_rate;
-                // If its an array, get first element
+                // If its an array, get last element
                 if(Array.isArray(fedData) && fedData.length > 0) {
-                    fedData = fedData[0];
-                }
-                // Now extract value and date
-                if(fedData.value !== undefined) {
-                    document.getElementById("fed-rate").innerHTML = 
+                    const latestFed = fedData[fedData.length - 1];
+                    document.getElementById("fed-rate").innerHTML =
+                        `<div class="value">${Number(latestFed.value).toFixed(2)}%</div>
+                         <div class="period">${latestFed.date}</div>`;
+
+                    // Create sparkline
+                    const fedLabels = fedData.map(d => d.date);
+                    const fedValues = fedData.map(d => d.value);
+                    createSparkline('sparkline-fed', fedLabels, fedValues, '#e74c3c');
+                } else if(fedData.value !== undefined) {
+                    // Handle single object format
+                    document.getElementById("fed-rate").innerHTML =
                         `<div class="value">${Number(fedData.value).toFixed(2)}%</div>
                          <div class="period">${fedData.date}</div>`;
                 }
@@ -106,13 +211,20 @@
             // Unemployment - Handle as array/dataframe
             if(data.unemployment) {
                 let unempData = data.unemployment;
-                // If its an array, get first element
+                // If its an array, get last element
                 if(Array.isArray(unempData) && unempData.length > 0) {
-                    unempData = unempData[0];
-                }
-                // Now extract value and date
-                if(unempData.value !== undefined) {
-                    document.getElementById("unemployment").innerHTML = 
+                    const latestUnemp = unempData[unempData.length - 1];
+                    document.getElementById("unemployment").innerHTML =
+                        `<div class="value">${Number(latestUnemp.value).toFixed(1)}%</div>
+                         <div class="period">${latestUnemp.date}</div>`;
+
+                    // Create sparkline
+                    const unempLabels = unempData.map(d => d.date);
+                    const unempValues = unempData.map(d => d.value);
+                    createSparkline('sparkline-unemp', unempLabels, unempValues, '#f39c12');
+                } else if(unempData.value !== undefined) {
+                    // Handle single object format
+                    document.getElementById("unemployment").innerHTML =
                         `<div class="value">${Number(unempData.value).toFixed(1)}%</div>
                          <div class="period">${unempData.date}</div>`;
                 }

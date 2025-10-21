@@ -61,10 +61,10 @@ def fetch_fred_data(series_id, limit=12):
 
     return observations
 
-def fetch_market_data_yahoo(symbol):
+def fetch_market_data_yahoo(symbol, historical=False):
     """Fetch market data from Yahoo Finance"""
     end_date = datetime.now()
-    start_date = end_date - timedelta(days=7)
+    start_date = end_date - timedelta(days=365 if historical else 7)
 
     period1 = int(start_date.timestamp())
     period2 = int(end_date.timestamp())
@@ -81,14 +81,34 @@ def fetch_market_data_yahoo(symbol):
             if len(lines) < 2:
                 return None
 
-            last_line = lines[-1].split(',')
-
-            return {
-                'symbol': symbol,
-                'date': last_line[0],
-                'close': float(last_line[4]),
-                'volume': int(float(last_line[6])) if last_line[6] != 'null' else 0
-            }
+            if historical:
+                # Return all data points for sparkline
+                history = []
+                for line in lines[1:]:  # Skip header
+                    parts = line.split(',')
+                    if len(parts) >= 7:
+                        try:
+                            history.append({
+                                'date': parts[0],
+                                'close': float(parts[4])
+                            })
+                        except:
+                            continue
+                return {
+                    'symbol': symbol,
+                    'current_date': history[-1]['date'] if history else None,
+                    'current_close': history[-1]['close'] if history else None,
+                    'history': history
+                }
+            else:
+                # Just return latest value
+                last_line = lines[-1].split(',')
+                return {
+                    'symbol': symbol,
+                    'date': last_line[0],
+                    'close': float(last_line[4]),
+                    'volume': int(float(last_line[6])) if last_line[6] != 'null' else 0
+                }
     except Exception as e:
         print_safe(f"  ! {symbol} unavailable")
         return None
@@ -114,10 +134,10 @@ def update_dashboard():
     markets = []
     symbols = ['SPY', '^DJI', '^GSPC', '^VIX']
     for symbol in symbols:
-        market_data = fetch_market_data_yahoo(symbol)
+        market_data = fetch_market_data_yahoo(symbol, historical=True)
         if market_data:
             markets.append(market_data)
-            print_safe(f"  OK {symbol}: ${market_data['close']:.2f}")
+            print_safe(f"  OK {symbol}: ${market_data['current_close']:.2f} ({len(market_data.get('history', []))} data points)")
         time.sleep(1)  # Rate limiting
 
     if markets:
@@ -125,17 +145,17 @@ def update_dashboard():
 
     # 3. Fed Funds Rate
     print_safe("\nFetching Fed Funds Rate...")
-    fed_rate = fetch_fred_data('DFF', limit=1)
+    fed_rate = fetch_fred_data('DFF', limit=12)
     if fed_rate:
         dashboard_data['fed_funds_rate'] = fed_rate
-        print_safe(f"  OK Latest: {fed_rate[0]['value']}%")
+        print_safe(f"  OK Latest: {fed_rate[-1]['value']}% ({len(fed_rate)} data points)")
 
     # 4. Unemployment Rate
     print_safe("\nFetching Unemployment Rate...")
-    unemployment = fetch_fred_data('UNRATE', limit=1)
+    unemployment = fetch_fred_data('UNRATE', limit=12)
     if unemployment:
         dashboard_data['unemployment'] = unemployment
-        print_safe(f"  OK Latest: {unemployment[0]['value']}%")
+        print_safe(f"  OK Latest: {unemployment[-1]['value']}% ({len(unemployment)} data points)")
 
     # Simplified CPI and Employment (using existing data as fallback)
     print_safe("\nUsing existing CPI and Employment data...")
