@@ -129,19 +129,19 @@ def update_dashboard():
         dashboard_data['consumer_confidence'] = consumer_confidence
         print_safe(f"  OK Latest: {consumer_confidence[-1]['value']} ({consumer_confidence[-1]['date']})")
 
-    # 2. Market Data
-    print_safe("\nFetching Market Data...")
-    markets = []
-    symbols = ['SPY', '^DJI', '^GSPC', '^VIX']
-    for symbol in symbols:
-        market_data = fetch_market_data_yahoo(symbol, historical=True)
-        if market_data:
-            markets.append(market_data)
-            print_safe(f"  OK {symbol}: ${market_data['current_close']:.2f} ({len(market_data.get('history', []))} data points)")
-        time.sleep(1)  # Rate limiting
-
-    if markets:
+    # 2. Market Data - Using FRED S&P 500 Index
+    print_safe("\nFetching Market Data (S&P 500 from FRED)...")
+    sp500_data = fetch_fred_data('SP500', limit=12)
+    if sp500_data:
+        # Format to match expected structure
+        markets = [{
+            'symbol': 'SPY',
+            'current_date': sp500_data[-1]['date'],
+            'current_close': sp500_data[-1]['value'],
+            'history': [{'date': d['date'], 'close': d['value']} for d in sp500_data]
+        }]
         dashboard_data['markets'] = markets
+        print_safe(f"  OK S&P 500: {sp500_data[-1]['value']:.2f} ({len(sp500_data)} data points)")
 
     # 3. Fed Funds Rate
     print_safe("\nFetching Fed Funds Rate...")
