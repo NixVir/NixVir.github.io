@@ -1,0 +1,203 @@
+{{ define "main" }}
+  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links {{ $.Param "text_color" | compare.Default "mid-gray" }}">
+    {{ .Content }}
+  </article>
+
+  {{/* Two-column layout: News and Indicators Dashboard */}}
+  {{ $mainSections := site.Params.mainSections | compare.Default (collections.Slice "post") }}
+  {{ $show_recent_posts := site.Params.ananke.show_recent_posts }}
+  {{ $section := collections.Where $.Site.RegularPages "Section" "in" $mainSections }}
+  {{ $section_count := len $section }}
+
+  {{ if and ($show_recent_posts) (compare.Ge $section_count 1) }}
+    <div class="pa3 pa4-ns w-100 center" style="max-width: 1400px;">
+
+      {{/* Two column container */}}
+      <div class="flex-l">
+
+        {{/* Left Column: News Section */}}
+        <section class="w-100 w-60-l pr4-l mb4 mb0-l">
+          <h2 class="f3 fw6 mb3">News</h2>
+          {{ $n_posts := $.Param "recent_posts_number" | compare.Default 3 }}
+
+          {{/* Range through the first $n_posts items of the section */}}
+          {{ range (collections.First $n_posts $section) }}
+            <div class="w-100 mb4 pb3 bb b--light-gray">
+              {{ .Render "summary-with-image" }}
+            </div>
+          {{ end }}
+
+          {{ if compare.Ge $section_count (math.Add $n_posts 1) }}
+            <div class="w-100 mt3">
+              <h3 class="f4 fw6 mb2">More Articles</h3>
+              {{/* Range through the next four after the initial $n_posts items */}}
+              {{ range (collections.First 4 (collections.After $n_posts $section))  }}
+                <div class="mb2">
+                  <a href="{{ .RelPermalink }}" class="link blue dim">
+                    {{ .Title }}
+                  </a>
+                </div>
+              {{ end }}
+            </div>
+          {{ end }}
+        </section>
+
+        {{/* Right Column: Indicators Dashboard */}}
+        <section class="w-100 w-40-l">
+          <h2 class="f3 fw6 mb3">Economic Indicators</h2>
+
+          <div id="indicators-dashboard">
+            <p class="f6 gray mb3">Last updated: <span id="indicators-last-update">Loading...</span></p>
+
+            <div class="ba b--light-gray br2 pa3 mb3 bg-near-white">
+              <h4 class="f5 fw6 mt0 mb2">Consumer Confidence</h4>
+              <div id="ind-consumer-confidence" class="f3 fw7 mb2">—</div>
+              <canvas id="ind-sparkline-cc" class="sparkline-small"></canvas>
+            </div>
+
+            <div class="ba b--light-gray br2 pa3 mb3 bg-near-white">
+              <h4 class="f5 fw6 mt0 mb2">S&P 500</h4>
+              <div id="ind-sp500" class="f3 fw7 mb2">—</div>
+              <canvas id="ind-sparkline-spy" class="sparkline-small"></canvas>
+            </div>
+
+            <div class="ba b--light-gray br2 pa3 mb3 bg-near-white">
+              <h4 class="f5 fw6 mt0 mb2">CPI</h4>
+              <div id="ind-cpi" class="f3 fw7 mb2">—</div>
+              <canvas id="ind-sparkline-cpi" class="sparkline-small"></canvas>
+            </div>
+
+            <div class="ba b--light-gray br2 pa3 mb3 bg-near-white">
+              <h4 class="f5 fw6 mt0 mb2">Unemployment</h4>
+              <div id="ind-unemployment" class="f3 fw7 mb2">—</div>
+              <canvas id="ind-sparkline-unemp" class="sparkline-small"></canvas>
+            </div>
+
+            <div class="tc mt3">
+              <a href="/dashboard" class="link blue dim fw6">View Full Dashboard →</a>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  {{ end }}
+
+  {{/* Load Chart.js and dashboard script */}}
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    .sparkline-small {
+      width: 100% !important;
+      height: 40px !important;
+      display: block;
+    }
+  </style>
+  <script>
+    // Helper function to create sparkline charts
+    function createIndicatorSparkline(canvasId, labels, values, color = '#3498db') {
+      const ctx = document.getElementById(canvasId);
+      if (!ctx) return;
+
+      // Destroy existing chart if it exists
+      if (ctx.chart) {
+        ctx.chart.destroy();
+      }
+
+      ctx.chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{
+            data: values,
+            borderColor: color,
+            borderWidth: 2,
+            fill: false,
+            pointRadius: 0,
+            pointHoverRadius: 0,
+            tension: 0.1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: { enabled: false }
+          },
+          scales: {
+            x: { display: false },
+            y: { display: false }
+          },
+          interaction: { mode: 'none' }
+        }
+      });
+    }
+
+    // Load dashboard data
+    async function loadIndicatorsDashboard() {
+      try {
+        const response = await fetch("/data/dashboard.json");
+        const data = await response.json();
+
+        document.getElementById("indicators-last-update").textContent =
+          new Date(data.updated).toLocaleDateString();
+
+        // Consumer Confidence
+        if(data.consumer_confidence && data.consumer_confidence.length > 0) {
+          const cc = data.consumer_confidence[data.consumer_confidence.length - 1];
+          document.getElementById("ind-consumer-confidence").textContent =
+            Number(cc.value).toFixed(1);
+          const ccLabels = data.consumer_confidence.map(d => d.date);
+          const ccValues = data.consumer_confidence.map(d => d.value);
+          createIndicatorSparkline('ind-sparkline-cc', ccLabels, ccValues, '#3498db');
+        }
+
+        // S&P 500
+        if(data.markets && data.markets.length > 0) {
+          const sp = data.markets.find(m => m.symbol === "SPY");
+          if (sp) {
+            const currentClose = sp.current_close || sp.close;
+            document.getElementById("ind-sp500").textContent =
+              Number(currentClose).toFixed(0);
+            if (sp.history && sp.history.length > 0) {
+              const spLabels = sp.history.map(d => d.date);
+              const spValues = sp.history.map(d => d.close);
+              createIndicatorSparkline('ind-sparkline-spy', spLabels, spValues, '#27ae60');
+            }
+          }
+        }
+
+        // CPI
+        if(data.cpi) {
+          if(Array.isArray(data.cpi) && data.cpi.length > 0) {
+            const latestCpi = data.cpi[data.cpi.length - 1];
+            document.getElementById("ind-cpi").textContent =
+              Number(latestCpi.value).toFixed(1);
+            const cpiLabels = data.cpi.map(d => d.date);
+            const cpiValues = data.cpi.map(d => d.value);
+            createIndicatorSparkline('ind-sparkline-cpi', cpiLabels, cpiValues, '#9b59b6');
+          }
+        }
+
+        // Unemployment
+        if(data.unemployment) {
+          if(Array.isArray(data.unemployment) && data.unemployment.length > 0) {
+            const latestUnemp = data.unemployment[data.unemployment.length - 1];
+            document.getElementById("ind-unemployment").textContent =
+              Number(latestUnemp.value).toFixed(1) + '%';
+            const unempLabels = data.unemployment.map(d => d.date);
+            const unempValues = data.unemployment.map(d => d.value);
+            createIndicatorSparkline('ind-sparkline-unemp', unempLabels, unempValues, '#f39c12');
+          }
+        }
+
+      } catch (error) {
+        console.error("Failed to load indicators:", error);
+        document.getElementById("indicators-last-update").textContent = "Error loading data";
+      }
+    }
+
+    // Load on page load
+    loadIndicatorsDashboard();
+  </script>
+{{ end }}
