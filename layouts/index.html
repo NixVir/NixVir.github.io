@@ -91,6 +91,19 @@
       width: 100%;
       height: 40px;
     }
+
+    /* Responsive sparkline heights for better aspect ratio on mobile */
+    @media screen and (max-width: 60em) {
+      .sparkline-small {
+        height: 60px;
+      }
+    }
+
+    @media screen and (max-width: 30em) {
+      .sparkline-small {
+        height: 80px;
+      }
+    }
   </style>
   <script>
     // Helper function to create sparkline charts
@@ -98,11 +111,12 @@
       const ctx = document.getElementById(canvasId);
       if (!ctx) return;
 
-      // Set canvas size to match container
+      // Set canvas size to match container and computed height
       const container = ctx.parentElement;
       const containerWidth = container.offsetWidth;
+      const computedHeight = parseInt(window.getComputedStyle(ctx).height) || 40;
       ctx.width = containerWidth;
-      ctx.height = 40;
+      ctx.height = computedHeight;
 
       // Destroy existing chart if it exists
       if (ctx.chart) {
