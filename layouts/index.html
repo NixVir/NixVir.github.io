@@ -113,7 +113,10 @@
             borderWidth: 2,
             fill: false,
             pointRadius: 0,
-            pointHoverRadius: 0,
+            pointHoverRadius: 3,
+            pointHoverBackgroundColor: color,
+            pointHoverBorderColor: '#fff',
+            pointHoverBorderWidth: 2,
             tension: 0.1
           }]
         },
@@ -122,13 +125,34 @@
           maintainAspectRatio: false,
           plugins: {
             legend: { display: false },
-            tooltip: { enabled: false }
+            tooltip: {
+              enabled: true,
+              mode: 'index',
+              intersect: false,
+              displayColors: false,
+              backgroundColor: 'rgba(0,0,0,0.8)',
+              titleColor: '#fff',
+              bodyColor: '#fff',
+              padding: 8,
+              cornerRadius: 4,
+              callbacks: {
+                title: function(context) {
+                  return context[0].label;
+                },
+                label: function(context) {
+                  return context.parsed.y.toFixed(2);
+                }
+              }
+            }
           },
           scales: {
             x: { display: false },
             y: { display: false }
           },
-          interaction: { mode: 'none' }
+          interaction: {
+            mode: 'index',
+            intersect: false
+          }
         }
       });
     }
