@@ -1,5 +1,5 @@
 {
-  "updated": "2025-10-21 20:15:19",
+  "updated": "2025-10-22 14:16:17",
   "consumer_confidence": [
     {
       "date": "2024-09-01",
@@ -89,13 +89,9 @@
   "markets": [
     {
       "symbol": "SPY",
-      "current_date": "2025-10-20",
-      "current_close": 6735.13,
+      "current_date": "2025-10-21",
+      "current_close": 6735.35,
       "history": [
-        {
-          "date": "2025-10-03",
-          "close": 6715.79
-        },
         {
           "date": "2025-10-06",
           "close": 6740.28
@@ -139,32 +135,15 @@
         {
           "date": "2025-10-20",
           "close": 6735.13
+        },
+        {
+          "date": "2025-10-21",
+          "close": 6735.35
         }
       ]
     }
   ],
   "fed_funds_rate": [
-    {
-      "date": "2025-10-06",
-      "series_id": "DFF",
-      "value": 4.09,
-      "realtime_start": "2025-10-21",
-      "realtime_end": "2025-10-21"
-    },
-    {
-      "date": "2025-10-07",
-      "series_id": "DFF",
-      "value": 4.09,
-      "realtime_start": "2025-10-21",
-      "realtime_end": "2025-10-21"
-    },
-    {
-      "date": "2025-10-08",
-      "series_id": "DFF",
-      "value": 4.1,
-      "realtime_start": "2025-10-21",
-      "realtime_end": "2025-10-21"
-    },
     {
       "date": "2025-10-09",
       "series_id": "DFF",
@@ -223,6 +202,27 @@
     },
     {
       "date": "2025-10-17",
+      "series_id": "DFF",
+      "value": 4.11,
+      "realtime_start": "2025-10-21",
+      "realtime_end": "2025-10-21"
+    },
+    {
+      "date": "2025-10-18",
+      "series_id": "DFF",
+      "value": 4.11,
+      "realtime_start": "2025-10-21",
+      "realtime_end": "2025-10-21"
+    },
+    {
+      "date": "2025-10-19",
+      "series_id": "DFF",
+      "value": 4.11,
+      "realtime_start": "2025-10-21",
+      "realtime_end": "2025-10-21"
+    },
+    {
+      "date": "2025-10-20",
       "series_id": "DFF",
       "value": 4.11,
       "realtime_start": "2025-10-21",
