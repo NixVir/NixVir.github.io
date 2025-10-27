@@ -1,101 +1,97 @@
 {
-  "updated": "2025-10-24 14:15:19",
+  "updated": "2025-10-27 14:15:44",
   "consumer_confidence": [
-    {
-      "date": "2024-09-01",
-      "series_id": "UMCSENT",
-      "value": 70.3,
-      "realtime_start": "2025-09-26",
-      "realtime_end": "2025-09-26"
-    },
     {
       "date": "2024-10-01",
       "series_id": "UMCSENT",
       "value": 70.5,
-      "realtime_start": "2025-09-26",
-      "realtime_end": "2025-09-26"
+      "realtime_start": "2025-10-24",
+      "realtime_end": "2025-10-24"
     },
     {
       "date": "2024-11-01",
       "series_id": "UMCSENT",
       "value": 71.8,
-      "realtime_start": "2025-09-26",
-      "realtime_end": "2025-09-26"
+      "realtime_start": "2025-10-24",
+      "realtime_end": "2025-10-24"
     },
     {
       "date": "2024-12-01",
       "series_id": "UMCSENT",
       "value": 74.0,
-      "realtime_start": "2025-09-26",
-      "realtime_end": "2025-09-26"
+      "realtime_start": "2025-10-24",
+      "realtime_end": "2025-10-24"
     },
     {
       "date": "2025-01-01",
       "series_id": "UMCSENT",
       "value": 71.7,
-      "realtime_start": "2025-09-26",
-      "realtime_end": "2025-09-26"
+      "realtime_start": "2025-10-24",
+      "realtime_end": "2025-10-24"
     },
     {
       "date": "2025-02-01",
       "series_id": "UMCSENT",
       "value": 64.7,
-      "realtime_start": "2025-09-26",
-      "realtime_end": "2025-09-26"
+      "realtime_start": "2025-10-24",
+      "realtime_end": "2025-10-24"
     },
     {
       "date": "2025-03-01",
       "series_id": "UMCSENT",
       "value": 57.0,
-      "realtime_start": "2025-09-26",
-      "realtime_end": "2025-09-26"
+      "realtime_start": "2025-10-24",
+      "realtime_end": "2025-10-24"
     },
     {
       "date": "2025-04-01",
       "series_id": "UMCSENT",
       "value": 52.2,
-      "realtime_start": "2025-09-26",
-      "realtime_end": "2025-09-26"
+      "realtime_start": "2025-10-24",
+      "realtime_end": "2025-10-24"
     },
     {
       "date": "2025-05-01",
       "series_id": "UMCSENT",
       "value": 52.2,
-      "realtime_start": "2025-09-26",
-      "realtime_end": "2025-09-26"
+      "realtime_start": "2025-10-24",
+      "realtime_end": "2025-10-24"
     },
     {
       "date": "2025-06-01",
       "series_id": "UMCSENT",
       "value": 60.7,
-      "realtime_start": "2025-09-26",
-      "realtime_end": "2025-09-26"
+      "realtime_start": "2025-10-24",
+      "realtime_end": "2025-10-24"
     },
     {
       "date": "2025-07-01",
       "series_id": "UMCSENT",
       "value": 61.7,
-      "realtime_start": "2025-09-26",
-      "realtime_end": "2025-09-26"
+      "realtime_start": "2025-10-24",
+      "realtime_end": "2025-10-24"
     },
     {
       "date": "2025-08-01",
       "series_id": "UMCSENT",
       "value": 58.2,
-      "realtime_start": "2025-09-26",
-      "realtime_end": "2025-09-26"
+      "realtime_start": "2025-10-24",
+      "realtime_end": "2025-10-24"
+    },
+    {
+      "date": "2025-09-01",
+      "series_id": "UMCSENT",
+      "value": 55.1,
+      "realtime_start": "2025-10-24",
+      "realtime_end": "2025-10-24"
     }
   ],
   "markets": [
     {
       "symbol": "SPY",
-      "current_date": "2025-10-23",
-      "current_close": 6738.44,
+      "current_date": "2025-10-24",
+      "current_close": 6791.69,
       "history": [
-        {
-          "date": "2025-10-08",
-          "close": 6753.72
-        },
         {
           "date": "2025-10-09",
           "close": 6735.11
@@ -139,94 +135,98 @@
         {
           "date": "2025-10-23",
           "close": 6738.44
+        },
+        {
+          "date": "2025-10-24",
+          "close": 6791.69
         }
       ]
     }
   ],
   "fed_funds_rate": [
     {
-      "date": "2025-10-11",
-      "series_id": "DFF",
-      "value": 4.1,
-      "realtime_start": "2025-10-24",
-      "realtime_end": "2025-10-24"
-    },
-    {
       "date": "2025-10-12",
       "series_id": "DFF",
       "value": 4.1,
-      "realtime_start": "2025-10-24",
-      "realtime_end": "2025-10-24"
+      "realtime_start": "2025-10-26",
+      "realtime_end": "2025-10-26"
     },
     {
       "date": "2025-10-13",
       "series_id": "DFF",
       "value": 4.1,
-      "realtime_start": "2025-10-24",
-      "realtime_end": "2025-10-24"
+      "realtime_start": "2025-10-26",
+      "realtime_end": "2025-10-26"
     },
     {
       "date": "2025-10-14",
       "series_id": "DFF",
       "value": 4.1,
-      "realtime_start": "2025-10-24",
-      "realtime_end": "2025-10-24"
+      "realtime_start": "2025-10-26",
+      "realtime_end": "2025-10-26"
     },
     {
       "date": "2025-10-15",
       "series_id": "DFF",
       "value": 4.1,
-      "realtime_start": "2025-10-24",
-      "realtime_end": "2025-10-24"
+      "realtime_start": "2025-10-26",
+      "realtime_end": "2025-10-26"
     },
     {
       "date": "2025-10-16",
       "series_id": "DFF",
       "value": 4.11,
-      "realtime_start": "2025-10-24",
-      "realtime_end": "2025-10-24"
+      "realtime_start": "2025-10-26",
+      "realtime_end": "2025-10-26"
     },
     {
       "date": "2025-10-17",
       "series_id": "DFF",
       "value": 4.11,
-      "realtime_start": "2025-10-24",
-      "realtime_end": "2025-10-24"
+      "realtime_start": "2025-10-26",
+      "realtime_end": "2025-10-26"
     },
     {
       "date": "2025-10-18",
       "series_id": "DFF",
       "value": 4.11,
-      "realtime_start": "2025-10-24",
-      "realtime_end": "2025-10-24"
+      "realtime_start": "2025-10-26",
+      "realtime_end": "2025-10-26"
     },
     {
       "date": "2025-10-19",
       "series_id": "DFF",
       "value": 4.11,
-      "realtime_start": "2025-10-24",
-      "realtime_end": "2025-10-24"
+      "realtime_start": "2025-10-26",
+      "realtime_end": "2025-10-26"
     },
     {
       "date": "2025-10-20",
       "series_id": "DFF",
       "value": 4.11,
-      "realtime_start": "2025-10-24",
-      "realtime_end": "2025-10-24"
+      "realtime_start": "2025-10-26",
+      "realtime_end": "2025-10-26"
     },
     {
       "date": "2025-10-21",
       "series_id": "DFF",
       "value": 4.11,
-      "realtime_start": "2025-10-24",
-      "realtime_end": "2025-10-24"
+      "realtime_start": "2025-10-26",
+      "realtime_end": "2025-10-26"
     },
     {
       "date": "2025-10-22",
       "series_id": "DFF",
       "value": 4.11,
-      "realtime_start": "2025-10-24",
-      "realtime_end": "2025-10-24"
+      "realtime_start": "2025-10-26",
+      "realtime_end": "2025-10-26"
+    },
+    {
+      "date": "2025-10-23",
+      "series_id": "DFF",
+      "value": 4.11,
+      "realtime_start": "2025-10-26",
+      "realtime_end": "2025-10-26"
     }
   ],
   "unemployment": [
