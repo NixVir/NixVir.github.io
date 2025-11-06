@@ -1,5 +1,5 @@
 {
-  "updated": "2025-11-05 14:15:14",
+  "updated": "2025-11-06 14:15:28",
   "consumer_confidence": [
     {
       "date": "2024-10-01",
@@ -89,13 +89,9 @@
   "markets": [
     {
       "symbol": "SPY",
-      "current_date": "2025-11-04",
-      "current_close": 6771.55,
+      "current_date": "2025-11-05",
+      "current_close": 6796.29,
       "history": [
-        {
-          "date": "2025-10-20",
-          "close": 6735.13
-        },
         {
           "date": "2025-10-21",
           "close": 6735.35
@@ -139,94 +135,98 @@
         {
           "date": "2025-11-04",
           "close": 6771.55
+        },
+        {
+          "date": "2025-11-05",
+          "close": 6796.29
         }
       ]
     }
   ],
   "fed_funds_rate": [
     {
-      "date": "2025-10-23",
-      "series_id": "DFF",
-      "value": 4.11,
-      "realtime_start": "2025-11-04",
-      "realtime_end": "2025-11-04"
-    },
-    {
       "date": "2025-10-24",
       "series_id": "DFF",
       "value": 4.11,
-      "realtime_start": "2025-11-04",
-      "realtime_end": "2025-11-04"
+      "realtime_start": "2025-11-05",
+      "realtime_end": "2025-11-05"
     },
     {
       "date": "2025-10-25",
       "series_id": "DFF",
       "value": 4.11,
-      "realtime_start": "2025-11-04",
-      "realtime_end": "2025-11-04"
+      "realtime_start": "2025-11-05",
+      "realtime_end": "2025-11-05"
     },
     {
       "date": "2025-10-26",
       "series_id": "DFF",
       "value": 4.11,
-      "realtime_start": "2025-11-04",
-      "realtime_end": "2025-11-04"
+      "realtime_start": "2025-11-05",
+      "realtime_end": "2025-11-05"
     },
     {
       "date": "2025-10-27",
       "series_id": "DFF",
       "value": 4.12,
-      "realtime_start": "2025-11-04",
-      "realtime_end": "2025-11-04"
+      "realtime_start": "2025-11-05",
+      "realtime_end": "2025-11-05"
     },
     {
       "date": "2025-10-28",
       "series_id": "DFF",
       "value": 4.12,
-      "realtime_start": "2025-11-04",
-      "realtime_end": "2025-11-04"
+      "realtime_start": "2025-11-05",
+      "realtime_end": "2025-11-05"
     },
     {
       "date": "2025-10-29",
       "series_id": "DFF",
       "value": 4.12,
-      "realtime_start": "2025-11-04",
-      "realtime_end": "2025-11-04"
+      "realtime_start": "2025-11-05",
+      "realtime_end": "2025-11-05"
     },
     {
       "date": "2025-10-30",
       "series_id": "DFF",
       "value": 3.87,
-      "realtime_start": "2025-11-04",
-      "realtime_end": "2025-11-04"
+      "realtime_start": "2025-11-05",
+      "realtime_end": "2025-11-05"
     },
     {
       "date": "2025-10-31",
       "series_id": "DFF",
       "value": 3.86,
-      "realtime_start": "2025-11-04",
-      "realtime_end": "2025-11-04"
+      "realtime_start": "2025-11-05",
+      "realtime_end": "2025-11-05"
     },
     {
       "date": "2025-11-01",
       "series_id": "DFF",
       "value": 3.86,
-      "realtime_start": "2025-11-04",
-      "realtime_end": "2025-11-04"
+      "realtime_start": "2025-11-05",
+      "realtime_end": "2025-11-05"
     },
     {
       "date": "2025-11-02",
       "series_id": "DFF",
       "value": 3.86,
-      "realtime_start": "2025-11-04",
-      "realtime_end": "2025-11-04"
+      "realtime_start": "2025-11-05",
+      "realtime_end": "2025-11-05"
     },
     {
       "date": "2025-11-03",
       "series_id": "DFF",
       "value": 3.87,
-      "realtime_start": "2025-11-04",
-      "realtime_end": "2025-11-04"
+      "realtime_start": "2025-11-05",
+      "realtime_end": "2025-11-05"
+    },
+    {
+      "date": "2025-11-04",
+      "series_id": "DFF",
+      "value": 3.87,
+      "realtime_start": "2025-11-05",
+      "realtime_end": "2025-11-05"
     }
   ],
   "unemployment": [
@@ -406,85 +406,85 @@
       "date": "2024-09-01",
       "series_id": "PAYEMS",
       "value": 158314.0,
-      "realtime_start": "2025-09-06",
-      "realtime_end": "2025-09-06"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2024-10-01",
       "series_id": "PAYEMS",
       "value": 158358.0,
-      "realtime_start": "2025-09-06",
-      "realtime_end": "2025-09-06"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2024-11-01",
       "series_id": "PAYEMS",
       "value": 158619.0,
-      "realtime_start": "2025-09-06",
-      "realtime_end": "2025-09-06"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2024-12-01",
       "series_id": "PAYEMS",
       "value": 158942.0,
-      "realtime_start": "2025-09-06",
-      "realtime_end": "2025-09-06"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2025-01-01",
       "series_id": "PAYEMS",
       "value": 159053.0,
-      "realtime_start": "2025-09-06",
-      "realtime_end": "2025-09-06"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2025-02-01",
       "series_id": "PAYEMS",
       "value": 159155.0,
-      "realtime_start": "2025-09-06",
-      "realtime_end": "2025-09-06"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2025-03-01",
       "series_id": "PAYEMS",
       "value": 159275.0,
-      "realtime_start": "2025-09-06",
-      "realtime_end": "2025-09-06"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2025-04-01",
       "series_id": "PAYEMS",
       "value": 159433.0,
-      "realtime_start": "2025-09-06",
-      "realtime_end": "2025-09-06"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2025-05-01",
       "series_id": "PAYEMS",
       "value": 159452.0,
-      "realtime_start": "2025-09-06",
-      "realtime_end": "2025-09-06"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2025-06-01",
       "series_id": "PAYEMS",
       "value": 159439.0,
-      "realtime_start": "2025-09-06",
-      "realtime_end": "2025-09-06"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2025-07-01",
       "series_id": "PAYEMS",
       "value": 159518.0,
-      "realtime_start": "2025-09-06",
-      "realtime_end": "2025-09-06"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2025-08-01",
       "series_id": "PAYEMS",
       "value": 159540.0,
-      "realtime_start": "2025-09-06",
-      "realtime_end": "2025-09-06"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     }
   ],
   "wages": [
