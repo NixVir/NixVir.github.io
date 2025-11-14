@@ -1,5 +1,5 @@
 {
-  "updated": "2025-11-13 14:15:05",
+  "updated": "2025-11-14 14:15:06",
   "consumer_confidence": [
     {
       "date": "2024-10-01",
@@ -89,13 +89,9 @@
   "markets": [
     {
       "symbol": "SPY",
-      "current_date": "2025-11-12",
-      "current_close": 6850.92,
+      "current_date": "2025-11-13",
+      "current_close": 6737.49,
       "history": [
-        {
-          "date": "2025-10-28",
-          "close": 6890.89
-        },
         {
           "date": "2025-10-29",
           "close": 6890.59
@@ -139,94 +135,98 @@
         {
           "date": "2025-11-12",
           "close": 6850.92
+        },
+        {
+          "date": "2025-11-13",
+          "close": 6737.49
         }
       ]
     }
   ],
   "fed_funds_rate": [
     {
-      "date": "2025-10-31",
-      "series_id": "DFF",
-      "value": 3.86,
-      "realtime_start": "2025-11-13",
-      "realtime_end": "2025-11-13"
-    },
-    {
       "date": "2025-11-01",
       "series_id": "DFF",
       "value": 3.86,
-      "realtime_start": "2025-11-13",
-      "realtime_end": "2025-11-13"
+      "realtime_start": "2025-11-14",
+      "realtime_end": "2025-11-14"
     },
     {
       "date": "2025-11-02",
       "series_id": "DFF",
       "value": 3.86,
-      "realtime_start": "2025-11-13",
-      "realtime_end": "2025-11-13"
+      "realtime_start": "2025-11-14",
+      "realtime_end": "2025-11-14"
     },
     {
       "date": "2025-11-03",
       "series_id": "DFF",
       "value": 3.87,
-      "realtime_start": "2025-11-13",
-      "realtime_end": "2025-11-13"
+      "realtime_start": "2025-11-14",
+      "realtime_end": "2025-11-14"
     },
     {
       "date": "2025-11-04",
       "series_id": "DFF",
       "value": 3.87,
-      "realtime_start": "2025-11-13",
-      "realtime_end": "2025-11-13"
+      "realtime_start": "2025-11-14",
+      "realtime_end": "2025-11-14"
     },
     {
       "date": "2025-11-05",
       "series_id": "DFF",
       "value": 3.87,
-      "realtime_start": "2025-11-13",
-      "realtime_end": "2025-11-13"
+      "realtime_start": "2025-11-14",
+      "realtime_end": "2025-11-14"
     },
     {
       "date": "2025-11-06",
       "series_id": "DFF",
       "value": 3.87,
-      "realtime_start": "2025-11-13",
-      "realtime_end": "2025-11-13"
+      "realtime_start": "2025-11-14",
+      "realtime_end": "2025-11-14"
     },
     {
       "date": "2025-11-07",
       "series_id": "DFF",
       "value": 3.87,
-      "realtime_start": "2025-11-13",
-      "realtime_end": "2025-11-13"
+      "realtime_start": "2025-11-14",
+      "realtime_end": "2025-11-14"
     },
     {
       "date": "2025-11-08",
       "series_id": "DFF",
       "value": 3.87,
-      "realtime_start": "2025-11-13",
-      "realtime_end": "2025-11-13"
+      "realtime_start": "2025-11-14",
+      "realtime_end": "2025-11-14"
     },
     {
       "date": "2025-11-09",
       "series_id": "DFF",
       "value": 3.87,
-      "realtime_start": "2025-11-13",
-      "realtime_end": "2025-11-13"
+      "realtime_start": "2025-11-14",
+      "realtime_end": "2025-11-14"
     },
     {
       "date": "2025-11-10",
       "series_id": "DFF",
       "value": 3.87,
-      "realtime_start": "2025-11-13",
-      "realtime_end": "2025-11-13"
+      "realtime_start": "2025-11-14",
+      "realtime_end": "2025-11-14"
     },
     {
       "date": "2025-11-11",
       "series_id": "DFF",
       "value": 3.87,
-      "realtime_start": "2025-11-13",
-      "realtime_end": "2025-11-13"
+      "realtime_start": "2025-11-14",
+      "realtime_end": "2025-11-14"
+    },
+    {
+      "date": "2025-11-12",
+      "series_id": "DFF",
+      "value": 3.87,
+      "realtime_start": "2025-11-14",
+      "realtime_end": "2025-11-14"
     }
   ],
   "unemployment": [
@@ -234,85 +234,85 @@
       "date": "2024-09-01",
       "series_id": "UNRATE",
       "value": 4.1,
-      "realtime_start": "2025-09-15",
-      "realtime_end": "2025-09-15"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2024-10-01",
       "series_id": "UNRATE",
       "value": 4.1,
-      "realtime_start": "2025-09-15",
-      "realtime_end": "2025-09-15"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2024-11-01",
       "series_id": "UNRATE",
       "value": 4.2,
-      "realtime_start": "2025-09-15",
-      "realtime_end": "2025-09-15"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2024-12-01",
       "series_id": "UNRATE",
       "value": 4.1,
-      "realtime_start": "2025-09-15",
-      "realtime_end": "2025-09-15"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2025-01-01",
       "series_id": "UNRATE",
       "value": 4.0,
-      "realtime_start": "2025-09-15",
-      "realtime_end": "2025-09-15"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2025-02-01",
       "series_id": "UNRATE",
       "value": 4.1,
-      "realtime_start": "2025-09-15",
-      "realtime_end": "2025-09-15"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2025-03-01",
       "series_id": "UNRATE",
       "value": 4.2,
-      "realtime_start": "2025-09-15",
-      "realtime_end": "2025-09-15"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2025-04-01",
       "series_id": "UNRATE",
       "value": 4.2,
-      "realtime_start": "2025-09-15",
-      "realtime_end": "2025-09-15"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2025-05-01",
       "series_id": "UNRATE",
       "value": 4.2,
-      "realtime_start": "2025-09-15",
-      "realtime_end": "2025-09-15"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2025-06-01",
       "series_id": "UNRATE",
       "value": 4.1,
-      "realtime_start": "2025-09-15",
-      "realtime_end": "2025-09-15"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2025-07-01",
       "series_id": "UNRATE",
       "value": 4.2,
-      "realtime_start": "2025-09-15",
-      "realtime_end": "2025-09-15"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     },
     {
       "date": "2025-08-01",
       "series_id": "UNRATE",
       "value": 4.3,
-      "realtime_start": "2025-09-15",
-      "realtime_end": "2025-09-15"
+      "realtime_start": "2025-09-05",
+      "realtime_end": "2025-09-05"
     }
   ],
   "cpi": [
