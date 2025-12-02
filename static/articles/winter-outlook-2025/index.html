@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOAA vs CanSIPS NDJ 2025/26 Forecast Comparison</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2C3E50;
+            background: #ffffff;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #1E3A5F;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #4A8B8D;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            color: #2E5C8A;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #4A8B8D;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #1E3A5F;
+            font-size: 1.4em;
+            margin: 25px 0 15px 0;
+        }
+
+        .map-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .map-container {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .map-container h4 {
+            color: #2E5C8A;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .map-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #2E5C8A 0%, #4A8B8D 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .stat-card h4 {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th {
+            background: #2E5C8A;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ECF0F1;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .comparison-table tr:hover {
+            background: #e3f2fd;
+        }
+
+        .highlight-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .highlight-box h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .key-difference {
+            background: #e8f4f8;
+            border-left: 4px solid #4A8B8D;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .key-difference strong {
+            color: #2E5C8A;
+        }
+
+        ul, ol {
+            margin: 15px 0 15px 30px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #ECF0F1;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        .methodology {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+
+        @media (max-width: 968px) {
+            .map-comparison,
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NOAA vs Environment Canada CanSIPS</h1>
+        <div class="subtitle">NDJ 2025/26 Seasonal Forecast Comparison for North American Ski Areas</div>
+
+        <!-- Executive Summary -->
+        <div class="section">
+            <h2>Executive Summary</h2>
+            <p>This analysis compares two leading seasonal forecast systems for November-December-January (NDJ) 2025-2026 across all 707 North American ski areas. The forecasts show <strong>striking differences</strong> in their temperature predictions, with implications for winter sports planning and operations.</p>
+
+            <div class="highlight-box">
+                <h4>Key Finding</h4>
+                <p><strong>CanSIPS predicts widespread warming (80% of North America "Above Normal") with high confidence, while NOAA presents a more balanced outlook with significant areas of below-normal temperatures (20% of regions).</strong></p>
+            </div>
+        </div>
+
+        <!-- Temperature Comparison -->
+        <div class="section">
+            <h2>Temperature Forecast Comparison</h2>
+
+            <div class="map-comparison">
+                <div class="map-container">
+                    <h4>NOAA CPC Forecast</h4>
+                    <img src="maps/noaa_ndj_temperature_outlook.png" alt="NOAA Temperature Forecast">
+                    <p style="text-align: center; margin-top: 10px; font-size: 0.9em; color: #666;">
+                        Balanced regional outlook with below-normal temperatures in Pacific Northwest
+                    </p>
+                </div>
+
+                <div class="map-container">
+                    <h4>Environment Canada CanSIPS Forecast</h4>
+                    <img src="maps/cansips_ndj_temperature_outlook.png" alt="CanSIPS Temperature Forecast">
+                    <p style="text-align: center; margin-top: 10px; font-size: 0.9em; color: #666;">
+                        Widespread above-normal temperatures across nearly entire continent
+                    </p>
+                </div>
+            </div>
+
+            <h3>Temperature Statistics</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h4>NOAA CPC</h4>
+                    <div class="stat-value">47%</div>
+                    <div class="stat-label">Areas forecast "Above Normal"</div>
+                    <div style="margin-top: 15px;">
+                        <div>Above: 47% | EC: 33% | Below: 20%</div>
+                        <div style="margin-top: 8px; opacity: 0.9;">Avg Probability: 38.1%</div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <h4>Environment Canada CanSIPS</h4>
+                    <div class="stat-value">80%</div>
+                    <div class="stat-label">Areas forecast "Above Normal"</div>
+                    <div style="margin-top: 15px;">
+                        <div>Above: 80% | EC: 20% | Below: <1%</div>
+                        <div style="margin-top: 8px; opacity: 0.9;">Avg Probability: 57.8%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-difference">
+                <strong>Critical Difference:</strong> CanSIPS shows virtually no areas with below-normal temperatures (<1%), while NOAA forecasts 20% of regions to be cooler than normal, particularly in the Pacific Northwest, Northern Plains, and parts of Alaska.
+            </div>
+        </div>
+
+        <!-- Precipitation Comparison -->
+        <div class="section">
+            <h2>Precipitation Forecast Comparison</h2>
+
+            <div class="map-comparison">
+                <div class="map-container">
+                    <h4>NOAA CPC Forecast</h4>
+                    <img src="maps/noaa_ndj_precipitation_outlook.png" alt="NOAA Precipitation Forecast">
+                    <p style="text-align: center; margin-top: 10px; font-size: 0.9em; color: #666;">
+                        Wetter Northern tier, drier Southwest - typical La Niña-like pattern
+                    </p>
+                </div>
+
+                <div class="map-container">
+                    <h4>Environment Canada CanSIPS Forecast</h4>
+                    <img src="maps/cansips_ndj_precipitation_outlook.png" alt="CanSIPS Precipitation Forecast">
+                    <p style="text-align: center; margin-top: 10px; font-size: 0.9em; color: #666;">
+                        More widespread "Equal Chances" with less spatial structure
+                    </p>
+                </div>
+            </div>
+
+            <h3>Precipitation Statistics</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Forecast System</th>
+                        <th>Above Normal</th>
+                        <th>Equal Chances</th>
+                        <th>Below Normal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>NOAA CPC</strong></td>
+                        <td>29% (wetter)</td>
+                        <td>35%</td>
+                        <td>35% (drier)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CanSIPS</strong></td>
+                        <td>15% (wetter)</td>
+                        <td>63%</td>
+                        <td>22% (drier)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="key-difference">
+                <strong>Precipitation Outlook:</strong> Both models show less confidence in precipitation forecasts compared to temperature. CanSIPS shows "Equal Chances" for 63% of the continent, indicating low forecast skill. NOAA shows more regional structure with wetter conditions in the North and drier in the Southwest.
+            </div>
+        </div>
+
+        <!-- Detailed Comparison -->
+        <div class="section">
+            <h2>Detailed Technical Comparison</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Characteristic</th>
+                        <th>NOAA CPC</th>
+                        <th>Environment Canada CanSIPS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Issue Date</strong></td>
+                        <td>October 16, 2025</td>
+                        <td>October 2025 (estimated)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Valid Period</strong></td>
+                        <td>November-December-January 2025-2026</td>
+                        <td>November-December-January 2025-2026</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Spatial Resolution</strong></td>
+                        <td>15-17 regional polygons</td>
+                        <td>7,260 grid cells (1° × 1°)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Forecast Methodology</strong></td>
+                        <td>Multi-model ensemble + expert forecaster interpretation</td>
+                        <td>Ensemble seasonal prediction system (model-driven)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Temp: Above Normal</strong></td>
+                        <td>46.7% of regions</td>
+                        <td>79.5% of grid cells</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Temp: Below Normal</strong></td>
+                        <td>20.0% of regions</td>
+                        <td>0.7% of grid cells</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Avg Confidence (Temp)</strong></td>
+                        <td>38.1% probability</td>
+                        <td>57.8% probability</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Coverage Area</strong></td>
+                        <td>Contiguous US + Alaska + Hawaii</td>
+                        <td>Global (North America shown)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Why the Differences -->
+        <div class="section">
+            <h2>Why Do These Forecasts Differ?</h2>
+
+            <h3>1. Modeling Philosophy</h3>
+            <div class="methodology">
+                <p><strong>CanSIPS (Model-Driven):</strong> Pure statistical ensemble output from coupled ocean-atmosphere models. The high probabilities (avg 57.8%) indicate tight agreement among ensemble members, suggesting the model "sees" a strong warming signal.</p>
+
+                <p style="margin-top: 15px;"><strong>NOAA CPC (Hybrid Approach):</strong> Consolidates multiple models but adds expert forecaster interpretation, regional climate knowledge, and consideration of analogue years. Lower probabilities (avg 38.1%) reflect forecaster conservatism and acknowledgment of uncertainty.</p>
+            </div>
+
+            <h3>2. Spatial Scale Differences</h3>
+            <div class="key-difference">
+                CanSIPS provides fine-scale (1° × 1°) gridded output, while NOAA deliberately simplifies into broad regional polygons. NOAA's approach recognizes that sub-seasonal forecast skill may not support fine spatial detail.
+            </div>
+
+            <h3>3. Possible Climate Drivers</h3>
+            <ul>
+                <li><strong>Long-term warming trend:</strong> CanSIPS may be heavily weighting anthropogenic climate change, predicting widespread warming</li>
+                <li><strong>ENSO neutral conditions:</strong> Both models may be interpreting neutral El Niño/La Niña conditions differently</li>
+                <li><strong>Arctic/North Atlantic patterns:</strong> NOAA forecasters may be factoring in Arctic Oscillation or North Atlantic patterns that suggest cooler Pacific Northwest</li>
+                <li><strong>Model bias:</strong> CanSIPS may have a known warm bias that NOAA forecasters correct for</li>
+            </ul>
+
+            <h3>4. Forecast Verification History</h3>
+            <div class="methodology">
+                <p><strong>NOAA CPC:</strong> Has multi-decade verification record for US forecasts. Their conservatism (lower probabilities) may reflect historical skill limitations.</p>
+
+                <p style="margin-top: 15px;"><strong>CanSIPS:</strong> Verified globally but may have different skill scores for North America. Higher confidence may or may not be justified by historical performance.</p>
+            </div>
+        </div>
+
+        <!-- Implications -->
+        <div class="section">
+            <h2>Implications for Ski Area Planning</h2>
+
+            <h3>Temperature Implications</h3>
+            <div class="key-difference">
+                <strong>If CanSIPS is correct:</strong> Widespread warmer-than-normal temperatures would reduce natural snowfall, shorten seasons, and increase snowmaking costs across most of North America. Only isolated mountain regions in "Equal Chances" zones (Montana, Idaho, BC interior) might see normal conditions.
+            </div>
+
+            <div class="key-difference" style="margin-top: 15px;">
+                <strong>If NOAA is correct:</strong> Mixed conditions with some regions (Pacific Northwest, Northern Plains, parts of Alaska) actually seeing cooler-than-normal temperatures and potentially better natural snow conditions. Other regions (Southwest, East Coast, Southern areas) would see warming consistent with CanSIPS.
+            </div>
+
+            <h3>Risk Management Approach</h3>
+            <ol>
+                <li><strong>Plan for the worse case:</strong> CanSIPS warmer scenario suggests preparing for increased snowmaking, shorter seasons, and energy cost management</li>
+                <li><strong>Monitor actual conditions:</strong> Early November weather will quickly reveal which model is more accurate</li>
+                <li><strong>Regional variation:</strong> Pacific Northwest resorts might benefit from the cooler NOAA outlook</li>
+                <li><strong>Precipitation uncertainty:</strong> Both models show low confidence in precipitation, suggesting normal snowfall variability</li>
+            </ol>
+
+            <h3>Which Forecast to Trust?</h3>
+            <div class="highlight-box">
+                <h4>Recommended Interpretation</h4>
+                <ul>
+                    <li><strong>For US operations:</strong> Weight NOAA CPC more heavily due to their US-focused expertise and forecaster interpretation</li>
+                    <li><strong>For Canadian operations:</strong> Consider both forecasts; CanSIPS has regional expertise but may be overly confident</li>
+                    <li><strong>Prudent approach:</strong> Plan for warmer conditions (CanSIPS scenario) but be prepared for regional variability (NOAA scenario)</li>
+                    <li><strong>Update frequently:</strong> Sub-seasonal forecasts improve with shorter lead times; monitor weekly updates through November</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Conclusion -->
+        <div class="section">
+            <h2>Conclusion</h2>
+            <p>The stark difference between these two reputable forecast systems highlights the inherent uncertainty in seasonal climate prediction. CanSIPS' widespread warm signal may reflect long-term climate trends or model bias, while NOAA's more conservative regional approach acknowledges forecast limitations.</p>
+
+            <p style="margin-top: 15px;">For ski industry planning, the <strong>prudent approach is to prepare for warmer conditions while monitoring actual weather patterns closely</strong>. Early-season conditions in November will quickly reveal which model better captured the NDJ 2025-2026 pattern.</p>
+
+            <div class="methodology" style="margin-top: 25px;">
+                <p><strong>Follow-up Analysis:</strong> Post-season verification of these forecasts would provide valuable insights into each system's skill for North American winter sports applications. Consider tracking actual temperatures against both forecasts throughout the NDJ period.</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Data Sources:</strong> NOAA Climate Prediction Center | Environment and Climate Change Canada (CanSIPS)</p>
+            <p style="margin-top: 8px;"><strong>Analysis Period:</strong> November-December-January 2025-2026</p>
+            <p style="margin-top: 8px;"><strong>Ski Areas Analyzed:</strong> 707 (468 US, 239 Canada)</p>
+            <p style="margin-top: 15px;">© 2025 Nixvir | Seasonal Forecast Comparison Analysis</p>
+        </div>
+    </div>
+</body>
+</html>
