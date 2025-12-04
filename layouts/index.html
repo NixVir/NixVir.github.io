@@ -117,12 +117,67 @@
         max-height: 70px;
       }
     }
+
+    .change-indicator { font-size: 0.75em; margin-top: 2px; }
+    .change-indicator .arrow { font-weight: bold; margin-right: 2px; }
+    .change-indicator .yoy { margin-right: 4px; }
+    .positive { color: #27ae60; }
+    .negative { color: #e74c3c; }
+    .neutral { color: #3498db; }
   </style>
   <script>
     // Helper function to format dates for x-axis
     function formatDateLabel(dateStr) {
       const date = new Date(dateStr);
       return date.toLocaleDateString('en-US', { month: 'short', year: '2-digit' });
+    }
+
+    // Calculate year-over-year or period change
+    function calcChange(data, isPercent = false) {
+      if (!data || data.length < 2) return null;
+      const latest = data[data.length - 1].value;
+      const oldest = data[0].value;
+      if (oldest === 0) return null;
+
+      if (isPercent) {
+        const change = latest - oldest;
+        return { change: change, pctChange: null, isPointChange: true };
+      } else {
+        const pctChange = ((latest - oldest) / oldest) * 100;
+        return { change: latest - oldest, pctChange: pctChange, isPointChange: false };
+      }
+    }
+
+    // Get trend arrow based on change
+    function getTrendArrow(change) {
+      if (change > 0.5) return { arrow: '\u2191', class: 'positive' };
+      if (change < -0.5) return { arrow: '\u2193', class: 'negative' };
+      return { arrow: '\u2192', class: 'neutral' };
+    }
+
+    // Format change indicator HTML
+    function formatChangeIndicator(changeData, invertColors = false) {
+      if (!changeData) return '';
+
+      const change = changeData.pctChange !== null ? changeData.pctChange : changeData.change;
+      const trend = getTrendArrow(change);
+
+      let colorClass = trend.class;
+      if (invertColors) {
+        if (colorClass === 'positive') colorClass = 'negative';
+        else if (colorClass === 'negative') colorClass = 'positive';
+      }
+
+      let changeText;
+      if (changeData.isPointChange) {
+        const sign = changeData.change >= 0 ? '+' : '';
+        changeText = `${sign}${changeData.change.toFixed(2)} pts`;
+      } else {
+        const sign = changeData.pctChange >= 0 ? '+' : '';
+        changeText = `${sign}${changeData.pctChange.toFixed(1)}%`;
+      }
+
+      return `<span class="change-indicator"><span class="arrow ${colorClass}">${trend.arrow}</span><span class="yoy ${colorClass}">${changeText} YoY</span></span>`;
     }
 
     // Helper function to create sparkline charts with visible x-axis
@@ -223,8 +278,9 @@
         // Consumer Confidence
         if(data.consumer_confidence && data.consumer_confidence.length > 0) {
           const cc = data.consumer_confidence[data.consumer_confidence.length - 1];
-          document.getElementById("ind-consumer-confidence").textContent =
-            Number(cc.value).toFixed(1);
+          const ccChange = calcChange(data.consumer_confidence);
+          document.getElementById("ind-consumer-confidence").innerHTML =
+            Number(cc.value).toFixed(1) + ' ' + formatChangeIndicator(ccChange);
           const ccLabels = data.consumer_confidence.map(d => d.date);
           const ccValues = data.consumer_confidence.map(d => d.value);
           createIndicatorSparkline('ind-sparkline-cc', ccLabels, ccValues, '#3498db');
@@ -235,8 +291,10 @@
           const sp = data.markets.find(m => m.symbol === "SPY");
           if (sp) {
             const currentClose = sp.current_close || sp.close;
-            document.getElementById("ind-sp500").textContent =
-              Number(currentClose).toFixed(0);
+            const spData = sp.history ? sp.history.map(h => ({value: h.close, date: h.date})) : [];
+            const spChange = calcChange(spData);
+            document.getElementById("ind-sp500").innerHTML =
+              Number(currentClose).toFixed(0) + ' ' + formatChangeIndicator(spChange);
             if (sp.history && sp.history.length > 0) {
               const spLabels = sp.history.map(d => d.date);
               const spValues = sp.history.map(d => d.close);
@@ -249,20 +307,22 @@
         if(data.cpi) {
           if(Array.isArray(data.cpi) && data.cpi.length > 0) {
             const latestCpi = data.cpi[data.cpi.length - 1];
-            document.getElementById("ind-cpi").textContent =
-              Number(latestCpi.value).toFixed(1);
+            const cpiChange = calcChange(data.cpi);
+            document.getElementById("ind-cpi").innerHTML =
+              Number(latestCpi.value).toFixed(1) + ' ' + formatChangeIndicator(cpiChange);
             const cpiLabels = data.cpi.map(d => d.date);
             const cpiValues = data.cpi.map(d => d.value);
             createIndicatorSparkline('ind-sparkline-cpi', cpiLabels, cpiValues, '#9b59b6');
           }
         }
 
-        // Unemployment
+        // Unemployment (invert colors - up is bad)
         if(data.unemployment) {
           if(Array.isArray(data.unemployment) && data.unemployment.length > 0) {
             const latestUnemp = data.unemployment[data.unemployment.length - 1];
-            document.getElementById("ind-unemployment").textContent =
-              Number(latestUnemp.value).toFixed(1) + '%';
+            const unempChange = calcChange(data.unemployment, true);
+            document.getElementById("ind-unemployment").innerHTML =
+              Number(latestUnemp.value).toFixed(1) + '% ' + formatChangeIndicator(unempChange, true);
             const unempLabels = data.unemployment.map(d => d.date);
             const unempValues = data.unemployment.map(d => d.value);
             createIndicatorSparkline('ind-sparkline-unemp', unempLabels, unempValues, '#f39c12');
