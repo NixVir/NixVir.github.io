@@ -20,6 +20,10 @@ menu:
 .positive { color: #27ae60; }
 .negative { color: #e74c3c; }
 .neutral { color: #3498db; }
+.change-indicator { font-size: 0.85em; margin-top: 4px; }
+.change-indicator .arrow { font-weight: bold; margin-right: 3px; }
+.change-indicator .yoy { margin-right: 8px; }
+.change-indicator .momentum { font-size: 0.9em; color: #7f8c8d; }
 </style>
 
 <div id="dashboard-container">
@@ -121,6 +125,97 @@ function formatShortDate(dateStr) {
   return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 }
 
+// Calculate year-over-year or period change
+function calcChange(data, isPercent = false) {
+  if (!data || data.length < 2) return null;
+  const latest = data[data.length - 1].value;
+  const oldest = data[0].value;
+  if (oldest === 0) return null;
+
+  if (isPercent) {
+    // For metrics already in percent (unemployment, rates), show point change
+    const change = latest - oldest;
+    return { change: change, pctChange: null, isPointChange: true };
+  } else {
+    // For other metrics, show percent change
+    const pctChange = ((latest - oldest) / oldest) * 100;
+    return { change: latest - oldest, pctChange: pctChange, isPointChange: false };
+  }
+}
+
+// Calculate 30-day momentum for daily data
+function calc30DayMomentum(data, isPercent = false) {
+  if (!data || data.length < 30) return null;
+  const latest = data[data.length - 1].value;
+  const thirtyDaysAgo = data[data.length - 30].value;
+  if (thirtyDaysAgo === 0) return null;
+
+  if (isPercent) {
+    return { change: latest - thirtyDaysAgo, isPointChange: true };
+  } else {
+    const pctChange = ((latest - thirtyDaysAgo) / thirtyDaysAgo) * 100;
+    return { pctChange: pctChange, isPointChange: false };
+  }
+}
+
+// Get trend arrow based on change
+function getTrendArrow(change) {
+  if (change > 0.5) return { arrow: '\u2191', class: 'positive' };  // Up arrow
+  if (change < -0.5) return { arrow: '\u2193', class: 'negative' }; // Down arrow
+  return { arrow: '\u2192', class: 'neutral' };  // Right arrow (stable)
+}
+
+// Format change indicator HTML
+function formatChangeIndicator(changeData, momentumData = null, invertColors = false) {
+  if (!changeData) return '';
+
+  const change = changeData.pctChange !== null ? changeData.pctChange : changeData.change;
+  const trend = getTrendArrow(change);
+
+  // Some metrics are "bad" when they go up (unemployment), so invert colors
+  let colorClass = trend.class;
+  if (invertColors) {
+    if (colorClass === 'positive') colorClass = 'negative';
+    else if (colorClass === 'negative') colorClass = 'positive';
+  }
+
+  let changeText;
+  if (changeData.isPointChange) {
+    const sign = changeData.change >= 0 ? '+' : '';
+    changeText = `${sign}${changeData.change.toFixed(2)} pts YoY`;
+  } else {
+    const sign = changeData.pctChange >= 0 ? '+' : '';
+    changeText = `${sign}${changeData.pctChange.toFixed(1)}% YoY`;
+  }
+
+  let html = `<div class="change-indicator">`;
+  html += `<span class="arrow ${colorClass}">${trend.arrow}</span>`;
+  html += `<span class="yoy ${colorClass}">${changeText}</span>`;
+
+  if (momentumData) {
+    const momChange = momentumData.pctChange !== null ? momentumData.pctChange : momentumData.change;
+    const momTrend = getTrendArrow(momChange);
+    let momColorClass = momTrend.class;
+    if (invertColors) {
+      if (momColorClass === 'positive') momColorClass = 'negative';
+      else if (momColorClass === 'negative') momColorClass = 'positive';
+    }
+
+    let momText;
+    if (momentumData.isPointChange) {
+      const sign = momentumData.change >= 0 ? '+' : '';
+      momText = `(${sign}${momentumData.change.toFixed(2)} pts 30d)`;
+    } else {
+      const sign = momentumData.pctChange >= 0 ? '+' : '';
+      momText = `(${sign}${momentumData.pctChange.toFixed(1)}% 30d)`;
+    }
+    html += `<span class="momentum ${momColorClass}">${momText}</span>`;
+  }
+
+  html += `</div>`;
+  return html;
+}
+
 function createChart(canvasId, labels, values, color = '#3498db', options = {}) {
   const ctx = document.getElementById(canvasId);
   if (!ctx) return;
@@ -188,14 +283,16 @@ async function loadDashboard() {
     // GDP
     if(data.gdp && Array.isArray(data.gdp) && data.gdp.length > 0) {
       const latest = data.gdp[data.gdp.length - 1];
-      document.getElementById("gdp").innerHTML = `<div class="value">$${Number(latest.value).toLocaleString()}B</div><div class="period">${formatDate(latest.date)}</div>`;
+      const gdpChange = calcChange(data.gdp);
+      document.getElementById("gdp").innerHTML = `<div class="value">$${Number(latest.value).toLocaleString()}B</div><div class="period">${formatDate(latest.date)}</div>${formatChangeIndicator(gdpChange)}`;
       createChart('chart-gdp', data.gdp.map(d => formatDate(d.date)), data.gdp.map(d => d.value), '#2ecc71', { prefix: '$', suffix: 'B', decimals: 0 });
     }
 
     // Consumer Confidence
     if(data.consumer_confidence && data.consumer_confidence.length > 0) {
       const cc = data.consumer_confidence[data.consumer_confidence.length - 1];
-      document.getElementById("consumer-confidence").innerHTML = `<div class="value">${Number(cc.value).toFixed(1)}</div><div class="period">${formatDate(cc.date)}</div>`;
+      const ccChange = calcChange(data.consumer_confidence);
+      document.getElementById("consumer-confidence").innerHTML = `<div class="value">${Number(cc.value).toFixed(1)}</div><div class="period">${formatDate(cc.date)}</div>${formatChangeIndicator(ccChange)}`;
       createChart('chart-cc', data.consumer_confidence.map(d => formatDate(d.date)), data.consumer_confidence.map(d => d.value), '#3498db', { decimals: 1 });
     }
 
@@ -205,7 +302,10 @@ async function loadDashboard() {
       if (sp) {
         const currentClose = sp.current_close || sp.close;
         const currentDate = sp.current_date || sp.date;
-        document.getElementById("sp500").innerHTML = `<div class="value positive">${Number(currentClose).toLocaleString(undefined, {minimumFractionDigits: 2})}</div><div class="period">${formatDate(currentDate)}</div>`;
+        // Convert history to the format expected by calcChange
+        const spData = sp.history ? sp.history.map(h => ({value: h.close, date: h.date})) : [];
+        const spChange = calcChange(spData);
+        document.getElementById("sp500").innerHTML = `<div class="value positive">${Number(currentClose).toLocaleString(undefined, {minimumFractionDigits: 2})}</div><div class="period">${formatDate(currentDate)}</div>${formatChangeIndicator(spChange)}`;
         if (sp.history && sp.history.length > 0) {
           createChart('chart-spy', sp.history.map(d => formatShortDate(d.date)), sp.history.map(d => d.close), '#27ae60', { decimals: 2 });
         }
@@ -215,77 +315,94 @@ async function loadDashboard() {
     // CPI
     if(data.cpi && Array.isArray(data.cpi) && data.cpi.length > 0) {
       const latestCpi = data.cpi[data.cpi.length - 1];
-      document.getElementById("cpi").innerHTML = `<div class="value">${Number(latestCpi.value).toFixed(1)}</div><div class="period">${formatDate(latestCpi.date)}</div>`;
+      const cpiChange = calcChange(data.cpi);
+      document.getElementById("cpi").innerHTML = `<div class="value">${Number(latestCpi.value).toFixed(1)}</div><div class="period">${formatDate(latestCpi.date)}</div>${formatChangeIndicator(cpiChange)}`;
       createChart('chart-cpi', data.cpi.map(d => formatDate(d.date)), data.cpi.map(d => d.value), '#9b59b6', { decimals: 1 });
     }
 
-    // Fed Rate
+    // Fed Rate (daily - show YoY + 30-day momentum)
     if(data.fed_funds_rate && Array.isArray(data.fed_funds_rate) && data.fed_funds_rate.length > 0) {
       const latestFed = data.fed_funds_rate[data.fed_funds_rate.length - 1];
-      document.getElementById("fed-rate").innerHTML = `<div class="value neutral">${Number(latestFed.value).toFixed(2)}%</div><div class="period">${formatShortDate(latestFed.date)}</div>`;
+      const fedChange = calcChange(data.fed_funds_rate, true);  // isPercent=true for point change
+      const fedMomentum = calc30DayMomentum(data.fed_funds_rate, true);
+      document.getElementById("fed-rate").innerHTML = `<div class="value neutral">${Number(latestFed.value).toFixed(2)}%</div><div class="period">${formatShortDate(latestFed.date)}</div>${formatChangeIndicator(fedChange, fedMomentum)}`;
       createChart('chart-fed', data.fed_funds_rate.map(d => formatShortDate(d.date)), data.fed_funds_rate.map(d => d.value), '#e74c3c', { suffix: '%', decimals: 2 });
     }
 
-    // Unemployment
+    // Unemployment (invert colors - up is bad)
     if(data.unemployment && Array.isArray(data.unemployment) && data.unemployment.length > 0) {
       const latestUnemp = data.unemployment[data.unemployment.length - 1];
-      document.getElementById("unemployment").innerHTML = `<div class="value">${Number(latestUnemp.value).toFixed(1)}%</div><div class="period">${formatDate(latestUnemp.date)}</div>`;
+      const unempChange = calcChange(data.unemployment, true);  // isPercent=true for point change
+      document.getElementById("unemployment").innerHTML = `<div class="value">${Number(latestUnemp.value).toFixed(1)}%</div><div class="period">${formatDate(latestUnemp.date)}</div>${formatChangeIndicator(unempChange, null, true)}`;
       createChart('chart-unemp', data.unemployment.map(d => formatDate(d.date)), data.unemployment.map(d => d.value), '#f39c12', { suffix: '%', decimals: 1 });
     }
 
     // Employment
     if(data.employment && Array.isArray(data.employment) && data.employment.length > 0) {
       const latestEmp = data.employment[data.employment.length - 1];
-      document.getElementById("employment").innerHTML = `<div class="value">${Number(latestEmp.value).toLocaleString()}</div><div class="period">${formatDate(latestEmp.date)}</div>`;
+      const empChange = calcChange(data.employment);
+      document.getElementById("employment").innerHTML = `<div class="value">${Number(latestEmp.value).toLocaleString()}</div><div class="period">${formatDate(latestEmp.date)}</div>${formatChangeIndicator(empChange)}`;
       createChart('chart-emp', data.employment.map(d => formatDate(d.date)), data.employment.map(d => d.value), '#1abc9c', { suffix: 'K', decimals: 0 });
     }
 
     // Wages
     if(data.wages && Array.isArray(data.wages) && data.wages.length > 0) {
       const latestWages = data.wages[data.wages.length - 1];
-      document.getElementById("wages").innerHTML = `<div class="value">$${Number(latestWages.value).toFixed(2)}</div><div class="period">${formatDate(latestWages.date)}</div>`;
+      const wagesChange = calcChange(data.wages);
+      document.getElementById("wages").innerHTML = `<div class="value">$${Number(latestWages.value).toFixed(2)}</div><div class="period">${formatDate(latestWages.date)}</div>${formatChangeIndicator(wagesChange)}`;
       createChart('chart-wages', data.wages.map(d => formatDate(d.date)), data.wages.map(d => d.value), '#16a085', { prefix: '$', decimals: 2 });
     }
 
     // Housing Starts
     if(data.housing_starts && Array.isArray(data.housing_starts) && data.housing_starts.length > 0) {
       const latestHousing = data.housing_starts[data.housing_starts.length - 1];
-      document.getElementById("housing").innerHTML = `<div class="value">${Number(latestHousing.value).toLocaleString()}</div><div class="period">${formatDate(latestHousing.date)}</div>`;
+      const housingChange = calcChange(data.housing_starts);
+      document.getElementById("housing").innerHTML = `<div class="value">${Number(latestHousing.value).toLocaleString()}</div><div class="period">${formatDate(latestHousing.date)}</div>${formatChangeIndicator(housingChange)}`;
       createChart('chart-housing', data.housing_starts.map(d => formatDate(d.date)), data.housing_starts.map(d => d.value), '#8e44ad', { suffix: 'K', decimals: 0 });
     }
 
-    // 10-Year Treasury
+    // 10-Year Treasury (daily - show YoY + 30-day momentum)
     if(data.treasury_10y && Array.isArray(data.treasury_10y) && data.treasury_10y.length > 0) {
       const latestTreasury = data.treasury_10y[data.treasury_10y.length - 1];
-      document.getElementById("treasury").innerHTML = `<div class="value neutral">${Number(latestTreasury.value).toFixed(2)}%</div><div class="period">${formatShortDate(latestTreasury.date)}</div>`;
+      const treasuryChange = calcChange(data.treasury_10y, true);  // isPercent=true for point change
+      const treasuryMomentum = calc30DayMomentum(data.treasury_10y, true);
+      document.getElementById("treasury").innerHTML = `<div class="value neutral">${Number(latestTreasury.value).toFixed(2)}%</div><div class="period">${formatShortDate(latestTreasury.date)}</div>${formatChangeIndicator(treasuryChange, treasuryMomentum)}`;
       createChart('chart-treasury', data.treasury_10y.map(d => formatShortDate(d.date)), data.treasury_10y.map(d => d.value), '#c0392b', { suffix: '%', decimals: 2 });
     }
 
-    // USD/CAD
+    // USD/CAD (daily - show YoY + 30-day momentum)
     if(data.usd_cad && Array.isArray(data.usd_cad) && data.usd_cad.length > 0) {
       const latest = data.usd_cad[data.usd_cad.length - 1];
-      document.getElementById("usd-cad").innerHTML = `<div class="value">${Number(latest.value).toFixed(4)}</div><div class="period">${formatShortDate(latest.date)} (CAD per USD)</div>`;
+      const cadChange = calcChange(data.usd_cad);
+      const cadMomentum = calc30DayMomentum(data.usd_cad);
+      document.getElementById("usd-cad").innerHTML = `<div class="value">${Number(latest.value).toFixed(4)}</div><div class="period">${formatShortDate(latest.date)} (CAD per USD)</div>${formatChangeIndicator(cadChange, cadMomentum)}`;
       createChart('chart-cad', data.usd_cad.map(d => formatShortDate(d.date)), data.usd_cad.map(d => d.value), '#e74c3c', { decimals: 4 });
     }
 
-    // USD/EUR
+    // USD/EUR (daily - show YoY + 30-day momentum)
     if(data.usd_eur && Array.isArray(data.usd_eur) && data.usd_eur.length > 0) {
       const latest = data.usd_eur[data.usd_eur.length - 1];
-      document.getElementById("usd-eur").innerHTML = `<div class="value">${Number(latest.value).toFixed(4)}</div><div class="period">${formatShortDate(latest.date)} (USD per EUR)</div>`;
+      const eurChange = calcChange(data.usd_eur);
+      const eurMomentum = calc30DayMomentum(data.usd_eur);
+      document.getElementById("usd-eur").innerHTML = `<div class="value">${Number(latest.value).toFixed(4)}</div><div class="period">${formatShortDate(latest.date)} (USD per EUR)</div>${formatChangeIndicator(eurChange, eurMomentum)}`;
       createChart('chart-eur', data.usd_eur.map(d => formatShortDate(d.date)), data.usd_eur.map(d => d.value), '#3498db', { decimals: 4 });
     }
 
-    // USD/JPY
+    // USD/JPY (daily - show YoY + 30-day momentum)
     if(data.usd_jpy && Array.isArray(data.usd_jpy) && data.usd_jpy.length > 0) {
       const latest = data.usd_jpy[data.usd_jpy.length - 1];
-      document.getElementById("usd-jpy").innerHTML = `<div class="value">${Number(latest.value).toFixed(2)}</div><div class="period">${formatShortDate(latest.date)} (JPY per USD)</div>`;
+      const jpyChange = calcChange(data.usd_jpy);
+      const jpyMomentum = calc30DayMomentum(data.usd_jpy);
+      document.getElementById("usd-jpy").innerHTML = `<div class="value">${Number(latest.value).toFixed(2)}</div><div class="period">${formatShortDate(latest.date)} (JPY per USD)</div>${formatChangeIndicator(jpyChange, jpyMomentum)}`;
       createChart('chart-jpy', data.usd_jpy.map(d => formatShortDate(d.date)), data.usd_jpy.map(d => d.value), '#9b59b6', { decimals: 2 });
     }
 
-    // USD/MXN
+    // USD/MXN (daily - show YoY + 30-day momentum)
     if(data.usd_mxn && Array.isArray(data.usd_mxn) && data.usd_mxn.length > 0) {
       const latest = data.usd_mxn[data.usd_mxn.length - 1];
-      document.getElementById("usd-mxn").innerHTML = `<div class="value">${Number(latest.value).toFixed(2)}</div><div class="period">${formatShortDate(latest.date)} (MXN per USD)</div>`;
+      const mxnChange = calcChange(data.usd_mxn);
+      const mxnMomentum = calc30DayMomentum(data.usd_mxn);
+      document.getElementById("usd-mxn").innerHTML = `<div class="value">${Number(latest.value).toFixed(2)}</div><div class="period">${formatShortDate(latest.date)} (MXN per USD)</div>${formatChangeIndicator(mxnChange, mxnMomentum)}`;
       createChart('chart-mxn', data.usd_mxn.map(d => formatShortDate(d.date)), data.usd_mxn.map(d => d.value), '#27ae60', { decimals: 2 });
     }
 

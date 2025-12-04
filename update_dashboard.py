@@ -143,9 +143,9 @@ def update_dashboard():
         dashboard_data['markets'] = markets
         print_safe(f"  OK S&P 500: {sp500_data[-1]['value']:.2f} ({len(sp500_data)} data points)")
 
-    # 3. Fed Funds Rate
+    # 3. Fed Funds Rate (Daily - fetch ~1 year of trading days)
     print_safe("\nFetching Fed Funds Rate...")
-    fed_rate = fetch_fred_data('DFF', limit=12)
+    fed_rate = fetch_fred_data('DFF', limit=260)
     if fed_rate:
         dashboard_data['fed_funds_rate'] = fed_rate
         print_safe(f"  OK Latest: {fed_rate[-1]['value']}% ({len(fed_rate)} data points)")
@@ -192,36 +192,36 @@ def update_dashboard():
         dashboard_data['housing_starts'] = housing_data
         print_safe(f"  OK Latest: {housing_data[-1]['value']} thousand units ({len(housing_data)} data points)")
 
-    # 10. 10-Year Treasury Yield (Daily)
+    # 10. 10-Year Treasury Yield (Daily - fetch ~1 year of trading days)
     print_safe("\nFetching 10-Year Treasury Yield...")
-    treasury_data = fetch_fred_data('DGS10', limit=30)
+    treasury_data = fetch_fred_data('DGS10', limit=260)
     if treasury_data:
         dashboard_data['treasury_10y'] = treasury_data
         print_safe(f"  OK Latest: {treasury_data[-1]['value']}% ({len(treasury_data)} data points)")
 
-    # 11. Currency Exchange Rates
+    # 11. Currency Exchange Rates (Daily - fetch ~1 year of trading days)
     print_safe("\nFetching Currency Exchange Rates...")
 
     # USD/CAD
-    usd_cad = fetch_fred_data('DEXCAUS', limit=30)
+    usd_cad = fetch_fred_data('DEXCAUS', limit=260)
     if usd_cad:
         dashboard_data['usd_cad'] = usd_cad
         print_safe(f"  OK USD/CAD: {usd_cad[-1]['value']} ({len(usd_cad)} data points)")
 
     # USD/EUR
-    usd_eur = fetch_fred_data('DEXUSEU', limit=30)
+    usd_eur = fetch_fred_data('DEXUSEU', limit=260)
     if usd_eur:
         dashboard_data['usd_eur'] = usd_eur
         print_safe(f"  OK USD/EUR: {usd_eur[-1]['value']} ({len(usd_eur)} data points)")
 
     # USD/JPY
-    usd_jpy = fetch_fred_data('DEXJPUS', limit=30)
+    usd_jpy = fetch_fred_data('DEXJPUS', limit=260)
     if usd_jpy:
         dashboard_data['usd_jpy'] = usd_jpy
         print_safe(f"  OK USD/JPY: {usd_jpy[-1]['value']} ({len(usd_jpy)} data points)")
 
     # USD/MXN
-    usd_mxn = fetch_fred_data('DEXMXUS', limit=30)
+    usd_mxn = fetch_fred_data('DEXMXUS', limit=260)
     if usd_mxn:
         dashboard_data['usd_mxn'] = usd_mxn
         print_safe(f"  OK USD/MXN: {usd_mxn[-1]['value']} ({len(usd_mxn)} data points)")
