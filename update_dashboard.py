@@ -178,6 +178,54 @@ def update_dashboard():
         dashboard_data['wages'] = wages_data
         print_safe(f"  OK Latest: ${wages_data[-1]['value']} ({len(wages_data)} data points)")
 
+    # 8. GDP (Quarterly)
+    print_safe("\nFetching GDP...")
+    gdp_data = fetch_fred_data('GDP', limit=12)
+    if gdp_data:
+        dashboard_data['gdp'] = gdp_data
+        print_safe(f"  OK Latest: ${gdp_data[-1]['value']} billion ({len(gdp_data)} data points)")
+
+    # 9. Housing Starts (Monthly)
+    print_safe("\nFetching Housing Starts...")
+    housing_data = fetch_fred_data('HOUST', limit=12)
+    if housing_data:
+        dashboard_data['housing_starts'] = housing_data
+        print_safe(f"  OK Latest: {housing_data[-1]['value']} thousand units ({len(housing_data)} data points)")
+
+    # 10. 10-Year Treasury Yield (Daily)
+    print_safe("\nFetching 10-Year Treasury Yield...")
+    treasury_data = fetch_fred_data('DGS10', limit=30)
+    if treasury_data:
+        dashboard_data['treasury_10y'] = treasury_data
+        print_safe(f"  OK Latest: {treasury_data[-1]['value']}% ({len(treasury_data)} data points)")
+
+    # 11. Currency Exchange Rates
+    print_safe("\nFetching Currency Exchange Rates...")
+
+    # USD/CAD
+    usd_cad = fetch_fred_data('DEXCAUS', limit=30)
+    if usd_cad:
+        dashboard_data['usd_cad'] = usd_cad
+        print_safe(f"  OK USD/CAD: {usd_cad[-1]['value']} ({len(usd_cad)} data points)")
+
+    # USD/EUR
+    usd_eur = fetch_fred_data('DEXUSEU', limit=30)
+    if usd_eur:
+        dashboard_data['usd_eur'] = usd_eur
+        print_safe(f"  OK USD/EUR: {usd_eur[-1]['value']} ({len(usd_eur)} data points)")
+
+    # USD/JPY
+    usd_jpy = fetch_fred_data('DEXJPUS', limit=30)
+    if usd_jpy:
+        dashboard_data['usd_jpy'] = usd_jpy
+        print_safe(f"  OK USD/JPY: {usd_jpy[-1]['value']} ({len(usd_jpy)} data points)")
+
+    # USD/MXN
+    usd_mxn = fetch_fred_data('DEXMXUS', limit=30)
+    if usd_mxn:
+        dashboard_data['usd_mxn'] = usd_mxn
+        print_safe(f"  OK USD/MXN: {usd_mxn[-1]['value']} ({len(usd_mxn)} data points)")
+
     # Write to file
     output_path = 'static/data/dashboard.json'
     print_safe(f"\nWriting data to {output_path}...")
