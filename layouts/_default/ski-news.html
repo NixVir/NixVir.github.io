@@ -2,7 +2,7 @@
 <article class="pa3 pa4-ns">
   <div class="mw8 center">
     <h1 class="f2 fw6 mb2">{{ .Title }}</h1>
-    <p class="f5 gray mb4">{{ .Content }}</p>
+    <div class="f5 gray mb4">{{ .Content }}</div>
     <p class="f6 gray mb4">Last updated: <span id="ski-news-update">Loading...</span></p>
 
     <div id="ski-news-container">
@@ -82,15 +82,22 @@ async function loadSkiNews() {
       return;
     }
 
+    // Sort articles by publication date, most recent first
+    const sortedArticles = data.articles.sort((a, b) => {
+      const dateA = a.pub_date ? new Date(a.pub_date) : new Date(0);
+      const dateB = b.pub_date ? new Date(b.pub_date) : new Date(0);
+      return dateB - dateA;
+    });
+
     let html = '';
-    data.articles.forEach(article => {
+    sortedArticles.forEach(article => {
       const pubDate = article.pub_date ?
         new Date(article.pub_date).toLocaleDateString('en-US', {
           month: 'short', day: 'numeric', year: 'numeric'
         }) : '';
 
       const desc = article.description ?
-        article.description.substring(0, 250) + (article.description.length > 250 ? '...' : '') : '';
+        article.description.substring(0, 300) + (article.description.length > 300 ? '...' : '') : '';
 
       html += `
         <div class="ski-news-card">

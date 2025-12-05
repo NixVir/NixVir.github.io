@@ -3,7 +3,7 @@ title: "Economic Dashboard"
 description: "Real-time economic indicators and market data"
 menu:
   main:
-    weight: 2
+    weight: 4
 ---
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
