@@ -15,9 +15,9 @@
       {{/* Two column container */}}
       <div class="flex-l">
 
-        {{/* Left Column: News Section */}}
+        {{/* Left Column: Data Insights Section */}}
         <section class="w-100 w-60-l pr4-l mb4 mb0-l">
-          <h2 class="f3 fw6 mb3">News</h2>
+          <h2 class="f3 fw6 mb3"><a href="/post/" class="link dark-gray dim">Data Insights</a></h2>
           {{ $n_posts := $.Param "recent_posts_number" | compare.Default 3 }}
 
           {{/* Range through the first $n_posts items of the section */}}
@@ -42,9 +42,9 @@
           {{ end }}
         </section>
 
-        {{/* Right Column: Indicators Dashboard */}}
+        {{/* Right Column: Economic Dashboard */}}
         <section class="w-100 w-40-l">
-          <h2 class="f3 fw6 mb3">Economic Indicators</h2>
+          <h2 class="f3 fw6 mb3"><a href="/dashboard/" class="link dark-gray dim">Economic Dashboard</a></h2>
 
           <div id="indicators-dashboard">
             <p class="f6 gray mb3">Last updated: <span id="indicators-last-update">Loading...</span></p>
@@ -93,7 +93,7 @@
     {{/* Ski Business News Section */}}
     <div class="pa3 pa4-ns w-100 center" style="max-width: 1400px;">
       <section class="w-100">
-        <h2 class="f3 fw6 mb3">Ski Business News</h2>
+        <h2 class="f3 fw6 mb3"><a href="/ski-news/" class="link dark-gray dim">Ski Business News</a></h2>
         <p class="f6 gray mb3">Curated industry news, updated daily. Last update: <span id="ski-news-update">Loading...</span></p>
 
         <div id="ski-news-container" class="flex-l flex-wrap">
