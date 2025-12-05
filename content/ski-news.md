@@ -7,4 +7,4 @@ menu:
     weight: 5
 ---
 
-Curated ski industry news from trusted sources, updated daily. Articles are scored for business relevance and quality.
+Ski related business news gathered daily by our young and fallible ski AI agent in training.
