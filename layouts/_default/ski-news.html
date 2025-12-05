@@ -49,15 +49,6 @@
     color: #444;
     line-height: 1.5;
   }
-  .ski-news-score {
-    display: inline-block;
-    font-size: 0.7rem;
-    padding: 2px 6px;
-    border-radius: 3px;
-    background: #e8f4f8;
-    color: #2980b9;
-    margin-left: 8px;
-  }
 </style>
 
 <script>
@@ -82,11 +73,14 @@ async function loadSkiNews() {
       return;
     }
 
-    // Sort articles by publication date, most recent first
+    // Sort articles by date (most recent first), then by score (highest first) within each date
     const sortedArticles = data.articles.sort((a, b) => {
-      const dateA = a.pub_date ? new Date(a.pub_date) : new Date(0);
-      const dateB = b.pub_date ? new Date(b.pub_date) : new Date(0);
-      return dateB - dateA;
+      const dateA = a.pub_date ? new Date(a.pub_date).toDateString() : '';
+      const dateB = b.pub_date ? new Date(b.pub_date).toDateString() : '';
+      if (dateA !== dateB) {
+        return new Date(b.pub_date || 0) - new Date(a.pub_date || 0);
+      }
+      return (b.score || 0) - (a.score || 0);
     });
 
     let html = '';
@@ -103,7 +97,6 @@ async function loadSkiNews() {
         <div class="ski-news-card">
           <h3>
             <a href="${article.url}" target="_blank" rel="noopener">${article.title || 'Untitled'}</a>
-            <span class="ski-news-score">Score: ${article.score || '?'}</span>
           </h3>
           <div class="ski-news-meta">${article.source || ''} ${pubDate ? '&bull; ' + pubDate : ''}</div>
           ${desc ? `<div class="ski-news-desc">${desc}</div>` : ''}
