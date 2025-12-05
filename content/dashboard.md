@@ -1,5 +1,5 @@
 ---
-title: "Economic & Market Dashboard"
+title: "Economic Dashboard"
 description: "Real-time economic indicators and market data"
 menu:
   main:
