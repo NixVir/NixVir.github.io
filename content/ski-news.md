@@ -1,6 +1,7 @@
 ---
 title: "Ski Business News"
 date: 2025-12-04
+type: "page"
 layout: "ski-news"
 menu:
   main:
