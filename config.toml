@@ -10,7 +10,7 @@ mainSections = ["post"]
 
 MetaDataFormat = "yaml"
 DefaultContentLanguage = "en"
-SectionPagesMenu = "main"
+# SectionPagesMenu = "main"  # Disabled - using explicit menu entries in content files instead
 
 enableRobotsTXT = true
 
