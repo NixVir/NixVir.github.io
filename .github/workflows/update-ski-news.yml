@@ -1,0 +1,47 @@
+name: Update Ski Business News
+
+on:
+  schedule:
+    # Run twice daily at 6 AM and 6 PM EST (11 AM and 11 PM UTC)
+    - cron: '0 11,23 * * *'
+  workflow_dispatch:  # Allow manual triggering
+  push:
+    paths:
+      - 'update_ski_news.py'
+      - '.github/workflows/update-ski-news.yml'
+
+jobs:
+  update-ski-news:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Update ski news data
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python update_ski_news.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add static/data/ski-news.json static/data/ski-news-review.json
+
+          # Check if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes to ski news data"
+          else
+            git commit -m "Update ski news - $(date +'%Y-%m-%d %H:%M')"
+            git push
+            echo "Ski news data updated and pushed"
+          fi
