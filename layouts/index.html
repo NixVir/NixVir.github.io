@@ -416,8 +416,18 @@
           return;
         }
 
+        // Sort articles by date (most recent first), then by score within each date
+        const sortedArticles = data.articles.sort((a, b) => {
+          const dateA = a.pub_date ? new Date(a.pub_date).toDateString() : '';
+          const dateB = b.pub_date ? new Date(b.pub_date).toDateString() : '';
+          if (dateA !== dateB) {
+            return new Date(b.pub_date || 0) - new Date(a.pub_date || 0);
+          }
+          return (b.score || 0) - (a.score || 0);
+        });
+
         // Display up to 6 articles on homepage
-        const articles = data.articles.slice(0, 6);
+        const articles = sortedArticles.slice(0, 6);
         let html = '';
 
         articles.forEach(article => {
