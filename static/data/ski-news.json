@@ -1,6 +1,6 @@
 {
   "updated": "2025-12-08 11:13:14",
-  "total_articles": 46,
+  "total_articles": 45,
   "articles": [
     {
       "source": "New York Times - Travel",
@@ -38,7 +38,7 @@
         "reason": "This article provides interesting information about the security measures in place at Sunshine Village's Delirium Dive ski run in Canada, which is relevant for ski resort business operations and may be of interest to the ski industry. However, the article focuses more on the experience of the run rather than the business implications, and the reporting quality is moderate."
       },
       "approved_date": "2025-12-04",
-      "category": "canadian"
+      "category": "canada"
     },
     {
       "source": "Unofficial Networks",
@@ -106,21 +106,6 @@
     },
     {
       "source": "Unofficial Networks",
-      "title": "Survivalist Feels Honored To Come Face-To-Face With A Mountain Lion",
-      "url": "https://unofficialnetworks.com/2025/12/02/mountain-lion-survivalist-encounter/",
-      "description": "When wilderness skills instructor Callie Russell came face-to-face with a mountain lion in a tree, she explained her gratitude.",
-      "content": "There are an estimated 20,000 to 40,000 mountain lions still living in the United States, primarily living in the western half of the country. Human population growth, poaching, hunting, development, pollution, and habitat loss all threaten their numbers. Spotting one in the wild is a rare occurrence, and while they might seem intimidating, many people are honored to see a mountain lion in the wild. Wilderness skills instructor Callie Russell , who participate on Season 7 of the the show Alone , is one of those people. When she came face-to-face with a mountain lion in a tree, she explained how much gratitude she had for the moment. \u201c There was a time, long ago, when I was afraid of the large wild predators, mostly when I slept in wild places by myself, with no tent, or anything separating me from them, over the years, I have had several close encounters with mountain lions, bears, and wolves, and now I do not have any fear for them, just deep reverence and respect. It feels like a gif",
-      "pub_date": "Tue, 02 Dec 2025 20:48:29 +0000",
-      "id": "80677118b574",
-      "score": 6,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 0)"
-      },
-      "approved_date": "2025-12-04",
-      "category": "business-investment"
-    },
-    {
-      "source": "Unofficial Networks",
       "title": "These Six North American Ski Resorts Are Having Great Starts To Their Seasons",
       "url": "https://unofficialnetworks.com/2025/12/02/north-american-ski-resorts-december/",
       "description": "While many ski regions in the US & Canada struck out last month, these six ski resorts had a great November.",
@@ -132,7 +117,7 @@
         "reason": "Keyword scoring (boost: 0)"
       },
       "approved_date": "2025-12-04",
-      "category": "canadian"
+      "category": "canada"
     },
     {
       "source": "Unofficial Networks",
@@ -166,7 +151,7 @@
         "reason": "Keyword scoring (boost: 0)"
       },
       "approved_date": "2025-12-04",
-      "category": "canadian"
+      "category": "canada"
     },
     {
       "source": "Unofficial Networks",
@@ -363,7 +348,7 @@
         "reason": "This article is highly relevant to the ski industry, as it covers the first-ever Skimo World Cup event held in the United States, which is a significant development for the sport. The news is timely and provides valuable information about the event and its implications for the upcoming 2026 Olympic debut of ski mountaineering. The reporting appears to be generally well-done, though it could be more in-depth in some areas. Overall, this article would be a strong addition to a ski business news feed."
       },
       "approved_date": "2025-12-07",
-      "category": "racing-events"
+      "category": "winter-sports"
     },
     {
       "source": "Unofficial Networks",
@@ -401,7 +386,7 @@
         "reason": "This article discusses the extreme terrain and features of Kicking Horse, a prominent ski resort in Canada. It is relevant to ski resort operations and management, as it highlights the unique selling points and challenges of the resort. The news value is reasonably high, as it provides an in-depth look at a specific ski destination. The quality of the reporting is good, with a focus on facts and descriptions of the terrain, but it could be improved with more context or analysis."
       },
       "approved_date": "2025-12-07",
-      "category": "canadian"
+      "category": "canada"
     },
     {
       "source": "SnowBrains",
@@ -439,7 +424,10 @@
         "reason": "This article provides timely and relevant information about the opening of a new cat-skiing operation in British Columbia, which is of interest to the ski industry. The details about the size of the terrain, annual snowfall, and amenities are well-reported and not overly promotional. The information would be valuable for a ski business news feed."
       },
       "approved_date": "2025-12-07",
-      "category": "weather-snow"
+      "category": "resort-operations",
+      "secondary_categories": [
+        "canada"
+      ]
     },
     {
       "source": "SnowBrains",
@@ -454,7 +442,7 @@
         "reason": "Keyword scoring (boost: 0)"
       },
       "approved_date": "2025-12-06",
-      "category": "racing-events"
+      "category": "winter-sports"
     },
     {
       "source": "Unofficial Networks",
@@ -499,7 +487,7 @@
         "reason": "Keyword scoring (boost: 0)"
       },
       "approved_date": "2025-12-06",
-      "category": "canadian"
+      "category": "canada"
     },
     {
       "source": "SnowBrains",
@@ -556,7 +544,7 @@
         "reason": "This article provides timely and relevant information about a key event in the ski industry - a major World Cup ski race at a popular resort. The reporting appears to be thorough and focused on the news, rather than sensationalism or fluff."
       },
       "approved_date": "2025-12-07",
-      "category": "racing-events"
+      "category": "winter-sports"
     },
     {
       "source": "SnowBrains",
@@ -613,7 +601,12 @@
         "reason": "High-quality NPR reporting on critical international tourism decline affecting ski resort revenue. Documents 25% drop in Canadian visitors, specific economic impacts on Whitefish and broader industry. Essential business news."
       },
       "approved_date": "2025-12-04",
-      "category": "racing-events"
+      "category": "industry-trends",
+      "secondary_categories": [
+        "business-investment",
+        "canada",
+        "international"
+      ]
     },
     {
       "source": "Unofficial Networks",
@@ -673,7 +666,8 @@
         "reason": "Keyword scoring (boost: 0)"
       },
       "approved_date": "2025-12-06",
-      "category": "weather-snow"
+      "category": "ski-history",
+      "secondary_categories": []
     },
     {
       "source": "Unofficial Networks",
@@ -779,7 +773,8 @@
         "reason": "This article reports on physical altercations that occurred at two popular ski resorts, which is relevant business news for the ski industry. While the incidents themselves may not be the most significant news, the article provides details on how the local law enforcement responded, which could impact resort operations and policies. The reporting appears factual, though the writing quality is moderate."
       },
       "approved_date": "2025-12-04",
-      "category": "racing-events"
+      "category": "safety-incidents",
+      "secondary_categories": []
     },
     {
       "source": "Summit Daily News",
@@ -798,7 +793,7 @@
         "reason": "This article discusses the growing popularity of ski mountaineering and its upcoming inclusion in the Olympics, which is relevant news for the ski industry. While it doesn't directly cover business or industry trends, it highlights the growth of a niche skiing discipline that could impact the broader ski market."
       },
       "approved_date": "2025-12-04",
-      "category": "racing-events"
+      "category": "winter-sports"
     }
   ]
 }

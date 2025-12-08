@@ -20,14 +20,17 @@ ANTHROPIC_API_KEY = os.environ.get('ANTHROPIC_API_KEY', '')
 OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY', '')
 
 # Article categories with keywords for classification
+# Note: 'canadian' renamed to 'canada', 'racing-events' renamed to 'winter-sports'
 ARTICLE_CATEGORIES = {
     'resort-operations': {
-        'name': 'Resort Operations & Infrastructure',
+        'name': 'Resort Operations',
         'keywords': ['lift', 'chairlift', 'gondola', 'snowmaking', 'terrain expansion',
                      'new trail', 'mountain operations', 'ski patrol', 'grooming',
                      'base lodge', 'summit lodge', 'ticket', 'pass', 'opening day',
                      'season opening', 'closing day', 'first chair', 'last chair',
-                     'delayed opening', 'early opening', 'vertical drop', 'acreage']
+                     'delayed opening', 'early opening', 'vertical drop', 'acreage',
+                     'catskiing', 'cat skiing', 'heli-skiing', 'heliskiing', 'backcountry lodge',
+                     'inaugural season', 'opens for', 'lodge opens']
     },
     'business-investment': {
         'name': 'Business & Investment',
@@ -38,14 +41,14 @@ ARTICLE_CATEGORIES = {
                      'vail resorts', 'alterra', 'boyne', 'deal', 'billion', 'million']
     },
     'weather-snow': {
-        'name': 'Weather & Snow Conditions',
+        'name': 'Weather & Snow',
         'keywords': ['snowfall', 'snow forecast', 'winter forecast', 'la nina', 'el nino',
                      'climate change', 'global warming', 'snow drought', 'snowpack',
-                     'weather', 'storm', 'blizzard', 'cold front', 'warm winter',
-                     'record snow', 'powder', 'base depth', 'natural snow']
+                     'weather forecast', 'storm system', 'blizzard', 'cold front', 'warm winter',
+                     'record snow', 'base depth', 'natural snow', 'atmospheric river']
     },
     'transportation': {
-        'name': 'Transportation & Access',
+        'name': 'Transportation',
         'keywords': ['airport', 'airline', 'flight', 'air service', 'nonstop',
                      'eagle county', 'yampa valley', 'aspen airport', 'jackson hole airport',
                      'salt lake city', 'denver international', 'reno tahoe', 'bozeman',
@@ -53,39 +56,49 @@ ARTICLE_CATEGORIES = {
                      'parking', 'train', 'rail']
     },
     'industry-trends': {
-        'name': 'Industry Trends & Economics',
-        'keywords': ['skier visits', 'ski industry', 'market', 'trend', 'growth',
-                     'decline', 'statistics', 'visitor spending', 'tourism',
+        'name': 'Industry Trends',
+        'keywords': ['skier visits', 'ski industry', 'market trend', 'growth rate',
+                     'decline', 'statistics', 'visitor spending', 'tourism decline',
                      'season performance', 'industry report', 'nsaa', 'sia',
-                     'participation', 'demographic', 'economic impact', 'tariff']
+                     'participation', 'demographic', 'economic impact', 'tariff',
+                     'steep drop', 'international travel', 'cross-border', 'tourism impact']
     },
-    'racing-events': {
-        'name': 'Racing & Events',
-        'keywords': ['world cup', 'olympic', 'olympics', 'fis', 'race', 'racing',
-                     'slalom', 'giant slalom', 'downhill', 'super-g', 'combined',
-                     'championship', 'competition', 'athlete', 'podium', 'medal',
-                     'x games', 'dew tour', 'freestyle', 'halfpipe', 'slopestyle']
+    'winter-sports': {
+        'name': 'Winter Sports',
+        'keywords': ['world cup', 'olympic', 'olympics', 'fis', 'ski race', 'ski racing',
+                     'slalom', 'giant slalom', 'downhill race', 'super-g', 'combined',
+                     'championship', 'ski competition', 'athlete', 'podium', 'medal',
+                     'x games', 'dew tour', 'freestyle', 'halfpipe', 'slopestyle',
+                     'nordic', 'cross-country', 'biathlon', 'ski jumping']
     },
     'safety-incidents': {
-        'name': 'Safety & Incidents',
+        'name': 'Safety',
         'keywords': ['accident', 'injury', 'death', 'fatality', 'avalanche',
                      'rescue', 'safety', 'collision', 'lawsuit', 'liability',
-                     'ski patrol', 'emergency', 'closed', 'hazard', 'warning']
+                     'ski patrol', 'emergency', 'closed', 'hazard', 'warning',
+                     'altercation', 'fight', 'assault', 'arrest', 'charges', 'physical']
     },
-    'canadian': {
-        'name': 'Canadian Ski Industry',
+    'canada': {
+        'name': 'Canada',
         'keywords': ['canada', 'canadian', 'whistler', 'blackcomb', 'banff',
                      'lake louise', 'revelstoke', 'big white', 'sun peaks',
                      'silver star', 'fernie', 'kicking horse', 'mont tremblant',
                      'blue mountain', 'british columbia', 'alberta', 'quebec', 'ontario']
     },
     'international': {
-        'name': 'International Markets',
+        'name': 'International',
         'keywords': ['europe', 'european', 'alps', 'japan', 'japanese',
                      'australia', 'new zealand', 'south america', 'chile', 'argentina',
                      'chamonix', 'zermatt', 'st. moritz', 'courchevel', 'verbier',
                      'kitzbuhel', 'dolomites', 'perisher', 'thredbo', 'niseko',
-                     'international', 'worldwide', 'global']
+                     'worldwide', 'global market']
+    },
+    'ski-history': {
+        'name': 'Ski History',
+        'keywords': ['abandoned', 'historic', 'history', 'anniversary', 'founded',
+                     'pioneer', 'vintage', 'legacy', 'memorial', 'museum',
+                     'closed permanently', 'defunct', 'former ski area', 'old ski area',
+                     'ski heritage', 'first ski', 'skiing history', 'remains of']
     }
 }
 
@@ -478,8 +491,10 @@ def basic_relevance_filter(article):
             return True
     return False
 
-def assign_category(article):
-    """Assign a category to an article based on keyword matching"""
+def assign_categories(article):
+    """Assign primary and secondary categories to an article based on keyword matching.
+    Returns a tuple: (primary_category, list_of_secondary_categories)
+    """
     text = f"{article.get('title', '')} {article.get('description', '')} {article.get('content', '')}".lower()
     title = article.get('title', '').lower()
 
@@ -495,14 +510,28 @@ def assign_category(article):
                 score += 1
         category_scores[cat_id] = score
 
-    # Get the category with highest score
-    if category_scores:
-        best_category = max(category_scores, key=category_scores.get)
-        if category_scores[best_category] > 0:
-            return best_category
+    # Sort categories by score descending
+    sorted_cats = sorted(category_scores.items(), key=lambda x: x[1], reverse=True)
 
-    # Default to industry-trends if no strong match
-    return 'industry-trends'
+    # Get primary category (highest score)
+    primary = 'industry-trends'
+    secondary = []
+
+    if sorted_cats and sorted_cats[0][1] > 0:
+        primary = sorted_cats[0][0]
+
+        # Get secondary categories (score > 0, not primary, max 3)
+        for cat_id, score in sorted_cats[1:]:
+            if score > 0 and len(secondary) < 3:
+                secondary.append(cat_id)
+
+    return primary, secondary
+
+
+def assign_category(article):
+    """Assign a category to an article based on keyword matching (legacy single-category)"""
+    primary, _ = assign_categories(article)
+    return primary
 
 def score_with_claude(article):
     """Score article using Claude API"""
@@ -986,8 +1015,11 @@ def update_ski_news():
             article['score'] = score
             article['score_details'] = details
             article['approved_date'] = datetime.now().strftime('%Y-%m-%d')
-            article['category'] = assign_category(article)
-            print_safe(f"    Category: {article['category']}")
+            primary, secondary = assign_categories(article)
+            article['category'] = primary
+            article['secondary_categories'] = secondary
+            cat_display = primary + (f" (+{', '.join(secondary)})" if secondary else "")
+            print_safe(f"    Category: {cat_display}")
             approved.append(article)
         elif score <= AUTO_REJECT_THRESHOLD:
             print_safe(f"    - Score: {score} - REJECTED")

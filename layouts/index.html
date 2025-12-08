@@ -110,10 +110,11 @@
               <option value="weather-snow">Weather & Snow</option>
               <option value="transportation">Transportation</option>
               <option value="industry-trends">Industry Trends</option>
-              <option value="racing-events">Racing & Events</option>
+              <option value="winter-sports">Winter Sports</option>
               <option value="safety-incidents">Safety</option>
-              <option value="canadian">Canadian</option>
+              <option value="canada">Canada</option>
               <option value="international">International</option>
+              <option value="ski-history">Ski History</option>
             </select>
           </div>
         </div>
@@ -232,10 +233,12 @@
     .cat-weather-snow { background: #e0f2fe; color: #0ea5e9; }
     .cat-transportation { background: #ede9fe; color: #8b5cf6; }
     .cat-industry-trends { background: #fef3c7; color: #d97706; }
-    .cat-racing-events { background: #fee2e2; color: #ef4444; }
+    .cat-winter-sports { background: #fee2e2; color: #ef4444; }
     .cat-safety-incidents { background: #fecaca; color: #dc2626; }
-    .cat-canadian { background: #fce7f3; color: #e11d48; }
+    .cat-canada { background: #fce7f3; color: #e11d48; }
     .cat-international { background: #e0e7ff; color: #6366f1; }
+    .cat-ski-history { background: #f5f5f4; color: #78716c; }
+    .ski-news-secondary { font-size: 0.6rem; opacity: 0.8; margin-left: 4px; }
 
     /* Mobile responsive for sort/filter controls */
     @media screen and (max-width: 60em) {
@@ -470,10 +473,11 @@
       'weather-snow': { name: 'Weather', icon: '/images/ski-news-icons/weather-snow.svg' },
       'transportation': { name: 'Transportation', icon: '/images/ski-news-icons/transportation.svg' },
       'industry-trends': { name: 'Industry', icon: '/images/ski-news-icons/industry-trends.svg' },
-      'racing-events': { name: 'Racing', icon: '/images/ski-news-icons/racing-events.svg' },
+      'winter-sports': { name: 'Winter Sports', icon: '/images/ski-news-icons/winter-sports.svg' },
       'safety-incidents': { name: 'Safety', icon: '/images/ski-news-icons/safety-incidents.svg' },
-      'canadian': { name: 'Canadian', icon: '/images/ski-news-icons/canadian.svg' },
-      'international': { name: 'International', icon: '/images/ski-news-icons/international.svg' }
+      'canada': { name: 'Canada', icon: '/images/ski-news-icons/canada.svg' },
+      'international': { name: 'International', icon: '/images/ski-news-icons/international.svg' },
+      'ski-history': { name: 'Ski History', icon: '/images/ski-news-icons/ski-history.svg' }
     };
 
     // Global state for ski news
@@ -556,6 +560,15 @@
         const category = article.category || 'industry-trends';
         const catMeta = CATEGORY_META[category] || CATEGORY_META['industry-trends'];
 
+        // Build secondary categories display
+        let secondaryHtml = '';
+        if (article.secondary_categories && article.secondary_categories.length > 0) {
+          const secondaryNames = article.secondary_categories
+            .map(c => CATEGORY_META[c]?.name || c)
+            .slice(0, 2);
+          secondaryHtml = `<span class="ski-news-secondary">+${secondaryNames.join(', ')}</span>`;
+        }
+
         html += `
           <div class="ski-news-card">
             <div class="ski-news-header">
@@ -564,7 +577,7 @@
                 <h4><a href="${article.url}" target="_blank" rel="noopener">${article.title || 'Untitled'}</a></h4>
                 <div class="ski-news-meta">
                   ${article.source || ''} ${pubDate ? '&bull; ' + pubDate : ''}
-                  <span class="ski-news-category cat-${category}">${catMeta.name}</span>
+                  <span class="ski-news-category cat-${category}">${catMeta.name}</span>${secondaryHtml}
                 </div>
                 ${desc ? `<div class="ski-news-desc">${desc}</div>` : ''}
               </div>
