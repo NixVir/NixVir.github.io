@@ -1,18 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
-  <!-- Winter Sports - Snowboarder doing aerial in halfpipe (Olympic pictogram style) -->
+  <!-- Winter Sports - Snowboarder aerial in halfpipe (matching reference) -->
   <circle cx="24" cy="24" r="22" fill="#EF4444" opacity="0.1"/>
-  <!-- Halfpipe curve -->
-  <path d="M6 42 Q24 22 42 42" stroke="#EF4444" stroke-width="3" stroke-linecap="round" fill="none"/>
-  <!-- Snowboarder head -->
-  <circle cx="24" cy="8" r="3" fill="#EF4444"/>
-  <!-- Body/torso - leaning forward in grab position -->
-  <path d="M24 11 L20 18" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
-  <!-- Arm reaching forward to grab board -->
-  <path d="M22 14 L28 20" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Halfpipe curve at bottom, opening upward -->
+  <path d="M4 38 Q24 48 44 38" stroke="#EF4444" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <!-- Snowboarder figure above halfpipe -->
+  <!-- Head -->
+  <circle cx="26" cy="10" r="3" fill="#EF4444"/>
+  <!-- Body leaning forward/down -->
+  <path d="M26 13 L22 20" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+  <!-- Back arm reaching up and back -->
+  <path d="M24 15 L30 10" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Front arm reaching down to grab board -->
+  <path d="M23 17 L18 24" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round"/>
   <!-- Back leg bent up behind -->
-  <path d="M20 18 L14 14" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
-  <!-- Front leg bent toward board -->
-  <path d="M20 18 L26 24" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
-  <!-- Snowboard - angled beneath rider -->
-  <path d="M24 26 L32 20" stroke="#EF4444" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M22 20 L28 16" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+  <!-- Front leg angled down toward board -->
+  <path d="M22 20 L16 26" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+  <!-- Snowboard angled under rider -->
+  <path d="M12 28 L20 22" stroke="#EF4444" stroke-width="4" stroke-linecap="round"/>
 </svg>
