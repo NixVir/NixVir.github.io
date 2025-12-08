@@ -44,6 +44,14 @@
             color: #333;
             font-size: 1.1em;
         }
+        .metric-card h4 a {
+            color: #333;
+            text-decoration: none;
+        }
+        .metric-card h4 a:hover {
+            color: #3498db;
+            text-decoration: underline;
+        }
         .value {
             font-size: 2em;
             font-weight: bold;
@@ -93,56 +101,56 @@
     <h2 class="section-title">Economic Indicators</h2>
     <div class="dashboard-grid">
         <div class="metric-card">
-            <h4>GDP (Quarterly)</h4>
+            <h4><a href="https://fred.stlouisfed.org/series/GDP" target="_blank" rel="noopener" title="Gross Domestic Product">GDP (Quarterly)</a></h4>
             <div id="gdp">Loading...</div>
             <div class="chart-container">
                 <canvas id="chart-gdp"></canvas>
             </div>
         </div>
         <div class="metric-card">
-            <h4>Consumer Confidence</h4>
+            <h4><a href="https://fred.stlouisfed.org/series/UMCSENT" target="_blank" rel="noopener" title="University of Michigan Consumer Sentiment">Consumer Confidence</a></h4>
             <div id="consumer-confidence">Loading...</div>
             <div class="chart-container">
                 <canvas id="chart-cc"></canvas>
             </div>
         </div>
         <div class="metric-card">
-            <h4>CPI (Consumer Price Index)</h4>
+            <h4><a href="https://fred.stlouisfed.org/series/CPIAUCSL" target="_blank" rel="noopener" title="Consumer Price Index for All Urban Consumers">CPI (Consumer Price Index)</a></h4>
             <div id="cpi">Loading...</div>
             <div class="chart-container">
                 <canvas id="chart-cpi"></canvas>
             </div>
         </div>
         <div class="metric-card">
-            <h4>Unemployment Rate</h4>
+            <h4><a href="https://fred.stlouisfed.org/series/UNRATE" target="_blank" rel="noopener" title="Unemployment Rate">Unemployment Rate</a></h4>
             <div id="unemployment">Loading...</div>
             <div class="chart-container">
                 <canvas id="chart-unemp"></canvas>
             </div>
         </div>
         <div class="metric-card">
-            <h4>Employment (Thousands)</h4>
+            <h4><a href="https://fred.stlouisfed.org/series/PAYEMS" target="_blank" rel="noopener" title="Total Nonfarm Payroll Employment">Employment (Thousands)</a></h4>
             <div id="employment">Loading...</div>
             <div class="chart-container">
                 <canvas id="chart-emp"></canvas>
             </div>
         </div>
         <div class="metric-card">
-            <h4>Average Hourly Wages</h4>
+            <h4><a href="https://fred.stlouisfed.org/series/CES0500000003" target="_blank" rel="noopener" title="Average Hourly Earnings">Average Hourly Wages</a></h4>
             <div id="wages">Loading...</div>
             <div class="chart-container">
                 <canvas id="chart-wages"></canvas>
             </div>
         </div>
         <div class="metric-card">
-            <h4>Housing Starts (Thousands)</h4>
+            <h4><a href="https://fred.stlouisfed.org/series/HOUST" target="_blank" rel="noopener" title="Housing Starts: Total">Housing Starts (Thousands)</a></h4>
             <div id="housing">Loading...</div>
             <div class="chart-container">
                 <canvas id="chart-housing"></canvas>
             </div>
         </div>
         <div class="metric-card">
-            <h4>News Sentiment Index</h4>
+            <h4><a href="https://www.frbsf.org/research-and-insights/data-and-indicators/daily-news-sentiment-index/" target="_blank" rel="noopener" title="SF Fed Daily News Sentiment Index">News Sentiment Index</a></h4>
             <div id="news-sentiment">Loading...</div>
             <div class="chart-container">
                 <canvas id="chart-sentiment"></canvas>
@@ -154,21 +162,21 @@
     <h2 class="section-title">Markets & Interest Rates</h2>
     <div class="dashboard-grid">
         <div class="metric-card">
-            <h4>S&P 500 Index</h4>
+            <h4><a href="https://fred.stlouisfed.org/series/SP500" target="_blank" rel="noopener" title="S&P 500">S&P 500 Index</a></h4>
             <div id="sp500">Loading...</div>
             <div class="chart-container">
                 <canvas id="chart-spy"></canvas>
             </div>
         </div>
         <div class="metric-card">
-            <h4>Fed Funds Rate</h4>
+            <h4><a href="https://fred.stlouisfed.org/series/DFF" target="_blank" rel="noopener" title="Federal Funds Effective Rate">Fed Funds Rate</a></h4>
             <div id="fed-rate">Loading...</div>
             <div class="chart-container">
                 <canvas id="chart-fed"></canvas>
             </div>
         </div>
         <div class="metric-card">
-            <h4>10-Year Treasury Yield</h4>
+            <h4><a href="https://fred.stlouisfed.org/series/DGS10" target="_blank" rel="noopener" title="10-Year Treasury Constant Maturity Rate">10-Year Treasury Yield</a></h4>
             <div id="treasury">Loading...</div>
             <div class="chart-container">
                 <canvas id="chart-treasury"></canvas>
@@ -180,28 +188,28 @@
     <h2 class="section-title">Currency Exchange Rates (USD Strength)</h2>
     <div class="dashboard-grid">
         <div class="metric-card">
-            <h4>USD / Canadian Dollar</h4>
+            <h4><a href="https://fred.stlouisfed.org/series/DEXCAUS" target="_blank" rel="noopener" title="Canada / U.S. Foreign Exchange Rate">USD / Canadian Dollar</a></h4>
             <div id="usd-cad">Loading...</div>
             <div class="chart-container">
                 <canvas id="chart-cad"></canvas>
             </div>
         </div>
         <div class="metric-card">
-            <h4>USD / Euro</h4>
+            <h4><a href="https://fred.stlouisfed.org/series/DEXUSEU" target="_blank" rel="noopener" title="U.S. / Euro Foreign Exchange Rate">USD / Euro</a></h4>
             <div id="usd-eur">Loading...</div>
             <div class="chart-container">
                 <canvas id="chart-eur"></canvas>
             </div>
         </div>
         <div class="metric-card">
-            <h4>USD / Japanese Yen</h4>
+            <h4><a href="https://fred.stlouisfed.org/series/DEXJPUS" target="_blank" rel="noopener" title="Japan / U.S. Foreign Exchange Rate">USD / Japanese Yen</a></h4>
             <div id="usd-jpy">Loading...</div>
             <div class="chart-container">
                 <canvas id="chart-jpy"></canvas>
             </div>
         </div>
         <div class="metric-card">
-            <h4>USD / Mexican Peso</h4>
+            <h4><a href="https://fred.stlouisfed.org/series/DEXMXUS" target="_blank" rel="noopener" title="Mexico / U.S. Foreign Exchange Rate">USD / Mexican Peso</a></h4>
             <div id="usd-mxn">Loading...</div>
             <div class="chart-container">
                 <canvas id="chart-mxn"></canvas>

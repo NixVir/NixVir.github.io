@@ -50,7 +50,7 @@
             <p class="f6 gray mb3">Last updated: <span id="indicators-last-update">Loading...</span></p>
 
             <div class="ba b--light-gray br2 pa3 mb3 bg-near-white">
-              <h4 class="f5 fw6 mt0 mb2">Consumer Confidence</h4>
+              <h4 class="f5 fw6 mt0 mb2"><a href="https://fred.stlouisfed.org/series/UMCSENT" target="_blank" rel="noopener" class="link dark-gray dim" title="University of Michigan Consumer Sentiment">Consumer Confidence</a></h4>
               <div id="ind-consumer-confidence" class="f3 fw7 mb2">—</div>
               <div class="sparkline-container">
                 <canvas id="ind-sparkline-cc" class="sparkline-small"></canvas>
@@ -58,7 +58,7 @@
             </div>
 
             <div class="ba b--light-gray br2 pa3 mb3 bg-near-white">
-              <h4 class="f5 fw6 mt0 mb2">S&P 500</h4>
+              <h4 class="f5 fw6 mt0 mb2"><a href="https://fred.stlouisfed.org/series/SP500" target="_blank" rel="noopener" class="link dark-gray dim" title="S&P 500 Index">S&P 500</a></h4>
               <div id="ind-sp500" class="f3 fw7 mb2">—</div>
               <div class="sparkline-container">
                 <canvas id="ind-sparkline-spy" class="sparkline-small"></canvas>
@@ -66,7 +66,7 @@
             </div>
 
             <div class="ba b--light-gray br2 pa3 mb3 bg-near-white">
-              <h4 class="f5 fw6 mt0 mb2">News Sentiment</h4>
+              <h4 class="f5 fw6 mt0 mb2"><a href="https://www.frbsf.org/research-and-insights/data-and-indicators/daily-news-sentiment-index/" target="_blank" rel="noopener" class="link dark-gray dim" title="SF Fed Daily News Sentiment Index">News Sentiment</a></h4>
               <div id="ind-news-sentiment" class="f3 fw7 mb2">—</div>
               <div class="sparkline-container">
                 <canvas id="ind-sparkline-sentiment" class="sparkline-small"></canvas>
@@ -74,7 +74,7 @@
             </div>
 
             <div class="ba b--light-gray br2 pa3 mb3 bg-near-white">
-              <h4 class="f5 fw6 mt0 mb2">Unemployment</h4>
+              <h4 class="f5 fw6 mt0 mb2"><a href="https://fred.stlouisfed.org/series/UNRATE" target="_blank" rel="noopener" class="link dark-gray dim" title="U.S. Unemployment Rate">Unemployment</a></h4>
               <div id="ind-unemployment" class="f3 fw7 mb2">—</div>
               <div class="sparkline-container">
                 <canvas id="ind-sparkline-unemp" class="sparkline-small"></canvas>
@@ -441,8 +441,10 @@
             const sentimentSign = sentimentValue >= 0 ? '+' : '';
             document.getElementById("ind-news-sentiment").innerHTML =
               `<span class="${sentimentColor}">${sentimentSign}${sentimentValue.toFixed(2)}</span>`;
-            const sentimentLabels = data.news_sentiment.map(d => d.date);
-            const sentimentValues = data.news_sentiment.map(d => d.value);
+            // Use last 60 days for sparkline (daily data has 365 points)
+            const recentSentiment = data.news_sentiment.slice(-60);
+            const sentimentLabels = recentSentiment.map(d => d.date);
+            const sentimentValues = recentSentiment.map(d => d.value);
             createIndicatorSparkline('ind-sparkline-sentiment', sentimentLabels, sentimentValues, '#9b59b6');
           }
         }
