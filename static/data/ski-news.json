@@ -1,7 +1,25 @@
 {
-  "updated": "2025-12-07 23:19:11",
-  "total_articles": 43,
+  "updated": "2025-12-08 08:06:31",
+  "total_articles": 46,
   "articles": [
+    {
+      "source": "New York Times - Travel",
+      "title": "National Park Service Will Close All Grand Canyon Hotels for Water Line Repairs",
+      "url": "https://www.nytimes.com/2025/12/03/travel/grand-canyon-hotels-closed-south-rim.html",
+      "description": "The National Park Service said seven hotels would temporarily close starting on Saturday after \u201csignificant breaks\u201d in a crucial 12.5-mile water line.",
+      "content": "The National Park Service said seven hotels would temporarily close starting on Saturday after \u201csignificant breaks\u201d in a crucial 12.5-mile water line.",
+      "pub_date": "Wed, 03 Dec 2025 20:40:23 +0000",
+      "id": "2a4d869dadc0",
+      "score": 7,
+      "score_details": {
+        "relevance": 7,
+        "news_value": 8,
+        "quality": 7,
+        "overall": 7,
+        "reason": "This story about water line repairs forcing the temporary closure of hotels in the Grand Canyon National Park is moderately relevant to the ski industry, as it highlights the operational challenges and infrastructure needs that can impact resort destinations, especially in remote areas. The story has high news value and comes from a reputable source, the New York Times, so it would be a good fit for a ski business news feed."
+      },
+      "approved_date": "2025-12-08"
+    },
     {
       "source": "Unofficial Networks",
       "title": "Canada\u2019s Scariest Ski Run Is Guarded By Military-Like Security",
@@ -33,6 +51,24 @@
         "reason": "Keyword scoring (boost: 0)"
       },
       "approved_date": "2025-12-04"
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "How to Ski: A Beginner\u2019s Guide",
+      "url": "https://www.nytimes.com/2025/12/03/travel/tips-for-first-time-skiers.html",
+      "description": "What to know about gear, ski passes, classes and more.",
+      "content": "What to know about gear, ski passes, classes and more.",
+      "pub_date": "Wed, 03 Dec 2025 10:00:31 +0000",
+      "id": "27345adc621b",
+      "score": 6,
+      "score_details": {
+        "relevance": 6,
+        "news_value": 7,
+        "quality": 7,
+        "overall": 6,
+        "reason": "The article provides a general beginner's guide to skiing, which has moderate relevance to the ski industry business. While it contains useful information for new skiers, it lacks substantive business news or analysis that would be most valuable for a ski industry news feed."
+      },
+      "approved_date": "2025-12-08"
     },
     {
       "source": "Unofficial Networks",
@@ -623,6 +659,24 @@
         "reason": "Keyword scoring (boost: 0)"
       },
       "approved_date": "2025-12-06"
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "Can Killington Become the \u2018Aspen of the East\u2019? Maybe With a $3 Billion Upgrade.",
+      "url": "https://www.nytimes.com/2025/12/05/travel/killington-vermont-ski-resort.html",
+      "description": "A developer wants to add luxury housing and a glossy base area complete with everything from a spa to a \u2018ski beach\u2019 to the resort, which has never been known for its amenities. But is Vermont ready for it?",
+      "content": "A developer wants to add luxury housing and a glossy base area complete with everything from a spa to a \u2018ski beach\u2019 to the resort, which has never been known for its amenities. But is Vermont ready for it?",
+      "pub_date": "Fri, 05 Dec 2025 10:00:11 +0000",
+      "id": "f7444c2869c8",
+      "score": 8,
+      "score_details": {
+        "relevance": 8,
+        "news_value": 7,
+        "quality": 8,
+        "overall": 8,
+        "reason": "This article covers a major proposed $3 billion development at a prominent East Coast ski resort, which aligns with the 'major ski resort business news' and 'real estate development in ski communities' criteria. The content is substantive and covers the potential impact on the resort and local community. While the New York Times is a reputable source, the article has a somewhat promotional tone and does not delve deeply into the potential challenges or broader industry implications."
+      },
+      "approved_date": "2025-12-08"
     },
     {
       "source": "Summit Daily News",
