@@ -141,6 +141,13 @@
                 <canvas id="chart-housing"></canvas>
             </div>
         </div>
+        <div class="metric-card">
+            <h4>News Sentiment Index</h4>
+            <div id="news-sentiment">Loading...</div>
+            <div class="chart-container">
+                <canvas id="chart-sentiment"></canvas>
+            </div>
+        </div>
     </div>
 
     <!-- Markets & Rates Section -->
@@ -546,6 +553,25 @@
                     data.housing_starts.map(d => d.value),
                     '#8e44ad',
                     { suffix: 'K', decimals: 0 }
+                );
+            }
+
+            // News Sentiment Index (from SF Fed - daily updates)
+            if(data.news_sentiment && Array.isArray(data.news_sentiment) && data.news_sentiment.length > 0) {
+                const latestSentiment = data.news_sentiment[data.news_sentiment.length - 1];
+                const sentimentValue = Number(latestSentiment.value);
+                const sentimentMomentum = calc30DayMomentum(data.news_sentiment);
+                const sentimentColor = sentimentValue >= 0 ? 'positive' : 'negative';
+                const sentimentSign = sentimentValue >= 0 ? '+' : '';
+                document.getElementById("news-sentiment").innerHTML =
+                    `<div class="value ${sentimentColor}">${sentimentSign}${sentimentValue.toFixed(3)}</div>
+                     <div class="period">${formatShortDate(latestSentiment.date)} (SF Fed Daily News Sentiment)</div>
+                     ${sentimentMomentum ? formatChangeIndicator({pctChange: null, change: sentimentMomentum.change || sentimentMomentum.pctChange, isPointChange: true}) : ''}`;
+                createChart('chart-sentiment',
+                    data.news_sentiment.map(d => formatShortDate(d.date)),
+                    data.news_sentiment.map(d => d.value),
+                    '#9b59b6',
+                    { decimals: 3 }
                 );
             }
 

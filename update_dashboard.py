@@ -11,6 +11,7 @@ from datetime import datetime, timedelta
 import urllib.request
 import urllib.error
 import time
+import tempfile
 
 # API endpoints
 FRED_API_KEY = os.environ.get('FRED_API_KEY', '')
@@ -60,6 +61,70 @@ def fetch_fred_data(series_id, limit=12):
             })
 
     return observations
+
+def fetch_news_sentiment():
+    """Fetch Daily News Sentiment Index from SF Fed Excel file"""
+    # The URL pattern includes a cache-busting date parameter
+    url = "https://www.frbsf.org/wp-content/uploads/news_sentiment_data.xlsx"
+
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req, timeout=60) as response:
+            # Save to temp file
+            with tempfile.NamedTemporaryFile(delete=False, suffix='.xlsx') as tmp:
+                tmp.write(response.read())
+                tmp_path = tmp.name
+
+        # Try to parse Excel file using openpyxl
+        try:
+            from openpyxl import load_workbook
+            wb = load_workbook(tmp_path, read_only=True, data_only=True)
+            ws = wb.active
+
+            # Read data - typically date in column A, sentiment in column B
+            observations = []
+            for row in ws.iter_rows(min_row=2, values_only=True):  # Skip header
+                if row[0] is None:
+                    continue
+                date_val = row[0]
+                sentiment_val = row[1] if len(row) > 1 else None
+
+                if sentiment_val is None:
+                    continue
+
+                # Handle date formatting
+                if hasattr(date_val, 'strftime'):
+                    date_str = date_val.strftime('%Y-%m-%d')
+                else:
+                    date_str = str(date_val)
+
+                try:
+                    observations.append({
+                        'date': date_str,
+                        'value': float(sentiment_val)
+                    })
+                except (ValueError, TypeError):
+                    continue
+
+            wb.close()
+            os.unlink(tmp_path)
+
+            # Return last 365 days of data for sparkline
+            if observations:
+                # Sort by date and get recent data
+                observations.sort(key=lambda x: x['date'])
+                return observations[-365:]
+            return []
+
+        except ImportError:
+            print_safe("  ! openpyxl not installed, skipping News Sentiment")
+            os.unlink(tmp_path)
+            return []
+
+    except Exception as e:
+        print_safe(f"  ! News Sentiment unavailable: {e}")
+        return []
+
 
 def fetch_market_data_yahoo(symbol, historical=False):
     """Fetch market data from Yahoo Finance"""
@@ -225,6 +290,13 @@ def update_dashboard():
     if usd_mxn:
         dashboard_data['usd_mxn'] = usd_mxn
         print_safe(f"  OK USD/MXN: {usd_mxn[-1]['value']} ({len(usd_mxn)} data points)")
+
+    # 12. Daily News Sentiment Index (from SF Fed - updates weekly)
+    print_safe("\nFetching News Sentiment Index...")
+    news_sentiment = fetch_news_sentiment()
+    if news_sentiment:
+        dashboard_data['news_sentiment'] = news_sentiment
+        print_safe(f"  OK Latest: {news_sentiment[-1]['value']:.3f} ({news_sentiment[-1]['date']}) ({len(news_sentiment)} data points)")
 
     # Write to file
     output_path = 'static/data/dashboard.json'

@@ -66,10 +66,10 @@
             </div>
 
             <div class="ba b--light-gray br2 pa3 mb3 bg-near-white">
-              <h4 class="f5 fw6 mt0 mb2">CPI</h4>
-              <div id="ind-cpi" class="f3 fw7 mb2">—</div>
+              <h4 class="f5 fw6 mt0 mb2">News Sentiment</h4>
+              <div id="ind-news-sentiment" class="f3 fw7 mb2">—</div>
               <div class="sparkline-container">
-                <canvas id="ind-sparkline-cpi" class="sparkline-small"></canvas>
+                <canvas id="ind-sparkline-sentiment" class="sparkline-small"></canvas>
               </div>
             </div>
 
@@ -431,16 +431,19 @@
           }
         }
 
-        // CPI
-        if(data.cpi) {
-          if(Array.isArray(data.cpi) && data.cpi.length > 0) {
-            const latestCpi = data.cpi[data.cpi.length - 1];
-            const cpiChange = calcChange(data.cpi);
-            document.getElementById("ind-cpi").innerHTML =
-              Number(latestCpi.value).toFixed(1) + ' ' + formatChangeIndicator(cpiChange);
-            const cpiLabels = data.cpi.map(d => d.date);
-            const cpiValues = data.cpi.map(d => d.value);
-            createIndicatorSparkline('ind-sparkline-cpi', cpiLabels, cpiValues, '#9b59b6');
+        // News Sentiment (from SF Fed - daily updates)
+        if(data.news_sentiment) {
+          if(Array.isArray(data.news_sentiment) && data.news_sentiment.length > 0) {
+            const latestSentiment = data.news_sentiment[data.news_sentiment.length - 1];
+            const sentimentValue = Number(latestSentiment.value);
+            // Format sentiment with sign and color indicator
+            const sentimentColor = sentimentValue >= 0 ? 'positive' : 'negative';
+            const sentimentSign = sentimentValue >= 0 ? '+' : '';
+            document.getElementById("ind-news-sentiment").innerHTML =
+              `<span class="${sentimentColor}">${sentimentSign}${sentimentValue.toFixed(2)}</span>`;
+            const sentimentLabels = data.news_sentiment.map(d => d.date);
+            const sentimentValues = data.news_sentiment.map(d => d.value);
+            createIndicatorSparkline('ind-sparkline-sentiment', sentimentLabels, sentimentValues, '#9b59b6');
           }
         }
 
