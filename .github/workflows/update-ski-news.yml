@@ -2,13 +2,9 @@ name: Update Ski Business News
 
 on:
   schedule:
-    # Run twice daily at 6 AM and 6 PM EST (11 AM and 11 PM UTC)
-    - cron: '0 11,23 * * *'
+    # Run once daily at 6 AM EST (11 AM UTC)
+    - cron: '0 11 * * *'
   workflow_dispatch:  # Allow manual triggering
-  push:
-    paths:
-      - 'update_ski_news.py'
-      - '.github/workflows/update-ski-news.yml'
 
 jobs:
   update-ski-news:
