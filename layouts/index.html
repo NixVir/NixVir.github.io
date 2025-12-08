@@ -94,7 +94,29 @@
     <div class="pa3 pa4-ns w-100 center" style="max-width: 1400px;">
       <section class="w-100">
         <h2 class="f3 fw6 mb3"><a href="/ski-news/" class="link dark-gray dim">Ski Business News</a></h2>
-        <p class="f6 gray mb3">Curated industry news, updated daily. Last update: <span id="ski-news-update">Loading...</span></p>
+        <div class="flex items-center justify-between mb3">
+          <p class="f6 gray ma0">Curated industry news, updated daily. Last update: <span id="ski-news-update">Loading...</span></p>
+          <div class="flex items-center">
+            <label class="f6 gray mr2">Sort:</label>
+            <select id="ski-news-sort" class="f6 pa1 br2 ba b--light-gray">
+              <option value="date">Date</option>
+              <option value="category">Category</option>
+            </select>
+            <label class="f6 gray ml3 mr2">Filter:</label>
+            <select id="ski-news-filter" class="f6 pa1 br2 ba b--light-gray">
+              <option value="all">All Categories</option>
+              <option value="resort-operations">Resort Operations</option>
+              <option value="business-investment">Business & Investment</option>
+              <option value="weather-snow">Weather & Snow</option>
+              <option value="transportation">Transportation</option>
+              <option value="industry-trends">Industry Trends</option>
+              <option value="racing-events">Racing & Events</option>
+              <option value="safety-incidents">Safety</option>
+              <option value="canadian">Canadian</option>
+              <option value="international">International</option>
+            </select>
+          </div>
+        </div>
 
         <div id="ski-news-container" class="flex-l flex-wrap">
           <p class="gray">Loading ski business news...</p>
@@ -160,6 +182,19 @@
         margin-right: 1rem;
       }
     }
+    .ski-news-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    .ski-news-icon {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+    .ski-news-content {
+      flex: 1;
+    }
     .ski-news-card h4 {
       margin: 0 0 0.5rem 0;
       font-size: 1rem;
@@ -177,10 +212,42 @@
       color: #666;
       margin-bottom: 0.5rem;
     }
+    .ski-news-category {
+      display: inline-block;
+      font-size: 0.65rem;
+      padding: 2px 6px;
+      border-radius: 3px;
+      margin-left: 6px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
     .ski-news-desc {
       font-size: 0.875rem;
       color: #444;
       line-height: 1.4;
+    }
+    /* Category colors */
+    .cat-resort-operations { background: #dbeafe; color: #2563eb; }
+    .cat-business-investment { background: #d1fae5; color: #059669; }
+    .cat-weather-snow { background: #e0f2fe; color: #0ea5e9; }
+    .cat-transportation { background: #ede9fe; color: #8b5cf6; }
+    .cat-industry-trends { background: #fef3c7; color: #d97706; }
+    .cat-racing-events { background: #fee2e2; color: #ef4444; }
+    .cat-safety-incidents { background: #fecaca; color: #dc2626; }
+    .cat-canadian { background: #fce7f3; color: #e11d48; }
+    .cat-international { background: #e0e7ff; color: #6366f1; }
+
+    /* Mobile responsive for sort/filter controls */
+    @media screen and (max-width: 60em) {
+      .flex.items-center.justify-between {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .flex.items-center.justify-between > div {
+        margin-top: 0.5rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
     }
   </style>
   <script>
@@ -396,6 +463,22 @@
     // Load on page load
     loadIndicatorsDashboard();
 
+    // Category metadata
+    const CATEGORY_META = {
+      'resort-operations': { name: 'Resort Operations', icon: '/images/ski-news-icons/resort-operations.svg' },
+      'business-investment': { name: 'Business', icon: '/images/ski-news-icons/business-investment.svg' },
+      'weather-snow': { name: 'Weather', icon: '/images/ski-news-icons/weather-snow.svg' },
+      'transportation': { name: 'Transportation', icon: '/images/ski-news-icons/transportation.svg' },
+      'industry-trends': { name: 'Industry', icon: '/images/ski-news-icons/industry-trends.svg' },
+      'racing-events': { name: 'Racing', icon: '/images/ski-news-icons/racing-events.svg' },
+      'safety-incidents': { name: 'Safety', icon: '/images/ski-news-icons/safety-incidents.svg' },
+      'canadian': { name: 'Canadian', icon: '/images/ski-news-icons/canadian.svg' },
+      'international': { name: 'International', icon: '/images/ski-news-icons/international.svg' }
+    };
+
+    // Global state for ski news
+    let skiNewsData = null;
+
     // Load Ski Business News
     async function loadSkiNews() {
       const container = document.getElementById('ski-news-container');
@@ -405,6 +488,7 @@
       try {
         const response = await fetch('/data/ski-news.json');
         const data = await response.json();
+        skiNewsData = data;
 
         if (updateSpan) {
           updateSpan.textContent = new Date(data.updated).toLocaleDateString();
@@ -416,8 +500,37 @@
           return;
         }
 
-        // Sort articles by date (most recent first), then by score within each date
-        const sortedArticles = data.articles.sort((a, b) => {
+        renderSkiNews();
+
+      } catch (error) {
+        console.error('Failed to load ski news:', error);
+        container.innerHTML = '<p class="gray">Unable to load ski business news.</p>';
+      }
+    }
+
+    function renderSkiNews() {
+      const container = document.getElementById('ski-news-container');
+      const sortBy = document.getElementById('ski-news-sort').value;
+      const filterBy = document.getElementById('ski-news-filter').value;
+
+      if (!skiNewsData || !skiNewsData.articles) return;
+
+      // Filter articles
+      let articles = skiNewsData.articles;
+      if (filterBy !== 'all') {
+        articles = articles.filter(a => a.category === filterBy);
+      }
+
+      // Sort articles
+      if (sortBy === 'category') {
+        articles = [...articles].sort((a, b) => {
+          const catA = a.category || 'industry-trends';
+          const catB = b.category || 'industry-trends';
+          if (catA !== catB) return catA.localeCompare(catB);
+          return new Date(b.pub_date || 0) - new Date(a.pub_date || 0);
+        });
+      } else {
+        articles = [...articles].sort((a, b) => {
           const dateA = a.pub_date ? new Date(a.pub_date).toDateString() : '';
           const dateB = b.pub_date ? new Date(b.pub_date).toDateString() : '';
           if (dateA !== dateB) {
@@ -425,36 +538,51 @@
           }
           return (b.score || 0) - (a.score || 0);
         });
-
-        // Display up to 6 articles on homepage
-        const articles = sortedArticles.slice(0, 6);
-        let html = '';
-
-        articles.forEach(article => {
-          const pubDate = article.pub_date ?
-            new Date(article.pub_date).toLocaleDateString('en-US', {
-              month: 'short', day: 'numeric', year: 'numeric'
-            }) : '';
-
-          const desc = article.description ?
-            article.description.substring(0, 150) + (article.description.length > 150 ? '...' : '') : '';
-
-          html += `
-            <div class="ski-news-card">
-              <h4><a href="${article.url}" target="_blank" rel="noopener">${article.title || 'Untitled'}</a></h4>
-              <div class="ski-news-meta">${article.source || ''} ${pubDate ? '&bull; ' + pubDate : ''}</div>
-              ${desc ? `<div class="ski-news-desc">${desc}</div>` : ''}
-            </div>
-          `;
-        });
-
-        container.innerHTML = html;
-
-      } catch (error) {
-        console.error('Failed to load ski news:', error);
-        container.innerHTML = '<p class="gray">Unable to load ski business news.</p>';
       }
+
+      // Display up to 6 articles on homepage
+      const displayArticles = articles.slice(0, 6);
+      let html = '';
+
+      displayArticles.forEach(article => {
+        const pubDate = article.pub_date ?
+          new Date(article.pub_date).toLocaleDateString('en-US', {
+            month: 'short', day: 'numeric', year: 'numeric'
+          }) : '';
+
+        const desc = article.description ?
+          article.description.substring(0, 150) + (article.description.length > 150 ? '...' : '') : '';
+
+        const category = article.category || 'industry-trends';
+        const catMeta = CATEGORY_META[category] || CATEGORY_META['industry-trends'];
+
+        html += `
+          <div class="ski-news-card">
+            <div class="ski-news-header">
+              <img src="${catMeta.icon}" alt="${catMeta.name}" class="ski-news-icon" />
+              <div class="ski-news-content">
+                <h4><a href="${article.url}" target="_blank" rel="noopener">${article.title || 'Untitled'}</a></h4>
+                <div class="ski-news-meta">
+                  ${article.source || ''} ${pubDate ? '&bull; ' + pubDate : ''}
+                  <span class="ski-news-category cat-${category}">${catMeta.name}</span>
+                </div>
+                ${desc ? `<div class="ski-news-desc">${desc}</div>` : ''}
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      if (displayArticles.length === 0) {
+        html = '<p class="gray w-100">No articles match the selected filter.</p>';
+      }
+
+      container.innerHTML = html;
     }
+
+    // Event listeners for sort and filter
+    document.getElementById('ski-news-sort').addEventListener('change', renderSkiNews);
+    document.getElementById('ski-news-filter').addEventListener('change', renderSkiNews);
 
     loadSkiNews();
   </script>

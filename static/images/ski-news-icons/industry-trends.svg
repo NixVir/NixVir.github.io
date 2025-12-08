@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Industry Trends & Economics - Analytics/Pie icon -->
+  <circle cx="24" cy="24" r="22" fill="#F59E0B" opacity="0.1"/>
+  <circle cx="24" cy="24" r="14" stroke="#F59E0B" stroke-width="2.5" fill="none"/>
+  <path d="M24 10V24L34 34" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M24 24L14 14" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M24 10A14 14 0 0 1 38 24" fill="#F59E0B" opacity="0.4"/>
+  <path d="M38 24A14 14 0 0 1 24 38" fill="#F59E0B" opacity="0.25"/>
+  <circle cx="24" cy="24" r="3" fill="#F59E0B"/>
+</svg>

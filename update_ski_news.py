@@ -19,6 +19,76 @@ from html import unescape
 ANTHROPIC_API_KEY = os.environ.get('ANTHROPIC_API_KEY', '')
 OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY', '')
 
+# Article categories with keywords for classification
+ARTICLE_CATEGORIES = {
+    'resort-operations': {
+        'name': 'Resort Operations & Infrastructure',
+        'keywords': ['lift', 'chairlift', 'gondola', 'snowmaking', 'terrain expansion',
+                     'new trail', 'mountain operations', 'ski patrol', 'grooming',
+                     'base lodge', 'summit lodge', 'ticket', 'pass', 'opening day',
+                     'season opening', 'closing day', 'first chair', 'last chair',
+                     'delayed opening', 'early opening', 'vertical drop', 'acreage']
+    },
+    'business-investment': {
+        'name': 'Business & Investment',
+        'keywords': ['acquisition', 'merger', 'investment', 'earnings', 'revenue',
+                     'profit', 'loss', 'ipo', 'bankruptcy', 'layoff', 'ceo',
+                     'executive', 'quarterly', 'annual report', 'partnership',
+                     'financial', 'sold', 'buys', 'purchase', 'ownership',
+                     'vail resorts', 'alterra', 'boyne', 'deal', 'billion', 'million']
+    },
+    'weather-snow': {
+        'name': 'Weather & Snow Conditions',
+        'keywords': ['snowfall', 'snow forecast', 'winter forecast', 'la nina', 'el nino',
+                     'climate change', 'global warming', 'snow drought', 'snowpack',
+                     'weather', 'storm', 'blizzard', 'cold front', 'warm winter',
+                     'record snow', 'powder', 'base depth', 'natural snow']
+    },
+    'transportation': {
+        'name': 'Transportation & Access',
+        'keywords': ['airport', 'airline', 'flight', 'air service', 'nonstop',
+                     'eagle county', 'yampa valley', 'aspen airport', 'jackson hole airport',
+                     'salt lake city', 'denver international', 'reno tahoe', 'bozeman',
+                     'highway', 'road', 'i-70', 'traffic', 'shuttle', 'bus service',
+                     'parking', 'train', 'rail']
+    },
+    'industry-trends': {
+        'name': 'Industry Trends & Economics',
+        'keywords': ['skier visits', 'ski industry', 'market', 'trend', 'growth',
+                     'decline', 'statistics', 'visitor spending', 'tourism',
+                     'season performance', 'industry report', 'nsaa', 'sia',
+                     'participation', 'demographic', 'economic impact', 'tariff']
+    },
+    'racing-events': {
+        'name': 'Racing & Events',
+        'keywords': ['world cup', 'olympic', 'olympics', 'fis', 'race', 'racing',
+                     'slalom', 'giant slalom', 'downhill', 'super-g', 'combined',
+                     'championship', 'competition', 'athlete', 'podium', 'medal',
+                     'x games', 'dew tour', 'freestyle', 'halfpipe', 'slopestyle']
+    },
+    'safety-incidents': {
+        'name': 'Safety & Incidents',
+        'keywords': ['accident', 'injury', 'death', 'fatality', 'avalanche',
+                     'rescue', 'safety', 'collision', 'lawsuit', 'liability',
+                     'ski patrol', 'emergency', 'closed', 'hazard', 'warning']
+    },
+    'canadian': {
+        'name': 'Canadian Ski Industry',
+        'keywords': ['canada', 'canadian', 'whistler', 'blackcomb', 'banff',
+                     'lake louise', 'revelstoke', 'big white', 'sun peaks',
+                     'silver star', 'fernie', 'kicking horse', 'mont tremblant',
+                     'blue mountain', 'british columbia', 'alberta', 'quebec', 'ontario']
+    },
+    'international': {
+        'name': 'International Markets',
+        'keywords': ['europe', 'european', 'alps', 'japan', 'japanese',
+                     'australia', 'new zealand', 'south america', 'chile', 'argentina',
+                     'chamonix', 'zermatt', 'st. moritz', 'courchevel', 'verbier',
+                     'kitzbuhel', 'dolomites', 'perisher', 'thredbo', 'niseko',
+                     'international', 'worldwide', 'global']
+    }
+}
+
 # Scoring thresholds
 # Without LLM: lower thresholds to let more through
 AUTO_APPROVE_THRESHOLD = 6  # Was 8 for LLM scoring
@@ -227,6 +297,13 @@ RSS_SOURCES = [
         'url': 'https://www.skiinghistory.org/feed',
         'category': 'history',
         'boost': 1
+    },
+    # Colorado TV stations (good for breaking ski news)
+    {
+        'name': 'Denver7',
+        'url': 'https://www.denver7.com/news/local-news.rss',
+        'category': 'local_news',
+        'boost': 1  # Colorado ski coverage
     }
 ]
 
@@ -400,6 +477,32 @@ def basic_relevance_filter(article):
         if keyword.lower() in text:
             return True
     return False
+
+def assign_category(article):
+    """Assign a category to an article based on keyword matching"""
+    text = f"{article.get('title', '')} {article.get('description', '')} {article.get('content', '')}".lower()
+    title = article.get('title', '').lower()
+
+    category_scores = {}
+
+    for cat_id, cat_info in ARTICLE_CATEGORIES.items():
+        score = 0
+        for keyword in cat_info['keywords']:
+            # Title matches count more
+            if keyword.lower() in title:
+                score += 3
+            elif keyword.lower() in text:
+                score += 1
+        category_scores[cat_id] = score
+
+    # Get the category with highest score
+    if category_scores:
+        best_category = max(category_scores, key=category_scores.get)
+        if category_scores[best_category] > 0:
+            return best_category
+
+    # Default to industry-trends if no strong match
+    return 'industry-trends'
 
 def score_with_claude(article):
     """Score article using Claude API"""
@@ -736,18 +839,35 @@ def basic_keyword_score(article):
             score -= 3
             break
 
-    # PENALTY: Tangentially related outdoor content (-4)
-    tangential = ['tick', 'mosquito', 'bug spray', 'repellent', 'hiking trail',
-                  'camping', 'mountain bike', 'golf course', 'summer activities',
-                  'zip line', 'alpine slide', 'water park', 'fishing', 'hunting',
-                  'rock climbing', 'kayak', 'rafting']
-    for kw in tangential:
-        if kw in title.lower():  # Stronger penalty if in title
+    # PENALTY: Tangentially related outdoor content
+    # Only penalize if NOT in ski resort context (summer ops at resorts are relevant)
+    ski_context_indicators = ['ski resort', 'ski area', 'mountain resort', 'ski season',
+                              'lift', 'chairlift', 'gondola', 'slope', 'trail', 'terrain',
+                              'snowmaking', 'base area', 'summit', 'vertical', 'ski town']
+    has_ski_context = any(indicator in text for indicator in ski_context_indicators)
+
+    # These are ALWAYS off-topic regardless of context
+    always_penalize = ['tick', 'mosquito', 'bug spray', 'repellent', 'lyme disease']
+    for kw in always_penalize:
+        if kw in title.lower():
             score -= 5
             break
         elif kw in text:
             score -= 3
             break
+
+    # These are only penalized if NOT in ski resort context
+    if not has_ski_context:
+        summer_activities = ['hiking trail', 'camping', 'mountain bike', 'golf course',
+                             'zip line', 'alpine slide', 'water park', 'fishing', 'hunting',
+                             'rock climbing', 'kayak', 'rafting']
+        for kw in summer_activities:
+            if kw in title.lower():
+                score -= 5
+                break
+            elif kw in text:
+                score -= 3
+                break
 
     # PENALTY: Feel-good fluff without business angle (-3)
     feelgood_fluff = ['heartwarming', 'inspiring story', 'feel-good', 'amazing moment',
@@ -866,6 +986,8 @@ def update_ski_news():
             article['score'] = score
             article['score_details'] = details
             article['approved_date'] = datetime.now().strftime('%Y-%m-%d')
+            article['category'] = assign_category(article)
+            print_safe(f"    Category: {article['category']}")
             approved.append(article)
         elif score <= AUTO_REJECT_THRESHOLD:
             print_safe(f"    - Score: {score} - REJECTED")

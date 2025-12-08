@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Transportation & Access - Road/Mountain icon -->
+  <circle cx="24" cy="24" r="22" fill="#8B5CF6" opacity="0.1"/>
+  <path d="M8 38L20 14L32 26L42 10" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M16 38L24 22L32 38" fill="#8B5CF6" opacity="0.3"/>
+  <path d="M18 38H30" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M20 34H28" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round"/>
+  <path d="M22 30H26" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="42" cy="10" r="3" fill="#8B5CF6"/>
+</svg>
