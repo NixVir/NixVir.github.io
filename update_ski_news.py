@@ -99,6 +99,14 @@ ARTICLE_CATEGORIES = {
                      'pioneer', 'vintage', 'legacy', 'memorial', 'museum',
                      'closed permanently', 'defunct', 'former ski area', 'old ski area',
                      'ski heritage', 'first ski', 'skiing history', 'remains of']
+    },
+    'hospitality': {
+        'name': 'Hospitality',
+        'keywords': ['hotel', 'hotels', 'lodging', 'accommodation', 'resort hotel',
+                     'ski-in ski-out', 'slopeside', 'inn', 'motel', 'vacation rental',
+                     'airbnb', 'vrbo', 'condo', 'timeshare', 'bed and breakfast',
+                     'room rates', 'occupancy', 'booking', 'reservations', 'hospitality',
+                     'lodge', 'chalet', 'cabin rental', 'overnight', 'stay']
     }
 }
 

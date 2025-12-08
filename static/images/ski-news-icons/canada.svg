@@ -1,6 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
-  <!-- Canada - Maple leaf inspired -->
+  <!-- Canada - Canadian flag maple leaf -->
   <circle cx="24" cy="24" r="22" fill="#E11D48" opacity="0.1"/>
-  <path d="M24 6L26 14L34 12L30 18L38 22L30 24L32 32L24 28L16 32L18 24L10 22L18 18L14 12L22 14L24 6Z" fill="#E11D48"/>
-  <path d="M24 28V42" stroke="#E11D48" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Maple leaf based on Canadian flag design -->
+  <path d="M24 8
+           L25 12 L29 10 L27 14 L31 14 L28 17 L30 18 L26 20 L28 24 L25 23 L25 27 L24 26 L23 27 L23 23 L20 24 L22 20 L18 18 L20 17 L17 14 L21 14 L19 10 L23 12 L24 8Z"
+        fill="#E11D48"/>
+  <!-- Stem -->
+  <path d="M24 27V38" stroke="#E11D48" stroke-width="2.5" stroke-linecap="round"/>
 </svg>
