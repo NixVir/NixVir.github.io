@@ -124,11 +124,11 @@
 // Category metadata
 const CATEGORY_META = {
   'resort-operations': { name: 'Resort Operations', icon: '/images/ski-news-icons/resort-operations.svg' },
-  'business-investment': { name: 'Business', icon: '/images/ski-news-icons/business-investment.svg' },
-  'weather-snow': { name: 'Weather', icon: '/images/ski-news-icons/weather-snow.svg' },
+  'business-investment': { name: 'Business & Investment', icon: '/images/ski-news-icons/business-investment.svg' },
+  'weather-snow': { name: 'Weather & Snow', icon: '/images/ski-news-icons/weather-snow.svg' },
   'transportation': { name: 'Transportation', icon: '/images/ski-news-icons/transportation.svg' },
   'winter-sports': { name: 'Winter Sports', icon: '/images/ski-news-icons/winter-sports.svg' },
-  'safety-incidents': { name: 'Safety', icon: '/images/ski-news-icons/safety-incidents.svg' },
+  'safety-incidents': { name: 'Safety & Incidents', icon: '/images/ski-news-icons/safety-incidents.svg' },
   'canada': { name: 'Canada', icon: '/images/ski-news-icons/canada.svg' },
   'international': { name: 'International', icon: '/images/ski-news-icons/international.svg' },
   'ski-history': { name: 'Ski History', icon: '/images/ski-news-icons/ski-history.svg' },
@@ -217,8 +217,7 @@ function renderSkiNews() {
     let secondaryHtml = '';
     if (article.secondary_categories && article.secondary_categories.length > 0) {
       const secondaryNames = article.secondary_categories
-        .map(c => CATEGORY_META[c]?.name || c)
-        .slice(0, 2);
+        .map(c => CATEGORY_META[c]?.name || c);
       secondaryHtml = `<span class="ski-news-secondary">+${secondaryNames.join(', ')}</span>`;
     }
 
