@@ -19,7 +19,6 @@
           <option value="business-investment">Business & Investment</option>
           <option value="weather-snow">Weather & Snow</option>
           <option value="transportation">Transportation</option>
-          <option value="industry-trends">Industry Trends</option>
           <option value="winter-sports">Winter Sports</option>
           <option value="safety-incidents">Safety</option>
           <option value="canada">Canada</option>
@@ -101,7 +100,6 @@
   .cat-business-investment { background: #d1fae5; color: #059669; }
   .cat-weather-snow { background: #e0f2fe; color: #0ea5e9; }
   .cat-transportation { background: #ede9fe; color: #8b5cf6; }
-  .cat-industry-trends { background: #fef3c7; color: #d97706; }
   .cat-winter-sports { background: #fee2e2; color: #ef4444; }
   .cat-safety-incidents { background: #fecaca; color: #dc2626; }
   .cat-canada { background: #fce7f3; color: #e11d48; }
@@ -129,7 +127,6 @@ const CATEGORY_META = {
   'business-investment': { name: 'Business', icon: '/images/ski-news-icons/business-investment.svg' },
   'weather-snow': { name: 'Weather', icon: '/images/ski-news-icons/weather-snow.svg' },
   'transportation': { name: 'Transportation', icon: '/images/ski-news-icons/transportation.svg' },
-  'industry-trends': { name: 'Industry', icon: '/images/ski-news-icons/industry-trends.svg' },
   'winter-sports': { name: 'Winter Sports', icon: '/images/ski-news-icons/winter-sports.svg' },
   'safety-incidents': { name: 'Safety', icon: '/images/ski-news-icons/safety-incidents.svg' },
   'canada': { name: 'Canada', icon: '/images/ski-news-icons/canada.svg' },
@@ -187,8 +184,8 @@ function renderSkiNews() {
   // Sort articles
   if (sortBy === 'category') {
     articles = [...articles].sort((a, b) => {
-      const catA = a.category || 'industry-trends';
-      const catB = b.category || 'industry-trends';
+      const catA = a.category || 'resort-operations';
+      const catB = b.category || 'resort-operations';
       if (catA !== catB) return catA.localeCompare(catB);
       return new Date(b.pub_date || 0) - new Date(a.pub_date || 0);
     });
@@ -213,8 +210,8 @@ function renderSkiNews() {
     const desc = article.description ?
       article.description.substring(0, 300) + (article.description.length > 300 ? '...' : '') : '';
 
-    const category = article.category || 'industry-trends';
-    const catMeta = CATEGORY_META[category] || CATEGORY_META['industry-trends'];
+    const category = article.category || 'resort-operations';
+    const catMeta = CATEGORY_META[category] || CATEGORY_META['resort-operations'];
 
     // Build secondary categories display
     let secondaryHtml = '';

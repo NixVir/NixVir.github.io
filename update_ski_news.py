@@ -55,14 +55,6 @@ ARTICLE_CATEGORIES = {
                      'highway', 'road', 'i-70', 'traffic', 'shuttle', 'bus service',
                      'parking', 'train', 'rail']
     },
-    'industry-trends': {
-        'name': 'Industry Trends',
-        'keywords': ['skier visits', 'ski industry', 'market trend', 'growth rate',
-                     'decline', 'statistics', 'visitor spending', 'tourism decline',
-                     'season performance', 'industry report', 'nsaa', 'sia',
-                     'participation', 'demographic', 'economic impact', 'tariff',
-                     'steep drop', 'international travel', 'cross-border', 'tourism impact']
-    },
     'winter-sports': {
         'name': 'Winter Sports',
         'keywords': ['world cup', 'olympic', 'olympics', 'fis', 'ski race', 'ski racing',
@@ -522,7 +514,7 @@ def assign_categories(article):
     sorted_cats = sorted(category_scores.items(), key=lambda x: x[1], reverse=True)
 
     # Get primary category (highest score)
-    primary = 'industry-trends'
+    primary = 'resort-operations'
     secondary = []
 
     if sorted_cats and sorted_cats[0][1] > 0:
