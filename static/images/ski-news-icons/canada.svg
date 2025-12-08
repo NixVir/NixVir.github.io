@@ -1,10 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
-  <!-- Canada - Canadian flag maple leaf (official 11-point design) -->
+  <!-- Canada - Simple red maple leaf -->
   <circle cx="24" cy="24" r="22" fill="#E11D48" opacity="0.1"/>
-  <!-- Official Canadian flag maple leaf - accurate proportions -->
-  <path d="M24 5
-           L25.5 10 L28 8.5 L27 12 L33 11 L30 14.5 L34 14.5 L31 17 L35 19 L29.5 19.5 L32 24 L27 22 L28.5 28 L24 24.5 L19.5 28 L21 22 L16 24 L18.5 19.5 L13 19 L17 17 L14 14.5 L18 14.5 L15 11 L21 12 L20 8.5 L22.5 10 Z"
-        fill="#E11D48"/>
-  <!-- Stem -->
-  <rect x="22" y="28" width="4" height="12" rx="0.5" fill="#E11D48"/>
+  <!-- Simple maple leaf shape -->
+  <path d="M24 6 L27 14 L35 14 L29 20 L32 28 L24 23 L16 28 L19 20 L13 14 L21 14 Z" fill="#E11D48"/>
 </svg>
