@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
-  <!-- Winter Sports - Stylized skier on curved slope (like Olympic pictogram) -->
+  <!-- Winter Sports - Snowboarder doing aerial in halfpipe (Olympic pictogram style) -->
   <circle cx="24" cy="24" r="22" fill="#EF4444" opacity="0.1"/>
-  <!-- Curved slope/halfpipe -->
-  <path d="M8 40 Q24 20 40 40" stroke="#EF4444" stroke-width="3" stroke-linecap="round" fill="none"/>
-  <!-- Skier figure - head -->
-  <circle cx="26" cy="10" r="3.5" fill="#EF4444"/>
-  <!-- Skier body - torso leaning forward -->
-  <path d="M26 13.5 L22 22" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
-  <!-- Arm reaching up/back -->
-  <path d="M24 16 L32 10" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round"/>
-  <!-- Back leg bent up -->
-  <path d="M22 22 L18 16" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
-  <!-- Front leg extended down to slope -->
-  <path d="M22 22 L26 30" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
-  <!-- Ski/board on slope -->
-  <path d="M23 31 L30 27" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Halfpipe curve -->
+  <path d="M6 42 Q24 22 42 42" stroke="#EF4444" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <!-- Snowboarder head -->
+  <circle cx="24" cy="8" r="3" fill="#EF4444"/>
+  <!-- Body/torso - leaning forward in grab position -->
+  <path d="M24 11 L20 18" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+  <!-- Arm reaching forward to grab board -->
+  <path d="M22 14 L28 20" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Back leg bent up behind -->
+  <path d="M20 18 L14 14" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+  <!-- Front leg bent toward board -->
+  <path d="M20 18 L26 24" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+  <!-- Snowboard - angled beneath rider -->
+  <path d="M24 26 L32 20" stroke="#EF4444" stroke-width="3.5" stroke-linecap="round"/>
 </svg>
