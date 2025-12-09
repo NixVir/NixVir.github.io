@@ -29,12 +29,15 @@
                 <div class="data-insight-item mb3 pb2 bb b--near-white">
                   {{ if .Params.featured_image }}
                     <a href="{{ .RelPermalink }}" class="db mb2">
-                      <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="w-100 br2" style="max-height: 120px; object-fit: cover;">
+                      <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="w-100 br2" style="max-height: 100px; object-fit: cover;">
                     </a>
                   {{ end }}
                   <h4 class="f6 fw6 mt0 mb1 lh-title">
                     <a href="{{ .RelPermalink }}" class="link dark-gray dim">{{ .Title }}</a>
                   </h4>
+                  {{ with .Params.description }}
+                    <p class="f7 mid-gray ma0 mb1 lh-copy">{{ . | truncate 100 }}</p>
+                  {{ end }}
                   <p class="f7 gray ma0">{{ .Date.Format "Jan 2, 2006" }}</p>
                 </div>
               {{ end }}
@@ -161,6 +164,7 @@
 
   {{/* Styles */}}
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
   <style>
     /* Section frames */
     .section-frame {
@@ -339,6 +343,11 @@
       return `<span class="change-indicator"><span class="arrow ${colorClass}">${trend.arrow}</span><span class="yoy ${colorClass}">${changeText} YoY</span></span>`;
     }
 
+    // Helper function to sort data by date (oldest first for left-to-right display)
+    function sortByDate(data) {
+      return [...data].sort((a, b) => new Date(a.date) - new Date(b.date));
+    }
+
     // Helper function to create sparkline charts
     function createIndicatorSparkline(canvasId, labels, values, color = '#3498db') {
       const ctx = document.getElementById(canvasId);
@@ -403,6 +412,111 @@
       });
     }
 
+    // Special sparkline for News Sentiment with colored bands
+    function createSentimentSparkline(canvasId, labels, values) {
+      const ctx = document.getElementById(canvasId);
+      if (!ctx) return;
+
+      const formattedLabels = labels.map(formatDateLabel);
+
+      if (ctx.chart) {
+        ctx.chart.destroy();
+      }
+
+      ctx.chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: formattedLabels,
+          datasets: [{
+            data: values,
+            borderColor: '#9b59b6',
+            borderWidth: 1.5,
+            fill: false,
+            pointRadius: 0,
+            pointHoverRadius: 2,
+            pointHoverBackgroundColor: '#9b59b6',
+            tension: 0.1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              enabled: true,
+              mode: 'index',
+              intersect: false,
+              displayColors: false,
+              backgroundColor: 'rgba(0,0,0,0.8)',
+              titleFont: { size: 10 },
+              bodyFont: { size: 10 },
+              padding: 6,
+              callbacks: {
+                title: function(context) { return context[0].label; },
+                label: function(context) {
+                  const val = context.parsed.y;
+                  const sign = val >= 0 ? '+' : '';
+                  return sign + val.toFixed(3);
+                }
+              }
+            },
+            annotation: {
+              annotations: {
+                optimisticZone: {
+                  type: 'box',
+                  yMin: 0.05,
+                  yMax: 0.3,
+                  backgroundColor: 'rgba(39, 174, 96, 0.15)',
+                  borderWidth: 0
+                },
+                neutralZone: {
+                  type: 'box',
+                  yMin: -0.05,
+                  yMax: 0.05,
+                  backgroundColor: 'rgba(200, 200, 200, 0.2)',
+                  borderWidth: 0
+                },
+                pessimisticZone: {
+                  type: 'box',
+                  yMin: -0.3,
+                  yMax: -0.05,
+                  backgroundColor: 'rgba(231, 76, 60, 0.15)',
+                  borderWidth: 0
+                },
+                zeroLine: {
+                  type: 'line',
+                  yMin: 0,
+                  yMax: 0,
+                  borderColor: 'rgba(0, 0, 0, 0.2)',
+                  borderWidth: 1,
+                  borderDash: [3, 3]
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              display: true,
+              ticks: {
+                maxRotation: 0,
+                font: { size: 8 },
+                color: '#999',
+                maxTicksLimit: 3
+              },
+              grid: { display: false }
+            },
+            y: {
+              display: false,
+              min: -0.15,
+              max: 0.10
+            }
+          },
+          interaction: { mode: 'index', intersect: false }
+        }
+      });
+    }
+
     // Load dashboard data
     async function loadIndicatorsDashboard() {
       try {
@@ -414,13 +528,14 @@
 
         // Consumer Confidence
         if(data.consumer_confidence && data.consumer_confidence.length > 0) {
-          const cc = data.consumer_confidence[data.consumer_confidence.length - 1];
-          const ccChange = calcChange(data.consumer_confidence);
+          const ccSorted = sortByDate(data.consumer_confidence);
+          const cc = ccSorted[ccSorted.length - 1];
+          const ccChange = calcChange(ccSorted);
           document.getElementById("ind-consumer-confidence").innerHTML =
             Number(cc.value).toFixed(1) + ' ' + formatChangeIndicator(ccChange);
           createIndicatorSparkline('ind-sparkline-cc',
-            data.consumer_confidence.map(d => d.date),
-            data.consumer_confidence.map(d => d.value), '#3498db');
+            ccSorted.map(d => d.date),
+            ccSorted.map(d => d.value), '#3498db');
         }
 
         // S&P 500
@@ -429,51 +544,56 @@
           if (sp) {
             const currentClose = sp.current_close || sp.close;
             const spData = sp.history ? sp.history.map(h => ({value: h.close, date: h.date})) : [];
-            const spChange = calcChange(spData);
+            const spSorted = sortByDate(spData);
+            const spChange = calcChange(spSorted);
             document.getElementById("ind-sp500").innerHTML =
               Number(currentClose).toFixed(0) + ' ' + formatChangeIndicator(spChange);
             if (sp.history && sp.history.length > 0) {
+              const historySorted = sortByDate(sp.history.map(h => ({date: h.date, close: h.close})));
               createIndicatorSparkline('ind-sparkline-spy',
-                sp.history.map(d => d.date),
-                sp.history.map(d => d.close), '#27ae60');
+                historySorted.map(d => d.date),
+                historySorted.map(d => d.close), '#27ae60');
             }
           }
         }
 
-        // News Sentiment
+        // News Sentiment - uses special sparkline with colored bands
         if(data.news_sentiment && Array.isArray(data.news_sentiment) && data.news_sentiment.length > 0) {
-          const latestSentiment = data.news_sentiment[data.news_sentiment.length - 1];
+          const sentimentSorted = sortByDate(data.news_sentiment);
+          const latestSentiment = sentimentSorted[sentimentSorted.length - 1];
           const sentimentValue = Number(latestSentiment.value);
           const sentimentColor = sentimentValue >= 0 ? 'positive' : 'negative';
           const sentimentSign = sentimentValue >= 0 ? '+' : '';
           document.getElementById("ind-news-sentiment").innerHTML =
             `<span class="${sentimentColor}">${sentimentSign}${sentimentValue.toFixed(2)}</span>`;
-          const recentSentiment = data.news_sentiment.slice(-60);
-          createIndicatorSparkline('ind-sparkline-sentiment',
+          const recentSentiment = sentimentSorted.slice(-60);
+          createSentimentSparkline('ind-sparkline-sentiment',
             recentSentiment.map(d => d.date),
-            recentSentiment.map(d => d.value), '#9b59b6');
+            recentSentiment.map(d => d.value));
         }
 
         // Unemployment
         if(data.unemployment && Array.isArray(data.unemployment) && data.unemployment.length > 0) {
-          const latestUnemp = data.unemployment[data.unemployment.length - 1];
-          const unempChange = calcChange(data.unemployment, true);
+          const unempSorted = sortByDate(data.unemployment);
+          const latestUnemp = unempSorted[unempSorted.length - 1];
+          const unempChange = calcChange(unempSorted, true);
           document.getElementById("ind-unemployment").innerHTML =
             Number(latestUnemp.value).toFixed(1) + '% ' + formatChangeIndicator(unempChange, true);
           createIndicatorSparkline('ind-sparkline-unemp',
-            data.unemployment.map(d => d.date),
-            data.unemployment.map(d => d.value), '#f39c12');
+            unempSorted.map(d => d.date),
+            unempSorted.map(d => d.value), '#f39c12');
         }
 
         // Fed Funds Rate
         if(data.fed_funds_rate && Array.isArray(data.fed_funds_rate) && data.fed_funds_rate.length > 0) {
-          const latestFed = data.fed_funds_rate[data.fed_funds_rate.length - 1];
-          const fedChange = calcChange(data.fed_funds_rate, true);
+          const fedSorted = sortByDate(data.fed_funds_rate);
+          const latestFed = fedSorted[fedSorted.length - 1];
+          const fedChange = calcChange(fedSorted, true);
           document.getElementById("ind-fed-rate").innerHTML =
             Number(latestFed.value).toFixed(2) + '% ' + formatChangeIndicator(fedChange);
           createIndicatorSparkline('ind-sparkline-fed',
-            data.fed_funds_rate.map(d => d.date),
-            data.fed_funds_rate.map(d => d.value), '#e74c3c');
+            fedSorted.map(d => d.date),
+            fedSorted.map(d => d.value), '#e74c3c');
         }
 
       } catch (error) {
