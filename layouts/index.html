@@ -311,14 +311,10 @@
     // Helper function to create sparkline charts with visible x-axis
     function createIndicatorSparkline(canvasId, labels, values, color = '#3498db') {
       const ctx = document.getElementById(canvasId);
-      if (!ctx) return;
-
-      // Set canvas size to match container and computed height
-      const container = ctx.parentElement;
-      const containerWidth = container.offsetWidth;
-      const computedHeight = parseInt(window.getComputedStyle(ctx).height) || 70;
-      ctx.width = containerWidth;
-      ctx.height = computedHeight;
+      if (!ctx) {
+        console.error('Canvas not found:', canvasId);
+        return;
+      }
 
       // Format labels for display
       const formattedLabels = labels.map(formatDateLabel);
@@ -346,7 +342,7 @@
           }]
         },
         options: {
-          responsive: false,
+          responsive: true,
           maintainAspectRatio: false,
           plugins: {
             legend: { display: false },
