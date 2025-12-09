@@ -317,6 +317,26 @@ RSS_SOURCES = [
         'url': 'https://www.denver7.com/news/local-news.rss',
         'category': 'local_news',
         'boost': 1  # Colorado ski coverage
+    },
+    # Hospitality and hotel industry
+    {
+        'name': 'CoStar Hotels',
+        'url': 'https://www.costar.com/rss/news/hotels',
+        'category': 'hospitality',
+        'boost': 2  # Hotel industry news for ski resort hospitality
+    },
+    # Government statistics (population, demographics, economic data)
+    {
+        'name': 'U.S. Census Bureau',
+        'url': 'https://www.census.gov/economic-indicators/indicator.xml',
+        'category': 'government',
+        'boost': 3  # Official U.S. government statistics
+    },
+    {
+        'name': 'Statistics Canada - Travel & Tourism',
+        'url': 'https://www150.statcan.gc.ca/n1/dai-quo/ssi/homepage-eng.xml',
+        'category': 'government',
+        'boost': 3  # Official Canadian government statistics
     }
 ]
 
