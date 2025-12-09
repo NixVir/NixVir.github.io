@@ -1,205 +1,245 @@
 {{ define "main" }}
-  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links {{ $.Param "text_color" | compare.Default "mid-gray" }}">
+  {{/* Compact intro - minimal text */}}
+  <article class="cf ph3 ph5-l pv2 pv3-l f4 tc-l center measure-wide lh-copy nested-links {{ $.Param "text_color" | compare.Default "mid-gray" }}">
     {{ .Content }}
   </article>
 
-  {{/* Two-column layout: News and Indicators Dashboard */}}
+  {{/* Three-column layout */}}
   {{ $mainSections := site.Params.mainSections | compare.Default (collections.Slice "post") }}
   {{ $show_recent_posts := site.Params.ananke.show_recent_posts }}
   {{ $section := collections.Where $.Site.RegularPages "Section" "in" $mainSections }}
   {{ $section_count := len $section }}
 
   {{ if and ($show_recent_posts) (compare.Ge $section_count 1) }}
-    <div class="pa3 pa4-ns w-100 center" style="max-width: 1400px;">
-
-      {{/* Two column container */}}
+    <div class="pa3 pa4-ns w-100 center" style="max-width: 1600px;">
+      {{/* Three column container */}}
       <div class="flex-l">
 
-        {{/* Left Column: Data Insights Section */}}
-        <section class="w-100 w-60-l pr4-l mb4 mb0-l">
-          <h2 class="f3 fw6 mb3"><a href="/post/" class="link dark-gray dim">Data Insights</a></h2>
-          {{ $n_posts := $.Param "recent_posts_number" | compare.Default 3 }}
+        {{/* Column 1: Data Insights */}}
+        <section class="w-100 w-third-l ph2-l mb4 mb0-l">
+          <div class="section-frame ba b--light-gray br2 bg-white pa3 h-100">
+            <h2 class="f4 fw6 mb2 pb2 bb b--light-gray">
+              <a href="/post/" class="link dark-gray dim">Data Insights</a>
+            </h2>
+            {{ $n_posts := 5 }}
 
-          {{/* Range through the first $n_posts items of the section */}}
-          {{ range (collections.First $n_posts $section) }}
-            <div class="w-100 mb4 pb3 bb b--light-gray">
-              {{ .Render "summary-with-image" }}
-            </div>
-          {{ end }}
-
-          {{ if compare.Ge $section_count (math.Add $n_posts 1) }}
-            <div class="w-100 mt3">
-              <h3 class="f4 fw6 mb2">More Articles</h3>
-              {{/* Range through the next four after the initial $n_posts items */}}
-              {{ range (collections.First 4 (collections.After $n_posts $section))  }}
-                <div class="mb2">
-                  <a href="{{ .RelPermalink }}" class="link blue dim">
-                    {{ .Title }}
-                  </a>
+            <div class="section-content">
+              {{/* Range through posts */}}
+              {{ range (collections.First $n_posts $section) }}
+                <div class="data-insight-item mb3 pb2 bb b--near-white">
+                  {{ if .Params.featured_image }}
+                    <a href="{{ .RelPermalink }}" class="db mb2">
+                      <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="w-100 br2" style="max-height: 120px; object-fit: cover;">
+                    </a>
+                  {{ end }}
+                  <h4 class="f6 fw6 mt0 mb1 lh-title">
+                    <a href="{{ .RelPermalink }}" class="link dark-gray dim">{{ .Title }}</a>
+                  </h4>
+                  <p class="f7 gray ma0">{{ .Date.Format "Jan 2, 2006" }}</p>
                 </div>
               {{ end }}
             </div>
-          {{ end }}
+
+            <div class="tc mt3 pt2 bt b--light-gray">
+              <a href="/post/" class="link blue dim fw6 f6">View All Articles &rarr;</a>
+            </div>
+          </div>
         </section>
 
-        {{/* Right Column: Economic Dashboard */}}
-        <section class="w-100 w-40-l">
-          <h2 class="f3 fw6 mb3"><a href="/dashboard/" class="link dark-gray dim">Economic Dashboard</a></h2>
+        {{/* Column 2: Economic Dashboard */}}
+        <section class="w-100 w-third-l ph2-l mb4 mb0-l">
+          <div class="section-frame ba b--light-gray br2 bg-white pa3 h-100">
+            <h2 class="f4 fw6 mb2 pb2 bb b--light-gray">
+              <a href="/dashboard/" class="link dark-gray dim">Economic Dashboard</a>
+            </h2>
 
-          <div id="indicators-dashboard">
-            <p class="f6 gray mb3">Last updated: <span id="indicators-last-update">Loading...</span></p>
+            <div id="indicators-dashboard" class="section-content">
+              <p class="f7 gray mb2">Updated: <span id="indicators-last-update">Loading...</span></p>
 
-            <div class="ba b--light-gray br2 pa3 mb3 bg-near-white">
-              <h4 class="f5 fw6 mt0 mb2"><a href="https://fred.stlouisfed.org/series/UMCSENT" target="_blank" rel="noopener" class="link dark-gray dim" title="University of Michigan Consumer Sentiment">Consumer Confidence</a></h4>
-              <div id="ind-consumer-confidence" class="f3 fw7 mb2">—</div>
-              <div class="sparkline-container">
-                <canvas id="ind-sparkline-cc" class="sparkline-small"></canvas>
+              <div class="indicator-card ba b--light-gray br2 pa2 mb2 bg-near-white">
+                <h4 class="f6 fw6 mt0 mb1">
+                  <a href="https://fred.stlouisfed.org/series/UMCSENT" target="_blank" rel="noopener" class="link dark-gray dim" title="University of Michigan Consumer Sentiment">Consumer Confidence</a>
+                </h4>
+                <div id="ind-consumer-confidence" class="f5 fw7 mb1">-</div>
+                <div class="sparkline-container">
+                  <canvas id="ind-sparkline-cc" class="sparkline-small"></canvas>
+                </div>
+              </div>
+
+              <div class="indicator-card ba b--light-gray br2 pa2 mb2 bg-near-white">
+                <h4 class="f6 fw6 mt0 mb1">
+                  <a href="https://fred.stlouisfed.org/series/SP500" target="_blank" rel="noopener" class="link dark-gray dim" title="S&P 500 Index">S&P 500</a>
+                </h4>
+                <div id="ind-sp500" class="f5 fw7 mb1">-</div>
+                <div class="sparkline-container">
+                  <canvas id="ind-sparkline-spy" class="sparkline-small"></canvas>
+                </div>
+              </div>
+
+              <div class="indicator-card ba b--light-gray br2 pa2 mb2 bg-near-white">
+                <h4 class="f6 fw6 mt0 mb1">
+                  <a href="https://www.frbsf.org/research-and-insights/data-and-indicators/daily-news-sentiment-index/" target="_blank" rel="noopener" class="link dark-gray dim" title="SF Fed Daily News Sentiment Index">News Sentiment</a>
+                </h4>
+                <div id="ind-news-sentiment" class="f5 fw7 mb1">-</div>
+                <div class="sparkline-container">
+                  <canvas id="ind-sparkline-sentiment" class="sparkline-small"></canvas>
+                </div>
+              </div>
+
+              <div class="indicator-card ba b--light-gray br2 pa2 mb2 bg-near-white">
+                <h4 class="f6 fw6 mt0 mb1">
+                  <a href="https://fred.stlouisfed.org/series/UNRATE" target="_blank" rel="noopener" class="link dark-gray dim" title="U.S. Unemployment Rate">Unemployment</a>
+                </h4>
+                <div id="ind-unemployment" class="f5 fw7 mb1">-</div>
+                <div class="sparkline-container">
+                  <canvas id="ind-sparkline-unemp" class="sparkline-small"></canvas>
+                </div>
+              </div>
+
+              <div class="indicator-card ba b--light-gray br2 pa2 bg-near-white">
+                <h4 class="f6 fw6 mt0 mb1">
+                  <a href="https://fred.stlouisfed.org/series/DFF" target="_blank" rel="noopener" class="link dark-gray dim" title="Federal Funds Rate">Fed Funds Rate</a>
+                </h4>
+                <div id="ind-fed-rate" class="f5 fw7 mb1">-</div>
+                <div class="sparkline-container">
+                  <canvas id="ind-sparkline-fed" class="sparkline-small"></canvas>
+                </div>
               </div>
             </div>
 
-            <div class="ba b--light-gray br2 pa3 mb3 bg-near-white">
-              <h4 class="f5 fw6 mt0 mb2"><a href="https://fred.stlouisfed.org/series/SP500" target="_blank" rel="noopener" class="link dark-gray dim" title="S&P 500 Index">S&P 500</a></h4>
-              <div id="ind-sp500" class="f3 fw7 mb2">—</div>
-              <div class="sparkline-container">
-                <canvas id="ind-sparkline-spy" class="sparkline-small"></canvas>
+            <div class="tc mt3 pt2 bt b--light-gray">
+              <a href="/dashboard/" class="link blue dim fw6 f6">View Full Dashboard &rarr;</a>
+            </div>
+          </div>
+        </section>
+
+        {{/* Column 3: Ski Business News */}}
+        <section class="w-100 w-third-l ph2-l mb4 mb0-l">
+          <div class="section-frame ba b--light-gray br2 bg-white pa3 h-100">
+            <h2 class="f4 fw6 mb2 pb2 bb b--light-gray">
+              <a href="/ski-news/" class="link dark-gray dim">Ski Business News</a>
+            </h2>
+
+            <div class="section-content">
+              <p class="f7 gray mb2">Updated: <span id="ski-news-update">Loading...</span></p>
+
+              <div class="flex items-center mb2">
+                <label class="f7 gray mr1">Filter:</label>
+                <select id="ski-news-filter" class="f7 pa1 br2 ba b--light-gray" style="max-width: 120px;">
+                  <option value="all">All</option>
+                  <option value="resort-operations">Resort Ops</option>
+                  <option value="business-investment">Business</option>
+                  <option value="weather-snow">Weather</option>
+                  <option value="transportation">Transport</option>
+                  <option value="winter-sports">Sports</option>
+                  <option value="safety-incidents">Safety</option>
+                  <option value="canada">Canada</option>
+                  <option value="international">Intl</option>
+                  <option value="ski-history">History</option>
+                  <option value="hospitality">Hospitality</option>
+                </select>
+              </div>
+
+              <div id="ski-news-container">
+                <p class="f7 gray">Loading...</p>
+              </div>
+
+              <div id="ski-news-empty" class="dn tc pa3 gray f7">
+                <p>No ski news available.</p>
               </div>
             </div>
 
-            <div class="ba b--light-gray br2 pa3 mb3 bg-near-white">
-              <h4 class="f5 fw6 mt0 mb2"><a href="https://www.frbsf.org/research-and-insights/data-and-indicators/daily-news-sentiment-index/" target="_blank" rel="noopener" class="link dark-gray dim" title="SF Fed Daily News Sentiment Index">News Sentiment</a></h4>
-              <div id="ind-news-sentiment" class="f3 fw7 mb2">—</div>
-              <div class="sparkline-container">
-                <canvas id="ind-sparkline-sentiment" class="sparkline-small"></canvas>
-              </div>
-            </div>
-
-            <div class="ba b--light-gray br2 pa3 mb3 bg-near-white">
-              <h4 class="f5 fw6 mt0 mb2"><a href="https://fred.stlouisfed.org/series/UNRATE" target="_blank" rel="noopener" class="link dark-gray dim" title="U.S. Unemployment Rate">Unemployment</a></h4>
-              <div id="ind-unemployment" class="f3 fw7 mb2">—</div>
-              <div class="sparkline-container">
-                <canvas id="ind-sparkline-unemp" class="sparkline-small"></canvas>
-              </div>
-            </div>
-
-            <div class="tc mt3">
-              <a href="/dashboard" class="link blue dim fw6">View Full Dashboard →</a>
+            <div class="tc mt3 pt2 bt b--light-gray">
+              <a href="/ski-news/" class="link blue dim fw6 f6">View All News &rarr;</a>
             </div>
           </div>
         </section>
 
       </div>
     </div>
-
-    {{/* Ski Business News Section */}}
-    <div class="pa3 pa4-ns w-100 center" style="max-width: 1400px;">
-      <section class="w-100">
-        <h2 class="f3 fw6 mb3"><a href="/ski-news/" class="link dark-gray dim">Ski Business News</a></h2>
-        <div class="flex items-center justify-between mb3">
-          <p class="f6 gray ma0">Curated industry news, updated daily. Last update: <span id="ski-news-update">Loading...</span></p>
-          <div class="flex items-center">
-            <label class="f6 gray mr2">Sort:</label>
-            <select id="ski-news-sort" class="f6 pa1 br2 ba b--light-gray">
-              <option value="date">Date</option>
-              <option value="category">Category</option>
-            </select>
-            <label class="f6 gray ml3 mr2">Filter:</label>
-            <select id="ski-news-filter" class="f6 pa1 br2 ba b--light-gray">
-              <option value="all">All Categories</option>
-              <option value="resort-operations">Resort Operations</option>
-              <option value="business-investment">Business & Investment</option>
-              <option value="weather-snow">Weather & Snow</option>
-              <option value="transportation">Transportation</option>
-              <option value="winter-sports">Winter Sports</option>
-              <option value="safety-incidents">Safety</option>
-              <option value="canada">Canada</option>
-              <option value="international">International</option>
-              <option value="ski-history">Ski History</option>
-              <option value="hospitality">Hospitality</option>
-            </select>
-          </div>
-        </div>
-
-        <div id="ski-news-container" class="flex-l flex-wrap">
-          <p class="gray">Loading ski business news...</p>
-        </div>
-
-        <div id="ski-news-empty" class="dn tc pa4 gray">
-          <p>No ski business news available yet. Check back soon!</p>
-        </div>
-      </section>
-    </div>
   {{ end }}
 
-  {{/* Load Chart.js and dashboard script */}}
+  {{/* Styles */}}
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
+    /* Section frames */
+    .section-frame {
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .section-content {
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    /* Constrain height on large screens for equal columns */
+    @media screen and (min-width: 60em) {
+      .section-frame {
+        min-height: 600px;
+        max-height: 700px;
+      }
+      .section-content {
+        max-height: 520px;
+      }
+    }
+
+    /* Sparkline containers - compact */
     .sparkline-container {
       position: relative;
       width: 100%;
-      height: 80px;
+      height: 50px;
       overflow: hidden;
     }
-
     .sparkline-small {
       display: block;
       width: 100%;
       height: 100%;
-      max-height: 80px;
+      max-height: 50px;
     }
 
-    /* On large screens where the dashboard is in the right column, use slightly shorter height */
-    @media screen and (min-width: 60em) {
-      .sparkline-container {
-        height: 70px;
-      }
-      .sparkline-small {
-        max-height: 70px;
-      }
+    /* Indicator cards */
+    .indicator-card {
+      transition: box-shadow 0.2s ease;
+    }
+    .indicator-card:hover {
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    .change-indicator { font-size: 0.75em; margin-top: 2px; }
+    /* Change indicators */
+    .change-indicator { font-size: 0.7em; margin-top: 2px; }
     .change-indicator .arrow { font-weight: bold; margin-right: 2px; }
     .change-indicator .yoy { margin-right: 4px; }
     .positive { color: #27ae60; }
     .negative { color: #e74c3c; }
     .neutral { color: #3498db; }
 
-    /* Ski News Cards */
+    /* Ski News Cards - compact for column layout */
     .ski-news-card {
-      width: 100%;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border: 1px solid #e0e0e0;
-      border-radius: 4px;
-      background: #fafafa;
-      transition: box-shadow 0.2s ease;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #eee;
     }
-    .ski-news-card:hover {
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    @media screen and (min-width: 60em) {
-      .ski-news-card {
-        width: calc(50% - 1rem);
-        margin-right: 1rem;
-      }
+    .ski-news-card:last-child {
+      border-bottom: none;
     }
     .ski-news-header {
       display: flex;
       align-items: flex-start;
-      gap: 0.75rem;
+      gap: 0.5rem;
     }
     .ski-news-icon {
-      width: 32px;
-      height: 32px;
+      width: 20px;
+      height: 20px;
       flex-shrink: 0;
     }
     .ski-news-content {
       flex: 1;
+      min-width: 0;
     }
     .ski-news-card h4 {
-      margin: 0 0 0.5rem 0;
-      font-size: 1rem;
-      line-height: 1.3;
+      margin: 0 0 0.25rem 0;
+      font-size: 0.8rem;
+      line-height: 1.25;
     }
     .ski-news-card h4 a {
       color: #333;
@@ -209,24 +249,18 @@
       color: #0066cc;
     }
     .ski-news-meta {
-      font-size: 0.75rem;
+      font-size: 0.65rem;
       color: #666;
-      margin-bottom: 0.5rem;
     }
     .ski-news-category {
       display: inline-block;
-      font-size: 0.65rem;
-      padding: 2px 6px;
-      border-radius: 3px;
-      margin-left: 6px;
+      font-size: 0.55rem;
+      padding: 1px 4px;
+      border-radius: 2px;
       font-weight: 600;
       text-transform: uppercase;
     }
-    .ski-news-desc {
-      font-size: 0.875rem;
-      color: #444;
-      line-height: 1.4;
-    }
+
     /* Category colors */
     .cat-resort-operations { background: #dbeafe; color: #2563eb; }
     .cat-business-investment { background: #d1fae5; color: #059669; }
@@ -238,21 +272,18 @@
     .cat-international { background: #e0e7ff; color: #6366f1; }
     .cat-ski-history { background: #f5f5f4; color: #78716c; }
     .cat-hospitality { background: #ccfbf1; color: #14b8a6; }
-    .ski-news-secondary { font-size: 0.6rem; opacity: 0.8; margin-left: 4px; }
 
-    /* Mobile responsive for sort/filter controls */
+    /* Mobile stacking */
     @media screen and (max-width: 60em) {
-      .flex.items-center.justify-between {
-        flex-direction: column;
-        align-items: flex-start;
+      .section-frame {
+        max-height: none;
       }
-      .flex.items-center.justify-between > div {
-        margin-top: 0.5rem;
-        flex-wrap: wrap;
-        gap: 0.5rem;
+      .section-content {
+        max-height: none;
       }
     }
   </style>
+
   <script>
     // Helper function to format dates for x-axis
     function formatDateLabel(dateStr) {
@@ -308,18 +339,13 @@
       return `<span class="change-indicator"><span class="arrow ${colorClass}">${trend.arrow}</span><span class="yoy ${colorClass}">${changeText} YoY</span></span>`;
     }
 
-    // Helper function to create sparkline charts with visible x-axis
+    // Helper function to create sparkline charts
     function createIndicatorSparkline(canvasId, labels, values, color = '#3498db') {
       const ctx = document.getElementById(canvasId);
-      if (!ctx) {
-        console.error('Canvas not found:', canvasId);
-        return;
-      }
+      if (!ctx) return;
 
-      // Format labels for display
       const formattedLabels = labels.map(formatDateLabel);
 
-      // Destroy existing chart if it exists
       if (ctx.chart) {
         ctx.chart.destroy();
       }
@@ -331,13 +357,11 @@
           datasets: [{
             data: values,
             borderColor: color,
-            borderWidth: 2,
+            borderWidth: 1.5,
             fill: false,
             pointRadius: 0,
-            pointHoverRadius: 3,
+            pointHoverRadius: 2,
             pointHoverBackgroundColor: color,
-            pointHoverBorderColor: '#fff',
-            pointHoverBorderWidth: 2,
             tension: 0.1
           }]
         },
@@ -352,19 +376,12 @@
               intersect: false,
               displayColors: false,
               backgroundColor: 'rgba(0,0,0,0.8)',
-              titleColor: '#fff',
-              bodyColor: '#fff',
-              titleFont: { size: 12, family: 'Arial, sans-serif' },
-              bodyFont: { size: 12, family: 'Arial, sans-serif' },
-              padding: 8,
-              cornerRadius: 4,
+              titleFont: { size: 10 },
+              bodyFont: { size: 10 },
+              padding: 6,
               callbacks: {
-                title: function(context) {
-                  return context[0].label;
-                },
-                label: function(context) {
-                  return context.parsed.y.toFixed(2);
-                }
+                title: function(context) { return context[0].label; },
+                label: function(context) { return context.parsed.y.toFixed(2); }
               }
             }
           },
@@ -372,20 +389,16 @@
             x: {
               display: true,
               ticks: {
-                maxRotation: 45,
-                minRotation: 45,
-                font: { size: 9 },
-                color: '#7f8c8d',
-                maxTicksLimit: 4
+                maxRotation: 0,
+                font: { size: 8 },
+                color: '#999',
+                maxTicksLimit: 3
               },
               grid: { display: false }
             },
             y: { display: false }
           },
-          interaction: {
-            mode: 'index',
-            intersect: false
-          }
+          interaction: { mode: 'index', intersect: false }
         }
       });
     }
@@ -405,9 +418,9 @@
           const ccChange = calcChange(data.consumer_confidence);
           document.getElementById("ind-consumer-confidence").innerHTML =
             Number(cc.value).toFixed(1) + ' ' + formatChangeIndicator(ccChange);
-          const ccLabels = data.consumer_confidence.map(d => d.date);
-          const ccValues = data.consumer_confidence.map(d => d.value);
-          createIndicatorSparkline('ind-sparkline-cc', ccLabels, ccValues, '#3498db');
+          createIndicatorSparkline('ind-sparkline-cc',
+            data.consumer_confidence.map(d => d.date),
+            data.consumer_confidence.map(d => d.value), '#3498db');
         }
 
         // S&P 500
@@ -420,71 +433,73 @@
             document.getElementById("ind-sp500").innerHTML =
               Number(currentClose).toFixed(0) + ' ' + formatChangeIndicator(spChange);
             if (sp.history && sp.history.length > 0) {
-              const spLabels = sp.history.map(d => d.date);
-              const spValues = sp.history.map(d => d.close);
-              createIndicatorSparkline('ind-sparkline-spy', spLabels, spValues, '#27ae60');
+              createIndicatorSparkline('ind-sparkline-spy',
+                sp.history.map(d => d.date),
+                sp.history.map(d => d.close), '#27ae60');
             }
           }
         }
 
-        // News Sentiment (from SF Fed - daily updates)
-        if(data.news_sentiment) {
-          if(Array.isArray(data.news_sentiment) && data.news_sentiment.length > 0) {
-            const latestSentiment = data.news_sentiment[data.news_sentiment.length - 1];
-            const sentimentValue = Number(latestSentiment.value);
-            // Format sentiment with sign and color indicator
-            const sentimentColor = sentimentValue >= 0 ? 'positive' : 'negative';
-            const sentimentSign = sentimentValue >= 0 ? '+' : '';
-            document.getElementById("ind-news-sentiment").innerHTML =
-              `<span class="${sentimentColor}">${sentimentSign}${sentimentValue.toFixed(2)}</span>`;
-            // Use last 60 days for sparkline (daily data has 365 points)
-            const recentSentiment = data.news_sentiment.slice(-60);
-            const sentimentLabels = recentSentiment.map(d => d.date);
-            const sentimentValues = recentSentiment.map(d => d.value);
-            createIndicatorSparkline('ind-sparkline-sentiment', sentimentLabels, sentimentValues, '#9b59b6');
-          }
+        // News Sentiment
+        if(data.news_sentiment && Array.isArray(data.news_sentiment) && data.news_sentiment.length > 0) {
+          const latestSentiment = data.news_sentiment[data.news_sentiment.length - 1];
+          const sentimentValue = Number(latestSentiment.value);
+          const sentimentColor = sentimentValue >= 0 ? 'positive' : 'negative';
+          const sentimentSign = sentimentValue >= 0 ? '+' : '';
+          document.getElementById("ind-news-sentiment").innerHTML =
+            `<span class="${sentimentColor}">${sentimentSign}${sentimentValue.toFixed(2)}</span>`;
+          const recentSentiment = data.news_sentiment.slice(-60);
+          createIndicatorSparkline('ind-sparkline-sentiment',
+            recentSentiment.map(d => d.date),
+            recentSentiment.map(d => d.value), '#9b59b6');
         }
 
-        // Unemployment (invert colors - up is bad)
-        if(data.unemployment) {
-          if(Array.isArray(data.unemployment) && data.unemployment.length > 0) {
-            const latestUnemp = data.unemployment[data.unemployment.length - 1];
-            const unempChange = calcChange(data.unemployment, true);
-            document.getElementById("ind-unemployment").innerHTML =
-              Number(latestUnemp.value).toFixed(1) + '% ' + formatChangeIndicator(unempChange, true);
-            const unempLabels = data.unemployment.map(d => d.date);
-            const unempValues = data.unemployment.map(d => d.value);
-            createIndicatorSparkline('ind-sparkline-unemp', unempLabels, unempValues, '#f39c12');
-          }
+        // Unemployment
+        if(data.unemployment && Array.isArray(data.unemployment) && data.unemployment.length > 0) {
+          const latestUnemp = data.unemployment[data.unemployment.length - 1];
+          const unempChange = calcChange(data.unemployment, true);
+          document.getElementById("ind-unemployment").innerHTML =
+            Number(latestUnemp.value).toFixed(1) + '% ' + formatChangeIndicator(unempChange, true);
+          createIndicatorSparkline('ind-sparkline-unemp',
+            data.unemployment.map(d => d.date),
+            data.unemployment.map(d => d.value), '#f39c12');
+        }
+
+        // Fed Funds Rate
+        if(data.fed_funds_rate && Array.isArray(data.fed_funds_rate) && data.fed_funds_rate.length > 0) {
+          const latestFed = data.fed_funds_rate[data.fed_funds_rate.length - 1];
+          const fedChange = calcChange(data.fed_funds_rate, true);
+          document.getElementById("ind-fed-rate").innerHTML =
+            Number(latestFed.value).toFixed(2) + '% ' + formatChangeIndicator(fedChange);
+          createIndicatorSparkline('ind-sparkline-fed',
+            data.fed_funds_rate.map(d => d.date),
+            data.fed_funds_rate.map(d => d.value), '#e74c3c');
         }
 
       } catch (error) {
         console.error("Failed to load indicators:", error);
-        document.getElementById("indicators-last-update").textContent = "Error loading data";
+        document.getElementById("indicators-last-update").textContent = "Error";
       }
     }
 
-    // Load on page load
     loadIndicatorsDashboard();
 
-    // Category metadata
+    // Category metadata for ski news
     const CATEGORY_META = {
-      'resort-operations': { name: 'Resort Operations', icon: '/images/ski-news-icons/resort-operations.svg' },
-      'business-investment': { name: 'Business & Investment', icon: '/images/ski-news-icons/business-investment.svg' },
-      'weather-snow': { name: 'Weather & Snow', icon: '/images/ski-news-icons/weather-snow.svg' },
-      'transportation': { name: 'Transportation', icon: '/images/ski-news-icons/transportation.svg' },
-      'winter-sports': { name: 'Winter Sports', icon: '/images/ski-news-icons/winter-sports.svg' },
-      'safety-incidents': { name: 'Safety & Incidents', icon: '/images/ski-news-icons/safety-incidents.svg' },
+      'resort-operations': { name: 'Resort Ops', icon: '/images/ski-news-icons/resort-operations.svg' },
+      'business-investment': { name: 'Business', icon: '/images/ski-news-icons/business-investment.svg' },
+      'weather-snow': { name: 'Weather', icon: '/images/ski-news-icons/weather-snow.svg' },
+      'transportation': { name: 'Transport', icon: '/images/ski-news-icons/transportation.svg' },
+      'winter-sports': { name: 'Sports', icon: '/images/ski-news-icons/winter-sports.svg' },
+      'safety-incidents': { name: 'Safety', icon: '/images/ski-news-icons/safety-incidents.svg' },
       'canada': { name: 'Canada', icon: '/images/ski-news-icons/canada.svg' },
-      'international': { name: 'International', icon: '/images/ski-news-icons/international.svg' },
-      'ski-history': { name: 'Ski History', icon: '/images/ski-news-icons/ski-history.svg' },
+      'international': { name: 'Intl', icon: '/images/ski-news-icons/international.svg' },
+      'ski-history': { name: 'History', icon: '/images/ski-news-icons/ski-history.svg' },
       'hospitality': { name: 'Hospitality', icon: '/images/ski-news-icons/hospitality.svg' }
     };
 
-    // Global state for ski news
     let skiNewsData = null;
 
-    // Load Ski Business News
     async function loadSkiNews() {
       const container = document.getElementById('ski-news-container');
       const emptyState = document.getElementById('ski-news-empty');
@@ -509,65 +524,41 @@
 
       } catch (error) {
         console.error('Failed to load ski news:', error);
-        container.innerHTML = '<p class="gray">Unable to load ski business news.</p>';
+        container.innerHTML = '<p class="f7 gray">Unable to load news.</p>';
       }
     }
 
     function renderSkiNews() {
       const container = document.getElementById('ski-news-container');
-      const sortBy = document.getElementById('ski-news-sort').value;
       const filterBy = document.getElementById('ski-news-filter').value;
 
       if (!skiNewsData || !skiNewsData.articles) return;
 
-      // Filter articles
       let articles = skiNewsData.articles;
       if (filterBy !== 'all') {
         articles = articles.filter(a => a.category === filterBy);
       }
 
-      // Sort articles
-      if (sortBy === 'category') {
-        articles = [...articles].sort((a, b) => {
-          const catA = a.category || 'resort-operations';
-          const catB = b.category || 'resort-operations';
-          if (catA !== catB) return catA.localeCompare(catB);
+      // Sort by date, then score
+      articles = [...articles].sort((a, b) => {
+        const dateA = a.pub_date ? new Date(a.pub_date).toDateString() : '';
+        const dateB = b.pub_date ? new Date(b.pub_date).toDateString() : '';
+        if (dateA !== dateB) {
           return new Date(b.pub_date || 0) - new Date(a.pub_date || 0);
-        });
-      } else {
-        articles = [...articles].sort((a, b) => {
-          const dateA = a.pub_date ? new Date(a.pub_date).toDateString() : '';
-          const dateB = b.pub_date ? new Date(b.pub_date).toDateString() : '';
-          if (dateA !== dateB) {
-            return new Date(b.pub_date || 0) - new Date(a.pub_date || 0);
-          }
-          return (b.score || 0) - (a.score || 0);
-        });
-      }
+        }
+        return (b.score || 0) - (a.score || 0);
+      });
 
-      // Display up to 6 articles on homepage
-      const displayArticles = articles.slice(0, 6);
+      // Show 8 articles in compact view
+      const displayArticles = articles.slice(0, 8);
       let html = '';
 
       displayArticles.forEach(article => {
         const pubDate = article.pub_date ?
-          new Date(article.pub_date).toLocaleDateString('en-US', {
-            month: 'short', day: 'numeric', year: 'numeric'
-          }) : '';
-
-        const desc = article.description ?
-          article.description.substring(0, 150) + (article.description.length > 150 ? '...' : '') : '';
+          new Date(article.pub_date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : '';
 
         const category = article.category || 'resort-operations';
         const catMeta = CATEGORY_META[category] || CATEGORY_META['resort-operations'];
-
-        // Build secondary categories display
-        let secondaryHtml = '';
-        if (article.secondary_categories && article.secondary_categories.length > 0) {
-          const secondaryNames = article.secondary_categories
-            .map(c => CATEGORY_META[c]?.name || c);
-          secondaryHtml = `<span class="ski-news-secondary">+${secondaryNames.join(', ')}</span>`;
-        }
 
         html += `
           <div class="ski-news-card">
@@ -577,9 +568,8 @@
                 <h4><a href="${article.url}" target="_blank" rel="noopener">${article.title || 'Untitled'}</a></h4>
                 <div class="ski-news-meta">
                   ${article.source || ''} ${pubDate ? '&bull; ' + pubDate : ''}
-                  <span class="ski-news-category cat-${category}">${catMeta.name}</span>${secondaryHtml}
+                  <span class="ski-news-category cat-${category}">${catMeta.name}</span>
                 </div>
-                ${desc ? `<div class="ski-news-desc">${desc}</div>` : ''}
               </div>
             </div>
           </div>
@@ -587,16 +577,13 @@
       });
 
       if (displayArticles.length === 0) {
-        html = '<p class="gray w-100">No articles match the selected filter.</p>';
+        html = '<p class="f7 gray">No articles match filter.</p>';
       }
 
       container.innerHTML = html;
     }
 
-    // Event listeners for sort and filter
-    document.getElementById('ski-news-sort').addEventListener('change', renderSkiNews);
     document.getElementById('ski-news-filter').addEventListener('change', renderSkiNews);
-
     loadSkiNews();
   </script>
 {{ end }}
