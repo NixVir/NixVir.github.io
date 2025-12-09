@@ -182,6 +182,13 @@
                 <canvas id="chart-treasury"></canvas>
             </div>
         </div>
+        <div class="metric-card">
+            <h4><a href="https://www.investopedia.com/terms/v/vix.asp" target="_blank" rel="noopener" title="CBOE Volatility Index - Market Fear Gauge">VIX Volatility Index</a></h4>
+            <div id="vix">Loading...</div>
+            <div class="chart-container">
+                <canvas id="chart-vix"></canvas>
+            </div>
+        </div>
     </div>
 
     <!-- Currency Exchange Rates Section -->
@@ -596,6 +603,25 @@
                     data.treasury_10y.map(d => d.value),
                     '#c0392b',
                     { suffix: '%', decimals: 2 }
+                );
+            }
+
+            // VIX Volatility Index (daily - show YoY + 30-day momentum)
+            if(data.vix && Array.isArray(data.vix) && data.vix.length > 0) {
+                const latestVix = data.vix[data.vix.length - 1];
+                const vixChange = calcChange(data.vix, true);
+                const vixMomentum = calc30DayMomentum(data.vix, true);
+                // VIX color: green when low (calm), red when high (fear)
+                const vixValue = Number(latestVix.value);
+                const vixColor = vixValue < 20 ? 'positive' : vixValue < 30 ? 'neutral' : 'negative';
+                document.getElementById("vix").innerHTML =
+                    `<div class="value ${vixColor}">${vixValue.toFixed(2)}</div>
+                     <div class="period">${formatShortDate(latestVix.date)} (CBOE Fear Gauge)</div>${formatChangeIndicator(vixChange, vixMomentum, true)}`;
+                createChart('chart-vix',
+                    data.vix.map(d => formatShortDate(d.date)),
+                    data.vix.map(d => d.value),
+                    '#9b59b6',
+                    { decimals: 2 }
                 );
             }
 

@@ -208,6 +208,13 @@ def update_dashboard():
         dashboard_data['markets'] = markets
         print_safe(f"  OK S&P 500: {sp500_data[-1]['value']:.2f} ({len(sp500_data)} data points)")
 
+    # 2b. VIX Volatility Index (Daily - fetch ~1 year of trading days)
+    print_safe("\nFetching VIX Volatility Index...")
+    vix_data = fetch_fred_data('VIXCLS', limit=260)
+    if vix_data:
+        dashboard_data['vix'] = vix_data
+        print_safe(f"  OK VIX: {vix_data[-1]['value']:.2f} ({len(vix_data)} data points)")
+
     # 3. Fed Funds Rate (Daily - fetch ~1 year of trading days)
     print_safe("\nFetching Fed Funds Rate...")
     fed_rate = fetch_fred_data('DFF', limit=260)
