@@ -92,6 +92,7 @@
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
 </head>
 <body>
     <h1>Economic & Market Dashboard</h1>
@@ -228,6 +229,92 @@
     // Store chart instances for cleanup
     const charts = {};
 
+    // NBER Recession dates (recent recessions within data range)
+    // Format: [start_date, end_date] - we only need recessions that might appear in ~1 year of data
+    const NBER_RECESSIONS = [
+        // COVID-19 recession
+        ['2020-02-01', '2020-04-30'],
+        // Great Recession
+        ['2007-12-01', '2009-06-30'],
+        // 2001 Recession
+        ['2001-03-01', '2001-11-30'],
+        // 1990-1991 Recession
+        ['1990-07-01', '1991-03-31'],
+        // 1981-1982 Recession
+        ['1981-07-01', '1982-11-30'],
+        // 1980 Recession
+        ['1980-01-01', '1980-07-31']
+    ];
+
+    // Helper function to get recession annotations for a date range
+    function getRecessionAnnotations(labels) {
+        if (!labels || labels.length === 0) return {};
+
+        // Parse the first and last label dates
+        // Labels can be in formats like "Jan '24" or "Jan 5"
+        const parseDate = (label) => {
+            // Try to parse various date formats
+            const fullDate = new Date(label);
+            if (!isNaN(fullDate.getTime())) return fullDate;
+
+            // Handle "Mon 'YY" format
+            const match = label.match(/([A-Za-z]+)\s+'?(\d{2})/);
+            if (match) {
+                const months = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+                const monthIdx = months.indexOf(match[1].toLowerCase());
+                if (monthIdx !== -1) {
+                    const year = 2000 + parseInt(match[2]);
+                    return new Date(year, monthIdx, 15);
+                }
+            }
+            return null;
+        };
+
+        const firstDate = parseDate(labels[0]);
+        const lastDate = parseDate(labels[labels.length - 1]);
+
+        if (!firstDate || !lastDate) return {};
+
+        const annotations = {};
+
+        NBER_RECESSIONS.forEach((recession, idx) => {
+            const recStart = new Date(recession[0]);
+            const recEnd = new Date(recession[1]);
+
+            // Check if recession overlaps with our data range
+            if (recEnd >= firstDate && recStart <= lastDate) {
+                // Find the label indices that correspond to the recession period
+                let startIdx = 0;
+                let endIdx = labels.length - 1;
+
+                labels.forEach((label, i) => {
+                    const labelDate = parseDate(label);
+                    if (labelDate) {
+                        if (labelDate >= recStart && startIdx === 0) {
+                            startIdx = Math.max(0, i - 1);
+                        }
+                        if (labelDate <= recEnd) {
+                            endIdx = i;
+                        }
+                    }
+                });
+
+                // Only add if there's meaningful overlap
+                if (endIdx > startIdx) {
+                    annotations[`recession${idx}`] = {
+                        type: 'box',
+                        xMin: labels[startIdx],
+                        xMax: labels[Math.min(endIdx + 1, labels.length - 1)],
+                        backgroundColor: 'rgba(200, 200, 200, 0.3)',
+                        borderWidth: 0
+                    };
+                }
+            }
+        });
+
+        return annotations;
+    }
+
     // Helper function to format date for display
     function formatDate(dateStr) {
         const date = new Date(dateStr);
@@ -328,7 +415,7 @@
         return html;
     }
 
-    // Helper function to create charts with visible x-axis
+    // Helper function to create charts with visible x-axis and optional recession shading
     function createChart(canvasId, labels, values, color = '#3498db', options = {}) {
         const ctx = document.getElementById(canvasId);
         if (!ctx) return;
@@ -337,6 +424,9 @@
         if (charts[canvasId]) {
             charts[canvasId].destroy();
         }
+
+        // Get recession annotations if this is an economic indicator chart
+        const recessionAnnotations = options.showRecessions !== false ? getRecessionAnnotations(labels) : {};
 
         const defaultOptions = {
             responsive: true,
@@ -360,6 +450,9 @@
                             }) + suffix;
                         }
                     }
+                },
+                annotation: {
+                    annotations: recessionAnnotations
                 }
             },
             scales: {
@@ -418,6 +511,191 @@
             },
             options: defaultOptions
         });
+    }
+
+    // Special chart for News Sentiment with fixed y-axis and colored bands
+    function createSentimentChart(canvasId, labels, values) {
+        const ctx = document.getElementById(canvasId);
+        if (!ctx) return;
+
+        // Destroy existing chart if it exists
+        if (charts[canvasId]) {
+            charts[canvasId].destroy();
+        }
+
+        // Get recession annotations
+        const recessionAnnotations = getRecessionAnnotations(labels);
+
+        // Add sentiment zone annotations (horizontal bands)
+        const sentimentAnnotations = {
+            ...recessionAnnotations,
+            optimisticZone: {
+                type: 'box',
+                yMin: 0.05,
+                yMax: 0.4,
+                backgroundColor: 'rgba(39, 174, 96, 0.15)',
+                borderWidth: 0,
+                label: {
+                    display: false
+                }
+            },
+            neutralZone: {
+                type: 'box',
+                yMin: -0.05,
+                yMax: 0.05,
+                backgroundColor: 'rgba(200, 200, 200, 0.2)',
+                borderWidth: 0,
+                label: {
+                    display: false
+                }
+            },
+            pessimisticZone: {
+                type: 'box',
+                yMin: -0.4,
+                yMax: -0.05,
+                backgroundColor: 'rgba(231, 76, 60, 0.15)',
+                borderWidth: 0,
+                label: {
+                    display: false
+                }
+            },
+            zeroLine: {
+                type: 'line',
+                yMin: 0,
+                yMax: 0,
+                borderColor: 'rgba(0, 0, 0, 0.3)',
+                borderWidth: 1,
+                borderDash: [5, 5]
+            }
+        };
+
+        const chartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
+                    displayColors: false,
+                    callbacks: {
+                        title: function(context) {
+                            return context[0].label;
+                        },
+                        label: function(context) {
+                            const val = context.parsed.y;
+                            const sign = val >= 0 ? '+' : '';
+                            let sentiment = 'Neutral';
+                            if (val > 0.05) sentiment = 'Optimistic';
+                            else if (val < -0.05) sentiment = 'Pessimistic';
+                            return `${sign}${val.toFixed(3)} (${sentiment})`;
+                        }
+                    }
+                },
+                annotation: {
+                    annotations: sentimentAnnotations
+                }
+            },
+            scales: {
+                x: {
+                    display: true,
+                    ticks: {
+                        maxRotation: 45,
+                        minRotation: 45,
+                        font: { size: 10 },
+                        color: '#7f8c8d',
+                        maxTicksLimit: 6
+                    },
+                    grid: {
+                        display: false
+                    }
+                },
+                y: {
+                    display: true,
+                    min: -0.25,
+                    max: 0.15,
+                    ticks: {
+                        font: { size: 10 },
+                        color: '#7f8c8d',
+                        callback: function(value) {
+                            const sign = value >= 0 ? '+' : '';
+                            return sign + value.toFixed(2);
+                        }
+                    },
+                    grid: {
+                        color: '#ecf0f1'
+                    }
+                }
+            },
+            interaction: {
+                mode: 'index',
+                intersect: false
+            }
+        };
+
+        charts[canvasId] = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: values,
+                    borderColor: '#9b59b6',
+                    backgroundColor: 'rgba(155, 89, 182, 0.2)',
+                    borderWidth: 2,
+                    fill: true,
+                    pointRadius: 1,
+                    pointHoverRadius: 5,
+                    tension: 0.3
+                }]
+            },
+            options: chartOptions
+        });
+    }
+
+    // Calculate week-over-week change for sentiment
+    function calcWeeklyChange(data) {
+        if (!data || data.length < 8) return null;
+        const latest = data[data.length - 1].value;
+        const weekAgo = data[data.length - 8].value; // ~7 days ago
+        return {
+            current: latest,
+            previous: weekAgo,
+            change: latest - weekAgo
+        };
+    }
+
+    // Format sentiment change text with colors
+    function formatSentimentChange(weeklyData) {
+        if (!weeklyData) return '';
+
+        const change = weeklyData.change;
+        const current = weeklyData.current;
+        const sign = change >= 0 ? '+' : '';
+
+        // Determine color based on direction of change
+        let colorClass = '';
+        let trendText = '';
+
+        if (change > 0.005) {
+            colorClass = 'positive';
+            trendText = 'more optimistic';
+        } else if (change < -0.005) {
+            colorClass = 'negative';
+            trendText = 'more pessimistic';
+        } else {
+            colorClass = '';
+            trendText = 'stable';
+        }
+
+        // Determine current zone
+        let zoneText = 'neutral';
+        if (current > 0.05) zoneText = 'optimistic';
+        else if (current < -0.05) zoneText = 'pessimistic';
+
+        return `<div class="change-indicator">
+            <span class="${colorClass}">${sign}${change.toFixed(3)} vs last week</span>
+            <span class="momentum ${colorClass}">(${trendText}, currently ${zoneText})</span>
+        </div>`;
     }
 
     async function loadDashboard() {
@@ -575,18 +853,23 @@
             if(data.news_sentiment && Array.isArray(data.news_sentiment) && data.news_sentiment.length > 0) {
                 const latestSentiment = data.news_sentiment[data.news_sentiment.length - 1];
                 const sentimentValue = Number(latestSentiment.value);
-                const sentimentMomentum = calc30DayMomentum(data.news_sentiment);
-                const sentimentColor = sentimentValue >= 0 ? 'positive' : 'negative';
+                const weeklyChange = calcWeeklyChange(data.news_sentiment);
+
+                // Color based on current zone
+                let sentimentColor = 'neutral';
+                if (sentimentValue > 0.05) sentimentColor = 'positive';
+                else if (sentimentValue < -0.05) sentimentColor = 'negative';
+
                 const sentimentSign = sentimentValue >= 0 ? '+' : '';
                 document.getElementById("news-sentiment").innerHTML =
                     `<div class="value ${sentimentColor}">${sentimentSign}${sentimentValue.toFixed(3)}</div>
                      <div class="period">${formatShortDate(latestSentiment.date)} (SF Fed Daily News Sentiment)</div>
-                     ${sentimentMomentum ? formatChangeIndicator({pctChange: null, change: sentimentMomentum.change || sentimentMomentum.pctChange, isPointChange: true}) : ''}`;
-                createChart('chart-sentiment',
+                     ${formatSentimentChange(weeklyChange)}`;
+
+                // Use the special sentiment chart with colored bands
+                createSentimentChart('chart-sentiment',
                     data.news_sentiment.map(d => formatShortDate(d.date)),
-                    data.news_sentiment.map(d => d.value),
-                    '#9b59b6',
-                    { decimals: 3 }
+                    data.news_sentiment.map(d => d.value)
                 );
             }
 
