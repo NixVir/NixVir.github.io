@@ -193,7 +193,7 @@
     </div>
 
     <!-- Currency Exchange Rates Section -->
-    <h2 class="section-title">Currency Exchange Rates (USD Strength)</h2>
+    <h2 class="section-title">Currency Exchange Rates (Up = Stronger USD)</h2>
     <div class="dashboard-grid">
         <div class="metric-card">
             <h4><a href="https://fred.stlouisfed.org/series/DEXCAUS" target="_blank" rel="noopener" title="Canada / U.S. Foreign Exchange Rate">USD / Canadian Dollar</a></h4>
@@ -210,6 +210,13 @@
             </div>
         </div>
         <div class="metric-card">
+            <h4><a href="https://fred.stlouisfed.org/series/DEXUSUK" target="_blank" rel="noopener" title="U.S. / British Pound Foreign Exchange Rate">USD / British Pound</a></h4>
+            <div id="usd-gbp">Loading...</div>
+            <div class="chart-container">
+                <canvas id="chart-gbp"></canvas>
+            </div>
+        </div>
+        <div class="metric-card">
             <h4><a href="https://fred.stlouisfed.org/series/DEXJPUS" target="_blank" rel="noopener" title="Japan / U.S. Foreign Exchange Rate">USD / Japanese Yen</a></h4>
             <div id="usd-jpy">Loading...</div>
             <div class="chart-container">
@@ -217,10 +224,64 @@
             </div>
         </div>
         <div class="metric-card">
+            <h4><a href="https://fred.stlouisfed.org/series/DEXCHUS" target="_blank" rel="noopener" title="China / U.S. Foreign Exchange Rate">USD / Chinese Yuan</a></h4>
+            <div id="usd-cny">Loading...</div>
+            <div class="chart-container">
+                <canvas id="chart-cny"></canvas>
+            </div>
+        </div>
+        <div class="metric-card">
+            <h4><a href="https://fred.stlouisfed.org/series/DEXINUS" target="_blank" rel="noopener" title="India / U.S. Foreign Exchange Rate">USD / Indian Rupee</a></h4>
+            <div id="usd-inr">Loading...</div>
+            <div class="chart-container">
+                <canvas id="chart-inr"></canvas>
+            </div>
+        </div>
+        <div class="metric-card">
+            <h4><a href="https://fred.stlouisfed.org/series/DEXUSAL" target="_blank" rel="noopener" title="Australia / U.S. Foreign Exchange Rate">USD / Australian Dollar</a></h4>
+            <div id="usd-aud">Loading...</div>
+            <div class="chart-container">
+                <canvas id="chart-aud"></canvas>
+            </div>
+        </div>
+        <div class="metric-card">
             <h4><a href="https://fred.stlouisfed.org/series/DEXMXUS" target="_blank" rel="noopener" title="Mexico / U.S. Foreign Exchange Rate">USD / Mexican Peso</a></h4>
             <div id="usd-mxn">Loading...</div>
             <div class="chart-container">
                 <canvas id="chart-mxn"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Commodities Section -->
+    <h2 class="section-title">Commodities</h2>
+    <div class="dashboard-grid">
+        <div class="metric-card">
+            <h4><a href="https://fred.stlouisfed.org/series/GOLDAMGBD228NLBM" target="_blank" rel="noopener" title="Gold Fixing Price in London Bullion Market">Gold (USD/oz)</a></h4>
+            <div id="gold">Loading...</div>
+            <div class="chart-container">
+                <canvas id="chart-gold"></canvas>
+            </div>
+        </div>
+        <div class="metric-card">
+            <h4><a href="https://fred.stlouisfed.org/series/DCOILWTICO" target="_blank" rel="noopener" title="Crude Oil Prices: West Texas Intermediate">Crude Oil WTI (USD/bbl)</a></h4>
+            <div id="crude-oil">Loading...</div>
+            <div class="chart-container">
+                <canvas id="chart-oil"></canvas>
+            </div>
+        </div>
+        <div class="metric-card">
+            <h4><a href="https://fred.stlouisfed.org/series/DHHNGSP" target="_blank" rel="noopener" title="Henry Hub Natural Gas Spot Price">Natural Gas (USD/MMBtu)</a></h4>
+            <div id="natural-gas">Loading...</div>
+            <div class="chart-container">
+                <canvas id="chart-natgas"></canvas>
+            </div>
+        </div>
+        <div class="metric-card">
+            <h4><a href="https://fred.stlouisfed.org/series/PCOPPUSDM" target="_blank" rel="noopener" title="Global Price of Copper">Copper (USD/lb)</a></h4>
+            <div id="copper">Loading...</div>
+            <div class="chart-container">
+                <canvas id="chart-copper"></canvas>
             </div>
         </div>
     </div>
@@ -924,18 +985,34 @@
                 );
             }
 
-            // USD/EUR (daily - show YoY + 30-day momentum)
+            // USD/EUR (daily - show YoY + 30-day momentum) - inverted so up = stronger USD
             if(data.usd_eur && Array.isArray(data.usd_eur) && data.usd_eur.length > 0) {
                 const latest = data.usd_eur[data.usd_eur.length - 1];
                 const eurChange = calcChange(data.usd_eur);
                 const eurMomentum = calc30DayMomentum(data.usd_eur);
                 document.getElementById("usd-eur").innerHTML =
                     `<div class="value">${Number(latest.value).toFixed(4)}</div>
-                     <div class="period">${formatShortDate(latest.date)} (USD per EUR)</div>${formatChangeIndicator(eurChange, eurMomentum)}`;
+                     <div class="period">${formatShortDate(latest.date)} (EUR per USD)</div>${formatChangeIndicator(eurChange, eurMomentum)}`;
                 createChart('chart-eur',
                     data.usd_eur.map(d => formatShortDate(d.date)),
                     data.usd_eur.map(d => d.value),
                     '#3498db',
+                    { decimals: 4 }
+                );
+            }
+
+            // USD/GBP (daily - inverted so up = stronger USD)
+            if(data.usd_gbp && Array.isArray(data.usd_gbp) && data.usd_gbp.length > 0) {
+                const latest = data.usd_gbp[data.usd_gbp.length - 1];
+                const gbpChange = calcChange(data.usd_gbp);
+                const gbpMomentum = calc30DayMomentum(data.usd_gbp);
+                document.getElementById("usd-gbp").innerHTML =
+                    `<div class="value">${Number(latest.value).toFixed(4)}</div>
+                     <div class="period">${formatShortDate(latest.date)} (GBP per USD)</div>${formatChangeIndicator(gbpChange, gbpMomentum)}`;
+                createChart('chart-gbp',
+                    data.usd_gbp.map(d => formatShortDate(d.date)),
+                    data.usd_gbp.map(d => d.value),
+                    '#2980b9',
                     { decimals: 4 }
                 );
             }
@@ -969,6 +1046,119 @@
                     data.usd_mxn.map(d => d.value),
                     '#27ae60',
                     { decimals: 2 }
+                );
+            }
+
+            // USD/CNY (daily - Chinese Yuan per USD)
+            if(data.usd_cny && Array.isArray(data.usd_cny) && data.usd_cny.length > 0) {
+                const latest = data.usd_cny[data.usd_cny.length - 1];
+                const cnyChange = calcChange(data.usd_cny);
+                const cnyMomentum = calc30DayMomentum(data.usd_cny);
+                document.getElementById("usd-cny").innerHTML =
+                    `<div class="value">${Number(latest.value).toFixed(4)}</div>
+                     <div class="period">${formatShortDate(latest.date)} (CNY per USD)</div>${formatChangeIndicator(cnyChange, cnyMomentum)}`;
+                createChart('chart-cny',
+                    data.usd_cny.map(d => formatShortDate(d.date)),
+                    data.usd_cny.map(d => d.value),
+                    '#c0392b',
+                    { decimals: 4 }
+                );
+            }
+
+            // USD/INR (daily - Indian Rupees per USD)
+            if(data.usd_inr && Array.isArray(data.usd_inr) && data.usd_inr.length > 0) {
+                const latest = data.usd_inr[data.usd_inr.length - 1];
+                const inrChange = calcChange(data.usd_inr);
+                const inrMomentum = calc30DayMomentum(data.usd_inr);
+                document.getElementById("usd-inr").innerHTML =
+                    `<div class="value">${Number(latest.value).toFixed(2)}</div>
+                     <div class="period">${formatShortDate(latest.date)} (INR per USD)</div>${formatChangeIndicator(inrChange, inrMomentum)}`;
+                createChart('chart-inr',
+                    data.usd_inr.map(d => formatShortDate(d.date)),
+                    data.usd_inr.map(d => d.value),
+                    '#d35400',
+                    { decimals: 2 }
+                );
+            }
+
+            // USD/AUD (daily - inverted so up = stronger USD)
+            if(data.usd_aud && Array.isArray(data.usd_aud) && data.usd_aud.length > 0) {
+                const latest = data.usd_aud[data.usd_aud.length - 1];
+                const audChange = calcChange(data.usd_aud);
+                const audMomentum = calc30DayMomentum(data.usd_aud);
+                document.getElementById("usd-aud").innerHTML =
+                    `<div class="value">${Number(latest.value).toFixed(4)}</div>
+                     <div class="period">${formatShortDate(latest.date)} (AUD per USD)</div>${formatChangeIndicator(audChange, audMomentum)}`;
+                createChart('chart-aud',
+                    data.usd_aud.map(d => formatShortDate(d.date)),
+                    data.usd_aud.map(d => d.value),
+                    '#16a085',
+                    { decimals: 4 }
+                );
+            }
+
+            // COMMODITIES
+
+            // Gold (USD per troy ounce)
+            if(data.gold && Array.isArray(data.gold) && data.gold.length > 0) {
+                const latest = data.gold[data.gold.length - 1];
+                const goldChange = calcChange(data.gold);
+                const goldMomentum = calc30DayMomentum(data.gold);
+                document.getElementById("gold").innerHTML =
+                    `<div class="value">$${Number(latest.value).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div>
+                     <div class="period">${formatShortDate(latest.date)}</div>${formatChangeIndicator(goldChange, goldMomentum)}`;
+                createChart('chart-gold',
+                    data.gold.map(d => formatShortDate(d.date)),
+                    data.gold.map(d => d.value),
+                    '#f1c40f',
+                    { prefix: '$', decimals: 2 }
+                );
+            }
+
+            // Crude Oil WTI (USD per barrel)
+            if(data.crude_oil && Array.isArray(data.crude_oil) && data.crude_oil.length > 0) {
+                const latest = data.crude_oil[data.crude_oil.length - 1];
+                const oilChange = calcChange(data.crude_oil);
+                const oilMomentum = calc30DayMomentum(data.crude_oil);
+                document.getElementById("crude-oil").innerHTML =
+                    `<div class="value">$${Number(latest.value).toFixed(2)}</div>
+                     <div class="period">${formatShortDate(latest.date)}</div>${formatChangeIndicator(oilChange, oilMomentum)}`;
+                createChart('chart-oil',
+                    data.crude_oil.map(d => formatShortDate(d.date)),
+                    data.crude_oil.map(d => d.value),
+                    '#2c3e50',
+                    { prefix: '$', decimals: 2 }
+                );
+            }
+
+            // Natural Gas (USD per MMBtu)
+            if(data.natural_gas && Array.isArray(data.natural_gas) && data.natural_gas.length > 0) {
+                const latest = data.natural_gas[data.natural_gas.length - 1];
+                const natgasChange = calcChange(data.natural_gas);
+                const natgasMomentum = calc30DayMomentum(data.natural_gas);
+                document.getElementById("natural-gas").innerHTML =
+                    `<div class="value">$${Number(latest.value).toFixed(2)}</div>
+                     <div class="period">${formatShortDate(latest.date)}</div>${formatChangeIndicator(natgasChange, natgasMomentum)}`;
+                createChart('chart-natgas',
+                    data.natural_gas.map(d => formatShortDate(d.date)),
+                    data.natural_gas.map(d => d.value),
+                    '#3498db',
+                    { prefix: '$', decimals: 2 }
+                );
+            }
+
+            // Copper (USD per pound - monthly)
+            if(data.copper && Array.isArray(data.copper) && data.copper.length > 0) {
+                const latest = data.copper[data.copper.length - 1];
+                const copperChange = calcChange(data.copper);
+                document.getElementById("copper").innerHTML =
+                    `<div class="value">$${Number(latest.value).toFixed(2)}</div>
+                     <div class="period">${formatDate(latest.date)} (monthly)</div>${formatChangeIndicator(copperChange)}`;
+                createChart('chart-copper',
+                    data.copper.map(d => formatDate(d.date)),
+                    data.copper.map(d => d.value),
+                    '#e67e22',
+                    { prefix: '$', decimals: 2 }
                 );
             }
 

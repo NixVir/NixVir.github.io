@@ -29,7 +29,7 @@
                 <div class="data-insight-item mb3 pb2 bb b--near-white">
                   {{ if .Params.featured_image }}
                     <a href="{{ .RelPermalink }}" class="db mb2">
-                      <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="w-100 br2" style="max-height: 100px; object-fit: cover;">
+                      <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="w-100 br2" style="max-height: 150px; object-fit: contain; background: #f8f8f8;">
                     </a>
                   {{ end }}
                   <h4 class="f6 fw6 mt0 mb1 lh-title">

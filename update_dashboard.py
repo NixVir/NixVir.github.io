@@ -272,33 +272,109 @@ def update_dashboard():
         print_safe(f"  OK Latest: {treasury_data[-1]['value']}% ({len(treasury_data)} data points)")
 
     # 11. Currency Exchange Rates (Daily - fetch ~1 year of trading days)
+    # All rates stored as "units of foreign currency per 1 USD" so UP = stronger USD
     print_safe("\nFetching Currency Exchange Rates...")
 
-    # USD/CAD
+    # USD/CAD (Canadian Dollars per USD) - DEXCAUS is CAD per USD, so up = stronger USD
     usd_cad = fetch_fred_data('DEXCAUS', limit=260)
     if usd_cad:
         dashboard_data['usd_cad'] = usd_cad
         print_safe(f"  OK USD/CAD: {usd_cad[-1]['value']} ({len(usd_cad)} data points)")
 
-    # USD/EUR
-    usd_eur = fetch_fred_data('DEXUSEU', limit=260)
-    if usd_eur:
+    # EUR/USD - DEXUSEU is USD per EUR, need to INVERT so up = stronger USD
+    eur_usd_raw = fetch_fred_data('DEXUSEU', limit=260)
+    if eur_usd_raw:
+        # Invert: store as EUR per USD (1/rate)
+        usd_eur = [{
+            'date': d['date'],
+            'value': round(1.0 / d['value'], 4) if d['value'] != 0 else 0
+        } for d in eur_usd_raw]
         dashboard_data['usd_eur'] = usd_eur
-        print_safe(f"  OK USD/EUR: {usd_eur[-1]['value']} ({len(usd_eur)} data points)")
+        print_safe(f"  OK USD/EUR: {usd_eur[-1]['value']} ({len(usd_eur)} data points) [inverted]")
 
-    # USD/JPY
+    # USD/JPY (Yen per USD) - DEXJPUS is JPY per USD, so up = stronger USD
     usd_jpy = fetch_fred_data('DEXJPUS', limit=260)
     if usd_jpy:
         dashboard_data['usd_jpy'] = usd_jpy
         print_safe(f"  OK USD/JPY: {usd_jpy[-1]['value']} ({len(usd_jpy)} data points)")
 
-    # USD/MXN
+    # USD/MXN (Pesos per USD) - DEXMXUS is MXN per USD, so up = stronger USD
     usd_mxn = fetch_fred_data('DEXMXUS', limit=260)
     if usd_mxn:
         dashboard_data['usd_mxn'] = usd_mxn
         print_safe(f"  OK USD/MXN: {usd_mxn[-1]['value']} ({len(usd_mxn)} data points)")
 
-    # 12. Daily News Sentiment Index (from SF Fed - updates weekly)
+    # USD/GBP - DEXUSUK is USD per GBP, need to INVERT so up = stronger USD
+    gbp_usd_raw = fetch_fred_data('DEXUSUK', limit=260)
+    if gbp_usd_raw:
+        # Invert: store as GBP per USD (1/rate)
+        usd_gbp = [{
+            'date': d['date'],
+            'value': round(1.0 / d['value'], 4) if d['value'] != 0 else 0
+        } for d in gbp_usd_raw]
+        dashboard_data['usd_gbp'] = usd_gbp
+        print_safe(f"  OK USD/GBP: {usd_gbp[-1]['value']} ({len(usd_gbp)} data points) [inverted]")
+
+    # USD/AUD - DEXUSAL is USD per AUD, need to INVERT so up = stronger USD
+    aud_usd_raw = fetch_fred_data('DEXUSAL', limit=260)
+    if aud_usd_raw:
+        # Invert: store as AUD per USD (1/rate)
+        usd_aud = [{
+            'date': d['date'],
+            'value': round(1.0 / d['value'], 4) if d['value'] != 0 else 0
+        } for d in aud_usd_raw]
+        dashboard_data['usd_aud'] = usd_aud
+        print_safe(f"  OK USD/AUD: {usd_aud[-1]['value']} ({len(usd_aud)} data points) [inverted]")
+
+    # USD/CNY (Yuan per USD) - DEXCHUS is CNY per USD, so up = stronger USD
+    usd_cny = fetch_fred_data('DEXCHUS', limit=260)
+    if usd_cny:
+        dashboard_data['usd_cny'] = usd_cny
+        print_safe(f"  OK USD/CNY: {usd_cny[-1]['value']} ({len(usd_cny)} data points)")
+
+    # USD/INR (Rupees per USD) - DEXINUS is INR per USD, so up = stronger USD
+    usd_inr = fetch_fred_data('DEXINUS', limit=260)
+    if usd_inr:
+        dashboard_data['usd_inr'] = usd_inr
+        print_safe(f"  OK USD/INR: {usd_inr[-1]['value']} ({len(usd_inr)} data points)")
+
+    # 12. Commodities (Daily prices)
+    print_safe("\nFetching Commodity Prices...")
+
+    # Gold Price (USD per troy ounce) - Global price of Gold (monthly)
+    gold_data = fetch_fred_data('PPIACO', limit=12)  # PPI Gold Ores - fallback
+    if not gold_data:
+        gold_data = fetch_fred_data('APU0000706111', limit=12)  # Average price
+    # Try daily series
+    if not gold_data:
+        gold_data = fetch_fred_data('GLDPRUSD', limit=260)  # IMF Gold price (daily)
+    if not gold_data:
+        gold_data = fetch_fred_data('GOLDPMGBD228NLBM', limit=260)  # London PM Fix
+    if gold_data:
+        dashboard_data['gold'] = gold_data
+        print_safe(f"  OK Gold: ${gold_data[-1]['value']:.2f}/oz ({len(gold_data)} data points)")
+    else:
+        print_safe("  ! Gold data unavailable from FRED")
+
+    # Crude Oil WTI (USD per barrel)
+    oil_data = fetch_fred_data('DCOILWTICO', limit=260)
+    if oil_data:
+        dashboard_data['crude_oil'] = oil_data
+        print_safe(f"  OK Crude Oil WTI: ${oil_data[-1]['value']:.2f}/bbl ({len(oil_data)} data points)")
+
+    # Natural Gas Henry Hub (USD per MMBtu)
+    natgas_data = fetch_fred_data('DHHNGSP', limit=260)
+    if natgas_data:
+        dashboard_data['natural_gas'] = natgas_data
+        print_safe(f"  OK Natural Gas: ${natgas_data[-1]['value']:.2f}/MMBtu ({len(natgas_data)} data points)")
+
+    # Copper Price (USD per pound) - Global price
+    copper_data = fetch_fred_data('PCOPPUSDM', limit=12)  # Monthly data
+    if copper_data:
+        dashboard_data['copper'] = copper_data
+        print_safe(f"  OK Copper: ${copper_data[-1]['value']:.2f}/lb ({len(copper_data)} data points)")
+
+    # 13. Daily News Sentiment Index (from SF Fed - updates weekly)
     print_safe("\nFetching News Sentiment Index...")
     news_sentiment = fetch_news_sentiment()
     if news_sentiment:
