@@ -36,6 +36,35 @@ def fetch_json(url, error_msg="Error fetching data"):
         print_safe(f"{error_msg}: {e}")
         return None
 
+def fetch_gold_price():
+    """Fetch daily gold prices from FreeGoldAPI.com (USD per troy ounce)"""
+    url = "https://freegoldapi.com/data/latest.json"
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req, timeout=30) as response:
+            data = json.loads(response.read().decode())
+
+        # Get the most recent ~260 trading days of data
+        # Data is already sorted by date ascending
+        recent_data = data[-260:] if len(data) > 260 else data
+
+        # Convert to our format
+        gold_prices = []
+        for record in recent_data:
+            if 'date' in record and 'price' in record:
+                try:
+                    gold_prices.append({
+                        'date': record['date'],
+                        'value': float(record['price'])
+                    })
+                except (ValueError, TypeError):
+                    continue
+
+        return gold_prices
+    except Exception as e:
+        print_safe(f"Error fetching gold price: {e}")
+        return None
+
 def fetch_fred_data(series_id, limit=12):
     """Fetch data from Federal Reserve Economic Data (FRED)"""
     if not FRED_API_KEY:
@@ -341,20 +370,14 @@ def update_dashboard():
     # 12. Commodities (Daily prices)
     print_safe("\nFetching Commodity Prices...")
 
-    # Gold Price (USD per troy ounce) - Global price of Gold (monthly)
-    gold_data = fetch_fred_data('PPIACO', limit=12)  # PPI Gold Ores - fallback
-    if not gold_data:
-        gold_data = fetch_fred_data('APU0000706111', limit=12)  # Average price
-    # Try daily series
-    if not gold_data:
-        gold_data = fetch_fred_data('GLDPRUSD', limit=260)  # IMF Gold price (daily)
-    if not gold_data:
-        gold_data = fetch_fred_data('GOLDPMGBD228NLBM', limit=260)  # London PM Fix
+    # Gold Price (USD per troy ounce) from FreeGoldAPI.com
+    # FRED discontinued LBMA gold prices in Jan 2022, using free alternative API
+    gold_data = fetch_gold_price()
     if gold_data:
         dashboard_data['gold'] = gold_data
         print_safe(f"  OK Gold: ${gold_data[-1]['value']:.2f}/oz ({len(gold_data)} data points)")
     else:
-        print_safe("  ! Gold data unavailable from FRED")
+        print_safe("  ! Gold data unavailable")
 
     # Crude Oil WTI (USD per barrel)
     oil_data = fetch_fred_data('DCOILWTICO', limit=260)
