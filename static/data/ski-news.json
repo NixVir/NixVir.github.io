@@ -1,7 +1,27 @@
 {
-  "updated": "2025-12-09 11:13:22",
-  "total_articles": 46,
+  "updated": "2025-12-10 11:14:08",
+  "total_articles": 47,
   "articles": [
+    {
+      "source": "New York Times - Travel",
+      "title": "U.S. Plans to Scrutinize Foreign Tourists\u2019 Social Media History",
+      "url": "https://www.nytimes.com/2025/12/09/travel/social-media-tourists-visa-border-patrol.html",
+      "description": "Even visitors from countries like Britain and France, whose citizens don\u2019t need visas, would have to share five years\u2019 worth of social media.",
+      "content": "Even visitors from countries like Britain and France, whose citizens don\u2019t need visas, would have to share five years\u2019 worth of social media.",
+      "pub_date": "Wed, 10 Dec 2025 00:29:07 +0000",
+      "id": "f088fabcdc62",
+      "score": 8,
+      "score_details": {
+        "relevance": 8,
+        "news_value": 8,
+        "quality": 8,
+        "overall": 8,
+        "reason": "This article directly impacts the ski industry by discussing changes to foreign tourist travel policies, which could significantly affect visitation and revenues for ski destinations. The New York Times is a reputable source providing substantive, timely reporting on this important issue."
+      },
+      "approved_date": "2025-12-10",
+      "category": "ski-history",
+      "secondary_categories": []
+    },
     {
       "source": "New York Times - Travel",
       "title": "National Park Service Will Close All Grand Canyon Hotels for Water Line Repairs",
