@@ -595,30 +595,48 @@
                 yMin: 0.05,
                 yMax: 0.4,
                 backgroundColor: 'rgba(39, 174, 96, 0.15)',
-                borderWidth: 0,
-                label: {
-                    display: false
-                }
+                borderWidth: 0
+            },
+            optimisticLabel: {
+                type: 'label',
+                xValue: labels[Math.floor(labels.length * 0.02)],
+                yValue: 0.12,
+                content: 'Optimistic',
+                color: 'rgba(39, 174, 96, 0.7)',
+                font: { size: 11, weight: 'bold' },
+                position: 'start'
             },
             neutralZone: {
                 type: 'box',
                 yMin: -0.05,
                 yMax: 0.05,
                 backgroundColor: 'rgba(200, 200, 200, 0.2)',
-                borderWidth: 0,
-                label: {
-                    display: false
-                }
+                borderWidth: 0
+            },
+            neutralLabel: {
+                type: 'label',
+                xValue: labels[Math.floor(labels.length * 0.02)],
+                yValue: 0,
+                content: 'Neutral',
+                color: 'rgba(120, 120, 120, 0.7)',
+                font: { size: 11, weight: 'bold' },
+                position: 'start'
             },
             pessimisticZone: {
                 type: 'box',
                 yMin: -0.4,
                 yMax: -0.05,
                 backgroundColor: 'rgba(231, 76, 60, 0.15)',
-                borderWidth: 0,
-                label: {
-                    display: false
-                }
+                borderWidth: 0
+            },
+            pessimisticLabel: {
+                type: 'label',
+                xValue: labels[Math.floor(labels.length * 0.02)],
+                yValue: -0.12,
+                content: 'Pessimistic',
+                color: 'rgba(231, 76, 60, 0.7)',
+                font: { size: 11, weight: 'bold' },
+                position: 'start'
             },
             zeroLine: {
                 type: 'line',
