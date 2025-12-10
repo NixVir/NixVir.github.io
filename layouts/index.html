@@ -1,6 +1,6 @@
 {{ define "main" }}
   {{/* Compact intro - minimal text */}}
-  <article class="cf ph3 ph5-l pv2 pv3-l f4 tc-l center measure-wide lh-copy nested-links {{ $.Param "text_color" | compare.Default "mid-gray" }}">
+  <article class="cf ph3 ph5-l pv1 pv2-l f5 tc-l center measure-wide lh-copy nested-links {{ $.Param "text_color" | compare.Default "mid-gray" }}">
     {{ .Content }}
   </article>
 
@@ -11,7 +11,7 @@
   {{ $section_count := len $section }}
 
   {{ if and ($show_recent_posts) (compare.Ge $section_count 1) }}
-    <div class="pa3 pa4-ns w-100 center" style="max-width: 1600px;">
+    <div class="pa2 pa3-ns w-100 center" style="max-width: 1600px;">
       {{/* Three column container - Data Insights (40%) | Dashboard (20%) | Ski News (40%) */}}
       <div class="flex-l">
 
