@@ -703,7 +703,26 @@
       container.innerHTML = html;
     }
 
-    document.getElementById('ski-news-filter').addEventListener('change', renderSkiNews);
+    document.getElementById('ski-news-filter').addEventListener('change', function() {
+      renderSkiNews();
+      // GA4 Event: Ski news category filter change
+      if (typeof gtag === 'function') {
+        gtag('event', 'ski_news_filter', {
+          'filter_category': this.value
+        });
+      }
+    });
     loadSkiNews();
+
+    // GA4 Event: Ski news article click (delegated)
+    document.getElementById('ski-news-container').addEventListener('click', function(e) {
+      const link = e.target.closest('a');
+      if (link && typeof gtag === 'function') {
+        gtag('event', 'ski_news_click', {
+          'article_title': link.textContent.trim().substring(0, 100),
+          'destination_url': link.href
+        });
+      }
+    });
   </script>
 {{ end }}

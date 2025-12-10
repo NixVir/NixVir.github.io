@@ -1196,6 +1196,17 @@
 
     loadDashboard();
     setInterval(loadDashboard, 300000); // Refresh every 5 minutes
+
+    // GA4 Event Tracking for metric link clicks
+    document.querySelectorAll('.metric-card h4 a').forEach(link => {
+        link.addEventListener('click', function() {
+            const metricName = this.textContent.trim();
+            gtag('event', 'dashboard_metric_click', {
+                'metric_name': metricName,
+                'destination_url': this.href
+            });
+        });
+    });
     </script>
 </body>
 </html>
