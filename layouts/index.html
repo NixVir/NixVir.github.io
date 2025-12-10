@@ -26,19 +26,21 @@
             <div class="section-content">
               {{/* Range through posts */}}
               {{ range (collections.First $n_posts $section) }}
-                <div class="data-insight-item mb3 pb2 bb b--near-white">
+                <div class="data-insight-item mb3 pb2 bb b--near-white flex items-start">
                   {{ if .Params.featured_image }}
-                    <a href="{{ .RelPermalink }}" class="db mb2">
-                      <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="w-100 br2" style="max-height: 150px; object-fit: contain; background: #f8f8f8;">
+                    <a href="{{ .RelPermalink }}" class="db flex-shrink-0 mr2" style="width: 80px;">
+                      <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="br2" style="width: 80px; height: 60px; object-fit: cover; background: #f8f8f8;">
                     </a>
                   {{ end }}
-                  <h4 class="f6 fw6 mt0 mb1 lh-title">
-                    <a href="{{ .RelPermalink }}" class="link dark-gray dim">{{ .Title }}</a>
-                  </h4>
-                  {{ with .Params.description }}
-                    <p class="f7 mid-gray ma0 mb1 lh-copy">{{ . | truncate 100 }}</p>
-                  {{ end }}
-                  <p class="f7 gray ma0">{{ .Date.Format "Jan 2, 2006" }}</p>
+                  <div class="flex-auto">
+                    <h4 class="f6 fw6 mt0 mb1 lh-title">
+                      <a href="{{ .RelPermalink }}" class="link dark-gray dim">{{ .Title }}</a>
+                    </h4>
+                    {{ with .Params.description }}
+                      <p class="f7 mid-gray ma0 mb1 lh-copy">{{ . | truncate 80 }}</p>
+                    {{ end }}
+                    <p class="f7 gray ma0">{{ .Date.Format "Jan 2, 2006" }}</p>
+                  </div>
                 </div>
               {{ end }}
             </div>
