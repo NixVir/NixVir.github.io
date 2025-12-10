@@ -12,11 +12,11 @@
 
   {{ if and ($show_recent_posts) (compare.Ge $section_count 1) }}
     <div class="pa3 pa4-ns w-100 center" style="max-width: 1600px;">
-      {{/* Three column container */}}
+      {{/* Three column container - Data Insights (40%) | Dashboard (20%) | Ski News (40%) */}}
       <div class="flex-l">
 
-        {{/* Column 1: Data Insights */}}
-        <section class="w-100 w-third-l ph2-l mb4 mb0-l">
+        {{/* Column 1: Data Insights - wider */}}
+        <section class="w-100 ph2-l mb4 mb0-l" style="flex: 2;">
           <div class="section-frame ba b--light-gray br2 bg-white pa3 h-100">
             <h2 class="f4 fw6 mb2 pb2 bb b--light-gray">
               <a href="/post/" class="link dark-gray dim">Data Insights</a>
@@ -51,8 +51,8 @@
           </div>
         </section>
 
-        {{/* Column 2: Economic Dashboard */}}
-        <section class="w-100 w-third-l ph2-l mb4 mb0-l">
+        {{/* Column 2: Economic Dashboard - narrower for better sparklines */}}
+        <section class="w-100 ph2-l mb4 mb0-l" style="flex: 1; min-width: 220px; max-width: 280px;">
           <div class="section-frame ba b--light-gray br2 bg-white pa3 h-100">
             <h2 class="f4 fw6 mb2 pb2 bb b--light-gray">
               <a href="/dashboard/" class="link dark-gray dim">Economic Dashboard</a>
@@ -118,8 +118,8 @@
           </div>
         </section>
 
-        {{/* Column 3: Ski Business News */}}
-        <section class="w-100 w-third-l ph2-l mb4 mb0-l">
+        {{/* Column 3: Ski Business News - wider */}}
+        <section class="w-100 ph2-l mb4 mb0-l" style="flex: 2;">
           <div class="section-frame ba b--light-gray br2 bg-white pa3 h-100">
             <h2 class="f4 fw6 mb2 pb2 bb b--light-gray">
               <a href="/ski-news/" class="link dark-gray dim">Ski Business News</a>
