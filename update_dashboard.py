@@ -391,9 +391,15 @@ def update_dashboard():
         dashboard_data['natural_gas'] = natgas_data
         print_safe(f"  OK Natural Gas: ${natgas_data[-1]['value']:.2f}/MMBtu ({len(natgas_data)} data points)")
 
-    # Copper Price (USD per pound) - Global price
-    copper_data = fetch_fred_data('PCOPPUSDM', limit=12)  # Monthly data
-    if copper_data:
+    # Copper Price - FRED PCOPPUSDM is USD per metric ton, convert to USD per pound
+    # 1 metric ton = 2204.62 pounds
+    copper_data_raw = fetch_fred_data('PCOPPUSDM', limit=12)  # Monthly data
+    if copper_data_raw:
+        # Convert from USD/metric ton to USD/lb
+        copper_data = [{
+            'date': d['date'],
+            'value': round(d['value'] / 2204.62, 2)
+        } for d in copper_data_raw]
         dashboard_data['copper'] = copper_data
         print_safe(f"  OK Copper: ${copper_data[-1]['value']:.2f}/lb ({len(copper_data)} data points)")
 
