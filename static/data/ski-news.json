@@ -1,7 +1,27 @@
 {
-  "updated": "2025-12-10 11:14:08",
-  "total_articles": 47,
+  "updated": "2025-12-11 11:14:24",
+  "total_articles": 48,
   "articles": [
+    {
+      "source": "Washington Post",
+      "title": "Fed lowers interest rates again amid debate over inflation, jobs",
+      "url": "https://www.washingtonpost.com/business/2025/12/10/federal-reserve-rate-cut-stagflation/",
+      "description": "The Federal Reserve cut interest rates by a quarter of a percentage point, seeking to steady a softening labor market.",
+      "content": "The Federal Reserve cut interest rates by a quarter of a percentage point, seeking to steady a softening labor market.",
+      "pub_date": "Wed, 10 Dec 2025 21:50:16 +0000",
+      "id": "e085653aa583",
+      "score": 7,
+      "score_details": {
+        "relevance": 6,
+        "news_value": 7,
+        "quality": 7,
+        "overall": 7,
+        "reason": "This article about the Federal Reserve's interest rate cut is moderately relevant to the ski industry, as it could impact consumer spending and business operations. While not directly about the ski industry, it provides important economic context that ski businesses should be aware of."
+      },
+      "approved_date": "2025-12-11",
+      "category": "resort-operations",
+      "secondary_categories": []
+    },
     {
       "source": "New York Times - Travel",
       "title": "U.S. Plans to Scrutinize Foreign Tourists\u2019 Social Media History",
