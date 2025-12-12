@@ -1,6 +1,6 @@
 {
-  "updated": "2025-12-11 11:14:24",
-  "total_articles": 48,
+  "updated": "2025-12-12 11:14:50",
+  "total_articles": 50,
   "articles": [
     {
       "source": "Washington Post",
@@ -227,6 +227,28 @@
       },
       "approved_date": "2025-12-04",
       "category": "resort-operations"
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "The Coziest New Ski Lodges in the Alps",
+      "url": "https://www.nytimes.com/2025/12/11/t-magazine/ski-lodge-alps-cozy-travel.html",
+      "description": "Five of the most notable newcomers to Europe\u2019s winter resort scene are small hotels with distinctive personalities \u2014 and enough amenities to keep indoor types happy too.",
+      "content": "Five of the most notable newcomers to Europe\u2019s winter resort scene are small hotels with distinctive personalities \u2014 and enough amenities to keep indoor types happy too.",
+      "pub_date": "Thu, 11 Dec 2025 22:48:01 +0000",
+      "id": "8549bfab80eb",
+      "score": 7,
+      "score_details": {
+        "relevance": 7,
+        "news_value": 6,
+        "quality": 7,
+        "overall": 7,
+        "reason": "This article covers notable new ski lodge developments in the Alps, which is relevant ski industry news. While it doesn't dive deep into the business specifics, it provides a high-level overview of new hospitality offerings in key ski markets. The New York Times is a reputable source. Overall, this warrants inclusion in a ski business news feed, though it's not the most critical or in-depth coverage."
+      },
+      "approved_date": "2025-12-12",
+      "category": "hospitality",
+      "secondary_categories": [
+        "international"
+      ]
     },
     {
       "source": "SnowBrains",
@@ -689,6 +711,26 @@
         "canada",
         "international"
       ]
+    },
+    {
+      "source": "Washington Post",
+      "title": "Trump administration launches ambitious air-taxi push",
+      "url": "https://www.washingtonpost.com/transportation/2025/12/12/air-taxis-pilot-program-trump/",
+      "description": "A pilot program created by the Trump administration may boost the fortunes of companies eager to have air taxis in the skies in time for the 2028 Olympics in Los Angeles.",
+      "content": "A pilot program created by the Trump administration may boost the fortunes of companies eager to have air taxis in the skies in time for the 2028 Olympics in Los Angeles.",
+      "pub_date": "Fri, 12 Dec 2025 11:00:00 +0000",
+      "id": "90939384515b",
+      "score": 7,
+      "score_details": {
+        "relevance": 8,
+        "news_value": 7,
+        "quality": 7,
+        "overall": 7,
+        "reason": "This article about the Trump administration's air taxi program is relevant to the ski industry, as it could impact transportation options and access to ski destinations in time for the 2028 Olympics in Los Angeles. The news value is moderate, as the program is still in a pilot stage, but the reporting from the Washington Post provides quality information. While not directly about the ski industry, this story could have significant business implications for the ski industry in the long run."
+      },
+      "approved_date": "2025-12-12",
+      "category": "winter-sports",
+      "secondary_categories": []
     },
     {
       "source": "Unofficial Networks",
