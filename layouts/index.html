@@ -1,6 +1,6 @@
 {{ define "main" }}
-  {{/* Compact intro - minimal text */}}
-  <article class="cf ph3 ph5-l pv1 pv2-l f5 tc-l center measure-wide lh-copy nested-links {{ $.Param "text_color" | compare.Default "mid-gray" }}">
+  {{/* Compact intro - left-aligned with constrained width */}}
+  <article class="cf ph3 ph5-l pv1 pv2-l f6 center measure lh-copy nested-links {{ $.Param "text_color" | compare.Default "mid-gray" }}">
     {{ .Content }}
   </article>
 
@@ -12,46 +12,10 @@
 
   {{ if and ($show_recent_posts) (compare.Ge $section_count 1) }}
     <div class="pa2 pa3-ns w-100 center" style="max-width: 1600px;">
-      {{/* Three column container - Data Insights (40%) | Dashboard (20%) | Ski News (40%) */}}
+      {{/* Three column container - Dashboard (20%) | Ski News (40%) | Data Insights (40%) */}}
       <div class="flex-l">
 
-        {{/* Column 1: Data Insights - wider */}}
-        <section class="w-100 ph2-l mb4 mb0-l" style="flex: 2;">
-          <div class="section-frame ba b--light-gray br2 bg-white pa3 h-100">
-            <h2 class="f4 fw6 mb2 pb2 bb b--light-gray">
-              <a href="/post/" class="link dark-gray dim">Data Insights</a>
-            </h2>
-            {{ $n_posts := 5 }}
-
-            <div class="section-content">
-              {{/* Range through posts */}}
-              {{ range (collections.First $n_posts $section) }}
-                <div class="data-insight-item mb3 pb2 bb b--near-white flex items-start">
-                  {{ if .Params.featured_image }}
-                    <a href="{{ .RelPermalink }}" class="db flex-shrink-0 mr2" style="width: 80px;">
-                      <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="br2" style="width: 80px; height: 60px; object-fit: cover; background: #f8f8f8;">
-                    </a>
-                  {{ end }}
-                  <div class="flex-auto">
-                    <h4 class="f6 fw6 mt0 mb1 lh-title">
-                      <a href="{{ .RelPermalink }}" class="link dark-gray dim">{{ .Title }}</a>
-                    </h4>
-                    {{ with .Params.description }}
-                      <p class="f7 mid-gray ma0 mb1 lh-copy">{{ . | truncate 80 }}</p>
-                    {{ end }}
-                    <p class="f7 gray ma0">{{ .Date.Format "Jan 2, 2006" }}</p>
-                  </div>
-                </div>
-              {{ end }}
-            </div>
-
-            <div class="tc mt3 pt2 bt b--light-gray">
-              <a href="/post/" class="link blue dim fw6 f6">View All Articles &rarr;</a>
-            </div>
-          </div>
-        </section>
-
-        {{/* Column 2: Economic Dashboard - narrower for better sparklines */}}
+        {{/* Column 1: Economic Dashboard - narrower for better sparklines */}}
         <section class="w-100 ph2-l mb4 mb0-l" style="flex: 1; min-width: 220px; max-width: 280px;">
           <div class="section-frame ba b--light-gray br2 bg-white pa3 h-100">
             <h2 class="f4 fw6 mb2 pb2 bb b--light-gray">
@@ -118,7 +82,7 @@
           </div>
         </section>
 
-        {{/* Column 3: Ski Business News - wider */}}
+        {{/* Column 2: Ski Business News - wider */}}
         <section class="w-100 ph2-l mb4 mb0-l" style="flex: 2;">
           <div class="section-frame ba b--light-gray br2 bg-white pa3 h-100">
             <h2 class="f4 fw6 mb2 pb2 bb b--light-gray">
@@ -156,6 +120,42 @@
 
             <div class="tc mt3 pt2 bt b--light-gray">
               <a href="/ski-news/" class="link blue dim fw6 f6">View All News &rarr;</a>
+            </div>
+          </div>
+        </section>
+
+        {{/* Column 3: Data Insights - wider */}}
+        <section class="w-100 ph2-l mb4 mb0-l" style="flex: 2;">
+          <div class="section-frame ba b--light-gray br2 bg-white pa3 h-100">
+            <h2 class="f4 fw6 mb2 pb2 bb b--light-gray">
+              <a href="/post/" class="link dark-gray dim">Data Insights</a>
+            </h2>
+            {{ $n_posts := 5 }}
+
+            <div class="section-content">
+              {{/* Range through posts */}}
+              {{ range (collections.First $n_posts $section) }}
+                <div class="data-insight-item mb3 pb2 bb b--near-white flex items-start">
+                  {{ if .Params.featured_image }}
+                    <a href="{{ .RelPermalink }}" class="db flex-shrink-0 mr2" style="width: 80px;">
+                      <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="br2" style="width: 80px; height: 60px; object-fit: cover; background: #f8f8f8;">
+                    </a>
+                  {{ end }}
+                  <div class="flex-auto">
+                    <h4 class="f6 fw6 mt0 mb1 lh-title">
+                      <a href="{{ .RelPermalink }}" class="link dark-gray dim">{{ .Title }}</a>
+                    </h4>
+                    {{ with .Params.description }}
+                      <p class="f7 mid-gray ma0 mb1 lh-copy">{{ . | truncate 80 }}</p>
+                    {{ end }}
+                    <p class="f7 gray ma0">{{ .Date.Format "Jan 2, 2006" }}</p>
+                  </div>
+                </div>
+              {{ end }}
+            </div>
+
+            <div class="tc mt3 pt2 bt b--light-gray">
+              <a href="/post/" class="link blue dim fw6 f6">View All Articles &rarr;</a>
             </div>
           </div>
         </section>
@@ -612,12 +612,12 @@
       'business-investment': { name: 'Business', icon: '/images/ski-news-icons/business-investment.svg' },
       'weather-snow': { name: 'Weather', icon: '/images/ski-news-icons/weather-snow.svg' },
       'transportation': { name: 'Transport', icon: '/images/ski-news-icons/transportation.svg' },
-      'winter-sports': { name: 'Sports', icon: '/images/ski-news-icons/winter-sports.svg' },
+      'winter-sports': { name: 'Sports', icon: '/images/ski-news-icons/winter-sports.png' },
       'safety-incidents': { name: 'Safety', icon: '/images/ski-news-icons/safety-incidents.svg' },
-      'canada': { name: 'Canada', icon: '/images/ski-news-icons/canada.svg' },
+      'canada': { name: 'Canada', icon: '/images/ski-news-icons/canada.png' },
       'international': { name: 'Intl', icon: '/images/ski-news-icons/international.svg' },
       'ski-history': { name: 'History', icon: '/images/ski-news-icons/ski-history.svg' },
-      'hospitality': { name: 'Hospitality', icon: '/images/ski-news-icons/hospitality.svg' }
+      'hospitality': { name: 'Hospitality', icon: '/images/ski-news-icons/hospitality.svg?v=2' }
     };
 
     let skiNewsData = null;

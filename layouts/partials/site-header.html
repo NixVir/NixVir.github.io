@@ -1,0 +1,41 @@
+{{ $featured_image := partials.Include "func/GetFeaturedImage.html" . }}
+{{ if $featured_image }}
+  {{/* Trimming the slash and adding absURL make sure the image works no matter where our site lives */}}
+  {{ $featured_image_class := site.Params.featured_image_class | compare.Default "cover bg-center" }}
+  <header class="{{ $featured_image_class }}" style="background-image: url('{{ $featured_image }}');">
+    {{ $cover_dimming_class := site.Params.cover_dimming_class | compare.Default "bg-black-60" }}
+    <div class="{{ $cover_dimming_class }}" style="display: flex; flex-direction: column; min-height: 340px;">
+      {{ partials.Include "site-navigation.html" .}}
+      {{/* Content at top with large bottom padding */}}
+      <div class="tc ph3 ph4-ns" style="padding-top: 0.5rem; padding-bottom: 5rem;">
+        <div>
+          <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
+            {{ .Title | compare.Default .Site.Title }}
+          </h1>
+          {{ with .Params.description }}
+            {{/* Centered block with left-justified text inside */}}
+            <h2 class="fw1 f6 f5-l white-80 center mt2 mb0 lh-copy" style="max-width: 36em; text-align: left;">
+              {{ . | safeHTML }}
+            </h2>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </header>
+{{ else }}
+  <header>
+    <div class="pb3-m pb6-l {{ .Site.Params.background_color_class | compare.Default "bg-black" }}">
+      {{ partials.Include "site-navigation.html" . }}
+      <div class="tc pv2 pv3-l ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
+          {{ .Title | compare.Default .Site.Title }}
+        </h1>
+        {{ with .Params.description }}
+          <h2 class="fw1 f6 f5-l white-80 center lh-copy mt2 mb0" style="max-width: 36em; text-align: left;">
+            {{ . }}
+          </h2>
+        {{ end }}
+      </div>
+    </div>
+  </header>
+{{ end }}

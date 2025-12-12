@@ -7,11 +7,11 @@
     <div class="{{ $cover_dimming_class }}">
       {{ partials.Include "site-navigation.html" . }}
       {{/* Minimal hero - reduced vertical space */}}
-      <div class="tc-l pv2 pv3-ns ph3 ph4-ns">
+      <div class="pv2 pv3-ns ph3 ph4-ns ph5-l" style="text-align: left !important;">
         {{ if not .Params.omit_header_text }}
-          <div class="f4 f3-l fw2 white-90 mb0 lh-title">{{ .Title | compare.Default .Site.Title }}</div>
+          <div class="f4 f3-l fw2 white-90 mb0 lh-title" style="text-align: left !important;">{{ .Title | compare.Default .Site.Title }}</div>
           {{ with .Params.description  }}
-            <div class="fw1 f7 f6-l white-80 measure-wide-l center lh-copy mt1 mb2">
+            <div class="fw1 f7 f6-l white-80 lh-copy mt1 mb2" style="max-width: 34em; text-align: left !important;">
               {{ . }}
             </div>
           {{ end }}
