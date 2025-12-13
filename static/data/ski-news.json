@@ -1,5 +1,5 @@
 {
-  "updated": "2025-12-12 11:14:50",
+  "updated": "2025-12-13 11:11:28",
   "total_articles": 50,
   "articles": [
     {
@@ -527,6 +527,26 @@
       "category": "winter-sports"
     },
     {
+      "source": "Washington Post",
+      "title": "How companies are cracking down on workers\u2019 social media activity",
+      "url": "https://www.washingtonpost.com/business/2025/12/13/employer-crackdown-social-media/",
+      "description": "Fervor over employee posts about Charlie Kirk\u2019s death is leading companies to adjust policies and step up monitoring of workers\u2019 online conduct.",
+      "content": "Fervor over employee posts about Charlie Kirk\u2019s death is leading companies to adjust policies and step up monitoring of workers\u2019 online conduct.",
+      "pub_date": "Sat, 13 Dec 2025 11:00:00 +0000",
+      "id": "bce7d7811e5a",
+      "score": 7,
+      "score_details": {
+        "relevance": 6,
+        "news_value": 7,
+        "quality": 7,
+        "overall": 7,
+        "reason": "This article discusses a business trend of companies cracking down on employees' social media activity, which has relevance to the ski industry as it grapples with workforce and labor issues. While not directly about the ski industry, the content has moderate priority for inclusion in a ski business news feed."
+      },
+      "approved_date": "2025-12-13",
+      "category": "safety-incidents",
+      "secondary_categories": []
+    },
+    {
       "source": "Unofficial Networks",
       "title": "Big Sky Marks Major Milestone With New Explorer Gondola",
       "url": "https://unofficialnetworks.com/2025/12/06/big-sky-marks-major-milestone-with-new-explorer-gondola/",
@@ -884,25 +904,6 @@
       "approved_date": "2025-12-04",
       "category": "safety-incidents",
       "secondary_categories": []
-    },
-    {
-      "source": "Summit Daily News",
-      "title": "Summit County skimo athletes help usher sport into its Olympic debut",
-      "url": "https://www.summitdaily.com/news/summit-county-skimo-athletes-help-usher-sport-into-its-olympic-debut/",
-      "description": "As the sun begins to rise into the sky, snowcats meticulously work to groom the last section of snow for a brand new ski day. While the mountain may seem completely desolate, people soon exit the...",
-      "content": "As the sun begins to rise into the sky, snowcats meticulously work to groom the last section of snow for a brand new ski day. While the mountain may seem completely desolate, people soon exit the warmth of their car, strap on a head lamp and begin walking to the base of the mountain. In between sleepy yawns, the growing group of people step into their skis, take hold of their poles and begin skinning under the soft morning light and the distant groan of the working snowcat. These athletes will spend the next hour or so before the lifts begin spinning, skinning up the mountain before eventually cruising back down to the base area. Although there is a small group of athletes who do this on a daily basis the sport \u2014 which is formally called ski mountaineering, or skimo for short \u2013 will be making its debut at the 2026 Milano Cortina Winter Olympics. The sprint and mixed-relay disciplines will be represented at the 25th Olympiad. Even though the two races are not typically fan favorites for",
-      "pub_date": "Fri, 05 Dec 2025 00:21:52 +0000",
-      "id": "77fd88afe649",
-      "score": 7,
-      "score_details": {
-        "relevance": 7,
-        "news_value": 7,
-        "quality": 7,
-        "overall": 7,
-        "reason": "This article discusses the growing popularity of ski mountaineering and its upcoming inclusion in the Olympics, which is relevant news for the ski industry. While it doesn't directly cover business or industry trends, it highlights the growth of a niche skiing discipline that could impact the broader ski market."
-      },
-      "approved_date": "2025-12-04",
-      "category": "winter-sports"
     }
   ]
 }
