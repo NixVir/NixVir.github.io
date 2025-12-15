@@ -2632,6 +2632,235 @@
       "score_details": {
         "reason": "Scoring failed"
       }
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "5 Hotels for the Holidays",
+      "url": "https://www.nytimes.com/2025/12/15/travel/hotels-winter-holidays.html",
+      "description": "From Colorado Springs to Vienna, here\u2019s where you can indulge in a festive winter break.",
+      "content": "From Colorado Springs to Vienna, here\u2019s where you can indulge in a festive winter break.",
+      "pub_date": "Mon, 15 Dec 2025 10:02:13 +0000",
+      "id": "32d4f27fe59d",
+      "score": 5,
+      "score_details": {
+        "relevance": 5,
+        "news_value": 4,
+        "quality": 6,
+        "overall": 5,
+        "reason": "The article provides a general overview of festive hotel options for winter travelers, but does not contain any substantive business news relevant to the ski industry. The content is more lifestyle-oriented than business-focused."
+      }
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "How to Avoid an Airbnb Fail",
+      "url": "https://www.nytimes.com/2025/12/15/travel/airbnb-short-term-rental-booking-tips.html",
+      "description": "Sometimes, a short-term rental doesn\u2019t live up to its billing. Here\u2019s how to recognize red flags before you turn up at the front door.",
+      "content": "Sometimes, a short-term rental doesn\u2019t live up to its billing. Here\u2019s how to recognize red flags before you turn up at the front door.",
+      "pub_date": "Mon, 15 Dec 2025 10:00:31 +0000",
+      "id": "5ddbe8bd217f",
+      "score": 4,
+      "score_details": {
+        "relevance": 3,
+        "news_value": 4,
+        "quality": 5,
+        "overall": 4,
+        "reason": "The article is not directly relevant to the ski industry business, as it is a general travel advice piece on Airbnb rentals. While it may be of interest to some ski travelers, it does not contain substantive news about the ski industry itself."
+      }
+    },
+    {
+      "source": "Financial Times",
+      "title": "Trump assault opens EU rift as leaders split on US strategy",
+      "url": "https://www.ft.com/content/294c24e6-0647-4ebb-ab08-278061e8fe19",
+      "description": "European institutions and capitals divided over how far to push back against Washington without hurting Ukraine",
+      "content": "European institutions and capitals divided over how far to push back against Washington without hurting Ukraine",
+      "pub_date": "Mon, 15 Dec 2025 09:23:47 GMT",
+      "id": "89bf61a979c1",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Financial Times",
+      "title": "Ukraine offers to drop Nato membership demands",
+      "url": "https://www.ft.com/content/c98d24a4-0df3-43dd-a008-56feb0266f45",
+      "description": "Zelenskyy says Kyiv still needs US and European protection guarantees ahead of Berlin talks",
+      "content": "Zelenskyy says Kyiv still needs US and European protection guarantees ahead of Berlin talks",
+      "pub_date": "Sun, 14 Dec 2025 21:03:46 GMT",
+      "id": "087e7b7a8990",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Financial Times",
+      "title": "China investment decline deepens as Xi attacks \u2018reckless\u2019 spending",
+      "url": "https://www.ft.com/content/2f3d6fbd-22aa-4ca7-9fbe-e6e2a45ced09",
+      "description": "Weakest retail sales growth in three years underlines challenge for Beijing to cut waste and boost domestic demand",
+      "content": "Weakest retail sales growth in three years underlines challenge for Beijing to cut waste and boost domestic demand",
+      "pub_date": "Mon, 15 Dec 2025 09:56:40 GMT",
+      "id": "98a4ab892887",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Financial Times",
+      "title": "Conservative hardliner wins Chile\u2019s presidency in election landslide",
+      "url": "https://www.ft.com/content/16d4709c-f0f8-44c6-b1fd-91b4ff6e8279",
+      "description": "Jos\u00e9 Antonio Kast will be country\u2019s most rightwing president in 35 years of democracy",
+      "content": "Jos\u00e9 Antonio Kast will be country\u2019s most rightwing president in 35 years of democracy",
+      "pub_date": "Mon, 15 Dec 2025 02:04:20 GMT",
+      "id": "086dacf9466c",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Copper Rebounds With Other Metals After Sharp Selloff on Friday",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-15/copper-rebounds-with-other-metals-after-sharp-selloff-on-friday",
+      "description": "Copper rose \u2014 clawing back some of Friday\u2019s steep drop \u2014 as investors refocused on prospects for a tighter market next year.",
+      "content": "Copper rose \u2014 clawing back some of Friday\u2019s steep drop \u2014 as investors refocused on prospects for a tighter market next year.",
+      "pub_date": "Mon, 15 Dec 2025 04:50:02 GMT",
+      "id": "752cc0f57e56",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "US Stock Futures Rise Amid Bullish Calls for 2026: Markets Wrap",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-14/asian-stocks-set-for-losses-as-tech-concerns-mount-markets-wrap",
+      "description": "US stock futures climbed at the start of the last full trading week of 2025 as a tech selloff abated and analysts kept up a bullish drumbeat of calls for next year.",
+      "content": "US stock futures climbed at the start of the last full trading week of 2025 as a tech selloff abated and analysts kept up a bullish drumbeat of calls for next year.",
+      "pub_date": "Sun, 14 Dec 2025 22:36:44 GMT",
+      "id": "07da9a02b886",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Albanese Vows Tougher Gun Laws After Attack",
+      "url": "https://www.bloomberg.com/news/videos/2025-12-15/albanese-vows-tougher-gun-laws-after-attack-video",
+      "description": "Prime Minister Albanese has signaled tougher gun-control measures after Sunday\u2019s attack in Sydney\u2019s Bondi Beach. Australia\u2019s gun laws are often held up as a global model, but the shooting has renewed scrutiny of gaps in enforcement. (Source: Bloomberg)",
+      "content": "Prime Minister Albanese has signaled tougher gun-control measures after Sunday\u2019s attack in Sydney\u2019s Bondi Beach. Australia\u2019s gun laws are often held up as a global model, but the shooting has renewed scrutiny of gaps in enforcement. (Source: Bloomberg)",
+      "pub_date": "Mon, 15 Dec 2025 09:06:27 GMT",
+      "id": "ba2f09f0877e",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Goldman and BofA Push Texas Stock Exchange\u2019s Haul to $270 Million",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-15/goldman-bofa-push-texas-stock-exchange-s-haul-to-270-million",
+      "description": "Goldman Sachs Group Inc. and Bank of America Corp. are headlining a group of investors putting about $20 million into the parent company of the Texas Stock Exchange, adding to the list of Wall Street mainstays backing the upstart marketplace.",
+      "content": "Goldman Sachs Group Inc. and Bank of America Corp. are headlining a group of investors putting about $20 million into the parent company of the Texas Stock Exchange, adding to the list of Wall Street mainstays backing the upstart marketplace.",
+      "pub_date": "Mon, 15 Dec 2025 11:00:00 GMT",
+      "id": "ec6964fab63e",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "McKinsey Plots Thousands of Job Cuts in Slowdown for Consulting Industry",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-15/mckinsey-executives-plot-job-cuts-in-slowdown-for-consulting-industry",
+      "description": "As McKinsey & Co. partners gathered in the consulting giant\u2019s birthplace in late October, Bob Sternfels delivered a rallying cry. \u201cWe will kick some ass as we start our second century,\u201d the firm\u2019s top executive told the thousands of attendees.",
+      "content": "As McKinsey & Co. partners gathered in the consulting giant\u2019s birthplace in late October, Bob Sternfels delivered a rallying cry. \u201cWe will kick some ass as we start our second century,\u201d the firm\u2019s top executive told the thousands of attendees.",
+      "pub_date": "Mon, 15 Dec 2025 10:45:00 GMT",
+      "id": "feb46678cb84",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Macron\u2019s Delaying Tactics Risk Burying Mercosur Deal For Good",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-15/macron-s-delaying-tactics-risk-burying-mercosur-deal-for-good",
+      "description": "Emmanuel Macron\u2019s push to delay a key European Union vote on the Mercosur trade agreement risks derailing the pact altogether.",
+      "content": "Emmanuel Macron\u2019s push to delay a key European Union vote on the Mercosur trade agreement risks derailing the pact altogether.",
+      "pub_date": "Mon, 15 Dec 2025 10:31:49 GMT",
+      "id": "a8c544a53dc5",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Riskier Small Caps Seen Outperforming in 2026 on Growth Outlook",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-15/riskier-small-caps-seen-outperforming-in-2026-on-growth-outlook",
+      "description": "The fast-paced rally in small caps, sidelined for much of this year, has been fueled by a combination of falling interest rates and economic growth \u2014 dual tailwinds that many on Wall Street see as likely to propel the riskier group to market leading gains next year.",
+      "content": "The fast-paced rally in small caps, sidelined for much of this year, has been fueled by a combination of falling interest rates and economic growth \u2014 dual tailwinds that many on Wall Street see as likely to propel the riskier group to market leading gains next year.",
+      "pub_date": "Mon, 15 Dec 2025 10:30:00 GMT",
+      "id": "50c1835b6796",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Korean Pension Fund to Take Flexible Approach to FX Hedging",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-15/korean-pension-fund-to-take-flexible-approach-to-fx-hedging",
+      "description": "South Korea\u2019s National Pension Service will take a more \u201cflexible\u201d approach to strategic foreign-exchange hedging as it moves to shore up the country\u2019s beleaguered currency.",
+      "content": "South Korea\u2019s National Pension Service will take a more \u201cflexible\u201d approach to strategic foreign-exchange hedging as it moves to shore up the country\u2019s beleaguered currency.",
+      "pub_date": "Mon, 15 Dec 2025 09:21:24 GMT",
+      "id": "234bab2f4f7f",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Bond-Market Debate Over Fed\u2019s Path in 2026 Is About to Heat Up",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-14/bond-market-debate-over-fed-s-path-in-2026-is-about-to-heat-up",
+      "description": "The big debate in the US Treasury market over the extent of Federal Reserve interest-rate cuts ahead is about to heat up with a string of pivotal economic data releases.",
+      "content": "The big debate in the US Treasury market over the extent of Federal Reserve interest-rate cuts ahead is about to heat up with a string of pivotal economic data releases.",
+      "pub_date": "Sun, 14 Dec 2025 20:00:00 GMT",
+      "id": "fe6e67624d9f",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "BOJ Is Said to Start Selling ETF Holdings as Soon as January",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-15/boj-is-said-to-start-selling-etf-holdings-as-soon-as-january",
+      "description": "Bank of Japan officials are likely to start selling the central bank\u2019s pile of exchange-traded funds as early as next month, according to people familiar with the matter, a process expected to take decades to complete.",
+      "content": "Bank of Japan officials are likely to start selling the central bank\u2019s pile of exchange-traded funds as early as next month, according to people familiar with the matter, a process expected to take decades to complete.",
+      "pub_date": "Mon, 15 Dec 2025 05:20:20 GMT",
+      "id": "5ce18d15049c",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Canadian Home Prices Dip as Momentum Stalls Heading to Year-End",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-15/canadian-home-prices-dip-as-momentum-stalls-heading-to-year-end",
+      "description": "Canadian home prices dipped in November as the tentative momentum the market built through the middle of the year petered out heading into the colder months.",
+      "content": "Canadian home prices dipped in November as the tentative momentum the market built through the middle of the year petered out heading into the colder months.",
+      "pub_date": "Mon, 15 Dec 2025 10:00:00 GMT",
+      "id": "0f2beda7ad9a",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
     }
   ],
   "rejected": [
@@ -3256,6 +3485,57 @@
         "quality": 1,
         "overall": 1,
         "reason": "The article is not about the ski industry at all and does not contain any relevant information for a ski business news feed."
+      }
+    },
+    {
+      "source": "The Atlantic",
+      "url": "https://www.theatlantic.com/ideas/2025/12/bondi-beach-australia-anti-semitism/685256/?utm_source=feed",
+      "title": "The Intifada Comes to Bondi Beach",
+      "description": "A Hanukkah massacre of Australian Jews",
+      "content": "A Hanukkah massacre of Australian Jews",
+      "pub_date": "2025-12-14T12:20:00-05:00",
+      "id": "42a415a2c220",
+      "score": 1,
+      "score_details": {
+        "relevance": 1,
+        "news_value": 1,
+        "quality": 3,
+        "overall": 1,
+        "reason": "This article has no relevance to the ski industry or ski business news. It appears to be about a terrorist attack in Australia, which is completely unrelated to the ski industry."
+      }
+    },
+    {
+      "source": "The Atlantic",
+      "url": "https://www.theatlantic.com/photography/2025/12/day-14-2025-space-telescope-advent-calendar-ripples-galactic-merger/685253/?utm_source=feed",
+      "title": "Ripples of a Galactic Merger",
+      "description": "Day 14 of the 2025 Space Telescope Advent Calendar",
+      "content": "Day 14 of the 2025 Space Telescope Advent Calendar",
+      "pub_date": "2025-12-14T11:47:00-05:00",
+      "id": "5318a6113942",
+      "score": 1,
+      "score_details": {
+        "relevance": 1,
+        "news_value": 1,
+        "quality": 1,
+        "overall": 1,
+        "reason": "This article is about a space telescope and has no relevance to the ski industry."
+      }
+    },
+    {
+      "source": "Financial Times",
+      "title": "Australia to toughen gun laws after 15 die in attack on Jewish festival",
+      "url": "https://www.ft.com/content/c422b9f4-3286-446e-802c-9c75e38d88dd",
+      "description": "Prime Minister Anthony Albanese says country will do more to combat antisemitism",
+      "content": "Prime Minister Anthony Albanese says country will do more to combat antisemitism",
+      "pub_date": "Mon, 15 Dec 2025 10:55:10 GMT",
+      "id": "f35d05a32185",
+      "score": 1,
+      "score_details": {
+        "relevance": 1,
+        "news_value": 1,
+        "quality": 3,
+        "overall": 1,
+        "reason": "This article is about a terrorist attack and changes to gun laws in Australia, which have no direct relevance to the ski industry business. It does not contain any substantive news about ski resorts, destinations, or the industry overall."
       }
     }
   ]
