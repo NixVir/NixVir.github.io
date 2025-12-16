@@ -77,6 +77,7 @@ python update_ski_news.py
 - Python 3.11+
 - Hugo (extended version recommended)
 - Git
+- Python packages: `pip install openpyxl requests`
 
 ### Local Server
 ```powershell
@@ -104,6 +105,12 @@ Output goes to `public/` directory.
    ```
 2. If not set locally, add to Windows environment variables
 3. For GitHub Actions, verify secret is configured
+
+### News Sentiment Chart Empty
+1. Ensure `openpyxl` is installed: `pip install openpyxl`
+2. The SF Fed publishes sentiment as Excel (.xlsx) which requires openpyxl to parse
+3. Check if SF Fed URL is accessible: https://www.frbsf.org/wp-content/uploads/news_sentiment_data.xlsx
+4. GitHub Actions workflow includes `pip install openpyxl` step
 
 ### Ski News Miscategorized
 1. Check `update_ski_news.py` category keywords (line ~88)
