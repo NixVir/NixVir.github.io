@@ -1,89 +1,89 @@
 {
-  "updated": "2025-12-16 20:06:28",
+  "updated": "2025-12-16 20:11:09",
   "consumer_confidence": [
     {
       "date": "2024-11-01",
       "series_id": "UMCSENT",
       "value": 71.8,
-      "realtime_start": "2025-12-05",
-      "realtime_end": "2025-12-05"
+      "realtime_start": "2025-12-03",
+      "realtime_end": "2025-12-03"
     },
     {
       "date": "2024-12-01",
       "series_id": "UMCSENT",
       "value": 74.0,
-      "realtime_start": "2025-12-05",
-      "realtime_end": "2025-12-05"
+      "realtime_start": "2025-12-03",
+      "realtime_end": "2025-12-03"
     },
     {
       "date": "2025-01-01",
       "series_id": "UMCSENT",
       "value": 71.7,
-      "realtime_start": "2025-12-05",
-      "realtime_end": "2025-12-05"
+      "realtime_start": "2025-12-03",
+      "realtime_end": "2025-12-03"
     },
     {
       "date": "2025-02-01",
       "series_id": "UMCSENT",
       "value": 64.7,
-      "realtime_start": "2025-12-05",
-      "realtime_end": "2025-12-05"
+      "realtime_start": "2025-12-03",
+      "realtime_end": "2025-12-03"
     },
     {
       "date": "2025-03-01",
       "series_id": "UMCSENT",
       "value": 57.0,
-      "realtime_start": "2025-12-05",
-      "realtime_end": "2025-12-05"
+      "realtime_start": "2025-12-03",
+      "realtime_end": "2025-12-03"
     },
     {
       "date": "2025-04-01",
       "series_id": "UMCSENT",
       "value": 52.2,
-      "realtime_start": "2025-12-05",
-      "realtime_end": "2025-12-05"
+      "realtime_start": "2025-12-03",
+      "realtime_end": "2025-12-03"
     },
     {
       "date": "2025-05-01",
       "series_id": "UMCSENT",
       "value": 52.2,
-      "realtime_start": "2025-12-05",
-      "realtime_end": "2025-12-05"
+      "realtime_start": "2025-12-03",
+      "realtime_end": "2025-12-03"
     },
     {
       "date": "2025-06-01",
       "series_id": "UMCSENT",
       "value": 60.7,
-      "realtime_start": "2025-12-05",
-      "realtime_end": "2025-12-05"
+      "realtime_start": "2025-12-03",
+      "realtime_end": "2025-12-03"
     },
     {
       "date": "2025-07-01",
       "series_id": "UMCSENT",
       "value": 61.7,
-      "realtime_start": "2025-12-05",
-      "realtime_end": "2025-12-05"
+      "realtime_start": "2025-12-03",
+      "realtime_end": "2025-12-03"
     },
     {
       "date": "2025-08-01",
       "series_id": "UMCSENT",
       "value": 58.2,
-      "realtime_start": "2025-12-05",
-      "realtime_end": "2025-12-05"
+      "realtime_start": "2025-12-03",
+      "realtime_end": "2025-12-03"
     },
     {
       "date": "2025-09-01",
       "series_id": "UMCSENT",
       "value": 55.1,
-      "realtime_start": "2025-12-05",
-      "realtime_end": "2025-12-05"
+      "realtime_start": "2025-12-03",
+      "realtime_end": "2025-12-03"
     },
     {
       "date": "2025-10-01",
       "series_id": "UMCSENT",
       "value": 53.6,
-      "realtime_start": "2025-12-05",
-      "realtime_end": "2025-12-05"
+      "realtime_start": "2025-12-03",
+      "realtime_end": "2025-12-03"
     }
   ],
   "markets": [
@@ -3850,85 +3850,85 @@
       "date": "2024-10-01",
       "series_id": "CPIAUCSL",
       "value": 315.564,
-      "realtime_start": "2025-10-28",
-      "realtime_end": "2025-10-28"
+      "realtime_start": "2025-11-11",
+      "realtime_end": "2025-11-11"
     },
     {
       "date": "2024-11-01",
       "series_id": "CPIAUCSL",
       "value": 316.449,
-      "realtime_start": "2025-10-28",
-      "realtime_end": "2025-10-28"
+      "realtime_start": "2025-11-11",
+      "realtime_end": "2025-11-11"
     },
     {
       "date": "2024-12-01",
       "series_id": "CPIAUCSL",
       "value": 317.603,
-      "realtime_start": "2025-10-28",
-      "realtime_end": "2025-10-28"
+      "realtime_start": "2025-11-11",
+      "realtime_end": "2025-11-11"
     },
     {
       "date": "2025-01-01",
       "series_id": "CPIAUCSL",
       "value": 319.086,
-      "realtime_start": "2025-10-28",
-      "realtime_end": "2025-10-28"
+      "realtime_start": "2025-11-11",
+      "realtime_end": "2025-11-11"
     },
     {
       "date": "2025-02-01",
       "series_id": "CPIAUCSL",
       "value": 319.775,
-      "realtime_start": "2025-10-28",
-      "realtime_end": "2025-10-28"
+      "realtime_start": "2025-11-11",
+      "realtime_end": "2025-11-11"
     },
     {
       "date": "2025-03-01",
       "series_id": "CPIAUCSL",
       "value": 319.615,
-      "realtime_start": "2025-10-28",
-      "realtime_end": "2025-10-28"
+      "realtime_start": "2025-11-11",
+      "realtime_end": "2025-11-11"
     },
     {
       "date": "2025-04-01",
       "series_id": "CPIAUCSL",
       "value": 320.321,
-      "realtime_start": "2025-10-28",
-      "realtime_end": "2025-10-28"
+      "realtime_start": "2025-11-11",
+      "realtime_end": "2025-11-11"
     },
     {
       "date": "2025-05-01",
       "series_id": "CPIAUCSL",
       "value": 320.58,
-      "realtime_start": "2025-10-28",
-      "realtime_end": "2025-10-28"
+      "realtime_start": "2025-11-11",
+      "realtime_end": "2025-11-11"
     },
     {
       "date": "2025-06-01",
       "series_id": "CPIAUCSL",
       "value": 321.5,
-      "realtime_start": "2025-10-28",
-      "realtime_end": "2025-10-28"
+      "realtime_start": "2025-11-11",
+      "realtime_end": "2025-11-11"
     },
     {
       "date": "2025-07-01",
       "series_id": "CPIAUCSL",
       "value": 322.132,
-      "realtime_start": "2025-10-28",
-      "realtime_end": "2025-10-28"
+      "realtime_start": "2025-11-11",
+      "realtime_end": "2025-11-11"
     },
     {
       "date": "2025-08-01",
       "series_id": "CPIAUCSL",
       "value": 323.364,
-      "realtime_start": "2025-10-28",
-      "realtime_end": "2025-10-28"
+      "realtime_start": "2025-11-11",
+      "realtime_end": "2025-11-11"
     },
     {
       "date": "2025-09-01",
       "series_id": "CPIAUCSL",
       "value": 324.368,
-      "realtime_start": "2025-10-28",
-      "realtime_end": "2025-10-28"
+      "realtime_start": "2025-11-11",
+      "realtime_end": "2025-11-11"
     }
   ],
   "employment": [
@@ -4108,85 +4108,85 @@
       "date": "2022-07-01",
       "series_id": "GDP",
       "value": 26336.304,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-10-23",
+      "realtime_end": "2025-10-23"
     },
     {
       "date": "2022-10-01",
       "series_id": "GDP",
       "value": 26770.514,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-10-23",
+      "realtime_end": "2025-10-23"
     },
     {
       "date": "2023-01-01",
       "series_id": "GDP",
       "value": 27216.445,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-10-23",
+      "realtime_end": "2025-10-23"
     },
     {
       "date": "2023-04-01",
       "series_id": "GDP",
       "value": 27530.055,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-10-23",
+      "realtime_end": "2025-10-23"
     },
     {
       "date": "2023-07-01",
       "series_id": "GDP",
       "value": 28074.846,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-10-23",
+      "realtime_end": "2025-10-23"
     },
     {
       "date": "2023-10-01",
       "series_id": "GDP",
       "value": 28424.722,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-10-23",
+      "realtime_end": "2025-10-23"
     },
     {
       "date": "2024-01-01",
       "series_id": "GDP",
       "value": 28708.161,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-10-23",
+      "realtime_end": "2025-10-23"
     },
     {
       "date": "2024-04-01",
       "series_id": "GDP",
       "value": 29147.044,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-10-23",
+      "realtime_end": "2025-10-23"
     },
     {
       "date": "2024-07-01",
       "series_id": "GDP",
       "value": 29511.664,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-10-23",
+      "realtime_end": "2025-10-23"
     },
     {
       "date": "2024-10-01",
       "series_id": "GDP",
       "value": 29825.182,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-10-23",
+      "realtime_end": "2025-10-23"
     },
     {
       "date": "2025-01-01",
       "series_id": "GDP",
       "value": 30042.113,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-10-23",
+      "realtime_end": "2025-10-23"
     },
     {
       "date": "2025-04-01",
       "series_id": "GDP",
       "value": 30485.729,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-10-23",
+      "realtime_end": "2025-10-23"
     }
   ],
   "housing_starts": [
@@ -4194,85 +4194,85 @@
       "date": "2024-09-01",
       "series_id": "HOUST",
       "value": 1357.0,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-10-31",
+      "realtime_end": "2025-10-31"
     },
     {
       "date": "2024-10-01",
       "series_id": "HOUST",
       "value": 1352.0,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-10-31",
+      "realtime_end": "2025-10-31"
     },
     {
       "date": "2024-11-01",
       "series_id": "HOUST",
       "value": 1295.0,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-10-31",
+      "realtime_end": "2025-10-31"
     },
     {
       "date": "2024-12-01",
       "series_id": "HOUST",
       "value": 1514.0,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-10-31",
+      "realtime_end": "2025-10-31"
     },
     {
       "date": "2025-01-01",
       "series_id": "HOUST",
       "value": 1358.0,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-10-31",
+      "realtime_end": "2025-10-31"
     },
     {
       "date": "2025-02-01",
       "series_id": "HOUST",
       "value": 1490.0,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-10-31",
+      "realtime_end": "2025-10-31"
     },
     {
       "date": "2025-03-01",
       "series_id": "HOUST",
       "value": 1355.0,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-10-31",
+      "realtime_end": "2025-10-31"
     },
     {
       "date": "2025-04-01",
       "series_id": "HOUST",
       "value": 1398.0,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-10-31",
+      "realtime_end": "2025-10-31"
     },
     {
       "date": "2025-05-01",
       "series_id": "HOUST",
       "value": 1282.0,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-10-31",
+      "realtime_end": "2025-10-31"
     },
     {
       "date": "2025-06-01",
       "series_id": "HOUST",
       "value": 1382.0,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-10-31",
+      "realtime_end": "2025-10-31"
     },
     {
       "date": "2025-07-01",
       "series_id": "HOUST",
       "value": 1429.0,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-10-31",
+      "realtime_end": "2025-10-31"
     },
     {
       "date": "2025-08-01",
       "series_id": "HOUST",
       "value": 1307.0,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-10-31",
+      "realtime_end": "2025-10-31"
     }
   ],
   "treasury_10y": [
