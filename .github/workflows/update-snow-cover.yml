@@ -1,0 +1,49 @@
+name: Update Snow Cover Data
+
+on:
+  schedule:
+    # Run twice daily at 6 AM and 6 PM EST (11 AM and 11 PM UTC)
+    - cron: '0 11,23 * * *'
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  update-snow-cover:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Update snow cover data
+        run: |
+          python update_snow_cover.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add static/data/snow-cover.json
+
+          # Check if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes to snow cover data"
+          else
+            # Extract current values for commit message
+            USA=$(python -c "import json; d=json.load(open('static/data/snow-cover.json')); print(f\"{d['usa']['cover']}%\")")
+            CANADA=$(python -c "import json; d=json.load(open('static/data/snow-cover.json')); print(f\"{d['canada']['cover']}%\")")
+            COMBINED=$(python -c "import json; d=json.load(open('static/data/snow-cover.json')); print(f\"{d['combined']['cover']}%\")")
+            git commit -m "Update snow cover data - Combined: ${COMBINED}, USA: ${USA}, Canada: ${CANADA} ($(date +'%Y-%m-%d'))"
+            git push
+            echo "Snow cover data updated and pushed"
+          fi
