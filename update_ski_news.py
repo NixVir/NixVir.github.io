@@ -87,10 +87,13 @@ ARTICLE_CATEGORIES = {
     },
     'ski-history': {
         'name': 'Ski History',
-        'keywords': ['abandoned', 'historic', 'history', 'anniversary', 'founded',
-                     'pioneer', 'vintage', 'legacy', 'memorial', 'museum',
-                     'closed permanently', 'defunct', 'former ski area', 'old ski area',
-                     'ski heritage', 'first ski', 'skiing history', 'remains of']
+        'keywords': ['abandoned ski', 'abandoned resort', 'historic ski', 'ski history',
+                     'skiing history', 'resort history', '50th anniversary', '75th anniversary',
+                     '100th anniversary', 'ski pioneer', 'skiing pioneer', 'vintage ski',
+                     'ski legacy', 'ski memorial', 'ski museum', 'skiing museum',
+                     'closed permanently', 'defunct ski', 'former ski area', 'old ski area',
+                     'ski heritage', 'first ski lift', 'first chairlift', 'remains of ski',
+                     'history of skiing', 'history of the resort', 'founded in 19']
     },
     'hospitality': {
         'name': 'Hospitality',
