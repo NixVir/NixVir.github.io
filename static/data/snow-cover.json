@@ -1,5 +1,5 @@
 {
-  "updated": "2025-12-16 11:22 UTC",
+  "updated": "2025-12-16 23:21 UTC",
   "data_sources": {
     "usa": "NOHRSC",
     "canada": "Derived (NOHRSC ratio)",
@@ -7,15 +7,15 @@
     "copernicus_available": false
   },
   "combined": {
-    "cover": 49.2,
-    "change": "+3.4%",
-    "context": "Approximately 49% of North American land area currently has visible snow cover"
+    "cover": 45.0,
+    "change": "-1.1%",
+    "context": "Approximately 45% of North American land area currently has visible snow cover"
   },
   "usa": {
-    "cover": 30.7,
-    "change": "+3.4%",
-    "areaSqMi": 1165679,
-    "areaSqKm": 3019096,
+    "cover": 28.1,
+    "change": "\u2014",
+    "areaSqMi": 1066957,
+    "areaSqKm": 2763407,
     "avgDepthInches": 4,
     "avgDepthCm": 10.2,
     "priorYearAvgDepthInches": 1.2,
@@ -23,123 +23,123 @@
     "history": [
       {
         "date": "2025-11-17",
-        "value": 25.7
+        "value": 20.5
       },
       {
         "date": "2025-11-18",
-        "value": 23.2
+        "value": 22.2
       },
       {
         "date": "2025-11-19",
-        "value": 25.2
+        "value": 19.3
       },
       {
         "date": "2025-11-20",
-        "value": 24.1
+        "value": 20.1
       },
       {
         "date": "2025-11-21",
-        "value": 24.8
+        "value": 21.6
       },
       {
         "date": "2025-11-22",
-        "value": 25.4
+        "value": 22.8
       },
       {
         "date": "2025-11-23",
-        "value": 23.1
+        "value": 22.5
       },
       {
         "date": "2025-11-24",
-        "value": 27.6
+        "value": 21.5
       },
       {
         "date": "2025-11-25",
-        "value": 24.6
+        "value": 21.8
       },
       {
         "date": "2025-11-26",
-        "value": 23.2
+        "value": 21.3
       },
       {
         "date": "2025-11-27",
-        "value": 25.9
+        "value": 23.4
       },
       {
         "date": "2025-11-28",
-        "value": 26.4
+        "value": 25.9
       },
       {
         "date": "2025-11-29",
-        "value": 27.5
+        "value": 25.0
       },
       {
         "date": "2025-11-30",
-        "value": 26.0
-      },
-      {
-        "date": "2025-12-01",
-        "value": 28.9
-      },
-      {
-        "date": "2025-12-02",
-        "value": 28.7
-      },
-      {
-        "date": "2025-12-03",
-        "value": 27.2
-      },
-      {
-        "date": "2025-12-04",
-        "value": 28.3
-      },
-      {
-        "date": "2025-12-05",
-        "value": 29.3
-      },
-      {
-        "date": "2025-12-06",
         "value": 26.2
       },
       {
+        "date": "2025-12-01",
+        "value": 24.0
+      },
+      {
+        "date": "2025-12-02",
+        "value": 26.0
+      },
+      {
+        "date": "2025-12-03",
+        "value": 25.7
+      },
+      {
+        "date": "2025-12-04",
+        "value": 27.6
+      },
+      {
+        "date": "2025-12-05",
+        "value": 23.0
+      },
+      {
+        "date": "2025-12-06",
+        "value": 26.0
+      },
+      {
         "date": "2025-12-07",
-        "value": 30.8
+        "value": 26.5
       },
       {
         "date": "2025-12-08",
-        "value": 28.3
+        "value": 28.2
       },
       {
         "date": "2025-12-09",
-        "value": 27.3
+        "value": 28.4
       },
       {
         "date": "2025-12-10",
-        "value": 30.6
+        "value": 27.8
       },
       {
         "date": "2025-12-11",
-        "value": 30.2
+        "value": 29.0
       },
       {
         "date": "2025-12-12",
-        "value": 29.9
+        "value": 28.5
       },
       {
         "date": "2025-12-13",
-        "value": 28.9
+        "value": 28.0
       },
       {
         "date": "2025-12-14",
-        "value": 29.5
+        "value": 28.8
       },
       {
         "date": "2025-12-15",
-        "value": 31.2
+        "value": 28.7
       },
       {
         "date": "2025-12-16",
-        "value": 31.7
+        "value": 25.9
       }
     ],
     "priorYearHistory": [
@@ -266,287 +266,260 @@
     ]
   },
   "canada": {
-    "cover": 67.4,
-    "change": "+2.3%",
-    "areaSqMi": 2598213,
-    "areaSqKm": 6729347,
-    "avgDepthInches": 7.5,
-    "avgDepthCm": 19,
-    "priorYearAvgDepthInches": 2.2,
-    "priorYearAvgDepthCm": 5.6,
+    "cover": 61.7,
+    "change": "-1.1%",
+    "areaSqMi": 2378169,
+    "areaSqKm": 6159435,
+    "avgDepthInches": 7.1,
+    "avgDepthCm": 18,
+    "priorYearAvgDepthInches": 2.1,
+    "priorYearAvgDepthCm": 5.3,
     "history": [
       {
         "date": "2025-11-17",
-        "value": 56.9
+        "value": 56.2
       },
       {
         "date": "2025-11-18",
-        "value": 61.8
+        "value": 56.9
       },
       {
         "date": "2025-11-19",
-        "value": 57.2
+        "value": 54.7
       },
       {
         "date": "2025-11-20",
-        "value": 61.2
+        "value": 54.9
       },
       {
         "date": "2025-11-21",
-        "value": 62.3
+        "value": 55.6
       },
       {
         "date": "2025-11-22",
-        "value": 60.9
+        "value": 59.0
       },
       {
         "date": "2025-11-23",
-        "value": 60.3
+        "value": 57.4
       },
       {
         "date": "2025-11-24",
-        "value": 59.4
+        "value": 55.7
       },
       {
         "date": "2025-11-25",
-        "value": 60.1
+        "value": 56.9
       },
       {
         "date": "2025-11-26",
-        "value": 63.2
+        "value": 59.2
       },
       {
         "date": "2025-11-27",
-        "value": 60.6
+        "value": 60.5
       },
       {
         "date": "2025-11-28",
-        "value": 59.9
+        "value": 60.2
       },
       {
         "date": "2025-11-29",
-        "value": 61.3
+        "value": 58.3
       },
       {
         "date": "2025-11-30",
-        "value": 64.5
+        "value": 59.3
       },
       {
         "date": "2025-12-01",
-        "value": 62.2
+        "value": 56.5
       },
       {
         "date": "2025-12-02",
-        "value": 61.1
+        "value": 57.1
       },
       {
         "date": "2025-12-03",
-        "value": 62.0
+        "value": 57.4
       },
       {
         "date": "2025-12-04",
-        "value": 65.6
+        "value": 59.1
       },
       {
         "date": "2025-12-05",
-        "value": 65.7
+        "value": 60.9
       },
       {
         "date": "2025-12-06",
-        "value": 65.4
+        "value": 59.8
       },
       {
         "date": "2025-12-07",
-        "value": 63.4
+        "value": 59.0
       },
       {
         "date": "2025-12-08",
-        "value": 62.7
+        "value": 61.7
       },
       {
         "date": "2025-12-09",
-        "value": 65.1
+        "value": 62.8
       },
       {
         "date": "2025-12-10",
-        "value": 66.3
+        "value": 59.7
       },
       {
         "date": "2025-12-11",
-        "value": 66.6
+        "value": 59.8
       },
       {
         "date": "2025-12-12",
-        "value": 66.1
+        "value": 62.3
       },
       {
         "date": "2025-12-13",
-        "value": 67.2
+        "value": 61.9
       },
       {
         "date": "2025-12-14",
-        "value": 65.5
+        "value": 63.0
       },
       {
         "date": "2025-12-15",
-        "value": 67.7
+        "value": 63.8
       },
       {
         "date": "2025-12-16",
-        "value": 67.6
+        "value": 60.3
       }
     ],
     "priorYearHistory": [
       {
         "date": "2024-11-17",
-        "value": 24.6
+        "value": 30.4
       },
       {
         "date": "2024-11-18",
-        "value": 28.0
+        "value": 26.9
       },
       {
         "date": "2024-11-19",
-        "value": 30.9
+        "value": 38.5
       },
       {
         "date": "2024-11-20",
-        "value": 36.8
+        "value": 39.6
       },
       {
         "date": "2024-11-21",
-        "value": 37.2
+        "value": 38.1
       },
       {
         "date": "2024-11-22",
-        "value": 44.6
+        "value": 48.1
       },
       {
         "date": "2024-11-23",
-        "value": 41.0
-      },
-      {
-        "date": "2024-11-24",
-        "value": 33.6
-      },
-      {
-        "date": "2024-11-25",
-        "value": 41.8
-      },
-      {
-        "date": "2024-11-26",
-        "value": 52.6
-      },
-      {
-        "date": "2024-11-27",
-        "value": 50.8
-      },
-      {
-        "date": "2024-11-28",
-        "value": 53.3
-      },
-      {
-        "date": "2024-11-29",
-        "value": 57.5
-      },
-      {
-        "date": "2024-11-30",
-        "value": 63.0
-      },
-      {
-        "date": "2024-12-01",
-        "value": 55.3
-      },
-      {
-        "date": "2024-12-02",
-        "value": 53.4
-      },
-      {
-        "date": "2024-12-03",
-        "value": 55.6
-      },
-      {
-        "date": "2024-12-04",
-        "value": 52.6
-      },
-      {
-        "date": "2024-12-05",
-        "value": 47.8
-      },
-      {
-        "date": "2024-12-06",
-        "value": 53.7
-      },
-      {
-        "date": "2024-12-07",
-        "value": 41.8
-      },
-      {
-        "date": "2024-12-08",
-        "value": 39.0
-      },
-      {
-        "date": "2024-12-09",
         "value": 40.1
       },
       {
+        "date": "2024-11-24",
+        "value": 40.4
+      },
+      {
+        "date": "2024-11-25",
+        "value": 44.6
+      },
+      {
+        "date": "2024-11-26",
+        "value": 53.6
+      },
+      {
+        "date": "2024-11-27",
+        "value": 56.1
+      },
+      {
+        "date": "2024-11-28",
+        "value": 54.6
+      },
+      {
+        "date": "2024-11-29",
+        "value": 60.2
+      },
+      {
+        "date": "2024-11-30",
+        "value": 57.5
+      },
+      {
+        "date": "2024-12-01",
+        "value": 60.5
+      },
+      {
+        "date": "2024-12-02",
+        "value": 55.1
+      },
+      {
+        "date": "2024-12-03",
+        "value": 54.5
+      },
+      {
+        "date": "2024-12-04",
+        "value": 48.6
+      },
+      {
+        "date": "2024-12-05",
+        "value": 56.4
+      },
+      {
+        "date": "2024-12-06",
+        "value": 49.4
+      },
+      {
+        "date": "2024-12-07",
+        "value": 45.2
+      },
+      {
+        "date": "2024-12-08",
+        "value": 38.5
+      },
+      {
+        "date": "2024-12-09",
+        "value": 37.1
+      },
+      {
         "date": "2024-12-10",
-        "value": 41.6
+        "value": 41.2
       },
       {
         "date": "2024-12-11",
-        "value": 42.1
+        "value": 39.4
       },
       {
         "date": "2024-12-12",
-        "value": 48.0
+        "value": 47.4
       },
       {
         "date": "2024-12-13",
-        "value": 49.1
+        "value": 46.6
       },
       {
         "date": "2024-12-14",
-        "value": 46.8
+        "value": 46.2
       },
       {
         "date": "2024-12-15",
-        "value": 50.8
+        "value": 52.0
       },
       {
         "date": "2024-12-16",
-        "value": 53.7
+        "value": 58.7
       }
     ]
   },
   "metros": [
-    {
-      "city": "Calgary",
-      "region": "AB",
-      "country": "canada",
-      "cover": 85,
-      "depthInches": 6.2,
-      "depthCm": 15.6,
-      "trend": "up",
-      "history": [
-        98.8,
-        96.1,
-        75.2,
-        95.6,
-        76.5,
-        83.2,
-        78.5
-      ],
-      "priorYearHistory": [
-        70.0,
-        67.5,
-        54.3,
-        62.8,
-        58.3,
-        56.7,
-        56.3
-      ]
-    },
     {
       "city": "Edmonton",
       "region": "AB",
@@ -554,24 +527,24 @@
       "cover": 85,
       "depthInches": 6.2,
       "depthCm": 15.6,
-      "trend": "stable",
+      "trend": "down",
       "history": [
-        89.7,
-        77.7,
-        88.9,
-        91.7,
-        80.3,
-        90.4,
-        77.5
+        89.6,
+        87.3,
+        87.2,
+        82.3,
+        92.6,
+        82.2,
+        88.9
       ],
       "priorYearHistory": [
-        65.7,
-        52.7,
-        62.1,
-        70.8,
-        57.7,
-        61.9,
-        55.3
+        69.1,
+        63.9,
+        69.2,
+        64.5,
+        72.6,
+        65.2,
+        73.7
       ]
     },
     {
@@ -583,22 +556,22 @@
       "depthCm": 13.1,
       "trend": "up",
       "history": [
-        48.9,
-        65.4,
-        70.6,
-        56.5,
-        57.8,
-        59.2,
-        55.3
+        54.6,
+        65.2,
+        69.1,
+        69.3,
+        78.1,
+        58.3,
+        61.4
       ],
       "priorYearHistory": [
-        34.6,
-        48.8,
-        50.8,
-        42.8,
-        44.2,
-        43.2,
-        42.7
+        41.5,
+        54.1,
+        53.0,
+        51.0,
+        59.8,
+        42.6,
+        45.0
       ]
     },
     {
@@ -610,22 +583,22 @@
       "depthCm": 13.1,
       "trend": "up",
       "history": [
-        71.9,
-        70.8,
-        53.6,
-        53.7,
-        64.6,
-        68.8,
-        71.9
+        70.5,
+        73.9,
+        71.2,
+        68.4,
+        64.8,
+        72.9,
+        64.4
       ],
       "priorYearHistory": [
-        50.8,
-        50.3,
-        37.3,
-        35.8,
-        42.2,
-        53.0,
-        47.1
+        54.4,
+        52.9,
+        52.3,
+        49.5,
+        54.6,
+        59.1,
+        54.4
       ]
     },
     {
@@ -635,78 +608,78 @@
       "cover": 65,
       "depthInches": 5.2,
       "depthCm": 13.1,
-      "trend": "stable",
+      "trend": "up",
       "history": [
-        55.6,
-        56.5,
-        64.9,
-        70.9,
-        56.7,
-        60.0,
-        73.1
+        67.7,
+        70.4,
+        53.6,
+        79.9,
+        67.2,
+        69.8,
+        61.3
       ],
       "priorYearHistory": [
-        42.7,
-        39.1,
-        48.7,
-        51.1,
-        37.8,
-        47.4,
-        49.9
-      ]
-    },
-    {
-      "city": "Buffalo",
-      "region": "NY",
-      "country": "usa",
-      "cover": 50,
-      "depthInches": 7,
-      "depthCm": 17.8,
-      "trend": "down",
-      "history": [
-        44.8,
-        63.9,
-        40.4,
-        52.3,
-        46.9,
-        50.2,
-        42.8
-      ],
-      "priorYearHistory": [
-        30.4,
-        47.6,
-        31.9,
-        40.0,
-        32.8,
-        33.2,
-        34.0
+        51.3,
+        58.8,
+        43.4,
+        67.0,
+        49.6,
+        59.6,
+        53.3
       ]
     },
     {
       "city": "Quebec City",
       "region": "QC",
       "country": "canada",
-      "cover": 50,
-      "depthInches": 4.4,
-      "depthCm": 11.2,
-      "trend": "stable",
+      "cover": 65,
+      "depthInches": 5.2,
+      "depthCm": 13.1,
+      "trend": "up",
       "history": [
-        43.1,
-        43.8,
-        46.7,
-        54.8,
-        42.6,
-        41.2,
-        40.4
+        55.0,
+        62.4,
+        72.8,
+        76.7,
+        64.8,
+        70.6,
+        62.1
       ],
       "priorYearHistory": [
-        30.1,
-        33.6,
-        35.5,
-        41.7,
-        30.8,
-        27.0,
-        31.7
+        43.7,
+        50.4,
+        54.3,
+        59.1,
+        53.0,
+        50.9,
+        48.0
+      ]
+    },
+    {
+      "city": "Calgary",
+      "region": "AB",
+      "country": "canada",
+      "cover": 60,
+      "depthInches": 4.9,
+      "depthCm": 12.5,
+      "trend": "stable",
+      "history": [
+        49.7,
+        53.3,
+        67.7,
+        58.0,
+        72.2,
+        52.8,
+        52.5
+      ],
+      "priorYearHistory": [
+        39.9,
+        40.1,
+        52.4,
+        50.1,
+        53.3,
+        46.1,
+        40.7
       ]
     },
     {
@@ -718,76 +691,22 @@
       "depthCm": 7.6,
       "trend": "up",
       "history": [
-        50.8,
-        41.4,
-        48.9,
-        47.2,
-        43.6,
-        43.0,
-        47.9
-      ],
-      "priorYearHistory": [
-        34.9,
-        30.3,
-        33.6,
-        37.2,
-        28.4,
-        33.9,
-        34.4
-      ]
-    },
-    {
-      "city": "Chicago",
-      "region": "IL",
-      "country": "usa",
-      "cover": 45,
-      "depthInches": 3,
-      "depthCm": 7.6,
-      "trend": "stable",
-      "history": [
-        46.0,
-        58.8,
-        39.8,
-        50.6,
-        45.8,
-        37.1,
-        48.1
-      ],
-      "priorYearHistory": [
-        33.2,
+        49.1,
+        50.7,
+        52.4,
+        38.2,
         42.3,
-        29.6,
-        35.9,
-        30.8,
-        26.7,
-        31.7
-      ]
-    },
-    {
-      "city": "Minneapolis",
-      "region": "MN",
-      "country": "usa",
-      "cover": 45,
-      "depthInches": 3,
-      "depthCm": 7.6,
-      "trend": "down",
-      "history": [
-        46.3,
-        58.0,
-        43.7,
-        47.6,
-        39.4,
-        51.5,
-        43.7
+        49.0,
+        36.5
       ],
       "priorYearHistory": [
-        30.7,
-        41.2,
-        34.4,
-        36.1,
-        27.2,
-        34.4,
-        30.4
+        41.7,
+        42.5,
+        39.5,
+        32.4,
+        31.2,
+        39.6,
+        30.1
       ]
     },
     {
@@ -797,105 +716,51 @@
       "cover": 45,
       "depthInches": 3,
       "depthCm": 7.6,
-      "trend": "stable",
+      "trend": "down",
       "history": [
-        53.8,
-        49.7,
-        36.8,
-        31.0,
-        37.2,
-        43.0,
-        48.2
+        49.6,
+        51.7,
+        41.7,
+        39.6,
+        52.0,
+        38.8,
+        35.6
       ],
       "priorYearHistory": [
-        36.1,
-        36.8,
-        24.6,
-        21.6,
-        27.7,
-        30.3,
-        32.6
+        39.5,
+        41.2,
+        32.9,
+        30.8,
+        40.2,
+        31.9,
+        29.7
       ]
     },
     {
-      "city": "Detroit",
-      "region": "MI",
+      "city": "Buffalo",
+      "region": "NY",
       "country": "usa",
       "cover": 45,
       "depthInches": 3,
       "depthCm": 7.6,
       "trend": "up",
       "history": [
-        46.8,
-        45.9,
-        59.2,
+        49.6,
         42.0,
-        49.4,
-        53.7,
-        41.5
+        43.5,
+        47.6,
+        37.1,
+        51.9,
+        37.7
       ],
       "priorYearHistory": [
-        36.0,
-        30.5,
-        42.1,
-        28.1,
-        35.1,
-        37.5,
-        28.8
-      ]
-    },
-    {
-      "city": "Cleveland",
-      "region": "OH",
-      "country": "usa",
-      "cover": 45,
-      "depthInches": 3,
-      "depthCm": 7.6,
-      "trend": "stable",
-      "history": [
-        45.1,
-        49.4,
-        46.1,
-        46.0,
-        42.5,
-        37.8,
-        51.1
-      ],
-      "priorYearHistory": [
-        32.3,
-        39.0,
-        36.3,
-        31.1,
-        32.2,
-        26.5,
-        40.0
-      ]
-    },
-    {
-      "city": "Milwaukee",
-      "region": "WI",
-      "country": "usa",
-      "cover": 45,
-      "depthInches": 3,
-      "depthCm": 7.6,
-      "trend": "up",
-      "history": [
-        43.1,
-        51.5,
-        42.2,
-        31.0,
-        35.8,
-        45.1,
-        52.5
-      ],
-      "priorYearHistory": [
-        32.2,
-        36.1,
-        33.2,
-        24.3,
-        28.2,
-        33.4,
-        40.9
+        37.3,
+        30.4,
+        37.3,
+        40.6,
+        28.5,
+        43.6,
+        27.3
       ]
     },
     {
@@ -905,78 +770,186 @@
       "cover": 45,
       "depthInches": 4.2,
       "depthCm": 10.6,
-      "trend": "down",
+      "trend": "up",
       "history": [
-        43.5,
-        37.4,
-        48.7,
-        44.8,
-        48.4,
-        35.9,
-        37.3
+        51.6,
+        45.2,
+        35.3,
+        36.9,
+        50.8,
+        42.8,
+        49.6
       ],
       "priorYearHistory": [
-        29.3,
-        25.6,
-        37.6,
-        32.7,
+        37.2,
+        35.0,
+        26.3,
+        31.4,
+        43.0,
         32.2,
-        27.0,
-        28.6
+        42.2
       ]
     },
     {
-      "city": "Salt Lake City",
-      "region": "UT",
+      "city": "Chicago",
+      "region": "IL",
       "country": "usa",
       "cover": 25,
       "depthInches": 2,
       "depthCm": 5.1,
-      "trend": "stable",
+      "trend": "up",
       "history": [
-        41.0,
-        15.1,
+        17.1,
+        18.7,
+        27.6,
+        17.9,
+        29.7,
         19.6,
-        14.9,
-        23.2,
-        25.4,
-        24.7
+        26.4
       ],
       "priorYearHistory": [
-        28.9,
-        10.2,
-        14.7,
-        11.4,
-        16.5,
+        13.0,
+        15.1,
+        21.5,
+        13.7,
+        25.5,
+        17.1,
+        20.7
+      ]
+    },
+    {
+      "city": "Detroit",
+      "region": "MI",
+      "country": "usa",
+      "cover": 25,
+      "depthInches": 2,
+      "depthCm": 5.1,
+      "trend": "up",
+      "history": [
+        31.1,
+        19.6,
+        19.5,
+        18.9,
+        27.6,
+        29.2,
+        24.2
+      ],
+      "priorYearHistory": [
+        26.4,
+        14.4,
+        15.9,
+        13.6,
+        20.9,
+        24.7,
+        20.3
+      ]
+    },
+    {
+      "city": "Cleveland",
+      "region": "OH",
+      "country": "usa",
+      "cover": 25,
+      "depthInches": 2,
+      "depthCm": 5.1,
+      "trend": "down",
+      "history": [
         18.3,
-        18.0
+        29.8,
+        10.7,
+        21.5,
+        20.8,
+        19.3,
+        15.3
+      ],
+      "priorYearHistory": [
+        14.3,
+        24.7,
+        9.0,
+        17.9,
+        17.0,
+        15.8,
+        11.4
+      ]
+    },
+    {
+      "city": "Milwaukee",
+      "region": "WI",
+      "country": "usa",
+      "cover": 25,
+      "depthInches": 2,
+      "depthCm": 5.1,
+      "trend": "up",
+      "history": [
+        33.2,
+        10.4,
+        30.7,
+        17.7,
+        17.6,
+        31.6,
+        25.6
+      ],
+      "priorYearHistory": [
+        27.7,
+        8.5,
+        26.2,
+        15.4,
+        12.9,
+        26.2,
+        19.8
       ]
     },
     {
       "city": "Denver",
       "region": "CO",
       "country": "usa",
-      "cover": 10,
-      "depthInches": 0.2,
-      "depthCm": 0.6,
+      "cover": 0,
+      "depthInches": 0,
+      "depthCm": 0.0,
       "trend": "up",
       "history": [
-        2.9,
-        9.7,
-        8.8,
-        20.8,
-        12.4,
-        5.9,
-        19.3
+        0,
+        1.4,
+        1.5,
+        8.3,
+        0,
+        6.8,
+        0
       ],
       "priorYearHistory": [
-        2.2,
-        6.9,
-        6.1,
-        13.8,
-        9.9,
-        4.3,
-        13.3
+        0,
+        1.2,
+        1.2,
+        6.6,
+        0,
+        5.3,
+        0
+      ]
+    },
+    {
+      "city": "Minneapolis",
+      "region": "MN",
+      "country": "usa",
+      "cover": 0,
+      "depthInches": 0,
+      "depthCm": 0.0,
+      "trend": "up",
+      "history": [
+        0,
+        17.2,
+        0,
+        0.1,
+        0,
+        0,
+        0
+      ],
+      "priorYearHistory": [
+        0,
+        13.4,
+        0,
+        0.1,
+        0,
+        0,
+        0
       ]
     },
     {
@@ -986,24 +959,51 @@
       "cover": 0,
       "depthInches": 0,
       "depthCm": 0.0,
-      "trend": "down",
+      "trend": "stable",
+      "history": [
+        3.1,
+        3.7,
+        7.8,
+        2.4,
+        9.9,
+        3.3,
+        5.0
+      ],
+      "priorYearHistory": [
+        2.3,
+        2.7,
+        6.6,
+        1.7,
+        8.1,
+        2.4,
+        3.6
+      ]
+    },
+    {
+      "city": "Salt Lake City",
+      "region": "UT",
+      "country": "usa",
+      "cover": 0,
+      "depthInches": 0,
+      "depthCm": 0.0,
+      "trend": "up",
       "history": [
         0,
-        7.8,
+        1.6,
+        3.9,
         0,
         0,
-        1.3,
-        7.6,
-        0
+        1.6,
+        2.9
       ],
       "priorYearHistory": [
         0,
-        5.9,
+        1.2,
+        2.9,
         0,
         0,
-        0.9,
-        5.8,
-        0
+        1.3,
+        2.1
       ]
     },
     {
@@ -1015,22 +1015,22 @@
       "depthCm": 0.0,
       "trend": "up",
       "history": [
-        5.1,
-        4.9,
-        6.9,
         0,
-        11.1,
-        8.8,
-        8.5
+        0,
+        3.6,
+        0,
+        0,
+        0.6,
+        0
       ],
       "priorYearHistory": [
-        3.4,
-        3.9,
-        4.6,
         0,
-        7.3,
-        6.7,
-        5.8
+        0,
+        2.6,
+        0,
+        0,
+        0.5,
+        0
       ]
     },
     {
@@ -1040,24 +1040,24 @@
       "cover": 0,
       "depthInches": 0,
       "depthCm": 0.0,
-      "trend": "stable",
+      "trend": "up",
       "history": [
         0,
         0,
-        5.5,
-        5.4,
         0,
-        10.5,
-        6.4
+        0,
+        0,
+        7.4,
+        0
       ],
       "priorYearHistory": [
         0,
         0,
-        4.3,
-        3.9,
         0,
-        7.1,
-        4.4
+        0,
+        0,
+        5.3,
+        0
       ]
     }
   ]
