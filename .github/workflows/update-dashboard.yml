@@ -25,6 +25,10 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Install dependencies
+        run: |
+          pip install openpyxl
+
       - name: Update dashboard data
         env:
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
