@@ -71,7 +71,14 @@ menu:
 @media (max-width: 600px) { .sparkline-cell { display: none; } }
 .historical-section { background: #f9f9f9; border-radius: 12px; padding: 20px; border: 1px solid #ddd; }
 .historical-section h2 { font-size: 1.2em; color: #1e293b; margin-bottom: 15px; }
-.historical-chart { height: 220px; }
+.historical-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+@media (max-width: 768px) { .historical-grid { grid-template-columns: 1fr; } }
+.historical-card { background: white; border-radius: 8px; padding: 15px; border: 1px solid #e2e8f0; }
+.historical-card.usa { border-top: 3px solid #3b82f6; }
+.historical-card.canada { border-top: 3px solid #8b5cf6; }
+.historical-card h3 { font-size: 1em; color: #1e293b; margin: 0 0 10px 0; display: flex; align-items: center; gap: 8px; }
+.historical-card h3 .flag { font-size: 1.2em; }
+.historical-chart { height: 180px; }
 .data-attribution { text-align: center; margin-top: 20px; padding: 12px; font-size: 0.8em; color: #64748b; }
 .data-attribution a { color: #3b82f6; text-decoration: none; }
 .data-attribution a:hover { text-decoration: underline; }
@@ -191,7 +198,16 @@ menu:
 
 <section class="historical-section">
 <h2>&#128200; Snow Cover Trend (Past 30 Days)</h2>
-<div class="historical-chart"><canvas id="historical-chart"></canvas></div>
+<div class="historical-grid">
+<div class="historical-card usa">
+<h3><span class="flag">&#127482;&#127480;</span> United States</h3>
+<div class="historical-chart"><canvas id="usa-historical-chart"></canvas></div>
+</div>
+<div class="historical-card canada">
+<h3><span class="flag">&#127464;&#127462;</span> Canada</h3>
+<div class="historical-chart"><canvas id="canada-historical-chart"></canvas></div>
+</div>
+</div>
 </section>
 
 <div class="data-attribution">
@@ -206,7 +222,8 @@ Data sources: <a href="https://www.nohrsc.noaa.gov/" target="_blank">NOAA NOHRSC
 let naChart = null;
 let usaChart = null;
 let canadaChart = null;
-let historicalChart = null;
+let usaHistoricalChart = null;
+let canadaHistoricalChart = null;
 const metroSparklines = {};
 let snowData = null;
 let currentFilter = 'all';
@@ -676,70 +693,49 @@ function renderMetroTable() {
 }
 
 function renderHistoricalChart() {
-    const ctx = document.getElementById('historical-chart').getContext('2d');
-    if (historicalChart) historicalChart.destroy();
+    // Render USA historical chart
+    const usaCtx = document.getElementById('usa-historical-chart').getContext('2d');
+    if (usaHistoricalChart) usaHistoricalChart.destroy();
     const usaData = snowData.usa.history;
-    const canadaData = snowData.canada.history;
     const usaPrior = snowData.usa.priorYearHistory || [];
-    const canadaPrior = snowData.canada.priorYearHistory || [];
-    const datasets = [
-        {
-            label: 'United States (2025)',
-            data: usaData.map(function(h) { return h.value; }),
-            borderColor: '#3b82f6',
-            backgroundColor: 'rgba(59, 130, 246, 0.1)',
-            fill: true,
-            tension: 0.3,
-            borderWidth: 2.5
-        },
-        {
-            label: 'Canada (2025)',
-            data: canadaData.map(function(h) { return h.value; }),
-            borderColor: '#8b5cf6',
-            backgroundColor: 'rgba(139, 92, 246, 0.1)',
-            fill: true,
-            tension: 0.3,
-            borderWidth: 2.5
-        }
-    ];
+    const usaDatasets = [{
+        label: '2025',
+        data: usaData.map(function(h) { return h.value; }),
+        borderColor: '#3b82f6',
+        backgroundColor: 'rgba(59, 130, 246, 0.15)',
+        fill: true,
+        tension: 0.3,
+        borderWidth: 2,
+        pointRadius: 2,
+        pointHoverRadius: 4
+    }];
     if (usaPrior.length > 0) {
-        datasets.push({
-            label: 'United States (2024)',
+        usaDatasets.push({
+            label: '2024',
             data: usaPrior.map(function(h) { return h.value; }),
             borderColor: '#93c5fd',
             backgroundColor: 'transparent',
             fill: false,
             tension: 0.3,
             borderWidth: 1.5,
-            borderDash: [5, 3]
+            borderDash: [4, 2],
+            pointRadius: 0
         });
     }
-    if (canadaPrior.length > 0) {
-        datasets.push({
-            label: 'Canada (2024)',
-            data: canadaPrior.map(function(h) { return h.value; }),
-            borderColor: '#c4b5fd',
-            backgroundColor: 'transparent',
-            fill: false,
-            tension: 0.3,
-            borderWidth: 1.5,
-            borderDash: [5, 3]
-        });
-    }
-    historicalChart = new Chart(ctx, {
+    usaHistoricalChart = new Chart(usaCtx, {
         type: 'line',
         data: {
             labels: usaData.map(function(h) {
                 const date = new Date(h.date);
                 return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
             }),
-            datasets: datasets
+            datasets: usaDatasets
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
-                legend: { position: 'top', labels: { usePointStyle: true, padding: 15 } },
+                legend: { position: 'top', labels: { usePointStyle: true, padding: 10, boxWidth: 6, font: { size: 11 } } },
                 tooltip: {
                     mode: 'index',
                     intersect: false,
@@ -747,8 +743,64 @@ function renderHistoricalChart() {
                 }
             },
             scales: {
-                x: { grid: { display: false } },
-                y: { min: 0, max: 100, ticks: { callback: function(v) { return v + '%'; } } }
+                x: { grid: { display: false }, ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 8, font: { size: 10 } } },
+                y: { min: 0, max: 100, ticks: { callback: function(v) { return v + '%'; }, font: { size: 10 } } }
+            },
+            interaction: { intersect: false, mode: 'index' }
+        }
+    });
+    // Render Canada historical chart
+    const canadaCtx = document.getElementById('canada-historical-chart').getContext('2d');
+    if (canadaHistoricalChart) canadaHistoricalChart.destroy();
+    const canadaData = snowData.canada.history;
+    const canadaPrior = snowData.canada.priorYearHistory || [];
+    const canadaDatasets = [{
+        label: '2025',
+        data: canadaData.map(function(h) { return h.value; }),
+        borderColor: '#8b5cf6',
+        backgroundColor: 'rgba(139, 92, 246, 0.15)',
+        fill: true,
+        tension: 0.3,
+        borderWidth: 2,
+        pointRadius: 2,
+        pointHoverRadius: 4
+    }];
+    if (canadaPrior.length > 0) {
+        canadaDatasets.push({
+            label: '2024',
+            data: canadaPrior.map(function(h) { return h.value; }),
+            borderColor: '#c4b5fd',
+            backgroundColor: 'transparent',
+            fill: false,
+            tension: 0.3,
+            borderWidth: 1.5,
+            borderDash: [4, 2],
+            pointRadius: 0
+        });
+    }
+    canadaHistoricalChart = new Chart(canadaCtx, {
+        type: 'line',
+        data: {
+            labels: canadaData.map(function(h) {
+                const date = new Date(h.date);
+                return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            }),
+            datasets: canadaDatasets
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'top', labels: { usePointStyle: true, padding: 10, boxWidth: 6, font: { size: 11 } } },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
+                    callbacks: { label: function(ctx) { return ctx.dataset.label + ': ' + (ctx.parsed.y !== null ? ctx.parsed.y + '%' : 'N/A'); } }
+                }
+            },
+            scales: {
+                x: { grid: { display: false }, ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 8, font: { size: 10 } } },
+                y: { min: 0, max: 100, ticks: { callback: function(v) { return v + '%'; }, font: { size: 10 } } }
             },
             interaction: { intersect: false, mode: 'index' }
         }
