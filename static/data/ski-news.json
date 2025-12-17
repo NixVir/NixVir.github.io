@@ -1,7 +1,27 @@
 {
-  "updated": "2025-12-16 11:14:31",
+  "updated": "2025-12-17 11:14:23",
   "total_articles": 50,
   "articles": [
+    {
+      "source": "Financial Times",
+      "title": "The worried investor\u2019s guide to 2026",
+      "url": "https://www.ft.com/content/494676c5-d499-455e-b38a-a5fe02ba0ac8",
+      "description": "While markets were buoyant this year, volatility is never far away",
+      "content": "While markets were buoyant this year, volatility is never far away",
+      "pub_date": "Wed, 17 Dec 2025 05:00:36 GMT",
+      "id": "218bd5e90819",
+      "score": 8,
+      "score_details": {
+        "relevance": 8,
+        "news_value": 8,
+        "quality": 8,
+        "overall": 8,
+        "reason": "This article provides timely, substantive analysis of broader economic trends and their potential impact on the ski industry in the coming years. As a leading financial news source, the Financial Times offers high-quality reporting that is directly relevant to ski resort businesses and their investors."
+      },
+      "approved_date": "2025-12-17",
+      "category": "resort-operations",
+      "secondary_categories": []
+    },
     {
       "source": "Washington Post",
       "title": "Fed lowers interest rates again amid debate over inflation, jobs",
@@ -884,26 +904,6 @@
       },
       "approved_date": "2025-12-04",
       "category": "weather-snow"
-    },
-    {
-      "source": "Summit Daily News",
-      "title": "Physical altercations at Copper, Keystone resorts lead to charges at end of November",
-      "url": "https://www.summitdaily.com/news/colorado-ski-area-fights-2025-keystone-copper/",
-      "description": "The Summit County Sheriff\u2019s Office responded to two incidents at Summit County ski resorts last week that involved physical altercations. On Nov. 27 at Copper Mountain, a man and juvenile were watching the Copper Cup...",
-      "content": "The Summit County Sheriff\u2019s Office responded to two incidents at Summit County ski resorts last week that involved physical altercations. On Nov. 27 at Copper Mountain, a man and juvenile were watching the Copper Cup in a restricted area. Sheriff Jaime FitzSimons said neither person should have been in the area. He said the juvenile left, and the man thought the juvenile drew security workers\u2019 attention to the area, leading to the man being kicked out. The two moved to the same public area to watch the event, and the man thought the juvenile, who was taking pictures, stepped in front of him on purpose, FitzSimons said. The man tackled the juvenile, and the juvenile\u2019s camera was damaged in the altercation. After investigating, deputies arrested the man on charges including assault and criminal mischief and took him to the county jail. Three days later, on Nov. 30, at Keystone Resort, a female skier believed a male snowboarder was riding recklessly downhill of her. She skied ahead, stopp",
-      "pub_date": "Fri, 05 Dec 2025 00:26:17 +0000",
-      "id": "30f70bf369b6",
-      "score": 7,
-      "score_details": {
-        "relevance": 8,
-        "news_value": 7,
-        "quality": 6,
-        "overall": 7,
-        "reason": "This article reports on physical altercations that occurred at two popular ski resorts, which is relevant business news for the ski industry. While the incidents themselves may not be the most significant news, the article provides details on how the local law enforcement responded, which could impact resort operations and policies. The reporting appears factual, though the writing quality is moderate."
-      },
-      "approved_date": "2025-12-04",
-      "category": "safety-incidents",
-      "secondary_categories": []
     }
   ]
 }
