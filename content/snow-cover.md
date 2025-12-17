@@ -11,16 +11,12 @@ menu:
 <style>
 .snow-dashboard { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
 .dashboard-updated { text-align: center; margin-bottom: 20px; color: #666; }
-.combined-section { background: linear-gradient(135deg, #e8f4fc 0%, #d1e8f5 100%); border-radius: 12px; padding: 25px; margin-bottom: 25px; text-align: center; border: 1px solid #b8d4e8; }
-.combined-section h2 { font-size: 1em; color: #64748b; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
-.combined-percentage { font-size: 3.5em; font-weight: 700; color: #1e88e5; line-height: 1; }
-.combined-percentage .unit { font-size: 0.4em; color: #64748b; }
-.combined-bar { width: 100%; max-width: 500px; height: 24px; background: #e2e8f0; border-radius: 12px; margin: 15px auto; overflow: hidden; }
-.combined-bar-fill { height: 100%; background: linear-gradient(90deg, #60a5fa 0%, #3b82f6 50%, #1d4ed8 100%); border-radius: 12px; transition: width 1s ease-out; }
-.combined-context { font-size: 0.9em; color: #64748b; margin-top: 8px; }
-.country-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 25px; }
-@media (max-width: 768px) { .country-grid { grid-template-columns: 1fr; } }
+.country-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 25px; }
+@media (max-width: 992px) { .country-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .country-grid { grid-template-columns: 1fr; } }
 .country-card { background: #f9f9f9; border-radius: 12px; padding: 20px; border: 1px solid #ddd; }
+.country-card.na { border-top: 4px solid #10b981; }
+.country-card.na .country-percentage { color: #10b981; }
 .country-card.usa { border-top: 4px solid #3b82f6; }
 .country-card.canada { border-top: 4px solid #8b5cf6; }
 .country-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
@@ -84,8 +80,6 @@ menu:
 .yoy-down { color: #f97316; }
 .yoy-neutral { color: #64748b; }
 .yoy-label { color: #94a3b8; font-size: 0.9em; }
-.combined-yoy { font-size: 0.9em; color: #64748b; margin-top: 8px; }
-.combined-yoy .yoy-value { font-weight: 600; }
 .metro-yoy { font-size: 0.8em; white-space: nowrap; }
 .unit-toggle { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 15px; }
 .unit-toggle-label { font-size: 0.85em; color: #64748b; }
@@ -113,15 +107,22 @@ menu:
 </div>
 </div>
 
-<section class="combined-section">
-<h2>Total Land Area Under Snow Cover<span class="info-icon">i<span class="info-tooltip">Percentage of combined U.S. and Canadian land area currently covered by visible snow on the ground surface.</span></span></h2>
-<div class="combined-percentage"><span id="combined-value">--</span><span class="unit">%</span></div>
-<div class="combined-bar"><div class="combined-bar-fill" id="combined-bar" style="width: 0%"></div></div>
-<p class="combined-context" id="combined-context">Loading snow cover data...</p>
-<p class="combined-yoy" id="combined-yoy"></p>
-</section>
-
 <div class="country-grid">
+<div class="country-card na">
+<div class="country-header">
+<span class="country-flag">&#127758;</span>
+<span class="country-name">N. America</span>
+</div>
+<div class="country-percentage" id="na-percentage">--%</div>
+<div class="country-change" id="na-change"><span class="change-stable">Loading...</span></div>
+<div class="yoy-comparison" id="na-yoy"></div>
+<div class="country-chart"><canvas id="na-chart"></canvas></div>
+<div class="country-stats">
+<div class="stat-item"><div class="stat-value" id="na-area">--</div><div class="stat-label" id="na-area-label">Sq Miles<span class="info-icon">i<span class="info-tooltip">Total land area currently covered by snow in North America (US + Canada).</span></span></div></div>
+<div class="stat-item"><div class="stat-value" id="na-avg-depth">--</div><div class="stat-label" id="na-depth-label">Avg Depth<span class="info-icon">i<span class="info-tooltip">Weighted average snow depth across US and Canada.</span></span></div></div>
+</div>
+</div>
+
 <div class="country-card usa">
 <div class="country-header">
 <span class="country-flag">&#127482;&#127480;</span>
@@ -202,6 +203,7 @@ Data sources: <a href="https://www.nohrsc.noaa.gov/" target="_blank">NOAA NOHRSC
 </div>
 
 <script>
+let naChart = null;
 let usaChart = null;
 let canadaChart = null;
 let historicalChart = null;
@@ -310,20 +312,39 @@ async function loadSnowData() {
         renderDashboard();
     } catch (error) {
         console.error('Failed to load snow data:', error);
-        document.getElementById('combined-context').textContent = 'Unable to load snow cover data';
+        document.getElementById('na-change').innerHTML = '<span class="change-stable">Unable to load data</span>';
     }
 }
 
 function renderDashboard() {
     if (!snowData) return;
     document.getElementById('last-update').textContent = snowData.updated;
+    renderNACard();
+    renderCountryCard('usa');
+    renderCountryCard('canada');
+    renderMetroTable();
+    renderHistoricalChart();
+}
+
+function renderNACard() {
     const combined = snowData.combined;
-    document.getElementById('combined-value').textContent = combined.cover;
-    document.getElementById('combined-bar').style.width = combined.cover + '%';
-    document.getElementById('combined-context').textContent = combined.context;
-    // Calculate combined YoY from USA and Canada weighted average
-    var usaYoY = calculateYoY(snowData.usa.cover, snowData.usa.priorYearHistory);
-    var canadaYoY = calculateYoY(snowData.canada.cover, snowData.canada.priorYearHistory);
+    const usaData = snowData.usa;
+    const canadaData = snowData.canada;
+    // Display combined percentage
+    document.getElementById('na-percentage').textContent = combined.cover + '%';
+    // Calculate week-over-week change (average of USA and Canada changes)
+    var usaChange = parseFloat(usaData.change) || 0;
+    var canadaChange = parseFloat(canadaData.change) || 0;
+    var avgChange = ((usaChange + canadaChange) / 2).toFixed(1);
+    var changeValue = parseFloat(avgChange);
+    var changeClass = 'change-stable';
+    var changeIcon = '\u2192';
+    if (changeValue > 0) { changeClass = 'change-up'; changeIcon = '\u2191'; avgChange = '+' + avgChange; }
+    else if (changeValue < 0) { changeClass = 'change-down'; changeIcon = '\u2193'; }
+    document.getElementById('na-change').innerHTML = '<span class="' + changeClass + '">' + changeIcon + ' ' + avgChange + ' pts from last week</span>';
+    // Calculate YoY comparison
+    var usaYoY = calculateYoY(usaData.cover, usaData.priorYearHistory);
+    var canadaYoY = calculateYoY(canadaData.cover, canadaData.priorYearHistory);
     var combinedYoY = null;
     if (usaYoY !== null && canadaYoY !== null) {
         combinedYoY = (usaYoY + canadaYoY) / 2;
@@ -332,15 +353,109 @@ function renderDashboard() {
     } else if (canadaYoY !== null) {
         combinedYoY = canadaYoY;
     }
-    var combinedYoYFormatted = formatYoY(combinedYoY);
-    var combinedYoYEl = document.getElementById('combined-yoy');
+    var yoyFormatted = formatYoY(combinedYoY);
+    var yoyEl = document.getElementById('na-yoy');
     if (combinedYoY !== null) {
-        combinedYoYEl.innerHTML = '<span class="yoy-label">vs last year:</span> <span class="yoy-value ' + combinedYoYFormatted.class + '">' + combinedYoYFormatted.text + '</span>';
+        yoyEl.innerHTML = '<span class="yoy-label">vs last year:</span> <span class="' + yoyFormatted.class + '">' + yoyFormatted.text + '</span>';
     }
-    renderCountryCard('usa');
-    renderCountryCard('canada');
-    renderMetroTable();
-    renderHistoricalChart();
+    // Calculate combined area (USA + Canada)
+    var areaEl = document.getElementById('na-area');
+    var depthEl = document.getElementById('na-avg-depth');
+    var areaLabelEl = document.getElementById('na-area-label');
+    var depthLabelEl = document.getElementById('na-depth-label');
+    if (currentUnit === 'imperial') {
+        var usaAreaSqMi = usaData.areaSqMi || 0;
+        var canadaAreaSqMi = canadaData.areaSqKm ? canadaData.areaSqKm * 0.386102 : 0;
+        var totalAreaSqMi = usaAreaSqMi + canadaAreaSqMi;
+        areaEl.textContent = formatNumber(totalAreaSqMi);
+        // Weighted average depth
+        var usaDepth = usaData.avgDepthInches || 0;
+        var canadaDepth = canadaData.avgDepthCm ? canadaData.avgDepthCm / 2.54 : 0;
+        var avgDepth = usaAreaSqMi + canadaAreaSqMi > 0 ? ((usaDepth * usaAreaSqMi + canadaDepth * canadaAreaSqMi) / (usaAreaSqMi + canadaAreaSqMi)).toFixed(1) : '--';
+        depthEl.textContent = avgDepth + '"';
+        areaLabelEl.innerHTML = 'Sq Miles<span class="info-icon">i<span class="info-tooltip">Total land area currently covered by snow in North America (US + Canada).</span></span>';
+        depthLabelEl.innerHTML = 'Avg Depth (in)<span class="info-icon">i<span class="info-tooltip">Weighted average snow depth across US and Canada.</span></span>';
+    } else {
+        var usaAreaSqKm = usaData.areaSqMi ? usaData.areaSqMi * 2.58999 : 0;
+        var canadaAreaSqKm = canadaData.areaSqKm || 0;
+        var totalAreaSqKm = usaAreaSqKm + canadaAreaSqKm;
+        areaEl.textContent = formatNumber(totalAreaSqKm);
+        // Weighted average depth
+        var usaDepthCm = usaData.avgDepthInches ? usaData.avgDepthInches * 2.54 : 0;
+        var canadaDepthCm = canadaData.avgDepthCm || 0;
+        var avgDepthCm = usaAreaSqKm + canadaAreaSqKm > 0 ? ((usaDepthCm * usaAreaSqKm + canadaDepthCm * canadaAreaSqKm) / (usaAreaSqKm + canadaAreaSqKm)).toFixed(1) : '--';
+        depthEl.textContent = avgDepthCm + ' cm';
+        areaLabelEl.innerHTML = 'Sq Km<span class="info-icon">i<span class="info-tooltip">Total land area currently covered by snow in North America (US + Canada).</span></span>';
+        depthLabelEl.innerHTML = 'Avg Depth (cm)<span class="info-icon">i<span class="info-tooltip">Weighted average snow depth across US and Canada.</span></span>';
+    }
+    // Render combined sparkline chart
+    const ctx = document.getElementById('na-chart').getContext('2d');
+    if (naChart) naChart.destroy();
+    // Create combined history by averaging USA and Canada
+    var combinedHistory = [];
+    var combinedPriorHistory = [];
+    var maxLen = Math.max(usaData.history.length, canadaData.history.length);
+    for (var i = 0; i < maxLen; i++) {
+        var usaVal = usaData.history[i] ? usaData.history[i].value : null;
+        var canadaVal = canadaData.history[i] ? canadaData.history[i].value : null;
+        if (usaVal !== null && canadaVal !== null) {
+            combinedHistory.push({ date: usaData.history[i].date, value: Math.round((usaVal + canadaVal) / 2) });
+        } else if (usaVal !== null) {
+            combinedHistory.push({ date: usaData.history[i].date, value: usaVal });
+        } else if (canadaVal !== null) {
+            combinedHistory.push({ date: canadaData.history[i].date, value: canadaVal });
+        }
+        // Prior year
+        var usaPrior = usaData.priorYearHistory && usaData.priorYearHistory[i] ? usaData.priorYearHistory[i].value : null;
+        var canadaPrior = canadaData.priorYearHistory && canadaData.priorYearHistory[i] ? canadaData.priorYearHistory[i].value : null;
+        if (usaPrior !== null && canadaPrior !== null) {
+            combinedPriorHistory.push({ value: Math.round((usaPrior + canadaPrior) / 2) });
+        } else if (usaPrior !== null) {
+            combinedPriorHistory.push({ value: usaPrior });
+        } else if (canadaPrior !== null) {
+            combinedPriorHistory.push({ value: canadaPrior });
+        }
+    }
+    const color = '#10b981';
+    const bgColor = 'rgba(16, 185, 129, 0.1)';
+    const priorColor = '#9ca3af';
+    const datasets = [{
+        label: 'This Year',
+        data: combinedHistory.map(function(h) { return h.value; }),
+        borderColor: color,
+        backgroundColor: bgColor,
+        fill: true,
+        tension: 0.4,
+        pointRadius: 0,
+        borderWidth: 2
+    }];
+    if (combinedPriorHistory.length > 0) {
+        datasets.push({
+            label: 'Last Year',
+            data: combinedPriorHistory.map(function(h) { return h.value; }),
+            borderColor: priorColor,
+            backgroundColor: 'transparent',
+            fill: false,
+            tension: 0.4,
+            pointRadius: 0,
+            borderWidth: 1.5,
+            borderDash: [4, 2]
+        });
+    }
+    naChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: combinedHistory.map(function(h) { return h.date.slice(5); }),
+            datasets: datasets
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: { x: { display: false }, y: { display: false, min: 0, max: 100 } },
+            interaction: { intersect: false, mode: 'index' }
+        }
+    });
 }
 
 function renderCountryCard(country) {
@@ -655,6 +770,7 @@ document.addEventListener('DOMContentLoaded', function() {
             btn.classList.add('active');
             currentUnit = btn.dataset.unit;
             if (snowData) {
+                renderNACard();
                 renderCountryCard('usa');
                 renderCountryCard('canada');
                 renderMetroTable();
