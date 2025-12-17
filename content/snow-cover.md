@@ -101,6 +101,17 @@ menu:
 .info-icon:hover .info-tooltip { opacity: 1; visibility: visible; }
 .stat-label .info-icon { width: 12px; height: 12px; font-size: 9px; }
 .metro-table th .info-icon { margin-left: 3px; }
+.temp-anomaly { display: flex; align-items: center; gap: 4px; margin-top: 8px; padding-top: 8px; border-top: 1px dashed #e2e8f0; font-size: 0.85em; }
+.temp-anomaly-label { color: #64748b; }
+.temp-anomaly-value { font-weight: 600; }
+.temp-anomaly-value.warm { color: #ef4444; }
+.temp-anomaly-value.cold { color: #3b82f6; }
+.temp-anomaly-value.normal { color: #64748b; }
+.temp-current { color: #1e293b; font-weight: 500; }
+.metro-temp { font-size: 0.85em; white-space: nowrap; }
+.metro-temp .temp-warm { color: #ef4444; }
+.metro-temp .temp-cold { color: #3b82f6; }
+.metro-temp .temp-normal { color: #64748b; }
 </style>
 
 <div class="snow-dashboard">
@@ -128,6 +139,7 @@ menu:
 <div class="stat-item"><div class="stat-value" id="na-area">--</div><div class="stat-label" id="na-area-label">Sq Miles<span class="info-icon">i<span class="info-tooltip">Total land area currently covered by snow in North America (US + Canada).</span></span></div></div>
 <div class="stat-item"><div class="stat-value" id="na-avg-depth">--</div><div class="stat-label" id="na-depth-label">Avg Depth<span class="info-icon">i<span class="info-tooltip">Weighted average snow depth across US and Canada.</span></span></div></div>
 </div>
+<div class="temp-anomaly" id="na-temp"></div>
 </div>
 
 <div class="country-card usa">
@@ -143,6 +155,7 @@ menu:
 <div class="stat-item"><div class="stat-value" id="usa-area">--</div><div class="stat-label" id="usa-area-label">Sq Miles<span class="info-icon">i<span class="info-tooltip">Total land area currently covered by snow in the United States.</span></span></div></div>
 <div class="stat-item"><div class="stat-value" id="usa-avg-depth">--</div><div class="stat-label" id="usa-depth-label">Avg Depth<span class="info-icon">i<span class="info-tooltip">Average snow depth across all snow-covered areas. Source: NOAA NOHRSC.</span></span></div></div>
 </div>
+<div class="temp-anomaly" id="usa-temp"></div>
 </div>
 
 <div class="country-card canada">
@@ -158,6 +171,7 @@ menu:
 <div class="stat-item"><div class="stat-value" id="canada-area">--</div><div class="stat-label" id="canada-area-label">Sq Km<span class="info-icon">i<span class="info-tooltip">Total land area currently covered by snow in Canada.</span></span></div></div>
 <div class="stat-item"><div class="stat-value" id="canada-avg-depth">--</div><div class="stat-label" id="canada-depth-label">Avg Depth<span class="info-icon">i<span class="info-tooltip">Estimated average snow depth. Derived from coverage percentage (no direct source available).</span></span></div></div>
 </div>
+<div class="temp-anomaly" id="canada-temp"></div>
 </div>
 </div>
 
@@ -186,12 +200,13 @@ menu:
 <th class="sortable" data-sort="cover">Snow Cover<span class="info-icon">i<span class="info-tooltip">Percentage of the metro area currently covered by snow.</span></span></th>
 <th class="sortable" data-sort="yoy">vs Last Year<span class="info-icon">i<span class="info-tooltip">Percent change compared to the average snow cover during this same period last year.</span></span></th>
 <th class="sortable" data-sort="depth">Depth<span class="info-icon">i<span class="info-tooltip">Snow depth at a representative weather station in the metro area (point observation, not area average).</span></span></th>
+<th class="sortable" data-sort="temp">Temp<span class="info-icon">i<span class="info-tooltip">Current temperature and departure from normal (30-day average for this time of year). Source: Open-Meteo.</span></span></th>
 <th>Trend<span class="info-icon">i<span class="info-tooltip">Direction of snow cover change over the past week: increasing, decreasing, or stable.</span></span></th>
 <th class="sparkline-cell">7-Day<span class="info-icon">i<span class="info-tooltip">Snow cover percentage for the past 7 days. Solid line = this year, dashed line = last year.</span></span></th>
 </tr>
 </thead>
 <tbody id="metro-table-body">
-<tr><td colspan="6" style="text-align:center; padding: 20px; color: #64748b;">Loading metro data...</td></tr>
+<tr><td colspan="7" style="text-align:center; padding: 20px; color: #64748b;">Loading metro data...</td></tr>
 </tbody>
 </table>
 </section>
@@ -213,7 +228,8 @@ menu:
 <div class="data-attribution">
 Data sources: <a href="https://www.nohrsc.noaa.gov/" target="_blank">NOAA NOHRSC</a>,
 <a href="https://climate.rutgers.edu/snowcover/" target="_blank">Rutgers Global Snow Lab</a>,
-<a href="https://weather.gc.ca/" target="_blank">Environment Canada</a>
+<a href="https://weather.gc.ca/" target="_blank">Environment Canada</a>,
+<a href="https://open-meteo.com/" target="_blank">Open-Meteo</a> (temperature)
 <br>Updated daily. Snow cover represents visible snow on ground surface.
 </div>
 </div>
@@ -253,6 +269,34 @@ function formatYoY(yoyPercent) {
     var sign = yoyPercent >= 0 ? '+' : '';
     var cls = yoyPercent > 5 ? 'yoy-up' : yoyPercent < -5 ? 'yoy-down' : 'yoy-neutral';
     return { text: sign + yoyPercent.toFixed(0) + '%', class: cls };
+}
+
+function formatTempAnomaly(temp, anomaly, isImperial) {
+    if (temp === null || temp === undefined) return { tempText: '--', anomalyText: '', anomalyClass: 'normal' };
+    var tempText = isImperial ? Math.round(temp * 9/5 + 32) + '\u00B0F' : Math.round(temp) + '\u00B0C';
+    if (anomaly === null || anomaly === undefined) return { tempText: tempText, anomalyText: '', anomalyClass: 'normal' };
+    var anomalyVal = isImperial ? Math.round(anomaly * 9/5) : Math.round(anomaly);
+    var sign = anomalyVal >= 0 ? '+' : '';
+    var anomalyText = sign + anomalyVal + '\u00B0';
+    var anomalyClass = anomalyVal > 2 ? 'warm' : anomalyVal < -2 ? 'cold' : 'normal';
+    return { tempText: tempText, anomalyText: anomalyText, anomalyClass: anomalyClass };
+}
+
+function renderTempAnomaly(elementId, tempData, label) {
+    var el = document.getElementById(elementId);
+    if (!el || !tempData) return;
+    var isImperial = currentUnit === 'imperial';
+    var temp = isImperial ? tempData.avg_temp_f : tempData.avg_temp_c;
+    var anomaly = isImperial ? tempData.avg_anomaly_f : tempData.avg_anomaly_c;
+    if (temp === null || temp === undefined) {
+        el.innerHTML = '';
+        return;
+    }
+    var formatted = formatTempAnomaly(tempData.avg_temp_c, tempData.avg_anomaly_c, isImperial);
+    var icon = formatted.anomalyClass === 'warm' ? '\u2600\uFE0F' : formatted.anomalyClass === 'cold' ? '\u2744\uFE0F' : '\u2601\uFE0F';
+    el.innerHTML = '<span class="temp-anomaly-label">' + icon + ' ' + label + ':</span> ' +
+        '<span class="temp-current">' + formatted.tempText + '</span> ' +
+        '<span class="temp-anomaly-value ' + formatted.anomalyClass + '">(' + formatted.anomalyText + ' from normal)</span>';
 }
 
 function aggregateByStateProvince(metros) {
@@ -473,6 +517,8 @@ function renderNACard() {
             interaction: { intersect: false, mode: 'index' }
         }
     });
+    // Render temperature anomaly for N. America
+    renderTempAnomaly('na-temp', combined.temperature, 'Avg Temp');
 }
 
 function renderCountryCard(country) {
@@ -556,6 +602,8 @@ function renderCountryCard(country) {
     });
     if (country === 'usa') usaChart = chart;
     else canadaChart = chart;
+    // Render temperature anomaly
+    renderTempAnomaly(country + '-temp', data.temperature, 'Avg Temp');
 }
 
 function renderMetroTable() {
@@ -571,7 +619,7 @@ function renderMetroTable() {
         items = aggregateByStateProvince(snowData.metros);
     } else {
         title.innerHTML = '&#127963; Metro Area Snow Cover';
-        thead.innerHTML = '<tr><th class="sortable" data-sort="city">City</th><th class="sortable" data-sort="cover">Snow Cover<span class="info-icon">i<span class="info-tooltip">Percentage of the metro area currently covered by snow.</span></span></th><th class="sortable" data-sort="yoy">vs Last Year<span class="info-icon">i<span class="info-tooltip">Percent change compared to the average snow cover during this same period last year.</span></span></th><th class="sortable" data-sort="depth">Depth<span class="info-icon">i<span class="info-tooltip">Snow depth at a representative weather station in the metro area (point observation, not area average).</span></span></th><th>Trend<span class="info-icon">i<span class="info-tooltip">Direction of snow cover change over the past week: increasing, decreasing, or stable.</span></span></th><th class="sparkline-cell">7-Day<span class="info-icon">i<span class="info-tooltip">Snow cover percentage for the past 7 days. Solid line = this year, dashed line = last year.</span></span></th></tr>';
+        thead.innerHTML = '<tr><th class="sortable" data-sort="city">City</th><th class="sortable" data-sort="cover">Snow Cover<span class="info-icon">i<span class="info-tooltip">Percentage of the metro area currently covered by snow.</span></span></th><th class="sortable" data-sort="yoy">vs Last Year<span class="info-icon">i<span class="info-tooltip">Percent change compared to the average snow cover during this same period last year.</span></span></th><th class="sortable" data-sort="depth">Depth<span class="info-icon">i<span class="info-tooltip">Snow depth at a representative weather station in the metro area (point observation, not area average).</span></span></th><th class="sortable" data-sort="temp">Temp<span class="info-icon">i<span class="info-tooltip">Current temperature and departure from normal. Source: Open-Meteo.</span></span></th><th>Trend<span class="info-icon">i<span class="info-tooltip">Direction of snow cover change over the past week: increasing, decreasing, or stable.</span></span></th><th class="sparkline-cell">7-Day<span class="info-icon">i<span class="info-tooltip">Snow cover percentage for the past 7 days. Solid line = this year, dashed line = last year.</span></span></th></tr>';
         items = snowData.metros;
     }
     // Apply country filter
@@ -595,6 +643,9 @@ function renderMetroTable() {
         } else if (currentSort.field === 'yoy') {
             aVal = a.yoyValue;
             bVal = b.yoyValue;
+        } else if (currentSort.field === 'temp') {
+            aVal = a.temperature && a.temperature.temp_c !== null ? a.temperature.temp_c : -999;
+            bVal = b.temperature && b.temperature.temp_c !== null ? b.temperature.temp_c : -999;
         } else {
             aVal = a[currentSort.field];
             bVal = b[currentSort.field];
@@ -635,7 +686,18 @@ function renderMetroTable() {
             var metroCountText = item.metroCount > 1 ? ' (' + item.metroCount + ' metros)' : ' (1 metro)';
             return '<tr><td><div class="city-info"><span class="city-flag">' + flag + '</span><div><div class="city-name">' + item.region + '</div><div class="city-region">' + metroCountText + '</div></div></div></td><td class="snow-cover-cell ' + coverClass + '">' + item.cover + '%</td><td class="metro-yoy ' + yoyFormatted.class + '">' + yoyFormatted.text + '</td><td>' + depthDisplay + '</td><td class="trend-cell ' + trendClass + '">' + trendIcon + '</td><td class="sparkline-cell"><div class="sparkline-container"><canvas id="sparkline-' + idx + '"></canvas></div></td></tr>';
         } else {
-            return '<tr><td><div class="city-info"><span class="city-flag">' + flag + '</span><div><div class="city-name">' + item.city + '</div><div class="city-region">' + item.region + '</div></div></div></td><td class="snow-cover-cell ' + coverClass + '">' + item.cover + '%</td><td class="metro-yoy ' + yoyFormatted.class + '">' + yoyFormatted.text + '</td><td>' + depthDisplay + '</td><td class="trend-cell ' + trendClass + '">' + trendIcon + '</td><td class="sparkline-cell"><div class="sparkline-container"><canvas id="sparkline-' + idx + '"></canvas></div></td></tr>';
+            // Format temperature for metro view
+            var tempDisplay = '--';
+            var tempAnomalyClass = '';
+            if (item.temperature && item.temperature.temp_c !== null) {
+                var isImperial = currentUnit === 'imperial';
+                var formatted = formatTempAnomaly(item.temperature.temp_c, item.temperature.anomaly_c, isImperial);
+                tempDisplay = '<span class="temp-current">' + formatted.tempText + '</span>';
+                if (formatted.anomalyText) {
+                    tempDisplay += ' <span class="temp-' + formatted.anomalyClass + '">(' + formatted.anomalyText + ')</span>';
+                }
+            }
+            return '<tr><td><div class="city-info"><span class="city-flag">' + flag + '</span><div><div class="city-name">' + item.city + '</div><div class="city-region">' + item.region + '</div></div></div></td><td class="snow-cover-cell ' + coverClass + '">' + item.cover + '%</td><td class="metro-yoy ' + yoyFormatted.class + '">' + yoyFormatted.text + '</td><td>' + depthDisplay + '</td><td class="metro-temp">' + tempDisplay + '</td><td class="trend-cell ' + trendClass + '">' + trendIcon + '</td><td class="sparkline-cell"><div class="sparkline-container"><canvas id="sparkline-' + idx + '"></canvas></div></td></tr>';
         }
     }).join('');
     // Render sparklines

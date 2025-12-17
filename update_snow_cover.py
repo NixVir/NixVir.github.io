@@ -14,6 +14,7 @@ Outputs JSON for the snow cover dashboard.
 """
 
 import json
+import time
 import os
 import sys
 import re
@@ -915,6 +916,122 @@ def fetch_nws_snow_data(lat, lon):
     return None
 
 # ============================================
+# Open-Meteo Temperature Data
+# ============================================
+
+def fetch_openmeteo_temperature(lat, lon, city_name=None):
+    """
+    Fetch current temperature and historical normal from Open-Meteo API.
+
+    Returns dict with:
+    - temp_c: Current temperature in Celsius
+    - temp_f: Current temperature in Fahrenheit
+    - normal_c: 30-day historical average for this time of year
+    - anomaly_c: Departure from normal (temp_c - normal_c)
+    - anomaly_f: Departure from normal in Fahrenheit
+    """
+    result = {
+        'temp_c': None,
+        'temp_f': None,
+        'normal_c': None,
+        'anomaly_c': None,
+        'anomaly_f': None
+    }
+
+    try:
+        # Get current temperature
+        current_url = f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current=temperature_2m&temperature_unit=celsius&timezone=auto"
+        current_data = fetch_json(current_url, timeout=15)
+
+        if current_data and 'current' in current_data:
+            temp_c = current_data['current'].get('temperature_2m')
+            if temp_c is not None:
+                result['temp_c'] = round(temp_c, 1)
+                result['temp_f'] = round(temp_c * 9/5 + 32, 1)
+
+        # Get historical data for the same period last year to calculate "normal"
+        # Fetch 30 days of data from last year for this time period
+        today = datetime.now()
+        # Calculate dates relative to today, then shift back one year
+        start_date = today - timedelta(days=15)
+        end_date = today + timedelta(days=14)  # Use 14 to avoid future dates in edge cases
+        # Shift to last year
+        start_date = start_date.replace(year=start_date.year - 1)
+        end_date = end_date.replace(year=end_date.year - 1)
+
+        # Format dates - ensure start is before end
+        start_str = start_date.strftime('%Y-%m-%d')
+        end_str = end_date.strftime('%Y-%m-%d')
+
+        # Use Open-Meteo Historical API for climate normals
+        historical_url = f"https://archive-api.open-meteo.com/v1/archive?latitude={lat}&longitude={lon}&start_date={start_str}&end_date={end_str}&daily=temperature_2m_mean&timezone=auto"
+        historical_data = fetch_json(historical_url, timeout=15)
+
+        if historical_data and 'daily' in historical_data:
+            temps = historical_data['daily'].get('temperature_2m_mean', [])
+            valid_temps = [t for t in temps if t is not None]
+            if valid_temps:
+                normal_c = sum(valid_temps) / len(valid_temps)
+                result['normal_c'] = round(normal_c, 1)
+
+                # Calculate anomaly if we have current temp
+                if result['temp_c'] is not None:
+                    anomaly_c = result['temp_c'] - result['normal_c']
+                    result['anomaly_c'] = round(anomaly_c, 1)
+                    result['anomaly_f'] = round(anomaly_c * 9/5, 1)
+
+    except Exception as e:
+        if city_name:
+            print_safe(f"    ! Open-Meteo error for {city_name}: {e}")
+        else:
+            print_safe(f"    ! Open-Meteo error: {e}")
+
+    return result
+
+
+def fetch_country_temperature_anomaly(metros, country):
+    """
+    Calculate weighted average temperature anomaly for a country
+    based on its metro areas.
+
+    Returns dict with avg_temp_c, avg_temp_f, avg_anomaly_c, avg_anomaly_f
+    """
+    country_metros = [m for m in metros if m.get('country') == country]
+
+    if not country_metros:
+        return None
+
+    temps = []
+    anomalies = []
+
+    for metro in country_metros:
+        temp_data = metro.get('temperature', {})
+        if temp_data.get('temp_c') is not None:
+            temps.append(temp_data['temp_c'])
+        if temp_data.get('anomaly_c') is not None:
+            anomalies.append(temp_data['anomaly_c'])
+
+    result = {
+        'avg_temp_c': None,
+        'avg_temp_f': None,
+        'avg_anomaly_c': None,
+        'avg_anomaly_f': None
+    }
+
+    if temps:
+        avg_temp_c = sum(temps) / len(temps)
+        result['avg_temp_c'] = round(avg_temp_c, 1)
+        result['avg_temp_f'] = round(avg_temp_c * 9/5 + 32, 1)
+
+    if anomalies:
+        avg_anomaly_c = sum(anomalies) / len(anomalies)
+        result['avg_anomaly_c'] = round(avg_anomaly_c, 1)
+        result['avg_anomaly_f'] = round(avg_anomaly_c * 9/5, 1)
+
+    return result
+
+
+# ============================================
 # Estimation Functions
 # ============================================
 
@@ -1322,6 +1439,11 @@ def collect_snow_data():
         # Generate 7-day history for this metro
         metro_history = generate_metro_history(cover, 7)
 
+        # Fetch temperature and anomaly data from Open-Meteo
+        temp_data = fetch_openmeteo_temperature(metro['lat'], metro['lon'], city_name)
+        # Small delay to avoid rate limiting (Open-Meteo is free but has soft limits)
+        time.sleep(0.3)
+
         metros.append({
             'city': city_name,
             'region': metro['region'],
@@ -1330,7 +1452,8 @@ def collect_snow_data():
             'depthInches': round(depth_inches, 1),  # Numeric for sorting
             'depthCm': depth_cm,  # Numeric for sorting
             'trend': metro_trend,
-            'history': metro_history
+            'history': metro_history,
+            'temperature': temp_data
         })
 
     # Sort metros by snow cover descending
@@ -1394,6 +1517,29 @@ def collect_snow_data():
         depth_ratio = canada_avg_depth_inches / usa_avg_depth_inches if usa_avg_depth_inches > 0 else 1.5
         canada_prior_depth_avg = round(usa_prior_depth_avg * depth_ratio, 1)
 
+    # Calculate country-level temperature anomalies from metro data
+    usa_temp = fetch_country_temperature_anomaly(metros, 'usa')
+    canada_temp = fetch_country_temperature_anomaly(metros, 'canada')
+
+    # Calculate combined North America temperature anomaly
+    combined_temp = None
+    if usa_temp and canada_temp:
+        all_temps = []
+        all_anomalies = []
+        for m in metros:
+            t = m.get('temperature', {})
+            if t.get('temp_c') is not None:
+                all_temps.append(t['temp_c'])
+            if t.get('anomaly_c') is not None:
+                all_anomalies.append(t['anomaly_c'])
+        if all_temps or all_anomalies:
+            combined_temp = {
+                'avg_temp_c': round(sum(all_temps) / len(all_temps), 1) if all_temps else None,
+                'avg_temp_f': round((sum(all_temps) / len(all_temps)) * 9/5 + 32, 1) if all_temps else None,
+                'avg_anomaly_c': round(sum(all_anomalies) / len(all_anomalies), 1) if all_anomalies else None,
+                'avg_anomaly_f': round((sum(all_anomalies) / len(all_anomalies)) * 9/5, 1) if all_anomalies else None
+            }
+
     data = {
         'updated': today.strftime('%Y-%m-%d %H:%M') + ' UTC',
         'data_sources': {
@@ -1405,7 +1551,8 @@ def collect_snow_data():
         'combined': {
             'cover': round(combined_cover, 1),
             'change': usa_change if usa_trend != 'stable' else canada_change,
-            'context': f'Approximately {round(combined_cover)}% of North American land area currently has visible snow cover'
+            'context': f'Approximately {round(combined_cover)}% of North American land area currently has visible snow cover',
+            'temperature': combined_temp
         },
         'usa': {
             'cover': round(usa_cover, 1),
@@ -1417,7 +1564,8 @@ def collect_snow_data():
             'priorYearAvgDepthInches': usa_prior_depth_avg,
             'priorYearAvgDepthCm': round(usa_prior_depth_avg * 2.54, 1) if usa_prior_depth_avg else None,
             'history': usa_history,
-            'priorYearHistory': usa_prior_year_history
+            'priorYearHistory': usa_prior_year_history,
+            'temperature': usa_temp
         },
         'canada': {
             'cover': round(canada_cover, 1),
@@ -1429,7 +1577,8 @@ def collect_snow_data():
             'priorYearAvgDepthInches': canada_prior_depth_avg,
             'priorYearAvgDepthCm': round(canada_prior_depth_avg * 2.54, 1) if canada_prior_depth_avg else None,
             'history': canada_history,
-            'priorYearHistory': canada_prior_year_history
+            'priorYearHistory': canada_prior_year_history,
+            'temperature': canada_temp
         },
         'metros': metros
     }
