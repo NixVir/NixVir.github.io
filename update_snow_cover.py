@@ -63,30 +63,31 @@ PROVINCE_CODES = {
 }
 
 # Metro areas to track with correct station IDs
+# skiMarket=True for cities that are major ski destination feeder markets
 METRO_AREAS = [
     # USA Cities - using NWS API
-    {'city': 'New York City', 'region': 'NY', 'country': 'usa', 'lat': 40.7128, 'lon': -74.0060},
-    {'city': 'Chicago', 'region': 'IL', 'country': 'usa', 'lat': 41.8781, 'lon': -87.6298},
-    {'city': 'Denver', 'region': 'CO', 'country': 'usa', 'lat': 39.7392, 'lon': -104.9903},
-    {'city': 'Minneapolis', 'region': 'MN', 'country': 'usa', 'lat': 44.9778, 'lon': -93.2650},
-    {'city': 'Boston', 'region': 'MA', 'country': 'usa', 'lat': 42.3601, 'lon': -71.0589},
-    {'city': 'Seattle', 'region': 'WA', 'country': 'usa', 'lat': 47.6062, 'lon': -122.3321},
-    {'city': 'Detroit', 'region': 'MI', 'country': 'usa', 'lat': 42.3314, 'lon': -83.0458},
-    {'city': 'Salt Lake City', 'region': 'UT', 'country': 'usa', 'lat': 40.7608, 'lon': -111.8910},
-    {'city': 'Buffalo', 'region': 'NY', 'country': 'usa', 'lat': 42.8864, 'lon': -78.8784},
-    {'city': 'Cleveland', 'region': 'OH', 'country': 'usa', 'lat': 41.4993, 'lon': -81.6944},
-    {'city': 'Milwaukee', 'region': 'WI', 'country': 'usa', 'lat': 43.0389, 'lon': -87.9065},
-    {'city': 'Portland', 'region': 'OR', 'country': 'usa', 'lat': 45.5152, 'lon': -122.6784},
+    {'city': 'New York City', 'region': 'NY', 'country': 'usa', 'lat': 40.7128, 'lon': -74.0060, 'skiMarket': True},  # VT, NH, NY resorts
+    {'city': 'Chicago', 'region': 'IL', 'country': 'usa', 'lat': 41.8781, 'lon': -87.6298, 'skiMarket': True},  # CO, WI, MI resorts
+    {'city': 'Denver', 'region': 'CO', 'country': 'usa', 'lat': 39.7392, 'lon': -104.9903, 'skiMarket': True},  # CO resorts hub
+    {'city': 'Minneapolis', 'region': 'MN', 'country': 'usa', 'lat': 44.9778, 'lon': -93.2650, 'skiMarket': True},  # MN, CO resorts
+    {'city': 'Boston', 'region': 'MA', 'country': 'usa', 'lat': 42.3601, 'lon': -71.0589, 'skiMarket': True},  # VT, NH, ME resorts
+    {'city': 'Seattle', 'region': 'WA', 'country': 'usa', 'lat': 47.6062, 'lon': -122.3321, 'skiMarket': True},  # WA, BC resorts
+    {'city': 'Detroit', 'region': 'MI', 'country': 'usa', 'lat': 42.3314, 'lon': -83.0458, 'skiMarket': False},
+    {'city': 'Salt Lake City', 'region': 'UT', 'country': 'usa', 'lat': 40.7608, 'lon': -111.8910, 'skiMarket': True},  # UT resorts hub
+    {'city': 'Buffalo', 'region': 'NY', 'country': 'usa', 'lat': 42.8864, 'lon': -78.8784, 'skiMarket': False},
+    {'city': 'Cleveland', 'region': 'OH', 'country': 'usa', 'lat': 41.4993, 'lon': -81.6944, 'skiMarket': False},
+    {'city': 'Milwaukee', 'region': 'WI', 'country': 'usa', 'lat': 43.0389, 'lon': -87.9065, 'skiMarket': False},
+    {'city': 'Portland', 'region': 'OR', 'country': 'usa', 'lat': 45.5152, 'lon': -122.6784, 'skiMarket': True},  # OR, WA resorts
     # Canadian Cities - Environment Canada site codes (format: s0000XXX)
     # See: https://dd.weather.gc.ca/citypage_weather/docs/site_list_en.csv
-    {'city': 'Toronto', 'region': 'ON', 'country': 'canada', 'province': 'ON', 'site': 's0000458', 'lat': 43.6532, 'lon': -79.3832},
-    {'city': 'Montreal', 'region': 'QC', 'country': 'canada', 'province': 'QC', 'site': 's0000635', 'lat': 45.5017, 'lon': -73.5673},
-    {'city': 'Vancouver', 'region': 'BC', 'country': 'canada', 'province': 'BC', 'site': 's0000141', 'lat': 49.2827, 'lon': -123.1207},
-    {'city': 'Calgary', 'region': 'AB', 'country': 'canada', 'province': 'AB', 'site': 's0000047', 'lat': 51.0447, 'lon': -114.0719},
-    {'city': 'Edmonton', 'region': 'AB', 'country': 'canada', 'province': 'AB', 'site': 's0000045', 'lat': 53.5461, 'lon': -113.4938},
-    {'city': 'Ottawa', 'region': 'ON', 'country': 'canada', 'province': 'ON', 'site': 's0000623', 'lat': 45.4215, 'lon': -75.6972},
-    {'city': 'Winnipeg', 'region': 'MB', 'country': 'canada', 'province': 'MB', 'site': 's0000193', 'lat': 49.8951, 'lon': -97.1384},
-    {'city': 'Quebec City', 'region': 'QC', 'country': 'canada', 'province': 'QC', 'site': 's0000620', 'lat': 46.8139, 'lon': -71.2080},
+    {'city': 'Toronto', 'region': 'ON', 'country': 'canada', 'province': 'ON', 'site': 's0000458', 'lat': 43.6532, 'lon': -79.3832, 'skiMarket': True},  # ON, QC resorts
+    {'city': 'Montreal', 'region': 'QC', 'country': 'canada', 'province': 'QC', 'site': 's0000635', 'lat': 45.5017, 'lon': -73.5673, 'skiMarket': True},  # QC, VT resorts
+    {'city': 'Vancouver', 'region': 'BC', 'country': 'canada', 'province': 'BC', 'site': 's0000141', 'lat': 49.2827, 'lon': -123.1207, 'skiMarket': True},  # Whistler, BC resorts
+    {'city': 'Calgary', 'region': 'AB', 'country': 'canada', 'province': 'AB', 'site': 's0000047', 'lat': 51.0447, 'lon': -114.0719, 'skiMarket': True},  # Banff, AB resorts
+    {'city': 'Edmonton', 'region': 'AB', 'country': 'canada', 'province': 'AB', 'site': 's0000045', 'lat': 53.5461, 'lon': -113.4938, 'skiMarket': True},  # Jasper, AB resorts
+    {'city': 'Ottawa', 'region': 'ON', 'country': 'canada', 'province': 'ON', 'site': 's0000623', 'lat': 45.4215, 'lon': -75.6972, 'skiMarket': False},
+    {'city': 'Winnipeg', 'region': 'MB', 'country': 'canada', 'province': 'MB', 'site': 's0000193', 'lat': 49.8951, 'lon': -97.1384, 'skiMarket': False},
+    {'city': 'Quebec City', 'region': 'QC', 'country': 'canada', 'province': 'QC', 'site': 's0000620', 'lat': 46.8139, 'lon': -71.2080, 'skiMarket': True},  # Mont-Tremblant, QC resorts
 ]
 
 # ============================================
@@ -1453,7 +1454,8 @@ def collect_snow_data():
             'depthCm': depth_cm,  # Numeric for sorting
             'trend': metro_trend,
             'history': metro_history,
-            'temperature': temp_data
+            'temperature': temp_data,
+            'skiMarket': metro.get('skiMarket', False)
         })
 
     # Sort metros by snow cover descending

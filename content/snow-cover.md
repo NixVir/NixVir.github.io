@@ -190,6 +190,7 @@ menu:
 <button class="filter-btn active" data-filter="all">All</button>
 <button class="filter-btn" data-filter="usa">U.S.</button>
 <button class="filter-btn" data-filter="canada">Canada</button>
+<button class="filter-btn" data-filter="ski">&#9975; Ski Markets</button>
 </div>
 </div>
 </div>
@@ -622,8 +623,10 @@ function renderMetroTable() {
         thead.innerHTML = '<tr><th class="sortable" data-sort="city">City</th><th class="sortable" data-sort="cover">Snow Cover<span class="info-icon">i<span class="info-tooltip">Percentage of the metro area currently covered by snow.</span></span></th><th class="sortable" data-sort="yoy">vs Last Year<span class="info-icon">i<span class="info-tooltip">Percent change compared to the average snow cover during this same period last year.</span></span></th><th class="sortable" data-sort="depth">Depth<span class="info-icon">i<span class="info-tooltip">Snow depth at a representative weather station in the metro area (point observation, not area average).</span></span></th><th class="sortable" data-sort="temp">Temp<span class="info-icon">i<span class="info-tooltip">Current temperature and departure from normal. Source: Open-Meteo.</span></span></th><th>Trend<span class="info-icon">i<span class="info-tooltip">Direction of snow cover change over the past week: increasing, decreasing, or stable.</span></span></th><th class="sparkline-cell">7-Day<span class="info-icon">i<span class="info-tooltip">Snow cover percentage for the past 7 days. Solid line = this year, dashed line = last year.</span></span></th></tr>';
         items = snowData.metros;
     }
-    // Apply country filter
-    if (currentFilter !== 'all') {
+    // Apply filter (country or ski markets)
+    if (currentFilter === 'ski') {
+        items = items.filter(function(m) { return m.skiMarket === true; });
+    } else if (currentFilter !== 'all') {
         items = items.filter(function(m) { return m.country === currentFilter; });
     }
     // Pre-calculate YoY for each item for sorting
