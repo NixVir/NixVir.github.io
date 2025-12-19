@@ -3463,6 +3463,216 @@
       "score_details": {
         "reason": "Scoring failed"
       }
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "How Much More Can the U.S. Travel Industry Take?",
+      "url": "https://www.nytimes.com/2025/12/19/travel/us-travel-tourism-visas.html",
+      "description": "Politics and border hassles have chased away foreign visitors, costing businesses billions. Some fear next year\u2019s World Cup won\u2019t be enough to bring tourists back.",
+      "content": "Politics and border hassles have chased away foreign visitors, costing businesses billions. Some fear next year\u2019s World Cup won\u2019t be enough to bring tourists back.",
+      "pub_date": "Fri, 19 Dec 2025 10:00:36 +0000",
+      "id": "7eba607c89cf",
+      "score": 4,
+      "score_details": {
+        "relevance": 3,
+        "news_value": 4,
+        "quality": 5,
+        "overall": 4,
+        "reason": "This article is about the broader travel industry, not specifically the ski industry. While it mentions some business impacts that could be relevant, the content is too general and not focused enough on the ski sector to warrant high prioritization."
+      }
+    },
+    {
+      "source": "The Atlantic",
+      "url": "https://www.theatlantic.com/newsletters/2025/12/presidential-walk-of-fame-plaque-quiz/685323/?utm_source=feed",
+      "title": "Guess the Real Trump \u2018Presidential Walk of Fame\u2019 Plaque",
+      "pub_date": "2025-12-18T17:03:00-05:00",
+      "id": "1db84e5641a3",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "The Atlantic",
+      "url": "https://www.theatlantic.com/science/2025/12/climate-science-global-mothership-ncar/685313/?utm_source=feed",
+      "title": "The U.S. Is on the Verge of Meteorological Malpractice",
+      "description": "The Trump administration says it will dismantle a premier climate center, while somehow keeping weather forecasting intact.",
+      "content": "The Trump administration says it will dismantle a premier climate center, while somehow keeping weather forecasting intact.",
+      "pub_date": "2025-12-18T16:25:36-05:00",
+      "id": "1a47cc7ec1d4",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "The Atlantic",
+      "url": "https://www.theatlantic.com/technology/2025/12/australia-social-media-ban-teens/685306/?utm_source=feed",
+      "title": "Australia\u2019s Grand Social-Media Experiment",
+      "description": "Will the country ever know for sure if banning teens from social media makes their lives better?",
+      "content": "Will the country ever know for sure if banning teens from social media makes their lives better?",
+      "pub_date": "2025-12-18T07:30:00-05:00",
+      "id": "cfd42c9a9390",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Financial Times",
+      "title": "Flawed inflation data dashes Trump\u2019s hopes of a quick affordability victory",
+      "url": "https://www.ft.com/content/c90d704f-8efc-4870-a04a-5d0d6a637571",
+      "description": "White House hails figures showing cooling price growth but Wall Street says report was \u2018a mess\u2019",
+      "content": "White House hails figures showing cooling price growth but Wall Street says report was \u2018a mess\u2019",
+      "pub_date": "Thu, 18 Dec 2025 23:26:49 GMT",
+      "id": "61dc98c621b4",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Financial Times",
+      "title": "Prediction markets and the casino mentality of 2025",
+      "url": "https://www.ft.com/content/ec80c969-5c7b-4919-a13c-652c60a4237a",
+      "description": "Financial gamification has upended traditional patterns of trust and oversight",
+      "content": "Financial gamification has upended traditional patterns of trust and oversight",
+      "pub_date": "Fri, 19 Dec 2025 05:00:12 GMT",
+      "id": "70952062d3ac",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Financial Times",
+      "title": "Welcome to the age of zero-sum politics",
+      "url": "https://www.ft.com/content/30a49ab7-285b-4641-89f8-7375fc560ab9",
+      "description": "A stalled economic conveyor belt is behind the rise of anti-system, anti-growth parties on both the right and left",
+      "content": "A stalled economic conveyor belt is behind the rise of anti-system, anti-growth parties on both the right and left",
+      "pub_date": "Fri, 19 Dec 2025 05:00:20 GMT",
+      "id": "17d423c25f04",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Financial Times",
+      "title": "Japan raises interest rates to highest level in 30 years",
+      "url": "https://www.ft.com/content/cbaaff02-9c62-4f5f-8e02-d38798df4196",
+      "description": "Yields on 10-year government bonds hit highest level since 1990s after central bank\u2019s fourth rate increase",
+      "content": "Yields on 10-year government bonds hit highest level since 1990s after central bank\u2019s fourth rate increase",
+      "pub_date": "Fri, 19 Dec 2025 09:24:10 GMT",
+      "id": "754849c3b9e8",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Financial Times",
+      "title": "Bumper Christmas for air travel as 300mn take to the skies",
+      "url": "https://www.ft.com/content/2dff6fc7-88c5-41c4-aa64-f02e1c638002",
+      "description": "Airlines on track for the biggest holiday season getaway in history as industry braces for record demand",
+      "content": "Airlines on track for the biggest holiday season getaway in history as industry braces for record demand",
+      "pub_date": "Fri, 19 Dec 2025 05:00:12 GMT",
+      "id": "0a33f4a11b10",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "ECB Officials Wary on Direction of Next Interest-Rate Move",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-19/ecb-officials-wary-on-direction-of-next-interest-rate-move",
+      "description": "European Central Bank policymakers are circumspect on where borrowing costs may go next, comfortable to stay on hold for the time being as they survey inflation risks.",
+      "content": "European Central Bank policymakers are circumspect on where borrowing costs may go next, comfortable to stay on hold for the time being as they survey inflation risks.",
+      "pub_date": "Fri, 19 Dec 2025 08:40:46 GMT",
+      "id": "cf1d22e4c132",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Stocks Tick Higher as Yields Rise After BOJ Hike: Markets Wrap",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-18/stock-market-today-dow-s-p-live-updates",
+      "description": "US stocks are poised to end a choppy week on a stronger note as traders gear up for the year-end stretch that typically delivers equity gains. Global bond yields advanced after the Bank of Japan\u2019s interest-rate hike.",
+      "content": "US stocks are poised to end a choppy week on a stronger note as traders gear up for the year-end stretch that typically delivers equity gains. Global bond yields advanced after the Bank of Japan\u2019s interest-rate hike.",
+      "pub_date": "Thu, 18 Dec 2025 22:27:42 GMT",
+      "id": "b4a0c0c8bb19",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "ICICI Prudential AMC Jumps 19% After $1.2 Billion India IPO",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-19/icici-prudential-amc-set-for-debut-as-global-investors-pile-in",
+      "description": "ICICI Prudential Asset Management Co. surged in its Mumbai trading debut on Friday after an initial public offering that raised 106 billion rupees ($1.2 billion), potentially marking the year\u2019s final major listing.",
+      "content": "ICICI Prudential Asset Management Co. surged in its Mumbai trading debut on Friday after an initial public offering that raised 106 billion rupees ($1.2 billion), potentially marking the year\u2019s final major listing.",
+      "pub_date": "Fri, 19 Dec 2025 01:30:00 GMT",
+      "id": "cadfec0d84a0",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Euro-Zone Wage Growth to Pick Up in Second Half of Next Year",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-19/euro-zone-wage-growth-to-pick-up-in-second-half-of-next-year",
+      "description": "Pay growth in the euro area is set to accelerate in the latter half of next year, supporting the European Central Bank\u2019s assessment that there\u2019s currently no need to lower interest rates further.",
+      "content": "Pay growth in the euro area is set to accelerate in the latter half of next year, supporting the European Central Bank\u2019s assessment that there\u2019s currently no need to lower interest rates further.",
+      "pub_date": "Fri, 19 Dec 2025 08:38:50 GMT",
+      "id": "1001b186af3b",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Oil Heads for Second Weekly Decline as Glut Concerns Dominate",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-18/latest-oil-market-news-and-analysis-for-dec-18",
+      "description": "Oil headed for a second weekly decline as concerns over a growing glut outweighed potential supply disruptions.",
+      "content": "Oil headed for a second weekly decline as concerns over a growing glut outweighed potential supply disruptions.",
+      "pub_date": "Thu, 18 Dec 2025 23:35:56 GMT",
+      "id": "ff351a944103",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Six Charts That Show How Stock Markets Got Reshaped in 2025",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-19/six-charts-that-show-how-stock-markets-got-reshaped-in-2025",
+      "description": "Stock investors can\u2019t claim that this year has lacked market drama.",
+      "content": "Stock investors can\u2019t claim that this year has lacked market drama.",
+      "pub_date": "Fri, 19 Dec 2025 10:00:01 GMT",
+      "id": "a0e15844208e",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Wafra CEO Al-Mubaraki to Depart Kuwait-Owned Private Asset Firm",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-19/wafra-ceo-al-mubaraki-to-depart-kuwait-owned-private-asset-firm",
+      "description": "Fawaz Al-Mubaraki, the chief executive officer of Wafra Inc., is leaving at year-end after almost a decade leading the investment manager owned by Kuwait\u2019s state pension agency.",
+      "content": "Fawaz Al-Mubaraki, the chief executive officer of Wafra Inc., is leaving at year-end after almost a decade leading the investment manager owned by Kuwait\u2019s state pension agency.",
+      "pub_date": "Fri, 19 Dec 2025 10:00:00 GMT",
+      "id": "fd1ac360e158",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
     }
   ],
   "rejected": [
@@ -4359,6 +4569,74 @@
         "quality": 1,
         "overall": 1,
         "reason": "This article is not relevant to the ski industry. It discusses a claim made by President Donald Trump about investments in the United States, which has no direct connection to the ski industry."
+      }
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "52 Places to Go, So Little Time: Where We Went in 2025",
+      "url": "https://www.nytimes.com/2025/12/19/travel/visiting-places-to-go.html",
+      "description": "Our writers and photographers were on the ground to find out what makes the destinations on our annual list rise above the rest.",
+      "content": "Our writers and photographers were on the ground to find out what makes the destinations on our annual list rise above the rest.",
+      "pub_date": "Fri, 19 Dec 2025 10:01:58 +0000",
+      "id": "eb2427246673",
+      "score": 3,
+      "score_details": {
+        "relevance": 3,
+        "news_value": 2,
+        "quality": 4,
+        "overall": 3,
+        "reason": "This article is a general travel piece that mentions ski destinations only in passing, without any substantive business news or industry analysis. It does not meet the criteria for inclusion in a ski business news feed."
+      }
+    },
+    {
+      "source": "Washington Post",
+      "title": "Why Trump\u2019s social media company is merging with a fusion power firm",
+      "url": "https://www.washingtonpost.com/business/2025/12/18/trump-media-merge-with-fusion-power-developer-6-billion-deal/",
+      "description": "The $6 billion deal between Trump Media and Technology Group and TAE Technologies aimed at bringing fusion energy to the market raises conflict of interest questions.",
+      "content": "The $6 billion deal between Trump Media and Technology Group and TAE Technologies aimed at bringing fusion energy to the market raises conflict of interest questions.",
+      "pub_date": "Thu, 18 Dec 2025 22:06:57 +0000",
+      "id": "a7c1899eec4f",
+      "score": 1,
+      "score_details": {
+        "relevance": 1,
+        "news_value": 1,
+        "quality": 3,
+        "overall": 1,
+        "reason": "This article is about Trump's social media company merging with a fusion power firm, which has no direct relevance to the ski industry business operations."
+      }
+    },
+    {
+      "source": "Washington Post",
+      "title": "Trump officials keep blaming housing costs on one group: Immigrants",
+      "url": "https://www.washingtonpost.com/business/2025/12/18/immigration-housing-costs-trump/",
+      "description": "Trump officials are blaming immigrants for high housing costs, but experts say the issue is more complex",
+      "content": "Trump officials are blaming immigrants for high housing costs, but experts say the issue is more complex",
+      "pub_date": "Thu, 18 Dec 2025 15:40:51 +0000",
+      "id": "5b8c9cb38ee4",
+      "score": 3,
+      "score_details": {
+        "relevance": 2,
+        "news_value": 3,
+        "quality": 3,
+        "overall": 3,
+        "reason": "This article about Trump administration's immigration policies and their impact on housing costs is only tangentially related to the ski industry. While it may affect real estate development in ski towns, the connection is not direct or substantive enough for inclusion in a ski business news feed."
+      }
+    },
+    {
+      "source": "The Atlantic",
+      "url": "https://www.theatlantic.com/ideas/2025/12/trump-marijuana-rescheduling-tax/685317/?utm_source=feed",
+      "title": "Rescheduling Marijuana Is an Enormous Mistake",
+      "description": "Trump\u2019s executive order does little more than offer a tax cut to an industry that profits from addiction.",
+      "content": "Trump\u2019s executive order does little more than offer a tax cut to an industry that profits from addiction.",
+      "pub_date": "2025-12-18T19:09:00-05:00",
+      "id": "087c534469fe",
+      "score": 2,
+      "score_details": {
+        "relevance": 1,
+        "news_value": 2,
+        "quality": 3,
+        "overall": 2,
+        "reason": "This article about marijuana policy has no direct relevance to the ski industry business and is not timely or newsworthy for a ski business news feed."
       }
     }
   ]
