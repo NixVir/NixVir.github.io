@@ -1,9 +1,10 @@
 ---
 title: "Economic Dashboard"
-description: "Real-time economic indicators and market data"
+description: "Real-time economic indicators, market data, commodity prices, and currency exchange rates. Updated daily with year-over-year comparisons."
+featured_image: "images/mtnsky.jpg"
 menu:
   main:
-    weight: 4
+    weight: 1
 ---
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
@@ -108,6 +109,30 @@ menu:
       <h4>USD / Mexican Peso</h4>
       <div id="usd-mxn">Loading...</div>
       <div class="chart-container"><canvas id="chart-mxn"></canvas></div>
+    </div>
+  </div>
+
+  <h3 class="section-title">Commodity Prices</h3>
+  <div class="dashboard-grid">
+    <div class="metric-card">
+      <h4>Gold ($/oz)</h4>
+      <div id="gold">Loading...</div>
+      <div class="chart-container"><canvas id="chart-gold"></canvas></div>
+    </div>
+    <div class="metric-card">
+      <h4>Crude Oil WTI ($/barrel)</h4>
+      <div id="crude-oil">Loading...</div>
+      <div class="chart-container"><canvas id="chart-oil"></canvas></div>
+    </div>
+    <div class="metric-card">
+      <h4>Natural Gas ($/MMBtu)</h4>
+      <div id="natural-gas">Loading...</div>
+      <div class="chart-container"><canvas id="chart-gas"></canvas></div>
+    </div>
+    <div class="metric-card">
+      <h4>Copper ($/lb)</h4>
+      <div id="copper">Loading...</div>
+      <div class="chart-container"><canvas id="chart-copper"></canvas></div>
     </div>
   </div>
 </div>
@@ -404,6 +429,42 @@ async function loadDashboard() {
       const mxnMomentum = calc30DayMomentum(data.usd_mxn);
       document.getElementById("usd-mxn").innerHTML = `<div class="value">${Number(latest.value).toFixed(2)}</div><div class="period">${formatShortDate(latest.date)} (MXN per USD)</div>${formatChangeIndicator(mxnChange, mxnMomentum)}`;
       createChart('chart-mxn', data.usd_mxn.map(d => formatShortDate(d.date)), data.usd_mxn.map(d => d.value), '#27ae60', { decimals: 2 });
+    }
+
+    // Gold (daily - show YoY + 30-day momentum)
+    if(data.gold && Array.isArray(data.gold) && data.gold.length > 0) {
+      const latest = data.gold[data.gold.length - 1];
+      const goldChange = calcChange(data.gold);
+      const goldMomentum = calc30DayMomentum(data.gold);
+      document.getElementById("gold").innerHTML = `<div class="value">$${Number(latest.value).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</div><div class="period">${formatShortDate(latest.date)}</div>${formatChangeIndicator(goldChange, goldMomentum)}`;
+      createChart('chart-gold', data.gold.map(d => formatShortDate(d.date)), data.gold.map(d => d.value), '#f1c40f', { prefix: '$', decimals: 2 });
+    }
+
+    // Crude Oil WTI (daily - show YoY + 30-day momentum)
+    if(data.crude_oil && Array.isArray(data.crude_oil) && data.crude_oil.length > 0) {
+      const latest = data.crude_oil[data.crude_oil.length - 1];
+      const oilChange = calcChange(data.crude_oil);
+      const oilMomentum = calc30DayMomentum(data.crude_oil);
+      document.getElementById("crude-oil").innerHTML = `<div class="value">$${Number(latest.value).toFixed(2)}</div><div class="period">${formatShortDate(latest.date)}</div>${formatChangeIndicator(oilChange, oilMomentum)}`;
+      createChart('chart-oil', data.crude_oil.map(d => formatShortDate(d.date)), data.crude_oil.map(d => d.value), '#2c3e50', { prefix: '$', decimals: 2 });
+    }
+
+    // Natural Gas (daily - show YoY + 30-day momentum)
+    if(data.natural_gas && Array.isArray(data.natural_gas) && data.natural_gas.length > 0) {
+      const latest = data.natural_gas[data.natural_gas.length - 1];
+      const gasChange = calcChange(data.natural_gas);
+      const gasMomentum = calc30DayMomentum(data.natural_gas);
+      document.getElementById("natural-gas").innerHTML = `<div class="value">$${Number(latest.value).toFixed(2)}</div><div class="period">${formatShortDate(latest.date)}</div>${formatChangeIndicator(gasChange, gasMomentum)}`;
+      createChart('chart-gas', data.natural_gas.map(d => formatShortDate(d.date)), data.natural_gas.map(d => d.value), '#e67e22', { prefix: '$', decimals: 2 });
+    }
+
+    // Copper (daily - show YoY + 30-day momentum)
+    if(data.copper && Array.isArray(data.copper) && data.copper.length > 0) {
+      const latest = data.copper[data.copper.length - 1];
+      const copperChange = calcChange(data.copper);
+      const copperMomentum = calc30DayMomentum(data.copper);
+      document.getElementById("copper").innerHTML = `<div class="value">$${Number(latest.value).toFixed(2)}</div><div class="period">${formatShortDate(latest.date)}</div>${formatChangeIndicator(copperChange, copperMomentum)}`;
+      createChart('chart-copper', data.copper.map(d => formatShortDate(d.date)), data.copper.map(d => d.value), '#d35400', { prefix: '$', decimals: 2 });
     }
 
   } catch (error) {

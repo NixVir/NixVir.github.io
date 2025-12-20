@@ -1,6 +1,5 @@
 ---
-description: Welcome to NixVir.  We offer a wide range of research tools and data analysis services to provide your organization with actionable insights.  Our specialty is outdoor recreation, but we work across a wide range of industries.  Our approach is pragmatic, cost effective, and emphasizes efficiency and parsimony over flash.  We'll work with you from start to finish to help you reach your research goals within your budget.  
+description: "Providing research and data analytics that drive effective strategies and tactics. We specialize in all things snow. We are creative, resourceful, cost effective, and high touch. Your unique situation and needs determine the methods and tools we will leverage to help you achieve success. No problem is too big or small for our consideration. <a href='/contact/' class='white-80 underline'>Contact us to learn more.</a>"
 featured_image: /images/mtnsky.jpg
-title: NixVir 
+title: NixVir
 ---
-<a href="/contact/">Contact us to learn more.</a>

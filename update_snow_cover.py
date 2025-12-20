@@ -1032,6 +1032,63 @@ def fetch_country_temperature_anomaly(metros, country):
     return result
 
 
+def calculate_ski_market_aggregates(metros, country):
+    """
+    Calculate aggregate snow cover and temperature anomaly for ski market metros.
+
+    Args:
+        metros: List of metro area dicts with snow cover and temperature data
+        country: 'usa' or 'canada'
+
+    Returns dict with:
+        - cover: Average snow cover % for ski markets
+        - avg_temp_c/f: Average temperature
+        - avg_anomaly_c/f: Average temperature anomaly
+        - metro_count: Number of ski market metros included
+    """
+    ski_metros = [m for m in metros if m.get('country') == country and m.get('skiMarket') == True]
+
+    if not ski_metros:
+        return None
+
+    covers = []
+    temps = []
+    anomalies = []
+
+    for metro in ski_metros:
+        if metro.get('cover') is not None:
+            covers.append(metro['cover'])
+        temp_data = metro.get('temperature', {})
+        if temp_data.get('temp_c') is not None:
+            temps.append(temp_data['temp_c'])
+        if temp_data.get('anomaly_c') is not None:
+            anomalies.append(temp_data['anomaly_c'])
+
+    result = {
+        'cover': None,
+        'avg_temp_c': None,
+        'avg_temp_f': None,
+        'avg_anomaly_c': None,
+        'avg_anomaly_f': None,
+        'metro_count': len(ski_metros)
+    }
+
+    if covers:
+        result['cover'] = round(sum(covers) / len(covers), 1)
+
+    if temps:
+        avg_temp_c = sum(temps) / len(temps)
+        result['avg_temp_c'] = round(avg_temp_c, 1)
+        result['avg_temp_f'] = round(avg_temp_c * 9/5 + 32, 1)
+
+    if anomalies:
+        avg_anomaly_c = sum(anomalies) / len(anomalies)
+        result['avg_anomaly_c'] = round(avg_anomaly_c, 1)
+        result['avg_anomaly_f'] = round(avg_anomaly_c * 9/5, 1)
+
+    return result
+
+
 # ============================================
 # Estimation Functions
 # ============================================
@@ -1523,6 +1580,16 @@ def collect_snow_data():
     usa_temp = fetch_country_temperature_anomaly(metros, 'usa')
     canada_temp = fetch_country_temperature_anomaly(metros, 'canada')
 
+    # Calculate ski market aggregates for header widget
+    usa_ski = calculate_ski_market_aggregates(metros, 'usa')
+    canada_ski = calculate_ski_market_aggregates(metros, 'canada')
+
+    print_safe(f"\nSki Market Aggregates:")
+    if usa_ski:
+        print_safe(f"  USA Ski Markets ({usa_ski['metro_count']} metros): {usa_ski['cover']}% cover, {usa_ski['avg_anomaly_f']}°F anomaly")
+    if canada_ski:
+        print_safe(f"  Canada Ski Markets ({canada_ski['metro_count']} metros): {canada_ski['cover']}% cover, {canada_ski['avg_anomaly_f']}°F anomaly")
+
     # Calculate combined North America temperature anomaly
     combined_temp = None
     if usa_temp and canada_temp:
@@ -1555,6 +1622,10 @@ def collect_snow_data():
             'change': usa_change if usa_trend != 'stable' else canada_change,
             'context': f'Approximately {round(combined_cover)}% of North American land area currently has visible snow cover',
             'temperature': combined_temp
+        },
+        'skiMarkets': {
+            'usa': usa_ski,
+            'canada': canada_ski
         },
         'usa': {
             'cover': round(usa_cover, 1),

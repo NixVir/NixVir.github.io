@@ -1,17 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
-  <!-- Hospitality - Hotel/Lodge building icon -->
+  <!-- Hospitality - Mountain cabin/lodge with chimney and smoke -->
   <circle cx="24" cy="24" r="22" fill="#14B8A6" opacity="0.1"/>
-  <!-- Main hotel building -->
-  <rect x="12" y="16" width="24" height="22" rx="1" fill="#14B8A6"/>
-  <!-- Roof/top section -->
-  <rect x="14" y="12" width="20" height="4" rx="1" fill="#14B8A6"/>
-  <!-- Windows - top row -->
-  <rect x="15" y="19" width="4" height="4" rx="0.5" fill="white" opacity="0.7"/>
-  <rect x="22" y="19" width="4" height="4" rx="0.5" fill="white" opacity="0.7"/>
-  <rect x="29" y="19" width="4" height="4" rx="0.5" fill="white" opacity="0.7"/>
-  <!-- Windows - middle row -->
-  <rect x="15" y="26" width="4" height="4" rx="0.5" fill="white" opacity="0.7"/>
-  <rect x="29" y="26" width="4" height="4" rx="0.5" fill="white" opacity="0.7"/>
-  <!-- Door entrance -->
+  <!-- Chimney -->
+  <rect x="30" y="10" width="5" height="12" fill="#14B8A6"/>
+  <!-- Smoke puffs -->
+  <circle cx="32.5" cy="7" r="2" fill="#14B8A6" opacity="0.6"/>
+  <circle cx="34" cy="4" r="1.5" fill="#14B8A6" opacity="0.4"/>
+  <!-- Main roof - A-frame -->
+  <polygon points="24,12 8,28 40,28" fill="#14B8A6"/>
+  <!-- Cabin body -->
+  <rect x="12" y="28" width="24" height="10" fill="#14B8A6"/>
+  <!-- Door -->
   <rect x="21" y="30" width="6" height="8" rx="0.5" fill="white" opacity="0.9"/>
+  <!-- Window left in roof -->
+  <polygon points="18,20 15,25 21,25" fill="white" opacity="0.7"/>
+  <!-- Window right in roof -->
+  <polygon points="30,20 27,25 33,25" fill="white" opacity="0.7"/>
+  <!-- Wavy lines at bottom - water/snow -->
+  <path d="M6,42 Q10,40 14,42 Q18,44 22,42 Q26,40 30,42 Q34,44 38,42 Q42,40 46,42" stroke="#14B8A6" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M4,46 Q8,44 12,46 Q16,48 20,46 Q24,44 28,46 Q32,48 36,46 Q40,44 44,46" stroke="#14B8A6" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
 </svg>
