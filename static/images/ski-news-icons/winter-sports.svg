@@ -1,21 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
-  <!-- Winter Sports - Snowboarder aerial in halfpipe (matching reference) -->
-  <circle cx="24" cy="24" r="22" fill="#EF4444" opacity="0.1"/>
-  <!-- Halfpipe curve at bottom, opening upward -->
-  <path d="M4 38 Q24 48 44 38" stroke="#EF4444" stroke-width="3" stroke-linecap="round" fill="none"/>
-  <!-- Snowboarder figure above halfpipe -->
+  <!-- Winter Sports - Downhill skier -->
   <!-- Head -->
-  <circle cx="26" cy="10" r="3" fill="#EF4444"/>
-  <!-- Body leaning forward/down -->
-  <path d="M26 13 L22 20" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
-  <!-- Back arm reaching up and back -->
-  <path d="M24 15 L30 10" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round"/>
-  <!-- Front arm reaching down to grab board -->
-  <path d="M23 17 L18 24" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round"/>
-  <!-- Back leg bent up behind -->
-  <path d="M22 20 L28 16" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
-  <!-- Front leg angled down toward board -->
-  <path d="M22 20 L16 26" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
-  <!-- Snowboard angled under rider -->
-  <path d="M12 28 L20 22" stroke="#EF4444" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="28" cy="8" r="4" fill="#000000"/>
+  <!-- Body - torso leaning forward -->
+  <path d="M28 12 L22 22" stroke="#000000" stroke-width="4" stroke-linecap="round"/>
+  <!-- Back arm with pole behind -->
+  <path d="M26 15 L32 20" stroke="#000000" stroke-width="3" stroke-linecap="round"/>
+  <!-- Ski pole behind -->
+  <path d="M32 20 L38 32" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+  <!-- Front arm with pole forward -->
+  <path d="M24 18 L18 14" stroke="#000000" stroke-width="3" stroke-linecap="round"/>
+  <!-- Ski pole forward -->
+  <path d="M18 14 L14 6" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+  <!-- Front leg bent -->
+  <path d="M22 22 L18 30" stroke="#000000" stroke-width="4" stroke-linecap="round"/>
+  <path d="M18 30 L10 36" stroke="#000000" stroke-width="4" stroke-linecap="round"/>
+  <!-- Back leg extended -->
+  <path d="M22 22 L30 28" stroke="#000000" stroke-width="4" stroke-linecap="round"/>
+  <path d="M30 28 L38 32" stroke="#000000" stroke-width="4" stroke-linecap="round"/>
+  <!-- Front ski -->
+  <path d="M4 40 L16 34" stroke="#000000" stroke-width="3" stroke-linecap="round"/>
+  <!-- Back ski -->
+  <path d="M32 38 L44 32" stroke="#000000" stroke-width="3" stroke-linecap="round"/>
 </svg>

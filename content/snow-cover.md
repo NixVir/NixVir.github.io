@@ -1,6 +1,7 @@
 ---
 title: "Snow Cover"
-description: "Real-time North American snow coverage"
+description: "Real-time North American snow coverage tracking for the United States and Canada, including major ski markets. Updated daily with year-over-year comparisons and temperature anomaly data."
+featured_image: "images/mtnsky.jpg"
 menu:
   main:
     weight: 3
@@ -19,12 +20,16 @@ menu:
 .country-card.na .country-percentage { color: #10b981; }
 .country-card.usa { border-top: 4px solid #3b82f6; }
 .country-card.canada { border-top: 4px solid #8b5cf6; }
+.country-card.usa-ski { border-top: 4px solid #f97316; }
+.country-card.canada-ski { border-top: 4px solid #14b8a6; }
 .country-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
 .country-flag { font-size: 1.8em; }
 .country-name { font-size: 1.2em; font-weight: 600; color: #1e293b; }
 .country-percentage { font-size: 2.5em; font-weight: 700; margin-bottom: 5px; }
 .country-card.usa .country-percentage { color: #3b82f6; }
 .country-card.canada .country-percentage { color: #8b5cf6; }
+.country-card.usa-ski .country-percentage { color: #f97316; }
+.country-card.canada-ski .country-percentage { color: #14b8a6; }
 .country-change { font-size: 0.85em; margin-bottom: 12px; }
 .change-up { color: #22c55e; }
 .change-down { color: #ef4444; }
@@ -34,8 +39,8 @@ menu:
 .stat-item { text-align: center; }
 .stat-value { font-size: 1.1em; font-weight: 600; color: #1e293b; }
 .stat-label { font-size: 0.7em; color: #64748b; text-transform: uppercase; }
-.metro-section { background: #f9f9f9; border-radius: 12px; padding: 20px; border: 1px solid #ddd; margin-bottom: 25px; overflow: hidden; }
-.metro-table { table-layout: fixed; }
+.metro-section { background: #f9f9f9; border-radius: 12px; padding: 20px; border: 1px solid #ddd; margin-bottom: 25px; overflow-x: auto; }
+.metro-table { table-layout: auto; min-width: 700px; }
 .metro-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px; }
 .metro-header h2 { font-size: 1.2em; color: #1e293b; margin: 0; }
 .metro-controls { display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
@@ -54,10 +59,11 @@ menu:
 .metro-table th.sortable:hover { background: #f1f5f9; }
 .metro-table td { padding: 10px 12px; border-bottom: 1px solid #e2e8f0; }
 .metro-table tr:hover { background: #f8fafc; }
-.city-info { display: flex; align-items: center; gap: 8px; }
-.city-flag { font-size: 1.1em; }
-.city-name { font-weight: 500; }
-.city-region { font-size: 0.75em; color: #64748b; }
+.city-info { display: flex; align-items: center; gap: 8px; min-width: 140px; }
+.city-flag { font-size: 1.1em; flex-shrink: 0; }
+.city-details { display: flex; flex-direction: column; }
+.city-name { font-weight: 500; white-space: nowrap; }
+.city-region { font-size: 0.75em; color: #64748b; white-space: nowrap; }
 .snow-cover-cell { font-weight: 600; }
 .cover-high { color: #3b82f6; }
 .cover-medium { color: #64748b; }
@@ -173,6 +179,38 @@ menu:
 </div>
 <div class="temp-anomaly" id="canada-temp"></div>
 </div>
+
+<div class="country-card usa-ski">
+<div class="country-header">
+<span class="country-flag">&#9975;</span>
+<span class="country-name">US Ski Markets<span class="info-icon">i<span class="info-tooltip"><strong>8 Major US Ski Markets:</strong><br>Denver, Salt Lake City, Seattle, Portland, Boston, New York City, Chicago, Minneapolis</span></span></span>
+</div>
+<div class="country-percentage" id="usa-ski-percentage">--%</div>
+<div class="country-change" id="usa-ski-change"><span class="change-stable">Loading...</span></div>
+<div class="yoy-comparison" id="usa-ski-yoy"></div>
+<div class="country-chart"><canvas id="usa-ski-chart"></canvas></div>
+<div class="country-stats">
+<div class="stat-item"><div class="stat-value" id="usa-ski-metros">--</div><div class="stat-label">Metro Areas<span class="info-icon">i<span class="info-tooltip">Number of major metropolitan areas included in ski market calculation.</span></span></div></div>
+<div class="stat-item"><div class="stat-value" id="usa-ski-avg-cover">--</div><div class="stat-label">Avg Cover<span class="info-icon">i<span class="info-tooltip">Average snow cover percentage across all US ski market metros.</span></span></div></div>
+</div>
+<div class="temp-anomaly" id="usa-ski-temp"></div>
+</div>
+
+<div class="country-card canada-ski">
+<div class="country-header">
+<span class="country-flag">&#9975;</span>
+<span class="country-name">Canada Ski Markets<span class="info-icon">i<span class="info-tooltip"><strong>6 Major Canada Ski Markets:</strong><br>Vancouver, Calgary, Edmonton, Toronto, Montreal, Quebec City</span></span></span>
+</div>
+<div class="country-percentage" id="canada-ski-percentage">--%</div>
+<div class="country-change" id="canada-ski-change"><span class="change-stable">Loading...</span></div>
+<div class="yoy-comparison" id="canada-ski-yoy"></div>
+<div class="country-chart"><canvas id="canada-ski-chart"></canvas></div>
+<div class="country-stats">
+<div class="stat-item"><div class="stat-value" id="canada-ski-metros">--</div><div class="stat-label">Metro Areas<span class="info-icon">i<span class="info-tooltip">Number of major metropolitan areas included in ski market calculation.</span></span></div></div>
+<div class="stat-item"><div class="stat-value" id="canada-ski-avg-cover">--</div><div class="stat-label">Avg Cover<span class="info-icon">i<span class="info-tooltip">Average snow cover percentage across all Canada ski market metros.</span></span></div></div>
+</div>
+<div class="temp-anomaly" id="canada-ski-temp"></div>
+</div>
 </div>
 
 <section class="metro-section">
@@ -239,6 +277,8 @@ Data sources: <a href="https://www.nohrsc.noaa.gov/" target="_blank">NOAA NOHRSC
 let naChart = null;
 let usaChart = null;
 let canadaChart = null;
+let usaSkiChart = null;
+let canadaSkiChart = null;
 let usaHistoricalChart = null;
 let canadaHistoricalChart = null;
 const metroSparklines = {};
@@ -247,6 +287,10 @@ let currentFilter = 'all';
 let currentSort = { field: 'cover', direction: 'desc' };
 let currentUnit = 'imperial';
 let currentViewMode = 'metros';
+
+// Get current and prior year for labels
+const currentYear = new Date().getFullYear();
+const priorYear = currentYear - 1;
 
 function formatNumber(num) {
     if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
@@ -384,6 +428,8 @@ function renderDashboard() {
     renderNACard();
     renderCountryCard('usa');
     renderCountryCard('canada');
+    renderSkiMarketCard('usa');
+    renderSkiMarketCard('canada');
     renderMetroTable();
     renderHistoricalChart();
 }
@@ -513,7 +559,19 @@ function renderNACard() {
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            plugins: { legend: { display: false } },
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
+                    callbacks: {
+                        label: function(ctx) {
+                            var label = ctx.datasetIndex === 0 ? currentYear : priorYear;
+                            return label + ': ' + ctx.parsed.y + '%';
+                        }
+                    }
+                }
+            },
             scales: { x: { display: false }, y: { display: false, min: 0, max: 100 } },
             interaction: { intersect: false, mode: 'index' }
         }
@@ -596,7 +654,19 @@ function renderCountryCard(country) {
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            plugins: { legend: { display: false } },
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
+                    callbacks: {
+                        label: function(ctx) {
+                            var label = ctx.datasetIndex === 0 ? currentYear : priorYear;
+                            return label + ': ' + ctx.parsed.y + '%';
+                        }
+                    }
+                }
+            },
             scales: { x: { display: false }, y: { display: false, min: 0, max: 100 } },
             interaction: { intersect: false, mode: 'index' }
         }
@@ -605,6 +675,139 @@ function renderCountryCard(country) {
     else canadaChart = chart;
     // Render temperature anomaly
     renderTempAnomaly(country + '-temp', data.temperature, 'Avg Temp');
+}
+
+function renderSkiMarketCard(country) {
+    const skiData = snowData.skiMarkets && snowData.skiMarkets[country];
+    if (!skiData) return;
+    const prefix = country + '-ski';
+    // Display percentage
+    document.getElementById(prefix + '-percentage').textContent = Math.round(skiData.cover) + '%';
+    // Change indicator - compare to week ago using metro history average
+    var changeEl = document.getElementById(prefix + '-change');
+    var skiMetros = snowData.metros.filter(function(m) { return m.country === country && m.skiMarket === true; });
+    var currentAvg = skiData.cover;
+    var weekAgoAvg = 0;
+    var validMetros = 0;
+    skiMetros.forEach(function(m) {
+        if (m.history && m.history.length >= 7) {
+            weekAgoAvg += m.history[0];
+            validMetros++;
+        }
+    });
+    if (validMetros > 0) {
+        weekAgoAvg = weekAgoAvg / validMetros;
+        var change = (currentAvg - weekAgoAvg).toFixed(1);
+        var changeValue = parseFloat(change);
+        var changeClass = 'change-stable';
+        var changeIcon = '\u2192';
+        if (changeValue > 0) { changeClass = 'change-up'; changeIcon = '\u2191'; change = '+' + change; }
+        else if (changeValue < 0) { changeClass = 'change-down'; changeIcon = '\u2193'; }
+        changeEl.innerHTML = '<span class="' + changeClass + '">' + changeIcon + ' ' + change + ' pts from last week</span>';
+    } else {
+        changeEl.innerHTML = '<span class="change-stable">--</span>';
+    }
+    // YoY comparison
+    var yoyEl = document.getElementById(prefix + '-yoy');
+    var totalYoY = 0;
+    var yoyCount = 0;
+    skiMetros.forEach(function(m) {
+        var yoy = calculateYoY(m.cover, m.priorYearHistory);
+        if (yoy !== null) {
+            totalYoY += yoy;
+            yoyCount++;
+        }
+    });
+    if (yoyCount > 0) {
+        var avgYoY = totalYoY / yoyCount;
+        var yoyFormatted = formatYoY(avgYoY);
+        yoyEl.innerHTML = '<span class="yoy-label">vs last year:</span> <span class="' + yoyFormatted.class + '">' + yoyFormatted.text + '</span>';
+    }
+    // Stats: metro count and average cover
+    document.getElementById(prefix + '-metros').textContent = skiData.metro_count;
+    document.getElementById(prefix + '-avg-cover').textContent = Math.round(skiData.cover) + '%';
+    // Render sparkline chart from aggregated metro history
+    const ctx = document.getElementById(prefix + '-chart').getContext('2d');
+    if (country === 'usa' && usaSkiChart) usaSkiChart.destroy();
+    if (country === 'canada' && canadaSkiChart) canadaSkiChart.destroy();
+    // Aggregate history from ski market metros
+    var historyLen = skiMetros.length > 0 && skiMetros[0].history ? skiMetros[0].history.length : 0;
+    var aggregatedHistory = [];
+    var aggregatedPriorHistory = [];
+    for (var i = 0; i < historyLen; i++) {
+        var sum = 0, priorSum = 0, priorCount = 0;
+        skiMetros.forEach(function(m) {
+            if (m.history && m.history[i] !== undefined) sum += m.history[i];
+            if (m.priorYearHistory && m.priorYearHistory[i] !== undefined) {
+                priorSum += m.priorYearHistory[i];
+                priorCount++;
+            }
+        });
+        aggregatedHistory.push(Math.round(sum / skiMetros.length));
+        if (priorCount > 0) aggregatedPriorHistory.push(Math.round(priorSum / priorCount));
+    }
+    const color = country === 'usa' ? '#f97316' : '#14b8a6';
+    const bgColor = country === 'usa' ? 'rgba(249, 115, 22, 0.1)' : 'rgba(20, 184, 166, 0.1)';
+    const priorColor = '#9ca3af';
+    const datasets = [{
+        label: 'This Year',
+        data: aggregatedHistory,
+        borderColor: color,
+        backgroundColor: bgColor,
+        fill: true,
+        tension: 0.4,
+        pointRadius: 0,
+        borderWidth: 2
+    }];
+    if (aggregatedPriorHistory.length > 0) {
+        datasets.push({
+            label: 'Last Year',
+            data: aggregatedPriorHistory,
+            borderColor: priorColor,
+            backgroundColor: 'transparent',
+            fill: false,
+            tension: 0.4,
+            pointRadius: 0,
+            borderWidth: 1.5,
+            borderDash: [4, 2]
+        });
+    }
+    const chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: aggregatedHistory.map(function(_, i) { return i; }),
+            datasets: datasets
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
+                    callbacks: {
+                        label: function(ctx) {
+                            var label = ctx.datasetIndex === 0 ? currentYear : priorYear;
+                            return label + ': ' + ctx.parsed.y + '%';
+                        }
+                    }
+                }
+            },
+            scales: { x: { display: false }, y: { display: false, min: 0, max: 100 } },
+            interaction: { intersect: false, mode: 'index' }
+        }
+    });
+    if (country === 'usa') usaSkiChart = chart;
+    else canadaSkiChart = chart;
+    // Render temperature anomaly
+    var tempData = {
+        avg_temp_c: skiData.avg_temp_c,
+        avg_temp_f: skiData.avg_temp_f,
+        avg_anomaly_c: skiData.avg_anomaly_c,
+        avg_anomaly_f: skiData.avg_anomaly_f
+    };
+    renderTempAnomaly(prefix + '-temp', tempData, 'Avg Temp');
 }
 
 function renderMetroTable() {
@@ -687,7 +890,7 @@ function renderMetroTable() {
         var yoyFormatted = formatYoY(yoy);
         if (isStateView) {
             var metroCountText = item.metroCount > 1 ? ' (' + item.metroCount + ' metros)' : ' (1 metro)';
-            return '<tr><td><div class="city-info"><span class="city-flag">' + flag + '</span><div><div class="city-name">' + item.region + '</div><div class="city-region">' + metroCountText + '</div></div></div></td><td class="snow-cover-cell ' + coverClass + '">' + item.cover + '%</td><td class="metro-yoy ' + yoyFormatted.class + '">' + yoyFormatted.text + '</td><td>' + depthDisplay + '</td><td class="trend-cell ' + trendClass + '">' + trendIcon + '</td><td class="sparkline-cell"><div class="sparkline-container"><canvas id="sparkline-' + idx + '"></canvas></div></td></tr>';
+            return '<tr><td><div class="city-info"><span class="city-flag">' + flag + '</span><div class="city-details"><div class="city-name">' + item.region + '</div><div class="city-region">' + metroCountText + '</div></div></div></td><td class="snow-cover-cell ' + coverClass + '">' + item.cover + '%</td><td class="metro-yoy ' + yoyFormatted.class + '">' + yoyFormatted.text + '</td><td>' + depthDisplay + '</td><td class="trend-cell ' + trendClass + '">' + trendIcon + '</td><td class="sparkline-cell"><div class="sparkline-container"><canvas id="sparkline-' + idx + '"></canvas></div></td></tr>';
         } else {
             // Format temperature for metro view
             var tempDisplay = '--';
@@ -700,7 +903,7 @@ function renderMetroTable() {
                     tempDisplay += ' <span class="temp-' + formatted.anomalyClass + '">(' + formatted.anomalyText + ')</span>';
                 }
             }
-            return '<tr><td><div class="city-info"><span class="city-flag">' + flag + '</span><div><div class="city-name">' + item.city + '</div><div class="city-region">' + item.region + '</div></div></div></td><td class="snow-cover-cell ' + coverClass + '">' + item.cover + '%</td><td class="metro-yoy ' + yoyFormatted.class + '">' + yoyFormatted.text + '</td><td>' + depthDisplay + '</td><td class="metro-temp">' + tempDisplay + '</td><td class="trend-cell ' + trendClass + '">' + trendIcon + '</td><td class="sparkline-cell"><div class="sparkline-container"><canvas id="sparkline-' + idx + '"></canvas></div></td></tr>';
+            return '<tr><td><div class="city-info"><span class="city-flag">' + flag + '</span><div class="city-details"><div class="city-name">' + item.city + '</div><div class="city-region">' + item.region + '</div></div></div></td><td class="snow-cover-cell ' + coverClass + '">' + item.cover + '%</td><td class="metro-yoy ' + yoyFormatted.class + '">' + yoyFormatted.text + '</td><td>' + depthDisplay + '</td><td class="metro-temp">' + tempDisplay + '</td><td class="trend-cell ' + trendClass + '">' + trendIcon + '</td><td class="sparkline-cell"><div class="sparkline-container"><canvas id="sparkline-' + idx + '"></canvas></div></td></tr>';
         }
     }).join('');
     // Render sparklines
@@ -737,8 +940,21 @@ function renderMetroTable() {
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                plugins: { legend: { display: false } },
-                scales: { x: { display: false }, y: { display: false, min: 0, max: globalMax } }
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false,
+                        callbacks: {
+                            label: function(ctx) {
+                                var label = ctx.datasetIndex === 0 ? currentYear : priorYear;
+                                return label + ': ' + ctx.parsed.y + '%';
+                            }
+                        }
+                    }
+                },
+                scales: { x: { display: false }, y: { display: false, min: 0, max: globalMax } },
+                interaction: { intersect: false, mode: 'index' }
             }
         });
     });
@@ -764,7 +980,7 @@ function renderHistoricalChart() {
     const usaData = snowData.usa.history;
     const usaPrior = snowData.usa.priorYearHistory || [];
     const usaDatasets = [{
-        label: '2025',
+        label: String(currentYear),
         data: usaData.map(function(h) { return h.value; }),
         borderColor: '#3b82f6',
         backgroundColor: 'rgba(59, 130, 246, 0.15)',
@@ -776,7 +992,7 @@ function renderHistoricalChart() {
     }];
     if (usaPrior.length > 0) {
         usaDatasets.push({
-            label: '2024',
+            label: String(priorYear),
             data: usaPrior.map(function(h) { return h.value; }),
             borderColor: '#93c5fd',
             backgroundColor: 'transparent',
@@ -820,7 +1036,7 @@ function renderHistoricalChart() {
     const canadaData = snowData.canada.history;
     const canadaPrior = snowData.canada.priorYearHistory || [];
     const canadaDatasets = [{
-        label: '2025',
+        label: String(currentYear),
         data: canadaData.map(function(h) { return h.value; }),
         borderColor: '#8b5cf6',
         backgroundColor: 'rgba(139, 92, 246, 0.15)',
@@ -832,7 +1048,7 @@ function renderHistoricalChart() {
     }];
     if (canadaPrior.length > 0) {
         canadaDatasets.push({
-            label: '2024',
+            label: String(priorYear),
             data: canadaPrior.map(function(h) { return h.value; }),
             borderColor: '#c4b5fd',
             backgroundColor: 'transparent',
@@ -890,6 +1106,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 renderNACard();
                 renderCountryCard('usa');
                 renderCountryCard('canada');
+                renderSkiMarketCard('usa');
+                renderSkiMarketCard('canada');
                 renderMetroTable();
             }
         });

@@ -57,11 +57,12 @@ ARTICLE_CATEGORIES = {
     },
     'winter-sports': {
         'name': 'Winter Sports',
-        'keywords': ['world cup', 'olympic', 'olympics', 'fis', 'ski race', 'ski racing',
-                     'slalom', 'giant slalom', 'downhill race', 'super-g', 'combined',
-                     'championship', 'ski competition', 'athlete', 'podium', 'medal',
-                     'x games', 'dew tour', 'freestyle', 'halfpipe', 'slopestyle',
-                     'nordic', 'cross-country', 'biathlon', 'ski jumping']
+        'keywords': ['world cup ski', 'winter olympic', 'winter olympics', 'fis ski', 'fis alpine', 'ski race', 'ski racing',
+                     'slalom', 'giant slalom', 'downhill race', 'super-g', 'alpine combined',
+                     'ski championship', 'ski competition', 'ski athlete', 'ski podium', 'ski medal',
+                     'x games ski', 'x games snow', 'dew tour', 'freestyle skiing', 'ski halfpipe', 'ski slopestyle',
+                     'nordic skiing', 'cross-country skiing', 'biathlon', 'ski jumping', 'snowboard competition',
+                     'snowboard race', 'snowboard championship']
     },
     'safety-incidents': {
         'name': 'Safety',

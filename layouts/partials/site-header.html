@@ -9,9 +9,9 @@
       {{/* Content at top with large bottom padding */}}
       <div class="tc ph3 ph4-ns" style="padding-top: 0.5rem; padding-bottom: 5rem;">
         <div>
-          <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
-            {{ .Title | compare.Default .Site.Title }}
-          </h1>
+          <a href="/" class="dib">
+            <img src="/images/nixvirlogo.png" alt="{{ .Site.Title }}" style="height: 120px; width: auto;" />
+          </a>
           {{ with .Params.description }}
             {{/* Centered block with left-justified text inside */}}
             <h2 class="fw1 f6 f5-l white-80 center mt2 mb0 lh-copy" style="max-width: 36em; text-align: left;">
