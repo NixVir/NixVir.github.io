@@ -3868,6 +3868,218 @@
       "score_details": {
         "reason": "Scoring failed"
       }
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "California Faces a Weeklong Lashing of Rain, Wind and Some Snow",
+      "url": "https://www.nytimes.com/2025/12/20/weather/california-rain-atmospheric-river.html",
+      "description": "Forecasters said a parade of storms from the Pacific Ocean will pull in a river of moisture. Over the next week, parts of Northern California could get seven to 10 inches of rain.",
+      "content": "Forecasters said a parade of storms from the Pacific Ocean will pull in a river of moisture. Over the next week, parts of Northern California could get seven to 10 inches of rain.",
+      "pub_date": "Sat, 20 Dec 2025 17:27:57 +0000",
+      "id": "96411bbf3394",
+      "score": 5,
+      "score_details": {
+        "relevance": 5,
+        "news_value": 5,
+        "quality": 6,
+        "overall": 5,
+        "reason": "This article provides some relevant weather information for the ski industry, but it lacks specific analysis of the business impacts. The reporting is general and does not dive deep into how this storm system might affect resort operations, travel, or the broader ski economy in California. While potentially useful context, the article does not contain the level of industry-specific focus and analytical depth to warrant a higher score for inclusion in a specialized ski business news feed."
+      }
+    },
+    {
+      "source": "Financial Times",
+      "title": "Chinese stocks cool on weak economic data",
+      "url": "https://www.ft.com/content/8dd04935-3d05-44bc-bbef-7ff07d420287",
+      "description": "Profit-taking has also brought this year\u2019s steep rally to an end in the last quarter",
+      "content": "Profit-taking has also brought this year\u2019s steep rally to an end in the last quarter",
+      "pub_date": "Sun, 21 Dec 2025 05:00:11 GMT",
+      "id": "1d8183b0d647",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "World\u2019s Calmest Stock Market Challenges Options Traders in India",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-21/world-s-calmest-stock-market-challenges-options-traders-in-india",
+      "description": "India\u2019s stock market has become one of the calmest in the world \u2014 so calm that it\u2019s prompting a rethink of strategies among players in the country\u2019s vast derivatives space.",
+      "content": "India\u2019s stock market has become one of the calmest in the world \u2014 so calm that it\u2019s prompting a rethink of strategies among players in the country\u2019s vast derivatives space.",
+      "pub_date": "Sun, 21 Dec 2025 00:00:00 GMT",
+      "id": "657437bd7253",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "AI Boom Brings Flood of Debt to Ultrasafe Market: Credit Weekly",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-20/ai-boom-brings-flood-of-debt-to-ultrasafe-market-credit-weekly",
+      "description": "The great artificial intelligence boom that\u2019s fueling US economic growth now depends heavily on credit markets to finance the investments, and utilities are among the key borrowers.",
+      "content": "The great artificial intelligence boom that\u2019s fueling US economic growth now depends heavily on credit markets to finance the investments, and utilities are among the key borrowers.",
+      "pub_date": "Sat, 20 Dec 2025 20:00:00 GMT",
+      "id": "2d2b01e99705",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "The 25-Year Shift That Made China a Global Superpower",
+      "url": "https://www.bloomberg.com/news/videos/2025-12-20/the-25-year-shift-that-made-china-a-global-superpower-video",
+      "description": "China\u2019s entry into the WTO in 2001 accelerated its rise as a global manufacturing and technology powerhouse, fueled export growth, and helped stabilize global demand during the financial crisis. As China expanded Belt and Road investments, advanced in EVs and AI, and entered a sharper economic rivalry with the United States, its property slowdown and domestic inequality exposed new vulnerabilities. Enda Curran, Elizabeth Economy, and Afsaneh Beschloss explain China\u2019s past 25 years and what its n",
+      "content": "China\u2019s entry into the WTO in 2001 accelerated its rise as a global manufacturing and technology powerhouse, fueled export growth, and helped stabilize global demand during the financial crisis. As China expanded Belt and Road investments, advanced in EVs and AI, and entered a sharper economic rivalry with the United States, its property slowdown and domestic inequality exposed new vulnerabilities. Enda Curran, Elizabeth Economy, and Afsaneh Beschloss explain China\u2019s past 25 years and what its n",
+      "pub_date": "Sat, 20 Dec 2025 15:03:18 GMT",
+      "id": "cc7c4416cf71",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Shift in Modern Warfare Turns Defense Firms Into Growth Stocks",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-20/shift-in-modern-warfare-turns-defense-firms-into-growth-stocks",
+      "description": "Time was, military contractors appealed to equity investors for their stodginess \u2014 predictable revenue, solid profit margins and reliable dividends. Times change.",
+      "content": "Time was, military contractors appealed to equity investors for their stodginess \u2014 predictable revenue, solid profit margins and reliable dividends. Times change.",
+      "pub_date": "Sat, 20 Dec 2025 14:00:00 GMT",
+      "id": "6c75ead60526",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Covid, Inflation and the GFC: The Economic Story of a Quarter-Century",
+      "url": "https://www.bloomberg.com/news/videos/2025-12-20/twenty-five-years-of-economic-upheaval-video",
+      "description": "From Clinton-era optimism to the dot-com crash, the housing bust, a manufacturing decline that fueled MAGA, and the once-in-a-century shock of Covid, the first 25 years of the century reshaped both the economy and the public mood. Michael McKee, Jason Furman, Torsten Slok, and Stephanie Flanders explain how inflation returned, globalization shifted, and growth diverged across the US and Europe. (Source: Bloomberg)",
+      "content": "From Clinton-era optimism to the dot-com crash, the housing bust, a manufacturing decline that fueled MAGA, and the once-in-a-century shock of Covid, the first 25 years of the century reshaped both the economy and the public mood. Michael McKee, Jason Furman, Torsten Slok, and Stephanie Flanders explain how inflation returned, globalization shifted, and growth diverged across the US and Europe. (Source: Bloomberg)",
+      "pub_date": "Sat, 20 Dec 2025 13:03:50 GMT",
+      "id": "529d7bf39359",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Google News - Ski Industry",
+      "title": "Idaho's Ski Industry Is Growing\u2014Here's Which State Visits The Most - POWDER Magazine",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9JOVNRbzYzVjFCc2ZuN1NNYzZEeTZobmJELTdWRUhKeDI1QV9NQWNiVTR5dkhrTEQ4bnViakpDS1Y0Z28xcndNSWx5blRXM1VFVi1OTmpKcDBPOXE5N05EdUthaERQRFQ3QkVpMEsyTWRtTzVNZUg1dXBpMA?oc=5",
+      "description": "Idaho's Ski Industry Is Growing\u2014Here's Which State Visits The Most POWDER Magazine",
+      "content": "Idaho's Ski Industry Is Growing\u2014Here's Which State Visits The Most POWDER Magazine",
+      "pub_date": "Wed, 17 Dec 2025 13:18:00 GMT",
+      "id": "d5b7f045194e",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Google News - Ski Industry",
+      "title": "Can Vail Revive the Epic Pass by Fixing the Lift Ticket? - The Storm Skiing Journal and Podcast",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE0zeDdEN3hERjl2NHZKVENCLXRyNldtZ3BFOXRYc3R1M2FnVVpYR1RnLVJYd051Tnh2bnB0RlVfX2gyX0FsTDF5c19MbERCcXZJUURPdWh3OW01UnhYR3BYUVYwTkprMEQ0b1p5RUJaUQ?oc=5",
+      "description": "Can Vail Revive the Epic Pass by Fixing the Lift Ticket? The Storm Skiing Journal and Podcast",
+      "content": "Can Vail Revive the Epic Pass by Fixing the Lift Ticket? The Storm Skiing Journal and Podcast",
+      "pub_date": "Wed, 17 Dec 2025 22:08:22 GMT",
+      "id": "91fba7a73bf7",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Google News - Ski Industry",
+      "title": "A $5 billion ski industry confronts a cold front in global tourism | FISCAL ROCKIES - Colorado Politics",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOQ0NEUjc2RU1JcjFvWVNiS3BFM2lRSnJSQXlxa1FlTlJEWmczSU8tZUNzbzF3YXljNlNkbEtqS2o3cGg0TG1GdTAtM1hTTWEyWllmeTVPSk1RbDJ5R0xfdG9USi1qSEw4SEkzQks2Y1ZiYlRqNF9Pa2JyamVXa3k1SnZZeUtnM1Nfem5aQmczUERqckh1N2hjQVhkMjJVM3duT202NGZQZnl2UkxnM0dRandWbWFYcXcyTnktWmZubDJnOW8?oc=5",
+      "description": "A $5 billion ski industry confronts a cold front in global tourism | FISCAL ROCKIES Colorado Politics",
+      "content": "A $5 billion ski industry confronts a cold front in global tourism | FISCAL ROCKIES Colorado Politics",
+      "pub_date": "Thu, 18 Dec 2025 12:03:11 GMT",
+      "id": "4342ce4bb718",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Google News - Ski Industry",
+      "title": "Idaho\u2019s Ski Industry on a Roll: Annual Visits Top 2 Million Since 2020 - SnowBrains",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOa0VHTVF6UWViTWpCQUNLb3RsOUhJR1I2MnJQOVcwYW1OaFU4Sm91RmpvZU53ODVkUjNkcEFjZ0RJVXpTbnJDTW9fbDVOclE4Sjl1LUNYZ0x0NVFZcjAwVXhmUEJyb1JmUHZUUnd5dl8yUWRlZlkwdnRMdXVRbEZQU3JaTi04cFdUQ1M4aXZBV2ZPbWZGcDhB?oc=5",
+      "description": "Idaho\u2019s Ski Industry on a Roll: Annual Visits Top 2 Million Since 2020 SnowBrains",
+      "content": "Idaho\u2019s Ski Industry on a Roll: Annual Visits Top 2 Million Since 2020 SnowBrains",
+      "pub_date": "Wed, 17 Dec 2025 13:46:52 GMT",
+      "id": "2f35d00912d0",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Google News - Ski Industry",
+      "title": "Snowfall helping ski industry push West Virginia toward another record year for tourism - WCHS",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNX0YyaTNySjMyb0ZqbVA3dU5TQkwya1RPMXI1MWVzcHM0VlhKQ0JPRTMyX1lkaUhQNjNIWTVpVkQtNWxURjVGa1RuSlFCdy1WQ0pEZVJTdjhBemNzWlY4Ykx6Z01xbVFZbmowNW15MHo4c05kOVh3TF80R1NqMVJDb1ZiTGdlNjFDQzk1VnBnU29TaGZWTzFnbnVKbVNUS1lmOEo2UW4zSlFuZWxlNGhoOEJCSy1HQXZ5S0l3?oc=5",
+      "description": "Snowfall helping ski industry push West Virginia toward another record year for tourism WCHS",
+      "content": "Snowfall helping ski industry push West Virginia toward another record year for tourism WCHS",
+      "pub_date": "Mon, 15 Dec 2025 23:28:23 GMT",
+      "id": "f30f7e7b68fe",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Google News - Ski Industry",
+      "title": "Spokane\u2019s Riblet Tramway first connected minerals and crops with markets, then pivoted to become the innovative engine behind the ski industry we enjoy today - inlander.com",
+      "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxOaDl6NE9wVnN2bzh0WUFIV3RPekRYVDJoX2drUW9yVGg0cS1jZmo4T3N1RVM3bXJ5ZXQzUmMxSkZYSWppOTdzQlBfZ3VFX2JhY05sSV83RFRsRjdwdG1EVkQwekpSYUlqeWNLY09EYWpFVjJXLVlINmJqZlMzbHR4OXZuUW9ra21KblVfYm1uMlhnOVo3U3FKTnl3VzIwNnFodjZVNnZzRzlTbFlKaGhkdUt0SlZDVHNuSExRTDVjSzFKNTdqTnNURmRoSEx2S2laRGN1dXFuNlhYLTRnSjFVc0UtWS15azllOExJQ21oZ2dtcXg3bDB2NzVTZVBZTE8wVHFXX1dhYjRpdHdNSGc?oc=5",
+      "description": "Spokane\u2019s Riblet Tramway first connected minerals and crops with markets, then pivoted to become the innovative engine behind the ski industry we enjoy today inlander.com",
+      "content": "Spokane\u2019s Riblet Tramway first connected minerals and crops with markets, then pivoted to become the innovative engine behind the ski industry we enjoy today inlander.com",
+      "pub_date": "Thu, 18 Dec 2025 09:30:00 GMT",
+      "id": "55082a0e56ef",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Google News - Ski Industry",
+      "title": "Washington Ski Resort Shares Damage From Pineapple Express Storm - Unofficial Networks",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1JczJ5andtUDUwdXFSaGVXWTIwaW44SjB0MlA0RE1TQ1RCa3VtMUs1YWFvYkhoQ2VvT1N3X1I3QTkycldwN2pHMDc3N0c2YzJrVU42akdaaFluWUtZbXFHMWJUdzFmWlJDQmNId09ERUhKRTJyRXlvNg?oc=5",
+      "description": "Washington Ski Resort Shares Damage From Pineapple Express Storm Unofficial Networks",
+      "content": "Washington Ski Resort Shares Damage From Pineapple Express Storm Unofficial Networks",
+      "pub_date": "Wed, 17 Dec 2025 19:15:21 GMT",
+      "id": "1691336b03fd",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Google News - Ski Industry",
+      "title": "Italy\u2019s World-Famous Ski Resorts Struggle To Protect Eleven Billion Euroes Industry From The Devastating Impact Of Climate Change And Unpredictable Snowfall Patterns - Travel And Tour World",
+      "url": "https://news.google.com/rss/articles/CBMiuAJBVV95cUxQVGFqMXAyZmNqcHBvcW9uOWdGSk5jd3MxT0VXbUR1YmxUZnVzUnQ0UXc5WV95c1F0MU5KQVlpbWZzdHN1T0gxYXBKS0dnVDlDMVIxXzhOX0Q3MU40VlEzXzdlMFJGeno0clY1TmowaTZtNi1EY2YyZW1NVjBxckpuVWNPTGd5SzNhRFNxa3hXdWNiZ3p1MnowNFR0S091S3ZCcVdBYWtQNDJIbUR4RG9hYlpDX09YMHk3OXoxMHRGWF9VU3hPRm5HWWtpa0hLMktjdlhaNmxfb0JpRGZRREVfMWhqcTNDWXNRSmp4eVg2bUg2MEgwcVNoUFdVaUVYRTV6RV9BaFMtcjNVeVdiZDE0c2ZPUmg0a2hhWlZsVjFPaHFBWmtFcHFMNWhwMWtrUGtCMnFOU0FEZW4?oc=5",
+      "description": "Italy\u2019s World-Famous Ski Resorts Struggle To Protect Eleven Billion Euroes Industry From The Devastating Impact Of Climate Change And Unpredictable Snowfall Patterns Travel And Tour World",
+      "content": "Italy\u2019s World-Famous Ski Resorts Struggle To Protect Eleven Billion Euroes Industry From The Devastating Impact Of Climate Change And Unpredictable Snowfall Patterns Travel And Tour World",
+      "pub_date": "Tue, 16 Dec 2025 12:00:56 GMT",
+      "id": "e35334abbe56",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Google News - Ski Industry",
+      "title": "This Historic New Hampshire Ski Hill Is Offering Free Lift Access All Winter\u2014and It's Just 2 Hours From Boston - Travel + Leisure",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNRVdhZU5VcEk3V1NPTTVMSVNQNWg1U2IxOUcwbUlyVmN5a1hOZktLZm0wckZnVjducnJaRU1uY2Z4bFdjYTlJU1VJWndUN1RKYlZUNHFlRXpjdkM0bmR4WXdGYmY4empUbjE5X0J1dU01clNhQWdVUXFjQnJKZ1B3V1VVbm1PelJsMThjLVdXY2JZV1F4akZZSWF6c3NyNFZ4RXZfTlRRdw?oc=5",
+      "description": "This Historic New Hampshire Ski Hill Is Offering Free Lift Access All Winter\u2014and It's Just 2 Hours From Boston Travel + Leisure",
+      "content": "This Historic New Hampshire Ski Hill Is Offering Free Lift Access All Winter\u2014and It's Just 2 Hours From Boston Travel + Leisure",
+      "pub_date": "Sun, 14 Dec 2025 12:21:00 GMT",
+      "id": "81064b434567",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
     }
   ],
   "rejected": [
@@ -4900,6 +5112,57 @@
         "quality": 3,
         "overall": 2,
         "reason": "This article about cocoa prices is not directly relevant to the ski industry business news feed. While it may tangentially relate to costs of chocolate products, it does not contain any information specific to ski resorts, destinations, or the broader ski industry."
+      }
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "When Something Goes Wrong With Your Flight, These People Take Charge",
+      "url": "https://www.nytimes.com/2025/12/21/business/american-airlines-operations-hub.html",
+      "description": "Inside a tornado-hardened office in Texas, 1,700 American Airlines employees manage the carrier\u2019s operations, responding to bad weather, plane trouble and ailing passengers.",
+      "content": "Inside a tornado-hardened office in Texas, 1,700 American Airlines employees manage the carrier\u2019s operations, responding to bad weather, plane trouble and ailing passengers.",
+      "pub_date": "Sun, 21 Dec 2025 10:00:48 +0000",
+      "id": "03998b0bbee1",
+      "score": 3,
+      "score_details": {
+        "relevance": 2,
+        "news_value": 3,
+        "quality": 4,
+        "overall": 3,
+        "reason": "This article is about American Airlines operations and staffing, and does not contain any relevant information about the ski industry or ski business news."
+      }
+    },
+    {
+      "source": "Washington Post",
+      "title": "Market-savvy Treasury chief Scott Bessent emerges as unlikely MAGA warrior",
+      "url": "https://www.washingtonpost.com/business/2025/12/21/treasury-bessent-trump-politics/",
+      "description": "Treasury Secretary Scott Bessent\u2019s partisan comments are causing concern among investors and lawmakers, as he breaks with tradition and engages in combative rhetoric.",
+      "content": "Treasury Secretary Scott Bessent\u2019s partisan comments are causing concern among investors and lawmakers, as he breaks with tradition and engages in combative rhetoric.",
+      "pub_date": "Sun, 21 Dec 2025 11:00:27 +0000",
+      "id": "a924faf50e23",
+      "score": 2,
+      "score_details": {
+        "relevance": 2,
+        "news_value": 2,
+        "quality": 3,
+        "overall": 2,
+        "reason": "This article appears to be about partisan political commentary from a government official, rather than substantive ski industry business news. It does not meet the content guidelines for inclusion in a ski business news feed."
+      }
+    },
+    {
+      "source": "Financial Times",
+      "title": "Inside Tencent\u2019s deal to use Nvidia\u2019s best AI chips in Japan",
+      "url": "https://www.ft.com/content/9b47c335-9633-4560-9f57-5736c9d04bef",
+      "description": "Contracts with Chinese tech giant have rapidly turned Datasection into one of Asia\u2019s biggest \u2018neoclouds\u2019",
+      "content": "Contracts with Chinese tech giant have rapidly turned Datasection into one of Asia\u2019s biggest \u2018neoclouds\u2019",
+      "pub_date": "Sun, 21 Dec 2025 05:00:11 GMT",
+      "id": "a4995781c25c",
+      "score": 3,
+      "score_details": {
+        "relevance": 2,
+        "news_value": 3,
+        "quality": 4,
+        "overall": 3,
+        "reason": "This article about Tencent's AI chip deal with Nvidia is not directly relevant to the ski industry business. While it discusses a technology news story, it does not have any clear connections to ski resorts, destinations, or the broader ski industry."
       }
     }
   ]

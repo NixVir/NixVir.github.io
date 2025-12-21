@@ -1,6 +1,6 @@
 {
-  "updated": "2025-12-17 11:14:23",
-  "total_articles": 49,
+  "updated": "2025-12-21 11:11:57",
+  "total_articles": 50,
   "articles": [
     {
       "source": "Financial Times",
@@ -884,6 +884,26 @@
       },
       "approved_date": "2025-12-04",
       "category": "weather-snow"
+    },
+    {
+      "source": "The Atlantic",
+      "url": "https://www.theatlantic.com/podcasts/2025/12/prediction-markets-and-the-suckerifcation-crisis-with-max-read/685330/?utm_source=feed",
+      "title": "Prediction Markets and the \u2018Suckerifcation\u2019 Crisis, With Max Read",
+      "description": "Everyone\u2019s betting; nobody\u2019s winning.",
+      "content": "Everyone\u2019s betting; nobody\u2019s winning.",
+      "pub_date": "2025-12-19T14:00:00-05:00",
+      "id": "f45ae1695523",
+      "score": 7,
+      "score_details": {
+        "relevance": 6,
+        "news_value": 8,
+        "quality": 7,
+        "overall": 7,
+        "reason": "This article discusses the broader topic of prediction markets, which could have implications for the ski industry in terms of how skiers and resort operators make decisions. While not directly about the ski business, it provides insights on emerging trends that could impact the industry."
+      },
+      "approved_date": "2025-12-21",
+      "category": "hospitality",
+      "secondary_categories": []
     }
   ]
 }
