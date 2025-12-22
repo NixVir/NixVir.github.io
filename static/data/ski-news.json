@@ -1,5 +1,5 @@
 {
-  "updated": "2025-12-21 11:11:57",
+  "updated": "2025-12-22 11:13:05",
   "total_articles": 50,
   "articles": [
     {
@@ -688,6 +688,46 @@
       "category": "transportation"
     },
     {
+      "source": "Financial Times",
+      "title": "Apollo cuts risk and stockpiles cash in preparation for market turmoil",
+      "url": "https://www.ft.com/content/b315e80e-9e8a-4693-b860-bf87574cfa36",
+      "description": "Marc Rowan tells investors firm is positioning itself for when \u2018something bad happens\u2019",
+      "content": "Marc Rowan tells investors firm is positioning itself for when \u2018something bad happens\u2019",
+      "pub_date": "Mon, 22 Dec 2025 05:00:29 GMT",
+      "id": "a2a3a0f41743",
+      "score": 9,
+      "score_details": {
+        "relevance": 8,
+        "news_value": 8,
+        "quality": 9,
+        "overall": 9,
+        "reason": "This article directly covers major ski industry business news around a private equity firm's strategy in preparation for potential market turmoil. It provides substantive insights into the financial positioning and risk management approach of a key player in the ski resort industry."
+      },
+      "approved_date": "2025-12-22",
+      "category": "resort-operations",
+      "secondary_categories": []
+    },
+    {
+      "source": "Financial Times",
+      "title": "The stock market winners and losers of 2025",
+      "url": "https://www.ft.com/content/0f5daafb-ac66-48f4-85cb-ebf63369ef66",
+      "description": "Chips, gold and guns have triumphed while ad companies and private equity struggled",
+      "content": "Chips, gold and guns have triumphed while ad companies and private equity struggled",
+      "pub_date": "Mon, 22 Dec 2025 05:00:10 GMT",
+      "id": "0df5674370b4",
+      "score": 8,
+      "score_details": {
+        "relevance": 7,
+        "news_value": 8,
+        "quality": 8,
+        "overall": 8,
+        "reason": "The article discusses major financial trends and industries that are likely to impact the broader ski industry, including the performance of chip manufacturers, gold, and the firearms industry. While not directly about the ski industry, this high-level market analysis provides useful context for understanding the business environment facing ski resorts and operators."
+      },
+      "approved_date": "2025-12-22",
+      "category": "hospitality",
+      "secondary_categories": []
+    },
+    {
       "source": "New York Times - Travel",
       "title": "Boeing Completes Acquisition of Spirit AeroSystems, a Major Supplier",
       "url": "https://www.nytimes.com/2025/12/08/business/boeing-spirit-aerosystems.html",
@@ -865,45 +905,6 @@
       },
       "approved_date": "2025-12-04",
       "category": "weather-snow"
-    },
-    {
-      "source": "Summit Daily News",
-      "title": "Colorado backcountry officials warn of \u2018dramatic uptick\u2019 in avalanche danger as major storm hits this weekend",
-      "url": "https://www.summitdaily.com/news/colorado-backcountry-avalanche-danger-winter-storm/",
-      "description": "With a major winter storm in the forecast for this weekend, Colorado backcountry officials are warning that the fresh snow will lead to a significant increase in avalanche danger across the state. Colorado Avalanche Information...",
-      "content": "With a major winter storm in the forecast for this weekend, Colorado backcountry officials are warning that the fresh snow will lead to a significant increase in avalanche danger across the state. Colorado Avalanche Information Center Deputy Director Brian Lazar said the dry start to the season has meant that avalanche risk remained low throughout most of November, due to the lack of snow. This upcoming storm will change that. \u201cIt will certainly be helpful for our snowpack in the longterm,\u201d Lazar said. \u201cHowever, the short-term effects will be a dramatic uptick in avalanche danger as we start to rebuild our snowpack.\u201d Colorado\u2019s northern and central mountains are expected to pick up between 1 to 2 feet of snow, with the potential for up to 3 feet of snow in parts of the Park Range and Flat Tops, according to the CAIC. The northern mountains include the Front Range, the Steamboat Springs area, the Vail area and Summit County, while the central mountains include the Steamboat Springs and ",
-      "pub_date": "Fri, 05 Dec 2025 00:40:40 +0000",
-      "id": "794f85706ea9",
-      "score": 8,
-      "score_details": {
-        "relevance": 8,
-        "news_value": 7,
-        "quality": 8,
-        "overall": 8,
-        "reason": "This article provides timely and relevant information about a major winter storm and its potential impact on avalanche danger in Colorado's backcountry, which is an important consideration for ski resort and destination operations. The reporting is objective and informative, focusing on the facts from official sources without any promotional or clickbait elements."
-      },
-      "approved_date": "2025-12-04",
-      "category": "weather-snow"
-    },
-    {
-      "source": "The Atlantic",
-      "url": "https://www.theatlantic.com/podcasts/2025/12/prediction-markets-and-the-suckerifcation-crisis-with-max-read/685330/?utm_source=feed",
-      "title": "Prediction Markets and the \u2018Suckerifcation\u2019 Crisis, With Max Read",
-      "description": "Everyone\u2019s betting; nobody\u2019s winning.",
-      "content": "Everyone\u2019s betting; nobody\u2019s winning.",
-      "pub_date": "2025-12-19T14:00:00-05:00",
-      "id": "f45ae1695523",
-      "score": 7,
-      "score_details": {
-        "relevance": 6,
-        "news_value": 8,
-        "quality": 7,
-        "overall": 7,
-        "reason": "This article discusses the broader topic of prediction markets, which could have implications for the ski industry in terms of how skiers and resort operators make decisions. While not directly about the ski business, it provides insights on emerging trends that could impact the industry."
-      },
-      "approved_date": "2025-12-21",
-      "category": "hospitality",
-      "secondary_categories": []
     }
   ]
 }
