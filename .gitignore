@@ -15,3 +15,6 @@ scripts/
 
 # Claude Code
 .claude/
+
+# API keys (local development)
+.api_keys

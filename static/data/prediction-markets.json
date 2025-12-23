@@ -1,0 +1,465 @@
+{
+  "updated": "2025-12-23 01:05:33",
+  "inflation": {
+    "series": "KXACPI",
+    "name": "2025 Annual Inflation",
+    "markets": [
+      {
+        "ticker": "KXACPI-2025-0.6",
+        "strike": 0.6,
+        "title": "Will **inflation** in 2025 be above_below_between ?",
+        "yes_bid": 0.0,
+        "yes_ask": 0.01,
+        "volume": 2815,
+        "open_interest": 2815,
+        "close_time": "2026-01-12T13:25:00Z"
+      },
+      {
+        "ticker": "KXACPI-2025-0.8",
+        "strike": 0.8,
+        "title": "Will **inflation** in 2025 be above_below_between ?",
+        "yes_bid": 0.0,
+        "yes_ask": 0.01,
+        "volume": 2709,
+        "open_interest": 2564,
+        "close_time": "2026-01-12T13:25:00Z"
+      },
+      {
+        "ticker": "KXACPI-2025-1.3",
+        "strike": 1.3,
+        "title": "Will **inflation** in 2025 be above_below_between ?",
+        "yes_bid": 0.0,
+        "yes_ask": 0.05,
+        "volume": 2137,
+        "open_interest": 1993,
+        "close_time": "2026-01-12T13:25:00Z"
+      },
+      {
+        "ticker": "KXACPI-2025-1.8",
+        "strike": 1.8,
+        "title": "Will **inflation** in 2025 be above_below_between ?",
+        "yes_bid": 0.0,
+        "yes_ask": 0.01,
+        "volume": 6158,
+        "open_interest": 3600,
+        "close_time": "2026-01-12T13:25:00Z"
+      },
+      {
+        "ticker": "KXACPI-2025-2.3",
+        "strike": 2.3,
+        "title": "Will **inflation** in 2025 be above_below_between ?",
+        "yes_bid": 0.08,
+        "yes_ask": 0.12,
+        "volume": 25051,
+        "open_interest": 10577,
+        "close_time": "2026-01-12T13:25:00Z"
+      },
+      {
+        "ticker": "KXACPI-2025-2.8",
+        "strike": 2.8,
+        "title": "Will **inflation** in 2025 be above_below_between ?",
+        "yes_bid": 0.85,
+        "yes_ask": 0.86,
+        "volume": 79865,
+        "open_interest": 24167,
+        "close_time": "2026-01-12T13:25:00Z"
+      },
+      {
+        "ticker": "KXACPI-2025-3.3",
+        "strike": 3.3,
+        "title": "Will **inflation** in 2025 be above_below_between ?",
+        "yes_bid": 0.03,
+        "yes_ask": 0.04,
+        "volume": 69409,
+        "open_interest": 21087,
+        "close_time": "2026-01-12T13:25:00Z"
+      },
+      {
+        "ticker": "KXACPI-2025-3.8",
+        "strike": 3.8,
+        "title": "Will **inflation** in 2025 be above_below_between ?",
+        "yes_bid": 0.0,
+        "yes_ask": 0.03,
+        "volume": 15792,
+        "open_interest": 8959,
+        "close_time": "2026-01-12T13:25:00Z"
+      },
+      {
+        "ticker": "KXACPI-2025-4.3",
+        "strike": 4.3,
+        "title": "Will **inflation** in 2025 be above_below_between ?",
+        "yes_bid": 0.0,
+        "yes_ask": 0.01,
+        "volume": 4873,
+        "open_interest": 4670,
+        "close_time": "2026-01-12T13:25:00Z"
+      },
+      {
+        "ticker": "KXACPI-2025-4.8",
+        "strike": 4.8,
+        "title": "Will **inflation** in 2025 be above_below_between ?",
+        "yes_bid": 0.0,
+        "yes_ask": 0.01,
+        "volume": 6792,
+        "open_interest": 4378,
+        "close_time": "2026-01-12T13:25:00Z"
+      },
+      {
+        "ticker": "KXACPI-2025-5.3",
+        "strike": 5.3,
+        "title": "Will **inflation** in 2025 be above_below_between ?",
+        "yes_bid": 0.0,
+        "yes_ask": 0.01,
+        "volume": 6496,
+        "open_interest": 6246,
+        "close_time": "2026-01-12T13:25:00Z"
+      },
+      {
+        "ticker": "KXACPI-2025-5.75",
+        "strike": 5.75,
+        "title": "Will **inflation** in 2025 be above_below_between ?",
+        "yes_bid": 0.0,
+        "yes_ask": 0.01,
+        "volume": 7030,
+        "open_interest": 6625,
+        "close_time": "2026-01-12T13:25:00Z"
+      },
+      {
+        "ticker": "KXACPI-2025-6.0",
+        "strike": 6.0,
+        "title": "Will **inflation** in 2025 be above_below_between ?",
+        "yes_bid": 0.0,
+        "yes_ask": 0.01,
+        "volume": 9607,
+        "open_interest": 5716,
+        "close_time": "2026-01-12T13:25:00Z"
+      }
+    ],
+    "consensus_strike": 2.8,
+    "consensus_probability": 0.85,
+    "total_volume": 238734,
+    "updated": "2025-12-23T01:05:33.282583"
+  },
+  "payrolls": {
+    "series": "KXPAYROLLS",
+    "name": "Monthly Payrolls",
+    "months": [
+      {
+        "month": "26AUG",
+        "markets": [
+          {
+            "ticker": "KXPAYROLLS-26AUG-T0",
+            "strike": 0,
+            "yes_bid": 0.63,
+            "yes_ask": 0.72,
+            "volume": 0,
+            "close_time": "2026-09-04T12:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26AUG-T10000",
+            "strike": 10000,
+            "yes_bid": 0.59,
+            "yes_ask": 0.68,
+            "volume": 0,
+            "close_time": "2026-09-04T12:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26AUG-T20000",
+            "strike": 20000,
+            "yes_bid": 0.55,
+            "yes_ask": 0.64,
+            "volume": 0,
+            "close_time": "2026-09-04T12:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26AUG-T30000",
+            "strike": 30000,
+            "yes_bid": 0.5,
+            "yes_ask": 0.59,
+            "volume": 0,
+            "close_time": "2026-09-04T12:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26AUG-T40000",
+            "strike": 40000,
+            "yes_bid": 0.45,
+            "yes_ask": 0.54,
+            "volume": 0,
+            "close_time": "2026-09-04T12:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26AUG-T50000",
+            "strike": 50000,
+            "yes_bid": 0.4,
+            "yes_ask": 0.49,
+            "volume": 0,
+            "close_time": "2026-09-04T12:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26AUG-T60000",
+            "strike": 60000,
+            "yes_bid": 0.35,
+            "yes_ask": 0.44,
+            "volume": 0,
+            "close_time": "2026-09-04T12:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26AUG-T70000",
+            "strike": 70000,
+            "yes_bid": 0.31,
+            "yes_ask": 0.4,
+            "volume": 0,
+            "close_time": "2026-09-04T12:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26AUG-T80000",
+            "strike": 80000,
+            "yes_bid": 0.27,
+            "yes_ask": 0.36,
+            "volume": 0,
+            "close_time": "2026-09-04T12:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26AUG-T90000",
+            "strike": 90000,
+            "yes_bid": 0.23,
+            "yes_ask": 0.32,
+            "volume": 0,
+            "close_time": "2026-09-04T12:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26AUG-T100000",
+            "strike": 100000,
+            "yes_bid": 0.19,
+            "yes_ask": 0.28,
+            "volume": 0,
+            "close_time": "2026-09-04T12:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26AUG-T125000",
+            "strike": 125000,
+            "yes_bid": 0.12,
+            "yes_ask": 0.21,
+            "volume": 140,
+            "close_time": "2026-09-04T12:29:00Z"
+          }
+        ],
+        "median_strike": 0,
+        "total_volume": 140
+      },
+      {
+        "month": "26JUL",
+        "markets": [
+          {
+            "ticker": "KXPAYROLLS-26JUL-T0",
+            "strike": 0,
+            "yes_bid": 0.65,
+            "yes_ask": 0.73,
+            "volume": 0,
+            "close_time": "2026-08-07T12:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26JUL-T10000",
+            "strike": 10000,
+            "yes_bid": 0.59,
+            "yes_ask": 0.68,
+            "volume": 0,
+            "close_time": "2026-08-07T12:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26JUL-T20000",
+            "strike": 20000,
+            "yes_bid": 0.56,
+            "yes_ask": 0.65,
+            "volume": 0,
+            "close_time": "2026-08-07T12:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26JUL-T30000",
+            "strike": 30000,
+            "yes_bid": 0.5,
+            "yes_ask": 0.59,
+            "volume": 0,
+            "close_time": "2026-08-07T12:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26JUL-T40000",
+            "strike": 40000,
+            "yes_bid": 0.46,
+            "yes_ask": 0.54,
+            "volume": 0,
+            "close_time": "2026-08-07T12:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26JUL-T50000",
+            "strike": 50000,
+            "yes_bid": 0.41,
+            "yes_ask": 0.5,
+            "volume": 0,
+            "close_time": "2026-08-07T12:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26JUL-T60000",
+            "strike": 60000,
+            "yes_bid": 0.36,
+            "yes_ask": 0.44,
+            "volume": 0,
+            "close_time": "2026-08-07T12:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26JUL-T70000",
+            "strike": 70000,
+            "yes_bid": 0.32,
+            "yes_ask": 0.4,
+            "volume": 0,
+            "close_time": "2026-08-07T12:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26JUL-T80000",
+            "strike": 80000,
+            "yes_bid": 0.27,
+            "yes_ask": 0.35,
+            "volume": 0,
+            "close_time": "2026-08-07T12:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26JUL-T90000",
+            "strike": 90000,
+            "yes_bid": 0.23,
+            "yes_ask": 0.31,
+            "volume": 0,
+            "close_time": "2026-08-07T12:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26JUL-T100000",
+            "strike": 100000,
+            "yes_bid": 0.2,
+            "yes_ask": 0.28,
+            "volume": 0,
+            "close_time": "2026-08-07T12:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26JUL-T125000",
+            "strike": 125000,
+            "yes_bid": 0.13,
+            "yes_ask": 0.21,
+            "volume": 2,
+            "close_time": "2026-08-07T12:29:00Z"
+          }
+        ],
+        "median_strike": 0,
+        "total_volume": 2
+      },
+      {
+        "month": "26NOV",
+        "markets": [
+          {
+            "ticker": "KXPAYROLLS-26NOV-T0",
+            "strike": 0,
+            "yes_bid": 0.62,
+            "yes_ask": 0.71,
+            "volume": 102,
+            "close_time": "2026-12-04T13:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26NOV-T10000",
+            "strike": 10000,
+            "yes_bid": 0.58,
+            "yes_ask": 0.67,
+            "volume": 100,
+            "close_time": "2026-12-04T13:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26NOV-T20000",
+            "strike": 20000,
+            "yes_bid": 0.54,
+            "yes_ask": 0.63,
+            "volume": 0,
+            "close_time": "2026-12-04T13:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26NOV-T30000",
+            "strike": 30000,
+            "yes_bid": 0.49,
+            "yes_ask": 0.58,
+            "volume": 10,
+            "close_time": "2026-12-04T13:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26NOV-T40000",
+            "strike": 40000,
+            "yes_bid": 0.45,
+            "yes_ask": 0.54,
+            "volume": 0,
+            "close_time": "2026-12-04T13:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26NOV-T50000",
+            "strike": 50000,
+            "yes_bid": 0.41,
+            "yes_ask": 0.5,
+            "volume": 40,
+            "close_time": "2026-12-04T13:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26NOV-T60000",
+            "strike": 60000,
+            "yes_bid": 0.36,
+            "yes_ask": 0.45,
+            "volume": 0,
+            "close_time": "2026-12-04T13:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26NOV-T70000",
+            "strike": 70000,
+            "yes_bid": 0.32,
+            "yes_ask": 0.41,
+            "volume": 0,
+            "close_time": "2026-12-04T13:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26NOV-T80000",
+            "strike": 80000,
+            "yes_bid": 0.28,
+            "yes_ask": 0.37,
+            "volume": 0,
+            "close_time": "2026-12-04T13:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26NOV-T90000",
+            "strike": 90000,
+            "yes_bid": 0.24,
+            "yes_ask": 0.33,
+            "volume": 0,
+            "close_time": "2026-12-04T13:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26NOV-T100000",
+            "strike": 100000,
+            "yes_bid": 0.21,
+            "yes_ask": 0.3,
+            "volume": 0,
+            "close_time": "2026-12-04T13:29:00Z"
+          },
+          {
+            "ticker": "KXPAYROLLS-26NOV-T125000",
+            "strike": 125000,
+            "yes_bid": 0.14,
+            "yes_ask": 0.23,
+            "volume": 292,
+            "close_time": "2026-12-04T13:29:00Z"
+          }
+        ],
+        "median_strike": 0,
+        "total_volume": 544
+      }
+    ],
+    "updated": "2025-12-23T01:05:33.406883"
+  },
+  "core_cpi": {
+    "series": "KXECONSTATCPICORE",
+    "name": "Core CPI Month-over-Month",
+    "market_count": 96,
+    "updated": "2025-12-23T01:05:33.634054"
+  }
+}

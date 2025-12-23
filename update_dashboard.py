@@ -14,7 +14,18 @@ import time
 import tempfile
 
 # API endpoints
+# Check environment variable first, then fall back to local config file
 FRED_API_KEY = os.environ.get('FRED_API_KEY', '')
+if not FRED_API_KEY:
+    # Try reading from local config file (for local development)
+    config_path = os.path.join(os.path.dirname(__file__), '.api_keys')
+    if os.path.exists(config_path):
+        with open(config_path) as f:
+            for line in f:
+                line = line.strip()
+                if line.startswith('FRED_API_KEY='):
+                    FRED_API_KEY = line.split('=', 1)[1].strip()
+                    break
 
 def print_safe(msg):
     """Print with safe encoding for Windows"""

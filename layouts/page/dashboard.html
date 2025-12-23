@@ -1,0 +1,506 @@
+{{ define "main" }}
+<article class="pa3 pa4-ns">
+  <div class="mw8 center">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <style>
+    .dashboard-updated { text-align: center; margin-bottom: 20px; color: #666; }
+    .accordion-section { margin-bottom: 10px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; }
+    .accordion-header { display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; background: #f8f9fa; cursor: pointer; user-select: none; transition: background 0.2s; }
+    .accordion-header:hover { background: #e9ecef; }
+    .accordion-header h3 { margin: 0; font-size: 1.1em; color: #2c3e50; display: flex; align-items: center; gap: 10px; }
+    .accordion-header .section-icon { font-size: 1.2em; }
+    .accordion-header .metric-count { font-size: 0.8em; color: #7f8c8d; font-weight: normal; }
+    .accordion-arrow { font-size: 1.2em; color: #7f8c8d; transition: transform 0.3s; }
+    .accordion-section.open .accordion-arrow { transform: rotate(180deg); }
+    .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: #fff; }
+    .accordion-section.open .accordion-content { max-height: 2000px; }
+    .accordion-inner { padding: 20px; }
+    .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .metric-card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; background: #f9f9f9; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .metric-card h4 { margin: 0 0 8px 0; color: #333; font-size: 1em; }
+    .value { font-size: 1.8em; font-weight: bold; color: #2c3e50; }
+    .period { color: #7f8c8d; font-size: 0.85em; margin-top: 3px; }
+    .chart-container { height: 120px; margin-top: 12px; }
+    .positive { color: #27ae60; }
+    .negative { color: #e74c3c; }
+    .neutral { color: #3498db; }
+    .change-indicator { font-size: 0.85em; margin-top: 4px; }
+    .change-indicator .arrow { font-weight: bold; margin-right: 3px; }
+    .change-indicator .yoy { margin-right: 8px; }
+    .change-indicator .momentum { font-size: 0.9em; color: #7f8c8d; }
+    .prediction-intro { font-size: 0.85em; color: #7f8c8d; margin-bottom: 15px; padding: 10px; background: #f0f4f8; border-radius: 6px; }
+    .prediction-intro a { color: #3498db; }
+    .prediction-card { min-height: 280px; }
+    .prediction-meta { font-size: 0.75em; color: #95a5a6; margin-top: 8px; text-align: right; }
+    .consensus-value { font-size: 2em; font-weight: bold; color: #2c3e50; }
+    .consensus-prob { font-size: 0.9em; color: #27ae60; margin-left: 8px; }
+    .consensus-label { font-size: 0.85em; color: #7f8c8d; }
+    </style>
+
+    <div id="dashboard-container">
+      <div class="dashboard-updated">Last updated: <span id="last-update">Loading...</span></div>
+
+      <div class="accordion-section" data-section="economic">
+        <div class="accordion-header" onclick="toggleSection(this)">
+          <h3><span class="section-icon">📊</span> Economic Indicators <span class="metric-count">(7 metrics)</span></h3>
+          <span class="accordion-arrow">▼</span>
+        </div>
+        <div class="accordion-content">
+          <div class="accordion-inner">
+            <div class="dashboard-grid">
+              <div class="metric-card"><h4>GDP (Quarterly)</h4><div id="gdp">Loading...</div><div class="chart-container"><canvas id="chart-gdp"></canvas></div></div>
+              <div class="metric-card"><h4>Consumer Confidence</h4><div id="consumer-confidence">Loading...</div><div class="chart-container"><canvas id="chart-cc"></canvas></div></div>
+              <div class="metric-card"><h4>CPI (Consumer Price Index)</h4><div id="cpi">Loading...</div><div class="chart-container"><canvas id="chart-cpi"></canvas></div></div>
+              <div class="metric-card"><h4>Unemployment Rate</h4><div id="unemployment">Loading...</div><div class="chart-container"><canvas id="chart-unemp"></canvas></div></div>
+              <div class="metric-card"><h4>Employment (Thousands)</h4><div id="employment">Loading...</div><div class="chart-container"><canvas id="chart-emp"></canvas></div></div>
+              <div class="metric-card"><h4>Average Hourly Wages</h4><div id="wages">Loading...</div><div class="chart-container"><canvas id="chart-wages"></canvas></div></div>
+              <div class="metric-card"><h4>Housing Starts (Thousands)</h4><div id="housing">Loading...</div><div class="chart-container"><canvas id="chart-housing"></canvas></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-section" data-section="markets">
+        <div class="accordion-header" onclick="toggleSection(this)">
+          <h3><span class="section-icon">📈</span> Markets & Interest Rates <span class="metric-count">(3 metrics)</span></h3>
+          <span class="accordion-arrow">▼</span>
+        </div>
+        <div class="accordion-content">
+          <div class="accordion-inner">
+            <div class="dashboard-grid">
+              <div class="metric-card"><h4>S&P 500 Index</h4><div id="sp500">Loading...</div><div class="chart-container"><canvas id="chart-spy"></canvas></div></div>
+              <div class="metric-card"><h4>Fed Funds Rate</h4><div id="fed-rate">Loading...</div><div class="chart-container"><canvas id="chart-fed"></canvas></div></div>
+              <div class="metric-card"><h4>10-Year Treasury Yield</h4><div id="treasury">Loading...</div><div class="chart-container"><canvas id="chart-treasury"></canvas></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-section" data-section="currency">
+        <div class="accordion-header" onclick="toggleSection(this)">
+          <h3><span class="section-icon">💱</span> Currency Exchange Rates <span class="metric-count">(4 currencies)</span></h3>
+          <span class="accordion-arrow">▼</span>
+        </div>
+        <div class="accordion-content">
+          <div class="accordion-inner">
+            <div class="dashboard-grid">
+              <div class="metric-card"><h4>USD / Canadian Dollar</h4><div id="usd-cad">Loading...</div><div class="chart-container"><canvas id="chart-cad"></canvas></div></div>
+              <div class="metric-card"><h4>USD / Euro</h4><div id="usd-eur">Loading...</div><div class="chart-container"><canvas id="chart-eur"></canvas></div></div>
+              <div class="metric-card"><h4>USD / Japanese Yen</h4><div id="usd-jpy">Loading...</div><div class="chart-container"><canvas id="chart-jpy"></canvas></div></div>
+              <div class="metric-card"><h4>USD / Mexican Peso</h4><div id="usd-mxn">Loading...</div><div class="chart-container"><canvas id="chart-mxn"></canvas></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-section" data-section="commodities">
+        <div class="accordion-header" onclick="toggleSection(this)">
+          <h3><span class="section-icon">🛢️</span> Commodity Prices <span class="metric-count">(4 commodities)</span></h3>
+          <span class="accordion-arrow">▼</span>
+        </div>
+        <div class="accordion-content">
+          <div class="accordion-inner">
+            <div class="dashboard-grid">
+              <div class="metric-card"><h4>Gold ($/oz)</h4><div id="gold">Loading...</div><div class="chart-container"><canvas id="chart-gold"></canvas></div></div>
+              <div class="metric-card"><h4>Crude Oil WTI ($/barrel)</h4><div id="crude-oil">Loading...</div><div class="chart-container"><canvas id="chart-oil"></canvas></div></div>
+              <div class="metric-card"><h4>Natural Gas ($/MMBtu)</h4><div id="natural-gas">Loading...</div><div class="chart-container"><canvas id="chart-gas"></canvas></div></div>
+              <div class="metric-card"><h4>Copper ($/lb)</h4><div id="copper">Loading...</div><div class="chart-container"><canvas id="chart-copper"></canvas></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-section" data-section="prediction">
+        <div class="accordion-header" onclick="toggleSection(this)">
+          <h3><span class="section-icon">🎯</span> Prediction Markets <span class="metric-count">(Kalshi)</span></h3>
+          <span class="accordion-arrow">▼</span>
+        </div>
+        <div class="accordion-content">
+          <div class="accordion-inner">
+            <div class="prediction-intro">
+              Market-implied probabilities from <a href="https://kalshi.com" target="_blank" rel="noopener">Kalshi</a> prediction markets. These reflect trader expectations for economic outcomes.
+            </div>
+            <div class="dashboard-grid">
+              <div class="metric-card prediction-card">
+                <h4>2025 Annual Inflation</h4>
+                <div id="inflation-consensus">Loading...</div>
+                <div class="chart-container" style="height: 180px;"><canvas id="chart-inflation-dist"></canvas></div>
+                <div class="prediction-meta" id="inflation-meta"></div>
+              </div>
+              <div class="metric-card prediction-card">
+                <h4>Monthly Payrolls Outlook</h4>
+                <div id="payrolls-consensus">Loading...</div>
+                <div class="chart-container" style="height: 180px;"><canvas id="chart-payrolls"></canvas></div>
+                <div class="prediction-meta" id="payrolls-meta"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+    const charts = {};
+
+    function toggleSection(header) {
+      const section = header.parentElement;
+      const wasOpen = section.classList.contains('open');
+      section.classList.toggle('open');
+      if (!wasOpen) {
+        setTimeout(function() {
+          Object.keys(charts).forEach(function(chartId) {
+            if (charts[chartId]) charts[chartId].resize();
+          });
+        }, 350);
+      }
+    }
+
+    function formatDate(dateStr) {
+      const date = new Date(dateStr);
+      return date.toLocaleDateString('en-US', { month: 'short', year: '2-digit' });
+    }
+
+    function formatShortDate(dateStr) {
+      const date = new Date(dateStr);
+      return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    }
+
+    function calcChange(data, isPercent) {
+      if (!data || data.length < 2) return null;
+      const latest = data[data.length - 1].value;
+      const oldest = data[0].value;
+      if (oldest === 0) return null;
+      if (isPercent) {
+        return { change: latest - oldest, pctChange: null, isPointChange: true };
+      } else {
+        return { change: latest - oldest, pctChange: ((latest - oldest) / oldest) * 100, isPointChange: false };
+      }
+    }
+
+    function calc30DayMomentum(data, isPercent) {
+      if (!data || data.length < 30) return null;
+      const latest = data[data.length - 1].value;
+      const thirtyDaysAgo = data[data.length - 30].value;
+      if (thirtyDaysAgo === 0) return null;
+      if (isPercent) {
+        return { change: latest - thirtyDaysAgo, isPointChange: true };
+      } else {
+        return { pctChange: ((latest - thirtyDaysAgo) / thirtyDaysAgo) * 100, isPointChange: false };
+      }
+    }
+
+    function getTrendArrow(change) {
+      if (change > 0.5) return { arrow: '↑', cls: 'positive' };
+      if (change < -0.5) return { arrow: '↓', cls: 'negative' };
+      return { arrow: '→', cls: 'neutral' };
+    }
+
+    function formatChangeIndicator(changeData, momentumData, invertColors) {
+      if (!changeData) return '';
+      const change = changeData.pctChange !== null ? changeData.pctChange : changeData.change;
+      const trend = getTrendArrow(change);
+      let colorClass = trend.cls;
+      if (invertColors) {
+        if (colorClass === 'positive') colorClass = 'negative';
+        else if (colorClass === 'negative') colorClass = 'positive';
+      }
+      let changeText = changeData.isPointChange
+        ? (changeData.change >= 0 ? '+' : '') + changeData.change.toFixed(2) + ' pts YoY'
+        : (changeData.pctChange >= 0 ? '+' : '') + changeData.pctChange.toFixed(1) + '% YoY';
+      let html = '<div class="change-indicator"><span class="arrow ' + colorClass + '">' + trend.arrow + '</span><span class="yoy ' + colorClass + '">' + changeText + '</span>';
+      if (momentumData) {
+        const momChange = momentumData.pctChange !== null ? momentumData.pctChange : momentumData.change;
+        const momTrend = getTrendArrow(momChange);
+        let momColorClass = momTrend.cls;
+        if (invertColors) {
+          if (momColorClass === 'positive') momColorClass = 'negative';
+          else if (momColorClass === 'negative') momColorClass = 'positive';
+        }
+        let momText = momentumData.isPointChange
+          ? '(' + (momentumData.change >= 0 ? '+' : '') + momentumData.change.toFixed(2) + ' pts 30d)'
+          : '(' + (momentumData.pctChange >= 0 ? '+' : '') + momentumData.pctChange.toFixed(1) + '% 30d)';
+        html += '<span class="momentum ' + momColorClass + '">' + momText + '</span>';
+      }
+      return html + '</div>';
+    }
+
+    function createChart(canvasId, labels, values, color, options) {
+      options = options || {};
+      const ctx = document.getElementById(canvasId);
+      if (!ctx) return;
+      if (charts[canvasId]) charts[canvasId].destroy();
+      charts[canvasId] = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{
+            data: values,
+            borderColor: color,
+            backgroundColor: color + '20',
+            borderWidth: 2,
+            fill: true,
+            pointRadius: 2,
+            pointHoverRadius: 5,
+            tension: 0.3
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              mode: 'index',
+              intersect: false,
+              displayColors: false,
+              callbacks: {
+                label: function(context) {
+                  return (options.prefix || '') + context.parsed.y.toLocaleString(undefined, {
+                    minimumFractionDigits: options.decimals || 2,
+                    maximumFractionDigits: options.decimals || 2
+                  }) + (options.suffix || '');
+                }
+              }
+            }
+          },
+          scales: {
+            x: { display: true, ticks: { maxRotation: 45, minRotation: 45, font: { size: 9 }, color: '#7f8c8d', maxTicksLimit: 5 }, grid: { display: false } },
+            y: { display: true, ticks: { font: { size: 9 }, color: '#7f8c8d' }, grid: { color: '#ecf0f1' } }
+          }
+        }
+      });
+    }
+
+    function renderMetric(id, data, label, opts) {
+      opts = opts || {};
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (!data || data.length === 0) {
+        el.innerHTML = '<div class="value">--</div><div class="period">No data</div>';
+        return;
+      }
+      const latest = data[data.length - 1];
+      const val = opts.format ? opts.format(latest.value) : latest.value;
+      const dateStr = opts.shortDate ? formatShortDate(latest.date) : formatDate(latest.date);
+      const change = calcChange(data, opts.isPercent);
+      const momentum = opts.hasMomentum ? calc30DayMomentum(data, opts.isPercent) : null;
+      el.innerHTML = '<div class="value' + (opts.colorClass ? ' ' + opts.colorClass : '') + '">' + val + '</div><div class="period">' + dateStr + (opts.periodSuffix || '') + '</div>' + formatChangeIndicator(change, momentum, opts.invertColors);
+    }
+
+    async function loadDashboard() {
+      try {
+        const response = await fetch("/data/dashboard.json");
+        const data = await response.json();
+        document.getElementById("last-update").textContent = new Date(data.updated).toLocaleString();
+
+        // Economic Indicators
+        renderMetric('gdp', data.gdp, 'GDP', { format: v => '$' + Number(v).toLocaleString() + 'B' });
+        if (data.gdp && data.gdp.length > 0) createChart('chart-gdp', data.gdp.map(d => formatDate(d.date)), data.gdp.map(d => d.value), '#2ecc71', { prefix: '$', suffix: 'B', decimals: 0 });
+
+        renderMetric('consumer-confidence', data.consumer_confidence, 'CC', { format: v => Number(v).toFixed(1) });
+        if (data.consumer_confidence && data.consumer_confidence.length > 0) createChart('chart-cc', data.consumer_confidence.map(d => formatDate(d.date)), data.consumer_confidence.map(d => d.value), '#3498db', { decimals: 1 });
+
+        renderMetric('cpi', data.cpi, 'CPI', { format: v => Number(v).toFixed(1) });
+        if (data.cpi && data.cpi.length > 0) createChart('chart-cpi', data.cpi.map(d => formatDate(d.date)), data.cpi.map(d => d.value), '#9b59b6', { decimals: 1 });
+
+        renderMetric('unemployment', data.unemployment, 'Unemployment', { format: v => Number(v).toFixed(1) + '%', isPercent: true, invertColors: true });
+        if (data.unemployment && data.unemployment.length > 0) createChart('chart-unemp', data.unemployment.map(d => formatDate(d.date)), data.unemployment.map(d => d.value), '#f39c12', { suffix: '%', decimals: 1 });
+
+        renderMetric('employment', data.employment, 'Employment', { format: v => Number(v).toLocaleString() });
+        if (data.employment && data.employment.length > 0) createChart('chart-emp', data.employment.map(d => formatDate(d.date)), data.employment.map(d => d.value), '#1abc9c', { suffix: 'K', decimals: 0 });
+
+        renderMetric('wages', data.wages, 'Wages', { format: v => '$' + Number(v).toFixed(2) });
+        if (data.wages && data.wages.length > 0) createChart('chart-wages', data.wages.map(d => formatDate(d.date)), data.wages.map(d => d.value), '#16a085', { prefix: '$', decimals: 2 });
+
+        renderMetric('housing', data.housing_starts, 'Housing', { format: v => Number(v).toLocaleString() });
+        if (data.housing_starts && data.housing_starts.length > 0) createChart('chart-housing', data.housing_starts.map(d => formatDate(d.date)), data.housing_starts.map(d => d.value), '#8e44ad', { suffix: 'K', decimals: 0 });
+
+        // Markets & Interest Rates
+        if (data.markets) {
+          const sp = data.markets.find(m => m.symbol === "SPY");
+          if (sp) {
+            const spData = sp.history ? sp.history.map(h => ({value: h.close, date: h.date})) : [];
+            renderMetric('sp500', spData, 'S&P 500', { format: v => Number(v).toLocaleString(undefined, {minimumFractionDigits: 2}), colorClass: 'positive', shortDate: true });
+            if (sp.history && sp.history.length > 0) createChart('chart-spy', sp.history.map(d => formatShortDate(d.date)), sp.history.map(d => d.close), '#27ae60', { decimals: 2 });
+          }
+        } else {
+          document.getElementById('sp500').innerHTML = '<div class="value">--</div><div class="period">No data</div>';
+        }
+
+        renderMetric('fed-rate', data.fed_funds_rate, 'Fed Rate', { format: v => Number(v).toFixed(2) + '%', isPercent: true, hasMomentum: true, shortDate: true, colorClass: 'neutral' });
+        if (data.fed_funds_rate && data.fed_funds_rate.length > 0) createChart('chart-fed', data.fed_funds_rate.map(d => formatShortDate(d.date)), data.fed_funds_rate.map(d => d.value), '#e74c3c', { suffix: '%', decimals: 2 });
+
+        renderMetric('treasury', data.treasury_10y, 'Treasury', { format: v => Number(v).toFixed(2) + '%', isPercent: true, hasMomentum: true, shortDate: true, colorClass: 'neutral' });
+        if (data.treasury_10y && data.treasury_10y.length > 0) createChart('chart-treasury', data.treasury_10y.map(d => formatShortDate(d.date)), data.treasury_10y.map(d => d.value), '#c0392b', { suffix: '%', decimals: 2 });
+
+        // Currency Exchange Rates
+        renderMetric('usd-cad', data.usd_cad, 'USD/CAD', { format: v => Number(v).toFixed(4), hasMomentum: true, shortDate: true, periodSuffix: ' (CAD per USD)' });
+        if (data.usd_cad && data.usd_cad.length > 0) createChart('chart-cad', data.usd_cad.map(d => formatShortDate(d.date)), data.usd_cad.map(d => d.value), '#e74c3c', { decimals: 4 });
+
+        renderMetric('usd-eur', data.usd_eur, 'USD/EUR', { format: v => Number(v).toFixed(4), hasMomentum: true, shortDate: true, periodSuffix: ' (USD per EUR)' });
+        if (data.usd_eur && data.usd_eur.length > 0) createChart('chart-eur', data.usd_eur.map(d => formatShortDate(d.date)), data.usd_eur.map(d => d.value), '#3498db', { decimals: 4 });
+
+        renderMetric('usd-jpy', data.usd_jpy, 'USD/JPY', { format: v => Number(v).toFixed(2), hasMomentum: true, shortDate: true, periodSuffix: ' (JPY per USD)' });
+        if (data.usd_jpy && data.usd_jpy.length > 0) createChart('chart-jpy', data.usd_jpy.map(d => formatShortDate(d.date)), data.usd_jpy.map(d => d.value), '#9b59b6', { decimals: 2 });
+
+        renderMetric('usd-mxn', data.usd_mxn, 'USD/MXN', { format: v => Number(v).toFixed(2), hasMomentum: true, shortDate: true, periodSuffix: ' (MXN per USD)' });
+        if (data.usd_mxn && data.usd_mxn.length > 0) createChart('chart-mxn', data.usd_mxn.map(d => formatShortDate(d.date)), data.usd_mxn.map(d => d.value), '#27ae60', { decimals: 2 });
+
+        // Commodity Prices
+        renderMetric('gold', data.gold, 'Gold', { format: v => '$' + Number(v).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}), hasMomentum: true, shortDate: true });
+        if (data.gold && data.gold.length > 0) createChart('chart-gold', data.gold.map(d => formatShortDate(d.date)), data.gold.map(d => d.value), '#f1c40f', { prefix: '$', decimals: 2 });
+
+        renderMetric('crude-oil', data.crude_oil, 'Oil', { format: v => '$' + Number(v).toFixed(2), hasMomentum: true, shortDate: true });
+        if (data.crude_oil && data.crude_oil.length > 0) createChart('chart-oil', data.crude_oil.map(d => formatShortDate(d.date)), data.crude_oil.map(d => d.value), '#2c3e50', { prefix: '$', decimals: 2 });
+
+        renderMetric('natural-gas', data.natural_gas, 'Gas', { format: v => '$' + Number(v).toFixed(2), hasMomentum: true, shortDate: true });
+        if (data.natural_gas && data.natural_gas.length > 0) createChart('chart-gas', data.natural_gas.map(d => formatShortDate(d.date)), data.natural_gas.map(d => d.value), '#e67e22', { prefix: '$', decimals: 2 });
+
+        renderMetric('copper', data.copper, 'Copper', { format: v => '$' + Number(v).toFixed(2), hasMomentum: true, shortDate: true });
+        if (data.copper && data.copper.length > 0) createChart('chart-copper', data.copper.map(d => formatShortDate(d.date)), data.copper.map(d => d.value), '#d35400', { prefix: '$', decimals: 2 });
+
+      } catch (error) {
+        console.error("Failed to load dashboard:", error);
+        document.getElementById("last-update").textContent = "Error loading data";
+      }
+    }
+
+    loadDashboard();
+    setInterval(loadDashboard, 300000);
+
+    // Prediction Markets
+    async function loadPredictionMarkets() {
+      try {
+        const response = await fetch("/data/prediction-markets.json");
+        const data = await response.json();
+
+        // Render Inflation Distribution
+        if (data.inflation && data.inflation.markets) {
+          const inf = data.inflation;
+          const el = document.getElementById('inflation-consensus');
+          if (el) {
+            el.innerHTML = '<div class="consensus-value">' + inf.consensus_strike + '%</div>' +
+              '<div class="consensus-label">Market consensus: ' + Math.round(inf.consensus_probability * 100) + '% probability inflation stays below ' + inf.consensus_strike + '%</div>';
+          }
+
+          // Create distribution bar chart
+          const ctx = document.getElementById('chart-inflation-dist');
+          if (ctx) {
+            if (charts['chart-inflation-dist']) charts['chart-inflation-dist'].destroy();
+            charts['chart-inflation-dist'] = new Chart(ctx, {
+              type: 'bar',
+              data: {
+                labels: inf.markets.map(m => m.strike + '%'),
+                datasets: [{
+                  label: 'Market Price',
+                  data: inf.markets.map(m => m.yes_bid * 100),
+                  backgroundColor: inf.markets.map(m => m.strike === inf.consensus_strike ? '#3498db' : '#bdc3c7'),
+                  borderRadius: 4
+                }]
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  legend: { display: false },
+                  tooltip: {
+                    callbacks: {
+                      label: function(ctx) {
+                        return 'Prob above ' + inf.markets[ctx.dataIndex].strike + '%: ' + ctx.parsed.y.toFixed(0) + '%';
+                      },
+                      afterLabel: function(ctx) {
+                        return 'Volume: ' + inf.markets[ctx.dataIndex].volume.toLocaleString();
+                      }
+                    }
+                  }
+                },
+                scales: {
+                  x: { grid: { display: false }, ticks: { font: { size: 9 }, maxRotation: 45 } },
+                  y: { max: 100, ticks: { callback: v => v + '%', font: { size: 9 } }, grid: { color: '#ecf0f1' } }
+                }
+              }
+            });
+          }
+
+          const meta = document.getElementById('inflation-meta');
+          if (meta) {
+            meta.textContent = 'Total volume: ' + inf.total_volume.toLocaleString() + ' contracts';
+          }
+        }
+
+        // Render Payrolls
+        if (data.payrolls && data.payrolls.months && data.payrolls.months.length > 0) {
+          const pay = data.payrolls;
+          const nearestMonth = pay.months[0];
+          const el = document.getElementById('payrolls-consensus');
+
+          // Find the 50% probability strike
+          const medianMarket = nearestMonth.markets.find(m => m.yes_bid >= 0.45 && m.yes_bid <= 0.55) || nearestMonth.markets[0];
+
+          if (el) {
+            const monthLabel = nearestMonth.month.replace(/(\d{2})(\w+)/, (_, y, m) => m + ' 20' + y);
+            el.innerHTML = '<div class="consensus-value">' + (medianMarket.strike / 1000).toFixed(0) + 'K</div>' +
+              '<div class="consensus-label">Market expects ~' + (medianMarket.strike / 1000).toFixed(0) + 'K jobs added in ' + monthLabel + '</div>';
+          }
+
+          // Create payrolls probability curve
+          const ctx = document.getElementById('chart-payrolls');
+          if (ctx) {
+            if (charts['chart-payrolls']) charts['chart-payrolls'].destroy();
+            charts['chart-payrolls'] = new Chart(ctx, {
+              type: 'line',
+              data: {
+                labels: nearestMonth.markets.map(m => (m.strike / 1000) + 'K'),
+                datasets: [{
+                  label: 'P(Above)',
+                  data: nearestMonth.markets.map(m => m.yes_bid * 100),
+                  borderColor: '#27ae60',
+                  backgroundColor: 'rgba(39, 174, 96, 0.1)',
+                  fill: true,
+                  tension: 0.4,
+                  pointRadius: 3,
+                  pointHoverRadius: 6
+                }]
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  legend: { display: false },
+                  tooltip: {
+                    callbacks: {
+                      label: function(ctx) {
+                        return 'Prob > ' + nearestMonth.markets[ctx.dataIndex].strike.toLocaleString() + ' jobs: ' + ctx.parsed.y.toFixed(0) + '%';
+                      }
+                    }
+                  }
+                },
+                scales: {
+                  x: { grid: { display: false }, ticks: { font: { size: 9 } } },
+                  y: { max: 100, min: 0, ticks: { callback: v => v + '%', font: { size: 9 } }, grid: { color: '#ecf0f1' } }
+                }
+              }
+            });
+          }
+
+          const meta = document.getElementById('payrolls-meta');
+          if (meta) {
+            const monthLabel = nearestMonth.month.replace(/(\d{2})(\w+)/, (_, y, m) => m + ' 20' + y);
+            meta.textContent = monthLabel + ' | Volume: ' + nearestMonth.total_volume.toLocaleString();
+          }
+        }
+
+      } catch (error) {
+        console.error("Failed to load prediction markets:", error);
+        const el = document.getElementById('inflation-consensus');
+        if (el) el.innerHTML = '<div class="value">--</div><div class="period">Data unavailable</div>';
+      }
+    }
+
+    loadPredictionMarkets();
+    setInterval(loadPredictionMarkets, 300000);
+    </script>
+  </div>
+</article>
+{{ end }}
