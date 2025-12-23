@@ -4275,6 +4275,218 @@
       "score_details": {
         "reason": "Scoring failed"
       }
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "In Norway, Skiing Through a Winter Wonderland",
+      "url": "https://www.nytimes.com/2025/12/23/travel/norway-crosscountry-skiing.html",
+      "description": "A 100-mile journey along the country\u2019s Troll Trail includes stunning vistas, snowbound mountain hotels and waffles.",
+      "content": "A 100-mile journey along the country\u2019s Troll Trail includes stunning vistas, snowbound mountain hotels and waffles.",
+      "pub_date": "Tue, 23 Dec 2025 10:00:45 +0000",
+      "id": "5da734010477",
+      "score": 5,
+      "score_details": {
+        "relevance": 5,
+        "news_value": 5,
+        "quality": 6,
+        "overall": 5,
+        "reason": "The article is about a scenic ski journey in Norway, which has some general interest for ski enthusiasts but lacks direct relevance to ski industry business operations. The reporting is solid but the content is more focused on the travel experience rather than substantive business news."
+      }
+    },
+    {
+      "source": "Financial Times",
+      "title": "AI debt boom pushes US corporate bond sales close to record",
+      "url": "https://www.ft.com/content/faa3d747-9a32-4219-93eb-a93c10502f06",
+      "description": "Investment-grade borrowers have issued $1.7tn of bonds this year, closing in on 2020\u2019s Covid debt rush",
+      "content": "Investment-grade borrowers have issued $1.7tn of bonds this year, closing in on 2020\u2019s Covid debt rush",
+      "pub_date": "Tue, 23 Dec 2025 05:00:20 GMT",
+      "id": "c4063a3450b7",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Financial Times",
+      "title": "Year in a word: AI bubble",
+      "url": "https://www.ft.com/content/3e411742-b6bb-40c2-9432-4ee6f562af8f",
+      "description": "The high priests of Silicon Valley and Wall Street are beginning to acknowledge the excesses of Big Tech valuations",
+      "content": "The high priests of Silicon Valley and Wall Street are beginning to acknowledge the excesses of Big Tech valuations",
+      "pub_date": "Tue, 23 Dec 2025 05:00:11 GMT",
+      "id": "49ebeef89792",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Financial Times",
+      "title": "Novo Nordisk weight-loss drug wins US approval as a daily pill",
+      "url": "https://www.ft.com/content/c8630c2a-321a-4a25-ad19-7c2b571c77f7",
+      "description": "Shares in Danish company rise as drugmaker secures lead in oral obesity treatment",
+      "content": "Shares in Danish company rise as drugmaker secures lead in oral obesity treatment",
+      "pub_date": "Tue, 23 Dec 2025 01:22:01 GMT",
+      "id": "db0fd3fc3831",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Financial Times",
+      "title": "Private credit firms pile into consumer debt as risk-taking mounts",
+      "url": "https://www.ft.com/content/1583928d-08ec-4ae3-ab2f-ab07d9669fcf",
+      "description": "Growth raises concerns about underwriting and risk management at fast-expanding groups",
+      "content": "Growth raises concerns about underwriting and risk management at fast-expanding groups",
+      "pub_date": "Tue, 23 Dec 2025 05:00:20 GMT",
+      "id": "6c19b8243910",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Financial Times",
+      "title": "Russia\u2019s wage growth slows as wartime economy cools",
+      "url": "https://www.ft.com/content/5554ae15-4d8b-4df1-afa6-f8d3e982fff0",
+      "description": "Salary increases for new hires drop compared with last year",
+      "content": "Salary increases for new hires drop compared with last year",
+      "pub_date": "Tue, 23 Dec 2025 05:00:11 GMT",
+      "id": "8d06c42955b4",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Copper Hits $12,000 for First Time as Tariff Trade Upends Market",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-23/copper-hits-12-000-for-first-time-as-tariff-trade-upends-market",
+      "description": "Copper hit a fresh all-time high above $12,000 a ton as severe mine outages and trade dislocations linked to US President Donald Trump\u2019s tariff agenda put the crucial industrial metal on course for its biggest annual gain since 2009.",
+      "content": "Copper hit a fresh all-time high above $12,000 a ton as severe mine outages and trade dislocations linked to US President Donald Trump\u2019s tariff agenda put the crucial industrial metal on course for its biggest annual gain since 2009.",
+      "pub_date": "Tue, 23 Dec 2025 10:49:11 GMT",
+      "id": "11348636f0eb",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Stocks Hold Gains Ahead of Last Major Data of 2025: Markets Wrap",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-22/stock-market-today-dow-s-p-live-updates",
+      "description": "US stocks are holding their ground after a strong run as traders await some of the remaining data sets of 2025 to see whether they materially shift expectations for Federal Reserve interest-rate cuts.",
+      "content": "US stocks are holding their ground after a strong run as traders await some of the remaining data sets of 2025 to see whether they materially shift expectations for Federal Reserve interest-rate cuts.",
+      "pub_date": "Mon, 22 Dec 2025 22:39:59 GMT",
+      "id": "c0cd384b9ed3",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Wall Street Sees Cyclicals Rallying as Economic Growth Picks Up",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-23/wall-street-sees-cyclicals-rallying-as-economic-growth-picks-up",
+      "description": "US economic growth is set to accelerate with cheaper oil. Federal Reserve rate cuts are likely with inflation cooling. Stock pickers are looking for alternatives to artificial intelligence plays and the American consumer continues to spend.",
+      "content": "US economic growth is set to accelerate with cheaper oil. Federal Reserve rate cuts are likely with inflation cooling. Stock pickers are looking for alternatives to artificial intelligence plays and the American consumer continues to spend.",
+      "pub_date": "Tue, 23 Dec 2025 10:30:00 GMT",
+      "id": "3fd9a95455c5",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "European Stocks Edge Up to Record; Novo Rallies on Pill Approval",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-23/european-stocks-hover-near-record-novo-rallies-on-pill-approval",
+      "description": "European stocks hit another record, while Novo Nordisk A/S rallied as it won approval to sell a pill version of its blockbuster obesity shot Wegovy in the US.",
+      "content": "European stocks hit another record, while Novo Nordisk A/S rallied as it won approval to sell a pill version of its blockbuster obesity shot Wegovy in the US.",
+      "pub_date": "Tue, 23 Dec 2025 08:12:49 GMT",
+      "id": "c9f635d0a627",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Uzbekistan to Boost Local Market With New Listings, FX Bonds",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-23/uzbekistan-to-expand-local-market-with-new-listings-bond-rules",
+      "description": "Uzbekistan is introducing new rules that allow companies to pursue dual listings and issue bonds denominated in foreign currencies, taking another step to develop its capital market and attract investment.",
+      "content": "Uzbekistan is introducing new rules that allow companies to pursue dual listings and issue bonds denominated in foreign currencies, taking another step to develop its capital market and attract investment.",
+      "pub_date": "Tue, 23 Dec 2025 08:43:14 GMT",
+      "id": "b116e2e009e0",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Copper Nears $12,000 a Ton as Supply Cuts Fuel Annual Surge",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-23/copper-wavers-under-12-000-a-ton-after-supply-driven-rally",
+      "description": "Copper edged towards $12,000 a ton, nearing a new all-time high as supply setbacks and tariff-related trade dislocations fuel a powerful, months-long rally.",
+      "content": "Copper edged towards $12,000 a ton, nearing a new all-time high as supply setbacks and tariff-related trade dislocations fuel a powerful, months-long rally.",
+      "pub_date": "Tue, 23 Dec 2025 03:26:23 GMT",
+      "id": "cd97268515c6",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "The Ukraine Peace Trade Gets Trickier After Delivering Big Gains",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-23/the-ukraine-peace-trade-gets-trickier-after-delivering-big-gains",
+      "description": "The Ukraine \u201cpeace trade\u201d delivered stellar returns in markets in 2025, lifting assets that theoretically stand to benefit from an end to the war. Polish bank stocks, the Czech koruna and Ukrainian debt are among those to have rallied to close out the year.",
+      "content": "The Ukraine \u201cpeace trade\u201d delivered stellar returns in markets in 2025, lifting assets that theoretically stand to benefit from an end to the war. Polish bank stocks, the Czech koruna and Ukrainian debt are among those to have rallied to close out the year.",
+      "pub_date": "Tue, 23 Dec 2025 10:18:48 GMT",
+      "id": "1453b33dd0df",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Dollar\u2019s Worst Slide Since 2017 Has Further to Go, Options Show",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-23/usd-dollar-s-worst-slide-since-2017-has-further-to-go-options-show",
+      "description": "The dollar is heading for its weakest annual performance in eight years, and the options market is signaling that traders are preparing for more downside in the final sessions of 2025.",
+      "content": "The dollar is heading for its weakest annual performance in eight years, and the options market is signaling that traders are preparing for more downside in the final sessions of 2025.",
+      "pub_date": "Tue, 23 Dec 2025 10:03:15 GMT",
+      "id": "0059ba74e664",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Invesco Sees Fed Rate Cuts Boosting Equities in 2026",
+      "url": "https://www.bloomberg.com/news/videos/2025-12-23/invesco-sees-fed-rate-cuts-boosting-equities-in-2026-video",
+      "description": "Invesco strategist Ben Gutteridge discusses the outlook for the US economy, Fed policy and markets in the run up to 2026 and for the year ahead. \u201cThe more benign inflationary outlook is giving cover for the Federal Reserve to cut interest rates,\u201d Gutteridge says on Bloomberg Television. \u201cThat has something of a Goldilocks flavor to it, and that leaves us feeling positive about equities in 2026.\u201d",
+      "content": "Invesco strategist Ben Gutteridge discusses the outlook for the US economy, Fed policy and markets in the run up to 2026 and for the year ahead. \u201cThe more benign inflationary outlook is giving cover for the Federal Reserve to cut interest rates,\u201d Gutteridge says on Bloomberg Television. \u201cThat has something of a Goldilocks flavor to it, and that leaves us feeling positive about equities in 2026.\u201d",
+      "pub_date": "Tue, 23 Dec 2025 08:38:43 GMT",
+      "id": "f444b3f92bb9",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Billionaire Cheng Family Put London Rosewood Hotel Up for Sale",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-23/cheng-family-to-seek-sale-of-london-rosewood-as-pressures-mount",
+      "description": "The billionaire Cheng family have put a luxury London hotel up for sale as they grapple with liquidity challenges at debt laden Hong Kong property group New World Development Co.",
+      "content": "The billionaire Cheng family have put a luxury London hotel up for sale as they grapple with liquidity challenges at debt laden Hong Kong property group New World Development Co.",
+      "pub_date": "Tue, 23 Dec 2025 02:20:05 GMT",
+      "id": "af078f09ce34",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
     }
   ],
   "rejected": [
@@ -5409,6 +5621,74 @@
         "quality": 3,
         "overall": 1,
         "reason": "This article about President Trump's name branding has no relevance to the ski industry. It is not ski business news."
+      }
+    },
+    {
+      "source": "The Atlantic",
+      "url": "https://www.theatlantic.com/technology/2025/12/americafest-charlie-kirk-nick-fuentes/685402/?utm_source=feed",
+      "title": "\u2018It\u2019s Very Controversial, but I Love Nick Fuentes\u2019",
+      "description": "The white-supremacist influencer cast a shadow over Turning Point USA\u2019s annual gathering.",
+      "content": "The white-supremacist influencer cast a shadow over Turning Point USA\u2019s annual gathering.",
+      "pub_date": "2025-12-22T22:09:00-05:00",
+      "id": "50b1fe02629f",
+      "score": 1,
+      "score_details": {
+        "relevance": 1,
+        "news_value": 1,
+        "quality": 3,
+        "overall": 1,
+        "reason": "This article is not relevant to the ski industry and does not contain any substantive business news. It is about a controversial political figure and does not discuss the ski industry in any way."
+      }
+    },
+    {
+      "source": "The Atlantic",
+      "url": "https://www.theatlantic.com/newsletters/2025/12/daily-trivia-questions-answers-week-13/685394/?utm_source=feed",
+      "title": "Today\u2019s Atlantic Trivia: All Downhill From Here?",
+      "description": "Test your knowledge\u2014and read our latest stories for a little extra help.",
+      "content": "Test your knowledge\u2014and read our latest stories for a little extra help.",
+      "pub_date": "2025-12-22T16:02:53-05:00",
+      "id": "786ff8cae32e",
+      "score": 2,
+      "score_details": {
+        "relevance": 2,
+        "news_value": 2,
+        "quality": 3,
+        "overall": 2,
+        "reason": "This article does not contain any substantive ski industry business news. It is a trivia question unrelated to the ski industry."
+      }
+    },
+    {
+      "source": "The Atlantic",
+      "url": "https://www.theatlantic.com/ideas/2025/12/trump-paramount-netflix-cnn-cbs/685349/?utm_source=feed",
+      "title": "CBS and CNN Are Being Sacrificed to Trump",
+      "description": "Media conglomerates want the president\u2019s permission for mergers\u2014and control of news outlets is at stake.",
+      "content": "Media conglomerates want the president\u2019s permission for mergers\u2014and control of news outlets is at stake.",
+      "pub_date": "2025-12-22T08:43:00-05:00",
+      "id": "9e29c670312f",
+      "score": 1,
+      "score_details": {
+        "relevance": 1,
+        "news_value": 1,
+        "quality": 3,
+        "overall": 1,
+        "reason": "This article is not relevant to the ski industry. It discusses the business dealings of mainstream media companies, which have little to do with the ski resort or destination business."
+      }
+    },
+    {
+      "source": "The Atlantic",
+      "url": "https://www.theatlantic.com/culture/2025/12/ai-music-suno-warner-bros/685331/?utm_source=feed",
+      "title": "AI Is Democratizing Music. Unfortunately.",
+      "description": "The emerging technology is warping the record industry in all sorts of strange\u2014and foreboding\u2014ways.",
+      "content": "The emerging technology is warping the record industry in all sorts of strange\u2014and foreboding\u2014ways.",
+      "pub_date": "2025-12-22T08:00:00-05:00",
+      "id": "ac410a7f2cae",
+      "score": 1,
+      "score_details": {
+        "relevance": 1,
+        "news_value": 1,
+        "quality": 3,
+        "overall": 1,
+        "reason": "This article about the impact of AI on the music industry is not relevant to the ski industry news feed."
       }
     }
   ]
