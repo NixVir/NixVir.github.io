@@ -226,10 +226,13 @@ def fetch_nohrsc_snow_statistics():
 
         # Pattern 3: Look for snow-covered area in sq mi
         area_match = re.search(r'([\d,]+(?:\.\d+)?)\s*(?:square\s*)?mi(?:les?)?', nsa_content, re.IGNORECASE)
-        if area_match:
-            area = float(area_match.group(1).replace(',', ''))
-            if area > 10000:  # Should be a large number
-                result['snow_area_sq_mi'] = area
+        if area_match and area_match.group(1):
+            try:
+                area = float(area_match.group(1).replace(',', ''))
+                if area > 10000:  # Should be a large number
+                    result['snow_area_sq_mi'] = area
+            except ValueError:
+                pass  # Skip if conversion fails
 
     # Fallback: Try the text reports (may not exist anymore)
     if result['cover_percent'] is None:
