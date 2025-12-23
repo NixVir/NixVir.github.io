@@ -1,89 +1,89 @@
 {
-  "updated": "2025-12-23 00:52:54",
+  "updated": "2025-12-23 08:17:11",
   "consumer_confidence": [
     {
       "date": "2024-12-01",
       "series_id": "UMCSENT",
       "value": 74.0,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-23",
+      "realtime_end": "2025-12-23"
     },
     {
       "date": "2025-01-01",
       "series_id": "UMCSENT",
       "value": 71.7,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-23",
+      "realtime_end": "2025-12-23"
     },
     {
       "date": "2025-02-01",
       "series_id": "UMCSENT",
       "value": 64.7,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-23",
+      "realtime_end": "2025-12-23"
     },
     {
       "date": "2025-03-01",
       "series_id": "UMCSENT",
       "value": 57.0,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-23",
+      "realtime_end": "2025-12-23"
     },
     {
       "date": "2025-04-01",
       "series_id": "UMCSENT",
       "value": 52.2,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-23",
+      "realtime_end": "2025-12-23"
     },
     {
       "date": "2025-05-01",
       "series_id": "UMCSENT",
       "value": 52.2,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-23",
+      "realtime_end": "2025-12-23"
     },
     {
       "date": "2025-06-01",
       "series_id": "UMCSENT",
       "value": 60.7,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-23",
+      "realtime_end": "2025-12-23"
     },
     {
       "date": "2025-07-01",
       "series_id": "UMCSENT",
       "value": 61.7,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-23",
+      "realtime_end": "2025-12-23"
     },
     {
       "date": "2025-08-01",
       "series_id": "UMCSENT",
       "value": 58.2,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-23",
+      "realtime_end": "2025-12-23"
     },
     {
       "date": "2025-09-01",
       "series_id": "UMCSENT",
       "value": 55.1,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-23",
+      "realtime_end": "2025-12-23"
     },
     {
       "date": "2025-10-01",
       "series_id": "UMCSENT",
       "value": 53.6,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-23",
+      "realtime_end": "2025-12-23"
     },
     {
       "date": "2025-11-01",
       "series_id": "UMCSENT",
       "value": 51.0,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-23",
+      "realtime_end": "2025-12-23"
     }
   ],
   "markets": [
@@ -3850,78 +3850,78 @@
       "date": "2024-12-01",
       "series_id": "CPIAUCSL",
       "value": 317.603,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-01",
       "series_id": "CPIAUCSL",
       "value": 319.086,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-01",
       "series_id": "CPIAUCSL",
       "value": 319.775,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-01",
       "series_id": "CPIAUCSL",
       "value": 319.615,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-01",
       "series_id": "CPIAUCSL",
       "value": 320.321,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-01",
       "series_id": "CPIAUCSL",
       "value": 320.58,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-01",
       "series_id": "CPIAUCSL",
       "value": 321.5,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-01",
       "series_id": "CPIAUCSL",
       "value": 322.132,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-01",
       "series_id": "CPIAUCSL",
       "value": 323.364,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-01",
       "series_id": "CPIAUCSL",
       "value": 324.368,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-01",
       "series_id": "CPIAUCSL",
       "value": 325.031,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     }
   ],
   "employment": [
@@ -3929,85 +3929,85 @@
       "date": "2024-12-01",
       "series_id": "PAYEMS",
       "value": 158942.0,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-17",
+      "realtime_end": "2025-12-17"
     },
     {
       "date": "2025-01-01",
       "series_id": "PAYEMS",
       "value": 159053.0,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-17",
+      "realtime_end": "2025-12-17"
     },
     {
       "date": "2025-02-01",
       "series_id": "PAYEMS",
       "value": 159155.0,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-17",
+      "realtime_end": "2025-12-17"
     },
     {
       "date": "2025-03-01",
       "series_id": "PAYEMS",
       "value": 159275.0,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-17",
+      "realtime_end": "2025-12-17"
     },
     {
       "date": "2025-04-01",
       "series_id": "PAYEMS",
       "value": 159433.0,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-17",
+      "realtime_end": "2025-12-17"
     },
     {
       "date": "2025-05-01",
       "series_id": "PAYEMS",
       "value": 159452.0,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-17",
+      "realtime_end": "2025-12-17"
     },
     {
       "date": "2025-06-01",
       "series_id": "PAYEMS",
       "value": 159439.0,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-17",
+      "realtime_end": "2025-12-17"
     },
     {
       "date": "2025-07-01",
       "series_id": "PAYEMS",
       "value": 159511.0,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-17",
+      "realtime_end": "2025-12-17"
     },
     {
       "date": "2025-08-01",
       "series_id": "PAYEMS",
       "value": 159485.0,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-17",
+      "realtime_end": "2025-12-17"
     },
     {
       "date": "2025-09-01",
       "series_id": "PAYEMS",
       "value": 159593.0,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-17",
+      "realtime_end": "2025-12-17"
     },
     {
       "date": "2025-10-01",
       "series_id": "PAYEMS",
       "value": 159488.0,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-17",
+      "realtime_end": "2025-12-17"
     },
     {
       "date": "2025-11-01",
       "series_id": "PAYEMS",
       "value": 159552.0,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-17",
+      "realtime_end": "2025-12-17"
     }
   ],
   "wages": [
@@ -4015,85 +4015,85 @@
       "date": "2024-12-01",
       "series_id": "CES0500000003",
       "value": 35.68,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-17",
+      "realtime_end": "2025-12-17"
     },
     {
       "date": "2025-01-01",
       "series_id": "CES0500000003",
       "value": 35.83,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-17",
+      "realtime_end": "2025-12-17"
     },
     {
       "date": "2025-02-01",
       "series_id": "CES0500000003",
       "value": 35.9,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-17",
+      "realtime_end": "2025-12-17"
     },
     {
       "date": "2025-03-01",
       "series_id": "CES0500000003",
       "value": 36.02,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-17",
+      "realtime_end": "2025-12-17"
     },
     {
       "date": "2025-04-01",
       "series_id": "CES0500000003",
       "value": 36.08,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-17",
+      "realtime_end": "2025-12-17"
     },
     {
       "date": "2025-05-01",
       "series_id": "CES0500000003",
       "value": 36.23,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-17",
+      "realtime_end": "2025-12-17"
     },
     {
       "date": "2025-06-01",
       "series_id": "CES0500000003",
       "value": 36.31,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-17",
+      "realtime_end": "2025-12-17"
     },
     {
       "date": "2025-07-01",
       "series_id": "CES0500000003",
       "value": 36.43,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-17",
+      "realtime_end": "2025-12-17"
     },
     {
       "date": "2025-08-01",
       "series_id": "CES0500000003",
       "value": 36.58,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-17",
+      "realtime_end": "2025-12-17"
     },
     {
       "date": "2025-09-01",
       "series_id": "CES0500000003",
       "value": 36.65,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-17",
+      "realtime_end": "2025-12-17"
     },
     {
       "date": "2025-10-01",
       "series_id": "CES0500000003",
       "value": 36.81,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-17",
+      "realtime_end": "2025-12-17"
     },
     {
       "date": "2025-11-01",
       "series_id": "CES0500000003",
       "value": 36.86,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-17",
+      "realtime_end": "2025-12-17"
     }
   ],
   "gdp": [
@@ -4101,85 +4101,85 @@
       "date": "2022-07-01",
       "series_id": "GDP",
       "value": 26336.304,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-01",
+      "realtime_end": "2025-12-01"
     },
     {
       "date": "2022-10-01",
       "series_id": "GDP",
       "value": 26770.514,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-01",
+      "realtime_end": "2025-12-01"
     },
     {
       "date": "2023-01-01",
       "series_id": "GDP",
       "value": 27216.445,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-01",
+      "realtime_end": "2025-12-01"
     },
     {
       "date": "2023-04-01",
       "series_id": "GDP",
       "value": 27530.055,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-01",
+      "realtime_end": "2025-12-01"
     },
     {
       "date": "2023-07-01",
       "series_id": "GDP",
       "value": 28074.846,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-01",
+      "realtime_end": "2025-12-01"
     },
     {
       "date": "2023-10-01",
       "series_id": "GDP",
       "value": 28424.722,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-01",
+      "realtime_end": "2025-12-01"
     },
     {
       "date": "2024-01-01",
       "series_id": "GDP",
       "value": 28708.161,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-01",
+      "realtime_end": "2025-12-01"
     },
     {
       "date": "2024-04-01",
       "series_id": "GDP",
       "value": 29147.044,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-01",
+      "realtime_end": "2025-12-01"
     },
     {
       "date": "2024-07-01",
       "series_id": "GDP",
       "value": 29511.664,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-01",
+      "realtime_end": "2025-12-01"
     },
     {
       "date": "2024-10-01",
       "series_id": "GDP",
       "value": 29825.182,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-01",
+      "realtime_end": "2025-12-01"
     },
     {
       "date": "2025-01-01",
       "series_id": "GDP",
       "value": 30042.113,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-01",
+      "realtime_end": "2025-12-01"
     },
     {
       "date": "2025-04-01",
       "series_id": "GDP",
       "value": 30485.729,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-01",
+      "realtime_end": "2025-12-01"
     }
   ],
   "housing_starts": [
@@ -4187,85 +4187,85 @@
       "date": "2024-09-01",
       "series_id": "HOUST",
       "value": 1357.0,
-      "realtime_start": "2025-12-21",
-      "realtime_end": "2025-12-21"
+      "realtime_start": "2025-10-24",
+      "realtime_end": "2025-10-24"
     },
     {
       "date": "2024-10-01",
       "series_id": "HOUST",
       "value": 1352.0,
-      "realtime_start": "2025-12-21",
-      "realtime_end": "2025-12-21"
+      "realtime_start": "2025-10-24",
+      "realtime_end": "2025-10-24"
     },
     {
       "date": "2024-11-01",
       "series_id": "HOUST",
       "value": 1295.0,
-      "realtime_start": "2025-12-21",
-      "realtime_end": "2025-12-21"
+      "realtime_start": "2025-10-24",
+      "realtime_end": "2025-10-24"
     },
     {
       "date": "2024-12-01",
       "series_id": "HOUST",
       "value": 1514.0,
-      "realtime_start": "2025-12-21",
-      "realtime_end": "2025-12-21"
+      "realtime_start": "2025-10-24",
+      "realtime_end": "2025-10-24"
     },
     {
       "date": "2025-01-01",
       "series_id": "HOUST",
       "value": 1358.0,
-      "realtime_start": "2025-12-21",
-      "realtime_end": "2025-12-21"
+      "realtime_start": "2025-10-24",
+      "realtime_end": "2025-10-24"
     },
     {
       "date": "2025-02-01",
       "series_id": "HOUST",
       "value": 1490.0,
-      "realtime_start": "2025-12-21",
-      "realtime_end": "2025-12-21"
+      "realtime_start": "2025-10-24",
+      "realtime_end": "2025-10-24"
     },
     {
       "date": "2025-03-01",
       "series_id": "HOUST",
       "value": 1355.0,
-      "realtime_start": "2025-12-21",
-      "realtime_end": "2025-12-21"
+      "realtime_start": "2025-10-24",
+      "realtime_end": "2025-10-24"
     },
     {
       "date": "2025-04-01",
       "series_id": "HOUST",
       "value": 1398.0,
-      "realtime_start": "2025-12-21",
-      "realtime_end": "2025-12-21"
+      "realtime_start": "2025-10-24",
+      "realtime_end": "2025-10-24"
     },
     {
       "date": "2025-05-01",
       "series_id": "HOUST",
       "value": 1282.0,
-      "realtime_start": "2025-12-21",
-      "realtime_end": "2025-12-21"
+      "realtime_start": "2025-10-24",
+      "realtime_end": "2025-10-24"
     },
     {
       "date": "2025-06-01",
       "series_id": "HOUST",
       "value": 1382.0,
-      "realtime_start": "2025-12-21",
-      "realtime_end": "2025-12-21"
+      "realtime_start": "2025-10-24",
+      "realtime_end": "2025-10-24"
     },
     {
       "date": "2025-07-01",
       "series_id": "HOUST",
       "value": 1429.0,
-      "realtime_start": "2025-12-21",
-      "realtime_end": "2025-12-21"
+      "realtime_start": "2025-10-24",
+      "realtime_end": "2025-10-24"
     },
     {
       "date": "2025-08-01",
       "series_id": "HOUST",
       "value": 1307.0,
-      "realtime_start": "2025-12-21",
-      "realtime_end": "2025-12-21"
+      "realtime_start": "2025-10-24",
+      "realtime_end": "2025-10-24"
     }
   ],
   "treasury_10y": [
@@ -18772,1730 +18772,1730 @@
       "date": "2024-12-17",
       "series_id": "DCOILWTICO",
       "value": 70.31,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2024-12-18",
       "series_id": "DCOILWTICO",
       "value": 70.8,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2024-12-19",
       "series_id": "DCOILWTICO",
       "value": 70.1,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2024-12-20",
       "series_id": "DCOILWTICO",
       "value": 69.71,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2024-12-23",
       "series_id": "DCOILWTICO",
       "value": 69.5,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2024-12-24",
       "series_id": "DCOILWTICO",
       "value": 70.87,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2024-12-26",
       "series_id": "DCOILWTICO",
       "value": 70.38,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2024-12-27",
       "series_id": "DCOILWTICO",
       "value": 71.28,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2024-12-30",
       "series_id": "DCOILWTICO",
       "value": 71.73,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2024-12-31",
       "series_id": "DCOILWTICO",
       "value": 72.44,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-02",
       "series_id": "DCOILWTICO",
       "value": 73.79,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-03",
       "series_id": "DCOILWTICO",
       "value": 74.64,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-06",
       "series_id": "DCOILWTICO",
       "value": 74.31,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-07",
       "series_id": "DCOILWTICO",
       "value": 74.99,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-08",
       "series_id": "DCOILWTICO",
       "value": 73.99,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-10",
       "series_id": "DCOILWTICO",
       "value": 77.27,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-13",
       "series_id": "DCOILWTICO",
       "value": 79.57,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-14",
       "series_id": "DCOILWTICO",
       "value": 78.2,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-15",
       "series_id": "DCOILWTICO",
       "value": 80.73,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-16",
       "series_id": "DCOILWTICO",
       "value": 79.35,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-17",
       "series_id": "DCOILWTICO",
       "value": 78.56,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-21",
       "series_id": "DCOILWTICO",
       "value": 76.79,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-22",
       "series_id": "DCOILWTICO",
       "value": 76.12,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-23",
       "series_id": "DCOILWTICO",
       "value": 75.03,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-24",
       "series_id": "DCOILWTICO",
       "value": 74.97,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-27",
       "series_id": "DCOILWTICO",
       "value": 73.51,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-28",
       "series_id": "DCOILWTICO",
       "value": 74.15,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-29",
       "series_id": "DCOILWTICO",
       "value": 72.94,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-30",
       "series_id": "DCOILWTICO",
       "value": 73.1,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-31",
       "series_id": "DCOILWTICO",
       "value": 72.84,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-03",
       "series_id": "DCOILWTICO",
       "value": 73.52,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-04",
       "series_id": "DCOILWTICO",
       "value": 73.04,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-05",
       "series_id": "DCOILWTICO",
       "value": 71.39,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-06",
       "series_id": "DCOILWTICO",
       "value": 70.97,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-07",
       "series_id": "DCOILWTICO",
       "value": 71.32,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-10",
       "series_id": "DCOILWTICO",
       "value": 72.73,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-11",
       "series_id": "DCOILWTICO",
       "value": 73.67,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-12",
       "series_id": "DCOILWTICO",
       "value": 71.72,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-13",
       "series_id": "DCOILWTICO",
       "value": 71.66,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-14",
       "series_id": "DCOILWTICO",
       "value": 71.05,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-18",
       "series_id": "DCOILWTICO",
       "value": 72.21,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-19",
       "series_id": "DCOILWTICO",
       "value": 72.58,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-20",
       "series_id": "DCOILWTICO",
       "value": 72.88,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-21",
       "series_id": "DCOILWTICO",
       "value": 70.72,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-24",
       "series_id": "DCOILWTICO",
       "value": 71.06,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-25",
       "series_id": "DCOILWTICO",
       "value": 69.15,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-26",
       "series_id": "DCOILWTICO",
       "value": 68.87,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-27",
       "series_id": "DCOILWTICO",
       "value": 70.62,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-28",
       "series_id": "DCOILWTICO",
       "value": 69.97,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-03",
       "series_id": "DCOILWTICO",
       "value": 68.63,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-04",
       "series_id": "DCOILWTICO",
       "value": 68.47,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-05",
       "series_id": "DCOILWTICO",
       "value": 66.58,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-06",
       "series_id": "DCOILWTICO",
       "value": 66.62,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-07",
       "series_id": "DCOILWTICO",
       "value": 67.29,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-10",
       "series_id": "DCOILWTICO",
       "value": 66.31,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-11",
       "series_id": "DCOILWTICO",
       "value": 66.52,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-12",
       "series_id": "DCOILWTICO",
       "value": 67.65,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-13",
       "series_id": "DCOILWTICO",
       "value": 66.82,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-14",
       "series_id": "DCOILWTICO",
       "value": 67.43,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-17",
       "series_id": "DCOILWTICO",
       "value": 67.84,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-18",
       "series_id": "DCOILWTICO",
       "value": 67.49,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-19",
       "series_id": "DCOILWTICO",
       "value": 67.4,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-20",
       "series_id": "DCOILWTICO",
       "value": 68.55,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-21",
       "series_id": "DCOILWTICO",
       "value": 68.52,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-24",
       "series_id": "DCOILWTICO",
       "value": 69.46,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-25",
       "series_id": "DCOILWTICO",
       "value": 69.48,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-26",
       "series_id": "DCOILWTICO",
       "value": 70.05,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-27",
       "series_id": "DCOILWTICO",
       "value": 70.3,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-28",
       "series_id": "DCOILWTICO",
       "value": 69.74,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-31",
       "series_id": "DCOILWTICO",
       "value": 71.87,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-01",
       "series_id": "DCOILWTICO",
       "value": 71.61,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-02",
       "series_id": "DCOILWTICO",
       "value": 72.12,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-03",
       "series_id": "DCOILWTICO",
       "value": 67.43,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-04",
       "series_id": "DCOILWTICO",
       "value": 62.42,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-07",
       "series_id": "DCOILWTICO",
       "value": 61.05,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-08",
       "series_id": "DCOILWTICO",
       "value": 60.04,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-09",
       "series_id": "DCOILWTICO",
       "value": 62.63,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-10",
       "series_id": "DCOILWTICO",
       "value": 60.57,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-11",
       "series_id": "DCOILWTICO",
       "value": 61.91,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-14",
       "series_id": "DCOILWTICO",
       "value": 61.99,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-15",
       "series_id": "DCOILWTICO",
       "value": 61.74,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-16",
       "series_id": "DCOILWTICO",
       "value": 62.88,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-17",
       "series_id": "DCOILWTICO",
       "value": 65.07,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-21",
       "series_id": "DCOILWTICO",
       "value": 63.48,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-22",
       "series_id": "DCOILWTICO",
       "value": 64.6,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-23",
       "series_id": "DCOILWTICO",
       "value": 62.64,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-24",
       "series_id": "DCOILWTICO",
       "value": 63.55,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-25",
       "series_id": "DCOILWTICO",
       "value": 63.85,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-28",
       "series_id": "DCOILWTICO",
       "value": 63.3,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-29",
       "series_id": "DCOILWTICO",
       "value": 61.84,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-30",
       "series_id": "DCOILWTICO",
       "value": 59.55,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-01",
       "series_id": "DCOILWTICO",
       "value": 60.59,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-02",
       "series_id": "DCOILWTICO",
       "value": 59.67,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-05",
       "series_id": "DCOILWTICO",
       "value": 58.5,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-06",
       "series_id": "DCOILWTICO",
       "value": 60.42,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-07",
       "series_id": "DCOILWTICO",
       "value": 59.42,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-08",
       "series_id": "DCOILWTICO",
       "value": 61.25,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-09",
       "series_id": "DCOILWTICO",
       "value": 62.37,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-12",
       "series_id": "DCOILWTICO",
       "value": 63.32,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-13",
       "series_id": "DCOILWTICO",
       "value": 65.04,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-14",
       "series_id": "DCOILWTICO",
       "value": 64.48,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-15",
       "series_id": "DCOILWTICO",
       "value": 63.03,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-16",
       "series_id": "DCOILWTICO",
       "value": 63.84,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-19",
       "series_id": "DCOILWTICO",
       "value": 63.98,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-20",
       "series_id": "DCOILWTICO",
       "value": 63.97,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-21",
       "series_id": "DCOILWTICO",
       "value": 62.93,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-22",
       "series_id": "DCOILWTICO",
       "value": 62.55,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-23",
       "series_id": "DCOILWTICO",
       "value": 62.89,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-27",
       "series_id": "DCOILWTICO",
       "value": 61.61,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-28",
       "series_id": "DCOILWTICO",
       "value": 62.54,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-29",
       "series_id": "DCOILWTICO",
       "value": 61.66,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-30",
       "series_id": "DCOILWTICO",
       "value": 61.46,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-02",
       "series_id": "DCOILWTICO",
       "value": 63.27,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-03",
       "series_id": "DCOILWTICO",
       "value": 64.1,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-04",
       "series_id": "DCOILWTICO",
       "value": 63.57,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-05",
       "series_id": "DCOILWTICO",
       "value": 64.06,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-06",
       "series_id": "DCOILWTICO",
       "value": 65.3,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-09",
       "series_id": "DCOILWTICO",
       "value": 65.99,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-10",
       "series_id": "DCOILWTICO",
       "value": 65.66,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-11",
       "series_id": "DCOILWTICO",
       "value": 68.91,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-12",
       "series_id": "DCOILWTICO",
       "value": 68.73,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-13",
       "series_id": "DCOILWTICO",
       "value": 73.84,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-16",
       "series_id": "DCOILWTICO",
       "value": 72.53,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-17",
       "series_id": "DCOILWTICO",
       "value": 75.62,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-18",
       "series_id": "DCOILWTICO",
       "value": 75.89,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-20",
       "series_id": "DCOILWTICO",
       "value": 75.72,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-23",
       "series_id": "DCOILWTICO",
       "value": 69.36,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-24",
       "series_id": "DCOILWTICO",
       "value": 65.45,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-25",
       "series_id": "DCOILWTICO",
       "value": 65.98,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-26",
       "series_id": "DCOILWTICO",
       "value": 66.44,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-27",
       "series_id": "DCOILWTICO",
       "value": 66.66,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-30",
       "series_id": "DCOILWTICO",
       "value": 66.3,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-01",
       "series_id": "DCOILWTICO",
       "value": 66.64,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-02",
       "series_id": "DCOILWTICO",
       "value": 68.66,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-03",
       "series_id": "DCOILWTICO",
       "value": 68.13,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-07",
       "series_id": "DCOILWTICO",
       "value": 69.16,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-08",
       "series_id": "DCOILWTICO",
       "value": 69.55,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-09",
       "series_id": "DCOILWTICO",
       "value": 69.61,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-10",
       "series_id": "DCOILWTICO",
       "value": 67.78,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-11",
       "series_id": "DCOILWTICO",
       "value": 69.63,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-14",
       "series_id": "DCOILWTICO",
       "value": 68.19,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-15",
       "series_id": "DCOILWTICO",
       "value": 67.76,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-16",
       "series_id": "DCOILWTICO",
       "value": 67.13,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-17",
       "series_id": "DCOILWTICO",
       "value": 68.76,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-18",
       "series_id": "DCOILWTICO",
       "value": 68.53,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-21",
       "series_id": "DCOILWTICO",
       "value": 68.39,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-22",
       "series_id": "DCOILWTICO",
       "value": 67.56,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-23",
       "series_id": "DCOILWTICO",
       "value": 66.05,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-24",
       "series_id": "DCOILWTICO",
       "value": 67.16,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-25",
       "series_id": "DCOILWTICO",
       "value": 66.38,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-28",
       "series_id": "DCOILWTICO",
       "value": 67.81,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-29",
       "series_id": "DCOILWTICO",
       "value": 70.27,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-30",
       "series_id": "DCOILWTICO",
       "value": 71.09,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-31",
       "series_id": "DCOILWTICO",
       "value": 70.36,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-01",
       "series_id": "DCOILWTICO",
       "value": 68.39,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-04",
       "series_id": "DCOILWTICO",
       "value": 67.33,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-05",
       "series_id": "DCOILWTICO",
       "value": 66.2,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-06",
       "series_id": "DCOILWTICO",
       "value": 65.38,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-07",
       "series_id": "DCOILWTICO",
       "value": 64.9,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-08",
       "series_id": "DCOILWTICO",
       "value": 64.94,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-11",
       "series_id": "DCOILWTICO",
       "value": 65.03,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-12",
       "series_id": "DCOILWTICO",
       "value": 64.22,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-13",
       "series_id": "DCOILWTICO",
       "value": 63.68,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-14",
       "series_id": "DCOILWTICO",
       "value": 64.99,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-15",
       "series_id": "DCOILWTICO",
       "value": 63.78,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-18",
       "series_id": "DCOILWTICO",
       "value": 64.51,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-19",
       "series_id": "DCOILWTICO",
       "value": 63.38,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-20",
       "series_id": "DCOILWTICO",
       "value": 64.19,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-21",
       "series_id": "DCOILWTICO",
       "value": 64.56,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-22",
       "series_id": "DCOILWTICO",
       "value": 64.08,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-25",
       "series_id": "DCOILWTICO",
       "value": 65.18,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-26",
       "series_id": "DCOILWTICO",
       "value": 63.6,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-27",
       "series_id": "DCOILWTICO",
       "value": 64.49,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-28",
       "series_id": "DCOILWTICO",
       "value": 64.96,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-29",
       "series_id": "DCOILWTICO",
       "value": 64.36,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-02",
       "series_id": "DCOILWTICO",
       "value": 65.95,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-03",
       "series_id": "DCOILWTICO",
       "value": 64.36,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-04",
       "series_id": "DCOILWTICO",
       "value": 63.81,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-05",
       "series_id": "DCOILWTICO",
       "value": 62.22,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-08",
       "series_id": "DCOILWTICO",
       "value": 62.6,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-09",
       "series_id": "DCOILWTICO",
       "value": 62.97,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-10",
       "series_id": "DCOILWTICO",
       "value": 64.01,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-11",
       "series_id": "DCOILWTICO",
       "value": 62.71,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-12",
       "series_id": "DCOILWTICO",
       "value": 63.02,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-15",
       "series_id": "DCOILWTICO",
       "value": 63.66,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-16",
       "series_id": "DCOILWTICO",
       "value": 64.89,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-17",
       "series_id": "DCOILWTICO",
       "value": 64.41,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-18",
       "series_id": "DCOILWTICO",
       "value": 63.91,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-19",
       "series_id": "DCOILWTICO",
       "value": 63.02,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-22",
       "series_id": "DCOILWTICO",
       "value": 62.99,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-23",
       "series_id": "DCOILWTICO",
       "value": 63.76,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-24",
       "series_id": "DCOILWTICO",
       "value": 65.4,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-25",
       "series_id": "DCOILWTICO",
       "value": 65.51,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-26",
       "series_id": "DCOILWTICO",
       "value": 66.5,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-29",
       "series_id": "DCOILWTICO",
       "value": 64.27,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-30",
       "series_id": "DCOILWTICO",
       "value": 63.17,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-01",
       "series_id": "DCOILWTICO",
       "value": 62.59,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-02",
       "series_id": "DCOILWTICO",
       "value": 61.28,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-03",
       "series_id": "DCOILWTICO",
       "value": 61.65,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-06",
       "series_id": "DCOILWTICO",
       "value": 62.49,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-07",
       "series_id": "DCOILWTICO",
       "value": 62.52,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-08",
       "series_id": "DCOILWTICO",
       "value": 63.37,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-09",
       "series_id": "DCOILWTICO",
       "value": 62.36,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-10",
       "series_id": "DCOILWTICO",
       "value": 59.75,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-14",
       "series_id": "DCOILWTICO",
       "value": 59.52,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-15",
       "series_id": "DCOILWTICO",
       "value": 59.08,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-16",
       "series_id": "DCOILWTICO",
       "value": 58.29,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-17",
       "series_id": "DCOILWTICO",
       "value": 58.3,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-20",
       "series_id": "DCOILWTICO",
       "value": 58.34,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-21",
       "series_id": "DCOILWTICO",
       "value": 58.66,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-22",
       "series_id": "DCOILWTICO",
       "value": 59.3,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-23",
       "series_id": "DCOILWTICO",
       "value": 62.44,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-24",
       "series_id": "DCOILWTICO",
       "value": 62.27,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-27",
       "series_id": "DCOILWTICO",
       "value": 62.13,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-28",
       "series_id": "DCOILWTICO",
       "value": 60.97,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-29",
       "series_id": "DCOILWTICO",
       "value": 61.26,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-30",
       "series_id": "DCOILWTICO",
       "value": 61.36,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-31",
       "series_id": "DCOILWTICO",
       "value": 61.75,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-03",
       "series_id": "DCOILWTICO",
       "value": 61.79,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-04",
       "series_id": "DCOILWTICO",
       "value": 61.38,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-05",
       "series_id": "DCOILWTICO",
       "value": 60.4,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-06",
       "series_id": "DCOILWTICO",
       "value": 60.24,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-07",
       "series_id": "DCOILWTICO",
       "value": 60.54,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-10",
       "series_id": "DCOILWTICO",
       "value": 60.94,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-12",
       "series_id": "DCOILWTICO",
       "value": 59.3,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-13",
       "series_id": "DCOILWTICO",
       "value": 59.54,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-14",
       "series_id": "DCOILWTICO",
       "value": 60.87,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-17",
       "series_id": "DCOILWTICO",
       "value": 60.66,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-18",
       "series_id": "DCOILWTICO",
       "value": 61.51,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-19",
       "series_id": "DCOILWTICO",
       "value": 60.27,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-20",
       "series_id": "DCOILWTICO",
       "value": 60.07,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-21",
       "series_id": "DCOILWTICO",
       "value": 58.86,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-24",
       "series_id": "DCOILWTICO",
       "value": 59.11,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-25",
       "series_id": "DCOILWTICO",
       "value": 58.25,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-26",
       "series_id": "DCOILWTICO",
       "value": 58.81,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-28",
       "series_id": "DCOILWTICO",
       "value": 58.58,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-12-01",
       "series_id": "DCOILWTICO",
       "value": 59.47,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-12-02",
       "series_id": "DCOILWTICO",
       "value": 58.81,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-12-03",
       "series_id": "DCOILWTICO",
       "value": 59.09,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-12-04",
       "series_id": "DCOILWTICO",
       "value": 59.82,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-12-05",
       "series_id": "DCOILWTICO",
       "value": 60.23,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-12-08",
       "series_id": "DCOILWTICO",
       "value": 59.04,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-12-09",
       "series_id": "DCOILWTICO",
       "value": 58.4,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-12-10",
       "series_id": "DCOILWTICO",
       "value": 58.67,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-12-11",
       "series_id": "DCOILWTICO",
       "value": 57.76,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-12-12",
       "series_id": "DCOILWTICO",
       "value": 57.61,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-12-15",
       "series_id": "DCOILWTICO",
       "value": 56.97,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     }
   ],
   "natural_gas": [
@@ -20503,1737 +20503,1737 @@
       "date": "2024-12-17",
       "series_id": "DHHNGSP",
       "value": 2.85,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2024-12-18",
       "series_id": "DHHNGSP",
       "value": 3.01,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2024-12-19",
       "series_id": "DHHNGSP",
       "value": 3.15,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2024-12-20",
       "series_id": "DHHNGSP",
       "value": 3.1,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2024-12-23",
       "series_id": "DHHNGSP",
       "value": 2.89,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2024-12-24",
       "series_id": "DHHNGSP",
       "value": 2.95,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2024-12-26",
       "series_id": "DHHNGSP",
       "value": 2.96,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2024-12-27",
       "series_id": "DHHNGSP",
       "value": 2.91,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2024-12-30",
       "series_id": "DHHNGSP",
       "value": 3.39,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2024-12-31",
       "series_id": "DHHNGSP",
       "value": 3.4,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-02",
       "series_id": "DHHNGSP",
       "value": 3.65,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-03",
       "series_id": "DHHNGSP",
       "value": 3.4,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-06",
       "series_id": "DHHNGSP",
       "value": 4.05,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-07",
       "series_id": "DHHNGSP",
       "value": 3.8,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-08",
       "series_id": "DHHNGSP",
       "value": 3.75,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-09",
       "series_id": "DHHNGSP",
       "value": 3.94,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-10",
       "series_id": "DHHNGSP",
       "value": 4.13,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-13",
       "series_id": "DHHNGSP",
       "value": 4.4,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-14",
       "series_id": "DHHNGSP",
       "value": 4.32,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-15",
       "series_id": "DHHNGSP",
       "value": 4.45,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-16",
       "series_id": "DHHNGSP",
       "value": 4.3,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-17",
       "series_id": "DHHNGSP",
       "value": 9.86,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-21",
       "series_id": "DHHNGSP",
       "value": 4.4,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-22",
       "series_id": "DHHNGSP",
       "value": 3.91,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-23",
       "series_id": "DHHNGSP",
       "value": 3.91,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-24",
       "series_id": "DHHNGSP",
       "value": 3.84,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-27",
       "series_id": "DHHNGSP",
       "value": 3.71,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-28",
       "series_id": "DHHNGSP",
       "value": 3.4,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-29",
       "series_id": "DHHNGSP",
       "value": 3.38,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-30",
       "series_id": "DHHNGSP",
       "value": 3.12,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-01-31",
       "series_id": "DHHNGSP",
       "value": 2.93,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-03",
       "series_id": "DHHNGSP",
       "value": 3.3,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-04",
       "series_id": "DHHNGSP",
       "value": 3.25,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-05",
       "series_id": "DHHNGSP",
       "value": 3.22,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-06",
       "series_id": "DHHNGSP",
       "value": 3.31,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-07",
       "series_id": "DHHNGSP",
       "value": 3.32,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-10",
       "series_id": "DHHNGSP",
       "value": 3.48,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-11",
       "series_id": "DHHNGSP",
       "value": 3.65,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-12",
       "series_id": "DHHNGSP",
       "value": 3.97,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-13",
       "series_id": "DHHNGSP",
       "value": 4.43,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-14",
       "series_id": "DHHNGSP",
       "value": 4.6,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-18",
       "series_id": "DHHNGSP",
       "value": 6.4,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-19",
       "series_id": "DHHNGSP",
       "value": 7.15,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-20",
       "series_id": "DHHNGSP",
       "value": 5.62,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-21",
       "series_id": "DHHNGSP",
       "value": 4.43,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-24",
       "series_id": "DHHNGSP",
       "value": 3.86,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-25",
       "series_id": "DHHNGSP",
       "value": 3.88,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-26",
       "series_id": "DHHNGSP",
       "value": 3.9,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-27",
       "series_id": "DHHNGSP",
       "value": 3.91,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-02-28",
       "series_id": "DHHNGSP",
       "value": 3.91,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-03",
       "series_id": "DHHNGSP",
       "value": 3.8,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-04",
       "series_id": "DHHNGSP",
       "value": 4.39,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-05",
       "series_id": "DHHNGSP",
       "value": 4.4,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-06",
       "series_id": "DHHNGSP",
       "value": 4.39,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-07",
       "series_id": "DHHNGSP",
       "value": 4.39,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-10",
       "series_id": "DHHNGSP",
       "value": 4.23,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-11",
       "series_id": "DHHNGSP",
       "value": 4.57,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-12",
       "series_id": "DHHNGSP",
       "value": 4.18,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-13",
       "series_id": "DHHNGSP",
       "value": 3.89,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-14",
       "series_id": "DHHNGSP",
       "value": 3.89,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-17",
       "series_id": "DHHNGSP",
       "value": 4.15,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-18",
       "series_id": "DHHNGSP",
       "value": 4.17,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-19",
       "series_id": "DHHNGSP",
       "value": 4.21,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-20",
       "series_id": "DHHNGSP",
       "value": 4.23,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-21",
       "series_id": "DHHNGSP",
       "value": 3.93,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-24",
       "series_id": "DHHNGSP",
       "value": 4.03,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-25",
       "series_id": "DHHNGSP",
       "value": 3.94,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-26",
       "series_id": "DHHNGSP",
       "value": 3.85,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-27",
       "series_id": "DHHNGSP",
       "value": 3.88,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-28",
       "series_id": "DHHNGSP",
       "value": 3.89,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-03-31",
       "series_id": "DHHNGSP",
       "value": 4.11,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-01",
       "series_id": "DHHNGSP",
       "value": 3.96,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-02",
       "series_id": "DHHNGSP",
       "value": 4.04,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-03",
       "series_id": "DHHNGSP",
       "value": 4.21,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-04",
       "series_id": "DHHNGSP",
       "value": 4.04,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-07",
       "series_id": "DHHNGSP",
       "value": 3.97,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-08",
       "series_id": "DHHNGSP",
       "value": 3.85,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-09",
       "series_id": "DHHNGSP",
       "value": 3.42,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-10",
       "series_id": "DHHNGSP",
       "value": 3.7,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-11",
       "series_id": "DHHNGSP",
       "value": 3.44,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-14",
       "series_id": "DHHNGSP",
       "value": 3.57,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-15",
       "series_id": "DHHNGSP",
       "value": 3.27,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-16",
       "series_id": "DHHNGSP",
       "value": 3.25,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-17",
       "series_id": "DHHNGSP",
       "value": 2.94,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-21",
       "series_id": "DHHNGSP",
       "value": 3.16,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-22",
       "series_id": "DHHNGSP",
       "value": 3.12,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-23",
       "series_id": "DHHNGSP",
       "value": 3.12,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-24",
       "series_id": "DHHNGSP",
       "value": 2.87,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-25",
       "series_id": "DHHNGSP",
       "value": 2.71,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-28",
       "series_id": "DHHNGSP",
       "value": 2.96,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-29",
       "series_id": "DHHNGSP",
       "value": 3.17,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-04-30",
       "series_id": "DHHNGSP",
       "value": 3.12,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-01",
       "series_id": "DHHNGSP",
       "value": 3.08,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-02",
       "series_id": "DHHNGSP",
       "value": 3.1,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-05",
       "series_id": "DHHNGSP",
       "value": 3.26,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-06",
       "series_id": "DHHNGSP",
       "value": 3.08,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-07",
       "series_id": "DHHNGSP",
       "value": 3.18,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-08",
       "series_id": "DHHNGSP",
       "value": 3.23,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-09",
       "series_id": "DHHNGSP",
       "value": 3.22,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-12",
       "series_id": "DHHNGSP",
       "value": 3.19,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-13",
       "series_id": "DHHNGSP",
       "value": 3.27,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-14",
       "series_id": "DHHNGSP",
       "value": 3.31,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-15",
       "series_id": "DHHNGSP",
       "value": 3.2,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-16",
       "series_id": "DHHNGSP",
       "value": 3.01,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-19",
       "series_id": "DHHNGSP",
       "value": 2.96,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-20",
       "series_id": "DHHNGSP",
       "value": 3.15,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-21",
       "series_id": "DHHNGSP",
       "value": 3.2,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-22",
       "series_id": "DHHNGSP",
       "value": 3.0,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-23",
       "series_id": "DHHNGSP",
       "value": 2.93,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-27",
       "series_id": "DHHNGSP",
       "value": 3.2,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-28",
       "series_id": "DHHNGSP",
       "value": 3.09,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-29",
       "series_id": "DHHNGSP",
       "value": 2.97,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-05-30",
       "series_id": "DHHNGSP",
       "value": 2.86,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-02",
       "series_id": "DHHNGSP",
       "value": 3.0,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-03",
       "series_id": "DHHNGSP",
       "value": 2.84,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-04",
       "series_id": "DHHNGSP",
       "value": 2.8,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-05",
       "series_id": "DHHNGSP",
       "value": 2.86,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-06",
       "series_id": "DHHNGSP",
       "value": 2.68,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-09",
       "series_id": "DHHNGSP",
       "value": 3.13,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-10",
       "series_id": "DHHNGSP",
       "value": 2.79,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-11",
       "series_id": "DHHNGSP",
       "value": 2.73,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-12",
       "series_id": "DHHNGSP",
       "value": 2.9,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-13",
       "series_id": "DHHNGSP",
       "value": 2.65,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-16",
       "series_id": "DHHNGSP",
       "value": 2.9,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-17",
       "series_id": "DHHNGSP",
       "value": 2.9,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-18",
       "series_id": "DHHNGSP",
       "value": 3.43,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-20",
       "series_id": "DHHNGSP",
       "value": 3.09,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-23",
       "series_id": "DHHNGSP",
       "value": 3.5,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-24",
       "series_id": "DHHNGSP",
       "value": 3.3,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-25",
       "series_id": "DHHNGSP",
       "value": 3.26,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-26",
       "series_id": "DHHNGSP",
       "value": 3.23,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-27",
       "series_id": "DHHNGSP",
       "value": 3.23,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-06-30",
       "series_id": "DHHNGSP",
       "value": 3.26,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-01",
       "series_id": "DHHNGSP",
       "value": 3.14,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-02",
       "series_id": "DHHNGSP",
       "value": 3.1,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-03",
       "series_id": "DHHNGSP",
       "value": 3.24,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-07",
       "series_id": "DHHNGSP",
       "value": 3.24,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-08",
       "series_id": "DHHNGSP",
       "value": 3.2,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-09",
       "series_id": "DHHNGSP",
       "value": 3.08,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-10",
       "series_id": "DHHNGSP",
       "value": 3.11,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-11",
       "series_id": "DHHNGSP",
       "value": 3.22,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-14",
       "series_id": "DHHNGSP",
       "value": 3.21,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-15",
       "series_id": "DHHNGSP",
       "value": 3.31,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-16",
       "series_id": "DHHNGSP",
       "value": 3.42,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-17",
       "series_id": "DHHNGSP",
       "value": 3.52,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-18",
       "series_id": "DHHNGSP",
       "value": 3.5,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-21",
       "series_id": "DHHNGSP",
       "value": 3.5,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-22",
       "series_id": "DHHNGSP",
       "value": 3.16,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-23",
       "series_id": "DHHNGSP",
       "value": 3.08,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-24",
       "series_id": "DHHNGSP",
       "value": 3.13,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-25",
       "series_id": "DHHNGSP",
       "value": 3.1,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-28",
       "series_id": "DHHNGSP",
       "value": 3.12,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-29",
       "series_id": "DHHNGSP",
       "value": 3.08,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-30",
       "series_id": "DHHNGSP",
       "value": 2.98,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-07-31",
       "series_id": "DHHNGSP",
       "value": 2.99,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-01",
       "series_id": "DHHNGSP",
       "value": 3.0,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-04",
       "series_id": "DHHNGSP",
       "value": 2.89,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-05",
       "series_id": "DHHNGSP",
       "value": 2.98,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-06",
       "series_id": "DHHNGSP",
       "value": 3.02,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-07",
       "series_id": "DHHNGSP",
       "value": 3.05,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-08",
       "series_id": "DHHNGSP",
       "value": 3.03,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-11",
       "series_id": "DHHNGSP",
       "value": 3.05,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-12",
       "series_id": "DHHNGSP",
       "value": 2.93,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-13",
       "series_id": "DHHNGSP",
       "value": 2.95,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-14",
       "series_id": "DHHNGSP",
       "value": 2.78,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-15",
       "series_id": "DHHNGSP",
       "value": 2.98,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-18",
       "series_id": "DHHNGSP",
       "value": 2.96,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-19",
       "series_id": "DHHNGSP",
       "value": 2.87,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-20",
       "series_id": "DHHNGSP",
       "value": 2.8,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-21",
       "series_id": "DHHNGSP",
       "value": 2.88,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-22",
       "series_id": "DHHNGSP",
       "value": 2.76,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-25",
       "series_id": "DHHNGSP",
       "value": 2.76,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-26",
       "series_id": "DHHNGSP",
       "value": 2.82,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-27",
       "series_id": "DHHNGSP",
       "value": 2.88,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-28",
       "series_id": "DHHNGSP",
       "value": 2.9,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-08-29",
       "series_id": "DHHNGSP",
       "value": 2.88,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-02",
       "series_id": "DHHNGSP",
       "value": 2.7,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-03",
       "series_id": "DHHNGSP",
       "value": 3.0,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-04",
       "series_id": "DHHNGSP",
       "value": 3.11,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-05",
       "series_id": "DHHNGSP",
       "value": 3.05,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-08",
       "series_id": "DHHNGSP",
       "value": 3.1,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-09",
       "series_id": "DHHNGSP",
       "value": 3.12,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-10",
       "series_id": "DHHNGSP",
       "value": 2.89,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-11",
       "series_id": "DHHNGSP",
       "value": 2.81,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-12",
       "series_id": "DHHNGSP",
       "value": 2.86,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-15",
       "series_id": "DHHNGSP",
       "value": 3.0,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-16",
       "series_id": "DHHNGSP",
       "value": 3.07,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-17",
       "series_id": "DHHNGSP",
       "value": 3.19,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-18",
       "series_id": "DHHNGSP",
       "value": 3.1,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-19",
       "series_id": "DHHNGSP",
       "value": 2.89,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-22",
       "series_id": "DHHNGSP",
       "value": 2.9,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-23",
       "series_id": "DHHNGSP",
       "value": 2.86,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-24",
       "series_id": "DHHNGSP",
       "value": 2.88,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-25",
       "series_id": "DHHNGSP",
       "value": 2.98,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-26",
       "series_id": "DHHNGSP",
       "value": 2.9,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-29",
       "series_id": "DHHNGSP",
       "value": 2.93,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-09-30",
       "series_id": "DHHNGSP",
       "value": 3.12,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-01",
       "series_id": "DHHNGSP",
       "value": 3.24,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-02",
       "series_id": "DHHNGSP",
       "value": 3.32,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-03",
       "series_id": "DHHNGSP",
       "value": 3.19,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-06",
       "series_id": "DHHNGSP",
       "value": 3.32,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-07",
       "series_id": "DHHNGSP",
       "value": 3.32,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-08",
       "series_id": "DHHNGSP",
       "value": 3.35,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-09",
       "series_id": "DHHNGSP",
       "value": 3.25,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-10",
       "series_id": "DHHNGSP",
       "value": 2.9,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-13",
       "series_id": "DHHNGSP",
       "value": 2.9,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-14",
       "series_id": "DHHNGSP",
       "value": 2.83,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-15",
       "series_id": "DHHNGSP",
       "value": 2.79,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-16",
       "series_id": "DHHNGSP",
       "value": 2.82,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-17",
       "series_id": "DHHNGSP",
       "value": 2.65,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-20",
       "series_id": "DHHNGSP",
       "value": 2.99,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-21",
       "series_id": "DHHNGSP",
       "value": 3.28,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-22",
       "series_id": "DHHNGSP",
       "value": 3.45,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-23",
       "series_id": "DHHNGSP",
       "value": 3.34,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-24",
       "series_id": "DHHNGSP",
       "value": 3.21,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-27",
       "series_id": "DHHNGSP",
       "value": 3.3,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-28",
       "series_id": "DHHNGSP",
       "value": 3.44,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-29",
       "series_id": "DHHNGSP",
       "value": 3.36,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-30",
       "series_id": "DHHNGSP",
       "value": 3.46,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-10-31",
       "series_id": "DHHNGSP",
       "value": 3.57,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-03",
       "series_id": "DHHNGSP",
       "value": 3.37,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-04",
       "series_id": "DHHNGSP",
       "value": 3.35,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-05",
       "series_id": "DHHNGSP",
       "value": 3.51,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-06",
       "series_id": "DHHNGSP",
       "value": 3.71,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-07",
       "series_id": "DHHNGSP",
       "value": 3.76,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-10",
       "series_id": "DHHNGSP",
       "value": 3.8,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-12",
       "series_id": "DHHNGSP",
       "value": 3.6,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-13",
       "series_id": "DHHNGSP",
       "value": 3.6,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-14",
       "series_id": "DHHNGSP",
       "value": 3.49,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-17",
       "series_id": "DHHNGSP",
       "value": 3.71,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-18",
       "series_id": "DHHNGSP",
       "value": 3.7,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-19",
       "series_id": "DHHNGSP",
       "value": 3.94,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-20",
       "series_id": "DHHNGSP",
       "value": 3.97,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-21",
       "series_id": "DHHNGSP",
       "value": 4.13,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-24",
       "series_id": "DHHNGSP",
       "value": 4.15,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-25",
       "series_id": "DHHNGSP",
       "value": 4.12,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-11-26",
       "series_id": "DHHNGSP",
       "value": 4.59,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-12-01",
       "series_id": "DHHNGSP",
       "value": 5.08,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-12-02",
       "series_id": "DHHNGSP",
       "value": 4.83,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-12-03",
       "series_id": "DHHNGSP",
       "value": 4.86,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-12-04",
       "series_id": "DHHNGSP",
       "value": 4.89,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-12-05",
       "series_id": "DHHNGSP",
       "value": 5.19,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-12-08",
       "series_id": "DHHNGSP",
       "value": 5.19,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-12-09",
       "series_id": "DHHNGSP",
       "value": 4.76,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-12-10",
       "series_id": "DHHNGSP",
       "value": 4.62,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-12-11",
       "series_id": "DHHNGSP",
       "value": 4.35,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-12-12",
       "series_id": "DHHNGSP",
       "value": 4.07,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     },
     {
       "date": "2025-12-15",
       "series_id": "DHHNGSP",
       "value": 3.9,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-18",
+      "realtime_end": "2025-12-18"
     }
   ],
   "copper": [
