@@ -1,7 +1,27 @@
 {
-  "updated": "2025-12-23 11:13:26",
+  "updated": "2025-12-24 11:13:22",
   "total_articles": 50,
   "articles": [
+    {
+      "source": "Bloomberg Markets",
+      "title": "Why 2026 Is Poised to Be Another Rocky Year for Global Trade",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-24/trump-tariffs-usmca-global-trade-poised-for-rocky-2026",
+      "description": "The global trading system, which is finishing up one of its most transformational years of the past century, heads into another facing more challenges to stability and growth.",
+      "content": "The global trading system, which is finishing up one of its most transformational years of the past century, heads into another facing more challenges to stability and growth.",
+      "pub_date": "Wed, 24 Dec 2025 10:00:01 GMT",
+      "id": "2ab1a5a31e08",
+      "score": 7,
+      "score_details": {
+        "relevance": 7,
+        "news_value": 8,
+        "quality": 7,
+        "overall": 7,
+        "reason": "This article discusses global trade challenges that could impact the ski industry's supply chains, travel, and economic conditions, making it relevant to the ski business news feed. The reporting from Bloomberg Markets provides substantive analysis and industry context, though it is not directly focused on the ski industry."
+      },
+      "approved_date": "2025-12-24",
+      "category": "resort-operations",
+      "secondary_categories": []
+    },
     {
       "source": "Financial Times",
       "title": "The worried investor\u2019s guide to 2026",
@@ -886,25 +906,6 @@
       },
       "approved_date": "2025-12-08",
       "category": "business-investment"
-    },
-    {
-      "source": "Summit Daily News",
-      "title": "Summit County resorts roll out new terrain ahead of snowy weekend forecast",
-      "url": "https://www.summitdaily.com/news/summit-county-resorts-roll-out-new-terrain-ahead-of-snowy-weekend-forecast/",
-      "description": "Editor\u2019s Note: Each Thursday throughout the winter, the Summit Daily News will provide a terrain update that will inform skiers and riders on what trails are open at resorts near Summit County before they head...",
-      "content": "Editor\u2019s Note: Each Thursday throughout the winter, the Summit Daily News will provide a terrain update that will inform skiers and riders on what trails are open at resorts near Summit County before they head out to the slopes. The snow is finally starting to fall at Summit County\u2019s ski resorts . In typical Colorado fashion, Mother Nature is making up for the slow start by consistently delivering a few inches of fresh snow on a near-daily basis throughout the past week. With another storm system expected to bring potentially heavy snowfall this weekend , ski areas are dropping ropes on new terrain and preparing additional trails to come online in the days ahead. Keystone opens up North Peak for the season Keystone Resort once again leads the weekly terrain update with the announcement that North Peak will open for the season on Friday, Dec. 5. Skiers and riders can take Mozart down or take the Outpost Gondola over to North Peak to access the Prospector and the Alamo trails. The trails",
-      "pub_date": "Fri, 05 Dec 2025 00:46:15 +0000",
-      "id": "45c07054ee62",
-      "score": 7,
-      "score_details": {
-        "relevance": 8,
-        "news_value": 7,
-        "quality": 7,
-        "overall": 7,
-        "reason": "This article provides timely, relevant information about new terrain openings and snowfall forecasts at Summit County ski resorts, which would be valuable for a ski business news feed. While it contains some promotional content, the overall reporting appears objective and informative."
-      },
-      "approved_date": "2025-12-04",
-      "category": "weather-snow"
     }
   ]
 }
