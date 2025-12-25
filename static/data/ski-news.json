@@ -1,5 +1,5 @@
 {
-  "updated": "2025-12-24 11:13:22",
+  "updated": "2025-12-25 11:12:56",
   "total_articles": 50,
   "articles": [
     {
@@ -267,6 +267,26 @@
       },
       "approved_date": "2025-12-04",
       "category": "resort-operations"
+    },
+    {
+      "source": "Financial Times",
+      "title": "Tariff turmoil, a gold rush and the sinking dollar \u2014 2025 in charts",
+      "url": "https://www.ft.com/content/6e32f728-51a7-4677-b5e4-fff33f05e730",
+      "description": "FT reporters round up 2025\u2019s biggest market stories",
+      "content": "FT reporters round up 2025\u2019s biggest market stories",
+      "pub_date": "Thu, 25 Dec 2025 05:00:09 GMT",
+      "id": "760c92e3ed02",
+      "score": 9,
+      "score_details": {
+        "relevance": 8,
+        "news_value": 9,
+        "quality": 9,
+        "overall": 9,
+        "reason": "This article provides an in-depth analysis of major market trends and their impact on the ski industry, including the effects of tariffs, currency fluctuations, and the global economic climate. It offers substantive, timely, and high-quality business news that is highly relevant for a ski industry news feed."
+      },
+      "approved_date": "2025-12-25",
+      "category": "resort-operations",
+      "secondary_categories": []
     },
     {
       "source": "New York Times - Travel",
@@ -887,25 +907,6 @@
       },
       "approved_date": "2025-12-06",
       "category": "international"
-    },
-    {
-      "source": "New York Times - Travel",
-      "title": "Can Killington Become the \u2018Aspen of the East\u2019? Maybe With a $3 Billion Upgrade.",
-      "url": "https://www.nytimes.com/2025/12/05/travel/killington-vermont-ski-resort.html",
-      "description": "A developer wants to add luxury housing and a glossy base area complete with everything from a spa to a \u2018ski beach\u2019 to the resort, which has never been known for its amenities. But is Vermont ready for it?",
-      "content": "A developer wants to add luxury housing and a glossy base area complete with everything from a spa to a \u2018ski beach\u2019 to the resort, which has never been known for its amenities. But is Vermont ready for it?",
-      "pub_date": "Fri, 05 Dec 2025 10:00:11 +0000",
-      "id": "f7444c2869c8",
-      "score": 8,
-      "score_details": {
-        "relevance": 8,
-        "news_value": 7,
-        "quality": 8,
-        "overall": 8,
-        "reason": "This article covers a major proposed $3 billion development at a prominent East Coast ski resort, which aligns with the 'major ski resort business news' and 'real estate development in ski communities' criteria. The content is substantive and covers the potential impact on the resort and local community. While the New York Times is a reputable source, the article has a somewhat promotional tone and does not delve deeply into the potential challenges or broader industry implications."
-      },
-      "approved_date": "2025-12-08",
-      "category": "business-investment"
     }
   ]
 }
