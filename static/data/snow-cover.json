@@ -1,5 +1,5 @@
 {
-  "updated": "2025-12-25 11:19 UTC",
+  "updated": "2025-12-25 23:21 UTC",
   "data_sources": {
     "usa": "NOHRSC",
     "canada": "Derived (NOHRSC ratio)",
@@ -7,39 +7,39 @@
     "copernicus_available": false
   },
   "combined": {
-    "cover": 31.4,
-    "change": "+3.5%",
-    "context": "Approximately 31% of North American land area currently has visible snow cover",
+    "cover": 29.7,
+    "change": "+1.1%",
+    "context": "Approximately 30% of North American land area currently has visible snow cover",
     "temperature": {
-      "avg_temp_c": -1.9,
-      "avg_temp_f": 28.5,
-      "avg_anomaly_c": 0.4,
-      "avg_anomaly_f": 0.7
+      "avg_temp_c": -0.9,
+      "avg_temp_f": 30.4,
+      "avg_anomaly_c": 0.8,
+      "avg_anomaly_f": 1.5
     }
   },
   "skiMarkets": {
     "usa": {
-      "cover": 27.5,
-      "avg_temp_c": 2.8,
-      "avg_temp_f": 37.0,
-      "avg_anomaly_c": 1.6,
-      "avg_anomaly_f": 2.8,
+      "cover": 15.0,
+      "avg_temp_c": 6.2,
+      "avg_temp_f": 43.1,
+      "avg_anomaly_c": 5.3,
+      "avg_anomaly_f": 9.5,
       "metro_count": 8
     },
     "canada": {
-      "cover": 59.2,
-      "avg_temp_c": -8.9,
-      "avg_temp_f": 15.9,
-      "avg_anomaly_c": -3.7,
-      "avg_anomaly_f": -6.6,
+      "cover": 64.2,
+      "avg_temp_c": -9.9,
+      "avg_temp_f": 14.1,
+      "avg_anomaly_c": -5.4,
+      "avg_anomaly_f": -9.6,
       "metro_count": 6
     }
   },
   "usa": {
-    "cover": 20.0,
-    "change": "+3.5%",
-    "areaSqMi": 759400,
-    "areaSqKm": 1966838,
+    "cover": 18.9,
+    "change": "+1.1%",
+    "areaSqMi": 717633,
+    "areaSqKm": 1858662,
     "avgDepthInches": 3,
     "avgDepthCm": 7.6,
     "priorYearAvgDepthInches": 1.4,
@@ -47,123 +47,123 @@
     "history": [
       {
         "date": "2025-11-26",
-        "value": 16.0
+        "value": 14.5
       },
       {
         "date": "2025-11-27",
-        "value": 12.9
-      },
-      {
-        "date": "2025-11-28",
-        "value": 12.4
-      },
-      {
-        "date": "2025-11-29",
-        "value": 15.8
-      },
-      {
-        "date": "2025-11-30",
         "value": 13.3
       },
       {
+        "date": "2025-11-28",
+        "value": 13.7
+      },
+      {
+        "date": "2025-11-29",
+        "value": 16.2
+      },
+      {
+        "date": "2025-11-30",
+        "value": 16.6
+      },
+      {
         "date": "2025-12-01",
-        "value": 15.7
+        "value": 14.9
       },
       {
         "date": "2025-12-02",
-        "value": 15.1
+        "value": 12.4
       },
       {
         "date": "2025-12-03",
-        "value": 14.8
+        "value": 13.8
       },
       {
         "date": "2025-12-04",
-        "value": 13.4
+        "value": 14.2
       },
       {
         "date": "2025-12-05",
-        "value": 14.3
-      },
-      {
-        "date": "2025-12-06",
-        "value": 14.0
-      },
-      {
-        "date": "2025-12-07",
-        "value": 13.9
-      },
-      {
-        "date": "2025-12-08",
-        "value": 16.5
-      },
-      {
-        "date": "2025-12-09",
-        "value": 17.3
-      },
-      {
-        "date": "2025-12-10",
-        "value": 18.2
-      },
-      {
-        "date": "2025-12-11",
-        "value": 17.7
-      },
-      {
-        "date": "2025-12-12",
-        "value": 18.4
-      },
-      {
-        "date": "2025-12-13",
-        "value": 18.1
-      },
-      {
-        "date": "2025-12-14",
-        "value": 16.4
-      },
-      {
-        "date": "2025-12-15",
-        "value": 19.4
-      },
-      {
-        "date": "2025-12-16",
         "value": 17.2
       },
       {
+        "date": "2025-12-06",
+        "value": 17.8
+      },
+      {
+        "date": "2025-12-07",
+        "value": 15.7
+      },
+      {
+        "date": "2025-12-08",
+        "value": 13.7
+      },
+      {
+        "date": "2025-12-09",
+        "value": 14.3
+      },
+      {
+        "date": "2025-12-10",
+        "value": 16.8
+      },
+      {
+        "date": "2025-12-11",
+        "value": 18.6
+      },
+      {
+        "date": "2025-12-12",
+        "value": 15.1
+      },
+      {
+        "date": "2025-12-13",
+        "value": 15.2
+      },
+      {
+        "date": "2025-12-14",
+        "value": 16.3
+      },
+      {
+        "date": "2025-12-15",
+        "value": 17.5
+      },
+      {
+        "date": "2025-12-16",
+        "value": 18.7
+      },
+      {
         "date": "2025-12-17",
-        "value": 18.3
+        "value": 19.5
       },
       {
         "date": "2025-12-18",
-        "value": 16.5
+        "value": 17.8
       },
       {
         "date": "2025-12-19",
-        "value": 20.3
+        "value": 17.9
       },
       {
         "date": "2025-12-20",
-        "value": 20.8
+        "value": 20.4
       },
       {
         "date": "2025-12-21",
-        "value": 20.5
+        "value": 19.5
       },
       {
         "date": "2025-12-22",
-        "value": 18.9
+        "value": 17.3
       },
       {
         "date": "2025-12-23",
-        "value": 20.5
+        "value": 17.8
       },
       {
         "date": "2025-12-24",
-        "value": 22.1
+        "value": 16.9
       },
       {
         "date": "2025-12-25",
-        "value": 19.9
+        "value": 19.2
       }
     ],
     "priorYearHistory": [
@@ -289,270 +289,270 @@
       }
     ],
     "temperature": {
-      "avg_temp_c": 2.6,
-      "avg_temp_f": 36.7,
-      "avg_anomaly_c": 2.1,
-      "avg_anomaly_f": 3.7
+      "avg_temp_c": 4.6,
+      "avg_temp_f": 40.3,
+      "avg_anomaly_c": 4.1,
+      "avg_anomaly_f": 7.3
     }
   },
   "canada": {
-    "cover": 42.7,
-    "change": "+1.5%",
-    "areaSqMi": 1644982,
-    "areaSqKm": 4260488,
-    "avgDepthInches": 5.9,
-    "avgDepthCm": 15,
-    "priorYearAvgDepthInches": 2.8,
-    "priorYearAvgDepthCm": 7.1,
+    "cover": 40.3,
+    "change": "\u2014",
+    "areaSqMi": 1554508,
+    "areaSqKm": 4026161,
+    "avgDepthInches": 5.5,
+    "avgDepthCm": 14,
+    "priorYearAvgDepthInches": 2.6,
+    "priorYearAvgDepthCm": 6.6,
     "history": [
       {
         "date": "2025-11-26",
-        "value": 30.5
+        "value": 32.8
       },
       {
         "date": "2025-11-27",
-        "value": 30.6
+        "value": 29.6
       },
       {
         "date": "2025-11-28",
-        "value": 31.8
+        "value": 33.6
       },
       {
         "date": "2025-11-29",
-        "value": 33.9
+        "value": 31.3
       },
       {
         "date": "2025-11-30",
-        "value": 34.6
+        "value": 33.8
       },
       {
         "date": "2025-12-01",
-        "value": 35.7
-      },
-      {
-        "date": "2025-12-02",
-        "value": 34.3
-      },
-      {
-        "date": "2025-12-03",
-        "value": 35.7
-      },
-      {
-        "date": "2025-12-04",
-        "value": 36.8
-      },
-      {
-        "date": "2025-12-05",
-        "value": 33.1
-      },
-      {
-        "date": "2025-12-06",
-        "value": 37.1
-      },
-      {
-        "date": "2025-12-07",
         "value": 34.8
       },
       {
-        "date": "2025-12-08",
-        "value": 33.9
+        "date": "2025-12-02",
+        "value": 31.7
       },
       {
-        "date": "2025-12-09",
-        "value": 36.3
+        "date": "2025-12-03",
+        "value": 34.5
       },
       {
-        "date": "2025-12-10",
-        "value": 35.2
+        "date": "2025-12-04",
+        "value": 32.8
       },
       {
-        "date": "2025-12-11",
+        "date": "2025-12-05",
+        "value": 33.3
+      },
+      {
+        "date": "2025-12-06",
+        "value": 33.6
+      },
+      {
+        "date": "2025-12-07",
         "value": 35.4
       },
       {
+        "date": "2025-12-08",
+        "value": 32.9
+      },
+      {
+        "date": "2025-12-09",
+        "value": 34.2
+      },
+      {
+        "date": "2025-12-10",
+        "value": 37.8
+      },
+      {
+        "date": "2025-12-11",
+        "value": 36.5
+      },
+      {
         "date": "2025-12-12",
-        "value": 38.4
+        "value": 34.7
       },
       {
         "date": "2025-12-13",
-        "value": 36.2
+        "value": 35.5
       },
       {
         "date": "2025-12-14",
-        "value": 36.1
+        "value": 37.8
       },
       {
         "date": "2025-12-15",
-        "value": 38.4
+        "value": 38.6
       },
       {
         "date": "2025-12-16",
-        "value": 38.2
+        "value": 39.6
       },
       {
         "date": "2025-12-17",
-        "value": 38.4
+        "value": 37.5
       },
       {
         "date": "2025-12-18",
-        "value": 41.2
+        "value": 40.2
       },
       {
         "date": "2025-12-19",
-        "value": 41.2
+        "value": 37.6
       },
       {
         "date": "2025-12-20",
-        "value": 41.2
+        "value": 41.0
       },
       {
         "date": "2025-12-21",
-        "value": 43.3
+        "value": 41.5
       },
       {
         "date": "2025-12-22",
-        "value": 39.9
+        "value": 37.3
       },
       {
         "date": "2025-12-23",
-        "value": 43.0
+        "value": 39.5
       },
       {
         "date": "2025-12-24",
-        "value": 41.2
+        "value": 42.1
       },
       {
         "date": "2025-12-25",
-        "value": 42.6
+        "value": 42.3
       }
     ],
     "priorYearHistory": [
       {
         "date": "2024-11-26",
-        "value": 36.8
+        "value": 43.7
       },
       {
         "date": "2024-11-27",
-        "value": 51.5
+        "value": 48.3
       },
       {
         "date": "2024-11-28",
-        "value": 60.3
+        "value": 57.6
       },
       {
         "date": "2024-11-29",
-        "value": 55.4
+        "value": 49.8
       },
       {
         "date": "2024-11-30",
-        "value": 66.1
+        "value": 51.7
       },
       {
         "date": "2024-12-01",
-        "value": 58.4
+        "value": 60.0
       },
       {
         "date": "2024-12-02",
-        "value": 57.0
+        "value": 64.2
       },
       {
         "date": "2024-12-03",
-        "value": 58.9
+        "value": 61.0
       },
       {
         "date": "2024-12-04",
-        "value": 62.3
+        "value": 52.4
       },
       {
         "date": "2024-12-05",
-        "value": 49.3
+        "value": 41.2
       },
       {
         "date": "2024-12-06",
-        "value": 57.0
+        "value": 40.6
       },
       {
         "date": "2024-12-07",
-        "value": 50.8
+        "value": 45.8
       },
       {
         "date": "2024-12-08",
-        "value": 36.2
+        "value": 42.3
       },
       {
         "date": "2024-12-09",
-        "value": 35.3
+        "value": 40.2
       },
       {
         "date": "2024-12-10",
-        "value": 37.1
+        "value": 43.2
       },
       {
         "date": "2024-12-11",
-        "value": 38.2
+        "value": 37.5
       },
       {
         "date": "2024-12-12",
-        "value": 45.3
+        "value": 49.9
       },
       {
         "date": "2024-12-13",
-        "value": 42.2
+        "value": 49.3
       },
       {
         "date": "2024-12-14",
-        "value": 46.4
+        "value": 48.9
       },
       {
         "date": "2024-12-15",
-        "value": 46.3
+        "value": 51.6
       },
       {
         "date": "2024-12-16",
-        "value": 56.0
+        "value": 53.4
       },
       {
         "date": "2024-12-17",
-        "value": 45.3
+        "value": 41.5
       },
       {
         "date": "2024-12-18",
-        "value": 51.9
+        "value": 47.0
       },
       {
         "date": "2024-12-19",
-        "value": 42.8
+        "value": 44.3
       },
       {
         "date": "2024-12-20",
-        "value": 46.4
+        "value": 47.0
       },
       {
         "date": "2024-12-21",
-        "value": 58.3
+        "value": 58.7
       },
       {
         "date": "2024-12-22",
-        "value": 55.9
+        "value": 57.1
       },
       {
         "date": "2024-12-23",
-        "value": 52.6
+        "value": 55.7
       },
       {
         "date": "2024-12-24",
-        "value": 45.5
+        "value": 60.8
       },
       {
         "date": "2024-12-25",
-        "value": 56.5
+        "value": 58.2
       }
     ],
     "temperature": {
-      "avg_temp_c": -9.0,
-      "avg_temp_f": 15.7,
-      "avg_anomaly_c": -2.4,
-      "avg_anomaly_f": -4.3
+      "avg_temp_c": -9.5,
+      "avg_temp_f": 14.8,
+      "avg_anomaly_c": -3.8,
+      "avg_anomaly_f": -6.8
     }
   },
   "metros": [
@@ -563,27 +563,27 @@
       "cover": 85,
       "depthInches": 6.2,
       "depthCm": 15.6,
-      "trend": "down",
+      "trend": "up",
       "history": [
-        77.0,
-        80.1,
-        85.9,
-        94.6,
-        90.3,
-        91.4,
-        82.3
+        99.2,
+        76.0,
+        74.1,
+        76.8,
+        92.3,
+        79.8,
+        88.2
       ],
       "temperature": {
-        "temp_c": -18.1,
-        "temp_f": -0.6,
+        "temp_c": -13.7,
+        "temp_f": 7.3,
         "normal_c": -6.6,
-        "anomaly_c": -11.5,
-        "anomaly_f": -20.7
+        "anomaly_c": -7.1,
+        "anomaly_f": -12.8
       },
       "skiMarket": true,
       "priorYearHistory": [
-        94.1,
-        98.0,
+        100,
+        100,
         100,
         100,
         100,
@@ -598,22 +598,22 @@
       "cover": 85,
       "depthInches": 6.2,
       "depthCm": 15.6,
-      "trend": "up",
+      "trend": "stable",
       "history": [
-        99.4,
+        95.9,
+        90.2,
+        82.2,
         82.6,
-        92.0,
-        85.8,
-        97.9,
-        95.4,
-        76.4
+        89.6,
+        84.6,
+        79.2
       ],
       "temperature": {
-        "temp_c": -19.6,
-        "temp_f": -3.3,
-        "normal_c": null,
-        "anomaly_c": null,
-        "anomaly_f": null
+        "temp_c": -19.4,
+        "temp_f": -2.9,
+        "normal_c": -11.3,
+        "anomaly_c": -8.1,
+        "anomaly_f": -14.6
       },
       "skiMarket": true,
       "priorYearHistory": [
@@ -623,182 +623,147 @@
         100,
         100,
         100,
-        93.6
-      ]
-    },
-    {
-      "city": "Winnipeg",
-      "region": "MB",
-      "country": "canada",
-      "cover": 65,
-      "depthInches": 5.2,
-      "depthCm": 13.1,
-      "trend": "up",
-      "history": [
-        56.7,
-        62.6,
-        53.6,
-        69.7,
-        73.7,
-        68.5,
-        55.8
-      ],
-      "temperature": {
-        "temp_c": -12.8,
-        "temp_f": 9.0,
-        "normal_c": -12.5,
-        "anomaly_c": -0.3,
-        "anomaly_f": -0.5
-      },
-      "skiMarket": false,
-      "priorYearHistory": [
-        70.3,
-        87.7,
-        69.1,
-        92.5,
-        98.9,
-        95.3,
-        71.8
+        100
       ]
     },
     {
       "city": "Montreal",
       "region": "QC",
       "country": "canada",
-      "cover": 50,
-      "depthInches": 4.4,
-      "depthCm": 11.2,
-      "trend": "up",
+      "cover": 65,
+      "depthInches": 5.2,
+      "depthCm": 13.1,
+      "trend": "stable",
       "history": [
-        59.7,
-        48.6,
-        55.0,
-        58.5,
-        51.6,
-        40.6,
-        48.3
+        77.3,
+        66.3,
+        51.0,
+        62.1,
+        59.9,
+        64.6,
+        62.1
       ],
       "temperature": {
-        "temp_c": null,
-        "temp_f": null,
+        "temp_c": -11.3,
+        "temp_f": 11.7,
         "normal_c": -6.0,
-        "anomaly_c": null,
-        "anomaly_f": null
+        "anomaly_c": -5.3,
+        "anomaly_f": -9.5
       },
       "skiMarket": true,
       "priorYearHistory": [
-        87.2,
-        61.6,
-        78.3,
-        82.6,
-        73.3,
-        58.5,
-        61.1
+        100,
+        86.4,
+        64.7,
+        85.8,
+        88.6,
+        89.9,
+        84.2
       ]
     },
     {
       "city": "Ottawa",
       "region": "ON",
       "country": "canada",
-      "cover": 50,
-      "depthInches": 4.4,
-      "depthCm": 11.2,
-      "trend": "stable",
+      "cover": 65,
+      "depthInches": 5.2,
+      "depthCm": 13.1,
+      "trend": "up",
       "history": [
-        51.5,
-        51.9,
-        39.8,
-        42.3,
-        40.8,
-        58.1,
-        46.6
+        81.7,
+        67.4,
+        60.3,
+        60.6,
+        69.2,
+        58.6,
+        60.9
       ],
       "temperature": {
-        "temp_c": -5.9,
-        "temp_f": 21.4,
+        "temp_c": null,
+        "temp_f": null,
         "normal_c": -6.6,
-        "anomaly_c": 0.7,
-        "anomaly_f": 1.3
+        "anomaly_c": null,
+        "anomaly_f": null
       },
       "skiMarket": false,
       "priorYearHistory": [
-        70.0,
-        72.7,
-        49.0,
-        62.6,
-        52.7,
-        84.2,
-        68.5
+        100,
+        98.7,
+        82.6,
+        89.6,
+        94.2,
+        84.3,
+        85.0
       ]
     },
     {
       "city": "Quebec City",
       "region": "QC",
       "country": "canada",
-      "cover": 50,
-      "depthInches": 4.4,
-      "depthCm": 11.2,
-      "trend": "up",
+      "cover": 65,
+      "depthInches": 5.2,
+      "depthCm": 13.1,
+      "trend": "stable",
       "history": [
-        37.9,
-        48.7,
-        37.3,
-        58.2,
-        45.3,
-        41.8,
-        44.4
+        65.2,
+        72.1,
+        76.4,
+        69.5,
+        62.9,
+        55.3,
+        62.7
       ],
       "temperature": {
-        "temp_c": -8.2,
-        "temp_f": 17.2,
+        "temp_c": -15.8,
+        "temp_f": 3.6,
         "normal_c": -7.6,
-        "anomaly_c": -0.6,
-        "anomaly_f": -1.1
+        "anomaly_c": -8.2,
+        "anomaly_f": -14.8
       },
       "skiMarket": true,
       "priorYearHistory": [
-        47.2,
-        62.1,
-        48.9,
-        72.7,
-        57.4,
-        61.9,
-        62.6
+        96.0,
+        100,
+        100,
+        96.0,
+        81.1,
+        79.6,
+        79.7
       ]
     },
     {
-      "city": "Minneapolis",
-      "region": "MN",
-      "country": "usa",
-      "cover": 45,
-      "depthInches": 3,
-      "depthCm": 7.6,
+      "city": "Winnipeg",
+      "region": "MB",
+      "country": "canada",
+      "cover": 50,
+      "depthInches": 4.4,
+      "depthCm": 11.2,
       "trend": "stable",
       "history": [
-        37.5,
-        53.0,
-        48.4,
-        41.8,
-        33.5,
-        53.2,
-        40.3
+        71.0,
+        49.9,
+        44.4,
+        39.0,
+        59.6,
+        43.6,
+        59.3
       ],
       "temperature": {
-        "temp_c": -5.0,
-        "temp_f": 23.0,
-        "normal_c": -6.4,
-        "anomaly_c": 1.4,
-        "anomaly_f": 2.5
+        "temp_c": -7.0,
+        "temp_f": 19.4,
+        "normal_c": -12.5,
+        "anomaly_c": 5.5,
+        "anomaly_f": 9.9
       },
-      "skiMarket": true,
+      "skiMarket": false,
       "priorYearHistory": [
-        51.6,
-        71.9,
-        67.4,
-        53.5,
-        43.8,
-        74.0,
-        59.0
+        98.6,
+        75.8,
+        67.7,
+        50.0,
+        84.0,
+        59.3,
+        79.6
       ]
     },
     {
@@ -808,32 +773,32 @@
       "cover": 45,
       "depthInches": 3,
       "depthCm": 7.6,
-      "trend": "stable",
+      "trend": "up",
       "history": [
-        39.0,
-        62.9,
-        52.7,
-        50.4,
-        40.6,
-        53.9,
-        53.9
+        59.8,
+        39.4,
+        43.4,
+        48.6,
+        53.4,
+        46.0,
+        44.2
       ],
       "temperature": {
-        "temp_c": -2.2,
-        "temp_f": 28.0,
+        "temp_c": -2.6,
+        "temp_f": 27.3,
         "normal_c": 0.1,
-        "anomaly_c": -2.3,
-        "anomaly_f": -4.1
+        "anomaly_c": -2.7,
+        "anomaly_f": -4.9
       },
       "skiMarket": true,
       "priorYearHistory": [
-        47.0,
-        90.8,
-        71.8,
-        69.1,
-        58.4,
-        77.7,
-        73.9
+        89.4,
+        50.1,
+        54.0,
+        70.9,
+        70.6,
+        69.6,
+        59.4
       ]
     },
     {
@@ -843,32 +808,67 @@
       "cover": 45,
       "depthInches": 3,
       "depthCm": 7.6,
-      "trend": "up",
+      "trend": "stable",
       "history": [
-        45.3,
-        53.9,
-        38.1,
-        37.7,
-        41.3,
-        46.3,
-        49.6
+        36.9,
+        51.2,
+        40.7,
+        56.2,
+        46.9,
+        44.2,
+        53.1
+      ],
+      "temperature": {
+        "temp_c": -0.5,
+        "temp_f": 31.1,
+        "normal_c": -0.5,
+        "anomaly_c": 0.0,
+        "anomaly_f": 0.0
+      },
+      "skiMarket": false,
+      "priorYearHistory": [
+        51.9,
+        75.8,
+        52.7,
+        71.9,
+        59.1,
+        65.9,
+        76.8
+      ]
+    },
+    {
+      "city": "Buffalo",
+      "region": "NY",
+      "country": "usa",
+      "cover": 45,
+      "depthInches": 3,
+      "depthCm": 7.6,
+      "trend": "stable",
+      "history": [
+        31.7,
+        43.7,
+        34.3,
+        47.5,
+        40.1,
+        37.1,
+        45.5
       ],
       "temperature": {
         "temp_c": null,
         "temp_f": null,
-        "normal_c": -0.5,
+        "normal_c": -0.9,
         "anomaly_c": null,
         "anomaly_f": null
       },
       "skiMarket": false,
       "priorYearHistory": [
-        66.2,
-        76.6,
-        48.4,
-        52.3,
-        56.5,
-        56.1,
-        62.7
+        47.9,
+        59.0,
+        44.9,
+        68.6,
+        58.4,
+        52.6,
+        60.7
       ]
     },
     {
@@ -878,102 +878,32 @@
       "cover": 45,
       "depthInches": 4.2,
       "depthCm": 10.6,
-      "trend": "stable",
+      "trend": "down",
       "history": [
-        38.1,
-        48.7,
-        58.5,
-        36.2,
-        57.4,
-        46.5,
-        45.1
+        34.9,
+        48.5,
+        31.5,
+        59.1,
+        48.4,
+        41.9,
+        48.9
       ],
       "temperature": {
-        "temp_c": 0.2,
-        "temp_f": 32.4,
+        "temp_c": -4.2,
+        "temp_f": 24.4,
         "normal_c": -1.5,
-        "anomaly_c": 1.7,
-        "anomaly_f": 3.1
+        "anomaly_c": -2.7,
+        "anomaly_f": -4.9
       },
       "skiMarket": true,
       "priorYearHistory": [
-        55.4,
-        62.4,
-        85.1,
-        52.4,
-        79.0,
-        61.0,
-        60.4
-      ]
-    },
-    {
-      "city": "Seattle",
-      "region": "WA",
-      "country": "usa",
-      "cover": 40,
-      "depthInches": 3,
-      "depthCm": 7.6,
-      "trend": "up",
-      "history": [
-        52.8,
-        28.2,
-        27.3,
-        33.3,
-        40.9,
-        31.1,
-        30.1
-      ],
-      "temperature": {
-        "temp_c": 2.3,
-        "temp_f": 36.1,
-        "normal_c": 6.9,
-        "anomaly_c": -4.6,
-        "anomaly_f": -8.3
-      },
-      "skiMarket": true,
-      "priorYearHistory": [
-        67.4,
-        38.2,
-        39.9,
-        41.5,
-        58.9,
-        37.6,
-        40.1
-      ]
-    },
-    {
-      "city": "Portland",
-      "region": "OR",
-      "country": "usa",
-      "cover": 40,
-      "depthInches": 3,
-      "depthCm": 7.6,
-      "trend": "stable",
-      "history": [
-        27.5,
-        34.8,
-        24.2,
-        43.4,
-        43.1,
-        47.6,
-        37.6
-      ],
-      "temperature": {
-        "temp_c": 5.7,
-        "temp_f": 42.3,
-        "normal_c": 6.9,
-        "anomaly_c": -1.2,
-        "anomaly_f": -2.2
-      },
-      "skiMarket": true,
-      "priorYearHistory": [
-        33.5,
-        43.8,
-        31.7,
-        59.3,
-        57.6,
-        59.9,
-        46.2
+        50.5,
+        64.5,
+        46.4,
+        85.9,
+        62.6,
+        53.9,
+        64.9
       ]
     },
     {
@@ -983,32 +913,32 @@
       "cover": 40,
       "depthInches": 3.9,
       "depthCm": 10.0,
-      "trend": "up",
+      "trend": "stable",
       "history": [
-        49.5,
-        46.8,
-        43.3,
-        37.7,
-        46.1,
-        40.9,
-        46.5
+        29.2,
+        35.0,
+        31.6,
+        35.6,
+        49.8,
+        47.3,
+        30.2
       ],
       "temperature": {
-        "temp_c": 1.1,
-        "temp_f": 34.0,
+        "temp_c": 4.7,
+        "temp_f": 40.5,
         "normal_c": 5.4,
-        "anomaly_c": -4.3,
-        "anomaly_f": -7.7
+        "anomaly_c": -0.7,
+        "anomaly_f": -1.3
       },
       "skiMarket": true,
       "priorYearHistory": [
-        62.7,
-        62.1,
-        62.3,
-        49.9,
-        64.1,
-        52.9,
-        67.1
+        42.9,
+        46.7,
+        39.8,
+        52.1,
+        63.4,
+        66.6,
+        43.7
       ]
     },
     {
@@ -1018,32 +948,32 @@
       "cover": 25,
       "depthInches": 2,
       "depthCm": 5.1,
-      "trend": "stable",
+      "trend": "down",
       "history": [
-        31.9,
-        26.3,
-        23.7,
+        30.1,
+        16.6,
+        18.7,
+        31.2,
         25.6,
-        26.2,
-        29.5,
-        26.1
+        16.1,
+        27.8
       ],
       "temperature": {
-        "temp_c": 0.1,
-        "temp_f": 32.2,
+        "temp_c": 1.5,
+        "temp_f": 34.7,
         "normal_c": 1.2,
-        "anomaly_c": -1.1,
-        "anomaly_f": -2.0
+        "anomaly_c": 0.3,
+        "anomaly_f": 0.5
       },
       "skiMarket": true,
       "priorYearHistory": [
-        46.7,
-        37.8,
-        28.9,
-        35.1,
-        37.9,
-        42.1,
-        33.8
+        40.4,
+        22.2,
+        23.5,
+        42.5,
+        32.8,
+        22.0,
+        34.7
       ]
     },
     {
@@ -1055,65 +985,65 @@
       "depthCm": 5.1,
       "trend": "up",
       "history": [
-        32.1,
-        36.0,
-        32.8,
-        27.3,
-        32.0,
-        29.9,
-        24.3
+        34.2,
+        24.6,
+        23.2,
+        20.3,
+        32.4,
+        28.5,
+        27.7
       ],
       "temperature": {
-        "temp_c": 3.2,
-        "temp_f": 37.8,
+        "temp_c": 4.1,
+        "temp_f": 39.4,
         "normal_c": -0.8,
-        "anomaly_c": 4.0,
-        "anomaly_f": 7.2
+        "anomaly_c": 4.9,
+        "anomaly_f": 8.8
       },
       "skiMarket": true,
       "priorYearHistory": [
-        40.2,
-        47.9,
-        41.8,
-        38.2,
-        41.3,
-        43.0,
-        31.4
+        49.7,
+        31.2,
+        33.9,
+        26.6,
+        47.3,
+        35.4,
+        37.1
       ]
     },
     {
-      "city": "Buffalo",
-      "region": "NY",
+      "city": "Minneapolis",
+      "region": "MN",
       "country": "usa",
       "cover": 25,
       "depthInches": 2,
       "depthCm": 5.1,
-      "trend": "stable",
+      "trend": "up",
       "history": [
-        36.3,
-        31.2,
-        20.5,
-        19.1,
-        33.1,
-        16.5,
-        16.4
+        25.9,
+        33.8,
+        20.4,
+        29.0,
+        20.2,
+        32.1,
+        28.7
       ],
       "temperature": {
-        "temp_c": -0.1,
-        "temp_f": 31.8,
-        "normal_c": null,
-        "anomaly_c": null,
-        "anomaly_f": null
+        "temp_c": 0.1,
+        "temp_f": 32.2,
+        "normal_c": -6.4,
+        "anomaly_c": 6.5,
+        "anomaly_f": 11.7
       },
-      "skiMarket": false,
+      "skiMarket": true,
       "priorYearHistory": [
-        43.7,
+        34.2,
+        46.2,
+        27.4,
+        43.4,
+        25.6,
         45.3,
-        26.0,
-        27.2,
-        43.3,
-        23.4,
-        20.6
+        36.9
       ]
     },
     {
@@ -1123,32 +1053,32 @@
       "cover": 25,
       "depthInches": 2,
       "depthCm": 5.1,
-      "trend": "stable",
+      "trend": "up",
       "history": [
-        7.1,
-        21.3,
-        17.2,
-        16.1,
-        24.1,
-        22.2,
-        30.7
+        26.5,
+        20.4,
+        25.5,
+        26.4,
+        30.1,
+        21.5,
+        31.3
       ],
       "temperature": {
-        "temp_c": 4.2,
-        "temp_f": 39.6,
+        "temp_c": 0.4,
+        "temp_f": 32.7,
         "normal_c": 0.7,
-        "anomaly_c": 3.5,
-        "anomaly_f": 6.3
+        "anomaly_c": -0.3,
+        "anomaly_f": -0.5
       },
       "skiMarket": false,
       "priorYearHistory": [
-        10.0,
-        26.8,
-        22.0,
-        20.1,
-        33.7,
-        27.2,
-        37.0
+        37.7,
+        29.0,
+        32.7,
+        34.2,
+        39.3,
+        31.3,
+        40.9
       ]
     },
     {
@@ -1160,30 +1090,30 @@
       "depthCm": 5.1,
       "trend": "stable",
       "history": [
-        34.4,
-        33.9,
-        27.1,
-        14.6,
-        30.6,
-        23.9,
-        26.9
+        26.2,
+        14.8,
+        25.7,
+        29.5,
+        37.9,
+        32.2,
+        25.6
       ],
       "temperature": {
-        "temp_c": 2.1,
-        "temp_f": 35.8,
+        "temp_c": 1.6,
+        "temp_f": 34.9,
         "normal_c": -2.5,
-        "anomaly_c": 4.6,
-        "anomaly_f": 8.3
+        "anomaly_c": 4.1,
+        "anomaly_f": 7.4
       },
       "skiMarket": false,
       "priorYearHistory": [
-        48.2,
-        43.4,
-        37.7,
-        21.0,
-        39.2,
-        31.4,
-        39.0
+        35.9,
+        21.2,
+        37.1,
+        38.3,
+        50.9,
+        40.9,
+        32.7
       ]
     },
     {
@@ -1193,32 +1123,67 @@
       "cover": 0,
       "depthInches": 0,
       "depthCm": 0.0,
-      "trend": "up",
+      "trend": "stable",
       "history": [
+        0.7,
         0,
-        1.8,
-        7.4,
-        12.0,
-        3.2,
-        5.7,
+        1.9,
+        0.3,
+        7.2,
+        1.6,
         0
       ],
       "temperature": {
-        "temp_c": 4.6,
-        "temp_f": 40.3,
+        "temp_c": 17.3,
+        "temp_f": 63.1,
         "normal_c": 0.7,
-        "anomaly_c": 3.9,
-        "anomaly_f": 7.0
+        "anomaly_c": 16.6,
+        "anomaly_f": 29.9
+      },
+      "skiMarket": true,
+      "priorYearHistory": [
+        1.0,
+        0,
+        2.8,
+        0.4,
+        8.9,
+        2.0,
+        0
+      ]
+    },
+    {
+      "city": "Seattle",
+      "region": "WA",
+      "country": "usa",
+      "cover": 0,
+      "depthInches": 0,
+      "depthCm": 0.0,
+      "trend": "up",
+      "history": [
+        0,
+        0,
+        0.6,
+        0,
+        5.7,
+        0,
+        9.8
+      ],
+      "temperature": {
+        "temp_c": 5.0,
+        "temp_f": 41.0,
+        "normal_c": 6.9,
+        "anomaly_c": -1.9,
+        "anomaly_f": -3.4
       },
       "skiMarket": true,
       "priorYearHistory": [
         0,
-        2.4,
-        9.0,
-        16.1,
-        4.2,
-        7.0,
-        0
+        0,
+        0.8,
+        0,
+        8.1,
+        0,
+        14.6
       ]
     },
     {
@@ -1230,29 +1195,64 @@
       "depthCm": 0.0,
       "trend": "stable",
       "history": [
-        16.2,
+        9.7,
         0,
+        10.0,
+        7.5,
         0,
-        2.1,
-        5.0,
-        0,
+        7.6,
         0
       ],
       "temperature": {
-        "temp_c": 13.6,
-        "temp_f": 56.5,
+        "temp_c": 14.4,
+        "temp_f": 57.9,
         "normal_c": 1.2,
-        "anomaly_c": 12.4,
-        "anomaly_f": 22.3
+        "anomaly_c": 13.2,
+        "anomaly_f": 23.8
       },
       "skiMarket": true,
       "priorYearHistory": [
-        21.2,
+        12.3,
         0,
+        13.0,
+        10.3,
         0,
-        2.8,
-        7.1,
+        10.8,
+        0
+      ]
+    },
+    {
+      "city": "Portland",
+      "region": "OR",
+      "country": "usa",
+      "cover": 0,
+      "depthInches": 0,
+      "depthCm": 0.0,
+      "trend": "stable",
+      "history": [
+        20.9,
         0,
+        2.4,
+        4.0,
+        5.0,
+        3.2,
+        0
+      ],
+      "temperature": {
+        "temp_c": 9.6,
+        "temp_f": 49.3,
+        "normal_c": null,
+        "anomaly_c": null,
+        "anomaly_f": null
+      },
+      "skiMarket": true,
+      "priorYearHistory": [
+        27.7,
+        0,
+        3.6,
+        5.9,
+        7.2,
+        4.2,
         0
       ]
     }
