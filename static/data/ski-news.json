@@ -1,5 +1,5 @@
 {
-  "updated": "2025-12-26 11:13:13",
+  "updated": "2025-12-27 11:11:05",
   "total_articles": 50,
   "articles": [
     {
@@ -587,6 +587,26 @@
       "category": "winter-sports"
     },
     {
+      "source": "Bloomberg Markets",
+      "title": "Russia Extends Temporary Gasoline-Export Ban Through February",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-27/russia-extends-temporary-gasoline-export-ban-through-february",
+      "description": "Russia extended a temporary ban on gasoline exports through the end of February to maintain stability in its domestic fuel market.",
+      "content": "Russia extended a temporary ban on gasoline exports through the end of February to maintain stability in its domestic fuel market.",
+      "pub_date": "Sat, 27 Dec 2025 10:15:29 GMT",
+      "id": "0c6d47aef69f",
+      "score": 6,
+      "score_details": {
+        "relevance": 6,
+        "news_value": 6,
+        "quality": 6,
+        "overall": 6,
+        "reason": "This news about Russia extending a gasoline export ban is moderately relevant to the ski industry, as it could potentially impact fuel prices and costs for ski areas and travelers. However, the story is not directly about the ski business and does not provide significant detail on the industry implications."
+      },
+      "approved_date": "2025-12-27",
+      "category": "resort-operations",
+      "secondary_categories": []
+    },
+    {
       "source": "Washington Post",
       "title": "How companies are cracking down on workers\u2019 social media activity",
       "url": "https://www.washingtonpost.com/business/2025/12/13/employer-crackdown-social-media/",
@@ -906,21 +926,6 @@
       },
       "approved_date": "2025-12-06",
       "category": "weather-snow"
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "Maine Ski Hill With $5 Tickets Opens Earlier Than Usual",
-      "url": "https://unofficialnetworks.com/2025/12/05/powderhouse-hill-early-opening/",
-      "description": "A Maine ski area that relies on volunteers and natural snowfall to open started its 2025-26 season this week.",
-      "content": "South Berwick, Maine \u2014 If you\u2019re wondering how the ski season in the Northeast is going, a ski hill that first opens as late as April during one ski season is already open. On Tuesday, a snowstorm brought decent totals across New England. This included Powderhouse Hill in South Berwick, Maine. Relying on natural snow to open up, this snowstorm was enough to start Powderhouse\u2019s rope tow for skiers. On Wednesday, Powderhouse operated its rope tow from 7-9 p.m. If you\u2019re pondering a visit to Powderhouse, the ski hill has put together a guide to the experience. First opened back in 1939, Powderhouse Hill is run by volunteers. Lift tickets are only $5, but they only take cash. That means they don\u2019t take Crypto, bro. The ski hill typically operates on Wednesdays and Fridays from 7 to 9 p.m., and weekends from 12 to 4 p.m. Powderhouse Hill features three trails and one lift. With a vertical drop of 175 feet, it could be one of the smallest ski hills, if not the smallest, in the region. Maine ",
-      "pub_date": "Fri, 05 Dec 2025 18:40:53 +0000",
-      "id": "6805d54feaeb",
-      "score": 7,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 0)"
-      },
-      "approved_date": "2025-12-06",
-      "category": "resort-operations"
     }
   ]
 }
