@@ -1,5 +1,5 @@
 {
-  "updated": "2025-12-27 11:11:05",
+  "updated": "2025-12-28 11:12:13",
   "total_articles": 50,
   "articles": [
     {
@@ -474,6 +474,26 @@
       "category": "weather-snow"
     },
     {
+      "source": "Financial Times",
+      "title": "\u2018Wellness\u2019 culture is empty without service to others",
+      "url": "https://www.ft.com/content/2e430db3-a6e6-46a9-a390-bd3cb6ceb3b6",
+      "description": "Volunteering has declined along with religion \u2014 it needs a revival",
+      "content": "Volunteering has declined along with religion \u2014 it needs a revival",
+      "pub_date": "Sun, 28 Dec 2025 05:00:13 GMT",
+      "id": "93aea89e36c8",
+      "score": 7,
+      "score_details": {
+        "relevance": 6,
+        "news_value": 7,
+        "quality": 7,
+        "overall": 7,
+        "reason": "This article discusses broader societal trends that could have implications for the ski industry's labor force and community engagement, though the connection is not directly stated."
+      },
+      "approved_date": "2025-12-28",
+      "category": "resort-operations",
+      "secondary_categories": []
+    },
+    {
       "source": "Unofficial Networks",
       "title": "Solitude Mountain Resort Hosts First Ever Skimo World Cup in The United States",
       "url": "https://unofficialnetworks.com/2025/12/07/solitude-mountain-resort-hosts-first-ever-skimo-world-cup-in-the-united-states/",
@@ -911,21 +931,6 @@
       "approved_date": "2025-12-26",
       "category": "international",
       "secondary_categories": []
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "Several Feet Of Snow Expected Across Colorado This Weekend",
-      "url": "https://unofficialnetworks.com/2025/12/05/colorado-winter-storm-warnings/",
-      "description": "A Winter Storm Warning for multiple Colorado mountain ranges remains in effect through 11 PM MST Saturday, December 7th.",
-      "content": "Colorado skiers and snowboarders have reason to celebrate this weekend as significant snowfall is expected across several of the state\u2019s mountain ranges, with over two feet possible in some areas. Winter Storm Warnings and Winter Weather Advisories are currently in effect across the region through Saturday evening. Winter Storm Warning Colorado High End Snowfall Forecast. Credit: NWS The Elkhead and Park Mountains, Flat Tops, Gore and Elk Mountains/Central Mountain Valleys, and West Elk and Sawatch Mountains are all under Winter Storm Warnings. Heavy snow is expected throughout these regions, with the most significant accumulations hitting the Elkhead and Park Mountains. The Elkhead and Park Mountains, including Columbine, Hahns Peak, and Toponas, could see total snow accumulations between 8 and 26 inches, with winds gusting as high as 60 mph. A Winter Weather Advisory remains in effect until 5 PM MST this afternoon, followed by the Winter Storm Warning from 5 PM this afternoon through",
-      "pub_date": "Fri, 05 Dec 2025 19:59:42 +0000",
-      "id": "525169927162",
-      "score": 7,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 0)"
-      },
-      "approved_date": "2025-12-06",
-      "category": "weather-snow"
     }
   ]
 }
