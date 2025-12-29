@@ -5564,6 +5564,252 @@
       "score_details": {
         "reason": "Scoring failed"
       }
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "Winter Storm Batters Minnesota, Bringing \u2018Potentially Life-Threatening Travel Conditions\u2019",
+      "url": "https://www.nytimes.com/2025/12/28/us/minnesota-winter-storm.html",
+      "description": "Forecasters warned that whiteouts had reduced visibility in Minnesota. More heavy snow was expected in the region through Monday.",
+      "content": "Forecasters warned that whiteouts had reduced visibility in Minnesota. More heavy snow was expected in the region through Monday.",
+      "pub_date": "Mon, 29 Dec 2025 08:53:30 +0000",
+      "id": "7cbc3a00042a",
+      "score": 5,
+      "score_details": {
+        "relevance": 4,
+        "news_value": 5,
+        "quality": 6,
+        "overall": 5,
+        "reason": "This news article covers a winter storm in Minnesota, which is tangentially related to the ski industry but does not provide substantive business news or analysis. While severe weather can impact ski resort operations, the article does not go into those details or implications."
+      }
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "T Magazine\u2019s Essential 2025 Travel Guides",
+      "url": "https://www.nytimes.com/2025/12/28/t-magazine/essential-travel-guides.html",
+      "description": "Recommendations for where to go and how to get there, from the ultimate Japan itinerary to the best small cruise ships.",
+      "content": "Recommendations for where to go and how to get there, from the ultimate Japan itinerary to the best small cruise ships.",
+      "pub_date": "Sun, 28 Dec 2025 21:38:08 +0000",
+      "id": "c2d12f6f2d04",
+      "score": 4,
+      "score_details": {
+        "relevance": 4,
+        "news_value": 4,
+        "quality": 5,
+        "overall": 4,
+        "reason": "The article covers general travel recommendations and does not contain any substantive ski industry business news. It is only tangentially related to the ski industry."
+      }
+    },
+    {
+      "source": "Financial Times",
+      "title": "Arnaults\u2019 buying spree boosts sluggish market for luxury homes in Paris",
+      "url": "https://www.ft.com/content/da7dbbec-61f8-4ea0-a948-cce7cd28caf5",
+      "description": "Billionaire family lays out almost \u20ac200mn on three properties, among top prices paid in French capital over past year",
+      "content": "Billionaire family lays out almost \u20ac200mn on three properties, among top prices paid in French capital over past year",
+      "pub_date": "Mon, 29 Dec 2025 05:00:23 GMT",
+      "id": "c19d19728210",
+      "score": 4,
+      "score_details": {
+        "relevance": 3,
+        "news_value": 4,
+        "quality": 5,
+        "overall": 4,
+        "reason": "This article about luxury home sales in Paris is only tangentially related to the ski industry. While it discusses real estate trends in a major European city, it does not have direct relevance to ski resort business operations, ski travel, or the broader ski economy."
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Airbus Cranks Out Aircraft at Rapid Pace to Meet Delivery Goal",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-29/airbus-cranks-out-aircraft-at-rapid-pace-to-meet-delivery-goal",
+      "description": "Airbus SE is churning out aircraft at a rapid clip in the final days of the year, with confidence building at the European planemaker that it can achieve the delivery goal it was forced to cut only a few weeks ago, according to people familiar with the situation.",
+      "content": "Airbus SE is churning out aircraft at a rapid clip in the final days of the year, with confidence building at the European planemaker that it can achieve the delivery goal it was forced to cut only a few weeks ago, according to people familiar with the situation.",
+      "pub_date": "Mon, 29 Dec 2025 10:43:24 GMT",
+      "id": "aea933851c78",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Tech Drags US Stocks as Silver Turns Volatile: Markets Wrap",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-28/asian-stocks-set-for-muted-start-amid-thin-trading-markets-wrap",
+      "description": "Technology megacaps weighed on US equity futures as traders pared risk at the start of the final week of 2025. Volatility gripped precious metals as silver retreated after hitting a record.",
+      "content": "Technology megacaps weighed on US equity futures as traders pared risk at the start of the final week of 2025. Volatility gripped precious metals as silver retreated after hitting a record.",
+      "pub_date": "Sun, 28 Dec 2025 22:38:16 GMT",
+      "id": "c34ea6dc085b",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Tough Job Market Has People Using Dating Apps to Get Interviews",
+      "url": "https://www.bloomberg.com/news/videos/2025-12-29/tough-job-market-has-people-using-dating-apps-to-get-interviews",
+      "description": "Some job seekers are getting creative and turning to Hinge, Grindr and other apps to make employment connections. Original filename: Hinge for jobs_FINAL.mp4 (Source: Bloomberg)",
+      "content": "Some job seekers are getting creative and turning to Hinge, Grindr and other apps to make employment connections. Original filename: Hinge for jobs_FINAL.mp4 (Source: Bloomberg)",
+      "pub_date": "Mon, 29 Dec 2025 10:00:07 GMT",
+      "id": "e7a86fb45998",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Oil Pushes Higher With Ukraine Talks and China\u2019s Pledge in Focus",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-28/latest-oil-market-news-and-analysis-for-dec-29",
+      "description": "Oil advanced as US-led talks to end the war in Ukraine failed to yield a breakthrough, and China vowed to support growth next year.",
+      "content": "Oil advanced as US-led talks to end the war in Ukraine failed to yield a breakthrough, and China vowed to support growth next year.",
+      "pub_date": "Sun, 28 Dec 2025 23:12:32 GMT",
+      "id": "472819c7540d",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "KKR Gets First Negotiation Rights to Take Yomeishu Private",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-29/kkr-gets-first-negotiation-rights-to-take-yomeishu-private",
+      "description": "US investment firm KKR & Co. has received first negotiation rights to take Yomeishu Seizo Co. private, according to people familiar with the matter.",
+      "content": "US investment firm KKR & Co. has received first negotiation rights to take Yomeishu Seizo Co. private, according to people familiar with the matter.",
+      "pub_date": "Mon, 29 Dec 2025 09:12:48 GMT",
+      "id": "6ea62041aa51",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "SoftBank Nears Deal for Data Center Investment Firm DigitalBridge",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-29/softbank-nears-deal-for-data-center-investment-firm-digitalbridge",
+      "description": "SoftBank Group Corp. is in advanced talks to acquire DigitalBridge Group Inc., a private equity firm that invests in assets such as data centers, according to people with knowledge of the matter.",
+      "content": "SoftBank Group Corp. is in advanced talks to acquire DigitalBridge Group Inc., a private equity firm that invests in assets such as data centers, according to people with knowledge of the matter.",
+      "pub_date": "Mon, 29 Dec 2025 06:03:39 GMT",
+      "id": "e5b408311bbb",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Mauritius Central Bank Chief Says Growth Shouldn\u2019t Rely on Rates",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-29/mauritius-central-bank-chief-says-growth-shouldn-t-rely-on-rates",
+      "description": "The newly appointed governor of Mauritius\u2019s central bank said that the Indian Ocean nation \u2014 facing stubborn inflation \u2014 cannot rely on lower interest rates to spur economic growth.",
+      "content": "The newly appointed governor of Mauritius\u2019s central bank said that the Indian Ocean nation \u2014 facing stubborn inflation \u2014 cannot rely on lower interest rates to spur economic growth.",
+      "pub_date": "Mon, 29 Dec 2025 08:28:32 GMT",
+      "id": "92fe5e3d9f4d",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "European Stocks Steady as Investors Monitor Ukraine Peace Talks",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-29/european-stocks-steady-as-investors-monitor-ukraine-peace-talks",
+      "description": "European stocks were muted as traders monitored negotiations around a potential peace deal in Ukraine.",
+      "content": "European stocks were muted as traders monitored negotiations around a potential peace deal in Ukraine.",
+      "pub_date": "Mon, 29 Dec 2025 08:18:02 GMT",
+      "id": "c9580257d2b6",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Homeware Stocks Are Unlikely Winners of UK\u2019s Weak Housing Market",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-29/kingfisher-wickes-dfs-unlikely-winners-of-sluggish-uk-housing-market",
+      "description": "Britain\u2019s stagnant housing market is giving an unexpected boost to companies that sell home-improvement products.",
+      "content": "Britain\u2019s stagnant housing market is giving an unexpected boost to companies that sell home-improvement products.",
+      "pub_date": "Mon, 29 Dec 2025 08:05:03 GMT",
+      "id": "942db37f2407",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Mizuho CEO Eyes Corporate Banking Buildup in Europe and Asia",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-29/mizuho-ceo-eyes-corporate-banking-buildup-in-europe-and-asia",
+      "description": "Mizuho Financial Group Inc. is bolstering efforts to expand its corporate and institutional banking business in Europe and Asia, pursuing a growth strategy that\u2019s diverging from its Japanese peers.",
+      "content": "Mizuho Financial Group Inc. is bolstering efforts to expand its corporate and institutional banking business in Europe and Asia, pursuing a growth strategy that\u2019s diverging from its Japanese peers.",
+      "pub_date": "Mon, 29 Dec 2025 08:00:00 GMT",
+      "id": "4faf43f510ee",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Aspen Surges Most in 25 Years on $1.6 Billion Asian Asset Sale",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-29/aspen-to-sell-apac-ex-china-assets-to-bgh-for-1-6-billion",
+      "description": "Aspen Pharmacare Holdings Ltd. rallied the most in a quarter-century after Africa\u2019s biggest drugmaker said it will sell its assets in the Asia-Pacific region excluding China to an Australian private equity firm for 26.5 billion rand ($1.6 billion).",
+      "content": "Aspen Pharmacare Holdings Ltd. rallied the most in a quarter-century after Africa\u2019s biggest drugmaker said it will sell its assets in the Asia-Pacific region excluding China to an Australian private equity firm for 26.5 billion rand ($1.6 billion).",
+      "pub_date": "Mon, 29 Dec 2025 05:28:18 GMT",
+      "id": "d72eacfd233f",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Silver Pulls Back From Record After Historic Rally Above $80",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-28/silver-rises-to-record-above-80-in-historic-end-of-year-rally",
+      "description": "Silver retreated sharply after smashing through $80 an ounce for the first time, with traders taking profits from a record-breaking rally powered by a structural imbalance in supply and demand.",
+      "content": "Silver retreated sharply after smashing through $80 an ounce for the first time, with traders taking profits from a record-breaking rally powered by a structural imbalance in supply and demand.",
+      "pub_date": "Sun, 28 Dec 2025 23:04:17 GMT",
+      "id": "104874112e21",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Baht Falls Most Since May With Traders Wary of Intervention Risk",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-29/baht-trails-asia-peers-as-traders-grow-wary-of-intervention-risk",
+      "description": "Thailand\u2019s baht fell the most in seven months, with traders on alert for possible intervention by authorities after the currency capped six straight weeks of gains.",
+      "content": "Thailand\u2019s baht fell the most in seven months, with traders on alert for possible intervention by authorities after the currency capped six straight weeks of gains.",
+      "pub_date": "Mon, 29 Dec 2025 07:11:10 GMT",
+      "id": "11e6a536b48a",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Trump Says There Will Be a Security Agreement With EU",
+      "url": "https://www.bloomberg.com/news/videos/2025-12-28/trump-say-there-will-be-a-security-agreement-with-eu-video",
+      "description": "President Donald Trump speaks on meeting with Ukrainian President Volodymyr Zelenskiy, discussing peace agreement involving the European Union. (Source: Bloomberg)",
+      "content": "President Donald Trump speaks on meeting with Ukrainian President Volodymyr Zelenskiy, discussing peace agreement involving the European Union. (Source: Bloomberg)",
+      "pub_date": "Sun, 28 Dec 2025 19:20:06 GMT",
+      "id": "20c557a95fd3",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
+    },
+    {
+      "source": "Bloomberg Markets",
+      "title": "Yuan Pushback Builds as Chinese Media Warn Against One-Way Bets",
+      "url": "https://www.bloomberg.com/news/articles/2025-12-29/chinese-state-media-warns-against-making-one-way-bets-on-yuan",
+      "description": "Chinese state media has cautioned against making one-way bets on the yuan, signaling growing official discomfort about the pace of recent gains in the currency.",
+      "content": "Chinese state media has cautioned against making one-way bets on the yuan, signaling growing official discomfort about the pace of recent gains in the currency.",
+      "pub_date": "Mon, 29 Dec 2025 02:53:07 GMT",
+      "id": "f73413407c4d",
+      "score": 5,
+      "score_details": {
+        "reason": "Scoring failed"
+      }
     }
   ],
   "rejected": [
@@ -6970,6 +7216,40 @@
         "quality": 4,
         "overall": 3,
         "reason": "This article about declining Japanese birth rates is only tangentially related to the ski industry and does not contain any substantive business news or analysis relevant to ski resorts or destinations."
+      }
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "Exploring Jeddah, Saudia Arabia, With an Airline Pilot",
+      "url": "https://www.nytimes.com/2025/12/29/travel/jeddah-saudi-arabia-layover.html",
+      "description": "On a stopover in Saudi Arabia, the writer strolls along the corniche, lingers over coffee and explores the historic heart of this city on the Red Sea.",
+      "content": "On a stopover in Saudi Arabia, the writer strolls along the corniche, lingers over coffee and explores the historic heart of this city on the Red Sea.",
+      "pub_date": "Mon, 29 Dec 2025 10:00:10 +0000",
+      "id": "a6db70118333",
+      "score": 3,
+      "score_details": {
+        "relevance": 2,
+        "news_value": 3,
+        "quality": 3,
+        "overall": 3,
+        "reason": "This article about exploring Jeddah, Saudi Arabia has minimal relevance to the ski industry or ski business news. The content is a personal travel diary rather than substantive business news."
+      }
+    },
+    {
+      "source": "Financial Times",
+      "title": "Europe\u2019s largest defence groups set to return $5bn to shareholders in 2025",
+      "url": "https://www.ft.com/content/79c31767-ccac-4669-a299-3d2e9b797c6d",
+      "description": "Sector increases investment and rewards investors after surge in global military spending following Ukraine war",
+      "content": "Sector increases investment and rewards investors after surge in global military spending following Ukraine war",
+      "pub_date": "Mon, 29 Dec 2025 03:00:09 GMT",
+      "id": "4b5569d40e87",
+      "score": 2,
+      "score_details": {
+        "relevance": 1,
+        "news_value": 2,
+        "quality": 3,
+        "overall": 2,
+        "reason": "This article about the European defense industry has no relevance to the ski business. It does not contain any information about the ski industry, ski destinations, or ski business operations."
       }
     }
   ]
