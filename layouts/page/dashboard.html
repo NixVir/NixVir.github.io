@@ -129,20 +129,23 @@
 
       <div class="accordion-section" data-section="electricity">
         <div class="accordion-header" onclick="toggleSection(this)">
-          <h3><span class="section-icon">⚡</span> Electricity Pricing <span class="metric-count">(5 regions)</span></h3>
+          <h3><span class="section-icon">⚡</span> Electricity Pricing <span class="metric-count">(8 ski states)</span></h3>
           <span class="accordion-arrow">▼</span>
         </div>
         <div class="accordion-content">
           <div class="accordion-inner">
             <div class="prediction-intro">
-              Regional retail electricity prices ($/kWh) from <a href="https://fred.stlouisfed.org/tags/series?t=electricity" target="_blank" rel="noopener">FRED/BLS</a>. Metro areas selected as proxies for major ski regions. Natural gas (above) is a leading indicator for electricity costs.
+              Commercial sector retail electricity rates (cents/kWh) from <a href="https://www.eia.gov/electricity/data.php" target="_blank" rel="noopener">EIA</a>. State-level data for key ski regions. Natural gas (above) is a leading indicator for electricity costs.
             </div>
             <div class="dashboard-grid">
-              <div class="metric-card"><h4>U.S. National Average</h4><div id="elec-us">Loading...</div><div class="chart-container"><canvas id="chart-elec-us"></canvas></div></div>
-              <div class="metric-card"><h4>Denver Metro (Rockies)</h4><div id="elec-denver">Loading...</div><div class="chart-container"><canvas id="chart-elec-denver"></canvas></div></div>
-              <div class="metric-card"><h4>Boston Metro (New England)</h4><div id="elec-boston">Loading...</div><div class="chart-container"><canvas id="chart-elec-boston"></canvas></div></div>
-              <div class="metric-card"><h4>Los Angeles Metro (Tahoe)</h4><div id="elec-la">Loading...</div><div class="chart-container"><canvas id="chart-elec-la"></canvas></div></div>
-              <div class="metric-card"><h4>Seattle Metro (PNW)</h4><div id="elec-seattle">Loading...</div><div class="chart-container"><canvas id="chart-elec-seattle"></canvas></div></div>
+              <div class="metric-card"><h4>U.S. Average</h4><div id="elec-us">Loading...</div><div class="chart-container"><canvas id="chart-elec-us"></canvas></div></div>
+              <div class="metric-card"><h4>Colorado (Rockies)</h4><div id="elec-co">Loading...</div><div class="chart-container"><canvas id="chart-elec-co"></canvas></div></div>
+              <div class="metric-card"><h4>Utah (Wasatch)</h4><div id="elec-ut">Loading...</div><div class="chart-container"><canvas id="chart-elec-ut"></canvas></div></div>
+              <div class="metric-card"><h4>California (Tahoe/Mammoth)</h4><div id="elec-ca">Loading...</div><div class="chart-container"><canvas id="chart-elec-ca"></canvas></div></div>
+              <div class="metric-card"><h4>Vermont</h4><div id="elec-vt">Loading...</div><div class="chart-container"><canvas id="chart-elec-vt"></canvas></div></div>
+              <div class="metric-card"><h4>New Hampshire</h4><div id="elec-nh">Loading...</div><div class="chart-container"><canvas id="chart-elec-nh"></canvas></div></div>
+              <div class="metric-card"><h4>Washington (PNW)</h4><div id="elec-wa">Loading...</div><div class="chart-container"><canvas id="chart-elec-wa"></canvas></div></div>
+              <div class="metric-card"><h4>Wyoming (Jackson)</h4><div id="elec-wy">Loading...</div><div class="chart-container"><canvas id="chart-elec-wy"></canvas></div></div>
             </div>
           </div>
         </div>
@@ -442,21 +445,30 @@
         renderMetric('copper', data.copper, 'Copper', { format: v => '$' + Number(v).toFixed(2), hasMomentum: true, shortDate: true });
         if (data.copper && data.copper.length > 0) createChart('chart-copper', data.copper.map(d => formatShortDate(d.date)), data.copper.map(d => d.value), '#d35400', { prefix: '$', decimals: 2 });
 
-        // Electricity Pricing (Regional)
-        renderMetric('elec-us', data.electricity_us, 'US Elec', { format: v => '$' + Number(v).toFixed(3), periodSuffix: '/kWh' });
-        if (data.electricity_us && data.electricity_us.length > 0) createChart('chart-elec-us', data.electricity_us.map(d => formatDate(d.date)), data.electricity_us.map(d => d.value), '#f39c12', { prefix: '$', decimals: 3 });
+        // Electricity Pricing (State-Level from EIA - cents/kWh)
+        renderMetric('elec-us', data.electricity_us, 'US Elec', { format: v => Number(v).toFixed(2) + '¢', periodSuffix: '/kWh' });
+        if (data.electricity_us && data.electricity_us.length > 0) createChart('chart-elec-us', data.electricity_us.map(d => formatDate(d.date)), data.electricity_us.map(d => d.value), '#f39c12', { suffix: '¢', decimals: 2 });
 
-        renderMetric('elec-denver', data.electricity_denver, 'Denver Elec', { format: v => '$' + Number(v).toFixed(3), periodSuffix: '/kWh' });
-        if (data.electricity_denver && data.electricity_denver.length > 0) createChart('chart-elec-denver', data.electricity_denver.map(d => formatDate(d.date)), data.electricity_denver.map(d => d.value), '#3498db', { prefix: '$', decimals: 3 });
+        renderMetric('elec-co', data.electricity_co, 'CO Elec', { format: v => Number(v).toFixed(2) + '¢', periodSuffix: '/kWh' });
+        if (data.electricity_co && data.electricity_co.length > 0) createChart('chart-elec-co', data.electricity_co.map(d => formatDate(d.date)), data.electricity_co.map(d => d.value), '#3498db', { suffix: '¢', decimals: 2 });
 
-        renderMetric('elec-boston', data.electricity_boston, 'Boston Elec', { format: v => '$' + Number(v).toFixed(3), periodSuffix: '/kWh' });
-        if (data.electricity_boston && data.electricity_boston.length > 0) createChart('chart-elec-boston', data.electricity_boston.map(d => formatDate(d.date)), data.electricity_boston.map(d => d.value), '#e74c3c', { prefix: '$', decimals: 3 });
+        renderMetric('elec-ut', data.electricity_ut, 'UT Elec', { format: v => Number(v).toFixed(2) + '¢', periodSuffix: '/kWh' });
+        if (data.electricity_ut && data.electricity_ut.length > 0) createChart('chart-elec-ut', data.electricity_ut.map(d => formatDate(d.date)), data.electricity_ut.map(d => d.value), '#e67e22', { suffix: '¢', decimals: 2 });
 
-        renderMetric('elec-la', data.electricity_la, 'LA Elec', { format: v => '$' + Number(v).toFixed(3), periodSuffix: '/kWh' });
-        if (data.electricity_la && data.electricity_la.length > 0) createChart('chart-elec-la', data.electricity_la.map(d => formatDate(d.date)), data.electricity_la.map(d => d.value), '#9b59b6', { prefix: '$', decimals: 3 });
+        renderMetric('elec-ca', data.electricity_ca, 'CA Elec', { format: v => Number(v).toFixed(2) + '¢', periodSuffix: '/kWh' });
+        if (data.electricity_ca && data.electricity_ca.length > 0) createChart('chart-elec-ca', data.electricity_ca.map(d => formatDate(d.date)), data.electricity_ca.map(d => d.value), '#9b59b6', { suffix: '¢', decimals: 2 });
 
-        renderMetric('elec-seattle', data.electricity_seattle, 'Seattle Elec', { format: v => '$' + Number(v).toFixed(3), periodSuffix: '/kWh' });
-        if (data.electricity_seattle && data.electricity_seattle.length > 0) createChart('chart-elec-seattle', data.electricity_seattle.map(d => formatDate(d.date)), data.electricity_seattle.map(d => d.value), '#1abc9c', { prefix: '$', decimals: 3 });
+        renderMetric('elec-vt', data.electricity_vt, 'VT Elec', { format: v => Number(v).toFixed(2) + '¢', periodSuffix: '/kWh' });
+        if (data.electricity_vt && data.electricity_vt.length > 0) createChart('chart-elec-vt', data.electricity_vt.map(d => formatDate(d.date)), data.electricity_vt.map(d => d.value), '#27ae60', { suffix: '¢', decimals: 2 });
+
+        renderMetric('elec-nh', data.electricity_nh, 'NH Elec', { format: v => Number(v).toFixed(2) + '¢', periodSuffix: '/kWh' });
+        if (data.electricity_nh && data.electricity_nh.length > 0) createChart('chart-elec-nh', data.electricity_nh.map(d => formatDate(d.date)), data.electricity_nh.map(d => d.value), '#e74c3c', { suffix: '¢', decimals: 2 });
+
+        renderMetric('elec-wa', data.electricity_wa, 'WA Elec', { format: v => Number(v).toFixed(2) + '¢', periodSuffix: '/kWh' });
+        if (data.electricity_wa && data.electricity_wa.length > 0) createChart('chart-elec-wa', data.electricity_wa.map(d => formatDate(d.date)), data.electricity_wa.map(d => d.value), '#1abc9c', { suffix: '¢', decimals: 2 });
+
+        renderMetric('elec-wy', data.electricity_wy, 'WY Elec', { format: v => Number(v).toFixed(2) + '¢', periodSuffix: '/kWh' });
+        if (data.electricity_wy && data.electricity_wy.length > 0) createChart('chart-elec-wy', data.electricity_wy.map(d => formatDate(d.date)), data.electricity_wy.map(d => d.value), '#8e44ad', { suffix: '¢', decimals: 2 });
 
       } catch (error) {
         console.error("Failed to load dashboard:", error);

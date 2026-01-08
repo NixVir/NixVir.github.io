@@ -16,16 +16,18 @@ import tempfile
 # API endpoints
 # Check environment variable first, then fall back to local config file
 FRED_API_KEY = os.environ.get('FRED_API_KEY', '')
-if not FRED_API_KEY:
-    # Try reading from local config file (for local development)
-    config_path = os.path.join(os.path.dirname(__file__), '.api_keys')
-    if os.path.exists(config_path):
-        with open(config_path) as f:
-            for line in f:
-                line = line.strip()
-                if line.startswith('FRED_API_KEY='):
-                    FRED_API_KEY = line.split('=', 1)[1].strip()
-                    break
+EIA_API_KEY = os.environ.get('EIA_API_KEY', '')
+
+# Try reading from local config file (for local development)
+config_path = os.path.join(os.path.dirname(__file__), '.api_keys')
+if os.path.exists(config_path):
+    with open(config_path) as f:
+        for line in f:
+            line = line.strip()
+            if line.startswith('FRED_API_KEY=') and not FRED_API_KEY:
+                FRED_API_KEY = line.split('=', 1)[1].strip()
+            elif line.startswith('EIA_API_KEY=') and not EIA_API_KEY:
+                EIA_API_KEY = line.split('=', 1)[1].strip()
 
 def print_safe(msg):
     """Print with safe encoding for Windows"""
@@ -98,6 +100,64 @@ def fetch_fred_data(series_id, limit=12):
                 'value': float(obs['value']),
                 'realtime_start': obs['realtime_start'],
                 'realtime_end': obs['realtime_end']
+            })
+
+    return observations
+
+def fetch_eia_electricity(state_id, sector='ALL', limit=24):
+    """
+    Fetch electricity retail price data from EIA API v2
+
+    Args:
+        state_id: Two-letter state code (e.g., 'CO', 'VT', 'CA') or 'US' for national
+        sector: 'RES' (residential), 'COM' (commercial), 'IND' (industrial), 'ALL' (total)
+        limit: Number of monthly observations to fetch
+
+    Returns:
+        List of {date, value} dicts with price in cents/kWh
+    """
+    if not EIA_API_KEY:
+        print_safe(f"  ! Skipping EIA {state_id} - No EIA API key")
+        return []
+
+    # EIA API v2 endpoint for electricity retail sales
+    base_url = "https://api.eia.gov/v2/electricity/retail-sales/data/"
+
+    # Build query parameters
+    params = {
+        'api_key': EIA_API_KEY,
+        'frequency': 'monthly',
+        'data[0]': 'price',  # Average retail price (cents/kWh)
+        'facets[stateid][]': state_id,
+        'facets[sectorid][]': sector,
+        'sort[0][column]': 'period',
+        'sort[0][direction]': 'desc',
+        'length': str(limit)
+    }
+
+    # Build URL with parameters
+    param_str = '&'.join(f"{k}={v}" for k, v in params.items())
+    url = f"{base_url}?{param_str}"
+
+    data = fetch_json(url, f"Error fetching EIA {state_id}")
+    if not data or 'response' not in data or 'data' not in data['response']:
+        return []
+
+    observations = []
+    for record in reversed(data['response']['data']):
+        if record.get('price') is not None:
+            # Convert period (YYYY-MM) to date format (YYYY-MM-01)
+            period = record.get('period', '')
+            if len(period) == 7:  # YYYY-MM format
+                date_str = f"{period}-01"
+            else:
+                date_str = period
+
+            observations.append({
+                'date': date_str,
+                'value': float(record['price']),  # Already in cents/kWh
+                'state': record.get('stateid', state_id),
+                'sector': record.get('sectorid', sector)
             })
 
     return observations
@@ -336,42 +396,42 @@ def update_dashboard():
 
     # =========================================================================
     # ELECTRICITY PRICING INDICATORS (Ski Region Focus)
+    # Using EIA API for state-level data (cents/kWh, commercial sector)
     # =========================================================================
 
-    # 9c. U.S. Average Electricity Price (Monthly - dollars per kWh)
-    print_safe("\nFetching U.S. Average Electricity Price...")
-    elec_us = fetch_fred_data('APU000072610', limit=24)  # 2 years monthly
-    if elec_us:
-        dashboard_data['electricity_us'] = elec_us
-        print_safe(f"  OK US Avg: ${elec_us[-1]['value']:.3f}/kWh ({len(elec_us)} data points)")
+    print_safe("\n--- Electricity Pricing (EIA State-Level, Commercial Sector) ---")
 
-    # 9d. Denver Metro Electricity (Colorado/Rockies ski region)
-    print_safe("\nFetching Denver Metro Electricity Price...")
-    elec_denver = fetch_fred_data('APUS48B72610', limit=24)
-    if elec_denver:
-        dashboard_data['electricity_denver'] = elec_denver
-        print_safe(f"  OK Denver: ${elec_denver[-1]['value']:.3f}/kWh ({len(elec_denver)} data points)")
+    # Key ski states with their regions:
+    # - Colorado (CO): Rockies
+    # - Utah (UT): Rockies/Wasatch
+    # - California (CA): Tahoe/Mammoth
+    # - Vermont (VT): New England
+    # - New Hampshire (NH): New England
+    # - Washington (WA): Pacific Northwest
+    # - Wyoming (WY): Jackson Hole
 
-    # 9e. Boston Metro Electricity (New England ski region - VT/NH proxy)
-    print_safe("\nFetching Boston Metro Electricity Price...")
-    elec_boston = fetch_fred_data('APUS11A72610', limit=24)
-    if elec_boston:
-        dashboard_data['electricity_boston'] = elec_boston
-        print_safe(f"  OK Boston: ${elec_boston[-1]['value']:.3f}/kWh ({len(elec_boston)} data points)")
+    ski_states = [
+        ('US', 'U.S. Average'),
+        ('CO', 'Colorado'),
+        ('UT', 'Utah'),
+        ('CA', 'California'),
+        ('VT', 'Vermont'),
+        ('NH', 'New Hampshire'),
+        ('WA', 'Washington'),
+        ('WY', 'Wyoming'),
+    ]
 
-    # 9f. Los Angeles Metro Electricity (California/Tahoe region proxy)
-    print_safe("\nFetching Los Angeles Metro Electricity Price...")
-    elec_la = fetch_fred_data('APUS49A72610', limit=24)
-    if elec_la:
-        dashboard_data['electricity_la'] = elec_la
-        print_safe(f"  OK LA: ${elec_la[-1]['value']:.3f}/kWh ({len(elec_la)} data points)")
-
-    # 9g. Seattle Metro Electricity (Pacific Northwest ski region)
-    print_safe("\nFetching Seattle Metro Electricity Price...")
-    elec_seattle = fetch_fred_data('APUS49D72610', limit=24)
-    if elec_seattle:
-        dashboard_data['electricity_seattle'] = elec_seattle
-        print_safe(f"  OK Seattle: ${elec_seattle[-1]['value']:.3f}/kWh ({len(elec_seattle)} data points)")
+    for state_id, state_name in ski_states:
+        print_safe(f"\nFetching {state_name} Electricity (Commercial)...")
+        # Use commercial sector (COM) - most relevant for ski operations
+        elec_data = fetch_eia_electricity(state_id, sector='COM', limit=24)
+        if elec_data:
+            key = f'electricity_{state_id.lower()}'
+            dashboard_data[key] = elec_data
+            # EIA returns cents/kWh, display as such
+            print_safe(f"  OK {state_id}: {elec_data[-1]['value']:.2f} cents/kWh ({len(elec_data)} data points)")
+        else:
+            print_safe(f"  ! {state_id}: No data available")
 
     # 10. 10-Year Treasury Yield (Daily - fetch ~1 year of trading days)
     print_safe("\nFetching 10-Year Treasury Yield...")
