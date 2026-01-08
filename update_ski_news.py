@@ -120,17 +120,13 @@ RSS_SOURCES = [
         'category': 'major_publication',
         'boost': 3  # Premium journalism
     },
+    # WSJ feed removed - consistently returns DNS errors (paywall/geo-block)
+    # Economist feed removed - returns 403 Forbidden (paywall)
     {
-        'name': 'Wall Street Journal',
-        'url': 'https://feeds.wsj.com/rss/news',
+        'name': 'Reuters Business',
+        'url': 'https://www.reutersagency.com/feed/?taxonomy=best-sectors&post_type=best',
         'category': 'major_publication',
-        'boost': 3
-    },
-    {
-        'name': 'The Economist',
-        'url': 'https://www.economist.com/rss',
-        'category': 'major_publication',
-        'boost': 3
+        'boost': 3  # Wire service - reliable business coverage
     },
     {
         'name': 'Washington Post',
@@ -150,17 +146,12 @@ RSS_SOURCES = [
         'category': 'major_publication',
         'boost': 3
     },
+    # Boston Globe feed removed - returns 404 Not Found (paywall restructure)
     {
-        'name': 'Boston Globe',
-        'url': 'https://www.bostonglobe.com/rss/feed',
+        'name': 'Associated Press - Top News',
+        'url': 'https://feedx.net/rss/ap.xml',
         'category': 'major_publication',
-        'boost': 3  # Strong New England ski coverage
-    },
-    {
-        'name': 'Associated Press - Business',
-        'url': 'https://rsshub.app/apnews/topics/business',
-        'category': 'major_publication',
-        'boost': 3  # Wire service - broad business coverage
+        'boost': 3  # Wire service - broad news coverage (alternative to rsshub)
     },
     {
         'name': 'Bloomberg Markets',
@@ -194,11 +185,12 @@ RSS_SOURCES = [
         'boost': 2  # Canadian public broadcaster
     },
     # Canadian ski organizations
+    # Canadian Ski Council feed removed - returns 403 Forbidden
     {
-        'name': 'Canadian Ski Council',
-        'url': 'https://www.skicanada.org/feed/',
+        'name': 'Google News - Canada Ski Industry',
+        'url': 'https://news.google.com/rss/search?q=canada+ski+resort+OR+whistler+OR+banff+skiing&hl=en-CA&gl=CA&ceid=CA:en',
         'category': 'canadian_industry',
-        'boost': 2  # National ski industry association
+        'boost': 2  # Aggregates Canadian ski news
     },
     # European ski news
     {
@@ -219,6 +211,25 @@ RSS_SOURCES = [
         'url': 'https://news.google.com/rss/search?q=2026+Winter+Olympics+Milan+Cortina+skiing&hl=en-US&gl=US&ceid=US:en',
         'category': 'aggregator',
         'boost': 1  # Milan-Cortina 2026 coverage
+    },
+    # Additional ski-focused Google News aggregators
+    {
+        'name': 'Google News - Vail Alterra Ski',
+        'url': 'https://news.google.com/rss/search?q=Vail+Resorts+OR+Alterra+Mountain+ski&hl=en-US&gl=US&ceid=US:en',
+        'category': 'aggregator',
+        'boost': 2  # Major resort company news
+    },
+    {
+        'name': 'Google News - Ski Resort Business',
+        'url': 'https://news.google.com/rss/search?q="ski+resort"+business+OR+investment+OR+acquisition&hl=en-US&gl=US&ceid=US:en',
+        'category': 'aggregator',
+        'boost': 2  # Ski business news
+    },
+    {
+        'name': 'Google News - Ski Pass Prices',
+        'url': 'https://news.google.com/rss/search?q=ski+pass+price+OR+Epic+Pass+OR+Ikon+Pass&hl=en-US&gl=US&ceid=US:en',
+        'category': 'aggregator',
+        'boost': 1  # Pass and pricing news
     },
     # Industry publications
     {
@@ -623,7 +634,7 @@ The overall score should be your recommendation for inclusion (1-10). Be strict 
 
     try:
         data = json.dumps({
-            "model": "claude-3-haiku-20240307",
+            "model": "claude-haiku-4-5-20251015",
             "max_tokens": 200,
             "messages": [{"role": "user", "content": prompt}]
         }).encode('utf-8')
