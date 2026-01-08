@@ -634,7 +634,7 @@ The overall score should be your recommendation for inclusion (1-10). Be strict 
 
     try:
         data = json.dumps({
-            "model": "claude-haiku-4-5-20251015",
+            "model": "claude-haiku-4-5-20251001",
             "max_tokens": 200,
             "messages": [{"role": "user", "content": prompt}]
         }).encode('utf-8')
