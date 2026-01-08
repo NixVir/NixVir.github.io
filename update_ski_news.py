@@ -1063,12 +1063,26 @@ def update_ski_news():
     filtered_articles = [a for a in all_articles if basic_relevance_filter(a)]
     print_safe(f"After keyword filter: {len(filtered_articles)} articles")
 
+    # Prioritize ski-dedicated sources (Unofficial Networks, SnowBrains, PlanetSKI, etc.)
+    # so they get processed first within the 20-article limit
+    ski_dedicated_sources = ['Unofficial Networks', 'SnowBrains', 'PlanetSKI', 'The Ski Guru',
+                            'Ski Area Management', 'Snow Industry News', 'SIA - Snowsports Industries America']
+    def source_priority(article):
+        source = article.get('source', '')
+        if source in ski_dedicated_sources:
+            return 0  # Process first
+        elif 'ski' in source.lower() or 'snow' in source.lower():
+            return 1  # Second priority
+        else:
+            return 2  # Last
+    filtered_articles.sort(key=source_priority)
+
     approved = []
     pending = review_queue.get('pending', [])
     rejected = review_queue.get('rejected', [])
 
-    # Score each article with LLM
-    for i, article in enumerate(filtered_articles[:20]):  # Limit to 20 per run for cost control
+    # Score each article (prioritized by source)
+    for i, article in enumerate(filtered_articles[:20]):  # Limit to 20 per run
         print_safe(f"\n[{i+1}/{min(len(filtered_articles), 20)}] {article.get('title', 'No title')[:60]}...")
 
         score, details = score_article(article)
