@@ -754,7 +754,38 @@ def basic_keyword_score(article):
     text = f"{article.get('title', '')} {article.get('description', '')} {article.get('content', '')}".lower()
     title = article.get('title', '').lower()
 
-    score = 5  # Base score
+    # CORE SKI KEYWORDS - article MUST contain at least one to be considered
+    core_ski_keywords = [
+        'ski', 'skiing', 'skier', 'slope', 'slopes', 'chairlift', 'gondola', 'lift',
+        'snowboard', 'snowboarding', 'powder', 'alpine', 'downhill', 'terrain park',
+        'snow sport', 'winter sport', 'après', 'apres', 'backcountry', 'off-piste',
+        'snowmaking', 'grooming', 'base area', 'summit', 'vertical', 'mountain resort',
+        'ski resort', 'ski area', 'ski town', 'ski season', 'ski pass', 'ikon', 'epic pass',
+        'vail resorts', 'alterra', 'aspen skiing', 'boyne', 'powdr',
+        # Major resorts
+        'whistler', 'blackcomb', 'vail', 'aspen', 'park city', 'deer valley', 'jackson hole',
+        'mammoth', 'squaw', 'palisades', 'tahoe', 'big sky', 'telluride', 'steamboat',
+        'breckenridge', 'keystone', 'copper', 'winter park', 'arapahoe', 'loveland',
+        'banff', 'lake louise', 'revelstoke', 'fernie', 'big white', 'sun peaks',
+        'mont tremblant', 'blue mountain', 'killington', 'stowe', 'sugarbush', 'jay peak',
+        'snowbird', 'alta', 'brighton', 'solitude', 'snowbasin', 'sundance',
+        # Winter Olympics ski context
+        'winter olympics', 'winter games', 'olympic ski', 'slalom', 'giant slalom',
+        'super-g', 'downhill race', 'freestyle ski', 'ski cross', 'moguls',
+        # Snow/weather in ski context
+        'snowfall', 'snowpack', 'snow forecast', 'powder day', 'storm ski',
+        # Industry terms
+        'skier visit', 'ski industry', 'resort operator', 'lift ticket', 'season pass'
+    ]
+
+    # Check for core ski relevance
+    has_ski_relevance = any(kw in text for kw in core_ski_keywords)
+
+    # If no ski keywords found, reject with low score
+    if not has_ski_relevance:
+        return 2, {"reason": "No ski industry relevance detected"}
+
+    score = 5  # Base score (only for articles with ski relevance)
 
     # HIGH PRIORITY: Resort/destination business news (in title = +3, in body = +2)
     resort_business = ['acquisition', 'merger', 'investment', 'earnings', 'expansion',
