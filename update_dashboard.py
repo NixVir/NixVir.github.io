@@ -334,6 +334,45 @@ def update_dashboard():
         dashboard_data['bankruptcy_ppi'] = bankruptcy_data
         print_safe(f"  OK Latest: {bankruptcy_data[-1]['value']} ({len(bankruptcy_data)} data points)")
 
+    # =========================================================================
+    # ELECTRICITY PRICING INDICATORS (Ski Region Focus)
+    # =========================================================================
+
+    # 9c. U.S. Average Electricity Price (Monthly - dollars per kWh)
+    print_safe("\nFetching U.S. Average Electricity Price...")
+    elec_us = fetch_fred_data('APU000072610', limit=24)  # 2 years monthly
+    if elec_us:
+        dashboard_data['electricity_us'] = elec_us
+        print_safe(f"  OK US Avg: ${elec_us[-1]['value']:.3f}/kWh ({len(elec_us)} data points)")
+
+    # 9d. Denver Metro Electricity (Colorado/Rockies ski region)
+    print_safe("\nFetching Denver Metro Electricity Price...")
+    elec_denver = fetch_fred_data('APUS48B72610', limit=24)
+    if elec_denver:
+        dashboard_data['electricity_denver'] = elec_denver
+        print_safe(f"  OK Denver: ${elec_denver[-1]['value']:.3f}/kWh ({len(elec_denver)} data points)")
+
+    # 9e. Boston Metro Electricity (New England ski region - VT/NH proxy)
+    print_safe("\nFetching Boston Metro Electricity Price...")
+    elec_boston = fetch_fred_data('APUS11A72610', limit=24)
+    if elec_boston:
+        dashboard_data['electricity_boston'] = elec_boston
+        print_safe(f"  OK Boston: ${elec_boston[-1]['value']:.3f}/kWh ({len(elec_boston)} data points)")
+
+    # 9f. Los Angeles Metro Electricity (California/Tahoe region proxy)
+    print_safe("\nFetching Los Angeles Metro Electricity Price...")
+    elec_la = fetch_fred_data('APUS49A72610', limit=24)
+    if elec_la:
+        dashboard_data['electricity_la'] = elec_la
+        print_safe(f"  OK LA: ${elec_la[-1]['value']:.3f}/kWh ({len(elec_la)} data points)")
+
+    # 9g. Seattle Metro Electricity (Pacific Northwest ski region)
+    print_safe("\nFetching Seattle Metro Electricity Price...")
+    elec_seattle = fetch_fred_data('APUS49D72610', limit=24)
+    if elec_seattle:
+        dashboard_data['electricity_seattle'] = elec_seattle
+        print_safe(f"  OK Seattle: ${elec_seattle[-1]['value']:.3f}/kWh ({len(elec_seattle)} data points)")
+
     # 10. 10-Year Treasury Yield (Daily - fetch ~1 year of trading days)
     print_safe("\nFetching 10-Year Treasury Yield...")
     treasury_data = fetch_fred_data('DGS10', limit=260)
