@@ -1,6 +1,6 @@
 {
-  "updated": "2026-01-08 07:56:10",
-  "total_articles": 2,
+  "updated": "2026-01-08 08:00:50",
+  "total_articles": 3,
   "articles": [
     {
       "source": "New York Times - Travel",
@@ -35,6 +35,22 @@
       "secondary_categories": [
         "transportation"
       ]
+    },
+    {
+      "source": "The Atlantic",
+      "url": "https://www.theatlantic.com/science/2026/01/palisades-la-fire-one-year/685535/?utm_source=feed",
+      "title": "The View From the Palisades",
+      "description": "A year is only the beginning of recovery from disaster.",
+      "content": "A year is only the beginning of recovery from disaster.",
+      "pub_date": "2026-01-07T13:12:16-05:00",
+      "id": "a6a9dd3ca74f",
+      "score": 8,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 3)"
+      },
+      "approved_date": "2026-01-08",
+      "category": "hospitality",
+      "secondary_categories": []
     }
   ]
 }
