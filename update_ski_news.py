@@ -659,6 +659,10 @@ The overall score should be your recommendation for inclusion (1-10). Be strict 
                 scores = json.loads(json_match.group())
                 return scores.get('overall', 5), scores
 
+    except urllib.error.HTTPError as e:
+        error_body = e.read().decode('utf-8', errors='replace')
+        print_safe(f"    ! Claude API error: {e}")
+        print_safe(f"    ! Error details: {error_body[:500]}")
     except Exception as e:
         print_safe(f"    ! Claude API error: {e}")
 
