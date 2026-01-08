@@ -248,7 +248,29 @@ def update_dashboard():
         dashboard_data['markets'] = markets
         print_safe(f"  OK S&P 500: {sp500_data[-1]['value']:.2f} ({len(sp500_data)} data points)")
 
-    # 2b. VIX Volatility Index (Daily - fetch ~1 year of trading days)
+    # 2b. Dow Jones Industrial Average (Daily - fetch ~1 year of trading days)
+    print_safe("\nFetching Dow Jones Industrial Average...")
+    djia_data = fetch_fred_data('DJIA', limit=260)
+    if djia_data:
+        dashboard_data['djia'] = djia_data
+        print_safe(f"  OK DJIA: {djia_data[-1]['value']:.2f} ({len(djia_data)} data points)")
+
+    # 2c. NASDAQ Composite Index (Daily - fetch ~1 year of trading days)
+    print_safe("\nFetching NASDAQ Composite Index...")
+    nasdaq_data = fetch_fred_data('NASDAQCOM', limit=260)
+    if nasdaq_data:
+        dashboard_data['nasdaq'] = nasdaq_data
+        print_safe(f"  OK NASDAQ: {nasdaq_data[-1]['value']:.2f} ({len(nasdaq_data)} data points)")
+
+    # 2d. Hotel & Lodging REITs - use FRED NASDAQ REIT Index
+    # NASDAQNQUSB351020 = Nasdaq US Benchmark Real Estate Investment Trusts Index
+    print_safe("\nFetching Hotel & Lodging REITs (Nasdaq REIT Index)...")
+    reit_data = fetch_fred_data('NASDAQNQUSB351020', limit=260)
+    if reit_data:
+        dashboard_data['hotel_reits'] = reit_data
+        print_safe(f"  OK REITs: {reit_data[-1]['value']:.2f} ({len(reit_data)} data points)")
+
+    # 2e. VIX Volatility Index (Daily - fetch ~1 year of trading days)
     print_safe("\nFetching VIX Volatility Index...")
     vix_data = fetch_fred_data('VIXCLS', limit=260)
     if vix_data:
