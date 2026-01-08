@@ -11,7 +11,7 @@ tags:
   - forecasting
   - ski-resorts
 description: 'U.S. versus Canadian winter outlook forecasts are often presented separately and never fully contextualized with regards to their implications for the North American ski resorts as a whole. Here we attempt to provide that context, while also comparing and contrasting the two countries climate models and their relative strengths and weaknesses.'
-featured_image: '/images/winter-outlook-2025-comparison.png'
+featured_image: '/images/winter-outlook-2025-comparison.jpg'
 omit_header_text: true
 ---
 Click <a href="/articles/winter-outlook-2025/">here</a> to read the full analysis comparing NOAA and Environment Canada CanSIPS forecasts for the 2025/26 winter season.

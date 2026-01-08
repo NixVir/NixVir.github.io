@@ -11,7 +11,7 @@ tags:
   - middle class
   - poverty
 description: 'How a broken benchmark quietly broke America. The percentage of US households with a total income greater than $150,000 has increased as the middle class has been shrinking.'
-featured_image: '/images/growing-wealth-inequality.png'
+featured_image: '/images/growing-wealth-inequality.jpg'
 ---
 
 The percentage of US households earning more than $150,000 has grown significantly since 1965, while the middle class ($50,000 to $149,999) has been steadily shrinking. This chart from the US Census Bureau (in 2024 dollars) reveals a fundamental shift in American income distribution.

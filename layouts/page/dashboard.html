@@ -38,12 +38,19 @@
     .consensus-label { font-size: 0.85em; color: #7f8c8d; }
     </style>
 
+    <noscript>
+      <div style="background: #fef3cd; border: 1px solid #ffc107; border-radius: 6px; padding: 1rem; margin-bottom: 1.5rem; color: #856404;">
+        <strong>JavaScript Required:</strong> The Economic Dashboard requires JavaScript to display interactive charts and real-time data.
+        Please enable JavaScript in your browser settings to view the full dashboard.
+      </div>
+    </noscript>
+
     <div id="dashboard-container">
       <div class="dashboard-updated">Last updated: <span id="last-update">Loading...</span></div>
 
       <div class="accordion-section" data-section="economic">
         <div class="accordion-header" onclick="toggleSection(this)">
-          <h3><span class="section-icon">📊</span> Economic Indicators <span class="metric-count">(7 metrics)</span></h3>
+          <h3><span class="section-icon">📊</span> Economic Indicators <span class="metric-count">(8 metrics)</span></h3>
           <span class="accordion-arrow">▼</span>
         </div>
         <div class="accordion-content">
@@ -56,6 +63,7 @@
               <div class="metric-card"><h4>Employment (Thousands)</h4><div id="employment">Loading...</div><div class="chart-container"><canvas id="chart-emp"></canvas></div></div>
               <div class="metric-card"><h4>Average Hourly Wages</h4><div id="wages">Loading...</div><div class="chart-container"><canvas id="chart-wages"></canvas></div></div>
               <div class="metric-card"><h4>Housing Starts (Thousands)</h4><div id="housing">Loading...</div><div class="chart-container"><canvas id="chart-housing"></canvas></div></div>
+              <div class="metric-card"><h4>Bankruptcy Activity (PPI)</h4><div id="bankruptcy">Loading...</div><div class="chart-container"><canvas id="chart-bankruptcy"></canvas></div></div>
             </div>
           </div>
         </div>
@@ -63,15 +71,23 @@
 
       <div class="accordion-section" data-section="markets">
         <div class="accordion-header" onclick="toggleSection(this)">
-          <h3><span class="section-icon">📈</span> Markets & Interest Rates <span class="metric-count">(3 metrics)</span></h3>
+          <h3><span class="section-icon">📈</span> Markets & Interest Rates <span class="metric-count">(6 indices + Mag 7)</span></h3>
           <span class="accordion-arrow">▼</span>
         </div>
         <div class="accordion-content">
           <div class="accordion-inner">
+            <h4 style="margin: 0 0 15px 0; color: #7f8c8d; font-size: 0.9em; font-weight: 500;">Major Indices</h4>
             <div class="dashboard-grid">
               <div class="metric-card"><h4>S&P 500 Index</h4><div id="sp500">Loading...</div><div class="chart-container"><canvas id="chart-spy"></canvas></div></div>
+              <div class="metric-card"><h4>Dow Jones Industrial</h4><div id="djia">Loading...</div><div class="chart-container"><canvas id="chart-djia"></canvas></div></div>
+              <div class="metric-card"><h4>NASDAQ Composite</h4><div id="nasdaq">Loading...</div><div class="chart-container"><canvas id="chart-nasdaq"></canvas></div></div>
+              <div class="metric-card"><h4>Hotel & Lodging REITs</h4><div id="hotel-reits">Loading...</div><div class="chart-container"><canvas id="chart-hotel"></canvas></div></div>
               <div class="metric-card"><h4>Fed Funds Rate</h4><div id="fed-rate">Loading...</div><div class="chart-container"><canvas id="chart-fed"></canvas></div></div>
               <div class="metric-card"><h4>10-Year Treasury Yield</h4><div id="treasury">Loading...</div><div class="chart-container"><canvas id="chart-treasury"></canvas></div></div>
+            </div>
+            <h4 style="margin: 25px 0 15px 0; color: #7f8c8d; font-size: 0.9em; font-weight: 500;">Magnificent 7 Stocks</h4>
+            <div class="dashboard-grid" id="mag7-grid">
+              <div class="metric-card"><div id="mag7-loading">Loading Magnificent 7...</div></div>
             </div>
           </div>
         </div>
@@ -129,7 +145,7 @@
                 <div class="prediction-meta" id="inflation-meta"></div>
               </div>
               <div class="metric-card prediction-card">
-                <h4>Monthly Payrolls Outlook</h4>
+                <h4>Jobs Report Outlook</h4>
                 <div id="payrolls-consensus">Loading...</div>
                 <div class="chart-container" style="height: 180px;"><canvas id="chart-payrolls"></canvas></div>
                 <div class="prediction-meta" id="payrolls-meta"></div>
@@ -316,6 +332,9 @@
         renderMetric('housing', data.housing_starts, 'Housing', { format: v => Number(v).toLocaleString() });
         if (data.housing_starts && data.housing_starts.length > 0) createChart('chart-housing', data.housing_starts.map(d => formatDate(d.date)), data.housing_starts.map(d => d.value), '#8e44ad', { suffix: 'K', decimals: 0 });
 
+        renderMetric('bankruptcy', data.bankruptcy_ppi, 'Bankruptcy', { format: v => Number(v).toFixed(1) });
+        if (data.bankruptcy_ppi && data.bankruptcy_ppi.length > 0) createChart('chart-bankruptcy', data.bankruptcy_ppi.map(d => formatDate(d.date)), data.bankruptcy_ppi.map(d => d.value), '#c0392b', { decimals: 1 });
+
         // Markets & Interest Rates
         if (data.markets) {
           const sp = data.markets.find(m => m.symbol === "SPY");
@@ -328,11 +347,53 @@
           document.getElementById('sp500').innerHTML = '<div class="value">--</div><div class="period">No data</div>';
         }
 
+        // Dow Jones Industrial Average
+        renderMetric('djia', data.djia, 'DJIA', { format: v => Number(v).toLocaleString(undefined, {minimumFractionDigits: 2}), hasMomentum: true, shortDate: true });
+        if (data.djia && data.djia.length > 0) createChart('chart-djia', data.djia.map(d => formatShortDate(d.date)), data.djia.map(d => d.value), '#2980b9', { decimals: 0 });
+
+        // NASDAQ Composite
+        renderMetric('nasdaq', data.nasdaq, 'NASDAQ', { format: v => Number(v).toLocaleString(undefined, {minimumFractionDigits: 2}), hasMomentum: true, shortDate: true });
+        if (data.nasdaq && data.nasdaq.length > 0) createChart('chart-nasdaq', data.nasdaq.map(d => formatShortDate(d.date)), data.nasdaq.map(d => d.value), '#8e44ad', { decimals: 0 });
+
+        // Hotel & Lodging REITs
+        renderMetric('hotel-reits', data.hotel_reits, 'Hotel REITs', { format: v => Number(v).toFixed(2), hasMomentum: true, shortDate: true });
+        if (data.hotel_reits && data.hotel_reits.length > 0) createChart('chart-hotel', data.hotel_reits.map(d => formatShortDate(d.date)), data.hotel_reits.map(d => d.value), '#e67e22', { decimals: 2 });
+
         renderMetric('fed-rate', data.fed_funds_rate, 'Fed Rate', { format: v => Number(v).toFixed(2) + '%', isPercent: true, hasMomentum: true, shortDate: true, colorClass: 'neutral' });
         if (data.fed_funds_rate && data.fed_funds_rate.length > 0) createChart('chart-fed', data.fed_funds_rate.map(d => formatShortDate(d.date)), data.fed_funds_rate.map(d => d.value), '#e74c3c', { suffix: '%', decimals: 2 });
 
         renderMetric('treasury', data.treasury_10y, 'Treasury', { format: v => Number(v).toFixed(2) + '%', isPercent: true, hasMomentum: true, shortDate: true, colorClass: 'neutral' });
         if (data.treasury_10y && data.treasury_10y.length > 0) createChart('chart-treasury', data.treasury_10y.map(d => formatShortDate(d.date)), data.treasury_10y.map(d => d.value), '#c0392b', { suffix: '%', decimals: 2 });
+
+        // Magnificent 7 Stocks
+        if (data.mag7 && data.mag7.length > 0) {
+          const mag7Grid = document.getElementById('mag7-grid');
+          const stockColors = { 'AAPL': '#555555', 'MSFT': '#00a4ef', 'GOOGL': '#4285f4', 'AMZN': '#ff9900', 'NVDA': '#76b900', 'META': '#0866ff', 'TSLA': '#cc0000' };
+          mag7Grid.innerHTML = data.mag7.map(stock => {
+            const change = stock.previousClose ? ((stock.price - stock.previousClose) / stock.previousClose * 100) : 0;
+            const changeClass = change >= 0 ? 'positive' : 'negative';
+            const changeArrow = change >= 0 ? '↑' : '↓';
+            return '<div class="metric-card">' +
+              '<h4>' + stock.name.replace(' Inc.', '').replace(' Platforms', '').replace(', Inc.', '').replace(' Corp', '') + ' (' + stock.symbol + ')</h4>' +
+              '<div class="value">$' + stock.price.toFixed(2) + '</div>' +
+              '<div class="period"><span class="' + changeClass + '">' + changeArrow + ' ' + Math.abs(change).toFixed(2) + '%</span> today</div>' +
+              '<div class="chart-container"><canvas id="chart-' + stock.symbol.toLowerCase() + '"></canvas></div>' +
+              '</div>';
+          }).join('');
+          // Create mini charts for each stock
+          data.mag7.forEach(stock => {
+            if (stock.history && stock.history.length > 0) {
+              createChart('chart-' + stock.symbol.toLowerCase(),
+                stock.history.map(h => formatShortDate(h.date)),
+                stock.history.map(h => h.value),
+                stockColors[stock.symbol] || '#3498db',
+                { decimals: 2, prefix: '$' }
+              );
+            }
+          });
+        } else {
+          document.getElementById('mag7-grid').innerHTML = '<div class="metric-card"><div class="value">--</div><div class="period">Stock data unavailable</div></div>';
+        }
 
         // Currency Exchange Rates
         renderMetric('usd-cad', data.usd_cad, 'USD/CAD', { format: v => Number(v).toFixed(4), hasMomentum: true, shortDate: true, periodSuffix: ' (CAD per USD)' });
@@ -429,19 +490,31 @@
           }
         }
 
-        // Render Payrolls
+        // Render Payrolls - show most liquid month with meaningful framing
         if (data.payrolls && data.payrolls.months && data.payrolls.months.length > 0) {
           const pay = data.payrolls;
-          const nearestMonth = pay.months[0];
+          // Months are already sorted by volume (most liquid first)
+          const topMonth = pay.months[0];
           const el = document.getElementById('payrolls-consensus');
-
-          // Find the 50% probability strike
-          const medianMarket = nearestMonth.markets.find(m => m.yes_bid >= 0.45 && m.yes_bid <= 0.55) || nearestMonth.markets[0];
+          const monthLabel = topMonth.month.replace(/(\d{2})(\w+)/, (_, y, m) => m + ' 20' + y);
 
           if (el) {
-            const monthLabel = nearestMonth.month.replace(/(\d{2})(\w+)/, (_, y, m) => m + ' 20' + y);
-            el.innerHTML = '<div class="consensus-value">' + (medianMarket.strike / 1000).toFixed(0) + 'K</div>' +
-              '<div class="consensus-label">Market expects ~' + (medianMarket.strike / 1000).toFixed(0) + 'K jobs added in ' + monthLabel + '</div>';
+            // Show probability of job losses as the key metric (more meaningful for economic health)
+            const probLoss = topMonth.prob_job_loss || 0;
+            const probPositive = topMonth.prob_positive || 0;
+            const probStrong = topMonth.prob_strong || 0;
+
+            // Color code based on job loss probability
+            let riskClass = 'positive';
+            let riskLabel = 'Low Risk';
+            if (probLoss >= 50) { riskClass = 'negative'; riskLabel = 'High Risk'; }
+            else if (probLoss >= 30) { riskClass = 'neutral'; riskLabel = 'Moderate Risk'; }
+
+            el.innerHTML = '<div class="consensus-value ' + riskClass + '">' + probLoss.toFixed(0) + '%</div>' +
+              '<div class="consensus-label">Probability of job losses in ' + monthLabel + '</div>' +
+              '<div style="margin-top:8px; font-size:0.8em; color:#7f8c8d;">' +
+              '<span style="margin-right:12px;">Positive growth: ' + probPositive.toFixed(0) + '%</span>' +
+              '<span>Strong (+100K): ' + probStrong.toFixed(0) + '%</span></div>';
           }
 
           // Create payrolls probability curve
@@ -451,12 +524,12 @@
             charts['chart-payrolls'] = new Chart(ctx, {
               type: 'line',
               data: {
-                labels: nearestMonth.markets.map(m => (m.strike / 1000) + 'K'),
+                labels: topMonth.markets.map(m => (m.strike / 1000) + 'K'),
                 datasets: [{
                   label: 'P(Above)',
-                  data: nearestMonth.markets.map(m => m.yes_bid * 100),
-                  borderColor: '#27ae60',
-                  backgroundColor: 'rgba(39, 174, 96, 0.1)',
+                  data: topMonth.markets.map(m => m.yes_bid * 100),
+                  borderColor: '#3498db',
+                  backgroundColor: 'rgba(52, 152, 219, 0.1)',
                   fill: true,
                   tension: 0.4,
                   pointRadius: 3,
@@ -471,14 +544,16 @@
                   tooltip: {
                     callbacks: {
                       label: function(ctx) {
-                        return 'Prob > ' + nearestMonth.markets[ctx.dataIndex].strike.toLocaleString() + ' jobs: ' + ctx.parsed.y.toFixed(0) + '%';
+                        const strike = topMonth.markets[ctx.dataIndex].strike;
+                        const label = strike === 0 ? 'Prob of positive growth' : 'Prob > ' + strike.toLocaleString() + ' jobs';
+                        return label + ': ' + ctx.parsed.y.toFixed(0) + '%';
                       }
                     }
                   }
                 },
                 scales: {
-                  x: { grid: { display: false }, ticks: { font: { size: 9 } } },
-                  y: { max: 100, min: 0, ticks: { callback: v => v + '%', font: { size: 9 } }, grid: { color: '#ecf0f1' } }
+                  x: { grid: { display: false }, ticks: { font: { size: 9 } }, title: { display: true, text: 'Jobs Added', font: { size: 9 }, color: '#95a5a6' } },
+                  y: { max: 100, min: 0, ticks: { callback: v => v + '%', font: { size: 9 } }, grid: { color: '#ecf0f1' }, title: { display: true, text: 'Probability', font: { size: 9 }, color: '#95a5a6' } }
                 }
               }
             });
@@ -486,8 +561,7 @@
 
           const meta = document.getElementById('payrolls-meta');
           if (meta) {
-            const monthLabel = nearestMonth.month.replace(/(\d{2})(\w+)/, (_, y, m) => m + ' 20' + y);
-            meta.textContent = monthLabel + ' | Volume: ' + nearestMonth.total_volume.toLocaleString();
+            meta.textContent = monthLabel + ' (most liquid) | ' + topMonth.total_volume.toLocaleString() + ' contracts traded';
           }
         }
 
