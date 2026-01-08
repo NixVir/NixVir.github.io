@@ -956,14 +956,10 @@ def basic_keyword_score(article):
     return max(1, min(10, score)), {"reason": f"Keyword scoring (boost: {source_boost})"}
 
 def score_article(article):
-    """Score article using available LLM API"""
-    # Try Claude first, then OpenAI
-    if ANTHROPIC_API_KEY:
-        return score_with_claude(article)
-    elif OPENAI_API_KEY:
-        return score_with_openai(article)
-    else:
-        return basic_keyword_score(article)
+    """Score article using keyword-based analysis (no API costs)"""
+    # Use keyword scoring to avoid API costs
+    # LLM scoring functions are preserved but disabled
+    return basic_keyword_score(article)
 
 def load_existing_articles():
     """Load existing articles to avoid duplicates"""
@@ -1113,10 +1109,8 @@ def update_ski_news():
     return output_data
 
 if __name__ == '__main__':
-    # Check for API keys
-    if not ANTHROPIC_API_KEY and not OPENAI_API_KEY:
-        print_safe("WARNING: No LLM API key found. Set ANTHROPIC_API_KEY or OPENAI_API_KEY")
-        print_safe("Falling back to basic keyword scoring.\n")
+    # Using keyword-based scoring (no API costs)
+    print_safe("Using keyword-based scoring (no API costs)\n")
 
     try:
         update_ski_news()
