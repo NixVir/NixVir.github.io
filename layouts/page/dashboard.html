@@ -95,16 +95,40 @@
 
       <div class="accordion-section" data-section="currency">
         <div class="accordion-header" onclick="toggleSection(this)">
-          <h3><span class="section-icon">💱</span> Currency Exchange Rates <span class="metric-count">(4 currencies)</span></h3>
+          <h3><span class="section-icon">💱</span> Currency & Dollar Strength <span class="metric-count">(11 metrics)</span></h3>
           <span class="accordion-arrow">▼</span>
         </div>
         <div class="accordion-content">
           <div class="accordion-inner">
+            <div class="prediction-intro">
+              <strong>Dollar Strength Indices</strong> — The <a href="https://fred.stlouisfed.org/series/DTWEXBGS" target="_blank" rel="noopener">Fed Trade-Weighted Index</a> measures USD against 26 major trading partners weighted by trade volume. More representative than DXY (which is 57% Euro-weighted). Higher = stronger dollar = fewer international visitors.
+              <br><br>
+              <strong>Ski tourism impact:</strong> Research shows ski tourism is highly elastic to exchange rates (-1.5 to -2.2). A 10%+ move in USD/CAD typically correlates with measurable shifts in cross-border visits. Currency impacts lag 3-6 months for destination travel.
+              <br><br>
+              <span style="font-size: 0.9em; color: #95a5a6;">All rates shown as foreign currency per 1 USD. Higher values = stronger dollar. Sources: <a href="https://fred.stlouisfed.org/categories/105" target="_blank" rel="noopener">FRED Exchange Rates</a> | <a href="https://www.federalreserve.gov/releases/h10/summary/" target="_blank" rel="noopener">Fed H.10 Release</a></span>
+            </div>
+            <h4 style="margin: 0 0 15px 0; color: #7f8c8d; font-size: 0.9em; font-weight: 500;">Dollar Strength Indices</h4>
+            <div class="dashboard-grid">
+              <div class="metric-card"><h4>Trade-Weighted USD (Nominal)</h4><div id="trade-weighted">Loading...</div><div class="chart-container"><canvas id="chart-tw"></canvas></div></div>
+              <div class="metric-card"><h4>Trade-Weighted USD (Real)</h4><div id="real-trade-weighted">Loading...</div><div class="chart-container"><canvas id="chart-rtw"></canvas></div></div>
+            </div>
+            <h4 style="margin: 25px 0 15px 0; color: #7f8c8d; font-size: 0.9em; font-weight: 500;">North American & Latin America</h4>
             <div class="dashboard-grid">
               <div class="metric-card"><h4>USD / Canadian Dollar</h4><div id="usd-cad">Loading...</div><div class="chart-container"><canvas id="chart-cad"></canvas></div></div>
-              <div class="metric-card"><h4>USD / Euro</h4><div id="usd-eur">Loading...</div><div class="chart-container"><canvas id="chart-eur"></canvas></div></div>
-              <div class="metric-card"><h4>USD / Japanese Yen</h4><div id="usd-jpy">Loading...</div><div class="chart-container"><canvas id="chart-jpy"></canvas></div></div>
               <div class="metric-card"><h4>USD / Mexican Peso</h4><div id="usd-mxn">Loading...</div><div class="chart-container"><canvas id="chart-mxn"></canvas></div></div>
+            </div>
+            <h4 style="margin: 25px 0 15px 0; color: #7f8c8d; font-size: 0.9em; font-weight: 500;">Europe</h4>
+            <div class="dashboard-grid">
+              <div class="metric-card"><h4>USD / Euro</h4><div id="usd-eur">Loading...</div><div class="chart-container"><canvas id="chart-eur"></canvas></div></div>
+              <div class="metric-card"><h4>USD / British Pound</h4><div id="usd-gbp">Loading...</div><div class="chart-container"><canvas id="chart-gbp"></canvas></div></div>
+              <div class="metric-card"><h4>USD / Russian Ruble</h4><div id="usd-rub">Loading...</div><div class="chart-container"><canvas id="chart-rub"></canvas></div></div>
+            </div>
+            <h4 style="margin: 25px 0 15px 0; color: #7f8c8d; font-size: 0.9em; font-weight: 500;">Asia-Pacific</h4>
+            <div class="dashboard-grid">
+              <div class="metric-card"><h4>USD / Japanese Yen</h4><div id="usd-jpy">Loading...</div><div class="chart-container"><canvas id="chart-jpy"></canvas></div></div>
+              <div class="metric-card"><h4>USD / Chinese Yuan</h4><div id="usd-cny">Loading...</div><div class="chart-container"><canvas id="chart-cny"></canvas></div></div>
+              <div class="metric-card"><h4>USD / Indian Rupee</h4><div id="usd-inr">Loading...</div><div class="chart-container"><canvas id="chart-inr"></canvas></div></div>
+              <div class="metric-card"><h4>USD / Australian Dollar</h4><div id="usd-aud">Loading...</div><div class="chart-container"><canvas id="chart-aud"></canvas></div></div>
             </div>
           </div>
         </div>
@@ -425,18 +449,42 @@
           document.getElementById('mag7-grid').innerHTML = '<div class="metric-card"><div class="value">--</div><div class="period">Stock data unavailable</div></div>';
         }
 
-        // Currency Exchange Rates
+        // Dollar Strength Indices
+        renderMetric('trade-weighted', data.trade_weighted_usd, 'TW-USD', { format: v => Number(v).toFixed(2), hasMomentum: true, shortDate: true, periodSuffix: ' (index)' });
+        if (data.trade_weighted_usd && data.trade_weighted_usd.length > 0) createChart('chart-tw', data.trade_weighted_usd.map(d => formatShortDate(d.date)), data.trade_weighted_usd.map(d => d.value), '#2c3e50', { decimals: 2 });
+
+        renderMetric('real-trade-weighted', data.real_trade_weighted_usd, 'Real TW-USD', { format: v => Number(v).toFixed(2), hasMomentum: true, shortDate: true, periodSuffix: ' (index)' });
+        if (data.real_trade_weighted_usd && data.real_trade_weighted_usd.length > 0) createChart('chart-rtw', data.real_trade_weighted_usd.map(d => formatShortDate(d.date)), data.real_trade_weighted_usd.map(d => d.value), '#7f8c8d', { decimals: 2 });
+
+        // Currency Exchange Rates - North America & Latin America
         renderMetric('usd-cad', data.usd_cad, 'USD/CAD', { format: v => Number(v).toFixed(4), hasMomentum: true, shortDate: true, periodSuffix: ' (CAD per USD)' });
         if (data.usd_cad && data.usd_cad.length > 0) createChart('chart-cad', data.usd_cad.map(d => formatShortDate(d.date)), data.usd_cad.map(d => d.value), '#e74c3c', { decimals: 4 });
 
-        renderMetric('usd-eur', data.usd_eur, 'USD/EUR', { format: v => Number(v).toFixed(4), hasMomentum: true, shortDate: true, periodSuffix: ' (USD per EUR)' });
+        renderMetric('usd-mxn', data.usd_mxn, 'USD/MXN', { format: v => Number(v).toFixed(2), hasMomentum: true, shortDate: true, periodSuffix: ' (MXN per USD)' });
+        if (data.usd_mxn && data.usd_mxn.length > 0) createChart('chart-mxn', data.usd_mxn.map(d => formatShortDate(d.date)), data.usd_mxn.map(d => d.value), '#27ae60', { decimals: 2 });
+
+        // Currency Exchange Rates - Europe
+        renderMetric('usd-eur', data.usd_eur, 'USD/EUR', { format: v => Number(v).toFixed(4), hasMomentum: true, shortDate: true, periodSuffix: ' (EUR per USD)' });
         if (data.usd_eur && data.usd_eur.length > 0) createChart('chart-eur', data.usd_eur.map(d => formatShortDate(d.date)), data.usd_eur.map(d => d.value), '#3498db', { decimals: 4 });
 
+        renderMetric('usd-gbp', data.usd_gbp, 'USD/GBP', { format: v => Number(v).toFixed(4), hasMomentum: true, shortDate: true, periodSuffix: ' (GBP per USD)' });
+        if (data.usd_gbp && data.usd_gbp.length > 0) createChart('chart-gbp', data.usd_gbp.map(d => formatShortDate(d.date)), data.usd_gbp.map(d => d.value), '#1a5276', { decimals: 4 });
+
+        renderMetric('usd-rub', data.usd_rub, 'USD/RUB', { format: v => Number(v).toFixed(2), shortDate: true, periodSuffix: ' (RUB per USD)' });
+        if (data.usd_rub && data.usd_rub.length > 0) createChart('chart-rub', data.usd_rub.map(d => formatShortDate(d.date)), data.usd_rub.map(d => d.value), '#c0392b', { decimals: 2 });
+
+        // Currency Exchange Rates - Asia-Pacific
         renderMetric('usd-jpy', data.usd_jpy, 'USD/JPY', { format: v => Number(v).toFixed(2), hasMomentum: true, shortDate: true, periodSuffix: ' (JPY per USD)' });
         if (data.usd_jpy && data.usd_jpy.length > 0) createChart('chart-jpy', data.usd_jpy.map(d => formatShortDate(d.date)), data.usd_jpy.map(d => d.value), '#9b59b6', { decimals: 2 });
 
-        renderMetric('usd-mxn', data.usd_mxn, 'USD/MXN', { format: v => Number(v).toFixed(2), hasMomentum: true, shortDate: true, periodSuffix: ' (MXN per USD)' });
-        if (data.usd_mxn && data.usd_mxn.length > 0) createChart('chart-mxn', data.usd_mxn.map(d => formatShortDate(d.date)), data.usd_mxn.map(d => d.value), '#27ae60', { decimals: 2 });
+        renderMetric('usd-cny', data.usd_cny, 'USD/CNY', { format: v => Number(v).toFixed(4), hasMomentum: true, shortDate: true, periodSuffix: ' (CNY per USD)' });
+        if (data.usd_cny && data.usd_cny.length > 0) createChart('chart-cny', data.usd_cny.map(d => formatShortDate(d.date)), data.usd_cny.map(d => d.value), '#c0392b', { decimals: 4 });
+
+        renderMetric('usd-inr', data.usd_inr, 'USD/INR', { format: v => Number(v).toFixed(2), hasMomentum: true, shortDate: true, periodSuffix: ' (INR per USD)' });
+        if (data.usd_inr && data.usd_inr.length > 0) createChart('chart-inr', data.usd_inr.map(d => formatShortDate(d.date)), data.usd_inr.map(d => d.value), '#e67e22', { decimals: 2 });
+
+        renderMetric('usd-aud', data.usd_aud, 'USD/AUD', { format: v => Number(v).toFixed(4), hasMomentum: true, shortDate: true, periodSuffix: ' (AUD per USD)' });
+        if (data.usd_aud && data.usd_aud.length > 0) createChart('chart-aud', data.usd_aud.map(d => formatShortDate(d.date)), data.usd_aud.map(d => d.value), '#16a085', { decimals: 4 });
 
         // Commodity Prices
         renderMetric('gold', data.gold, 'Gold', { format: v => '$' + Number(v).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}), hasMomentum: true, shortDate: true });

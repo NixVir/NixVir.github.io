@@ -507,6 +507,27 @@ def update_dashboard():
         dashboard_data['usd_inr'] = usd_inr
         print_safe(f"  OK USD/INR: {usd_inr[-1]['value']} ({len(usd_inr)} data points)")
 
+    # USD/RUB (Russian Rubles per USD) - Monthly OECD data (no daily FRED series available)
+    usd_rub = fetch_fred_data('CCUSMA02RUM618N', limit=24)  # Monthly, last 2 years
+    if usd_rub:
+        dashboard_data['usd_rub'] = usd_rub
+        print_safe(f"  OK USD/RUB: {usd_rub[-1]['value']} ({len(usd_rub)} data points) [monthly]")
+
+    # Fed Trade-Weighted Dollar Index (Broad) - DTWEXBGS
+    # Measures USD against 26 major trading partners, weighted by trade volume
+    # More representative than DXY for actual trade relationships
+    print_safe("\nFetching Dollar Strength Indices...")
+    trade_weighted = fetch_fred_data('DTWEXBGS', limit=260)
+    if trade_weighted:
+        dashboard_data['trade_weighted_usd'] = trade_weighted
+        print_safe(f"  OK Trade-Weighted USD: {trade_weighted[-1]['value']} ({len(trade_weighted)} data points)")
+
+    # Real Trade-Weighted Dollar Index (inflation-adjusted)
+    real_trade_weighted = fetch_fred_data('RTWEXBGS', limit=260)
+    if real_trade_weighted:
+        dashboard_data['real_trade_weighted_usd'] = real_trade_weighted
+        print_safe(f"  OK Real Trade-Weighted USD: {real_trade_weighted[-1]['value']} ({len(real_trade_weighted)} data points)")
+
     # 12. Commodities (Daily prices)
     print_safe("\nFetching Commodity Prices...")
 
