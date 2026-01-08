@@ -1,4 +1,239 @@
 {
   "pending": [],
-  "rejected": []
+  "rejected": [
+    {
+      "source": "New York Times - Travel",
+      "title": "Hilton Drops Bookings for Minnesota Hotel Accused of Turning Away DHS Agents",
+      "url": "https://www.nytimes.com/2026/01/06/travel/hilton-hampton-inn-dhs.html",
+      "description": "The hotel giant said it took \u201cimmediate action\u201d against a Hampton Inn near Minneapolis after a video showed a worker declining Department of Homeland Security reservations.",
+      "content": "The hotel giant said it took \u201cimmediate action\u201d against a Hampton Inn near Minneapolis after a video showed a worker declining Department of Homeland Security reservations.",
+      "pub_date": "Tue, 06 Jan 2026 23:11:30 +0000",
+      "id": "1a045013c4f4",
+      "score": 2,
+      "score_details": {
+        "reason": "No ski industry relevance detected"
+      }
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "Caribbean Travelers Are Stranded After U.S. Raid in Venezuela Cancels Flights",
+      "url": "https://www.nytimes.com/2026/01/05/travel/venezuela-caribbean-stranded-travelers.html",
+      "description": "Mass flight cancellations during peak holiday travel season have forced travelers to miss school and work and to spend thousands on extended tropical vacations.",
+      "content": "Mass flight cancellations during peak holiday travel season have forced travelers to miss school and work and to spend thousands on extended tropical vacations.",
+      "pub_date": "Tue, 06 Jan 2026 13:55:24 +0000",
+      "id": "f2dc4427bc02",
+      "score": 2,
+      "score_details": {
+        "reason": "No ski industry relevance detected"
+      }
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "Travel Loyalty Programs Woo Fickle Customers With Members-Only Experiences",
+      "url": "https://www.nytimes.com/2026/01/05/travel/travel-credit-cards-members-only.html",
+      "description": "Travel loyalty programs are competing for customers with members-only experiences like backstage tours, exclusive dinners and access to V.I.P. areas.",
+      "content": "Travel loyalty programs are competing for customers with members-only experiences like backstage tours, exclusive dinners and access to V.I.P. areas.",
+      "pub_date": "Tue, 06 Jan 2026 13:57:12 +0000",
+      "id": "b3e99637d4f0",
+      "score": 2,
+      "score_details": {
+        "reason": "No ski industry relevance detected"
+      }
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "What to Know About Canceled Flights in the Caribbean Amid U.S. Military Action in Venezuela",
+      "url": "https://www.nytimes.com/2026/01/03/travel/caribbean-flight-cancellations-trump-venezuela.html",
+      "description": "The F.A.A. grounded U.S. flights in the region because of the Trump administration\u2019s military action in Venezuela, stranding travelers and disrupting vacations. Operations restarted on Sunday morning.",
+      "content": "The F.A.A. grounded U.S. flights in the region because of the Trump administration\u2019s military action in Venezuela, stranding travelers and disrupting vacations. Operations restarted on Sunday morning.",
+      "pub_date": "Sun, 04 Jan 2026 19:47:58 +0000",
+      "id": "a459e57029a2",
+      "score": 2,
+      "score_details": {
+        "reason": "No ski industry relevance detected"
+      }
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "Help! We Got Bedbug Bites in France, and the Luxury Hotel Won\u2019t Admit It.",
+      "url": "https://www.nytimes.com/2026/01/01/travel/bedbugs-hotel-france.html",
+      "description": "A country resort near Paris refused to cover $800 worth of medical and cleaning bills for a couple who woke up covered in bites. They\u2019d like their stay comped, too.",
+      "content": "A country resort near Paris refused to cover $800 worth of medical and cleaning bills for a couple who woke up covered in bites. They\u2019d like their stay comped, too.",
+      "pub_date": "Thu, 01 Jan 2026 10:01:42 +0000",
+      "id": "63d03183538e",
+      "score": 2,
+      "score_details": {
+        "reason": "No ski industry relevance detected"
+      }
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "6 Winter Travel Destinations for a Spirited Dry January",
+      "url": "https://www.nytimes.com/2025/12/30/travel/hotels-dry-january.html",
+      "description": "Evening pickleball, glacial ice plunges and mocktails galore are just some of the ways hotels are wooing travelers for Dry January.",
+      "content": "Evening pickleball, glacial ice plunges and mocktails galore are just some of the ways hotels are wooing travelers for Dry January.",
+      "pub_date": "Mon, 05 Jan 2026 15:18:51 +0000",
+      "id": "a542e50a1677",
+      "score": 2,
+      "score_details": {
+        "reason": "No ski industry relevance detected"
+      }
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "Hilton \u2018Maliciously Canceled\u2019 Immigration Agents\u2019 Reservations, DHS Says",
+      "url": "https://www.nytimes.com/2026/01/05/travel/hilton-hotel-reservations-minneapolis-minnesota-immigration.html",
+      "description": "As the U.S. ramps up deportation efforts in Minnesota, the Department of Homeland Security claimed on social media that a Hampton Inn had canceled agents\u2019 bookings.",
+      "content": "As the U.S. ramps up deportation efforts in Minnesota, the Department of Homeland Security claimed on social media that a Hampton Inn had canceled agents\u2019 bookings.",
+      "pub_date": "Tue, 06 Jan 2026 13:56:13 +0000",
+      "id": "0ce405d5e613",
+      "score": 2,
+      "score_details": {
+        "reason": "No ski industry relevance detected"
+      }
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "Airlines Are Canceling Flights After U.S. Closes Airspace Over the Caribbean",
+      "url": "https://www.nytimes.com/live/2026/01/03/world/trump-united-states-strikes-venezuela/flights-canceled-caribbean-faa-venezuela",
+      "description": "The Federal Aviation Administration cited \u201csafety-of-flight risks\u201d in restricting the U.S.-controlled airspace as a result of the military operation in Venezuela.",
+      "content": "The Federal Aviation Administration cited \u201csafety-of-flight risks\u201d in restricting the U.S.-controlled airspace as a result of the military operation in Venezuela.",
+      "pub_date": "Sat, 03 Jan 2026 20:40:17 +0000",
+      "id": "59bd0f4fdbf0",
+      "score": 2,
+      "score_details": {
+        "reason": "No ski industry relevance detected"
+      }
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "Exploring Jeddah, Saudi Arabia, With an Airline Pilot",
+      "url": "https://www.nytimes.com/2025/12/29/travel/jeddah-saudi-arabia-layover.html",
+      "description": "On a stopover in Saudi Arabia, the writer strolls along the corniche, lingers over coffee and explores the historic heart of this city on the Red Sea.",
+      "content": "On a stopover in Saudi Arabia, the writer strolls along the corniche, lingers over coffee and explores the historic heart of this city on the Red Sea.",
+      "pub_date": "Mon, 29 Dec 2025 10:00:10 +0000",
+      "id": "a6db70118333",
+      "score": 2,
+      "score_details": {
+        "reason": "No ski industry relevance detected"
+      }
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "Winter Storm Batters Minnesota, Bringing \u2018Potentially Life-Threatening Travel Conditions\u2019",
+      "url": "https://www.nytimes.com/2025/12/28/us/minnesota-winter-storm.html",
+      "description": "Forecasters warned that whiteouts had reduced visibility in Minnesota. More heavy snow was expected in the region through Monday.",
+      "content": "Forecasters warned that whiteouts had reduced visibility in Minnesota. More heavy snow was expected in the region through Monday.",
+      "pub_date": "Mon, 29 Dec 2025 08:53:30 +0000",
+      "id": "7cbc3a00042a",
+      "score": 2,
+      "score_details": {
+        "reason": "No ski industry relevance detected"
+      }
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "T Magazine\u2019s Essential 2025 Travel Guides",
+      "url": "https://www.nytimes.com/2025/12/28/t-magazine/essential-travel-guides.html",
+      "description": "Recommendations for where to go and how to get there, from the ultimate Japan itinerary to the best small cruise ships.",
+      "content": "Recommendations for where to go and how to get there, from the ultimate Japan itinerary to the best small cruise ships.",
+      "pub_date": "Sun, 28 Dec 2025 21:38:08 +0000",
+      "id": "c2d12f6f2d04",
+      "score": 2,
+      "score_details": {
+        "reason": "No ski industry relevance detected"
+      }
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "How Well Does Apple\u2019s Live Translation Work for Japanese? I Tested It in Tokyo.",
+      "url": "https://www.nytimes.com/2025/12/26/travel/airpods-live-translation-japan.html",
+      "description": "A non-Japanese-speaking first-time visitor used Apple\u2019s new in-ear translation feature to connect with locals at bars, sushi classes and even a fire ritual.",
+      "content": "A non-Japanese-speaking first-time visitor used Apple\u2019s new in-ear translation feature to connect with locals at bars, sushi classes and even a fire ritual.",
+      "pub_date": "Fri, 26 Dec 2025 10:00:29 +0000",
+      "id": "483d35e65c21",
+      "score": 2,
+      "score_details": {
+        "reason": "No ski industry relevance detected"
+      }
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "Planning a Road Trip? Here\u2019s How to Make It Better and Safer.",
+      "url": "https://www.nytimes.com/2025/12/22/travel/road-trip-driving-weather-safety-tips.html",
+      "description": "Be sure you have the right equipment and apps for weather and traffic, and don\u2019t forget to check those tires. Here are more tips for hitting the highway.",
+      "content": "Be sure you have the right equipment and apps for weather and traffic, and don\u2019t forget to check those tires. Here are more tips for hitting the highway.",
+      "pub_date": "Fri, 02 Jan 2026 15:52:44 +0000",
+      "id": "dd90a5809a9c",
+      "score": 2,
+      "score_details": {
+        "reason": "No ski industry relevance detected"
+      }
+    },
+    {
+      "source": "Washington Post",
+      "title": "Trump says he\u2019ll ban large investors from buying homes, with few details",
+      "url": "https://www.washingtonpost.com/business/2026/01/07/trump-ban-housing-investors/",
+      "description": "Politicians in both parties are trying to respond to voter anger over the price of housing.",
+      "content": "Politicians in both parties are trying to respond to voter anger over the price of housing.",
+      "pub_date": "Wed, 07 Jan 2026 20:01:50 +0000",
+      "id": "e1691a9fd346",
+      "score": 2,
+      "score_details": {
+        "reason": "No ski industry relevance detected"
+      }
+    },
+    {
+      "source": "Washington Post",
+      "title": "The Cuba-born Harvard economist behind Trump\u2019s immigration crackdown",
+      "url": "https://www.washingtonpost.com/business/2026/01/07/trump-immigration-policy-george-borjas/",
+      "description": "George Borjas has provided the intellectual underpinnings of the White House\u2019s sweeping immigration policy changes, including restrictions on H-1B visas.",
+      "content": "George Borjas has provided the intellectual underpinnings of the White House\u2019s sweeping immigration policy changes, including restrictions on H-1B visas.",
+      "pub_date": "Wed, 07 Jan 2026 10:00:00 +0000",
+      "id": "1e2d92e7ea0b",
+      "score": 2,
+      "score_details": {
+        "reason": "No ski industry relevance detected"
+      }
+    },
+    {
+      "source": "The Atlantic",
+      "url": "https://www.theatlantic.com/politics/2026/01/ice-shooting-minneapolis-trump/685548/?utm_source=feed",
+      "title": "Deadly Force on a Frozen Street",
+      "description": "Trump\u2019s immigration crackdown takes a dark turn in Minneapolis.",
+      "content": "Trump\u2019s immigration crackdown takes a dark turn in Minneapolis.",
+      "pub_date": "2026-01-07T22:11:00-05:00",
+      "id": "8d9cb29a46db",
+      "score": 2,
+      "score_details": {
+        "reason": "No ski industry relevance detected"
+      }
+    },
+    {
+      "source": "The Atlantic",
+      "url": "https://www.theatlantic.com/ideas/2026/01/deadly-shooting-minnesota/685541/?utm_source=feed",
+      "title": "A Deadly Shooting in Minnesota",
+      "description": "A federal immigration agent\u2019s killing of a woman driving an SUV fits into a tragic pattern.",
+      "content": "A federal immigration agent\u2019s killing of a woman driving an SUV fits into a tragic pattern.",
+      "pub_date": "2026-01-07T15:15:46-05:00",
+      "id": "81b045404103",
+      "score": 2,
+      "score_details": {
+        "reason": "No ski industry relevance detected"
+      }
+    },
+    {
+      "source": "The Atlantic",
+      "url": "https://www.theatlantic.com/podcasts/2026/01/david-frum-show-david-rothkopf-venezuela/685534/?utm_source=feed",
+      "title": "Trump Has No Plan for Venezuela",
+      "description": "David Rothkopf on how the Trump administration\u2019s contempt toward planning all but ensures a mess in Venezuela. Plus: Donald Trump\u2019s predatory worldview and Rudyard Kipling\u2019s \u201cRecessional.\u201d",
+      "content": "David Rothkopf on how the Trump administration\u2019s contempt toward planning all but ensures a mess in Venezuela. Plus: Donald Trump\u2019s predatory worldview and Rudyard Kipling\u2019s \u201cRecessional.\u201d",
+      "pub_date": "2026-01-07T13:27:38-05:00",
+      "id": "f10144f2383b",
+      "score": 2,
+      "score_details": {
+        "reason": "No ski industry relevance detected"
+      }
+    }
+  ]
 }

@@ -1,5 +1,40 @@
 {
-  "updated": "2026-01-08 08:00:00",
-  "total_articles": 0,
-  "articles": []
+  "updated": "2026-01-08 07:56:10",
+  "total_articles": 2,
+  "articles": [
+    {
+      "source": "New York Times - Travel",
+      "title": "5 Places to Channel the Olympic Spirit Without Attending the Games in Italy",
+      "url": "https://www.nytimes.com/2026/01/07/travel/winter-olympic-sites-united-states-canada.html",
+      "description": "Can\u2019t make it to Italy for the Winter Olympics? No worries, these spots in North America offer a taste of the Games (and let you try everything from speedskating to ski jumping, if you dare).",
+      "content": "Can\u2019t make it to Italy for the Winter Olympics? No worries, these spots in North America offer a taste of the Games (and let you try everything from speedskating to ski jumping, if you dare).",
+      "pub_date": "Wed, 07 Jan 2026 10:02:20 +0000",
+      "id": "cd3df9ef8b29",
+      "score": 8,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 3)"
+      },
+      "approved_date": "2026-01-08",
+      "category": "winter-sports",
+      "secondary_categories": []
+    },
+    {
+      "source": "New York Times - Travel",
+      "title": "In Norway, Skiing Through a Winter Wonderland",
+      "url": "https://www.nytimes.com/2025/12/23/travel/norway-crosscountry-skiing.html",
+      "description": "A 100-mile journey along the country\u2019s Troll Trail includes stunning vistas, snowbound mountain hotels and waffles.",
+      "content": "A 100-mile journey along the country\u2019s Troll Trail includes stunning vistas, snowbound mountain hotels and waffles.",
+      "pub_date": "Tue, 23 Dec 2025 10:00:45 +0000",
+      "id": "5da734010477",
+      "score": 9,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 3)"
+      },
+      "approved_date": "2026-01-08",
+      "category": "hospitality",
+      "secondary_categories": [
+        "transportation"
+      ]
+    }
+  ]
 }
