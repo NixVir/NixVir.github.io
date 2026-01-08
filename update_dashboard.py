@@ -326,6 +326,14 @@ def update_dashboard():
         dashboard_data['housing_starts'] = housing_data
         print_safe(f"  OK Latest: {housing_data[-1]['value']} thousand units ({len(housing_data)} data points)")
 
+    # 9b. Bankruptcy Activity (PPI - Producer Price Index for Bankruptcy Legal Services)
+    # PCU541110541110903 = PPI for Offices of Lawyers: Bankruptcy and Other Business Legal Services
+    print_safe("\nFetching Bankruptcy Activity (PPI)...")
+    bankruptcy_data = fetch_fred_data('PCU541110541110903', limit=12)
+    if bankruptcy_data:
+        dashboard_data['bankruptcy_ppi'] = bankruptcy_data
+        print_safe(f"  OK Latest: {bankruptcy_data[-1]['value']} ({len(bankruptcy_data)} data points)")
+
     # 10. 10-Year Treasury Yield (Daily - fetch ~1 year of trading days)
     print_safe("\nFetching 10-Year Treasury Yield...")
     treasury_data = fetch_fred_data('DGS10', limit=260)
