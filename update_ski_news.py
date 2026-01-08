@@ -256,18 +256,18 @@ RSS_SOURCES = [
         'category': 'industry',
         'boost': 2  # Trade magazine for mountain resort industry since 1962
     },
-    # Ski news sites
+    # Ski news sites (dedicated ski sources get boost for keyword scoring)
     {
         'name': 'Unofficial Networks',
         'url': 'https://unofficialnetworks.com/feed/',
         'category': 'news',
-        'boost': 0
+        'boost': 2  # Ski-dedicated source
     },
     {
         'name': 'SnowBrains',
         'url': 'https://snowbrains.com/feed/',
         'category': 'news',
-        'boost': 0
+        'boost': 2  # Ski-dedicated source
     },
     # Mountain community newspapers
     {
@@ -358,6 +358,8 @@ RSS_SOURCES = [
 # Keywords for basic pre-filtering (must contain at least one)
 # This is a broad filter - more specific scoring happens later
 BUSINESS_KEYWORDS = [
+    # Core ski terms (must pass pre-filter)
+    'ski', 'skiing', 'skier', 'snowboard', 'snowboarding', 'powder', 'slopes',
     # Resort/destination business
     'resort', 'ski area', 'mountain', 'lift', 'investment', 'acquisition',
     'merger', 'expansion', 'revenue', 'profit', 'loss', 'earnings', 'quarterly',
