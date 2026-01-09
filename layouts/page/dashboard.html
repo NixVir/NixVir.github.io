@@ -95,40 +95,69 @@
 
       <div class="accordion-section" data-section="currency">
         <div class="accordion-header" onclick="toggleSection(this)">
-          <h3><span class="section-icon">💱</span> Currency & Dollar Strength <span class="metric-count">(11 metrics)</span></h3>
+          <h3><span class="section-icon">💱</span> Currency & Visitor Purchasing Power <span class="metric-count">(19 metrics)</span></h3>
           <span class="accordion-arrow">▼</span>
         </div>
         <div class="accordion-content">
           <div class="accordion-inner">
             <div class="prediction-intro">
-              <strong>Dollar Strength Indices</strong> — The <a href="https://fred.stlouisfed.org/series/DTWEXBGS" target="_blank" rel="noopener">Fed Trade-Weighted Index</a> measures USD against 26 major trading partners weighted by trade volume. More representative than DXY (which is 57% Euro-weighted). Higher = stronger dollar = fewer international visitors.
+              <strong>Visitor Purchasing Power Perspective</strong> — Metrics reoriented to show "what does 100 units of visitor currency buy in USD?" Higher values = more attractive destination. Research shows ski tourism is highly elastic to exchange rates (-1.5 to -2.2).
               <br><br>
-              <strong>Ski tourism impact:</strong> Research shows ski tourism is highly elastic to exchange rates (-1.5 to -2.2). A 10%+ move in USD/CAD typically correlates with measurable shifts in cross-border visits. Currency impacts lag 3-6 months for destination travel.
+              <strong>Thresholds:</strong> <span style="color: #2E7D32;">Green = favorable for your resort</span> | <span style="color: #757575;">Gray = neutral</span> | <span style="color: #C62828;">Red = headwind</span>. Currency impacts lag 3-6 months for destination travel bookings.
               <br><br>
-              <span style="font-size: 0.9em; color: #95a5a6;">All rates shown as foreign currency per 1 USD. Higher values = stronger dollar. Sources: <a href="https://fred.stlouisfed.org/categories/105" target="_blank" rel="noopener">FRED Exchange Rates</a> | <a href="https://www.federalreserve.gov/releases/h10/summary/" target="_blank" rel="noopener">Fed H.10 Release</a></span>
+              <span style="font-size: 0.9em; color: #95a5a6;">Sources: <a href="https://fred.stlouisfed.org/categories/105" target="_blank" rel="noopener">FRED Exchange Rates</a> | <a href="https://www.federalreserve.gov/releases/h10/summary/" target="_blank" rel="noopener">Fed H.10 Release</a></span>
             </div>
-            <h4 style="margin: 0 0 15px 0; color: #7f8c8d; font-size: 0.9em; font-weight: 500;">Dollar Strength Indices</h4>
+
+            <!-- US RESORT VIEW -->
+            <h4 style="margin: 0 0 10px 0; color: #2c3e50; font-size: 1em; font-weight: 600; border-bottom: 2px solid #3498db; padding-bottom: 5px;">🇺🇸 US Resort Perspective</h4>
+            <p style="font-size: 0.85em; color: #7f8c8d; margin: 0 0 15px 0;">"How attractive is skiing in the US for international visitors?" Higher = better.</p>
+            <div class="dashboard-grid">
+              <div class="metric-card"><h4>100 CAD buys...</h4><div id="pp-cad">Loading...</div><div class="chart-container"><canvas id="chart-pp-cad"></canvas></div></div>
+              <div class="metric-card"><h4>100 MXN buys...</h4><div id="pp-mxn">Loading...</div><div class="chart-container"><canvas id="chart-pp-mxn"></canvas></div></div>
+              <div class="metric-card"><h4>100 EUR buys...</h4><div id="pp-eur">Loading...</div><div class="chart-container"><canvas id="chart-pp-eur"></canvas></div></div>
+              <div class="metric-card"><h4>100 GBP buys...</h4><div id="pp-gbp">Loading...</div><div class="chart-container"><canvas id="chart-pp-gbp"></canvas></div></div>
+              <div class="metric-card"><h4>100 BRL buys...</h4><div id="pp-brl">Loading...</div><div class="chart-container"><canvas id="chart-pp-brl"></canvas></div></div>
+              <div class="metric-card"><h4>100 AUD buys...</h4><div id="pp-aud">Loading...</div><div class="chart-container"><canvas id="chart-pp-aud"></canvas></div></div>
+            </div>
+
+            <!-- CANADIAN RESORT VIEW -->
+            <h4 style="margin: 25px 0 10px 0; color: #2c3e50; font-size: 1em; font-weight: 600; border-bottom: 2px solid #e74c3c; padding-bottom: 5px;">🇨🇦 Canadian Resort Perspective</h4>
+            <p style="font-size: 0.85em; color: #7f8c8d; margin: 0 0 15px 0;">"How attractive is Canada for US/international visitors?" + Domestic retention signal.</p>
+            <div class="dashboard-grid">
+              <div class="metric-card"><h4>$100 USD buys (CAD)</h4><div id="pp-usd-cad">Loading...</div><div class="chart-container"><canvas id="chart-pp-usd-cad"></canvas></div></div>
+              <div class="metric-card"><h4>Domestic Retention</h4><div id="ca-retention">Loading...</div><div class="chart-container"><canvas id="chart-ca-retention"></canvas></div></div>
+              <div class="metric-card"><h4>100 EUR buys (CAD)</h4><div id="pp-eur-cad">Loading...</div><div class="chart-container"><canvas id="chart-pp-eur-cad"></canvas></div></div>
+              <div class="metric-card"><h4>100 GBP buys (CAD)</h4><div id="pp-gbp-cad">Loading...</div><div class="chart-container"><canvas id="chart-pp-gbp-cad"></canvas></div></div>
+            </div>
+
+            <!-- LUXURY FEEDER MARKETS -->
+            <h4 style="margin: 25px 0 10px 0; color: #2c3e50; font-size: 1em; font-weight: 600; border-bottom: 2px solid #9b59b6; padding-bottom: 5px;">💎 Luxury Feeder Markets (Whistler/Aspen)</h4>
+            <p style="font-size: 0.85em; color: #7f8c8d; margin: 0 0 15px 0;">Ultra-high-net-worth markets. Less price-elastic but affects ancillary spend, length of stay, and party size.</p>
+            <div class="dashboard-grid">
+              <div class="metric-card"><h4>100 HKD buys...</h4><div id="pp-hkd">Loading...</div><div class="chart-container"><canvas id="chart-pp-hkd"></canvas></div></div>
+              <div class="metric-card"><h4>100 SGD buys...</h4><div id="pp-sgd">Loading...</div><div class="chart-container"><canvas id="chart-pp-sgd"></canvas></div></div>
+              <div class="metric-card"><h4>100 AED buys...</h4><div id="pp-aed">Loading...</div><div class="chart-container"><canvas id="chart-pp-aed"></canvas></div></div>
+              <div class="metric-card"><h4>100 CNY buys...</h4><div id="pp-cny">Loading...</div><div class="chart-container"><canvas id="chart-pp-cny"></canvas></div></div>
+              <div class="metric-card"><h4>100 JPY buys...</h4><div id="pp-jpy">Loading...</div><div class="chart-container"><canvas id="chart-pp-jpy"></canvas></div></div>
+              <div class="metric-card"><h4>100 INR buys...</h4><div id="pp-inr">Loading...</div><div class="chart-container"><canvas id="chart-pp-inr"></canvas></div></div>
+              <div class="metric-card"><h4>100 RUB buys...</h4><div id="pp-rub">Loading...</div><div class="chart-container"><canvas id="chart-pp-rub"></canvas></div></div>
+            </div>
+
+            <!-- COMPETITIVE DESTINATION COMPARISON -->
+            <h4 style="margin: 25px 0 10px 0; color: #2c3e50; font-size: 1em; font-weight: 600; border-bottom: 2px solid #f39c12; padding-bottom: 5px;">🏔️ Competitive Destination Comparison</h4>
+            <p style="font-size: 0.85em; color: #7f8c8d; margin: 0 0 15px 0;">For Whistler: How does CAD compare vs Alps (EUR/CHF) and Niseko (JPY)?</p>
+            <div class="dashboard-grid">
+              <div class="metric-card"><h4>$100 USD → Whistler (CAD)</h4><div id="comp-whistler">Loading...</div><div class="chart-container"><canvas id="chart-comp-whistler"></canvas></div></div>
+              <div class="metric-card"><h4>$100 USD → Alps/France (EUR)</h4><div id="comp-alps-eur">Loading...</div><div class="chart-container"><canvas id="chart-comp-alps-eur"></canvas></div></div>
+              <div class="metric-card"><h4>$100 USD → Swiss Alps (CHF)</h4><div id="comp-swiss">Loading...</div><div class="chart-container"><canvas id="chart-comp-swiss"></canvas></div></div>
+              <div class="metric-card"><h4>$100 USD → Niseko (JPY)</h4><div id="comp-niseko">Loading...</div><div class="chart-container"><canvas id="chart-comp-niseko"></canvas></div></div>
+            </div>
+
+            <!-- DOLLAR STRENGTH INDEX -->
+            <h4 style="margin: 25px 0 10px 0; color: #7f8c8d; font-size: 0.9em; font-weight: 500;">Dollar Strength Indices (Reference)</h4>
             <div class="dashboard-grid">
               <div class="metric-card"><h4>Trade-Weighted USD (Nominal)</h4><div id="trade-weighted">Loading...</div><div class="chart-container"><canvas id="chart-tw"></canvas></div></div>
               <div class="metric-card"><h4>Trade-Weighted USD (Real)</h4><div id="real-trade-weighted">Loading...</div><div class="chart-container"><canvas id="chart-rtw"></canvas></div></div>
-            </div>
-            <h4 style="margin: 25px 0 15px 0; color: #7f8c8d; font-size: 0.9em; font-weight: 500;">North American & Latin America</h4>
-            <div class="dashboard-grid">
-              <div class="metric-card"><h4>USD / Canadian Dollar</h4><div id="usd-cad">Loading...</div><div class="chart-container"><canvas id="chart-cad"></canvas></div></div>
-              <div class="metric-card"><h4>USD / Mexican Peso</h4><div id="usd-mxn">Loading...</div><div class="chart-container"><canvas id="chart-mxn"></canvas></div></div>
-            </div>
-            <h4 style="margin: 25px 0 15px 0; color: #7f8c8d; font-size: 0.9em; font-weight: 500;">Europe</h4>
-            <div class="dashboard-grid">
-              <div class="metric-card"><h4>USD / Euro</h4><div id="usd-eur">Loading...</div><div class="chart-container"><canvas id="chart-eur"></canvas></div></div>
-              <div class="metric-card"><h4>USD / British Pound</h4><div id="usd-gbp">Loading...</div><div class="chart-container"><canvas id="chart-gbp"></canvas></div></div>
-              <div class="metric-card"><h4>USD / Russian Ruble</h4><div id="usd-rub">Loading...</div><div class="chart-container"><canvas id="chart-rub"></canvas></div></div>
-            </div>
-            <h4 style="margin: 25px 0 15px 0; color: #7f8c8d; font-size: 0.9em; font-weight: 500;">Asia-Pacific</h4>
-            <div class="dashboard-grid">
-              <div class="metric-card"><h4>USD / Japanese Yen</h4><div id="usd-jpy">Loading...</div><div class="chart-container"><canvas id="chart-jpy"></canvas></div></div>
-              <div class="metric-card"><h4>USD / Chinese Yuan</h4><div id="usd-cny">Loading...</div><div class="chart-container"><canvas id="chart-cny"></canvas></div></div>
-              <div class="metric-card"><h4>USD / Indian Rupee</h4><div id="usd-inr">Loading...</div><div class="chart-container"><canvas id="chart-inr"></canvas></div></div>
-              <div class="metric-card"><h4>USD / Australian Dollar</h4><div id="usd-aud">Loading...</div><div class="chart-container"><canvas id="chart-aud"></canvas></div></div>
             </div>
           </div>
         </div>
@@ -449,42 +478,190 @@
           document.getElementById('mag7-grid').innerHTML = '<div class="metric-card"><div class="value">--</div><div class="period">Stock data unavailable</div></div>';
         }
 
-        // Dollar Strength Indices
+        // ==================== CURRENCY & VISITOR PURCHASING POWER ====================
+
+        // Helper: Convert rate to visitor purchasing power (100 foreign currency -> USD)
+        function toPurchasingPower(rateData, multiplier = 100) {
+          if (!rateData) return null;
+          return rateData.map(d => ({ date: d.date, value: multiplier / d.value }));
+        }
+
+        // Helper: Cross-rate to CAD (for Canadian resort view)
+        function toCadPurchasingPower(foreignData, cadData, multiplier = 100) {
+          if (!foreignData || !cadData) return null;
+          return foreignData.map((d, i) => {
+            const cadRate = cadData[i] ? cadData[i].value : cadData[cadData.length - 1].value;
+            return { date: d.date, value: (multiplier / d.value) * cadRate };
+          });
+        }
+
+        // Helper: Get threshold color for US resort perspective (higher PP = better)
+        function getUsThresholdColor(currency, ppValue) {
+          const thresholds = {
+            'CAD': { favorable: 80, unfavorable: 70 },  // $80+ per 100 CAD is good
+            'MXN': { favorable: 5.5, unfavorable: 5.0 },
+            'EUR': { favorable: 110, unfavorable: 100 },
+            'GBP': { favorable: 130, unfavorable: 120 },
+            'BRL': { favorable: 22, unfavorable: 18 },
+            'AUD': { favorable: 70, unfavorable: 62 }
+          };
+          const t = thresholds[currency];
+          if (!t) return '#3498db';
+          if (ppValue >= t.favorable) return '#2E7D32';  // Green - favorable
+          if (ppValue <= t.unfavorable) return '#C62828'; // Red - unfavorable
+          return '#757575'; // Gray - neutral
+        }
+
+        // Helper: Get Canadian domestic retention status
+        function getCaRetentionStatus(usdCadRate) {
+          if (usdCadRate >= 1.40) return { status: 'Strong Retention', color: '#2E7D32', note: 'USD expensive for Canadians - they stay home' };
+          if (usdCadRate <= 1.25) return { status: 'Weak Retention', color: '#C62828', note: 'USD cheap - Canadians may ski in US' };
+          return { status: 'Neutral', color: '#757575', note: 'Normal range' };
+        }
+
+        // ===== US RESORT PERSPECTIVE =====
+        const ppCad = toPurchasingPower(data.usd_cad);
+        const ppMxn = toPurchasingPower(data.usd_mxn);
+        const ppEur = toPurchasingPower(data.usd_eur);
+        const ppGbp = toPurchasingPower(data.usd_gbp);
+        const ppBrl = toPurchasingPower(data.usd_brl);
+        const ppAud = toPurchasingPower(data.usd_aud);
+
+        // Render US resort view metrics
+        if (ppCad) {
+          const latestPP = ppCad[ppCad.length - 1].value;
+          const color = getUsThresholdColor('CAD', latestPP);
+          renderMetric('pp-cad', ppCad, '100 CAD', { format: v => '$' + Number(v).toFixed(2) + ' USD', hasMomentum: true, shortDate: true, invertColors: true });
+          createChart('chart-pp-cad', ppCad.map(d => formatShortDate(d.date)), ppCad.map(d => d.value), color, { decimals: 2, prefix: '$' });
+        }
+        if (ppMxn) {
+          const latestPP = ppMxn[ppMxn.length - 1].value;
+          const color = getUsThresholdColor('MXN', latestPP);
+          renderMetric('pp-mxn', ppMxn, '100 MXN', { format: v => '$' + Number(v).toFixed(2) + ' USD', hasMomentum: true, shortDate: true, invertColors: true });
+          createChart('chart-pp-mxn', ppMxn.map(d => formatShortDate(d.date)), ppMxn.map(d => d.value), color, { decimals: 2, prefix: '$' });
+        }
+        if (ppEur) {
+          const latestPP = ppEur[ppEur.length - 1].value;
+          const color = getUsThresholdColor('EUR', latestPP);
+          renderMetric('pp-eur', ppEur, '100 EUR', { format: v => '$' + Number(v).toFixed(2) + ' USD', hasMomentum: true, shortDate: true, invertColors: true });
+          createChart('chart-pp-eur', ppEur.map(d => formatShortDate(d.date)), ppEur.map(d => d.value), color, { decimals: 2, prefix: '$' });
+        }
+        if (ppGbp) {
+          const latestPP = ppGbp[ppGbp.length - 1].value;
+          const color = getUsThresholdColor('GBP', latestPP);
+          renderMetric('pp-gbp', ppGbp, '100 GBP', { format: v => '$' + Number(v).toFixed(2) + ' USD', hasMomentum: true, shortDate: true, invertColors: true });
+          createChart('chart-pp-gbp', ppGbp.map(d => formatShortDate(d.date)), ppGbp.map(d => d.value), color, { decimals: 2, prefix: '$' });
+        }
+        if (ppBrl) {
+          const latestPP = ppBrl[ppBrl.length - 1].value;
+          const color = getUsThresholdColor('BRL', latestPP);
+          renderMetric('pp-brl', ppBrl, '100 BRL', { format: v => '$' + Number(v).toFixed(2) + ' USD', hasMomentum: true, shortDate: true, invertColors: true });
+          createChart('chart-pp-brl', ppBrl.map(d => formatShortDate(d.date)), ppBrl.map(d => d.value), color, { decimals: 2, prefix: '$' });
+        }
+        if (ppAud) {
+          const latestPP = ppAud[ppAud.length - 1].value;
+          const color = getUsThresholdColor('AUD', latestPP);
+          renderMetric('pp-aud', ppAud, '100 AUD', { format: v => '$' + Number(v).toFixed(2) + ' USD', hasMomentum: true, shortDate: true, invertColors: true });
+          createChart('chart-pp-aud', ppAud.map(d => formatShortDate(d.date)), ppAud.map(d => d.value), color, { decimals: 2, prefix: '$' });
+        }
+
+        // ===== CANADIAN RESORT PERSPECTIVE =====
+        // $100 USD buys X CAD
+        if (data.usd_cad) {
+          const usdToCad = data.usd_cad.map(d => ({ date: d.date, value: 100 * d.value }));
+          const latestRate = data.usd_cad[data.usd_cad.length - 1].value;
+          const cadColor = latestRate >= 1.35 ? '#2E7D32' : (latestRate <= 1.28 ? '#C62828' : '#757575');
+          renderMetric('pp-usd-cad', usdToCad, '$100 USD', { format: v => 'C$' + Number(v).toFixed(2), hasMomentum: true, shortDate: true, invertColors: true });
+          createChart('chart-pp-usd-cad', usdToCad.map(d => formatShortDate(d.date)), usdToCad.map(d => d.value), cadColor, { decimals: 2, prefix: 'C$' });
+
+          // Domestic retention indicator
+          const retention = getCaRetentionStatus(latestRate);
+          document.getElementById('ca-retention').innerHTML =
+            '<div class="value" style="color: ' + retention.color + ';">' + retention.status + '</div>' +
+            '<div class="period">USD/CAD: ' + latestRate.toFixed(4) + '</div>' +
+            '<div style="font-size: 0.8em; color: #7f8c8d; margin-top: 5px;">' + retention.note + '</div>';
+          createChart('chart-ca-retention', data.usd_cad.map(d => formatShortDate(d.date)), data.usd_cad.map(d => d.value), retention.color, { decimals: 4 });
+        }
+
+        // EUR/GBP cross-rate to CAD for Canadian resorts
+        const ppEurCad = toCadPurchasingPower(data.usd_eur, data.usd_cad);
+        const ppGbpCad = toCadPurchasingPower(data.usd_gbp, data.usd_cad);
+        if (ppEurCad) {
+          renderMetric('pp-eur-cad', ppEurCad, '100 EUR', { format: v => 'C$' + Number(v).toFixed(2), hasMomentum: true, shortDate: true, invertColors: true });
+          createChart('chart-pp-eur-cad', ppEurCad.map(d => formatShortDate(d.date)), ppEurCad.map(d => d.value), '#3498db', { decimals: 2, prefix: 'C$' });
+        }
+        if (ppGbpCad) {
+          renderMetric('pp-gbp-cad', ppGbpCad, '100 GBP', { format: v => 'C$' + Number(v).toFixed(2), hasMomentum: true, shortDate: true, invertColors: true });
+          createChart('chart-pp-gbp-cad', ppGbpCad.map(d => formatShortDate(d.date)), ppGbpCad.map(d => d.value), '#1a5276', { decimals: 2, prefix: 'C$' });
+        }
+
+        // ===== LUXURY FEEDER MARKETS =====
+        const ppHkd = toPurchasingPower(data.usd_hkd);
+        const ppSgd = toPurchasingPower(data.usd_sgd);
+        const ppAed = toPurchasingPower(data.usd_aed);
+        const ppCny = toPurchasingPower(data.usd_cny);
+        const ppJpy = toPurchasingPower(data.usd_jpy);
+        const ppInr = toPurchasingPower(data.usd_inr);
+        const ppRub = toPurchasingPower(data.usd_rub);
+
+        if (ppHkd) {
+          renderMetric('pp-hkd', ppHkd, '100 HKD', { format: v => '$' + Number(v).toFixed(2) + ' USD', hasMomentum: true, shortDate: true, invertColors: true });
+          createChart('chart-pp-hkd', ppHkd.map(d => formatShortDate(d.date)), ppHkd.map(d => d.value), '#9b59b6', { decimals: 2, prefix: '$' });
+        }
+        if (ppSgd) {
+          renderMetric('pp-sgd', ppSgd, '100 SGD', { format: v => '$' + Number(v).toFixed(2) + ' USD', hasMomentum: true, shortDate: true, invertColors: true });
+          createChart('chart-pp-sgd', ppSgd.map(d => formatShortDate(d.date)), ppSgd.map(d => d.value), '#8e44ad', { decimals: 2, prefix: '$' });
+        }
+        if (ppAed) {
+          renderMetric('pp-aed', ppAed, '100 AED', { format: v => '$' + Number(v).toFixed(2) + ' USD', shortDate: true });
+          createChart('chart-pp-aed', ppAed.map(d => formatShortDate(d.date)), ppAed.map(d => d.value), '#27ae60', { decimals: 2, prefix: '$' });
+        }
+        if (ppCny) {
+          renderMetric('pp-cny', ppCny, '100 CNY', { format: v => '$' + Number(v).toFixed(2) + ' USD', hasMomentum: true, shortDate: true, invertColors: true });
+          createChart('chart-pp-cny', ppCny.map(d => formatShortDate(d.date)), ppCny.map(d => d.value), '#c0392b', { decimals: 2, prefix: '$' });
+        }
+        if (ppJpy) {
+          renderMetric('pp-jpy', ppJpy, '100 JPY', { format: v => '$' + Number(v).toFixed(2) + ' USD', hasMomentum: true, shortDate: true, invertColors: true });
+          createChart('chart-pp-jpy', ppJpy.map(d => formatShortDate(d.date)), ppJpy.map(d => d.value), '#e74c3c', { decimals: 2, prefix: '$' });
+        }
+        if (ppInr) {
+          renderMetric('pp-inr', ppInr, '100 INR', { format: v => '$' + Number(v).toFixed(2) + ' USD', hasMomentum: true, shortDate: true, invertColors: true });
+          createChart('chart-pp-inr', ppInr.map(d => formatShortDate(d.date)), ppInr.map(d => d.value), '#e67e22', { decimals: 2, prefix: '$' });
+        }
+        if (ppRub) {
+          renderMetric('pp-rub', ppRub, '100 RUB', { format: v => '$' + Number(v).toFixed(2) + ' USD', shortDate: true });
+          createChart('chart-pp-rub', ppRub.map(d => formatShortDate(d.date)), ppRub.map(d => d.value), '#7f8c8d', { decimals: 2, prefix: '$' });
+        }
+
+        // ===== COMPETITIVE DESTINATION COMPARISON =====
+        // Shows what $100 USD buys at each destination
+        if (data.usd_cad) {
+          const whistlerValue = data.usd_cad.map(d => ({ date: d.date, value: 100 * d.value }));
+          renderMetric('comp-whistler', whistlerValue, 'Whistler', { format: v => 'C$' + Number(v).toFixed(0), hasMomentum: true, shortDate: true });
+          createChart('chart-comp-whistler', whistlerValue.map(d => formatShortDate(d.date)), whistlerValue.map(d => d.value), '#e74c3c', { decimals: 0, prefix: 'C$' });
+        }
+        if (data.usd_eur) {
+          const alpsEurValue = data.usd_eur.map(d => ({ date: d.date, value: 100 * d.value }));
+          renderMetric('comp-alps-eur', alpsEurValue, 'Alps (EUR)', { format: v => '€' + Number(v).toFixed(0), hasMomentum: true, shortDate: true });
+          createChart('chart-comp-alps-eur', alpsEurValue.map(d => formatShortDate(d.date)), alpsEurValue.map(d => d.value), '#3498db', { decimals: 0, prefix: '€' });
+        }
+        if (data.usd_chf) {
+          const swissValue = data.usd_chf.map(d => ({ date: d.date, value: 100 * d.value }));
+          renderMetric('comp-swiss', swissValue, 'Swiss', { format: v => 'CHF ' + Number(v).toFixed(0), hasMomentum: true, shortDate: true });
+          createChart('chart-comp-swiss', swissValue.map(d => formatShortDate(d.date)), swissValue.map(d => d.value), '#c0392b', { decimals: 0, prefix: 'CHF ' });
+        }
+        if (data.usd_jpy) {
+          const nisekoValue = data.usd_jpy.map(d => ({ date: d.date, value: 100 * d.value }));
+          renderMetric('comp-niseko', nisekoValue, 'Niseko', { format: v => '¥' + Number(v).toLocaleString(undefined, {maximumFractionDigits: 0}), hasMomentum: true, shortDate: true });
+          createChart('chart-comp-niseko', nisekoValue.map(d => formatShortDate(d.date)), nisekoValue.map(d => d.value), '#9b59b6', { decimals: 0, prefix: '¥' });
+        }
+
+        // ===== DOLLAR STRENGTH INDICES (Reference) =====
         renderMetric('trade-weighted', data.trade_weighted_usd, 'TW-USD', { format: v => Number(v).toFixed(2), hasMomentum: true, shortDate: true, periodSuffix: ' (index)' });
         if (data.trade_weighted_usd && data.trade_weighted_usd.length > 0) createChart('chart-tw', data.trade_weighted_usd.map(d => formatShortDate(d.date)), data.trade_weighted_usd.map(d => d.value), '#2c3e50', { decimals: 2 });
 
         renderMetric('real-trade-weighted', data.real_trade_weighted_usd, 'Real TW-USD', { format: v => Number(v).toFixed(2), hasMomentum: true, shortDate: true, periodSuffix: ' (index)' });
         if (data.real_trade_weighted_usd && data.real_trade_weighted_usd.length > 0) createChart('chart-rtw', data.real_trade_weighted_usd.map(d => formatShortDate(d.date)), data.real_trade_weighted_usd.map(d => d.value), '#7f8c8d', { decimals: 2 });
-
-        // Currency Exchange Rates - North America & Latin America
-        renderMetric('usd-cad', data.usd_cad, 'USD/CAD', { format: v => Number(v).toFixed(4), hasMomentum: true, shortDate: true, periodSuffix: ' (CAD per USD)' });
-        if (data.usd_cad && data.usd_cad.length > 0) createChart('chart-cad', data.usd_cad.map(d => formatShortDate(d.date)), data.usd_cad.map(d => d.value), '#e74c3c', { decimals: 4 });
-
-        renderMetric('usd-mxn', data.usd_mxn, 'USD/MXN', { format: v => Number(v).toFixed(2), hasMomentum: true, shortDate: true, periodSuffix: ' (MXN per USD)' });
-        if (data.usd_mxn && data.usd_mxn.length > 0) createChart('chart-mxn', data.usd_mxn.map(d => formatShortDate(d.date)), data.usd_mxn.map(d => d.value), '#27ae60', { decimals: 2 });
-
-        // Currency Exchange Rates - Europe
-        renderMetric('usd-eur', data.usd_eur, 'USD/EUR', { format: v => Number(v).toFixed(4), hasMomentum: true, shortDate: true, periodSuffix: ' (EUR per USD)' });
-        if (data.usd_eur && data.usd_eur.length > 0) createChart('chart-eur', data.usd_eur.map(d => formatShortDate(d.date)), data.usd_eur.map(d => d.value), '#3498db', { decimals: 4 });
-
-        renderMetric('usd-gbp', data.usd_gbp, 'USD/GBP', { format: v => Number(v).toFixed(4), hasMomentum: true, shortDate: true, periodSuffix: ' (GBP per USD)' });
-        if (data.usd_gbp && data.usd_gbp.length > 0) createChart('chart-gbp', data.usd_gbp.map(d => formatShortDate(d.date)), data.usd_gbp.map(d => d.value), '#1a5276', { decimals: 4 });
-
-        renderMetric('usd-rub', data.usd_rub, 'USD/RUB', { format: v => Number(v).toFixed(2), shortDate: true, periodSuffix: ' (RUB per USD)' });
-        if (data.usd_rub && data.usd_rub.length > 0) createChart('chart-rub', data.usd_rub.map(d => formatShortDate(d.date)), data.usd_rub.map(d => d.value), '#c0392b', { decimals: 2 });
-
-        // Currency Exchange Rates - Asia-Pacific
-        renderMetric('usd-jpy', data.usd_jpy, 'USD/JPY', { format: v => Number(v).toFixed(2), hasMomentum: true, shortDate: true, periodSuffix: ' (JPY per USD)' });
-        if (data.usd_jpy && data.usd_jpy.length > 0) createChart('chart-jpy', data.usd_jpy.map(d => formatShortDate(d.date)), data.usd_jpy.map(d => d.value), '#9b59b6', { decimals: 2 });
-
-        renderMetric('usd-cny', data.usd_cny, 'USD/CNY', { format: v => Number(v).toFixed(4), hasMomentum: true, shortDate: true, periodSuffix: ' (CNY per USD)' });
-        if (data.usd_cny && data.usd_cny.length > 0) createChart('chart-cny', data.usd_cny.map(d => formatShortDate(d.date)), data.usd_cny.map(d => d.value), '#c0392b', { decimals: 4 });
-
-        renderMetric('usd-inr', data.usd_inr, 'USD/INR', { format: v => Number(v).toFixed(2), hasMomentum: true, shortDate: true, periodSuffix: ' (INR per USD)' });
-        if (data.usd_inr && data.usd_inr.length > 0) createChart('chart-inr', data.usd_inr.map(d => formatShortDate(d.date)), data.usd_inr.map(d => d.value), '#e67e22', { decimals: 2 });
-
-        renderMetric('usd-aud', data.usd_aud, 'USD/AUD', { format: v => Number(v).toFixed(4), hasMomentum: true, shortDate: true, periodSuffix: ' (AUD per USD)' });
-        if (data.usd_aud && data.usd_aud.length > 0) createChart('chart-aud', data.usd_aud.map(d => formatShortDate(d.date)), data.usd_aud.map(d => d.value), '#16a085', { decimals: 4 });
 
         // Commodity Prices
         renderMetric('gold', data.gold, 'Gold', { format: v => '$' + Number(v).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}), hasMomentum: true, shortDate: true });

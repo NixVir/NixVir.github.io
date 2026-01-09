@@ -513,6 +513,39 @@ def update_dashboard():
         dashboard_data['usd_rub'] = usd_rub
         print_safe(f"  OK USD/RUB: {usd_rub[-1]['value']} ({len(usd_rub)} data points) [monthly]")
 
+    # --- LUXURY FEEDER MARKET CURRENCIES ---
+    print_safe("\nFetching Luxury Feeder Market Currencies...")
+
+    # USD/HKD (Hong Kong Dollars per USD) - DEXHKUS
+    usd_hkd = fetch_fred_data('DEXHKUS', limit=260)
+    if usd_hkd:
+        dashboard_data['usd_hkd'] = usd_hkd
+        print_safe(f"  OK USD/HKD: {usd_hkd[-1]['value']} ({len(usd_hkd)} data points)")
+
+    # USD/SGD (Singapore Dollars per USD) - DEXSIUS
+    usd_sgd = fetch_fred_data('DEXSIUS', limit=260)
+    if usd_sgd:
+        dashboard_data['usd_sgd'] = usd_sgd
+        print_safe(f"  OK USD/SGD: {usd_sgd[-1]['value']} ({len(usd_sgd)} data points)")
+
+    # USD/CHF (Swiss Francs per USD) - DEXSZUS - for competitive destination comparison
+    usd_chf = fetch_fred_data('DEXSZUS', limit=260)
+    if usd_chf:
+        dashboard_data['usd_chf'] = usd_chf
+        print_safe(f"  OK USD/CHF: {usd_chf[-1]['value']} ({len(usd_chf)} data points)")
+
+    # USD/BRL (Brazilian Reals per USD) - DEXBZUS - Aspen/Vail South American market
+    usd_brl = fetch_fred_data('DEXBZUS', limit=260)
+    if usd_brl:
+        dashboard_data['usd_brl'] = usd_brl
+        print_safe(f"  OK USD/BRL: {usd_brl[-1]['value']} ({len(usd_brl)} data points)")
+
+    # USD/AED (UAE Dirham) - Pegged at 3.6725, store static value with latest date
+    # No FRED daily series; AED has been pegged to USD since 1997
+    if usd_cad:  # Use CAD dates as reference
+        dashboard_data['usd_aed'] = [{'date': d['date'], 'value': 3.6725} for d in usd_cad[-30:]]
+        print_safe(f"  OK USD/AED: 3.6725 (pegged) ({len(dashboard_data['usd_aed'])} data points)")
+
     # Fed Trade-Weighted Dollar Index (Broad) - DTWEXBGS
     # Measures USD against 26 major trading partners, weighted by trade volume
     # More representative than DXY for actual trade relationships
