@@ -13,6 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -784,38 +785,6 @@
             color: var(--danger);
         }
 
-        /* Trend Chart */
-        #trend-chart {
-            width: 100%;
-            height: 100%;
-        }
-
-        .trend-line {
-            fill: none;
-            stroke: var(--accent-cold);
-            stroke-width: 2;
-        }
-
-        .trend-area {
-            fill: url(#trendGradient);
-        }
-
-        .norm-line {
-            fill: none;
-            stroke: var(--text-muted);
-            stroke-width: 1.5;
-            stroke-dasharray: 4,3;
-        }
-
-        .axis text {
-            fill: var(--text-muted);
-            font-size: 0.55rem;
-        }
-
-        .axis line,
-        .axis path {
-            stroke: var(--border);
-        }
 
         /* Tooltip */
         .tooltip {
@@ -865,16 +834,9 @@
             font-weight: 500;
         }
 
-        /* Bottom Section - National Overview + 30-Day Trend side by side */
+        /* Bottom Section - National Overview */
         .bottom-section {
-            display: grid;
-            grid-template-columns: 1fr 320px;
-            gap: 1.25rem;
             margin-top: 1.25rem;
-        }
-
-        .bottom-section .trend-container {
-            height: 280px;
         }
 
         /* National Overview Card */
@@ -917,24 +879,56 @@
             margin-top: 0.5rem;
         }
 
+        .chart-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 1rem 0 0.5rem 0;
+            gap: 1rem;
+        }
+
+        .chart-header-row > div {
+            flex: 1;
+        }
+
         .chart-title {
             font-size: 0.95rem;
             font-weight: 600;
             color: var(--text-primary);
-            margin: 1rem 0 0.25rem 0;
+            margin: 0 0 0.25rem 0;
             text-align: center;
         }
 
         .chart-note {
             font-size: 0.75rem;
             color: var(--text-muted);
-            margin: 0 0 0.5rem 0;
+            margin: 0;
             text-align: center;
             font-style: italic;
         }
 
+        .reset-zoom-btn {
+            background: var(--accent-cold);
+            color: white;
+            border: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .reset-zoom-btn:hover {
+            background: var(--accent-cold-bright);
+            transform: scale(1.02);
+        }
+
         .national-chart-container {
-            height: 220px;
+            height: 280px;
+            cursor: crosshair;
         }
 
         /* Loading State */
@@ -975,13 +969,6 @@
                 height: 450px;
             }
 
-            .bottom-section {
-                grid-template-columns: 1fr;
-            }
-
-            .bottom-section .trend-container {
-                height: 200px;
-            }
         }
 
         @media (max-width: 768px) {
@@ -1480,23 +1467,16 @@
                                 <div class="national-stat-temp" id="combined-temp"></div>
                             </div>
                         </div>
-                        <h3 class="chart-title">Current Winter of 2025/26 Percent Snow Cover vs. Prior 5-Year Average</h3>
-                        <p class="chart-note">Gray vertical bars indicate key holiday periods (labeled).</p>
+                        <div class="chart-header-row">
+                            <div>
+                                <h3 class="chart-title">Current Winter of 2025/26 Percent Snow Cover vs. Prior 5-Year Average</h3>
+                                <p class="chart-note">Gray bars show holidays. <strong>Click and drag</strong> on chart to zoom in. Double-click to reset.</p>
+                            </div>
+                            <button id="reset-zoom-btn" class="reset-zoom-btn" style="display: none;">Reset Zoom</button>
+                        </div>
                         <div class="national-chart-container">
                             <canvas id="national-chart"></canvas>
                         </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <div>
-                            <div class="card-title">30-Day North America Snow Cover Trend</div>
-                            <div class="card-subtitle">Combined USA + Canada (area-weighted) vs 5-year average</div>
-                        </div>
-                    </div>
-                    <div class="card-body trend-container">
-                        <svg id="trend-chart"></svg>
                     </div>
                 </div>
             </div>
@@ -1964,6 +1944,27 @@
                         },
                         annotation: {
                             annotations: holidayAnnotations
+                        },
+                        zoom: {
+                            pan: {
+                                enabled: true,
+                                mode: 'x',
+                                modifierKey: 'shift'
+                            },
+                            zoom: {
+                                drag: {
+                                    enabled: true,
+                                    backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                                    borderColor: 'rgba(59, 130, 246, 0.8)',
+                                    borderWidth: 1
+                                },
+                                mode: 'x',
+                                onZoomComplete: function({chart}) {
+                                    // Show reset button when zoomed
+                                    const resetBtn = document.getElementById('reset-zoom-btn');
+                                    if (resetBtn) resetBtn.style.display = 'block';
+                                }
+                            }
                         }
                     },
                     scales: {
@@ -1979,7 +1980,8 @@
                             ticks: {
                                 color: '#5c6678',
                                 maxRotation: 0,
-                                autoSkip: false,
+                                autoSkip: true,
+                                maxTicksLimit: 12,
                                 callback: function(value, index) {
                                     // Show label only on 1st of month with year
                                     const dateInfo = seasonDates[index];
@@ -2013,6 +2015,21 @@
                         mode: 'index'
                     }
                 }
+            });
+
+            // Set up reset zoom button
+            const resetBtn = document.getElementById('reset-zoom-btn');
+            if (resetBtn) {
+                resetBtn.addEventListener('click', function() {
+                    nationalChart.resetZoom();
+                    resetBtn.style.display = 'none';
+                });
+            }
+
+            // Double-click to reset zoom
+            ctx.canvas.addEventListener('dblclick', function() {
+                nationalChart.resetZoom();
+                if (resetBtn) resetBtn.style.display = 'none';
             });
         }
 
@@ -2285,149 +2302,6 @@
         }
 
         // ============================================
-        // Regional Trend Chart (D3)
-        // ============================================
-        function drawTrendChart() {
-            const container = document.getElementById("trend-chart");
-            if (!container) return;
-
-            const width = container.clientWidth || 280;
-            const height = container.clientHeight || 160;
-            const margin = { top: 10, right: 15, bottom: 40, left: 50 };
-            const innerWidth = width - margin.left - margin.right;
-            const innerHeight = height - margin.top - margin.bottom;
-
-            const svg = d3.select("#trend-chart")
-                .attr("width", width)
-                .attr("height", height);
-
-            svg.selectAll("*").remove();
-
-            // Gradient definition
-            const defs = svg.append("defs");
-            const gradient = defs.append("linearGradient")
-                .attr("id", "trendGradient")
-                .attr("x1", "0%").attr("y1", "0%")
-                .attr("x2", "0%").attr("y2", "100%");
-            gradient.append("stop").attr("offset", "0%").attr("stop-color", "var(--accent-cold)").attr("stop-opacity", 0.3);
-            gradient.append("stop").attr("offset", "100%").attr("stop-color", "var(--accent-cold)").attr("stop-opacity", 0.02);
-
-            const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
-
-            // Use REAL data from the snow-cover.json history (last 30 days)
-            const data = [];
-
-            // Get USA history from snowData (real accumulated data)
-            const usaHistory = snowData?.usa?.history || [];
-            const canadaHistory = snowData?.canada?.history || [];
-
-            // Get last 30 days of real data
-            const last30UsaHistory = usaHistory.slice(-30);
-            const last30CanadaHistory = canadaHistory.slice(-30);
-
-            // Create lookup for 5-year averages by MM-DD
-            const usaAvgLookup = {};
-            const canadaAvgLookup = {};
-            (historicalData?.usa || []).forEach(item => { usaAvgLookup[item.date] = item.value; });
-            (historicalData?.canada || []).forEach(item => { canadaAvgLookup[item.date] = item.value; });
-
-            // Build data array from real history
-            last30UsaHistory.forEach((entry, i) => {
-                const dateObj = new Date(entry.date + 'T12:00:00');
-                const mmdd = `${String(dateObj.getMonth() + 1).padStart(2, '0')}-${String(dateObj.getDate()).padStart(2, '0')}`;
-
-                // Get Canada value for same date
-                const canadaEntry = last30CanadaHistory[i];
-                const canadaValue = canadaEntry ? canadaEntry.value : null;
-
-                // Calculate combined North America value (weighted by land area)
-                // USA ~9.8M km², Canada ~10M km²
-                const usaValue = entry.value;
-                const combinedCurrent = usaValue !== null && canadaValue !== null
-                    ? (usaValue * 0.495 + canadaValue * 0.505)
-                    : (usaValue || canadaValue || 0);
-
-                // Get historical average for this date
-                const usaAvg = usaAvgLookup[mmdd] || 0;
-                const canadaAvg = canadaAvgLookup[mmdd] || 0;
-                const combinedHistorical = (usaAvg * 0.495 + canadaAvg * 0.505);
-
-                data.push({
-                    date: dateObj,
-                    current: combinedCurrent,
-                    historical: combinedHistorical
-                });
-            });
-
-            // Handle case where no data is available
-            if (data.length === 0) {
-                g.append("text")
-                    .attr("x", innerWidth / 2)
-                    .attr("y", innerHeight / 2)
-                    .attr("text-anchor", "middle")
-                    .attr("fill", "#8892a2")
-                    .text("No data available");
-                return;
-            }
-
-            const x = d3.scaleTime().domain(d3.extent(data, d => d.date)).range([0, innerWidth]);
-            // Dynamic Y scale based on actual data
-            const maxVal = Math.max(
-                d3.max(data, d => d.current) || 0,
-                d3.max(data, d => d.historical) || 0
-            );
-            const yMax = Math.ceil(maxVal / 10) * 10 + 10; // Round up to nearest 10, add padding
-            const y = d3.scaleLinear().domain([0, Math.max(yMax, 50)]).range([innerHeight, 0]);
-
-            // Historical norm line
-            const lineNorm = d3.line().x(d => x(d.date)).y(d => y(d.historical)).curve(d3.curveMonotoneX);
-            g.append("path").datum(data).attr("class", "norm-line").attr("d", lineNorm);
-
-            // Current area
-            const area = d3.area().x(d => x(d.date)).y0(innerHeight).y1(d => y(d.current)).curve(d3.curveMonotoneX);
-            g.append("path").datum(data).attr("class", "trend-area").attr("d", area);
-
-            // Current line
-            const line = d3.line().x(d => x(d.date)).y(d => y(d.current)).curve(d3.curveMonotoneX);
-            g.append("path").datum(data).attr("class", "trend-line").attr("d", line);
-
-            // Axes
-            g.append("g").attr("class", "axis").attr("transform", `translate(0,${innerHeight})`)
-                .call(d3.axisBottom(x).ticks(5).tickFormat(d3.timeFormat("%b %d")));
-            g.append("g").attr("class", "axis").call(d3.axisLeft(y).ticks(4).tickFormat(d => d + "%"));
-
-            // X-axis title
-            g.append("text")
-                .attr("class", "axis-title")
-                .attr("text-anchor", "middle")
-                .attr("x", innerWidth / 2)
-                .attr("y", innerHeight + 32)
-                .attr("fill", "#8892a2")
-                .attr("font-size", "10px")
-                .text("Date (Past 30 Days)");
-
-            // Y-axis title
-            g.append("text")
-                .attr("class", "axis-title")
-                .attr("text-anchor", "middle")
-                .attr("transform", "rotate(-90)")
-                .attr("x", -innerHeight / 2)
-                .attr("y", -38)
-                .attr("fill", "#8892a2")
-                .attr("font-size", "10px")
-                .text("Snow Cover (%)");
-
-            // Legend
-            const legend = g.append("g").attr("transform", `translate(${innerWidth - 120}, 0)`);
-            legend.append("line").attr("x1", 0).attr("x2", 16).attr("y1", 0).attr("y2", 0)
-                .attr("stroke", "var(--accent-cold)").attr("stroke-width", 2);
-            legend.append("text").attr("x", 20).attr("y", 3).attr("class", "axis").text("Current Season");
-            legend.append("line").attr("x1", 0).attr("x2", 16).attr("y1", 14).attr("y2", 14)
-                .attr("stroke", "var(--text-muted)").attr("stroke-dasharray", "4,3");
-            legend.append("text").attr("x", 20).attr("y", 17).attr("class", "axis").text("Historical Avg");
-        }
-
-        // ============================================
         // Headline Insight
         // ============================================
         function updateHeadlineInsight() {
@@ -2501,7 +2375,6 @@
             renderMarketTable();
             renderSummaryStats();
             renderInsight();
-            drawTrendChart();
 
             // Analytics
             gtag('event', 'region_view', {
@@ -2525,7 +2398,6 @@
 
         window.addEventListener("resize", () => {
             drawMap();
-            drawTrendChart();
         });
 
         // ============================================
