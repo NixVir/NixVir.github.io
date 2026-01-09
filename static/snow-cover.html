@@ -1491,8 +1491,8 @@
                 <div class="card">
                     <div class="card-header">
                         <div>
-                            <div class="card-title">30-Day Regional Trend</div>
-                            <div class="card-subtitle">Population-weighted avg snow cover</div>
+                            <div class="card-title">30-Day North America Snow Cover Trend</div>
+                            <div class="card-subtitle">Combined USA + Canada (area-weighted) vs 5-year average</div>
                         </div>
                     </div>
                     <div class="card-body trend-container">
@@ -2314,27 +2314,70 @@
 
             const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
 
-            // Generate trend data from market history if available
-            const days = 30;
+            // Use REAL data from the snow-cover.json history (last 30 days)
             const data = [];
 
-            // Calculate weighted average from markets with history
-            const avgSnow = currentMarkets.length > 0
-                ? currentMarkets.reduce((s, m) => s + m.snowCover, 0) / currentMarkets.length
-                : 30;
+            // Get USA history from snowData (real accumulated data)
+            const usaHistory = snowData?.usa?.history || [];
+            const canadaHistory = snowData?.canada?.history || [];
 
-            for (let i = 0; i < days; i++) {
-                const date = new Date();
-                date.setDate(date.getDate() - (days - 1 - i));
+            // Get last 30 days of real data
+            const last30UsaHistory = usaHistory.slice(-30);
+            const last30CanadaHistory = canadaHistory.slice(-30);
+
+            // Create lookup for 5-year averages by MM-DD
+            const usaAvgLookup = {};
+            const canadaAvgLookup = {};
+            (historicalData?.usa || []).forEach(item => { usaAvgLookup[item.date] = item.value; });
+            (historicalData?.canada || []).forEach(item => { canadaAvgLookup[item.date] = item.value; });
+
+            // Build data array from real history
+            last30UsaHistory.forEach((entry, i) => {
+                const dateObj = new Date(entry.date + 'T12:00:00');
+                const mmdd = `${String(dateObj.getMonth() + 1).padStart(2, '0')}-${String(dateObj.getDate()).padStart(2, '0')}`;
+
+                // Get Canada value for same date
+                const canadaEntry = last30CanadaHistory[i];
+                const canadaValue = canadaEntry ? canadaEntry.value : null;
+
+                // Calculate combined North America value (weighted by land area)
+                // USA ~9.8M km², Canada ~10M km²
+                const usaValue = entry.value;
+                const combinedCurrent = usaValue !== null && canadaValue !== null
+                    ? (usaValue * 0.495 + canadaValue * 0.505)
+                    : (usaValue || canadaValue || 0);
+
+                // Get historical average for this date
+                const usaAvg = usaAvgLookup[mmdd] || 0;
+                const canadaAvg = canadaAvgLookup[mmdd] || 0;
+                const combinedHistorical = (usaAvg * 0.495 + canadaAvg * 0.505);
+
                 data.push({
-                    date,
-                    current: Math.max(0, Math.min(100, avgSnow + 15 - i * 0.3 + Math.sin(i / 3) * 8)),
-                    historical: 35 + Math.sin(i / 5) * 5
+                    date: dateObj,
+                    current: combinedCurrent,
+                    historical: combinedHistorical
                 });
+            });
+
+            // Handle case where no data is available
+            if (data.length === 0) {
+                g.append("text")
+                    .attr("x", innerWidth / 2)
+                    .attr("y", innerHeight / 2)
+                    .attr("text-anchor", "middle")
+                    .attr("fill", "#8892a2")
+                    .text("No data available");
+                return;
             }
 
             const x = d3.scaleTime().domain(d3.extent(data, d => d.date)).range([0, innerWidth]);
-            const y = d3.scaleLinear().domain([0, 70]).range([innerHeight, 0]);
+            // Dynamic Y scale based on actual data
+            const maxVal = Math.max(
+                d3.max(data, d => d.current) || 0,
+                d3.max(data, d => d.historical) || 0
+            );
+            const yMax = Math.ceil(maxVal / 10) * 10 + 10; // Round up to nearest 10, add padding
+            const y = d3.scaleLinear().domain([0, Math.max(yMax, 50)]).range([innerHeight, 0]);
 
             // Historical norm line
             const lineNorm = d3.line().x(d => x(d.date)).y(d => y(d.historical)).curve(d3.curveMonotoneX);
