@@ -256,6 +256,12 @@ RSS_SOURCES = [
         'category': 'industry',
         'boost': 2  # Trade magazine for mountain resort industry since 1962
     },
+    {
+        'name': 'Google News - Ropeways & Lifts',
+        'url': 'https://news.google.com/rss/search?q=site:ropeways.net+OR+chairlift+installation+OR+gondola+project+OR+ski+lift+construction&hl=en-US&gl=US&ceid=US:en',
+        'category': 'industry',
+        'boost': 2  # Ropeway/lift industry news (ropeways.net + related)
+    },
     # Ski news sites (dedicated ski sources get boost for keyword scoring)
     {
         'name': 'Unofficial Networks',
