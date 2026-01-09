@@ -1309,48 +1309,63 @@ def calculate_trend(current, previous):
 # Data Generation
 # ============================================
 
-def generate_historical_data(base_value, days=30, trend_direction='up'):
-    """Generate plausible historical data trending toward current value"""
-    import random
+def load_season_data():
+    """
+    Load accumulated season data from snow-cover-season.json.
+    This file contains real historical data from Oct 1 onwards.
+    """
+    season_file = 'static/data/snow-cover-season.json'
+    if os.path.exists(season_file):
+        try:
+            with open(season_file, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception as e:
+            print_safe(f"Warning: Could not load season data: {e}")
+    return None
 
-    history = []
-    today = datetime.now()
 
-    # Determine starting value based on trend
-    if trend_direction == 'up':
-        start_value = max(0, base_value - random.uniform(5, 12))
-    elif trend_direction == 'down':
-        start_value = min(100, base_value + random.uniform(5, 12))
-    else:
-        start_value = base_value + random.uniform(-3, 3)
+def save_season_data(season_data):
+    """Save updated season data back to file."""
+    season_file = 'static/data/snow-cover-season.json'
+    os.makedirs(os.path.dirname(season_file), exist_ok=True)
+    with open(season_file, 'w', encoding='utf-8') as f:
+        json.dump(season_data, f, indent=2)
 
-    for i in range(days - 1, -1, -1):
-        date = today - timedelta(days=i)
-        # Gradually approach current value with some noise
-        progress = (days - 1 - i) / (days - 1) if days > 1 else 1
-        value = start_value + (base_value - start_value) * progress
-        value += random.uniform(-2.5, 2.5)  # Daily noise
-        value = max(0, min(100, value))
 
-        history.append({
-            'date': date.strftime('%Y-%m-%d'),
-            'value': round(value, 1)
+def append_todays_data(season_data, usa_cover, canada_cover, usa_depth=None):
+    """
+    Append today's data to the season history if not already present.
+    Returns the updated season data.
+    """
+    today_str = datetime.now().strftime('%Y-%m-%d')
+
+    # Check if today's data already exists
+    usa_dates = [entry['date'] for entry in season_data.get('usa', [])]
+
+    if today_str not in usa_dates:
+        # Add today's USA data
+        season_data['usa'].append({
+            'date': today_str,
+            'value': round(usa_cover, 1),
+            'depth_inches': usa_depth
         })
 
-    return history
+        # Add today's Canada data
+        canada_value = min(100, round(canada_cover, 1))
+        season_data['canada'].append({
+            'date': today_str,
+            'value': canada_value
+        })
 
-def generate_metro_history(base_cover, days=7):
-    """Generate 7-day sparkline data for metro area"""
-    import random
+        # Update generation timestamp
+        season_data['generated'] = datetime.now().strftime('%Y-%m-%d %H:%M') + ' UTC'
 
-    history = []
-    for i in range(days):
-        variance = random.uniform(-10, 10)
-        trend_adjust = (days - i - 1) * random.uniform(-2, 2)
-        value = max(0, min(100, base_cover + variance + trend_adjust))
-        history.append(round(value, 1))
+        print_safe(f"  Added data for {today_str}: USA={usa_cover:.1f}%, Canada={canada_cover:.1f}%")
+    else:
+        print_safe(f"  Data for {today_str} already exists, skipping append")
 
-    return history
+    return season_data
+
 
 # ============================================
 # Main Data Collection
@@ -1367,7 +1382,6 @@ def collect_snow_data():
     print_safe("=" * 60)
 
     today = datetime.now()
-    import random  # For filling gaps
 
     # ========== Fetch Real Data ==========
 
@@ -1458,41 +1472,40 @@ def collect_snow_data():
 
     print_safe(f"Combined Cover: {combined_cover:.1f}%")
 
-    # ========== Generate Historical Data ==========
+    # ========== Load and Update Season Data ==========
+    # Use REAL accumulated data from the season file, NOT synthetic data
 
-    # Determine trend direction based on season
-    if today.month in [10, 11, 12, 1]:
-        trend = 'up'  # Building snow cover
-    elif today.month in [3, 4, 5]:
-        trend = 'down'  # Melting
-    else:
-        trend = 'stable'
-
-    usa_history = generate_historical_data(usa_cover, 30, trend)
-    canada_history = generate_historical_data(canada_cover, 30, trend)
-
-    # Fetch prior year data for the same date range (USA only - NOHRSC has historical archive)
     print_safe("\n" + "=" * 40)
-    usa_prior_year_history, usa_prior_depth_avg = fetch_prior_year_history(usa_history)
+    print_safe("Loading season data...")
 
-    # For Canada, derive prior year from USA ratio (no direct historical source)
-    canada_prior_year_history = []
-    for i, usa_prior in enumerate(usa_prior_year_history):
-        if usa_prior['value'] is not None and usa_history[i]['value'] > 0:
-            # Use same Canada/USA ratio as current data
-            ratio = canada_history[i]['value'] / usa_history[i]['value'] if usa_history[i]['value'] > 0 else 2.0
-            canada_value = round(usa_prior['value'] * ratio, 1)
-            canada_value = min(100, canada_value)  # Cap at 100%
-        else:
-            canada_value = None
-        canada_prior_year_history.append({
-            'date': usa_prior['date'],
-            'value': canada_value
-        })
+    season_data = load_season_data()
+    if season_data is None:
+        print_safe("ERROR: No season data file found!")
+        print_safe("Run backfill_current_season.py first to create the data file.")
+        # Create minimal structure to avoid crashes
+        season_data = {
+            'usa': [],
+            'canada': [],
+            'season': '2025-2026'
+        }
 
+    # Get depth from NOHRSC if available
+    usa_depth = nohrsc_data.get('avg_depth_inches')
+
+    # Append today's real data to the season file
+    season_data = append_todays_data(season_data, usa_cover, canada_cover, usa_depth)
+
+    # Save updated season data
+    save_season_data(season_data)
+
+    # Get history from real accumulated data
+    usa_history = [{'date': e['date'], 'value': e['value']} for e in season_data.get('usa', [])]
+    canada_history = [{'date': e['date'], 'value': e['value']} for e in season_data.get('canada', [])]
+
+    print_safe(f"Season data: {len(usa_history)} days (from {usa_history[0]['date'] if usa_history else 'N/A'} to {usa_history[-1]['date'] if usa_history else 'N/A'})")
     print_safe("=" * 40 + "\n")
 
-    # Calculate week-over-week change
+    # Calculate week-over-week change from REAL data
     usa_last_week = usa_history[-8]['value'] if len(usa_history) >= 8 else usa_cover
     canada_last_week = canada_history[-8]['value'] if len(canada_history) >= 8 else canada_cover
 
@@ -1580,21 +1593,21 @@ def collect_snow_data():
                 else:
                     depth_inches = (10 + cover/5) / 2.54  # Convert estimated cm to inches
 
-        # Determine trend based on season and randomness
+        # Determine trend based on season patterns (deterministic, not random)
+        # In winter months, snow is building; in spring, melting
         if today.month in [11, 12, 1]:
-            trend_weights = [0.5, 0.15, 0.35]  # up, down, stable
+            metro_trend = 'up'  # Winter accumulation
         elif today.month in [3, 4]:
-            trend_weights = [0.15, 0.5, 0.35]  # melting season
+            metro_trend = 'down'  # Spring melt
         else:
-            trend_weights = [0.25, 0.25, 0.5]
-
-        metro_trend = random.choices(['up', 'down', 'stable'], trend_weights)[0]
+            metro_trend = 'stable'  # Transitional periods
 
         # Store numeric depth in both inches and cm for sorting and display
         depth_cm = round(depth_inches * 2.54, 1)
 
-        # Generate 7-day history for this metro
-        metro_history = generate_metro_history(cover, 7)
+        # Metro history is not used for sparklines anymore - we use national data
+        # Keep empty list for backwards compatibility
+        metro_history = []
 
         # Fetch temperature and anomaly data from Open-Meteo
         temp_data = fetch_openmeteo_temperature(metro['lat'], metro['lon'], city_name)
@@ -1620,39 +1633,25 @@ def collect_snow_data():
     # Sort metros by snow cover descending
     metros.sort(key=lambda x: x['cover'], reverse=True)
 
-    # ========== Add Prior Year History to Metros ==========
-    # Use the national-level prior year ratios to estimate metro prior year values
-    # This gives a sense of how this year compares to last year
+    # ========== Fetch Prior Year History (Real Data) ==========
+    # Fetch real prior year data from NOHRSC for comparison
+    print_safe("\nFetching prior year data for comparison...")
+    usa_prior_year_history, usa_prior_depth_avg = fetch_prior_year_history(usa_history[-30:] if len(usa_history) > 30 else usa_history)
 
-    # Calculate current and prior year averages for scaling
-    current_usa_avg = sum(h['value'] for h in usa_history) / len(usa_history) if usa_history else 1
-    prior_usa_values = [h['value'] for h in usa_prior_year_history if h['value'] is not None]
-    prior_usa_avg = sum(prior_usa_values) / len(prior_usa_values) if prior_usa_values else current_usa_avg
-
-    current_canada_avg = sum(h['value'] for h in canada_history) / len(canada_history) if canada_history else 1
-    prior_canada_values = [h['value'] for h in canada_prior_year_history if h['value'] is not None]
-    prior_canada_avg = sum(prior_canada_values) / len(prior_canada_values) if prior_canada_values else current_canada_avg
-
-    # Calculate prior year ratio for each country
-    usa_prior_ratio = prior_usa_avg / current_usa_avg if current_usa_avg > 0 else 1.0
-    canada_prior_ratio = prior_canada_avg / current_canada_avg if current_canada_avg > 0 else 1.0
-
-    for metro in metros:
-        # Get the appropriate ratio based on country
-        ratio = usa_prior_ratio if metro['country'] == 'usa' else canada_prior_ratio
-
-        # Generate prior year history by scaling current history
-        prior_history = []
-        for val in metro['history']:
-            # Scale the value and add some variation
-            prior_val = val * ratio
-            # Add ±10% random variation to make it look more realistic
-            variation = random.uniform(0.9, 1.1)
-            prior_val = round(prior_val * variation, 1)
-            prior_val = max(0, min(100, prior_val))  # Clamp to 0-100
-            prior_history.append(prior_val)
-
-        metro['priorYearHistory'] = prior_history
+    # For Canada, use the same dates but we don't have direct historical data
+    # So we'll derive from USA ratio
+    canada_prior_year_history = []
+    if usa_prior_year_history:
+        for entry in usa_prior_year_history:
+            if entry['value'] is not None:
+                # Apply historical USA/Canada ratio (Canada typically ~2x USA)
+                canada_value = min(100, round(entry['value'] * 2.0, 1))
+            else:
+                canada_value = None
+            canada_prior_year_history.append({
+                'date': entry['date'],
+                'value': canada_value
+            })
 
     # ========== Build Output ==========
 
@@ -1671,9 +1670,9 @@ def collect_snow_data():
     canada_avg_depth_cm = max(5, int(8 + canada_cover / 6))
     canada_avg_depth_inches = round(canada_avg_depth_cm / 2.54, 1)
 
-    # Estimate Canada prior year depth from USA ratio
+    # Estimate Canada prior year depth from USA ratio (using real USA prior depth data)
     canada_prior_depth_avg = None
-    if usa_prior_depth_avg is not None and usa_avg_depth_inches > 0:
+    if usa_prior_depth_avg is not None and usa_avg_depth_inches is not None and usa_avg_depth_inches > 0:
         # Use current Canada/USA depth ratio to estimate Canada prior year depth
         depth_ratio = canada_avg_depth_inches / usa_avg_depth_inches if usa_avg_depth_inches > 0 else 1.5
         canada_prior_depth_avg = round(usa_prior_depth_avg * depth_ratio, 1)
