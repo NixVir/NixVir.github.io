@@ -2,6 +2,7 @@
 <article class="pa3 pa4-ns">
   <div class="mw8 center">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
 
     <style>
     .dashboard-updated { text-align: center; margin-bottom: 20px; color: #666; }
@@ -14,7 +15,7 @@
     .accordion-arrow { font-size: 1.2em; color: #7f8c8d; transition: transform 0.3s; }
     .accordion-section.open .accordion-arrow { transform: rotate(180deg); }
     .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: #fff; }
-    .accordion-section.open .accordion-content { max-height: 2000px; }
+    .accordion-section.open .accordion-content { max-height: none; }
     .accordion-inner { padding: 20px; }
     .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
     .metric-card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; background: #f9f9f9; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
@@ -634,11 +635,44 @@
       const labels = data.map(d => formatDate(d.date));
       const values = data.map(d => d.value);
 
-      // Determine ski season months for background shading
-      const skiSeasonIndices = data.map((d, i) => {
+      // Build ski season bands (Nov-Apr for each winter)
+      // Group consecutive ski season months into bands
+      const skiSeasonBands = [];
+      let currentBand = null;
+
+      data.forEach((d, i) => {
         const month = new Date(d.date).getMonth(); // 0-indexed
-        return (month >= 10 || month <= 3) ? i : null; // Nov(10)-Apr(3)
-      }).filter(i => i !== null);
+        const isSkiSeason = (month >= 10 || month <= 3); // Nov(10)-Apr(3)
+
+        if (isSkiSeason) {
+          if (currentBand === null) {
+            currentBand = { start: i, end: i };
+          } else {
+            currentBand.end = i;
+          }
+        } else {
+          if (currentBand !== null) {
+            skiSeasonBands.push(currentBand);
+            currentBand = null;
+          }
+        }
+      });
+      // Don't forget the last band if data ends in ski season
+      if (currentBand !== null) {
+        skiSeasonBands.push(currentBand);
+      }
+
+      // Create annotation objects for each band
+      const annotations = {};
+      skiSeasonBands.forEach((band, idx) => {
+        annotations['skiSeason' + idx] = {
+          type: 'box',
+          xMin: band.start - 0.5,
+          xMax: band.end + 0.5,
+          backgroundColor: 'rgba(52, 152, 219, 0.08)',
+          borderWidth: 0
+        };
+      });
 
       new Chart(ctx, {
         type: 'line',
@@ -661,17 +695,7 @@
           maintainAspectRatio: false,
           plugins: {
             legend: { display: false },
-            annotation: {
-              annotations: skiSeasonIndices.length > 0 ? {
-                skiSeason: {
-                  type: 'box',
-                  xMin: Math.min(...skiSeasonIndices),
-                  xMax: Math.max(...skiSeasonIndices),
-                  backgroundColor: 'rgba(52, 152, 219, 0.1)',
-                  borderWidth: 0
-                }
-              } : {}
-            }
+            annotation: { annotations: annotations }
           },
           scales: {
             x: { display: true, ticks: { maxRotation: 45, minRotation: 45, font: { size: 9 }, maxTicksLimit: 6 }, grid: { display: false } },
