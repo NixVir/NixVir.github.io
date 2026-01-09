@@ -411,6 +411,140 @@ def fetch_bts_border_crossings(state=None, limit=36):
         return None
 
 
+def fetch_tsa_checkpoint_data(limit=90):
+    """
+    Fetch TSA checkpoint travel numbers from TSA.gov
+
+    Scrapes the daily passenger volume data from TSA's public pages.
+    Data is updated weekdays by 9am with ~1 day lag.
+
+    Args:
+        limit: Number of days of data to return
+
+    Returns:
+        List of dicts with date and value (passengers screened)
+    """
+    import re
+    from datetime import datetime
+
+    results = []
+    current_year = datetime.now().year
+
+    # Fetch current year and previous year if needed
+    years_to_fetch = [current_year, current_year - 1]
+
+    for year in years_to_fetch:
+        if year == current_year:
+            url = "https://www.tsa.gov/travel/passenger-volumes"
+        else:
+            url = f"https://www.tsa.gov/travel/passenger-volumes/{year}"
+
+        try:
+            req = urllib.request.Request(url, headers={
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            })
+            with urllib.request.urlopen(req, timeout=60) as response:
+                html = response.read().decode('utf-8')
+
+            # TSA table structure: rows with date in first cell, numbers in subsequent cells
+            # Extract all table rows with date patterns
+            # Pattern: <tr>...<td>M/D/YYYY</td><td>NUMBER</td>...</tr>
+            row_pattern = r'<tr[^>]*>.*?<td[^>]*>(\d{1,2}/\d{1,2}/\d{4})</td>\s*<td[^>]*>([\d,]+)</td>'
+            matches = re.findall(row_pattern, html, re.DOTALL)
+
+            for date_str, value_str in matches:
+                try:
+                    # Parse date M/D/YYYY to YYYY-MM-DD
+                    parts = date_str.split('/')
+                    month, day, yr = int(parts[0]), int(parts[1]), int(parts[2])
+                    iso_date = f"{yr}-{month:02d}-{day:02d}"
+
+                    # Parse value (remove commas)
+                    value = int(value_str.replace(',', ''))
+
+                    results.append({
+                        'date': iso_date,
+                        'value': value
+                    })
+                except (ValueError, IndexError):
+                    continue
+
+        except Exception as e:
+            # Continue with other years even if one fails
+            continue
+
+    if not results:
+        print_safe("  ! TSA checkpoint data: No data parsed")
+        return None
+
+    # Remove duplicates (in case of overlapping data)
+    seen = set()
+    unique_results = []
+    for r in results:
+        if r['date'] not in seen:
+            seen.add(r['date'])
+            unique_results.append(r)
+
+    # Sort by date ascending
+    unique_results.sort(key=lambda x: x['date'])
+
+    # Return most recent 'limit' entries
+    return unique_results[-limit:] if unique_results else None
+
+
+def fetch_bts_t100_aggregate(limit=36):
+    """
+    Fetch aggregate T-100 air traffic data from BTS
+
+    Uses the preliminary estimates dataset which provides monthly
+    national-level passenger counts.
+
+    Args:
+        limit: Number of months to return
+
+    Returns:
+        List of dicts with date, passengers (segment), and checks (TSA comparison)
+    """
+    url = "https://data.bts.gov/resource/3xj5-daif.json?$order=date%20DESC&$limit=100"
+
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req, timeout=60) as response:
+            data = json.loads(response.read().decode())
+
+        if not data:
+            return None
+
+        results = []
+        for record in data[:limit]:
+            date_str = record.get('date', '')[:10]  # YYYY-MM-DD
+            if not date_str:
+                continue
+
+            # segment = total passengers transported
+            # market = enplanements (unduplicated)
+            # checks = TSA screenings
+            # Use _fit values as fallback for recent months that don't have final data
+            segment = int(float(record.get('segment') or record.get('segment_fit') or 0))
+            market = int(float(record.get('market') or record.get('market_fit') or 0))
+            checks = int(float(record.get('checks', 0) or 0))
+
+            results.append({
+                'date': date_str,
+                'value': segment,  # Primary metric: passengers transported
+                'enplanements': market,
+                'tsa_checks': checks
+            })
+
+        # Sort ascending by date
+        results.sort(key=lambda x: x['date'])
+        return results[-limit:] if results else None
+
+    except Exception as e:
+        print_safe(f"  ! BTS T-100 aggregate data unavailable: {e}")
+        return None
+
+
 def update_dashboard():
     """Main function to update dashboard data"""
     print_safe("Starting dashboard update...")
@@ -762,6 +896,47 @@ def update_dashboard():
             print_safe(f"  OK Ports: {', '.join(border_data['ports'].keys())} ({len(border_data['ports'])} ports)")
     else:
         print_safe("  ! Border crossing data unavailable")
+
+    # --- AIR TRAVEL INDICATORS ---
+    print_safe("\n--- Air Travel Indicators ---")
+
+    # Jet Fuel Prices (FRED weekly data) - leading indicator for airfares
+    print_safe("\nFetching Jet Fuel Prices (Gulf Coast)...")
+    jet_fuel = fetch_fred_data('WJFUELUSGULF', limit=104)  # 2 years of weekly data
+    if jet_fuel:
+        dashboard_data['jet_fuel'] = jet_fuel
+        print_safe(f"  OK Jet Fuel: ${jet_fuel[-1]['value']:.2f}/gal ({len(jet_fuel)} weeks)")
+
+    # National Enplanements (FRED monthly) - overall air travel demand
+    print_safe("\nFetching National Enplanements...")
+    enplanements = fetch_fred_data('ENPLANED11', limit=36)
+    if enplanements:
+        dashboard_data['enplanements'] = enplanements
+        latest = enplanements[-1]['value']
+        print_safe(f"  OK Enplanements: {latest:,.0f} ({len(enplanements)} months)")
+
+    # Domestic Load Factor (FRED monthly) - capacity utilization
+    print_safe("\nFetching Domestic Load Factor...")
+    load_factor = fetch_fred_data('LOADFACTORD11', limit=36)
+    if load_factor:
+        dashboard_data['load_factor'] = load_factor
+        print_safe(f"  OK Load Factor: {load_factor[-1]['value']:.1f}% ({len(load_factor)} months)")
+
+    # TSA Checkpoint Data (daily) - real-time travel activity
+    print_safe("\nFetching TSA Checkpoint Data...")
+    tsa_data = fetch_tsa_checkpoint_data(limit=90)  # Last 90 days
+    if tsa_data:
+        dashboard_data['tsa_checkpoint'] = tsa_data
+        latest = tsa_data[-1]
+        print_safe(f"  OK TSA: {latest['value']:,} travelers ({latest['date']}) ({len(tsa_data)} days)")
+
+    # T-100 Aggregate Passengers (monthly) - airline-reported traffic
+    print_safe("\nFetching T-100 Aggregate Passengers...")
+    t100_data = fetch_bts_t100_aggregate(limit=36)
+    if t100_data:
+        dashboard_data['t100_passengers'] = t100_data
+        latest = t100_data[-1]
+        print_safe(f"  OK T-100: {latest['value']:,} passengers ({latest['date'][:7]}) ({len(t100_data)} months)")
 
     # Write to file
     output_path = 'static/data/dashboard.json'

@@ -258,6 +258,47 @@
         </div>
       </div>
 
+      <div class="accordion-section" data-section="air-travel">
+        <div class="accordion-header" onclick="toggleSection(this)">
+          <h3><span class="section-icon">✈️</span> Air Travel Indicators <span class="metric-count">(5 metrics)</span></h3>
+          <span class="accordion-arrow">▼</span>
+        </div>
+        <div class="accordion-content">
+          <div class="accordion-inner">
+            <div class="prediction-intro">
+              <strong>Air Travel Demand Signals</strong> — Key indicators for understanding air travel patterns affecting ski destination access. Jet fuel prices are a leading indicator for airfare changes; TSA checkpoints provide real-time demand signals.
+              <br><br>
+              <strong>Why it matters:</strong> Air connectivity is critical for destination resorts drawing fly-in visitors. Rising fuel costs typically lead to fare increases within 4-8 weeks. Load factors above 85% indicate capacity constraints and potential pricing pressure.
+              <br><br>
+              <span style="font-size: 0.9em; color: #95a5a6;">Sources: <a href="https://fred.stlouisfed.org/series/WJFUELUSGULF" target="_blank" rel="noopener">EIA via FRED (Jet Fuel)</a> | <a href="https://www.tsa.gov/travel/passenger-volumes" target="_blank" rel="noopener">TSA Checkpoint Data</a> | <a href="https://data.bts.gov" target="_blank" rel="noopener">BTS T-100</a></span>
+            </div>
+
+            <!-- PRICING INDICATORS -->
+            <h4 style="margin: 0 0 10px 0; color: #2c3e50; font-size: 1em; font-weight: 600; border-bottom: 2px solid #e74c3c; padding-bottom: 5px;">Pricing Indicators</h4>
+            <p style="font-size: 0.85em; color: #7f8c8d; margin: 0 0 15px 0;">Leading indicators for airfare changes. Fuel costs typically pass through to fares within 4-8 weeks.</p>
+            <div class="dashboard-grid">
+              <div class="metric-card"><h4>Jet Fuel Price ($/gal)</h4><div id="jet-fuel">Loading...</div><div class="chart-container"><canvas id="chart-jet-fuel"></canvas></div></div>
+            </div>
+
+            <!-- DEMAND INDICATORS -->
+            <h4 style="margin: 25px 0 10px 0; color: #2c3e50; font-size: 1em; font-weight: 600; border-bottom: 2px solid #3498db; padding-bottom: 5px;">Demand Indicators</h4>
+            <p style="font-size: 0.85em; color: #7f8c8d; margin: 0 0 15px 0;">Overall air travel demand and capacity utilization signals.</p>
+            <div class="dashboard-grid">
+              <div class="metric-card"><h4>National Enplanements (Monthly)</h4><div id="enplanements">Loading...</div><div class="chart-container"><canvas id="chart-enplanements"></canvas></div></div>
+              <div class="metric-card"><h4>Domestic Load Factor (%)</h4><div id="load-factor">Loading...</div><div class="chart-container"><canvas id="chart-load-factor"></canvas></div></div>
+              <div class="metric-card"><h4>T-100 Passengers (Monthly)</h4><div id="t100-passengers">Loading...</div><div class="chart-container"><canvas id="chart-t100"></canvas></div></div>
+            </div>
+
+            <!-- REAL-TIME ACTIVITY -->
+            <h4 style="margin: 25px 0 10px 0; color: #2c3e50; font-size: 1em; font-weight: 600; border-bottom: 2px solid #27ae60; padding-bottom: 5px;">Real-Time Activity</h4>
+            <p style="font-size: 0.85em; color: #7f8c8d; margin: 0 0 15px 0;">Daily TSA checkpoint data provides near-real-time travel demand signals.</p>
+            <div class="dashboard-grid">
+              <div class="metric-card"><h4>TSA Checkpoint Volume (Daily)</h4><div id="tsa-checkpoint">Loading...</div><div class="chart-container"><canvas id="chart-tsa"></canvas></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="accordion-section" data-section="prediction">
         <div class="accordion-header" onclick="toggleSection(this)">
           <h3><span class="section-icon">🎯</span> Prediction Markets <span class="metric-count">(Kalshi)</span></h3>
@@ -790,6 +831,27 @@
 
         renderMetric('border-blaine', data.border_port_blaine, 'Blaine', { format: borderFormat });
         if (data.border_port_blaine && data.border_port_blaine.length > 0) createChart('chart-border-blaine', data.border_port_blaine.map(d => formatDate(d.date)), data.border_port_blaine.map(d => d.value), '#9b59b6', { suffix: '', decimals: 0 });
+
+        // --- AIR TRAVEL INDICATORS ---
+        // Jet Fuel Price
+        renderMetric('jet-fuel', data.jet_fuel, 'Jet Fuel', { format: v => '$' + Number(v).toFixed(2) + '/gal' });
+        if (data.jet_fuel && data.jet_fuel.length > 0) createChart('chart-jet-fuel', data.jet_fuel.map(d => formatDate(d.date)), data.jet_fuel.map(d => d.value), '#e74c3c', { suffix: '', decimals: 2 });
+
+        // National Enplanements
+        renderMetric('enplanements', data.enplanements, 'Enplane', { format: v => (Number(v) / 1000000).toFixed(1) + 'M passengers' });
+        if (data.enplanements && data.enplanements.length > 0) createChart('chart-enplanements', data.enplanements.map(d => formatDate(d.date)), data.enplanements.map(d => d.value / 1000000), '#3498db', { suffix: 'M', decimals: 1 });
+
+        // Domestic Load Factor
+        renderMetric('load-factor', data.load_factor, 'Load', { format: v => Number(v).toFixed(1) + '%' });
+        if (data.load_factor && data.load_factor.length > 0) createChart('chart-load-factor', data.load_factor.map(d => formatDate(d.date)), data.load_factor.map(d => d.value), '#9b59b6', { suffix: '%', decimals: 1 });
+
+        // T-100 Passengers
+        renderMetric('t100-passengers', data.t100_passengers, 'T-100', { format: v => (Number(v) / 1000000).toFixed(1) + 'M passengers' });
+        if (data.t100_passengers && data.t100_passengers.length > 0) createChart('chart-t100', data.t100_passengers.map(d => formatDate(d.date)), data.t100_passengers.map(d => d.value / 1000000), '#3498db', { suffix: 'M', decimals: 1 });
+
+        // TSA Checkpoint (daily data - show last value prominently)
+        renderMetric('tsa-checkpoint', data.tsa_checkpoint, 'TSA', { format: v => Number(v).toLocaleString() + ' travelers' });
+        if (data.tsa_checkpoint && data.tsa_checkpoint.length > 0) createChart('chart-tsa', data.tsa_checkpoint.map(d => formatDate(d.date)), data.tsa_checkpoint.map(d => d.value / 1000000), '#27ae60', { suffix: 'M', decimals: 2 });
 
       } catch (error) {
         console.error("Failed to load dashboard:", error);
