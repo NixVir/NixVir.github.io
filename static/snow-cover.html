@@ -137,32 +137,135 @@
             color: var(--text-muted);
         }
 
-        .region-selector {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
+        /* Region Control Panel - Prominent Selector */
+        .region-control-panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
         }
 
-        .region-selector label {
-            font-size: 0.8rem;
+        .region-control-header h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .region-control-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .region-control-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .region-preset {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .region-preset label {
+            font-size: 0.9rem;
+            font-weight: 500;
             color: var(--text-secondary);
         }
 
-        .region-selector select {
+        .region-preset select {
             background: var(--bg-elevated);
-            border: 1px solid var(--border);
+            border: 2px solid var(--border);
             color: var(--text-primary);
-            padding: 0.5rem 0.875rem;
-            border-radius: 6px;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
             font-family: inherit;
-            font-size: 0.8rem;
+            font-size: 1rem;
             cursor: pointer;
-            min-width: 200px;
+            min-width: 220px;
+            transition: border-color 0.2s;
         }
 
-        .region-selector select:focus {
+        .region-preset select:hover {
+            border-color: var(--border-light);
+        }
+
+        .region-preset select:focus {
             outline: none;
             border-color: var(--accent-cold);
+        }
+
+        .region-divider {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .customize-btn-large {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 8px;
+            border: 2px solid var(--accent-cold);
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-cold-bright);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .customize-btn-large svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .customize-btn-large:hover {
+            background: var(--accent-cold);
+            color: white;
+        }
+
+        .region-control-hint {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .region-control-panel {
+                padding: 1.25rem;
+            }
+
+            .region-control-actions {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .region-divider {
+                display: none;
+            }
+
+            .region-preset select {
+                min-width: 100%;
+            }
+
+            .customize-btn-large {
+                width: 100%;
+                justify-content: center;
+            }
         }
 
         /* Main Layout */
@@ -903,28 +1006,6 @@
             color: var(--accent-cold-bright);
         }
 
-        .customize-btn {
-            padding: 0.4rem 0.75rem;
-            font-size: 0.75rem;
-            border-radius: 4px;
-            border: 1px solid var(--border);
-            background: var(--bg-elevated);
-            color: var(--text-secondary);
-            cursor: pointer;
-            transition: all 0.2s;
-            margin-left: 0.5rem;
-        }
-
-        .customize-btn:hover {
-            border-color: var(--accent-cold);
-            color: var(--text-primary);
-        }
-
-        .customize-btn.active {
-            border-color: var(--accent-cold);
-            background: rgba(59, 130, 246, 0.1);
-            color: var(--accent-cold-bright);
-        }
     </style>
 </head>
 <body>
@@ -959,8 +1040,18 @@
             <div class="header-right">
                 <a href="/" class="back-link">&larr; Back to NixVir</a>
                 <div class="last-updated" id="last-updated">Loading...</div>
-                <div class="region-selector">
-                    <label>Region:</label>
+            </div>
+        </header>
+
+        <!-- Region Selector - Front and Center -->
+        <div class="region-control-panel">
+            <div class="region-control-header">
+                <h2>Select Your Feeder Markets</h2>
+                <p class="region-control-desc">Choose a preset region or build a custom selection of the metro areas that feed your resort.</p>
+            </div>
+            <div class="region-control-actions">
+                <div class="region-preset">
+                    <label>Quick Select:</label>
                     <select id="region-select">
                         <optgroup label="NSAA Regions">
                             <option value="rocky-mountain">Rocky Mountain</option>
@@ -982,10 +1073,19 @@
                             <option value="custom">Custom Selection</option>
                         </optgroup>
                     </select>
-                    <button class="customize-btn" id="customize-btn" title="Build custom market selection">Customize</button>
                 </div>
+                <div class="region-divider">
+                    <span>or</span>
+                </div>
+                <button class="customize-btn-large" id="customize-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M5 12h14"/>
+                    </svg>
+                    Build Custom Region
+                </button>
             </div>
-        </header>
+            <p class="region-control-hint">Custom regions let you pick specific cities from any combination of markets across North America.</p>
+        </div>
 
         <div class="main-layout">
             <div class="card map-card">
