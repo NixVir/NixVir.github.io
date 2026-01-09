@@ -545,6 +545,113 @@ def fetch_bts_t100_aggregate(limit=36):
         return None
 
 
+# Ski gateway airport configuration
+SKI_GATEWAY_AIRPORTS = {
+    # Colorado
+    'HDN': {'name': 'Yampa Valley Regional', 'city': 'Hayden', 'resorts': 'Steamboat Springs', 'region': 'colorado'},
+    'EGE': {'name': 'Eagle County Regional', 'city': 'Eagle', 'resorts': 'Vail, Beaver Creek', 'region': 'colorado'},
+    'ASE': {'name': 'Aspen-Pitkin County', 'city': 'Aspen', 'resorts': 'Aspen, Snowmass', 'region': 'colorado'},
+    'MTJ': {'name': 'Montrose Regional', 'city': 'Montrose', 'resorts': 'Telluride', 'region': 'colorado'},
+    'GUC': {'name': 'Gunnison-Crested Butte', 'city': 'Gunnison', 'resorts': 'Crested Butte', 'region': 'colorado'},
+    'DRO': {'name': 'Durango-La Plata County', 'city': 'Durango', 'resorts': 'Purgatory', 'region': 'colorado'},
+    'TEX': {'name': 'Telluride Regional', 'city': 'Telluride', 'resorts': 'Telluride', 'region': 'colorado'},
+    # Northern Rockies (Montana, Wyoming, Idaho)
+    'JAC': {'name': 'Jackson Hole', 'city': 'Jackson', 'resorts': 'Jackson Hole, Grand Targhee', 'region': 'rockies'},
+    'SUN': {'name': 'Friedman Memorial', 'city': 'Hailey', 'resorts': 'Sun Valley', 'region': 'rockies'},
+    'FCA': {'name': 'Glacier Park Intl', 'city': 'Kalispell', 'resorts': 'Whitefish Mountain', 'region': 'rockies'},
+    'BZN': {'name': 'Bozeman Yellowstone', 'city': 'Bozeman', 'resorts': 'Big Sky, Bridger Bowl', 'region': 'rockies'},
+    'MSO': {'name': 'Missoula Intl', 'city': 'Missoula', 'resorts': 'Snowbowl, Lost Trail', 'region': 'rockies'},
+    # California/Nevada
+    'RNO': {'name': 'Reno-Tahoe Intl', 'city': 'Reno', 'resorts': 'Lake Tahoe resorts', 'region': 'california'},
+    'MMH': {'name': 'Mammoth Yosemite', 'city': 'Mammoth Lakes', 'resorts': 'Mammoth Mountain', 'region': 'california'},
+    # Major Hubs (high volume, serve multiple resorts)
+    'DEN': {'name': 'Denver Intl', 'city': 'Denver', 'resorts': 'All Colorado resorts', 'region': 'hubs'},
+    'SLC': {'name': 'Salt Lake City Intl', 'city': 'Salt Lake City', 'resorts': 'Park City, Snowbird, Alta', 'region': 'hubs'},
+}
+
+
+def fetch_ski_gateway_airports():
+    """
+    Fetch T-100 passenger data for ski gateway airports.
+
+    Uses the BTS T-100 Segment Summary By Origin Airport dataset.
+
+    Returns:
+        List of dicts with airport code, passengers, year, and metadata
+    """
+    url = "https://data.bts.gov/resource/r495-tyji.json?$limit=5000&$order=year%20DESC"
+
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req, timeout=60) as response:
+            data = json.loads(response.read().decode())
+
+        if not data:
+            return None
+
+        # Filter to ski gateway airports and organize by code
+        airport_data = {}
+        for record in data:
+            code = record.get('origin_airport_code', '')
+            if code not in SKI_GATEWAY_AIRPORTS:
+                continue
+
+            year = record.get('year', '')
+            passengers = int(float(record.get('total_passengers', 0)))
+            domestic_passengers = int(float(record.get('domestic_passengers', 0)))
+            load_factor = float(record.get('total_load_factor', 0) or 0)
+
+            if code not in airport_data:
+                airport_data[code] = []
+
+            airport_data[code].append({
+                'year': year,
+                'passengers': passengers,
+                'domestic_passengers': domestic_passengers,
+                'load_factor': load_factor
+            })
+
+        # Build result with latest data and YoY comparison
+        results = []
+        for code, years_data in airport_data.items():
+            if not years_data:
+                continue
+
+            # Sort by year descending
+            years_data.sort(key=lambda x: x['year'], reverse=True)
+            latest = years_data[0]
+
+            # Calculate YoY change if prior year available
+            yoy_change = None
+            if len(years_data) >= 2:
+                prior = years_data[1]
+                if prior['passengers'] > 0:
+                    yoy_change = ((latest['passengers'] - prior['passengers']) / prior['passengers']) * 100
+
+            config = SKI_GATEWAY_AIRPORTS[code]
+            results.append({
+                'code': code,
+                'name': config['name'],
+                'city': config['city'],
+                'resorts': config['resorts'],
+                'region': config['region'],
+                'year': latest['year'],
+                'passengers': latest['passengers'],
+                'domestic_passengers': latest['domestic_passengers'],
+                'load_factor': latest['load_factor'],
+                'yoy_change': round(yoy_change, 1) if yoy_change is not None else None,
+                'years_available': len(years_data)
+            })
+
+        # Sort by passengers descending
+        results.sort(key=lambda x: x['passengers'], reverse=True)
+        return results
+
+    except Exception as e:
+        print_safe(f"  ! Ski gateway airport data unavailable: {e}")
+        return None
+
+
 def update_dashboard():
     """Main function to update dashboard data"""
     print_safe("Starting dashboard update...")
@@ -937,6 +1044,15 @@ def update_dashboard():
         dashboard_data['t100_passengers'] = t100_data
         latest = t100_data[-1]
         print_safe(f"  OK T-100: {latest['value']:,} passengers ({latest['date'][:7]}) ({len(t100_data)} months)")
+
+    print_safe("\nFetching Ski Gateway Airport Data...")
+    ski_airports = fetch_ski_gateway_airports()
+    if ski_airports:
+        dashboard_data['ski_gateway_airports'] = ski_airports
+        print_safe(f"  OK Ski Airports: {len(ski_airports)} airports loaded")
+        # Show top 5 by passenger volume
+        for apt in ski_airports[:5]:
+            print_safe(f"    {apt['code']} ({apt['city']}): {apt['passengers']:,} pax ({apt['year']})")
 
     # Write to file
     output_path = 'static/data/dashboard.json'

@@ -36,6 +36,18 @@
     .consensus-value { font-size: 2em; font-weight: bold; color: #2c3e50; }
     .consensus-prob { font-size: 0.9em; color: #27ae60; margin-left: 8px; }
     .consensus-label { font-size: 0.85em; color: #7f8c8d; }
+    /* Tooltip icons for metric definitions */
+    .tooltip-icon { cursor: help; color: #95a5a6; font-size: 0.85em; margin-left: 4px; }
+    .tooltip-icon:hover { color: #3498db; }
+    /* Region filter buttons for ski airports */
+    .region-filter { padding: 6px 12px; border: 1px solid #ddd; border-radius: 4px; background: #fff; cursor: pointer; font-size: 0.85em; transition: all 0.2s; }
+    .region-filter:hover { background: #f0f4f8; border-color: #3498db; }
+    .region-filter.active { background: #3498db; color: #fff; border-color: #3498db; }
+    /* Ski airport cards */
+    .ski-airport-card { position: relative; }
+    .ski-airport-card .resort-tag { font-size: 0.75em; color: #7f8c8d; margin-top: 4px; }
+    .ski-airport-card .yoy-change { font-size: 0.85em; margin-top: 6px; }
+    .ski-airport-card .airport-code { font-size: 0.9em; color: #95a5a6; font-weight: normal; }
     </style>
 
     <noscript>
@@ -260,7 +272,7 @@
 
       <div class="accordion-section" data-section="air-travel">
         <div class="accordion-header" onclick="toggleSection(this)">
-          <h3><span class="section-icon">✈️</span> Air Travel Indicators <span class="metric-count">(5 metrics)</span></h3>
+          <h3><span class="section-icon">✈️</span> Air Travel Indicators <span class="metric-count">(5 metrics + 16 ski airports)</span></h3>
           <span class="accordion-arrow">▼</span>
         </div>
         <div class="accordion-content">
@@ -277,23 +289,60 @@
             <h4 style="margin: 0 0 10px 0; color: #2c3e50; font-size: 1em; font-weight: 600; border-bottom: 2px solid #e74c3c; padding-bottom: 5px;">Pricing Indicators</h4>
             <p style="font-size: 0.85em; color: #7f8c8d; margin: 0 0 15px 0;">Leading indicators for airfare changes. Fuel costs typically pass through to fares within 4-8 weeks.</p>
             <div class="dashboard-grid">
-              <div class="metric-card"><h4>Jet Fuel Price ($/gal)</h4><div id="jet-fuel">Loading...</div><div class="chart-container"><canvas id="chart-jet-fuel"></canvas></div></div>
+              <div class="metric-card">
+                <h4>Jet Fuel Price ($/gal) <span class="tooltip-icon" title="Gulf Coast kerosene-type jet fuel spot price (EIA). A leading indicator for airfare changes—fuel costs typically pass through to ticket prices within 4-8 weeks.">ⓘ</span></h4>
+                <div id="jet-fuel">Loading...</div>
+                <div class="chart-container"><canvas id="chart-jet-fuel"></canvas></div>
+              </div>
             </div>
 
             <!-- DEMAND INDICATORS -->
             <h4 style="margin: 25px 0 10px 0; color: #2c3e50; font-size: 1em; font-weight: 600; border-bottom: 2px solid #3498db; padding-bottom: 5px;">Demand Indicators</h4>
             <p style="font-size: 0.85em; color: #7f8c8d; margin: 0 0 15px 0;">Overall air travel demand and capacity utilization signals.</p>
             <div class="dashboard-grid">
-              <div class="metric-card"><h4>National Enplanements (Monthly)</h4><div id="enplanements">Loading...</div><div class="chart-container"><canvas id="chart-enplanements"></canvas></div></div>
-              <div class="metric-card"><h4>Domestic Load Factor (%)</h4><div id="load-factor">Loading...</div><div class="chart-container"><canvas id="chart-load-factor"></canvas></div></div>
-              <div class="metric-card"><h4>T-100 Passengers (Monthly)</h4><div id="t100-passengers">Loading...</div><div class="chart-container"><canvas id="chart-t100"></canvas></div></div>
+              <div class="metric-card">
+                <h4>National Enplanements <span class="tooltip-icon" title="Total passengers boarding flights at US airports (FRED/BTS). Includes domestic and international. Data is in thousands—multiply by 1,000 for actual passenger counts. Monthly data with ~2 month lag.">ⓘ</span></h4>
+                <div id="enplanements">Loading...</div>
+                <div class="chart-container"><canvas id="chart-enplanements"></canvas></div>
+              </div>
+              <div class="metric-card">
+                <h4>Domestic Load Factor <span class="tooltip-icon" title="Percentage of available seats filled on domestic flights (FRED/BTS). Above 85% indicates capacity pressure, potential pricing increases, and booking challenges. Below 75% may signal weak demand or overcapacity.">ⓘ</span></h4>
+                <div id="load-factor">Loading...</div>
+                <div class="chart-container"><canvas id="chart-load-factor"></canvas></div>
+              </div>
+              <div class="metric-card">
+                <h4>T-100 Passengers <span class="tooltip-icon" title="Total passengers on domestic flight segments from BTS Form 41 T-100 reports. Unlike enplanements, this counts each segment separately—connecting passengers count once per flight. Provides actual flown capacity data.">ⓘ</span></h4>
+                <div id="t100-passengers">Loading...</div>
+                <div class="chart-container"><canvas id="chart-t100"></canvas></div>
+              </div>
             </div>
 
             <!-- REAL-TIME ACTIVITY -->
             <h4 style="margin: 25px 0 10px 0; color: #2c3e50; font-size: 1em; font-weight: 600; border-bottom: 2px solid #27ae60; padding-bottom: 5px;">Real-Time Activity</h4>
             <p style="font-size: 0.85em; color: #7f8c8d; margin: 0 0 15px 0;">Daily TSA checkpoint data provides near-real-time travel demand signals.</p>
             <div class="dashboard-grid">
-              <div class="metric-card"><h4>TSA Checkpoint Volume (Daily)</h4><div id="tsa-checkpoint">Loading...</div><div class="chart-container"><canvas id="chart-tsa"></canvas></div></div>
+              <div class="metric-card">
+                <h4>TSA Checkpoint Volume <span class="tooltip-icon" title="Daily passenger screenings at TSA airport checkpoints. Published daily with 1-day lag. Highly variable by day of week—displayed as 7-day rolling average to smooth volatility. Compare to same period last year for trend analysis.">ⓘ</span></h4>
+                <div id="tsa-checkpoint">Loading...</div>
+                <div class="chart-container"><canvas id="chart-tsa"></canvas></div>
+              </div>
+            </div>
+
+            <!-- SKI GATEWAY AIRPORTS -->
+            <h4 style="margin: 25px 0 10px 0; color: #2c3e50; font-size: 1em; font-weight: 600; border-bottom: 2px solid #9b59b6; padding-bottom: 5px;">Ski Gateway Airports <span class="tooltip-icon" title="Annual passenger volumes at airports serving major North American ski destinations. Data from BTS T-100 Segment reports. Useful for understanding air access capacity to specific resort markets.">ⓘ</span></h4>
+            <p style="font-size: 0.85em; color: #7f8c8d; margin: 0 0 15px 0;">Annual passenger traffic at airports serving major ski destinations. Filter by region or view all.</p>
+
+            <!-- Region filter buttons -->
+            <div style="margin-bottom: 15px; display: flex; flex-wrap: wrap; gap: 8px;">
+              <button class="region-filter active" data-region="all" onclick="filterSkiAirports('all')">All Regions</button>
+              <button class="region-filter" data-region="colorado" onclick="filterSkiAirports('colorado')">Colorado</button>
+              <button class="region-filter" data-region="rockies" onclick="filterSkiAirports('rockies')">Northern Rockies</button>
+              <button class="region-filter" data-region="california" onclick="filterSkiAirports('california')">California/Nevada</button>
+              <button class="region-filter" data-region="hubs" onclick="filterSkiAirports('hubs')">Major Hubs</button>
+            </div>
+
+            <div id="ski-airports-grid" class="dashboard-grid">
+              <!-- Populated by JavaScript -->
             </div>
           </div>
         </div>
@@ -926,10 +975,58 @@
           createChart('chart-tsa', data.tsa_checkpoint.map(d => formatDate(d.date)), data.tsa_checkpoint.map(d => d.value / 1000000), '#27ae60', { suffix: 'M', decimals: 2 });
         }
 
+        // --- SKI GATEWAY AIRPORTS ---
+        if (data.ski_gateway_airports && data.ski_gateway_airports.length > 0) {
+          window.skiAirportsData = data.ski_gateway_airports;
+          renderSkiAirports('all');
+        }
+
       } catch (error) {
         console.error("Failed to load dashboard:", error);
         document.getElementById("last-update").textContent = "Error loading data";
       }
+    }
+
+    // Ski Gateway Airports rendering
+    function renderSkiAirports(region) {
+      const grid = document.getElementById('ski-airports-grid');
+      if (!grid || !window.skiAirportsData) return;
+
+      const airports = region === 'all'
+        ? window.skiAirportsData
+        : window.skiAirportsData.filter(a => a.region === region);
+
+      if (airports.length === 0) {
+        grid.innerHTML = '<p style="color: #7f8c8d; font-style: italic;">No airports found for this region.</p>';
+        return;
+      }
+
+      grid.innerHTML = airports.map(apt => {
+        const paxFormatted = apt.passengers >= 1000000
+          ? (apt.passengers / 1000000).toFixed(1) + 'M'
+          : (apt.passengers / 1000).toFixed(0) + 'K';
+
+        const yoyHtml = apt.yoy_change !== null
+          ? '<div class="yoy-change ' + (apt.yoy_change >= 0 ? 'positive' : 'negative') + '">' +
+            (apt.yoy_change >= 0 ? '↑' : '↓') + ' ' + Math.abs(apt.yoy_change).toFixed(1) + '% YoY</div>'
+          : '';
+
+        return '<div class="metric-card ski-airport-card" data-region="' + apt.region + '">' +
+          '<h4>' + apt.city + ' <span class="airport-code">(' + apt.code + ')</span></h4>' +
+          '<div class="value">' + paxFormatted + '</div>' +
+          '<div class="period">' + apt.year + ' passengers</div>' +
+          yoyHtml +
+          '<div class="resort-tag">✱ ' + apt.resorts + '</div>' +
+          '</div>';
+      }).join('');
+    }
+
+    function filterSkiAirports(region) {
+      // Update active button
+      document.querySelectorAll('.region-filter').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.region === region);
+      });
+      renderSkiAirports(region);
     }
 
     loadDashboard();
