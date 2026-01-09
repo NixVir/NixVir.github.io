@@ -210,6 +210,54 @@
         </div>
       </div>
 
+      <div class="accordion-section" data-section="border">
+        <div class="accordion-header" onclick="toggleSection(this)">
+          <h3><span class="section-icon">🛂</span> US/Canada Border Crossings <span class="metric-count">(12 metrics)</span></h3>
+          <span class="accordion-arrow">▼</span>
+        </div>
+        <div class="accordion-content">
+          <div class="accordion-inner">
+            <div class="prediction-intro">
+              <strong>Personal Vehicle Passengers</strong> — Monthly counts of passengers crossing US/Canada land border ports. Key indicator for Canadian visitor flows to US ski markets. Data from <a href="https://data.bts.gov/Research-and-Statistics/Border-Crossing-Entry-Data/keg4-3bc2" target="_blank" rel="noopener">Bureau of Transportation Statistics</a>, updated monthly with ~2 month lag.
+              <br><br>
+              <strong>Ski Market Relevance:</strong> Canadian visitors represent a significant segment for Montana (Whitefish/Big Sky), Vermont/New Hampshire, and Washington (Crystal/Stevens Pass) resorts. Strong CAD and favorable exchange rates typically correlate with increased border crossings.
+              <br><br>
+              <span style="font-size: 0.9em; color: #95a5a6;">Sources: <a href="https://data.bts.gov" target="_blank" rel="noopener">BTS Border Crossing Portal</a> | <a href="https://www.cbp.gov/newsroom/stats/cbp-enforcement-statistics" target="_blank" rel="noopener">CBP Statistics</a></span>
+            </div>
+
+            <!-- NATIONAL TOTALS -->
+            <h4 style="margin: 0 0 10px 0; color: #2c3e50; font-size: 1em; font-weight: 600; border-bottom: 2px solid #3498db; padding-bottom: 5px;">National Totals</h4>
+            <p style="font-size: 0.85em; color: #7f8c8d; margin: 0 0 15px 0;">All US/Canada land border crossings combined.</p>
+            <div class="dashboard-grid">
+              <div class="metric-card"><h4>US/Canada Total (Monthly)</h4><div id="border-national">Loading...</div><div class="chart-container"><canvas id="chart-border-national"></canvas></div></div>
+            </div>
+
+            <!-- SKI-RELEVANT STATES -->
+            <h4 style="margin: 25px 0 10px 0; color: #2c3e50; font-size: 1em; font-weight: 600; border-bottom: 2px solid #27ae60; padding-bottom: 5px;">Ski-Relevant States</h4>
+            <p style="font-size: 0.85em; color: #7f8c8d; margin: 0 0 15px 0;">State-level crossings for major ski market corridors.</p>
+            <div class="dashboard-grid">
+              <div class="metric-card"><h4>Montana</h4><div id="border-montana">Loading...</div><div class="chart-container"><canvas id="chart-border-montana"></canvas></div></div>
+              <div class="metric-card"><h4>Vermont</h4><div id="border-vermont">Loading...</div><div class="chart-container"><canvas id="chart-border-vermont"></canvas></div></div>
+              <div class="metric-card"><h4>New Hampshire</h4><div id="border-nh">Loading...</div><div class="chart-container"><canvas id="chart-border-nh"></canvas></div></div>
+              <div class="metric-card"><h4>Washington</h4><div id="border-washington">Loading...</div><div class="chart-container"><canvas id="chart-border-washington"></canvas></div></div>
+              <div class="metric-card"><h4>New York</h4><div id="border-ny">Loading...</div><div class="chart-container"><canvas id="chart-border-ny"></canvas></div></div>
+              <div class="metric-card"><h4>Maine</h4><div id="border-maine">Loading...</div><div class="chart-container"><canvas id="chart-border-maine"></canvas></div></div>
+            </div>
+
+            <!-- KEY PORTS -->
+            <h4 style="margin: 25px 0 10px 0; color: #2c3e50; font-size: 1em; font-weight: 600; border-bottom: 2px solid #9b59b6; padding-bottom: 5px;">Key Border Ports</h4>
+            <p style="font-size: 0.85em; color: #7f8c8d; margin: 0 0 15px 0;">Major crossing points serving ski destination corridors.</p>
+            <div class="dashboard-grid">
+              <div class="metric-card"><h4>Sweetgrass, MT (I-15/Calgary)</h4><div id="border-sweetgrass">Loading...</div><div class="chart-container"><canvas id="chart-border-sweetgrass"></canvas></div></div>
+              <div class="metric-card"><h4>Roosville, MT (US-93/BC)</h4><div id="border-roosville">Loading...</div><div class="chart-container"><canvas id="chart-border-roosville"></canvas></div></div>
+              <div class="metric-card"><h4>Derby Line, VT</h4><div id="border-derby">Loading...</div><div class="chart-container"><canvas id="chart-border-derby"></canvas></div></div>
+              <div class="metric-card"><h4>Highgate Springs, VT</h4><div id="border-highgate">Loading...</div><div class="chart-container"><canvas id="chart-border-highgate"></canvas></div></div>
+              <div class="metric-card"><h4>Blaine, WA (I-5/Vancouver)</h4><div id="border-blaine">Loading...</div><div class="chart-container"><canvas id="chart-border-blaine"></canvas></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="accordion-section" data-section="prediction">
         <div class="accordion-header" onclick="toggleSection(this)">
           <h3><span class="section-icon">🎯</span> Prediction Markets <span class="metric-count">(Kalshi)</span></h3>
@@ -700,6 +748,48 @@
 
         renderMetric('elec-wy', data.electricity_wy, 'WY Elec', { format: v => Number(v).toFixed(2) + '¢', periodSuffix: '/kWh' });
         if (data.electricity_wy && data.electricity_wy.length > 0) createChart('chart-elec-wy', data.electricity_wy.map(d => formatDate(d.date)), data.electricity_wy.map(d => d.value), '#8e44ad', { suffix: '¢', decimals: 2 });
+
+        // --- US/CANADA BORDER CROSSINGS ---
+        const borderFormat = v => Number(v).toLocaleString() + ' passengers';
+
+        // National totals
+        renderMetric('border-national', data.border_national, 'Border', { format: borderFormat });
+        if (data.border_national && data.border_national.length > 0) createChart('chart-border-national', data.border_national.map(d => formatDate(d.date)), data.border_national.map(d => d.value), '#3498db', { suffix: '', decimals: 0 });
+
+        // State-level (ski-relevant states)
+        renderMetric('border-montana', data.border_montana, 'MT Border', { format: borderFormat });
+        if (data.border_montana && data.border_montana.length > 0) createChart('chart-border-montana', data.border_montana.map(d => formatDate(d.date)), data.border_montana.map(d => d.value), '#27ae60', { suffix: '', decimals: 0 });
+
+        renderMetric('border-vermont', data.border_vermont, 'VT Border', { format: borderFormat });
+        if (data.border_vermont && data.border_vermont.length > 0) createChart('chart-border-vermont', data.border_vermont.map(d => formatDate(d.date)), data.border_vermont.map(d => d.value), '#27ae60', { suffix: '', decimals: 0 });
+
+        renderMetric('border-nh', data.border_new_hampshire, 'NH Border', { format: borderFormat });
+        if (data.border_new_hampshire && data.border_new_hampshire.length > 0) createChart('chart-border-nh', data.border_new_hampshire.map(d => formatDate(d.date)), data.border_new_hampshire.map(d => d.value), '#27ae60', { suffix: '', decimals: 0 });
+
+        renderMetric('border-washington', data.border_washington, 'WA Border', { format: borderFormat });
+        if (data.border_washington && data.border_washington.length > 0) createChart('chart-border-washington', data.border_washington.map(d => formatDate(d.date)), data.border_washington.map(d => d.value), '#27ae60', { suffix: '', decimals: 0 });
+
+        renderMetric('border-ny', data.border_new_york, 'NY Border', { format: borderFormat });
+        if (data.border_new_york && data.border_new_york.length > 0) createChart('chart-border-ny', data.border_new_york.map(d => formatDate(d.date)), data.border_new_york.map(d => d.value), '#27ae60', { suffix: '', decimals: 0 });
+
+        renderMetric('border-maine', data.border_maine, 'ME Border', { format: borderFormat });
+        if (data.border_maine && data.border_maine.length > 0) createChart('chart-border-maine', data.border_maine.map(d => formatDate(d.date)), data.border_maine.map(d => d.value), '#27ae60', { suffix: '', decimals: 0 });
+
+        // Key ports
+        renderMetric('border-sweetgrass', data.border_port_sweetgrass, 'Sweetgrass', { format: borderFormat });
+        if (data.border_port_sweetgrass && data.border_port_sweetgrass.length > 0) createChart('chart-border-sweetgrass', data.border_port_sweetgrass.map(d => formatDate(d.date)), data.border_port_sweetgrass.map(d => d.value), '#9b59b6', { suffix: '', decimals: 0 });
+
+        renderMetric('border-roosville', data.border_port_roosville, 'Roosville', { format: borderFormat });
+        if (data.border_port_roosville && data.border_port_roosville.length > 0) createChart('chart-border-roosville', data.border_port_roosville.map(d => formatDate(d.date)), data.border_port_roosville.map(d => d.value), '#9b59b6', { suffix: '', decimals: 0 });
+
+        renderMetric('border-derby', data.border_port_derby_line, 'Derby Line', { format: borderFormat });
+        if (data.border_port_derby_line && data.border_port_derby_line.length > 0) createChart('chart-border-derby', data.border_port_derby_line.map(d => formatDate(d.date)), data.border_port_derby_line.map(d => d.value), '#9b59b6', { suffix: '', decimals: 0 });
+
+        renderMetric('border-highgate', data.border_port_highgate_springs, 'Highgate Springs', { format: borderFormat });
+        if (data.border_port_highgate_springs && data.border_port_highgate_springs.length > 0) createChart('chart-border-highgate', data.border_port_highgate_springs.map(d => formatDate(d.date)), data.border_port_highgate_springs.map(d => d.value), '#9b59b6', { suffix: '', decimals: 0 });
+
+        renderMetric('border-blaine', data.border_port_blaine, 'Blaine', { format: borderFormat });
+        if (data.border_port_blaine && data.border_port_blaine.length > 0) createChart('chart-border-blaine', data.border_port_blaine.map(d => formatDate(d.date)), data.border_port_blaine.map(d => d.value), '#9b59b6', { suffix: '', decimals: 0 });
 
       } catch (error) {
         console.error("Failed to load dashboard:", error);

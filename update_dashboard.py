@@ -10,6 +10,7 @@ import sys
 from datetime import datetime, timedelta
 import urllib.request
 import urllib.error
+import urllib.parse
 import time
 import tempfile
 
@@ -277,6 +278,138 @@ def fetch_market_data_yahoo(symbol, historical=False):
     except Exception as e:
         print_safe(f"  ! {symbol} unavailable")
         return None
+
+def fetch_bts_border_crossings(state=None, limit=36):
+    """
+    Fetch US/Canada border crossing data from Bureau of Transportation Statistics (BTS)
+
+    Uses the Socrata API endpoint (no authentication required)
+    Data source: https://data.bts.gov/resource/keg4-3bc2.json
+
+    Args:
+        state: State filter (e.g., 'Montana', 'Vermont') or None for all states
+        limit: Number of months of data to return per port
+
+    Returns:
+        Dict with national totals, regional data, and port-level details
+    """
+    base_url = "https://data.bts.gov/resource/keg4-3bc2.json"
+
+    # Calculate date range (last 3 years for trends)
+    end_year = datetime.now().year
+    start_year = end_year - 3
+
+    # Query parameters - get Canadian border only, tourist-relevant measures
+    # Personal Vehicle Passengers is the key metric for tourism
+    params = {
+        '$limit': 50000,
+        '$where': f"border='US-Canada Border' AND date >= '{start_year}-01-01'",
+        '$order': 'date DESC'
+    }
+
+    param_str = '&'.join(f"{k}={urllib.parse.quote(str(v))}" for k, v in params.items())
+    url = f"{base_url}?{param_str}"
+
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req, timeout=120) as response:
+            data = json.loads(response.read().decode())
+
+        if not data:
+            return None
+
+        # Process data into structured format
+        # Group by date for national totals
+        from collections import defaultdict
+
+        national_monthly = defaultdict(lambda: {'passengers': 0, 'vehicles': 0})
+        state_monthly = defaultdict(lambda: defaultdict(lambda: {'passengers': 0, 'vehicles': 0}))
+        port_monthly = defaultdict(lambda: defaultdict(lambda: {'passengers': 0, 'vehicles': 0}))
+
+        # Key ski-relevant states
+        ski_states = ['Montana', 'Vermont', 'New Hampshire', 'Washington', 'New York', 'Maine', 'Michigan', 'Minnesota', 'North Dakota']
+
+        for record in data:
+            date_str = record.get('date', '')[:7]  # YYYY-MM format
+            if not date_str:
+                continue
+
+            state_name = record.get('state', '')
+            port_name = record.get('port_name', '')
+            measure = record.get('measure', '')
+            value = int(record.get('value', 0) or 0)
+
+            # Aggregate national totals
+            if measure == 'Personal Vehicle Passengers':
+                national_monthly[date_str]['passengers'] += value
+            elif measure == 'Personal Vehicles':
+                national_monthly[date_str]['vehicles'] += value
+
+            # State-level aggregation for ski states
+            if state_name in ski_states:
+                if measure == 'Personal Vehicle Passengers':
+                    state_monthly[state_name][date_str]['passengers'] += value
+                elif measure == 'Personal Vehicles':
+                    state_monthly[state_name][date_str]['vehicles'] += value
+
+                # Port-level for key ports
+                if measure == 'Personal Vehicle Passengers':
+                    port_monthly[port_name][date_str]['passengers'] += value
+
+        # Convert to list format sorted by date
+        def to_time_series(monthly_dict, limit=36):
+            sorted_dates = sorted(monthly_dict.keys(), reverse=True)[:limit]
+            return [
+                {
+                    'date': f"{d}-01",
+                    'value': monthly_dict[d]['passengers'],
+                    'vehicles': monthly_dict[d]['vehicles']
+                }
+                for d in reversed(sorted_dates)
+            ]
+
+        # National totals
+        national_series = to_time_series(national_monthly, limit)
+
+        # State series for ski-relevant states
+        state_series = {}
+        for state_name in ski_states:
+            if state_name in state_monthly and state_monthly[state_name]:
+                series = to_time_series(state_monthly[state_name], limit)
+                if series:
+                    state_series[state_name.lower().replace(' ', '_')] = series
+
+        # Key ports (top ports by volume in ski-relevant states)
+        # Focus on major crossing points
+        key_ports = [
+            'Sweetgrass',  # Montana - Calgary route
+            'Roosville',   # Montana - BC route
+            'Derby Line',  # Vermont
+            'Highgate Springs',  # Vermont
+            'Blaine',      # Washington
+            'Sumas',       # Washington
+            'Champlain',   # New York (Lake Champlain/Montreal corridor)
+        ]
+
+        port_series = {}
+        for port_name in key_ports:
+            if port_name in port_monthly and port_monthly[port_name]:
+                series = to_time_series(port_monthly[port_name], limit)
+                if series:
+                    # Clean port name for JSON key
+                    key = port_name.lower().replace(' ', '_').replace('-', '_')
+                    port_series[key] = series
+
+        return {
+            'national': national_series,
+            'states': state_series,
+            'ports': port_series
+        }
+
+    except Exception as e:
+        print_safe(f"  ! BTS border crossing data unavailable: {e}")
+        return None
+
 
 def update_dashboard():
     """Main function to update dashboard data"""
@@ -603,6 +736,32 @@ def update_dashboard():
     if news_sentiment:
         dashboard_data['news_sentiment'] = news_sentiment
         print_safe(f"  OK Latest: {news_sentiment[-1]['value']:.3f} ({news_sentiment[-1]['date']}) ({len(news_sentiment)} data points)")
+
+    # --- US/CANADA BORDER CROSSINGS (BTS) ---
+    # Key indicator for Canadian visitor flows to US ski markets
+    print_safe("\n--- Border Crossings (BTS US-Canada) ---")
+    print_safe("\nFetching US/Canada Border Crossing Data...")
+    border_data = fetch_bts_border_crossings(limit=36)
+    if border_data:
+        # National totals
+        if border_data.get('national'):
+            dashboard_data['border_national'] = border_data['national']
+            latest = border_data['national'][-1]
+            print_safe(f"  OK National: {latest['value']:,} passengers ({len(border_data['national'])} months)")
+
+        # State-level data for ski-relevant states
+        if border_data.get('states'):
+            for state_key, state_data in border_data['states'].items():
+                dashboard_data[f'border_{state_key}'] = state_data
+            print_safe(f"  OK States: {', '.join(border_data['states'].keys())} ({len(border_data['states'])} states)")
+
+        # Port-level data for key crossings
+        if border_data.get('ports'):
+            for port_key, port_data in border_data['ports'].items():
+                dashboard_data[f'border_port_{port_key}'] = port_data
+            print_safe(f"  OK Ports: {', '.join(border_data['ports'].keys())} ({len(border_data['ports'])} ports)")
+    else:
+        print_safe("  ! Border crossing data unavailable")
 
     # Write to file
     output_path = 'static/data/dashboard.json'

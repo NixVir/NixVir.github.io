@@ -1,89 +1,89 @@
 {
-  "updated": "2026-01-09 00:05:37",
+  "updated": "2026-01-08 17:20:54",
   "consumer_confidence": [
     {
       "date": "2024-12-01",
       "series_id": "UMCSENT",
       "value": 74.0,
-      "realtime_start": "2025-12-27",
-      "realtime_end": "2025-12-27"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-01-01",
       "series_id": "UMCSENT",
       "value": 71.7,
-      "realtime_start": "2025-12-27",
-      "realtime_end": "2025-12-27"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-02-01",
       "series_id": "UMCSENT",
       "value": 64.7,
-      "realtime_start": "2025-12-27",
-      "realtime_end": "2025-12-27"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-03-01",
       "series_id": "UMCSENT",
       "value": 57.0,
-      "realtime_start": "2025-12-27",
-      "realtime_end": "2025-12-27"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-04-01",
       "series_id": "UMCSENT",
       "value": 52.2,
-      "realtime_start": "2025-12-27",
-      "realtime_end": "2025-12-27"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-05-01",
       "series_id": "UMCSENT",
       "value": 52.2,
-      "realtime_start": "2025-12-27",
-      "realtime_end": "2025-12-27"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-06-01",
       "series_id": "UMCSENT",
       "value": 60.7,
-      "realtime_start": "2025-12-27",
-      "realtime_end": "2025-12-27"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-07-01",
       "series_id": "UMCSENT",
       "value": 61.7,
-      "realtime_start": "2025-12-27",
-      "realtime_end": "2025-12-27"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-08-01",
       "series_id": "UMCSENT",
       "value": 58.2,
-      "realtime_start": "2025-12-27",
-      "realtime_end": "2025-12-27"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-09-01",
       "series_id": "UMCSENT",
       "value": 55.1,
-      "realtime_start": "2025-12-27",
-      "realtime_end": "2025-12-27"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-10-01",
       "series_id": "UMCSENT",
       "value": 53.6,
-      "realtime_start": "2025-12-27",
-      "realtime_end": "2025-12-27"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-11-01",
       "series_id": "UMCSENT",
       "value": 51.0,
-      "realtime_start": "2025-12-27",
-      "realtime_end": "2025-12-27"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     }
   ],
   "markets": [
@@ -9154,78 +9154,78 @@
       "date": "2024-12-01",
       "series_id": "CPIAUCSL",
       "value": 317.603,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-20",
+      "realtime_end": "2025-12-20"
     },
     {
       "date": "2025-01-01",
       "series_id": "CPIAUCSL",
       "value": 319.086,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-20",
+      "realtime_end": "2025-12-20"
     },
     {
       "date": "2025-02-01",
       "series_id": "CPIAUCSL",
       "value": 319.775,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-20",
+      "realtime_end": "2025-12-20"
     },
     {
       "date": "2025-03-01",
       "series_id": "CPIAUCSL",
       "value": 319.615,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-20",
+      "realtime_end": "2025-12-20"
     },
     {
       "date": "2025-04-01",
       "series_id": "CPIAUCSL",
       "value": 320.321,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-20",
+      "realtime_end": "2025-12-20"
     },
     {
       "date": "2025-05-01",
       "series_id": "CPIAUCSL",
       "value": 320.58,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-20",
+      "realtime_end": "2025-12-20"
     },
     {
       "date": "2025-06-01",
       "series_id": "CPIAUCSL",
       "value": 321.5,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-20",
+      "realtime_end": "2025-12-20"
     },
     {
       "date": "2025-07-01",
       "series_id": "CPIAUCSL",
       "value": 322.132,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-20",
+      "realtime_end": "2025-12-20"
     },
     {
       "date": "2025-08-01",
       "series_id": "CPIAUCSL",
       "value": 323.364,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-20",
+      "realtime_end": "2025-12-20"
     },
     {
       "date": "2025-09-01",
       "series_id": "CPIAUCSL",
       "value": 324.368,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-20",
+      "realtime_end": "2025-12-20"
     },
     {
       "date": "2025-11-01",
       "series_id": "CPIAUCSL",
       "value": 325.031,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-20",
+      "realtime_end": "2025-12-20"
     }
   ],
   "employment": [
@@ -9233,85 +9233,85 @@
       "date": "2024-12-01",
       "series_id": "PAYEMS",
       "value": 158942.0,
-      "realtime_start": "2025-12-16",
-      "realtime_end": "2025-12-16"
+      "realtime_start": "2026-01-05",
+      "realtime_end": "2026-01-05"
     },
     {
       "date": "2025-01-01",
       "series_id": "PAYEMS",
       "value": 159053.0,
-      "realtime_start": "2025-12-16",
-      "realtime_end": "2025-12-16"
+      "realtime_start": "2026-01-05",
+      "realtime_end": "2026-01-05"
     },
     {
       "date": "2025-02-01",
       "series_id": "PAYEMS",
       "value": 159155.0,
-      "realtime_start": "2025-12-16",
-      "realtime_end": "2025-12-16"
+      "realtime_start": "2026-01-05",
+      "realtime_end": "2026-01-05"
     },
     {
       "date": "2025-03-01",
       "series_id": "PAYEMS",
       "value": 159275.0,
-      "realtime_start": "2025-12-16",
-      "realtime_end": "2025-12-16"
+      "realtime_start": "2026-01-05",
+      "realtime_end": "2026-01-05"
     },
     {
       "date": "2025-04-01",
       "series_id": "PAYEMS",
       "value": 159433.0,
-      "realtime_start": "2025-12-16",
-      "realtime_end": "2025-12-16"
+      "realtime_start": "2026-01-05",
+      "realtime_end": "2026-01-05"
     },
     {
       "date": "2025-05-01",
       "series_id": "PAYEMS",
       "value": 159452.0,
-      "realtime_start": "2025-12-16",
-      "realtime_end": "2025-12-16"
+      "realtime_start": "2026-01-05",
+      "realtime_end": "2026-01-05"
     },
     {
       "date": "2025-06-01",
       "series_id": "PAYEMS",
       "value": 159439.0,
-      "realtime_start": "2025-12-16",
-      "realtime_end": "2025-12-16"
+      "realtime_start": "2026-01-05",
+      "realtime_end": "2026-01-05"
     },
     {
       "date": "2025-07-01",
       "series_id": "PAYEMS",
       "value": 159511.0,
-      "realtime_start": "2025-12-16",
-      "realtime_end": "2025-12-16"
+      "realtime_start": "2026-01-05",
+      "realtime_end": "2026-01-05"
     },
     {
       "date": "2025-08-01",
       "series_id": "PAYEMS",
       "value": 159485.0,
-      "realtime_start": "2025-12-16",
-      "realtime_end": "2025-12-16"
+      "realtime_start": "2026-01-05",
+      "realtime_end": "2026-01-05"
     },
     {
       "date": "2025-09-01",
       "series_id": "PAYEMS",
       "value": 159593.0,
-      "realtime_start": "2025-12-16",
-      "realtime_end": "2025-12-16"
+      "realtime_start": "2026-01-05",
+      "realtime_end": "2026-01-05"
     },
     {
       "date": "2025-10-01",
       "series_id": "PAYEMS",
       "value": 159488.0,
-      "realtime_start": "2025-12-16",
-      "realtime_end": "2025-12-16"
+      "realtime_start": "2026-01-05",
+      "realtime_end": "2026-01-05"
     },
     {
       "date": "2025-11-01",
       "series_id": "PAYEMS",
       "value": 159552.0,
-      "realtime_start": "2025-12-16",
-      "realtime_end": "2025-12-16"
+      "realtime_start": "2026-01-05",
+      "realtime_end": "2026-01-05"
     }
   ],
   "wages": [
@@ -9319,85 +9319,85 @@
       "date": "2024-12-01",
       "series_id": "CES0500000003",
       "value": 35.68,
-      "realtime_start": "2025-12-16",
-      "realtime_end": "2025-12-16"
+      "realtime_start": "2026-01-08",
+      "realtime_end": "2026-01-08"
     },
     {
       "date": "2025-01-01",
       "series_id": "CES0500000003",
       "value": 35.83,
-      "realtime_start": "2025-12-16",
-      "realtime_end": "2025-12-16"
+      "realtime_start": "2026-01-08",
+      "realtime_end": "2026-01-08"
     },
     {
       "date": "2025-02-01",
       "series_id": "CES0500000003",
       "value": 35.9,
-      "realtime_start": "2025-12-16",
-      "realtime_end": "2025-12-16"
+      "realtime_start": "2026-01-08",
+      "realtime_end": "2026-01-08"
     },
     {
       "date": "2025-03-01",
       "series_id": "CES0500000003",
       "value": 36.02,
-      "realtime_start": "2025-12-16",
-      "realtime_end": "2025-12-16"
+      "realtime_start": "2026-01-08",
+      "realtime_end": "2026-01-08"
     },
     {
       "date": "2025-04-01",
       "series_id": "CES0500000003",
       "value": 36.08,
-      "realtime_start": "2025-12-16",
-      "realtime_end": "2025-12-16"
+      "realtime_start": "2026-01-08",
+      "realtime_end": "2026-01-08"
     },
     {
       "date": "2025-05-01",
       "series_id": "CES0500000003",
       "value": 36.23,
-      "realtime_start": "2025-12-16",
-      "realtime_end": "2025-12-16"
+      "realtime_start": "2026-01-08",
+      "realtime_end": "2026-01-08"
     },
     {
       "date": "2025-06-01",
       "series_id": "CES0500000003",
       "value": 36.31,
-      "realtime_start": "2025-12-16",
-      "realtime_end": "2025-12-16"
+      "realtime_start": "2026-01-08",
+      "realtime_end": "2026-01-08"
     },
     {
       "date": "2025-07-01",
       "series_id": "CES0500000003",
       "value": 36.43,
-      "realtime_start": "2025-12-16",
-      "realtime_end": "2025-12-16"
+      "realtime_start": "2026-01-08",
+      "realtime_end": "2026-01-08"
     },
     {
       "date": "2025-08-01",
       "series_id": "CES0500000003",
       "value": 36.58,
-      "realtime_start": "2025-12-16",
-      "realtime_end": "2025-12-16"
+      "realtime_start": "2026-01-08",
+      "realtime_end": "2026-01-08"
     },
     {
       "date": "2025-09-01",
       "series_id": "CES0500000003",
       "value": 36.65,
-      "realtime_start": "2025-12-16",
-      "realtime_end": "2025-12-16"
+      "realtime_start": "2026-01-08",
+      "realtime_end": "2026-01-08"
     },
     {
       "date": "2025-10-01",
       "series_id": "CES0500000003",
       "value": 36.81,
-      "realtime_start": "2025-12-16",
-      "realtime_end": "2025-12-16"
+      "realtime_start": "2026-01-08",
+      "realtime_end": "2026-01-08"
     },
     {
       "date": "2025-11-01",
       "series_id": "CES0500000003",
       "value": 36.86,
-      "realtime_start": "2025-12-16",
-      "realtime_end": "2025-12-16"
+      "realtime_start": "2026-01-08",
+      "realtime_end": "2026-01-08"
     }
   ],
   "gdp": [
@@ -9405,85 +9405,85 @@
       "date": "2022-10-01",
       "series_id": "GDP",
       "value": 26770.514,
-      "realtime_start": "2025-12-26",
-      "realtime_end": "2025-12-26"
+      "realtime_start": "2025-12-23",
+      "realtime_end": "2025-12-23"
     },
     {
       "date": "2023-01-01",
       "series_id": "GDP",
       "value": 27216.445,
-      "realtime_start": "2025-12-26",
-      "realtime_end": "2025-12-26"
+      "realtime_start": "2025-12-23",
+      "realtime_end": "2025-12-23"
     },
     {
       "date": "2023-04-01",
       "series_id": "GDP",
       "value": 27530.055,
-      "realtime_start": "2025-12-26",
-      "realtime_end": "2025-12-26"
+      "realtime_start": "2025-12-23",
+      "realtime_end": "2025-12-23"
     },
     {
       "date": "2023-07-01",
       "series_id": "GDP",
       "value": 28074.846,
-      "realtime_start": "2025-12-26",
-      "realtime_end": "2025-12-26"
+      "realtime_start": "2025-12-23",
+      "realtime_end": "2025-12-23"
     },
     {
       "date": "2023-10-01",
       "series_id": "GDP",
       "value": 28424.722,
-      "realtime_start": "2025-12-26",
-      "realtime_end": "2025-12-26"
+      "realtime_start": "2025-12-23",
+      "realtime_end": "2025-12-23"
     },
     {
       "date": "2024-01-01",
       "series_id": "GDP",
       "value": 28708.161,
-      "realtime_start": "2025-12-26",
-      "realtime_end": "2025-12-26"
+      "realtime_start": "2025-12-23",
+      "realtime_end": "2025-12-23"
     },
     {
       "date": "2024-04-01",
       "series_id": "GDP",
       "value": 29147.044,
-      "realtime_start": "2025-12-26",
-      "realtime_end": "2025-12-26"
+      "realtime_start": "2025-12-23",
+      "realtime_end": "2025-12-23"
     },
     {
       "date": "2024-07-01",
       "series_id": "GDP",
       "value": 29511.664,
-      "realtime_start": "2025-12-26",
-      "realtime_end": "2025-12-26"
+      "realtime_start": "2025-12-23",
+      "realtime_end": "2025-12-23"
     },
     {
       "date": "2024-10-01",
       "series_id": "GDP",
       "value": 29825.182,
-      "realtime_start": "2025-12-26",
-      "realtime_end": "2025-12-26"
+      "realtime_start": "2025-12-23",
+      "realtime_end": "2025-12-23"
     },
     {
       "date": "2025-01-01",
       "series_id": "GDP",
       "value": 30042.113,
-      "realtime_start": "2025-12-26",
-      "realtime_end": "2025-12-26"
+      "realtime_start": "2025-12-23",
+      "realtime_end": "2025-12-23"
     },
     {
       "date": "2025-04-01",
       "series_id": "GDP",
       "value": 30485.729,
-      "realtime_start": "2025-12-26",
-      "realtime_end": "2025-12-26"
+      "realtime_start": "2025-12-23",
+      "realtime_end": "2025-12-23"
     },
     {
       "date": "2025-07-01",
       "series_id": "GDP",
       "value": 31095.089,
-      "realtime_start": "2025-12-26",
-      "realtime_end": "2025-12-26"
+      "realtime_start": "2025-12-23",
+      "realtime_end": "2025-12-23"
     }
   ],
   "housing_starts": [
@@ -9491,85 +9491,85 @@
       "date": "2024-09-01",
       "series_id": "HOUST",
       "value": 1357.0,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-12-21",
+      "realtime_end": "2025-12-21"
     },
     {
       "date": "2024-10-01",
       "series_id": "HOUST",
       "value": 1352.0,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-12-21",
+      "realtime_end": "2025-12-21"
     },
     {
       "date": "2024-11-01",
       "series_id": "HOUST",
       "value": 1295.0,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-12-21",
+      "realtime_end": "2025-12-21"
     },
     {
       "date": "2024-12-01",
       "series_id": "HOUST",
       "value": 1514.0,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-12-21",
+      "realtime_end": "2025-12-21"
     },
     {
       "date": "2025-01-01",
       "series_id": "HOUST",
       "value": 1358.0,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-12-21",
+      "realtime_end": "2025-12-21"
     },
     {
       "date": "2025-02-01",
       "series_id": "HOUST",
       "value": 1490.0,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-12-21",
+      "realtime_end": "2025-12-21"
     },
     {
       "date": "2025-03-01",
       "series_id": "HOUST",
       "value": 1355.0,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-12-21",
+      "realtime_end": "2025-12-21"
     },
     {
       "date": "2025-04-01",
       "series_id": "HOUST",
       "value": 1398.0,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-12-21",
+      "realtime_end": "2025-12-21"
     },
     {
       "date": "2025-05-01",
       "series_id": "HOUST",
       "value": 1282.0,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-12-21",
+      "realtime_end": "2025-12-21"
     },
     {
       "date": "2025-06-01",
       "series_id": "HOUST",
       "value": 1382.0,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-12-21",
+      "realtime_end": "2025-12-21"
     },
     {
       "date": "2025-07-01",
       "series_id": "HOUST",
       "value": 1429.0,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-12-21",
+      "realtime_end": "2025-12-21"
     },
     {
       "date": "2025-08-01",
       "series_id": "HOUST",
       "value": 1307.0,
-      "realtime_start": "2025-10-15",
-      "realtime_end": "2025-10-15"
+      "realtime_start": "2025-12-21",
+      "realtime_end": "2025-12-21"
     }
   ],
   "bankruptcy_ppi": [
@@ -9656,6 +9656,1174 @@
       "value": 194.258,
       "realtime_start": "2026-01-08",
       "realtime_end": "2026-01-08"
+    }
+  ],
+  "electricity_us": [
+    {
+      "date": "2023-11-01",
+      "value": 12.43,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2023-12-01",
+      "value": 12.24,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-01-01",
+      "value": 12.5,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-02-01",
+      "value": 12.53,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-03-01",
+      "value": 12.47,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-04-01",
+      "value": 12.35,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-05-01",
+      "value": 12.32,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-06-01",
+      "value": 12.89,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-07-01",
+      "value": 13.37,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-08-01",
+      "value": 13.16,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-09-01",
+      "value": 13.23,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-10-01",
+      "value": 12.89,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-11-01",
+      "value": 12.35,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-12-01",
+      "value": 12.64,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-01-01",
+      "value": 12.9,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-02-01",
+      "value": 13.07,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-03-01",
+      "value": 13.25,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-04-01",
+      "value": 12.96,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-05-01",
+      "value": 13.01,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-06-01",
+      "value": 13.62,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-07-01",
+      "value": 14.15,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-08-01",
+      "value": 14.04,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-09-01",
+      "value": 14.06,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-10-01",
+      "value": 13.41,
+      "state": "US",
+      "sector": "COM"
+    }
+  ],
+  "electricity_co": [
+    {
+      "date": "2023-11-01",
+      "value": 11.51,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2023-12-01",
+      "value": 10.95,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-01-01",
+      "value": 10.85,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-02-01",
+      "value": 10.96,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-03-01",
+      "value": 10.77,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-04-01",
+      "value": 11.43,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-05-01",
+      "value": 11.38,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-06-01",
+      "value": 12.87,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-07-01",
+      "value": 12.69,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-08-01",
+      "value": 12.47,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-09-01",
+      "value": 12.49,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-10-01",
+      "value": 11.51,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-11-01",
+      "value": 11.67,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-12-01",
+      "value": 11.04,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-01-01",
+      "value": 11.01,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-02-01",
+      "value": 11.39,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-03-01",
+      "value": 11.35,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-04-01",
+      "value": 12.27,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-05-01",
+      "value": 12.32,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-06-01",
+      "value": 13.51,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-07-01",
+      "value": 13.27,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-08-01",
+      "value": 13.26,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-09-01",
+      "value": 13.58,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-10-01",
+      "value": 12.58,
+      "state": "CO",
+      "sector": "COM"
+    }
+  ],
+  "electricity_ut": [
+    {
+      "date": "2023-11-01",
+      "value": 8.39,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2023-12-01",
+      "value": 7.91,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-01-01",
+      "value": 8.53,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-02-01",
+      "value": 8.61,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-03-01",
+      "value": 8.71,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-04-01",
+      "value": 8.76,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-05-01",
+      "value": 8.85,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-06-01",
+      "value": 8.91,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-07-01",
+      "value": 10.26,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-08-01",
+      "value": 10.37,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-09-01",
+      "value": 11.35,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-10-01",
+      "value": 9.26,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-11-01",
+      "value": 9.56,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-12-01",
+      "value": 9.05,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-01-01",
+      "value": 9.15,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-02-01",
+      "value": 9.57,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-03-01",
+      "value": 9.67,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-04-01",
+      "value": 9.53,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-05-01",
+      "value": 9.83,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-06-01",
+      "value": 10.58,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-07-01",
+      "value": 10.46,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-08-01",
+      "value": 10.82,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-09-01",
+      "value": 11.1,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-10-01",
+      "value": 10.39,
+      "state": "UT",
+      "sector": "COM"
+    }
+  ],
+  "electricity_ca": [
+    {
+      "date": "2023-11-01",
+      "value": 23.12,
+      "state": "CA",
+      "sector": "COM"
+    },
+    {
+      "date": "2023-12-01",
+      "value": 22.66,
+      "state": "CA",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-01-01",
+      "value": 23.1,
+      "state": "CA",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-02-01",
+      "value": 23.72,
+      "state": "CA",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-03-01",
+      "value": 23.77,
+      "state": "CA",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-04-01",
+      "value": 22.87,
+      "state": "CA",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-05-01",
+      "value": 23.8,
+      "state": "CA",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-06-01",
+      "value": 26.08,
+      "state": "CA",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-07-01",
+      "value": 30.26,
+      "state": "CA",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-08-01",
+      "value": 29.0,
+      "state": "CA",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-09-01",
+      "value": 29.14,
+      "state": "CA",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-10-01",
+      "value": 26.46,
+      "state": "CA",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-11-01",
+      "value": 22.48,
+      "state": "CA",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-12-01",
+      "value": 23.19,
+      "state": "CA",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-01-01",
+      "value": 23.78,
+      "state": "CA",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-02-01",
+      "value": 24.07,
+      "state": "CA",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-03-01",
+      "value": 23.72,
+      "state": "CA",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-04-01",
+      "value": 23.23,
+      "state": "CA",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-05-01",
+      "value": 23.86,
+      "state": "CA",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-06-01",
+      "value": 26.69,
+      "state": "CA",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-07-01",
+      "value": 29.94,
+      "state": "CA",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-08-01",
+      "value": 29.31,
+      "state": "CA",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-09-01",
+      "value": 30.35,
+      "state": "CA",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-10-01",
+      "value": 26.96,
+      "state": "CA",
+      "sector": "COM"
+    }
+  ],
+  "electricity_vt": [
+    {
+      "date": "2023-11-01",
+      "value": 18.47,
+      "state": "VT",
+      "sector": "COM"
+    },
+    {
+      "date": "2023-12-01",
+      "value": 18.57,
+      "state": "VT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-01-01",
+      "value": 18.34,
+      "state": "VT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-02-01",
+      "value": 18.26,
+      "state": "VT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-03-01",
+      "value": 18.83,
+      "state": "VT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-04-01",
+      "value": 18.67,
+      "state": "VT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-05-01",
+      "value": 18.77,
+      "state": "VT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-06-01",
+      "value": 18.9,
+      "state": "VT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-07-01",
+      "value": 18.42,
+      "state": "VT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-08-01",
+      "value": 18.23,
+      "state": "VT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-09-01",
+      "value": 19.21,
+      "state": "VT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-10-01",
+      "value": 19.57,
+      "state": "VT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-11-01",
+      "value": 20.21,
+      "state": "VT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-12-01",
+      "value": 19.58,
+      "state": "VT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-01-01",
+      "value": 19.24,
+      "state": "VT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-02-01",
+      "value": 19.22,
+      "state": "VT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-03-01",
+      "value": 19.94,
+      "state": "VT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-04-01",
+      "value": 19.51,
+      "state": "VT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-05-01",
+      "value": 19.97,
+      "state": "VT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-06-01",
+      "value": 19.91,
+      "state": "VT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-07-01",
+      "value": 19.42,
+      "state": "VT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-08-01",
+      "value": 19.23,
+      "state": "VT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-09-01",
+      "value": 20.52,
+      "state": "VT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-10-01",
+      "value": 20.86,
+      "state": "VT",
+      "sector": "COM"
+    }
+  ],
+  "electricity_nh": [
+    {
+      "date": "2023-11-01",
+      "value": 19.38,
+      "state": "NH",
+      "sector": "COM"
+    },
+    {
+      "date": "2023-12-01",
+      "value": 19.56,
+      "state": "NH",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-01-01",
+      "value": 20.23,
+      "state": "NH",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-02-01",
+      "value": 20.2,
+      "state": "NH",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-03-01",
+      "value": 19.05,
+      "state": "NH",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-04-01",
+      "value": 19.07,
+      "state": "NH",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-05-01",
+      "value": 19.18,
+      "state": "NH",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-06-01",
+      "value": 18.94,
+      "state": "NH",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-07-01",
+      "value": 18.63,
+      "state": "NH",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-08-01",
+      "value": 18.6,
+      "state": "NH",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-09-01",
+      "value": 19.94,
+      "state": "NH",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-10-01",
+      "value": 19.95,
+      "state": "NH",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-11-01",
+      "value": 19.35,
+      "state": "NH",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-12-01",
+      "value": 19.85,
+      "state": "NH",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-01-01",
+      "value": 20.47,
+      "state": "NH",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-02-01",
+      "value": 20.78,
+      "state": "NH",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-03-01",
+      "value": 19.72,
+      "state": "NH",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-04-01",
+      "value": 19.48,
+      "state": "NH",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-05-01",
+      "value": 19.25,
+      "state": "NH",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-06-01",
+      "value": 19.41,
+      "state": "NH",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-07-01",
+      "value": 19.7,
+      "state": "NH",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-08-01",
+      "value": 20.43,
+      "state": "NH",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-09-01",
+      "value": 20.81,
+      "state": "NH",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-10-01",
+      "value": 20.32,
+      "state": "NH",
+      "sector": "COM"
+    }
+  ],
+  "electricity_wa": [
+    {
+      "date": "2023-11-01",
+      "value": 10.08,
+      "state": "WA",
+      "sector": "COM"
+    },
+    {
+      "date": "2023-12-01",
+      "value": 9.94,
+      "state": "WA",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-01-01",
+      "value": 12.5,
+      "state": "WA",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-02-01",
+      "value": 9.81,
+      "state": "WA",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-03-01",
+      "value": 9.75,
+      "state": "WA",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-04-01",
+      "value": 9.63,
+      "state": "WA",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-05-01",
+      "value": 9.66,
+      "state": "WA",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-06-01",
+      "value": 9.68,
+      "state": "WA",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-07-01",
+      "value": 9.69,
+      "state": "WA",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-08-01",
+      "value": 9.81,
+      "state": "WA",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-09-01",
+      "value": 9.75,
+      "state": "WA",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-10-01",
+      "value": 10.1,
+      "state": "WA",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-11-01",
+      "value": 10.0,
+      "state": "WA",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-12-01",
+      "value": 9.84,
+      "state": "WA",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-01-01",
+      "value": 10.74,
+      "state": "WA",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-02-01",
+      "value": 11.36,
+      "state": "WA",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-03-01",
+      "value": 11.48,
+      "state": "WA",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-04-01",
+      "value": 11.27,
+      "state": "WA",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-05-01",
+      "value": 11.59,
+      "state": "WA",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-06-01",
+      "value": 11.31,
+      "state": "WA",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-07-01",
+      "value": 11.86,
+      "state": "WA",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-08-01",
+      "value": 11.84,
+      "state": "WA",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-09-01",
+      "value": 10.99,
+      "state": "WA",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-10-01",
+      "value": 11.49,
+      "state": "WA",
+      "sector": "COM"
+    }
+  ],
+  "electricity_wy": [
+    {
+      "date": "2023-11-01",
+      "value": 8.85,
+      "state": "WY",
+      "sector": "COM"
+    },
+    {
+      "date": "2023-12-01",
+      "value": 8.51,
+      "state": "WY",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-01-01",
+      "value": 9.26,
+      "state": "WY",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-02-01",
+      "value": 8.71,
+      "state": "WY",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-03-01",
+      "value": 8.73,
+      "state": "WY",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-04-01",
+      "value": 8.95,
+      "state": "WY",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-05-01",
+      "value": 9.1,
+      "state": "WY",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-06-01",
+      "value": 9.25,
+      "state": "WY",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-07-01",
+      "value": 9.51,
+      "state": "WY",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-08-01",
+      "value": 9.5,
+      "state": "WY",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-09-01",
+      "value": 9.79,
+      "state": "WY",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-10-01",
+      "value": 9.85,
+      "state": "WY",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-11-01",
+      "value": 9.66,
+      "state": "WY",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-12-01",
+      "value": 9.06,
+      "state": "WY",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-01-01",
+      "value": 9.41,
+      "state": "WY",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-02-01",
+      "value": 9.42,
+      "state": "WY",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-03-01",
+      "value": 9.08,
+      "state": "WY",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-04-01",
+      "value": 9.37,
+      "state": "WY",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-05-01",
+      "value": 9.36,
+      "state": "WY",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-06-01",
+      "value": 9.79,
+      "state": "WY",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-07-01",
+      "value": 10.16,
+      "state": "WY",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-08-01",
+      "value": 9.74,
+      "state": "WY",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-09-01",
+      "value": 9.6,
+      "state": "WY",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-10-01",
+      "value": 9.6,
+      "state": "WY",
+      "sector": "COM"
     }
   ],
   "treasury_10y": [
@@ -39821,6 +40989,2661 @@
     {
       "date": "2026-01-04",
       "value": 0.05499010905623436
+    }
+  ],
+  "border_national": [
+    {
+      "date": "2023-01-01",
+      "value": 2274562,
+      "vehicles": 1238364
+    },
+    {
+      "date": "2023-02-01",
+      "value": 2243144,
+      "vehicles": 1198256
+    },
+    {
+      "date": "2023-03-01",
+      "value": 2702816,
+      "vehicles": 1422274
+    },
+    {
+      "date": "2023-04-01",
+      "value": 2859250,
+      "vehicles": 1485836
+    },
+    {
+      "date": "2023-05-01",
+      "value": 3229967,
+      "vehicles": 1700690
+    },
+    {
+      "date": "2023-06-01",
+      "value": 3720779,
+      "vehicles": 1907096
+    },
+    {
+      "date": "2023-07-01",
+      "value": 5096737,
+      "vehicles": 2337855
+    },
+    {
+      "date": "2023-08-01",
+      "value": 5088354,
+      "vehicles": 2359214
+    },
+    {
+      "date": "2023-09-01",
+      "value": 3703347,
+      "vehicles": 1931927
+    },
+    {
+      "date": "2023-10-01",
+      "value": 3418386,
+      "vehicles": 1804736
+    },
+    {
+      "date": "2023-11-01",
+      "value": 2968816,
+      "vehicles": 1577737
+    },
+    {
+      "date": "2023-12-01",
+      "value": 3312827,
+      "vehicles": 1644245
+    },
+    {
+      "date": "2024-01-01",
+      "value": 2454742,
+      "vehicles": 1327146
+    },
+    {
+      "date": "2024-02-01",
+      "value": 2673872,
+      "vehicles": 1429367
+    },
+    {
+      "date": "2024-03-01",
+      "value": 3394969,
+      "vehicles": 1705988
+    },
+    {
+      "date": "2024-04-01",
+      "value": 3146438,
+      "vehicles": 1681080
+    },
+    {
+      "date": "2024-05-01",
+      "value": 3694193,
+      "vehicles": 1929321
+    },
+    {
+      "date": "2024-06-01",
+      "value": 4178619,
+      "vehicles": 2077649
+    },
+    {
+      "date": "2024-07-01",
+      "value": 5315778,
+      "vehicles": 2451497
+    },
+    {
+      "date": "2024-08-01",
+      "value": 5635548,
+      "vehicles": 2567243
+    },
+    {
+      "date": "2024-09-01",
+      "value": 3829288,
+      "vehicles": 2010159
+    },
+    {
+      "date": "2024-10-01",
+      "value": 3657203,
+      "vehicles": 1933665
+    },
+    {
+      "date": "2024-11-01",
+      "value": 3275712,
+      "vehicles": 1713413
+    },
+    {
+      "date": "2024-12-01",
+      "value": 3506003,
+      "vehicles": 1736954
+    },
+    {
+      "date": "2025-01-01",
+      "value": 2667206,
+      "vehicles": 1441053
+    },
+    {
+      "date": "2025-02-01",
+      "value": 2222613,
+      "vehicles": 1219057
+    },
+    {
+      "date": "2025-03-01",
+      "value": 2519266,
+      "vehicles": 1347969
+    },
+    {
+      "date": "2025-04-01",
+      "value": 2304657,
+      "vehicles": 1255799
+    },
+    {
+      "date": "2025-05-01",
+      "value": 2669938,
+      "vehicles": 1449550
+    },
+    {
+      "date": "2025-06-01",
+      "value": 3177970,
+      "vehicles": 1639816
+    },
+    {
+      "date": "2025-07-01",
+      "value": 4059465,
+      "vehicles": 1942644
+    },
+    {
+      "date": "2025-08-01",
+      "value": 4354330,
+      "vehicles": 2056078
+    },
+    {
+      "date": "2025-09-01",
+      "value": 2943565,
+      "vehicles": 1618590
+    },
+    {
+      "date": "2025-10-01",
+      "value": 2921735,
+      "vehicles": 1590327
+    },
+    {
+      "date": "2025-11-01",
+      "value": 2579014,
+      "vehicles": 1389900
+    }
+  ],
+  "border_montana": [
+    {
+      "date": "2023-01-01",
+      "value": 42846,
+      "vehicles": 21573
+    },
+    {
+      "date": "2023-02-01",
+      "value": 43781,
+      "vehicles": 20753
+    },
+    {
+      "date": "2023-03-01",
+      "value": 47229,
+      "vehicles": 22899
+    },
+    {
+      "date": "2023-04-01",
+      "value": 49864,
+      "vehicles": 24426
+    },
+    {
+      "date": "2023-05-01",
+      "value": 63907,
+      "vehicles": 31508
+    },
+    {
+      "date": "2023-06-01",
+      "value": 97606,
+      "vehicles": 45243
+    },
+    {
+      "date": "2023-07-01",
+      "value": 156946,
+      "vehicles": 66953
+    },
+    {
+      "date": "2023-08-01",
+      "value": 148232,
+      "vehicles": 65230
+    },
+    {
+      "date": "2023-09-01",
+      "value": 97922,
+      "vehicles": 48178
+    },
+    {
+      "date": "2023-10-01",
+      "value": 72964,
+      "vehicles": 37104
+    },
+    {
+      "date": "2023-11-01",
+      "value": 52038,
+      "vehicles": 26078
+    },
+    {
+      "date": "2023-12-01",
+      "value": 63070,
+      "vehicles": 28677
+    },
+    {
+      "date": "2024-01-01",
+      "value": 43396,
+      "vehicles": 21667
+    },
+    {
+      "date": "2024-02-01",
+      "value": 50409,
+      "vehicles": 23639
+    },
+    {
+      "date": "2024-03-01",
+      "value": 59394,
+      "vehicles": 27269
+    },
+    {
+      "date": "2024-04-01",
+      "value": 52627,
+      "vehicles": 26305
+    },
+    {
+      "date": "2024-05-01",
+      "value": 73479,
+      "vehicles": 35015
+    },
+    {
+      "date": "2024-06-01",
+      "value": 108642,
+      "vehicles": 49216
+    },
+    {
+      "date": "2024-07-01",
+      "value": 165456,
+      "vehicles": 69613
+    },
+    {
+      "date": "2024-08-01",
+      "value": 167636,
+      "vehicles": 72244
+    },
+    {
+      "date": "2024-09-01",
+      "value": 99705,
+      "vehicles": 49229
+    },
+    {
+      "date": "2024-10-01",
+      "value": 81660,
+      "vehicles": 40968
+    },
+    {
+      "date": "2024-11-01",
+      "value": 53736,
+      "vehicles": 26878
+    },
+    {
+      "date": "2024-12-01",
+      "value": 64377,
+      "vehicles": 29475
+    },
+    {
+      "date": "2025-01-01",
+      "value": 46221,
+      "vehicles": 23006
+    },
+    {
+      "date": "2025-02-01",
+      "value": 40896,
+      "vehicles": 19742
+    },
+    {
+      "date": "2025-03-01",
+      "value": 43883,
+      "vehicles": 21595
+    },
+    {
+      "date": "2025-04-01",
+      "value": 42004,
+      "vehicles": 20533
+    },
+    {
+      "date": "2025-05-01",
+      "value": 55193,
+      "vehicles": 27020
+    },
+    {
+      "date": "2025-06-01",
+      "value": 78585,
+      "vehicles": 36265
+    },
+    {
+      "date": "2025-07-01",
+      "value": 122853,
+      "vehicles": 52728
+    },
+    {
+      "date": "2025-08-01",
+      "value": 114803,
+      "vehicles": 50806
+    },
+    {
+      "date": "2025-09-01",
+      "value": 67737,
+      "vehicles": 34719
+    },
+    {
+      "date": "2025-10-01",
+      "value": 66046,
+      "vehicles": 33196
+    },
+    {
+      "date": "2025-11-01",
+      "value": 44872,
+      "vehicles": 22441
+    }
+  ],
+  "border_vermont": [
+    {
+      "date": "2023-01-01",
+      "value": 99222,
+      "vehicles": 48737
+    },
+    {
+      "date": "2023-02-01",
+      "value": 101008,
+      "vehicles": 48130
+    },
+    {
+      "date": "2023-03-01",
+      "value": 112406,
+      "vehicles": 55166
+    },
+    {
+      "date": "2023-04-01",
+      "value": 130550,
+      "vehicles": 62162
+    },
+    {
+      "date": "2023-05-01",
+      "value": 150961,
+      "vehicles": 75522
+    },
+    {
+      "date": "2023-06-01",
+      "value": 191188,
+      "vehicles": 92797
+    },
+    {
+      "date": "2023-07-01",
+      "value": 307018,
+      "vehicles": 130583
+    },
+    {
+      "date": "2023-08-01",
+      "value": 300645,
+      "vehicles": 129655
+    },
+    {
+      "date": "2023-09-01",
+      "value": 199544,
+      "vehicles": 98200
+    },
+    {
+      "date": "2023-10-01",
+      "value": 174004,
+      "vehicles": 84753
+    },
+    {
+      "date": "2023-11-01",
+      "value": 119827,
+      "vehicles": 60139
+    },
+    {
+      "date": "2023-12-01",
+      "value": 136282,
+      "vehicles": 63027
+    },
+    {
+      "date": "2024-01-01",
+      "value": 112378,
+      "vehicles": 54771
+    },
+    {
+      "date": "2024-02-01",
+      "value": 117357,
+      "vehicles": 57102
+    },
+    {
+      "date": "2024-03-01",
+      "value": 169071,
+      "vehicles": 75982
+    },
+    {
+      "date": "2024-04-01",
+      "value": 146984,
+      "vehicles": 70831
+    },
+    {
+      "date": "2024-05-01",
+      "value": 170647,
+      "vehicles": 85031
+    },
+    {
+      "date": "2024-06-01",
+      "value": 231091,
+      "vehicles": 108617
+    },
+    {
+      "date": "2024-07-01",
+      "value": 336140,
+      "vehicles": 142831
+    },
+    {
+      "date": "2024-08-01",
+      "value": 342207,
+      "vehicles": 145411
+    },
+    {
+      "date": "2024-09-01",
+      "value": 200873,
+      "vehicles": 101208
+    },
+    {
+      "date": "2024-10-01",
+      "value": 205213,
+      "vehicles": 98819
+    },
+    {
+      "date": "2024-11-01",
+      "value": 137531,
+      "vehicles": 68003
+    },
+    {
+      "date": "2024-12-01",
+      "value": 154845,
+      "vehicles": 70526
+    },
+    {
+      "date": "2025-01-01",
+      "value": 123545,
+      "vehicles": 60082
+    },
+    {
+      "date": "2025-02-01",
+      "value": 108918,
+      "vehicles": 52287
+    },
+    {
+      "date": "2025-03-01",
+      "value": 114868,
+      "vehicles": 55205
+    },
+    {
+      "date": "2025-04-01",
+      "value": 98212,
+      "vehicles": 49344
+    },
+    {
+      "date": "2025-05-01",
+      "value": 105697,
+      "vehicles": 55636
+    },
+    {
+      "date": "2025-06-01",
+      "value": 145356,
+      "vehicles": 72739
+    },
+    {
+      "date": "2025-07-01",
+      "value": 204776,
+      "vehicles": 92335
+    },
+    {
+      "date": "2025-08-01",
+      "value": 224948,
+      "vehicles": 100754
+    },
+    {
+      "date": "2025-09-01",
+      "value": 131057,
+      "vehicles": 69671
+    },
+    {
+      "date": "2025-10-01",
+      "value": 149607,
+      "vehicles": 75102
+    },
+    {
+      "date": "2025-11-01",
+      "value": 111174,
+      "vehicles": 56438
+    }
+  ],
+  "border_washington": [
+    {
+      "date": "2023-01-01",
+      "value": 583323,
+      "vehicles": 324058
+    },
+    {
+      "date": "2023-02-01",
+      "value": 570165,
+      "vehicles": 309546
+    },
+    {
+      "date": "2023-03-01",
+      "value": 698295,
+      "vehicles": 373898
+    },
+    {
+      "date": "2023-04-01",
+      "value": 705035,
+      "vehicles": 380218
+    },
+    {
+      "date": "2023-05-01",
+      "value": 751508,
+      "vehicles": 413391
+    },
+    {
+      "date": "2023-06-01",
+      "value": 805738,
+      "vehicles": 442279
+    },
+    {
+      "date": "2023-07-01",
+      "value": 1074357,
+      "vehicles": 526337
+    },
+    {
+      "date": "2023-08-01",
+      "value": 1065609,
+      "vehicles": 528171
+    },
+    {
+      "date": "2023-09-01",
+      "value": 853538,
+      "vehicles": 461998
+    },
+    {
+      "date": "2023-10-01",
+      "value": 744520,
+      "vehicles": 408336
+    },
+    {
+      "date": "2023-11-01",
+      "value": 692736,
+      "vehicles": 375313
+    },
+    {
+      "date": "2023-12-01",
+      "value": 791330,
+      "vehicles": 408883
+    },
+    {
+      "date": "2024-01-01",
+      "value": 587294,
+      "vehicles": 322008
+    },
+    {
+      "date": "2024-02-01",
+      "value": 676147,
+      "vehicles": 365645
+    },
+    {
+      "date": "2024-03-01",
+      "value": 847981,
+      "vehicles": 443951
+    },
+    {
+      "date": "2024-04-01",
+      "value": 778381,
+      "vehicles": 438020
+    },
+    {
+      "date": "2024-05-01",
+      "value": 863088,
+      "vehicles": 475569
+    },
+    {
+      "date": "2024-06-01",
+      "value": 883479,
+      "vehicles": 471856
+    },
+    {
+      "date": "2024-07-01",
+      "value": 1118373,
+      "vehicles": 552047
+    },
+    {
+      "date": "2024-08-01",
+      "value": 1164048,
+      "vehicles": 567393
+    },
+    {
+      "date": "2024-09-01",
+      "value": 872055,
+      "vehicles": 468361
+    },
+    {
+      "date": "2024-10-01",
+      "value": 757919,
+      "vehicles": 425150
+    },
+    {
+      "date": "2024-11-01",
+      "value": 734821,
+      "vehicles": 397994
+    },
+    {
+      "date": "2024-12-01",
+      "value": 873811,
+      "vehicles": 451986
+    },
+    {
+      "date": "2025-01-01",
+      "value": 685290,
+      "vehicles": 376517
+    },
+    {
+      "date": "2025-02-01",
+      "value": 547820,
+      "vehicles": 303064
+    },
+    {
+      "date": "2025-03-01",
+      "value": 598139,
+      "vehicles": 325168
+    },
+    {
+      "date": "2025-04-01",
+      "value": 512612,
+      "vehicles": 286572
+    },
+    {
+      "date": "2025-05-01",
+      "value": 576377,
+      "vehicles": 320971
+    },
+    {
+      "date": "2025-06-01",
+      "value": 626664,
+      "vehicles": 339937
+    },
+    {
+      "date": "2025-07-01",
+      "value": 802872,
+      "vehicles": 407214
+    },
+    {
+      "date": "2025-08-01",
+      "value": 853724,
+      "vehicles": 424776
+    },
+    {
+      "date": "2025-09-01",
+      "value": 623192,
+      "vehicles": 347716
+    },
+    {
+      "date": "2025-10-01",
+      "value": 562238,
+      "vehicles": 317131
+    },
+    {
+      "date": "2025-11-01",
+      "value": 572448,
+      "vehicles": 308076
+    }
+  ],
+  "border_new_york": [
+    {
+      "date": "2023-01-01",
+      "value": 732810,
+      "vehicles": 368300
+    },
+    {
+      "date": "2023-02-01",
+      "value": 733937,
+      "vehicles": 360306
+    },
+    {
+      "date": "2023-03-01",
+      "value": 890429,
+      "vehicles": 431614
+    },
+    {
+      "date": "2023-04-01",
+      "value": 992095,
+      "vehicles": 468932
+    },
+    {
+      "date": "2023-05-01",
+      "value": 1120713,
+      "vehicles": 541762
+    },
+    {
+      "date": "2023-06-01",
+      "value": 1281908,
+      "vehicles": 607398
+    },
+    {
+      "date": "2023-07-01",
+      "value": 1817663,
+      "vehicles": 769966
+    },
+    {
+      "date": "2023-08-01",
+      "value": 1837040,
+      "vehicles": 777502
+    },
+    {
+      "date": "2023-09-01",
+      "value": 1251253,
+      "vehicles": 608456
+    },
+    {
+      "date": "2023-10-01",
+      "value": 1211965,
+      "vehicles": 589457
+    },
+    {
+      "date": "2023-11-01",
+      "value": 1017459,
+      "vehicles": 502071
+    },
+    {
+      "date": "2023-12-01",
+      "value": 1156461,
+      "vehicles": 523563
+    },
+    {
+      "date": "2024-01-01",
+      "value": 789994,
+      "vehicles": 392541
+    },
+    {
+      "date": "2024-02-01",
+      "value": 863455,
+      "vehicles": 426454
+    },
+    {
+      "date": "2024-03-01",
+      "value": 1148499,
+      "vehicles": 526153
+    },
+    {
+      "date": "2024-04-01",
+      "value": 1074531,
+      "vehicles": 516775
+    },
+    {
+      "date": "2024-05-01",
+      "value": 1258235,
+      "vehicles": 603083
+    },
+    {
+      "date": "2024-06-01",
+      "value": 1476346,
+      "vehicles": 672677
+    },
+    {
+      "date": "2024-07-01",
+      "value": 1905341,
+      "vehicles": 806032
+    },
+    {
+      "date": "2024-08-01",
+      "value": 2043328,
+      "vehicles": 849712
+    },
+    {
+      "date": "2024-09-01",
+      "value": 1291053,
+      "vehicles": 633554
+    },
+    {
+      "date": "2024-10-01",
+      "value": 1312305,
+      "vehicles": 634381
+    },
+    {
+      "date": "2024-11-01",
+      "value": 1182283,
+      "vehicles": 571078
+    },
+    {
+      "date": "2024-12-01",
+      "value": 1206847,
+      "vehicles": 546197
+    },
+    {
+      "date": "2025-01-01",
+      "value": 847507,
+      "vehicles": 422661
+    },
+    {
+      "date": "2025-02-01",
+      "value": 708283,
+      "vehicles": 360800
+    },
+    {
+      "date": "2025-03-01",
+      "value": 841927,
+      "vehicles": 417062
+    },
+    {
+      "date": "2025-04-01",
+      "value": 820631,
+      "vehicles": 403657
+    },
+    {
+      "date": "2025-05-01",
+      "value": 927195,
+      "vehicles": 467702
+    },
+    {
+      "date": "2025-06-01",
+      "value": 1136364,
+      "vehicles": 542418
+    },
+    {
+      "date": "2025-07-01",
+      "value": 1464194,
+      "vehicles": 649040
+    },
+    {
+      "date": "2025-08-01",
+      "value": 1628725,
+      "vehicles": 708742
+    },
+    {
+      "date": "2025-09-01",
+      "value": 1017268,
+      "vehicles": 524706
+    },
+    {
+      "date": "2025-10-01",
+      "value": 1049480,
+      "vehicles": 528890
+    },
+    {
+      "date": "2025-11-01",
+      "value": 897735,
+      "vehicles": 454048
+    }
+  ],
+  "border_maine": [
+    {
+      "date": "2023-01-01",
+      "value": 123954,
+      "vehicles": 78912
+    },
+    {
+      "date": "2023-02-01",
+      "value": 127411,
+      "vehicles": 79603
+    },
+    {
+      "date": "2023-03-01",
+      "value": 153777,
+      "vehicles": 94378
+    },
+    {
+      "date": "2023-04-01",
+      "value": 162161,
+      "vehicles": 99529
+    },
+    {
+      "date": "2023-05-01",
+      "value": 185306,
+      "vehicles": 114207
+    },
+    {
+      "date": "2023-06-01",
+      "value": 220888,
+      "vehicles": 129589
+    },
+    {
+      "date": "2023-07-01",
+      "value": 326724,
+      "vehicles": 173837
+    },
+    {
+      "date": "2023-08-01",
+      "value": 344330,
+      "vehicles": 182400
+    },
+    {
+      "date": "2023-09-01",
+      "value": 243749,
+      "vehicles": 145703
+    },
+    {
+      "date": "2023-10-01",
+      "value": 219158,
+      "vehicles": 132866
+    },
+    {
+      "date": "2023-11-01",
+      "value": 185003,
+      "vehicles": 114000
+    },
+    {
+      "date": "2023-12-01",
+      "value": 191575,
+      "vehicles": 115824
+    },
+    {
+      "date": "2024-01-01",
+      "value": 158525,
+      "vehicles": 100969
+    },
+    {
+      "date": "2024-02-01",
+      "value": 167995,
+      "vehicles": 104341
+    },
+    {
+      "date": "2024-03-01",
+      "value": 193949,
+      "vehicles": 115813
+    },
+    {
+      "date": "2024-04-01",
+      "value": 198234,
+      "vehicles": 125225
+    },
+    {
+      "date": "2024-05-01",
+      "value": 230131,
+      "vehicles": 142690
+    },
+    {
+      "date": "2024-06-01",
+      "value": 268582,
+      "vehicles": 155208
+    },
+    {
+      "date": "2024-07-01",
+      "value": 348817,
+      "vehicles": 187269
+    },
+    {
+      "date": "2024-08-01",
+      "value": 374344,
+      "vehicles": 197935
+    },
+    {
+      "date": "2024-09-01",
+      "value": 257750,
+      "vehicles": 155615
+    },
+    {
+      "date": "2024-10-01",
+      "value": 239721,
+      "vehicles": 146393
+    },
+    {
+      "date": "2024-11-01",
+      "value": 208516,
+      "vehicles": 127843
+    },
+    {
+      "date": "2024-12-01",
+      "value": 200432,
+      "vehicles": 121897
+    },
+    {
+      "date": "2025-01-01",
+      "value": 167600,
+      "vehicles": 107333
+    },
+    {
+      "date": "2025-02-01",
+      "value": 141904,
+      "vehicles": 89353
+    },
+    {
+      "date": "2025-03-01",
+      "value": 137661,
+      "vehicles": 87072
+    },
+    {
+      "date": "2025-04-01",
+      "value": 123810,
+      "vehicles": 79901
+    },
+    {
+      "date": "2025-05-01",
+      "value": 150863,
+      "vehicles": 95470
+    },
+    {
+      "date": "2025-06-01",
+      "value": 181417,
+      "vehicles": 108934
+    },
+    {
+      "date": "2025-07-01",
+      "value": 246833,
+      "vehicles": 135862
+    },
+    {
+      "date": "2025-08-01",
+      "value": 266133,
+      "vehicles": 144516
+    },
+    {
+      "date": "2025-09-01",
+      "value": 190345,
+      "vehicles": 117933
+    },
+    {
+      "date": "2025-10-01",
+      "value": 182584,
+      "vehicles": 113440
+    },
+    {
+      "date": "2025-11-01",
+      "value": 156435,
+      "vehicles": 97880
+    }
+  ],
+  "border_michigan": [
+    {
+      "date": "2023-01-01",
+      "value": 565592,
+      "vehicles": 328928
+    },
+    {
+      "date": "2023-02-01",
+      "value": 539398,
+      "vehicles": 312823
+    },
+    {
+      "date": "2023-03-01",
+      "value": 640609,
+      "vehicles": 363037
+    },
+    {
+      "date": "2023-04-01",
+      "value": 661779,
+      "vehicles": 368484
+    },
+    {
+      "date": "2023-05-01",
+      "value": 728345,
+      "vehicles": 406598
+    },
+    {
+      "date": "2023-06-01",
+      "value": 800273,
+      "vehicles": 432909
+    },
+    {
+      "date": "2023-07-01",
+      "value": 1003342,
+      "vehicles": 484684
+    },
+    {
+      "date": "2023-08-01",
+      "value": 993471,
+      "vehicles": 495141
+    },
+    {
+      "date": "2023-09-01",
+      "value": 790283,
+      "vehicles": 433203
+    },
+    {
+      "date": "2023-10-01",
+      "value": 790796,
+      "vehicles": 444289
+    },
+    {
+      "date": "2023-11-01",
+      "value": 735552,
+      "vehicles": 412482
+    },
+    {
+      "date": "2023-12-01",
+      "value": 794320,
+      "vehicles": 413259
+    },
+    {
+      "date": "2024-01-01",
+      "value": 617814,
+      "vehicles": 358825
+    },
+    {
+      "date": "2024-02-01",
+      "value": 639266,
+      "vehicles": 370503
+    },
+    {
+      "date": "2024-03-01",
+      "value": 780183,
+      "vehicles": 420790
+    },
+    {
+      "date": "2024-04-01",
+      "value": 707690,
+      "vehicles": 404895
+    },
+    {
+      "date": "2024-05-01",
+      "value": 842700,
+      "vehicles": 457976
+    },
+    {
+      "date": "2024-06-01",
+      "value": 860133,
+      "vehicles": 453703
+    },
+    {
+      "date": "2024-07-01",
+      "value": 1027718,
+      "vehicles": 506130
+    },
+    {
+      "date": "2024-08-01",
+      "value": 1097348,
+      "vehicles": 536086
+    },
+    {
+      "date": "2024-09-01",
+      "value": 835765,
+      "vehicles": 462326
+    },
+    {
+      "date": "2024-10-01",
+      "value": 845330,
+      "vehicles": 474888
+    },
+    {
+      "date": "2024-11-01",
+      "value": 776342,
+      "vehicles": 427848
+    },
+    {
+      "date": "2024-12-01",
+      "value": 828151,
+      "vehicles": 426841
+    },
+    {
+      "date": "2025-01-01",
+      "value": 649731,
+      "vehicles": 373827
+    },
+    {
+      "date": "2025-02-01",
+      "value": 544869,
+      "vehicles": 325008
+    },
+    {
+      "date": "2025-03-01",
+      "value": 641596,
+      "vehicles": 368128
+    },
+    {
+      "date": "2025-04-01",
+      "value": 577171,
+      "vehicles": 346769
+    },
+    {
+      "date": "2025-05-01",
+      "value": 662996,
+      "vehicles": 383524
+    },
+    {
+      "date": "2025-06-01",
+      "value": 725146,
+      "vehicles": 404606
+    },
+    {
+      "date": "2025-07-01",
+      "value": 877759,
+      "vehicles": 453497
+    },
+    {
+      "date": "2025-08-01",
+      "value": 934791,
+      "vehicles": 475948
+    },
+    {
+      "date": "2025-09-01",
+      "value": 701620,
+      "vehicles": 412725
+    },
+    {
+      "date": "2025-10-01",
+      "value": 735952,
+      "vehicles": 429013
+    },
+    {
+      "date": "2025-11-01",
+      "value": 652907,
+      "vehicles": 375667
+    }
+  ],
+  "border_minnesota": [
+    {
+      "date": "2023-01-01",
+      "value": 66069,
+      "vehicles": 37302
+    },
+    {
+      "date": "2023-02-01",
+      "value": 66117,
+      "vehicles": 36770
+    },
+    {
+      "date": "2023-03-01",
+      "value": 75175,
+      "vehicles": 41492
+    },
+    {
+      "date": "2023-04-01",
+      "value": 71322,
+      "vehicles": 39806
+    },
+    {
+      "date": "2023-05-01",
+      "value": 102705,
+      "vehicles": 55459
+    },
+    {
+      "date": "2023-06-01",
+      "value": 157506,
+      "vehicles": 76411
+    },
+    {
+      "date": "2023-07-01",
+      "value": 173806,
+      "vehicles": 81338
+    },
+    {
+      "date": "2023-08-01",
+      "value": 168657,
+      "vehicles": 80006
+    },
+    {
+      "date": "2023-09-01",
+      "value": 126714,
+      "vehicles": 66705
+    },
+    {
+      "date": "2023-10-01",
+      "value": 94862,
+      "vehicles": 53294
+    },
+    {
+      "date": "2023-11-01",
+      "value": 78189,
+      "vehicles": 44112
+    },
+    {
+      "date": "2023-12-01",
+      "value": 91101,
+      "vehicles": 48865
+    },
+    {
+      "date": "2024-01-01",
+      "value": 74281,
+      "vehicles": 41378
+    },
+    {
+      "date": "2024-02-01",
+      "value": 77757,
+      "vehicles": 42267
+    },
+    {
+      "date": "2024-03-01",
+      "value": 88478,
+      "vehicles": 46807
+    },
+    {
+      "date": "2024-04-01",
+      "value": 83356,
+      "vehicles": 46389
+    },
+    {
+      "date": "2024-05-01",
+      "value": 115222,
+      "vehicles": 60776
+    },
+    {
+      "date": "2024-06-01",
+      "value": 166453,
+      "vehicles": 78810
+    },
+    {
+      "date": "2024-07-01",
+      "value": 173557,
+      "vehicles": 81242
+    },
+    {
+      "date": "2024-08-01",
+      "value": 183052,
+      "vehicles": 84869
+    },
+    {
+      "date": "2024-09-01",
+      "value": 127290,
+      "vehicles": 67101
+    },
+    {
+      "date": "2024-10-01",
+      "value": 97470,
+      "vehicles": 54207
+    },
+    {
+      "date": "2024-11-01",
+      "value": 84260,
+      "vehicles": 46292
+    },
+    {
+      "date": "2024-12-01",
+      "value": 86830,
+      "vehicles": 46655
+    },
+    {
+      "date": "2025-01-01",
+      "value": 72873,
+      "vehicles": 40143
+    },
+    {
+      "date": "2025-02-01",
+      "value": 65348,
+      "vehicles": 36158
+    },
+    {
+      "date": "2025-03-01",
+      "value": 65220,
+      "vehicles": 35788
+    },
+    {
+      "date": "2025-04-01",
+      "value": 57018,
+      "vehicles": 31920
+    },
+    {
+      "date": "2025-05-01",
+      "value": 90876,
+      "vehicles": 47532
+    },
+    {
+      "date": "2025-06-01",
+      "value": 140198,
+      "vehicles": 66317
+    },
+    {
+      "date": "2025-07-01",
+      "value": 141638,
+      "vehicles": 66122
+    },
+    {
+      "date": "2025-08-01",
+      "value": 147437,
+      "vehicles": 68531
+    },
+    {
+      "date": "2025-09-01",
+      "value": 101900,
+      "vehicles": 54400
+    },
+    {
+      "date": "2025-10-01",
+      "value": 81746,
+      "vehicles": 45860
+    },
+    {
+      "date": "2025-11-01",
+      "value": 67647,
+      "vehicles": 37728
+    }
+  ],
+  "border_north_dakota": [
+    {
+      "date": "2023-01-01",
+      "value": 45268,
+      "vehicles": 22409
+    },
+    {
+      "date": "2023-02-01",
+      "value": 45550,
+      "vehicles": 22072
+    },
+    {
+      "date": "2023-03-01",
+      "value": 64160,
+      "vehicles": 28930
+    },
+    {
+      "date": "2023-04-01",
+      "value": 59563,
+      "vehicles": 28023
+    },
+    {
+      "date": "2023-05-01",
+      "value": 76954,
+      "vehicles": 36407
+    },
+    {
+      "date": "2023-06-01",
+      "value": 93376,
+      "vehicles": 43477
+    },
+    {
+      "date": "2023-07-01",
+      "value": 133355,
+      "vehicles": 55964
+    },
+    {
+      "date": "2023-08-01",
+      "value": 138794,
+      "vehicles": 58682
+    },
+    {
+      "date": "2023-09-01",
+      "value": 88223,
+      "vehicles": 42052
+    },
+    {
+      "date": "2023-10-01",
+      "value": 78896,
+      "vehicles": 37931
+    },
+    {
+      "date": "2023-11-01",
+      "value": 67432,
+      "vehicles": 32386
+    },
+    {
+      "date": "2023-12-01",
+      "value": 68467,
+      "vehicles": 31533
+    },
+    {
+      "date": "2024-01-01",
+      "value": 54744,
+      "vehicles": 25928
+    },
+    {
+      "date": "2024-02-01",
+      "value": 61681,
+      "vehicles": 28550
+    },
+    {
+      "date": "2024-03-01",
+      "value": 80480,
+      "vehicles": 34857
+    },
+    {
+      "date": "2024-04-01",
+      "value": 73808,
+      "vehicles": 35117
+    },
+    {
+      "date": "2024-05-01",
+      "value": 85794,
+      "vehicles": 40177
+    },
+    {
+      "date": "2024-06-01",
+      "value": 101276,
+      "vehicles": 45726
+    },
+    {
+      "date": "2024-07-01",
+      "value": 133684,
+      "vehicles": 56299
+    },
+    {
+      "date": "2024-08-01",
+      "value": 164216,
+      "vehicles": 67122
+    },
+    {
+      "date": "2024-09-01",
+      "value": 88923,
+      "vehicles": 42965
+    },
+    {
+      "date": "2024-10-01",
+      "value": 84620,
+      "vehicles": 40888
+    },
+    {
+      "date": "2024-11-01",
+      "value": 76234,
+      "vehicles": 35611
+    },
+    {
+      "date": "2024-12-01",
+      "value": 68280,
+      "vehicles": 31729
+    },
+    {
+      "date": "2025-01-01",
+      "value": 54975,
+      "vehicles": 26895
+    },
+    {
+      "date": "2025-02-01",
+      "value": 47968,
+      "vehicles": 23554
+    },
+    {
+      "date": "2025-03-01",
+      "value": 54657,
+      "vehicles": 26425
+    },
+    {
+      "date": "2025-04-01",
+      "value": 48884,
+      "vehicles": 23888
+    },
+    {
+      "date": "2025-05-01",
+      "value": 57675,
+      "vehicles": 28557
+    },
+    {
+      "date": "2025-06-01",
+      "value": 70030,
+      "vehicles": 33494
+    },
+    {
+      "date": "2025-07-01",
+      "value": 95518,
+      "vehicles": 42096
+    },
+    {
+      "date": "2025-08-01",
+      "value": 105281,
+      "vehicles": 46029
+    },
+    {
+      "date": "2025-09-01",
+      "value": 63291,
+      "vehicles": 32277
+    },
+    {
+      "date": "2025-10-01",
+      "value": 66103,
+      "vehicles": 33136
+    },
+    {
+      "date": "2025-11-01",
+      "value": 57213,
+      "vehicles": 28137
+    }
+  ],
+  "border_port_sweetgrass": [
+    {
+      "date": "2023-01-01",
+      "value": 21422,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-02-01",
+      "value": 19344,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-03-01",
+      "value": 22417,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-04-01",
+      "value": 22333,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-05-01",
+      "value": 24731,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-06-01",
+      "value": 30918,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-07-01",
+      "value": 46941,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-08-01",
+      "value": 42342,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-09-01",
+      "value": 30748,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-10-01",
+      "value": 35179,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-11-01",
+      "value": 24325,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-12-01",
+      "value": 28488,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-01-01",
+      "value": 20798,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-02-01",
+      "value": 21089,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-03-01",
+      "value": 25297,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-04-01",
+      "value": 21700,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-05-01",
+      "value": 25326,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-06-01",
+      "value": 31852,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-07-01",
+      "value": 44909,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-08-01",
+      "value": 44882,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-09-01",
+      "value": 29362,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-10-01",
+      "value": 37030,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-11-01",
+      "value": 25395,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-12-01",
+      "value": 29270,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-01-01",
+      "value": 21217,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-02-01",
+      "value": 16627,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-03-01",
+      "value": 18167,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-04-01",
+      "value": 17505,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-05-01",
+      "value": 18040,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-06-01",
+      "value": 24878,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-07-01",
+      "value": 36375,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-08-01",
+      "value": 32148,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-09-01",
+      "value": 21951,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-10-01",
+      "value": 30651,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-11-01",
+      "value": 21234,
+      "vehicles": 0
+    }
+  ],
+  "border_port_roosville": [
+    {
+      "date": "2023-01-01",
+      "value": 10832,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-02-01",
+      "value": 13301,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-03-01",
+      "value": 13962,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-04-01",
+      "value": 13837,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-05-01",
+      "value": 18887,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-06-01",
+      "value": 27764,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-07-01",
+      "value": 41601,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-08-01",
+      "value": 41826,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-09-01",
+      "value": 26033,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-10-01",
+      "value": 16334,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-11-01",
+      "value": 12060,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-12-01",
+      "value": 15172,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-01-01",
+      "value": 11395,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-02-01",
+      "value": 14464,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-03-01",
+      "value": 17339,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-04-01",
+      "value": 14281,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-05-01",
+      "value": 22470,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-06-01",
+      "value": 29231,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-07-01",
+      "value": 44213,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-08-01",
+      "value": 45675,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-09-01",
+      "value": 25405,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-10-01",
+      "value": 17458,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-11-01",
+      "value": 12382,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-12-01",
+      "value": 14920,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-01-01",
+      "value": 12738,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-02-01",
+      "value": 12379,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-03-01",
+      "value": 12772,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-04-01",
+      "value": 10303,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-05-01",
+      "value": 15956,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-06-01",
+      "value": 23211,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-07-01",
+      "value": 37205,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-08-01",
+      "value": 35961,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-09-01",
+      "value": 20192,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-10-01",
+      "value": 13686,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-11-01",
+      "value": 9292,
+      "vehicles": 0
+    }
+  ],
+  "border_port_derby_line": [
+    {
+      "date": "2023-01-01",
+      "value": 37593,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-02-01",
+      "value": 40971,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-03-01",
+      "value": 41220,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-04-01",
+      "value": 46302,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-05-01",
+      "value": 56407,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-06-01",
+      "value": 82583,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-07-01",
+      "value": 127305,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-08-01",
+      "value": 121291,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-09-01",
+      "value": 80176,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-10-01",
+      "value": 65741,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-11-01",
+      "value": 43742,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-12-01",
+      "value": 53584,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-01-01",
+      "value": 44825,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-02-01",
+      "value": 48431,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-03-01",
+      "value": 60484,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-04-01",
+      "value": 56539,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-05-01",
+      "value": 64409,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-06-01",
+      "value": 92269,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-07-01",
+      "value": 137969,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-08-01",
+      "value": 139805,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-09-01",
+      "value": 77953,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-10-01",
+      "value": 77497,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-11-01",
+      "value": 48527,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-12-01",
+      "value": 60865,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-01-01",
+      "value": 46682,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-02-01",
+      "value": 44203,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-03-01",
+      "value": 40078,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-04-01",
+      "value": 33785,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-05-01",
+      "value": 37911,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-06-01",
+      "value": 52227,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-07-01",
+      "value": 79723,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-08-01",
+      "value": 85418,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-09-01",
+      "value": 48783,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-10-01",
+      "value": 52237,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-11-01",
+      "value": 36731,
+      "vehicles": 0
+    }
+  ],
+  "border_port_highgate_springs": [
+    {
+      "date": "2023-01-01",
+      "value": 48603,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-02-01",
+      "value": 47112,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-03-01",
+      "value": 55045,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-04-01",
+      "value": 70220,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-05-01",
+      "value": 76270,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-06-01",
+      "value": 80314,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-07-01",
+      "value": 135297,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-08-01",
+      "value": 137244,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-09-01",
+      "value": 88932,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-10-01",
+      "value": 85538,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-11-01",
+      "value": 62328,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-12-01",
+      "value": 67135,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-01-01",
+      "value": 53694,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-02-01",
+      "value": 53188,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-03-01",
+      "value": 84767,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-04-01",
+      "value": 72751,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-05-01",
+      "value": 84785,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-06-01",
+      "value": 108385,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-07-01",
+      "value": 152251,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-08-01",
+      "value": 155674,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-09-01",
+      "value": 93918,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-10-01",
+      "value": 100156,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-11-01",
+      "value": 72523,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-12-01",
+      "value": 76177,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-01-01",
+      "value": 60580,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-02-01",
+      "value": 50271,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-03-01",
+      "value": 57932,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-04-01",
+      "value": 53985,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-05-01",
+      "value": 55970,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-06-01",
+      "value": 75278,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-07-01",
+      "value": 97910,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-08-01",
+      "value": 110093,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-09-01",
+      "value": 64889,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-10-01",
+      "value": 80040,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-11-01",
+      "value": 62541,
+      "vehicles": 0
+    }
+  ],
+  "border_port_blaine": [
+    {
+      "date": "2023-01-01",
+      "value": 380196,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-02-01",
+      "value": 370013,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-03-01",
+      "value": 455961,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-04-01",
+      "value": 465858,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-05-01",
+      "value": 482667,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-06-01",
+      "value": 510224,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-07-01",
+      "value": 670782,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-08-01",
+      "value": 669158,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-09-01",
+      "value": 530183,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-10-01",
+      "value": 463161,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-11-01",
+      "value": 441011,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-12-01",
+      "value": 511084,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-01-01",
+      "value": 381149,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-02-01",
+      "value": 435992,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-03-01",
+      "value": 544883,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-04-01",
+      "value": 495742,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-05-01",
+      "value": 544628,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-06-01",
+      "value": 554761,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-07-01",
+      "value": 685711,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-08-01",
+      "value": 715939,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-09-01",
+      "value": 558974,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-10-01",
+      "value": 476988,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-11-01",
+      "value": 475373,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-12-01",
+      "value": 573890,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-01-01",
+      "value": 442263,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-02-01",
+      "value": 341821,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-03-01",
+      "value": 374456,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-04-01",
+      "value": 329745,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-05-01",
+      "value": 354133,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-06-01",
+      "value": 378571,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-07-01",
+      "value": 473070,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-08-01",
+      "value": 508622,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-09-01",
+      "value": 384593,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-10-01",
+      "value": 360962,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-11-01",
+      "value": 373045,
+      "vehicles": 0
+    }
+  ],
+  "border_port_sumas": [
+    {
+      "date": "2023-01-01",
+      "value": 61638,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-02-01",
+      "value": 62288,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-03-01",
+      "value": 75960,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-04-01",
+      "value": 71821,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-05-01",
+      "value": 79884,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-06-01",
+      "value": 86285,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-07-01",
+      "value": 116563,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-08-01",
+      "value": 119149,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-09-01",
+      "value": 94979,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-10-01",
+      "value": 84069,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-11-01",
+      "value": 74424,
+      "vehicles": 0
+    },
+    {
+      "date": "2023-12-01",
+      "value": 83192,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-01-01",
+      "value": 64448,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-02-01",
+      "value": 76221,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-03-01",
+      "value": 93338,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-04-01",
+      "value": 82537,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-05-01",
+      "value": 92210,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-06-01",
+      "value": 91189,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-07-01",
+      "value": 115251,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-08-01",
+      "value": 118354,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-09-01",
+      "value": 94472,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-10-01",
+      "value": 82393,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-11-01",
+      "value": 74873,
+      "vehicles": 0
+    },
+    {
+      "date": "2024-12-01",
+      "value": 84817,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-01-01",
+      "value": 72333,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-02-01",
+      "value": 60175,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-03-01",
+      "value": 62499,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-04-01",
+      "value": 50660,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-05-01",
+      "value": 58899,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-06-01",
+      "value": 62553,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-07-01",
+      "value": 83797,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-08-01",
+      "value": 93051,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-09-01",
+      "value": 63459,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-10-01",
+      "value": 60359,
+      "vehicles": 0
+    },
+    {
+      "date": "2025-11-01",
+      "value": 55339,
+      "vehicles": 0
     }
   ]
 }
