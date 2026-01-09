@@ -2280,8 +2280,8 @@
             if (!container) return;
 
             const width = container.clientWidth || 280;
-            const height = container.clientHeight || 140;
-            const margin = { top: 10, right: 15, bottom: 25, left: 35 };
+            const height = container.clientHeight || 160;
+            const margin = { top: 10, right: 15, bottom: 40, left: 50 };
             const innerWidth = width - margin.left - margin.right;
             const innerHeight = height - margin.top - margin.bottom;
 
@@ -2341,14 +2341,35 @@
                 .call(d3.axisBottom(x).ticks(5).tickFormat(d3.timeFormat("%b %d")));
             g.append("g").attr("class", "axis").call(d3.axisLeft(y).ticks(4).tickFormat(d => d + "%"));
 
+            // X-axis title
+            g.append("text")
+                .attr("class", "axis-title")
+                .attr("text-anchor", "middle")
+                .attr("x", innerWidth / 2)
+                .attr("y", innerHeight + 32)
+                .attr("fill", "#8892a2")
+                .attr("font-size", "10px")
+                .text("Date (Past 30 Days)");
+
+            // Y-axis title
+            g.append("text")
+                .attr("class", "axis-title")
+                .attr("text-anchor", "middle")
+                .attr("transform", "rotate(-90)")
+                .attr("x", -innerHeight / 2)
+                .attr("y", -38)
+                .attr("fill", "#8892a2")
+                .attr("font-size", "10px")
+                .text("Snow Cover (%)");
+
             // Legend
-            const legend = g.append("g").attr("transform", `translate(${innerWidth - 80}, 0)`);
+            const legend = g.append("g").attr("transform", `translate(${innerWidth - 120}, 0)`);
             legend.append("line").attr("x1", 0).attr("x2", 16).attr("y1", 0).attr("y2", 0)
                 .attr("stroke", "var(--accent-cold)").attr("stroke-width", 2);
-            legend.append("text").attr("x", 20).attr("y", 3).attr("class", "axis").text("Current");
+            legend.append("text").attr("x", 20).attr("y", 3).attr("class", "axis").text("Current Season");
             legend.append("line").attr("x1", 0).attr("x2", 16).attr("y1", 14).attr("y2", 14)
                 .attr("stroke", "var(--text-muted)").attr("stroke-dasharray", "4,3");
-            legend.append("text").attr("x", 20).attr("y", 17).attr("class", "axis").text("Norm");
+            legend.append("text").attr("x", 20).attr("y", 17).attr("class", "axis").text("Historical Avg");
         }
 
         // ============================================
