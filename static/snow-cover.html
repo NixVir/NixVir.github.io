@@ -1481,7 +1481,7 @@
                             </div>
                         </div>
                         <h3 class="chart-title">Current Winter of 2025/26 Percent Snow Cover vs. Prior 5-Year Average</h3>
-                        <p class="chart-note">Gray vertical bars indicate key holidays.</p>
+                        <p class="chart-note">Gray vertical bars indicate key holiday periods (labeled).</p>
                         <div class="national-chart-container">
                             <canvas id="national-chart"></canvas>
                         </div>
@@ -1851,7 +1851,19 @@
                         xMin: startIdx - 0.5,
                         xMax: endIdx + 0.5,
                         backgroundColor: 'rgba(128, 128, 128, 0.12)',
-                        borderWidth: 0
+                        borderWidth: 0,
+                        label: {
+                            display: true,
+                            content: holiday.name,
+                            position: 'start',
+                            font: {
+                                size: 9,
+                                weight: 'normal'
+                            },
+                            color: 'rgba(100, 100, 100, 0.8)',
+                            rotation: -90,
+                            yAdjust: 50
+                        }
                     };
                 }
             });
