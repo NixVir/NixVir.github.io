@@ -1,89 +1,89 @@
 {
-  "updated": "2026-01-08 17:04:55",
+  "updated": "2026-01-09 00:05:37",
   "consumer_confidence": [
     {
       "date": "2024-12-01",
       "series_id": "UMCSENT",
       "value": 74.0,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-27",
+      "realtime_end": "2025-12-27"
     },
     {
       "date": "2025-01-01",
       "series_id": "UMCSENT",
       "value": 71.7,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-27",
+      "realtime_end": "2025-12-27"
     },
     {
       "date": "2025-02-01",
       "series_id": "UMCSENT",
       "value": 64.7,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-27",
+      "realtime_end": "2025-12-27"
     },
     {
       "date": "2025-03-01",
       "series_id": "UMCSENT",
       "value": 57.0,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-27",
+      "realtime_end": "2025-12-27"
     },
     {
       "date": "2025-04-01",
       "series_id": "UMCSENT",
       "value": 52.2,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-27",
+      "realtime_end": "2025-12-27"
     },
     {
       "date": "2025-05-01",
       "series_id": "UMCSENT",
       "value": 52.2,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-27",
+      "realtime_end": "2025-12-27"
     },
     {
       "date": "2025-06-01",
       "series_id": "UMCSENT",
       "value": 60.7,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-27",
+      "realtime_end": "2025-12-27"
     },
     {
       "date": "2025-07-01",
       "series_id": "UMCSENT",
       "value": 61.7,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-27",
+      "realtime_end": "2025-12-27"
     },
     {
       "date": "2025-08-01",
       "series_id": "UMCSENT",
       "value": 58.2,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-27",
+      "realtime_end": "2025-12-27"
     },
     {
       "date": "2025-09-01",
       "series_id": "UMCSENT",
       "value": 55.1,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-27",
+      "realtime_end": "2025-12-27"
     },
     {
       "date": "2025-10-01",
       "series_id": "UMCSENT",
       "value": 53.6,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-27",
+      "realtime_end": "2025-12-27"
     },
     {
       "date": "2025-11-01",
       "series_id": "UMCSENT",
       "value": 51.0,
-      "realtime_start": "2025-12-19",
-      "realtime_end": "2025-12-19"
+      "realtime_start": "2025-12-27",
+      "realtime_end": "2025-12-27"
     }
   ],
   "markets": [
@@ -9154,78 +9154,78 @@
       "date": "2024-12-01",
       "series_id": "CPIAUCSL",
       "value": 317.603,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-01-01",
       "series_id": "CPIAUCSL",
       "value": 319.086,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-02-01",
       "series_id": "CPIAUCSL",
       "value": 319.775,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-03-01",
       "series_id": "CPIAUCSL",
       "value": 319.615,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-04-01",
       "series_id": "CPIAUCSL",
       "value": 320.321,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-05-01",
       "series_id": "CPIAUCSL",
       "value": 320.58,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-06-01",
       "series_id": "CPIAUCSL",
       "value": 321.5,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-07-01",
       "series_id": "CPIAUCSL",
       "value": 322.132,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-08-01",
       "series_id": "CPIAUCSL",
       "value": 323.364,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-09-01",
       "series_id": "CPIAUCSL",
       "value": 324.368,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-11-01",
       "series_id": "CPIAUCSL",
       "value": 325.031,
-      "realtime_start": "2025-12-20",
-      "realtime_end": "2025-12-20"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     }
   ],
   "employment": [
@@ -9233,85 +9233,85 @@
       "date": "2024-12-01",
       "series_id": "PAYEMS",
       "value": 158942.0,
-      "realtime_start": "2026-01-05",
-      "realtime_end": "2026-01-05"
+      "realtime_start": "2025-12-16",
+      "realtime_end": "2025-12-16"
     },
     {
       "date": "2025-01-01",
       "series_id": "PAYEMS",
       "value": 159053.0,
-      "realtime_start": "2026-01-05",
-      "realtime_end": "2026-01-05"
+      "realtime_start": "2025-12-16",
+      "realtime_end": "2025-12-16"
     },
     {
       "date": "2025-02-01",
       "series_id": "PAYEMS",
       "value": 159155.0,
-      "realtime_start": "2026-01-05",
-      "realtime_end": "2026-01-05"
+      "realtime_start": "2025-12-16",
+      "realtime_end": "2025-12-16"
     },
     {
       "date": "2025-03-01",
       "series_id": "PAYEMS",
       "value": 159275.0,
-      "realtime_start": "2026-01-05",
-      "realtime_end": "2026-01-05"
+      "realtime_start": "2025-12-16",
+      "realtime_end": "2025-12-16"
     },
     {
       "date": "2025-04-01",
       "series_id": "PAYEMS",
       "value": 159433.0,
-      "realtime_start": "2026-01-05",
-      "realtime_end": "2026-01-05"
+      "realtime_start": "2025-12-16",
+      "realtime_end": "2025-12-16"
     },
     {
       "date": "2025-05-01",
       "series_id": "PAYEMS",
       "value": 159452.0,
-      "realtime_start": "2026-01-05",
-      "realtime_end": "2026-01-05"
+      "realtime_start": "2025-12-16",
+      "realtime_end": "2025-12-16"
     },
     {
       "date": "2025-06-01",
       "series_id": "PAYEMS",
       "value": 159439.0,
-      "realtime_start": "2026-01-05",
-      "realtime_end": "2026-01-05"
+      "realtime_start": "2025-12-16",
+      "realtime_end": "2025-12-16"
     },
     {
       "date": "2025-07-01",
       "series_id": "PAYEMS",
       "value": 159511.0,
-      "realtime_start": "2026-01-05",
-      "realtime_end": "2026-01-05"
+      "realtime_start": "2025-12-16",
+      "realtime_end": "2025-12-16"
     },
     {
       "date": "2025-08-01",
       "series_id": "PAYEMS",
       "value": 159485.0,
-      "realtime_start": "2026-01-05",
-      "realtime_end": "2026-01-05"
+      "realtime_start": "2025-12-16",
+      "realtime_end": "2025-12-16"
     },
     {
       "date": "2025-09-01",
       "series_id": "PAYEMS",
       "value": 159593.0,
-      "realtime_start": "2026-01-05",
-      "realtime_end": "2026-01-05"
+      "realtime_start": "2025-12-16",
+      "realtime_end": "2025-12-16"
     },
     {
       "date": "2025-10-01",
       "series_id": "PAYEMS",
       "value": 159488.0,
-      "realtime_start": "2026-01-05",
-      "realtime_end": "2026-01-05"
+      "realtime_start": "2025-12-16",
+      "realtime_end": "2025-12-16"
     },
     {
       "date": "2025-11-01",
       "series_id": "PAYEMS",
       "value": 159552.0,
-      "realtime_start": "2026-01-05",
-      "realtime_end": "2026-01-05"
+      "realtime_start": "2025-12-16",
+      "realtime_end": "2025-12-16"
     }
   ],
   "wages": [
@@ -9319,85 +9319,85 @@
       "date": "2024-12-01",
       "series_id": "CES0500000003",
       "value": 35.68,
-      "realtime_start": "2026-01-08",
-      "realtime_end": "2026-01-08"
+      "realtime_start": "2025-12-16",
+      "realtime_end": "2025-12-16"
     },
     {
       "date": "2025-01-01",
       "series_id": "CES0500000003",
       "value": 35.83,
-      "realtime_start": "2026-01-08",
-      "realtime_end": "2026-01-08"
+      "realtime_start": "2025-12-16",
+      "realtime_end": "2025-12-16"
     },
     {
       "date": "2025-02-01",
       "series_id": "CES0500000003",
       "value": 35.9,
-      "realtime_start": "2026-01-08",
-      "realtime_end": "2026-01-08"
+      "realtime_start": "2025-12-16",
+      "realtime_end": "2025-12-16"
     },
     {
       "date": "2025-03-01",
       "series_id": "CES0500000003",
       "value": 36.02,
-      "realtime_start": "2026-01-08",
-      "realtime_end": "2026-01-08"
+      "realtime_start": "2025-12-16",
+      "realtime_end": "2025-12-16"
     },
     {
       "date": "2025-04-01",
       "series_id": "CES0500000003",
       "value": 36.08,
-      "realtime_start": "2026-01-08",
-      "realtime_end": "2026-01-08"
+      "realtime_start": "2025-12-16",
+      "realtime_end": "2025-12-16"
     },
     {
       "date": "2025-05-01",
       "series_id": "CES0500000003",
       "value": 36.23,
-      "realtime_start": "2026-01-08",
-      "realtime_end": "2026-01-08"
+      "realtime_start": "2025-12-16",
+      "realtime_end": "2025-12-16"
     },
     {
       "date": "2025-06-01",
       "series_id": "CES0500000003",
       "value": 36.31,
-      "realtime_start": "2026-01-08",
-      "realtime_end": "2026-01-08"
+      "realtime_start": "2025-12-16",
+      "realtime_end": "2025-12-16"
     },
     {
       "date": "2025-07-01",
       "series_id": "CES0500000003",
       "value": 36.43,
-      "realtime_start": "2026-01-08",
-      "realtime_end": "2026-01-08"
+      "realtime_start": "2025-12-16",
+      "realtime_end": "2025-12-16"
     },
     {
       "date": "2025-08-01",
       "series_id": "CES0500000003",
       "value": 36.58,
-      "realtime_start": "2026-01-08",
-      "realtime_end": "2026-01-08"
+      "realtime_start": "2025-12-16",
+      "realtime_end": "2025-12-16"
     },
     {
       "date": "2025-09-01",
       "series_id": "CES0500000003",
       "value": 36.65,
-      "realtime_start": "2026-01-08",
-      "realtime_end": "2026-01-08"
+      "realtime_start": "2025-12-16",
+      "realtime_end": "2025-12-16"
     },
     {
       "date": "2025-10-01",
       "series_id": "CES0500000003",
       "value": 36.81,
-      "realtime_start": "2026-01-08",
-      "realtime_end": "2026-01-08"
+      "realtime_start": "2025-12-16",
+      "realtime_end": "2025-12-16"
     },
     {
       "date": "2025-11-01",
       "series_id": "CES0500000003",
       "value": 36.86,
-      "realtime_start": "2026-01-08",
-      "realtime_end": "2026-01-08"
+      "realtime_start": "2025-12-16",
+      "realtime_end": "2025-12-16"
     }
   ],
   "gdp": [
@@ -9405,85 +9405,85 @@
       "date": "2022-10-01",
       "series_id": "GDP",
       "value": 26770.514,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-26",
+      "realtime_end": "2025-12-26"
     },
     {
       "date": "2023-01-01",
       "series_id": "GDP",
       "value": 27216.445,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-26",
+      "realtime_end": "2025-12-26"
     },
     {
       "date": "2023-04-01",
       "series_id": "GDP",
       "value": 27530.055,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-26",
+      "realtime_end": "2025-12-26"
     },
     {
       "date": "2023-07-01",
       "series_id": "GDP",
       "value": 28074.846,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-26",
+      "realtime_end": "2025-12-26"
     },
     {
       "date": "2023-10-01",
       "series_id": "GDP",
       "value": 28424.722,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-26",
+      "realtime_end": "2025-12-26"
     },
     {
       "date": "2024-01-01",
       "series_id": "GDP",
       "value": 28708.161,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-26",
+      "realtime_end": "2025-12-26"
     },
     {
       "date": "2024-04-01",
       "series_id": "GDP",
       "value": 29147.044,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-26",
+      "realtime_end": "2025-12-26"
     },
     {
       "date": "2024-07-01",
       "series_id": "GDP",
       "value": 29511.664,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-26",
+      "realtime_end": "2025-12-26"
     },
     {
       "date": "2024-10-01",
       "series_id": "GDP",
       "value": 29825.182,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-26",
+      "realtime_end": "2025-12-26"
     },
     {
       "date": "2025-01-01",
       "series_id": "GDP",
       "value": 30042.113,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-26",
+      "realtime_end": "2025-12-26"
     },
     {
       "date": "2025-04-01",
       "series_id": "GDP",
       "value": 30485.729,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-26",
+      "realtime_end": "2025-12-26"
     },
     {
       "date": "2025-07-01",
       "series_id": "GDP",
       "value": 31095.089,
-      "realtime_start": "2025-12-23",
-      "realtime_end": "2025-12-23"
+      "realtime_start": "2025-12-26",
+      "realtime_end": "2025-12-26"
     }
   ],
   "housing_starts": [
@@ -9491,85 +9491,85 @@
       "date": "2024-09-01",
       "series_id": "HOUST",
       "value": 1357.0,
-      "realtime_start": "2025-12-21",
-      "realtime_end": "2025-12-21"
+      "realtime_start": "2025-10-15",
+      "realtime_end": "2025-10-15"
     },
     {
       "date": "2024-10-01",
       "series_id": "HOUST",
       "value": 1352.0,
-      "realtime_start": "2025-12-21",
-      "realtime_end": "2025-12-21"
+      "realtime_start": "2025-10-15",
+      "realtime_end": "2025-10-15"
     },
     {
       "date": "2024-11-01",
       "series_id": "HOUST",
       "value": 1295.0,
-      "realtime_start": "2025-12-21",
-      "realtime_end": "2025-12-21"
+      "realtime_start": "2025-10-15",
+      "realtime_end": "2025-10-15"
     },
     {
       "date": "2024-12-01",
       "series_id": "HOUST",
       "value": 1514.0,
-      "realtime_start": "2025-12-21",
-      "realtime_end": "2025-12-21"
+      "realtime_start": "2025-10-15",
+      "realtime_end": "2025-10-15"
     },
     {
       "date": "2025-01-01",
       "series_id": "HOUST",
       "value": 1358.0,
-      "realtime_start": "2025-12-21",
-      "realtime_end": "2025-12-21"
+      "realtime_start": "2025-10-15",
+      "realtime_end": "2025-10-15"
     },
     {
       "date": "2025-02-01",
       "series_id": "HOUST",
       "value": 1490.0,
-      "realtime_start": "2025-12-21",
-      "realtime_end": "2025-12-21"
+      "realtime_start": "2025-10-15",
+      "realtime_end": "2025-10-15"
     },
     {
       "date": "2025-03-01",
       "series_id": "HOUST",
       "value": 1355.0,
-      "realtime_start": "2025-12-21",
-      "realtime_end": "2025-12-21"
+      "realtime_start": "2025-10-15",
+      "realtime_end": "2025-10-15"
     },
     {
       "date": "2025-04-01",
       "series_id": "HOUST",
       "value": 1398.0,
-      "realtime_start": "2025-12-21",
-      "realtime_end": "2025-12-21"
+      "realtime_start": "2025-10-15",
+      "realtime_end": "2025-10-15"
     },
     {
       "date": "2025-05-01",
       "series_id": "HOUST",
       "value": 1282.0,
-      "realtime_start": "2025-12-21",
-      "realtime_end": "2025-12-21"
+      "realtime_start": "2025-10-15",
+      "realtime_end": "2025-10-15"
     },
     {
       "date": "2025-06-01",
       "series_id": "HOUST",
       "value": 1382.0,
-      "realtime_start": "2025-12-21",
-      "realtime_end": "2025-12-21"
+      "realtime_start": "2025-10-15",
+      "realtime_end": "2025-10-15"
     },
     {
       "date": "2025-07-01",
       "series_id": "HOUST",
       "value": 1429.0,
-      "realtime_start": "2025-12-21",
-      "realtime_end": "2025-12-21"
+      "realtime_start": "2025-10-15",
+      "realtime_end": "2025-10-15"
     },
     {
       "date": "2025-08-01",
       "series_id": "HOUST",
       "value": 1307.0,
-      "realtime_start": "2025-12-21",
-      "realtime_end": "2025-12-21"
+      "realtime_start": "2025-10-15",
+      "realtime_end": "2025-10-15"
     }
   ],
   "bankruptcy_ppi": [
@@ -9656,1174 +9656,6 @@
       "value": 194.258,
       "realtime_start": "2026-01-08",
       "realtime_end": "2026-01-08"
-    }
-  ],
-  "electricity_us": [
-    {
-      "date": "2023-11-01",
-      "value": 12.43,
-      "state": "US",
-      "sector": "COM"
-    },
-    {
-      "date": "2023-12-01",
-      "value": 12.24,
-      "state": "US",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-01-01",
-      "value": 12.5,
-      "state": "US",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-02-01",
-      "value": 12.53,
-      "state": "US",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-03-01",
-      "value": 12.47,
-      "state": "US",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-04-01",
-      "value": 12.35,
-      "state": "US",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-05-01",
-      "value": 12.32,
-      "state": "US",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-06-01",
-      "value": 12.89,
-      "state": "US",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-07-01",
-      "value": 13.37,
-      "state": "US",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-08-01",
-      "value": 13.16,
-      "state": "US",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-09-01",
-      "value": 13.23,
-      "state": "US",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-10-01",
-      "value": 12.89,
-      "state": "US",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-11-01",
-      "value": 12.35,
-      "state": "US",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-12-01",
-      "value": 12.64,
-      "state": "US",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-01-01",
-      "value": 12.9,
-      "state": "US",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-02-01",
-      "value": 13.07,
-      "state": "US",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-03-01",
-      "value": 13.25,
-      "state": "US",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-04-01",
-      "value": 12.96,
-      "state": "US",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-05-01",
-      "value": 13.01,
-      "state": "US",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-06-01",
-      "value": 13.62,
-      "state": "US",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-07-01",
-      "value": 14.15,
-      "state": "US",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-08-01",
-      "value": 14.04,
-      "state": "US",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-09-01",
-      "value": 14.06,
-      "state": "US",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-10-01",
-      "value": 13.41,
-      "state": "US",
-      "sector": "COM"
-    }
-  ],
-  "electricity_co": [
-    {
-      "date": "2023-11-01",
-      "value": 11.51,
-      "state": "CO",
-      "sector": "COM"
-    },
-    {
-      "date": "2023-12-01",
-      "value": 10.95,
-      "state": "CO",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-01-01",
-      "value": 10.85,
-      "state": "CO",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-02-01",
-      "value": 10.96,
-      "state": "CO",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-03-01",
-      "value": 10.77,
-      "state": "CO",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-04-01",
-      "value": 11.43,
-      "state": "CO",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-05-01",
-      "value": 11.38,
-      "state": "CO",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-06-01",
-      "value": 12.87,
-      "state": "CO",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-07-01",
-      "value": 12.69,
-      "state": "CO",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-08-01",
-      "value": 12.47,
-      "state": "CO",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-09-01",
-      "value": 12.49,
-      "state": "CO",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-10-01",
-      "value": 11.51,
-      "state": "CO",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-11-01",
-      "value": 11.67,
-      "state": "CO",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-12-01",
-      "value": 11.04,
-      "state": "CO",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-01-01",
-      "value": 11.01,
-      "state": "CO",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-02-01",
-      "value": 11.39,
-      "state": "CO",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-03-01",
-      "value": 11.35,
-      "state": "CO",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-04-01",
-      "value": 12.27,
-      "state": "CO",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-05-01",
-      "value": 12.32,
-      "state": "CO",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-06-01",
-      "value": 13.51,
-      "state": "CO",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-07-01",
-      "value": 13.27,
-      "state": "CO",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-08-01",
-      "value": 13.26,
-      "state": "CO",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-09-01",
-      "value": 13.58,
-      "state": "CO",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-10-01",
-      "value": 12.58,
-      "state": "CO",
-      "sector": "COM"
-    }
-  ],
-  "electricity_ut": [
-    {
-      "date": "2023-11-01",
-      "value": 8.39,
-      "state": "UT",
-      "sector": "COM"
-    },
-    {
-      "date": "2023-12-01",
-      "value": 7.91,
-      "state": "UT",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-01-01",
-      "value": 8.53,
-      "state": "UT",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-02-01",
-      "value": 8.61,
-      "state": "UT",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-03-01",
-      "value": 8.71,
-      "state": "UT",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-04-01",
-      "value": 8.76,
-      "state": "UT",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-05-01",
-      "value": 8.85,
-      "state": "UT",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-06-01",
-      "value": 8.91,
-      "state": "UT",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-07-01",
-      "value": 10.26,
-      "state": "UT",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-08-01",
-      "value": 10.37,
-      "state": "UT",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-09-01",
-      "value": 11.35,
-      "state": "UT",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-10-01",
-      "value": 9.26,
-      "state": "UT",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-11-01",
-      "value": 9.56,
-      "state": "UT",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-12-01",
-      "value": 9.05,
-      "state": "UT",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-01-01",
-      "value": 9.15,
-      "state": "UT",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-02-01",
-      "value": 9.57,
-      "state": "UT",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-03-01",
-      "value": 9.67,
-      "state": "UT",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-04-01",
-      "value": 9.53,
-      "state": "UT",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-05-01",
-      "value": 9.83,
-      "state": "UT",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-06-01",
-      "value": 10.58,
-      "state": "UT",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-07-01",
-      "value": 10.46,
-      "state": "UT",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-08-01",
-      "value": 10.82,
-      "state": "UT",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-09-01",
-      "value": 11.1,
-      "state": "UT",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-10-01",
-      "value": 10.39,
-      "state": "UT",
-      "sector": "COM"
-    }
-  ],
-  "electricity_ca": [
-    {
-      "date": "2023-11-01",
-      "value": 23.12,
-      "state": "CA",
-      "sector": "COM"
-    },
-    {
-      "date": "2023-12-01",
-      "value": 22.66,
-      "state": "CA",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-01-01",
-      "value": 23.1,
-      "state": "CA",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-02-01",
-      "value": 23.72,
-      "state": "CA",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-03-01",
-      "value": 23.77,
-      "state": "CA",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-04-01",
-      "value": 22.87,
-      "state": "CA",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-05-01",
-      "value": 23.8,
-      "state": "CA",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-06-01",
-      "value": 26.08,
-      "state": "CA",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-07-01",
-      "value": 30.26,
-      "state": "CA",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-08-01",
-      "value": 29.0,
-      "state": "CA",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-09-01",
-      "value": 29.14,
-      "state": "CA",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-10-01",
-      "value": 26.46,
-      "state": "CA",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-11-01",
-      "value": 22.48,
-      "state": "CA",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-12-01",
-      "value": 23.19,
-      "state": "CA",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-01-01",
-      "value": 23.78,
-      "state": "CA",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-02-01",
-      "value": 24.07,
-      "state": "CA",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-03-01",
-      "value": 23.72,
-      "state": "CA",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-04-01",
-      "value": 23.23,
-      "state": "CA",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-05-01",
-      "value": 23.86,
-      "state": "CA",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-06-01",
-      "value": 26.69,
-      "state": "CA",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-07-01",
-      "value": 29.94,
-      "state": "CA",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-08-01",
-      "value": 29.31,
-      "state": "CA",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-09-01",
-      "value": 30.35,
-      "state": "CA",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-10-01",
-      "value": 26.96,
-      "state": "CA",
-      "sector": "COM"
-    }
-  ],
-  "electricity_vt": [
-    {
-      "date": "2023-11-01",
-      "value": 18.47,
-      "state": "VT",
-      "sector": "COM"
-    },
-    {
-      "date": "2023-12-01",
-      "value": 18.57,
-      "state": "VT",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-01-01",
-      "value": 18.34,
-      "state": "VT",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-02-01",
-      "value": 18.26,
-      "state": "VT",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-03-01",
-      "value": 18.83,
-      "state": "VT",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-04-01",
-      "value": 18.67,
-      "state": "VT",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-05-01",
-      "value": 18.77,
-      "state": "VT",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-06-01",
-      "value": 18.9,
-      "state": "VT",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-07-01",
-      "value": 18.42,
-      "state": "VT",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-08-01",
-      "value": 18.23,
-      "state": "VT",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-09-01",
-      "value": 19.21,
-      "state": "VT",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-10-01",
-      "value": 19.57,
-      "state": "VT",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-11-01",
-      "value": 20.21,
-      "state": "VT",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-12-01",
-      "value": 19.58,
-      "state": "VT",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-01-01",
-      "value": 19.24,
-      "state": "VT",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-02-01",
-      "value": 19.22,
-      "state": "VT",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-03-01",
-      "value": 19.94,
-      "state": "VT",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-04-01",
-      "value": 19.51,
-      "state": "VT",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-05-01",
-      "value": 19.97,
-      "state": "VT",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-06-01",
-      "value": 19.91,
-      "state": "VT",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-07-01",
-      "value": 19.42,
-      "state": "VT",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-08-01",
-      "value": 19.23,
-      "state": "VT",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-09-01",
-      "value": 20.52,
-      "state": "VT",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-10-01",
-      "value": 20.86,
-      "state": "VT",
-      "sector": "COM"
-    }
-  ],
-  "electricity_nh": [
-    {
-      "date": "2023-11-01",
-      "value": 19.38,
-      "state": "NH",
-      "sector": "COM"
-    },
-    {
-      "date": "2023-12-01",
-      "value": 19.56,
-      "state": "NH",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-01-01",
-      "value": 20.23,
-      "state": "NH",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-02-01",
-      "value": 20.2,
-      "state": "NH",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-03-01",
-      "value": 19.05,
-      "state": "NH",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-04-01",
-      "value": 19.07,
-      "state": "NH",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-05-01",
-      "value": 19.18,
-      "state": "NH",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-06-01",
-      "value": 18.94,
-      "state": "NH",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-07-01",
-      "value": 18.63,
-      "state": "NH",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-08-01",
-      "value": 18.6,
-      "state": "NH",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-09-01",
-      "value": 19.94,
-      "state": "NH",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-10-01",
-      "value": 19.95,
-      "state": "NH",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-11-01",
-      "value": 19.35,
-      "state": "NH",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-12-01",
-      "value": 19.85,
-      "state": "NH",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-01-01",
-      "value": 20.47,
-      "state": "NH",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-02-01",
-      "value": 20.78,
-      "state": "NH",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-03-01",
-      "value": 19.72,
-      "state": "NH",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-04-01",
-      "value": 19.48,
-      "state": "NH",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-05-01",
-      "value": 19.25,
-      "state": "NH",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-06-01",
-      "value": 19.41,
-      "state": "NH",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-07-01",
-      "value": 19.7,
-      "state": "NH",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-08-01",
-      "value": 20.43,
-      "state": "NH",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-09-01",
-      "value": 20.81,
-      "state": "NH",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-10-01",
-      "value": 20.32,
-      "state": "NH",
-      "sector": "COM"
-    }
-  ],
-  "electricity_wa": [
-    {
-      "date": "2023-11-01",
-      "value": 10.08,
-      "state": "WA",
-      "sector": "COM"
-    },
-    {
-      "date": "2023-12-01",
-      "value": 9.94,
-      "state": "WA",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-01-01",
-      "value": 12.5,
-      "state": "WA",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-02-01",
-      "value": 9.81,
-      "state": "WA",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-03-01",
-      "value": 9.75,
-      "state": "WA",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-04-01",
-      "value": 9.63,
-      "state": "WA",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-05-01",
-      "value": 9.66,
-      "state": "WA",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-06-01",
-      "value": 9.68,
-      "state": "WA",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-07-01",
-      "value": 9.69,
-      "state": "WA",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-08-01",
-      "value": 9.81,
-      "state": "WA",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-09-01",
-      "value": 9.75,
-      "state": "WA",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-10-01",
-      "value": 10.1,
-      "state": "WA",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-11-01",
-      "value": 10.0,
-      "state": "WA",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-12-01",
-      "value": 9.84,
-      "state": "WA",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-01-01",
-      "value": 10.74,
-      "state": "WA",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-02-01",
-      "value": 11.36,
-      "state": "WA",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-03-01",
-      "value": 11.48,
-      "state": "WA",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-04-01",
-      "value": 11.27,
-      "state": "WA",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-05-01",
-      "value": 11.59,
-      "state": "WA",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-06-01",
-      "value": 11.31,
-      "state": "WA",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-07-01",
-      "value": 11.86,
-      "state": "WA",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-08-01",
-      "value": 11.84,
-      "state": "WA",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-09-01",
-      "value": 10.99,
-      "state": "WA",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-10-01",
-      "value": 11.49,
-      "state": "WA",
-      "sector": "COM"
-    }
-  ],
-  "electricity_wy": [
-    {
-      "date": "2023-11-01",
-      "value": 8.85,
-      "state": "WY",
-      "sector": "COM"
-    },
-    {
-      "date": "2023-12-01",
-      "value": 8.51,
-      "state": "WY",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-01-01",
-      "value": 9.26,
-      "state": "WY",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-02-01",
-      "value": 8.71,
-      "state": "WY",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-03-01",
-      "value": 8.73,
-      "state": "WY",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-04-01",
-      "value": 8.95,
-      "state": "WY",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-05-01",
-      "value": 9.1,
-      "state": "WY",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-06-01",
-      "value": 9.25,
-      "state": "WY",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-07-01",
-      "value": 9.51,
-      "state": "WY",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-08-01",
-      "value": 9.5,
-      "state": "WY",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-09-01",
-      "value": 9.79,
-      "state": "WY",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-10-01",
-      "value": 9.85,
-      "state": "WY",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-11-01",
-      "value": 9.66,
-      "state": "WY",
-      "sector": "COM"
-    },
-    {
-      "date": "2024-12-01",
-      "value": 9.06,
-      "state": "WY",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-01-01",
-      "value": 9.41,
-      "state": "WY",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-02-01",
-      "value": 9.42,
-      "state": "WY",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-03-01",
-      "value": 9.08,
-      "state": "WY",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-04-01",
-      "value": 9.37,
-      "state": "WY",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-05-01",
-      "value": 9.36,
-      "state": "WY",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-06-01",
-      "value": 9.79,
-      "state": "WY",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-07-01",
-      "value": 10.16,
-      "state": "WY",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-08-01",
-      "value": 9.74,
-      "state": "WY",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-09-01",
-      "value": 9.6,
-      "state": "WY",
-      "sector": "COM"
-    },
-    {
-      "date": "2025-10-01",
-      "value": 9.6,
-      "state": "WY",
-      "sector": "COM"
     }
   ],
   "treasury_10y": [
