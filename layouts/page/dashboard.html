@@ -224,7 +224,7 @@
 
       <div class="accordion-section" data-section="border">
         <div class="accordion-header" onclick="toggleSection(this)">
-          <h3><span class="section-icon">🛂</span> US/Canada Border Crossings <span class="metric-count">(12 metrics)</span></h3>
+          <h3><span class="section-icon">🛂</span> US/Canada Border Crossings <span class="metric-count">(16 metrics)</span></h3>
           <span class="accordion-arrow">▼</span>
         </div>
         <div class="accordion-content">
@@ -232,39 +232,49 @@
             <div class="prediction-intro">
               <strong>Personal Vehicle Passengers</strong> — Monthly counts of passengers crossing US/Canada land border ports. Key indicator for Canadian visitor flows to US ski markets. Data from <a href="https://data.bts.gov/Research-and-Statistics/Border-Crossing-Entry-Data/keg4-3bc2" target="_blank" rel="noopener">Bureau of Transportation Statistics</a>, updated monthly with ~2 month lag.
               <br><br>
-              <strong>Ski Market Relevance:</strong> Canadian visitors represent a significant segment for Montana (Whitefish/Big Sky), Vermont/New Hampshire, and Washington (Crystal/Stevens Pass) resorts. Strong CAD and favorable exchange rates typically correlate with increased border crossings.
+              <strong>Ski Market Relevance:</strong> Canadian visitors represent a significant segment for Montana (Whitefish/Big Sky), Vermont, and Washington (Crystal/Stevens Pass) resorts. Strong CAD and favorable exchange rates typically correlate with increased border crossings.
               <br><br>
-              <span style="font-size: 0.9em; color: #95a5a6;">Sources: <a href="https://data.bts.gov" target="_blank" rel="noopener">BTS Border Crossing Portal</a> | <a href="https://www.cbp.gov/newsroom/stats/cbp-enforcement-statistics" target="_blank" rel="noopener">CBP Statistics</a></span>
+              <strong>2019 Baseline:</strong> All metrics include comparison to 2019 (pre-COVID) levels to contextualize current recovery status. Shaded areas on charts indicate ski season (Nov-Apr).
+              <br><br>
+              <span style="font-size: 0.9em; color: #95a5a6;">Sources: <a href="https://data.bts.gov" target="_blank" rel="noopener">BTS Border Crossing Portal</a> | <a href="https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2410007101" target="_blank" rel="noopener">Statistics Canada Table 24-10-0071</a></span>
             </div>
 
-            <!-- NATIONAL TOTALS -->
-            <h4 style="margin: 0 0 10px 0; color: #2c3e50; font-size: 1em; font-weight: 600; border-bottom: 2px solid #3498db; padding-bottom: 5px;">National Totals</h4>
-            <p style="font-size: 0.85em; color: #7f8c8d; margin: 0 0 15px 0;">All US/Canada land border crossings combined.</p>
+            <!-- NATIONAL TOTALS WITH CAD OVERLAY -->
+            <h4 style="margin: 0 0 10px 0; color: #2c3e50; font-size: 1em; font-weight: 600; border-bottom: 2px solid #3498db; padding-bottom: 5px;">🇺🇸 US Border Entry (BTS)</h4>
+            <p style="font-size: 0.85em; color: #7f8c8d; margin: 0 0 15px 0;">Canadian visitors entering US — all land border crossings combined. <span id="border-vs-2019-badge" style="display: inline-block; padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 0.85em;"></span></p>
             <div class="dashboard-grid">
-              <div class="metric-card"><h4>US/Canada Total (Monthly)</h4><div id="border-national">Loading...</div><div class="chart-container"><canvas id="chart-border-national"></canvas></div></div>
+              <div class="metric-card" style="grid-column: span 2;">
+                <h4>US/Canada Total (Monthly) <span class="tooltip-icon" title="Total personal vehicle passengers entering US from Canada across all border ports. Includes both US residents returning and Canadian visitors.">ⓘ</span></h4>
+                <div id="border-national">Loading...</div>
+                <div style="font-size: 0.8em; color: #7f8c8d; margin-top: 5px;">CAD/USD trend shown in orange overlay</div>
+                <div class="chart-container" style="height: 180px;"><canvas id="chart-border-national"></canvas></div>
+              </div>
+            </div>
+
+            <!-- CANADIAN ORIGIN MARKETS (StatCan) -->
+            <h4 style="margin: 25px 0 10px 0; color: #2c3e50; font-size: 1em; font-weight: 600; border-bottom: 2px solid #e74c3c; padding-bottom: 5px;">🇨🇦 Canadian Origin Markets (StatCan)</h4>
+            <p style="font-size: 0.85em; color: #7f8c8d; margin: 0 0 15px 0;">Quarterly Canadian outbound visits to US by province of origin. Shows which Canadian markets are generating US-bound travel.</p>
+            <div id="canadian-outbound-grid" class="dashboard-grid">
+              <!-- Dynamically populated -->
             </div>
 
             <!-- SKI-RELEVANT STATES -->
-            <h4 style="margin: 25px 0 10px 0; color: #2c3e50; font-size: 1em; font-weight: 600; border-bottom: 2px solid #27ae60; padding-bottom: 5px;">Ski-Relevant States</h4>
-            <p style="font-size: 0.85em; color: #7f8c8d; margin: 0 0 15px 0;">State-level crossings for major ski market corridors.</p>
+            <h4 style="margin: 25px 0 10px 0; color: #2c3e50; font-size: 1em; font-weight: 600; border-bottom: 2px solid #27ae60; padding-bottom: 5px;">US Entry by State</h4>
+            <p style="font-size: 0.85em; color: #7f8c8d; margin: 0 0 15px 0;">State-level crossings for major ski market corridors. Shaded regions indicate ski season (Nov-Apr).</p>
             <div class="dashboard-grid">
-              <div class="metric-card"><h4>Montana</h4><div id="border-montana">Loading...</div><div class="chart-container"><canvas id="chart-border-montana"></canvas></div></div>
-              <div class="metric-card"><h4>Vermont</h4><div id="border-vermont">Loading...</div><div class="chart-container"><canvas id="chart-border-vermont"></canvas></div></div>
-              <div class="metric-card"><h4>New Hampshire</h4><div id="border-nh">Loading...</div><div class="chart-container"><canvas id="chart-border-nh"></canvas></div></div>
-              <div class="metric-card"><h4>Washington</h4><div id="border-washington">Loading...</div><div class="chart-container"><canvas id="chart-border-washington"></canvas></div></div>
-              <div class="metric-card"><h4>New York</h4><div id="border-ny">Loading...</div><div class="chart-container"><canvas id="chart-border-ny"></canvas></div></div>
-              <div class="metric-card"><h4>Maine</h4><div id="border-maine">Loading...</div><div class="chart-container"><canvas id="chart-border-maine"></canvas></div></div>
+              <div class="metric-card"><h4>Montana <span class="tooltip-icon" title="Entry points: Sweetgrass (Calgary corridor), Roosville (BC corridor). Primary resorts: Big Sky, Whitefish, Bridger Bowl.">ⓘ</span></h4><div id="border-montana">Loading...</div><div class="chart-container"><canvas id="chart-border-montana"></canvas></div></div>
+              <div class="metric-card"><h4>Vermont <span class="tooltip-icon" title="Entry points: Derby Line, Highgate Springs (Montreal/Quebec corridor). Primary resorts: Stowe, Jay Peak, Killington, Smugglers' Notch.">ⓘ</span></h4><div id="border-vermont">Loading...</div><div class="chart-container"><canvas id="chart-border-vermont"></canvas></div></div>
+              <div class="metric-card"><h4>Washington <span class="tooltip-icon" title="Entry points: Blaine (I-5/Vancouver), Sumas. Primary resorts: Mt. Baker, Stevens Pass, Crystal Mountain.">ⓘ</span></h4><div id="border-washington">Loading...</div><div class="chart-container"><canvas id="chart-border-washington"></canvas></div></div>
+              <div class="metric-card"><h4>New York <span class="tooltip-icon" title="Entry points: Champlain (I-87/Montreal corridor). Primary resorts: Whiteface, Gore Mountain, Lake Placid.">ⓘ</span></h4><div id="border-ny">Loading...</div><div class="chart-container"><canvas id="chart-border-ny"></canvas></div></div>
+              <div class="metric-card"><h4>Maine <span class="tooltip-icon" title="Entry points: Houlton, Calais (New Brunswick corridor). Primary resorts: Sugarloaf, Sunday River.">ⓘ</span></h4><div id="border-maine">Loading...</div><div class="chart-container"><canvas id="chart-border-maine"></canvas></div></div>
+              <div class="metric-card"><h4>Idaho <span class="tooltip-icon" title="Entry points: Eastport (BC corridor). Primary resorts: Sun Valley, Schweitzer.">ⓘ</span></h4><div id="border-idaho">Loading...</div><div class="chart-container"><canvas id="chart-border-idaho"></canvas></div></div>
             </div>
 
-            <!-- KEY PORTS -->
+            <!-- KEY PORTS WITH RESORT MAPPING -->
             <h4 style="margin: 25px 0 10px 0; color: #2c3e50; font-size: 1em; font-weight: 600; border-bottom: 2px solid #9b59b6; padding-bottom: 5px;">Key Border Ports</h4>
-            <p style="font-size: 0.85em; color: #7f8c8d; margin: 0 0 15px 0;">Major crossing points serving ski destination corridors.</p>
-            <div class="dashboard-grid">
-              <div class="metric-card"><h4>Sweetgrass, MT (I-15/Calgary)</h4><div id="border-sweetgrass">Loading...</div><div class="chart-container"><canvas id="chart-border-sweetgrass"></canvas></div></div>
-              <div class="metric-card"><h4>Roosville, MT (US-93/BC)</h4><div id="border-roosville">Loading...</div><div class="chart-container"><canvas id="chart-border-roosville"></canvas></div></div>
-              <div class="metric-card"><h4>Derby Line, VT</h4><div id="border-derby">Loading...</div><div class="chart-container"><canvas id="chart-border-derby"></canvas></div></div>
-              <div class="metric-card"><h4>Highgate Springs, VT</h4><div id="border-highgate">Loading...</div><div class="chart-container"><canvas id="chart-border-highgate"></canvas></div></div>
-              <div class="metric-card"><h4>Blaine, WA (I-5/Vancouver)</h4><div id="border-blaine">Loading...</div><div class="chart-container"><canvas id="chart-border-blaine"></canvas></div></div>
+            <p style="font-size: 0.85em; color: #7f8c8d; margin: 0 0 15px 0;">Major crossing points with resort destinations served. Click port for details.</p>
+            <div id="border-ports-grid" class="dashboard-grid">
+              <!-- Dynamically populated with resort tags -->
             </div>
           </div>
         </div>
@@ -591,6 +601,216 @@
       el.innerHTML = '<div class="value' + (opts.colorClass ? ' ' + opts.colorClass : '') + '">' + val + '</div><div class="period">' + dateStr + (opts.periodSuffix || '') + '</div>' + formatChangeIndicator(change, momentum, opts.invertColors);
     }
 
+    // Render metric with 2019 baseline comparison
+    function renderMetricWithBaseline(id, data, label, vs2019, opts) {
+      opts = opts || {};
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (!data || data.length === 0) {
+        el.innerHTML = '<div class="value">--</div><div class="period">No data</div>';
+        return;
+      }
+      const latest = data[data.length - 1];
+      const val = opts.format ? opts.format(latest.value) : latest.value;
+      const dateStr = opts.shortDate ? formatShortDate(latest.date) : formatDate(latest.date);
+      const change = calcChange(data, opts.isPercent);
+
+      // Add 2019 baseline badge if available
+      let baselineBadge = '';
+      if (vs2019 !== undefined && vs2019 !== null) {
+        const color = vs2019 >= 0 ? '#27ae60' : '#e74c3c';
+        const sign = vs2019 >= 0 ? '+' : '';
+        baselineBadge = `<span style="display: inline-block; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; font-weight: 600; background: ${color}22; color: ${color}; margin-left: 5px;">${sign}${vs2019.toFixed(0)}% vs '19</span>`;
+      }
+
+      el.innerHTML = '<div class="value">' + val + baselineBadge + '</div><div class="period">' + dateStr + '</div>' + formatChangeIndicator(change, null, opts.invertColors);
+    }
+
+    // Create chart with ski season shading (Nov-Apr highlighted)
+    function createChartWithSkiSeason(canvasId, data, color) {
+      const ctx = document.getElementById(canvasId);
+      if (!ctx) return;
+
+      const labels = data.map(d => formatDate(d.date));
+      const values = data.map(d => d.value);
+
+      // Determine ski season months for background shading
+      const skiSeasonIndices = data.map((d, i) => {
+        const month = new Date(d.date).getMonth(); // 0-indexed
+        return (month >= 10 || month <= 3) ? i : null; // Nov(10)-Apr(3)
+      }).filter(i => i !== null);
+
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Passengers',
+            data: values,
+            borderColor: color,
+            backgroundColor: color + '33',
+            borderWidth: 2,
+            fill: true,
+            tension: 0.3,
+            pointRadius: 0,
+            pointHoverRadius: 4
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            annotation: {
+              annotations: skiSeasonIndices.length > 0 ? {
+                skiSeason: {
+                  type: 'box',
+                  xMin: Math.min(...skiSeasonIndices),
+                  xMax: Math.max(...skiSeasonIndices),
+                  backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                  borderWidth: 0
+                }
+              } : {}
+            }
+          },
+          scales: {
+            x: { display: true, ticks: { maxRotation: 45, minRotation: 45, font: { size: 9 }, maxTicksLimit: 6 }, grid: { display: false } },
+            y: { display: true, ticks: { font: { size: 9 }, callback: v => (v/1000).toFixed(0) + 'K' }, grid: { color: '#ecf0f1' } }
+          }
+        }
+      });
+    }
+
+    // Create dual-axis chart for border crossings with CAD/USD overlay
+    function createChartWithDualAxis(canvasId, borderData, cadData, borderColor, cadColor) {
+      const ctx = document.getElementById(canvasId);
+      if (!ctx) return;
+
+      const labels = borderData.map(d => formatDate(d.date));
+      const borderValues = borderData.map(d => d.value);
+
+      // Match CAD data to border data dates if available
+      let cadValues = [];
+      if (cadData && cadData.length > 0) {
+        const cadMap = {};
+        cadData.forEach(d => { cadMap[d.date.substring(0, 7)] = d.value; });
+        cadValues = borderData.map(d => cadMap[d.date.substring(0, 7)] || null);
+      }
+
+      const datasets = [{
+        label: 'Border Crossings',
+        data: borderValues,
+        borderColor: borderColor,
+        backgroundColor: borderColor + '33',
+        borderWidth: 2,
+        fill: true,
+        tension: 0.3,
+        pointRadius: 0,
+        yAxisID: 'y'
+      }];
+
+      if (cadValues.some(v => v !== null)) {
+        datasets.push({
+          label: 'CAD/USD',
+          data: cadValues,
+          borderColor: cadColor,
+          borderWidth: 2,
+          borderDash: [4, 4],
+          fill: false,
+          tension: 0.3,
+          pointRadius: 0,
+          yAxisID: 'y1'
+        });
+      }
+
+      new Chart(ctx, {
+        type: 'line',
+        data: { labels, datasets },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: { legend: { display: true, position: 'bottom', labels: { font: { size: 9 }, boxWidth: 12 } } },
+          scales: {
+            x: { display: true, ticks: { maxRotation: 45, font: { size: 9 }, maxTicksLimit: 8 }, grid: { display: false } },
+            y: { type: 'linear', display: true, position: 'left', ticks: { font: { size: 9 }, callback: v => (v/1000000).toFixed(1) + 'M' }, grid: { color: '#ecf0f1' } },
+            y1: { type: 'linear', display: cadValues.some(v => v !== null), position: 'right', ticks: { font: { size: 9 } }, grid: { display: false } }
+          }
+        }
+      });
+    }
+
+    // Render Canadian outbound travel by province
+    function renderCanadianOutbound(outboundData) {
+      const grid = document.getElementById('canadian-outbound-grid');
+      if (!grid || !outboundData) {
+        if (grid) grid.innerHTML = '<div class="metric-card"><div class="value">--</div><div class="period">Data unavailable</div></div>';
+        return;
+      }
+
+      const provinces = ['alberta', 'british_columbia', 'ontario', 'quebec'];
+      const provColors = { alberta: '#e74c3c', british_columbia: '#3498db', ontario: '#27ae60', quebec: '#9b59b6 '};
+
+      grid.innerHTML = provinces.map(key => {
+        const prov = outboundData[key];
+        if (!prov) return '';
+
+        const vs2019 = prov.vs_2019;
+        const vs2019Color = vs2019 >= 0 ? '#27ae60' : '#e74c3c';
+        const vs2019Sign = vs2019 >= 0 ? '+' : '';
+        const vs2019Badge = vs2019 !== null ? `<span style="display: inline-block; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; font-weight: 600; background: ${vs2019Color}22; color: ${vs2019Color};">${vs2019Sign}${vs2019.toFixed(0)}% vs '19</span>` : '';
+
+        return `
+          <div class="metric-card">
+            <h4>${prov.name} <span class="tooltip-icon" title="Primary US ski destinations: ${prov.feeder_for}">ⓘ</span></h4>
+            <div class="value">${prov.latest.toLocaleString()}K visits ${vs2019Badge}</div>
+            <div class="period">${prov.latest_date} (quarterly)</div>
+            <div style="font-size: 0.75em; color: #7f8c8d; margin-top: 5px;">→ ${prov.feeder_for}</div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Render border ports dynamically with resort tags
+    function renderBorderPorts(portsData) {
+      const grid = document.getElementById('border-ports-grid');
+      if (!grid || !portsData) {
+        if (grid) grid.innerHTML = '<div class="metric-card"><div class="value">--</div><div class="period">Data unavailable</div></div>';
+        return;
+      }
+
+      const portNames = {
+        sweetgrass: 'Sweetgrass, MT',
+        roosville: 'Roosville, MT',
+        derby_line: 'Derby Line, VT',
+        highgate_springs: 'Highgate Springs, VT',
+        blaine: 'Blaine, WA',
+        champlain: 'Champlain, NY',
+        houlton: 'Houlton, ME',
+        piegan: 'Piegan, MT'
+      };
+
+      grid.innerHTML = Object.entries(portsData).map(([key, port]) => {
+        if (!port.data || port.data.length === 0) return '';
+
+        const latest = port.data[port.data.length - 1];
+        const vs2019 = port.vs_2019;
+        const vs2019Color = vs2019 >= 0 ? '#27ae60' : '#e74c3c';
+        const vs2019Sign = vs2019 >= 0 ? '+' : '';
+        const vs2019Badge = vs2019 !== null ? `<span style="display: inline-block; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; font-weight: 600; background: ${vs2019Color}22; color: ${vs2019Color};">${vs2019Sign}${vs2019.toFixed(0)}%</span>` : '';
+
+        return `
+          <div class="metric-card">
+            <h4>${portNames[key] || key} ${vs2019Badge}</h4>
+            <div class="value">${latest.value.toLocaleString()}</div>
+            <div class="period">${formatDate(latest.date)}</div>
+            <div class="resort-tag" style="font-size: 0.75em; color: #7f8c8d; margin-top: 5px;">⛷️ ${port.resorts}</div>
+            <div style="font-size: 0.7em; color: #95a5a6;">${port.route}</div>
+          </div>
+        `;
+      }).join('');
+    }
+
     async function loadDashboard() {
       try {
         const response = await fetch("/data/dashboard.json");
@@ -908,44 +1128,51 @@
         // --- US/CANADA BORDER CROSSINGS ---
         const borderFormat = v => Number(v).toLocaleString() + ' passengers';
 
-        // National totals
+        // National totals with 2019 baseline badge
         renderMetric('border-national', data.border_national, 'Border', { format: borderFormat });
-        if (data.border_national && data.border_national.length > 0) createChart('chart-border-national', data.border_national.map(d => formatDate(d.date)), data.border_national.map(d => d.value), '#3498db', { suffix: '', decimals: 0 });
 
-        // State-level (ski-relevant states)
-        renderMetric('border-montana', data.border_montana, 'MT Border', { format: borderFormat });
-        if (data.border_montana && data.border_montana.length > 0) createChart('chart-border-montana', data.border_montana.map(d => formatDate(d.date)), data.border_montana.map(d => d.value), '#27ae60', { suffix: '', decimals: 0 });
+        // Display vs 2019 badge
+        const vs2019Badge = document.getElementById('border-vs-2019-badge');
+        if (vs2019Badge && data.border_national_vs_2019 !== undefined && data.border_national_vs_2019 !== null) {
+          const vs2019 = data.border_national_vs_2019;
+          const color = vs2019 >= 0 ? '#27ae60' : '#e74c3c';
+          const sign = vs2019 >= 0 ? '+' : '';
+          vs2019Badge.textContent = `${sign}${vs2019.toFixed(1)}% vs 2019`;
+          vs2019Badge.style.background = color + '22';
+          vs2019Badge.style.color = color;
+        }
 
-        renderMetric('border-vermont', data.border_vermont, 'VT Border', { format: borderFormat });
-        if (data.border_vermont && data.border_vermont.length > 0) createChart('chart-border-vermont', data.border_vermont.map(d => formatDate(d.date)), data.border_vermont.map(d => d.value), '#27ae60', { suffix: '', decimals: 0 });
+        // Create chart with CAD/USD overlay if available
+        if (data.border_national && data.border_national.length > 0) {
+          createChartWithDualAxis('chart-border-national', data.border_national, data.cad, '#3498db', '#f39c12');
+        }
 
-        renderMetric('border-nh', data.border_new_hampshire, 'NH Border', { format: borderFormat });
-        if (data.border_new_hampshire && data.border_new_hampshire.length > 0) createChart('chart-border-nh', data.border_new_hampshire.map(d => formatDate(d.date)), data.border_new_hampshire.map(d => d.value), '#27ae60', { suffix: '', decimals: 0 });
+        // Canadian outbound markets (StatCan)
+        renderCanadianOutbound(data.canadian_outbound);
 
-        renderMetric('border-washington', data.border_washington, 'WA Border', { format: borderFormat });
-        if (data.border_washington && data.border_washington.length > 0) createChart('chart-border-washington', data.border_washington.map(d => formatDate(d.date)), data.border_washington.map(d => d.value), '#27ae60', { suffix: '', decimals: 0 });
+        // State-level (ski-relevant states) with ski season shading
+        const stateBaselines = data.border_state_baselines || {};
 
-        renderMetric('border-ny', data.border_new_york, 'NY Border', { format: borderFormat });
-        if (data.border_new_york && data.border_new_york.length > 0) createChart('chart-border-ny', data.border_new_york.map(d => formatDate(d.date)), data.border_new_york.map(d => d.value), '#27ae60', { suffix: '', decimals: 0 });
+        renderMetricWithBaseline('border-montana', data.border_montana, 'MT Border', stateBaselines.montana, { format: borderFormat });
+        if (data.border_montana && data.border_montana.length > 0) createChartWithSkiSeason('chart-border-montana', data.border_montana, '#27ae60');
 
-        renderMetric('border-maine', data.border_maine, 'ME Border', { format: borderFormat });
-        if (data.border_maine && data.border_maine.length > 0) createChart('chart-border-maine', data.border_maine.map(d => formatDate(d.date)), data.border_maine.map(d => d.value), '#27ae60', { suffix: '', decimals: 0 });
+        renderMetricWithBaseline('border-vermont', data.border_vermont, 'VT Border', stateBaselines.vermont, { format: borderFormat });
+        if (data.border_vermont && data.border_vermont.length > 0) createChartWithSkiSeason('chart-border-vermont', data.border_vermont, '#27ae60');
 
-        // Key ports
-        renderMetric('border-sweetgrass', data.border_port_sweetgrass, 'Sweetgrass', { format: borderFormat });
-        if (data.border_port_sweetgrass && data.border_port_sweetgrass.length > 0) createChart('chart-border-sweetgrass', data.border_port_sweetgrass.map(d => formatDate(d.date)), data.border_port_sweetgrass.map(d => d.value), '#9b59b6', { suffix: '', decimals: 0 });
+        renderMetricWithBaseline('border-washington', data.border_washington, 'WA Border', stateBaselines.washington, { format: borderFormat });
+        if (data.border_washington && data.border_washington.length > 0) createChartWithSkiSeason('chart-border-washington', data.border_washington, '#27ae60');
 
-        renderMetric('border-roosville', data.border_port_roosville, 'Roosville', { format: borderFormat });
-        if (data.border_port_roosville && data.border_port_roosville.length > 0) createChart('chart-border-roosville', data.border_port_roosville.map(d => formatDate(d.date)), data.border_port_roosville.map(d => d.value), '#9b59b6', { suffix: '', decimals: 0 });
+        renderMetricWithBaseline('border-ny', data.border_new_york, 'NY Border', stateBaselines.new_york, { format: borderFormat });
+        if (data.border_new_york && data.border_new_york.length > 0) createChartWithSkiSeason('chart-border-ny', data.border_new_york, '#27ae60');
 
-        renderMetric('border-derby', data.border_port_derby_line, 'Derby Line', { format: borderFormat });
-        if (data.border_port_derby_line && data.border_port_derby_line.length > 0) createChart('chart-border-derby', data.border_port_derby_line.map(d => formatDate(d.date)), data.border_port_derby_line.map(d => d.value), '#9b59b6', { suffix: '', decimals: 0 });
+        renderMetricWithBaseline('border-maine', data.border_maine, 'ME Border', stateBaselines.maine, { format: borderFormat });
+        if (data.border_maine && data.border_maine.length > 0) createChartWithSkiSeason('chart-border-maine', data.border_maine, '#27ae60');
 
-        renderMetric('border-highgate', data.border_port_highgate_springs, 'Highgate Springs', { format: borderFormat });
-        if (data.border_port_highgate_springs && data.border_port_highgate_springs.length > 0) createChart('chart-border-highgate', data.border_port_highgate_springs.map(d => formatDate(d.date)), data.border_port_highgate_springs.map(d => d.value), '#9b59b6', { suffix: '', decimals: 0 });
+        renderMetricWithBaseline('border-idaho', data.border_idaho, 'ID Border', stateBaselines.idaho, { format: borderFormat });
+        if (data.border_idaho && data.border_idaho.length > 0) createChartWithSkiSeason('chart-border-idaho', data.border_idaho, '#27ae60');
 
-        renderMetric('border-blaine', data.border_port_blaine, 'Blaine', { format: borderFormat });
-        if (data.border_port_blaine && data.border_port_blaine.length > 0) createChart('chart-border-blaine', data.border_port_blaine.map(d => formatDate(d.date)), data.border_port_blaine.map(d => d.value), '#9b59b6', { suffix: '', decimals: 0 });
+        // Render border ports dynamically with resort tags
+        renderBorderPorts(data.border_ports);
 
         // --- AIR TRAVEL INDICATORS ---
         // Jet Fuel Price

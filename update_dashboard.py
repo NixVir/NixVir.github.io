@@ -279,6 +279,21 @@ def fetch_market_data_yahoo(symbol, historical=False):
         print_safe(f"  ! {symbol} unavailable")
         return None
 
+# Port-to-resort mapping for ski context
+PORT_RESORT_MAPPING = {
+    'Sweetgrass': {'resorts': 'Big Sky, Bridger Bowl', 'route': 'I-15 from Calgary/Edmonton'},
+    'Roosville': {'resorts': 'Whitefish, Big Sky', 'route': 'US-93 from BC'},
+    'Piegan': {'resorts': 'Glacier NP, Whitefish', 'route': 'US-89 from Alberta'},
+    'Derby Line': {'resorts': 'Stowe, Jay Peak, Burke', 'route': 'I-91 from Montreal/Quebec'},
+    'Highgate Springs': {'resorts': 'Stowe, Smugglers Notch', 'route': 'I-89 from Montreal'},
+    'Blaine': {'resorts': 'Mt. Baker, Stevens Pass, Crystal', 'route': 'I-5 from Vancouver'},
+    'Sumas': {'resorts': 'Mt. Baker', 'route': 'WA-9 from BC'},
+    'Champlain': {'resorts': 'Whiteface, Gore, Lake Placid', 'route': 'I-87 from Montreal'},
+    'Houlton': {'resorts': 'Sugarloaf, Sunday River', 'route': 'I-95 from New Brunswick'},
+    'Calais': {'resorts': 'Sugarloaf, Sunday River', 'route': 'US-1 from New Brunswick'},
+}
+
+
 def fetch_bts_border_crossings(state=None, limit=36):
     """
     Fetch US/Canada border crossing data from Bureau of Transportation Statistics (BTS)
@@ -291,18 +306,18 @@ def fetch_bts_border_crossings(state=None, limit=36):
         limit: Number of months of data to return per port
 
     Returns:
-        Dict with national totals, regional data, and port-level details
+        Dict with national totals, regional data, port-level details, and 2019 baseline
     """
     base_url = "https://data.bts.gov/resource/keg4-3bc2.json"
 
-    # Calculate date range (last 3 years for trends)
+    # Calculate date range - include 2019 baseline for COVID comparison
     end_year = datetime.now().year
-    start_year = end_year - 3
+    start_year = 2019  # Include 2019 for baseline comparison
 
     # Query parameters - get Canadian border only, tourist-relevant measures
     # Personal Vehicle Passengers is the key metric for tourism
     params = {
-        '$limit': 50000,
+        '$limit': 100000,
         '$where': f"border='US-Canada Border' AND date >= '{start_year}-01-01'",
         '$order': 'date DESC'
     }
@@ -326,8 +341,8 @@ def fetch_bts_border_crossings(state=None, limit=36):
         state_monthly = defaultdict(lambda: defaultdict(lambda: {'passengers': 0, 'vehicles': 0}))
         port_monthly = defaultdict(lambda: defaultdict(lambda: {'passengers': 0, 'vehicles': 0}))
 
-        # Key ski-relevant states
-        ski_states = ['Montana', 'Vermont', 'New Hampshire', 'Washington', 'New York', 'Maine', 'Michigan', 'Minnesota', 'North Dakota']
+        # Key ski-relevant states (removed NH - no significant ski-relevant border ports)
+        ski_states = ['Montana', 'Vermont', 'Washington', 'New York', 'Maine', 'Michigan', 'Minnesota', 'Idaho']
 
         for record in data:
             date_str = record.get('date', '')[:7]  # YYYY-MM format
@@ -368,28 +383,47 @@ def fetch_bts_border_crossings(state=None, limit=36):
                 for d in reversed(sorted_dates)
             ]
 
+        # Calculate 2019 baseline for comparison
+        def calc_2019_baseline(monthly_dict):
+            """Calculate average monthly value for 2019 (pre-COVID baseline)"""
+            months_2019 = [m for m in monthly_dict.keys() if m.startswith('2019')]
+            if months_2019:
+                total = sum(monthly_dict[m]['passengers'] for m in months_2019)
+                return int(total / len(months_2019))
+            return None
+
+        def calc_vs_2019(monthly_dict):
+            """Calculate current vs 2019 baseline percentage"""
+            baseline = calc_2019_baseline(monthly_dict)
+            if not baseline:
+                return None
+            # Get most recent 12 months average
+            recent_dates = sorted(monthly_dict.keys(), reverse=True)[:12]
+            if len(recent_dates) < 6:
+                return None
+            recent_avg = sum(monthly_dict[d]['passengers'] for d in recent_dates) / len(recent_dates)
+            return round((recent_avg - baseline) / baseline * 100, 1)
+
         # National totals
         national_series = to_time_series(national_monthly, limit)
+        national_baseline_2019 = calc_2019_baseline(national_monthly)
+        national_vs_2019 = calc_vs_2019(national_monthly)
 
         # State series for ski-relevant states
         state_series = {}
+        state_baselines = {}
         for state_name in ski_states:
             if state_name in state_monthly and state_monthly[state_name]:
                 series = to_time_series(state_monthly[state_name], limit)
                 if series:
-                    state_series[state_name.lower().replace(' ', '_')] = series
+                    key = state_name.lower().replace(' ', '_')
+                    state_series[key] = series
+                    vs_2019 = calc_vs_2019(state_monthly[state_name])
+                    if vs_2019 is not None:
+                        state_baselines[key] = vs_2019
 
         # Key ports (top ports by volume in ski-relevant states)
-        # Focus on major crossing points
-        key_ports = [
-            'Sweetgrass',  # Montana - Calgary route
-            'Roosville',   # Montana - BC route
-            'Derby Line',  # Vermont
-            'Highgate Springs',  # Vermont
-            'Blaine',      # Washington
-            'Sumas',       # Washington
-            'Champlain',   # New York (Lake Champlain/Montreal corridor)
-        ]
+        key_ports = list(PORT_RESORT_MAPPING.keys())
 
         port_series = {}
         for port_name in key_ports:
@@ -398,16 +432,128 @@ def fetch_bts_border_crossings(state=None, limit=36):
                 if series:
                     # Clean port name for JSON key
                     key = port_name.lower().replace(' ', '_').replace('-', '_')
-                    port_series[key] = series
+                    port_info = PORT_RESORT_MAPPING.get(port_name, {})
+                    port_series[key] = {
+                        'data': series,
+                        'resorts': port_info.get('resorts', ''),
+                        'route': port_info.get('route', ''),
+                        'vs_2019': calc_vs_2019(port_monthly[port_name])
+                    }
 
         return {
             'national': national_series,
+            'national_baseline_2019': national_baseline_2019,
+            'national_vs_2019': national_vs_2019,
             'states': state_series,
+            'state_baselines': state_baselines,
             'ports': port_series
         }
 
     except Exception as e:
         print_safe(f"  ! BTS border crossing data unavailable: {e}")
+        return None
+
+
+def fetch_statcan_canadian_outbound():
+    """
+    Fetch Canadian outbound travel to US by province from Statistics Canada.
+
+    Uses Table 24-10-0071-01: Visits, nights and expenditures for Canadian
+    residents travelling in Canada and abroad.
+
+    Returns:
+        Dict with quarterly visits to US by province of origin, with 2019 baseline
+    """
+    import csv
+    import zipfile
+    import io
+    from collections import defaultdict
+
+    csv_url = "https://www150.statcan.gc.ca/n1/tbl/csv/24100071-eng.zip"
+
+    try:
+        req = urllib.request.Request(csv_url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req, timeout=120) as response:
+            zip_data = io.BytesIO(response.read())
+
+        with zipfile.ZipFile(zip_data) as zf:
+            csv_filename = [n for n in zf.namelist() if n.endswith('.csv') and 'MetaData' not in n][0]
+            with zf.open(csv_filename) as f:
+                content = io.TextIOWrapper(f, encoding='utf-8-sig')
+                reader = csv.DictReader(content)
+
+                # Key provinces for ski market analysis
+                target_provinces = [
+                    'Alberta (trip origin)',      # Montana, Idaho feeders
+                    'British Columbia (trip origin)',  # Washington, Montana feeders
+                    'Ontario (trip origin)',      # Vermont, NY feeders
+                    'Quebec (trip origin)',       # Vermont, Maine feeders
+                    'Canada (trip origin)'        # National total
+                ]
+
+                data = defaultdict(lambda: defaultdict(float))
+
+                for row in reader:
+                    # Filter: US destination, key provinces, Visits metric, All durations
+                    if (row.get('GEO') == 'United States of America' and
+                        row.get('Province of trip origin') in target_provinces and
+                        row.get('Visit duration') == 'All visit durations' and
+                        row.get('Visit statistics') == 'Visits' and
+                        row.get('VALUE')):
+
+                        date = row['REF_DATE']
+                        province = row['Province of trip origin'].replace(' (trip origin)', '')
+                        value = float(row['VALUE'])  # in thousands
+                        data[province][date] = value
+
+        # Build output structure
+        result = {}
+        province_mapping = {
+            'Canada': {'key': 'canada_total', 'feeder_for': 'All US ski markets'},
+            'Alberta': {'key': 'alberta', 'feeder_for': 'Montana, Idaho, Utah'},
+            'British Columbia': {'key': 'british_columbia', 'feeder_for': 'Washington, Montana, Colorado'},
+            'Ontario': {'key': 'ontario', 'feeder_for': 'Vermont, New York, Michigan'},
+            'Quebec': {'key': 'quebec', 'feeder_for': 'Vermont, Maine, New Hampshire'}
+        }
+
+        for prov_name, prov_info in province_mapping.items():
+            prov_data = data.get(prov_name, {})
+            if not prov_data:
+                continue
+
+            # Get sorted dates (most recent first)
+            sorted_dates = sorted(prov_data.keys(), reverse=True)
+
+            # Calculate 2019 baseline average
+            q2019 = [prov_data.get(f'2019-{m:02d}', 0) for m in [1, 4, 7, 10]]
+            valid_2019 = [q for q in q2019 if q > 0]
+            baseline_2019 = sum(valid_2019) / len(valid_2019) if valid_2019 else None
+
+            # Latest value and vs 2019
+            latest_date = sorted_dates[0] if sorted_dates else None
+            latest_value = prov_data.get(latest_date, 0) if latest_date else 0
+            vs_2019 = round((latest_value - baseline_2019) / baseline_2019 * 100, 1) if baseline_2019 else None
+
+            # Build time series (last 12 quarters)
+            series = [
+                {'date': d, 'value': int(prov_data[d])}
+                for d in reversed(sorted_dates[:12])
+            ]
+
+            result[prov_info['key']] = {
+                'name': prov_name,
+                'feeder_for': prov_info['feeder_for'],
+                'data': series,
+                'latest': int(latest_value),
+                'latest_date': latest_date,
+                'baseline_2019': int(baseline_2019) if baseline_2019 else None,
+                'vs_2019': vs_2019
+            }
+
+        return result
+
+    except Exception as e:
+        print_safe(f"  ! StatCan Canadian outbound data unavailable: {e}")
         return None
 
 
@@ -984,25 +1130,48 @@ def update_dashboard():
     print_safe("\nFetching US/Canada Border Crossing Data...")
     border_data = fetch_bts_border_crossings(limit=36)
     if border_data:
-        # National totals
+        # National totals with 2019 baseline
         if border_data.get('national'):
             dashboard_data['border_national'] = border_data['national']
+            dashboard_data['border_national_baseline_2019'] = border_data.get('national_baseline_2019')
+            dashboard_data['border_national_vs_2019'] = border_data.get('national_vs_2019')
             latest = border_data['national'][-1]
-            print_safe(f"  OK National: {latest['value']:,} passengers ({len(border_data['national'])} months)")
+            vs_2019 = border_data.get('national_vs_2019')
+            vs_2019_str = f" ({vs_2019:+.1f}% vs 2019)" if vs_2019 else ""
+            print_safe(f"  OK National: {latest['value']:,} passengers{vs_2019_str}")
 
-        # State-level data for ski-relevant states
+        # State-level data for ski-relevant states with baselines
         if border_data.get('states'):
             for state_key, state_data in border_data['states'].items():
                 dashboard_data[f'border_{state_key}'] = state_data
+            dashboard_data['border_state_baselines'] = border_data.get('state_baselines', {})
             print_safe(f"  OK States: {', '.join(border_data['states'].keys())} ({len(border_data['states'])} states)")
 
-        # Port-level data for key crossings
+        # Port-level data with resort mappings and 2019 baselines
         if border_data.get('ports'):
-            for port_key, port_data in border_data['ports'].items():
-                dashboard_data[f'border_port_{port_key}'] = port_data
+            dashboard_data['border_ports'] = border_data['ports']
+            for port_key, port_info in border_data['ports'].items():
+                dashboard_data[f'border_port_{port_key}'] = port_info.get('data', [])
             print_safe(f"  OK Ports: {', '.join(border_data['ports'].keys())} ({len(border_data['ports'])} ports)")
     else:
         print_safe("  ! Border crossing data unavailable")
+
+    # --- CANADIAN OUTBOUND TRAVEL (Statistics Canada) ---
+    # Canadian perspective: which provinces are sending travelers to US
+    print_safe("\nFetching Canadian Outbound Travel (StatCan)...")
+    statcan_outbound = fetch_statcan_canadian_outbound()
+    if statcan_outbound:
+        dashboard_data['canadian_outbound'] = statcan_outbound
+        canada_total = statcan_outbound.get('canada_total', {})
+        vs_2019 = canada_total.get('vs_2019')
+        vs_2019_str = f" ({vs_2019:+.1f}% vs 2019)" if vs_2019 else ""
+        print_safe(f"  OK Canada Total: {canada_total.get('latest', 0):,}K visits{vs_2019_str}")
+        for key in ['alberta', 'british_columbia', 'ontario', 'quebec']:
+            prov = statcan_outbound.get(key, {})
+            if prov:
+                print_safe(f"      {prov['name']}: {prov.get('latest', 0):,}K -> {prov.get('feeder_for', '')}")
+    else:
+        print_safe("  ! StatCan outbound data unavailable")
 
     # --- AIR TRAVEL INDICATORS ---
     print_safe("\n--- Air Travel Indicators ---")
