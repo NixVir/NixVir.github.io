@@ -246,7 +246,7 @@
 
             <!-- NATIONAL TOTALS WITH CAD OVERLAY -->
             <h4 style="margin: 0 0 10px 0; color: #2c3e50; font-size: 1em; font-weight: 600; border-bottom: 2px solid #3498db; padding-bottom: 5px;">🇺🇸 US Border Entry (BTS)</h4>
-            <p style="font-size: 0.85em; color: #7f8c8d; margin: 0 0 15px 0;">Canadian visitors entering US — all land border crossings combined. <span id="border-vs-2019-badge" style="display: inline-block; padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 0.85em;"></span></p>
+            <p style="font-size: 0.9em; color: #7f8c8d; margin: 0 0 15px 0;">Canadian visitors entering US — all land border crossings combined. <span id="border-vs-2019-badge" class="change-pill" style="font-size: 1.1em; padding: 6px 14px; margin-left: 8px;"></span></p>
             <div class="dashboard-grid">
               <div class="metric-card" style="grid-column: span 2;">
                 <h4>US/Canada Total (Monthly) <span class="tooltip-icon" title="Total personal vehicle passengers entering US from Canada across all border ports. Includes both US residents returning and Canadian visitors.">ⓘ</span></h4>
@@ -1174,15 +1174,17 @@
         // National totals with 2019 baseline badge
         renderMetric('border-national', data.border_national, 'Border', { format: borderFormat });
 
-        // Display vs 2019 badge
+        // Display vs 2019 badge - HEADLINE metric for the section
         const vs2019Badge = document.getElementById('border-vs-2019-badge');
         if (vs2019Badge && data.border_national_vs_2019 !== undefined && data.border_national_vs_2019 !== null) {
           const vs2019 = data.border_national_vs_2019;
-          const color = vs2019 >= 0 ? '#27ae60' : '#e74c3c';
+          const colorClass = vs2019 >= 0 ? 'positive' : 'negative';
           const sign = vs2019 >= 0 ? '+' : '';
-          vs2019Badge.textContent = `${sign}${vs2019.toFixed(1)}% vs 2019`;
-          vs2019Badge.style.background = color + '22';
-          vs2019Badge.style.color = color;
+          const arrow = vs2019 >= 0 ? '↑' : '↓';
+          vs2019Badge.className = 'change-pill ' + colorClass;
+          vs2019Badge.innerHTML = `<span class="arrow">${arrow}</span> ${sign}${vs2019.toFixed(1)}% vs 2019`;
+          vs2019Badge.style.fontSize = '1.1em';
+          vs2019Badge.style.padding = '6px 14px';
         }
 
         // Create chart with CAD/USD overlay if available
