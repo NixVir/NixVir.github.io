@@ -616,15 +616,15 @@
       const dateStr = opts.shortDate ? formatShortDate(latest.date) : formatDate(latest.date);
       const change = calcChange(data, opts.isPercent);
 
-      // Add 2019 baseline badge if available
+      // Add 2019 baseline badge if available - prominent display
       let baselineBadge = '';
       if (vs2019 !== undefined && vs2019 !== null) {
         const color = vs2019 >= 0 ? '#27ae60' : '#e74c3c';
         const sign = vs2019 >= 0 ? '+' : '';
-        baselineBadge = `<span style="display: inline-block; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; font-weight: 600; background: ${color}22; color: ${color}; margin-left: 5px;">${sign}${vs2019.toFixed(0)}% vs '19</span>`;
+        baselineBadge = `<div style="display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 0.95em; font-weight: 700; background: ${color}18; color: ${color}; margin-top: 6px;">${sign}${vs2019.toFixed(0)}% vs 2019</div>`;
       }
 
-      el.innerHTML = '<div class="value">' + val + baselineBadge + '</div><div class="period">' + dateStr + '</div>' + formatChangeIndicator(change, null, opts.invertColors);
+      el.innerHTML = '<div class="value">' + val + '</div><div class="period">' + dateStr + '</div>' + formatChangeIndicator(change, null, opts.invertColors) + baselineBadge;
     }
 
     // Create chart with ski season shading (Nov-Apr highlighted)
@@ -773,7 +773,6 @@
       }
 
       const provinces = ['alberta', 'british_columbia', 'ontario', 'quebec'];
-      const provColors = { alberta: '#e74c3c', british_columbia: '#3498db', ontario: '#27ae60', quebec: '#9b59b6 '};
 
       grid.innerHTML = provinces.map(key => {
         const prov = outboundData[key];
@@ -782,14 +781,15 @@
         const vs2019 = prov.vs_2019;
         const vs2019Color = vs2019 >= 0 ? '#27ae60' : '#e74c3c';
         const vs2019Sign = vs2019 >= 0 ? '+' : '';
-        const vs2019Badge = vs2019 !== null ? `<span style="display: inline-block; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; font-weight: 600; background: ${vs2019Color}22; color: ${vs2019Color};">${vs2019Sign}${vs2019.toFixed(0)}% vs '19</span>` : '';
+        const vs2019Badge = vs2019 !== null ? `<div style="display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 1em; font-weight: 700; background: ${vs2019Color}18; color: ${vs2019Color}; margin-top: 6px;">${vs2019Sign}${vs2019.toFixed(0)}% vs 2019</div>` : '';
 
         return `
-          <div class="metric-card">
-            <h4>${prov.name} <span class="tooltip-icon" title="Primary US ski destinations: ${prov.feeder_for}">ⓘ</span></h4>
-            <div class="value">${prov.latest.toLocaleString()}K visits ${vs2019Badge}</div>
-            <div class="period">${prov.latest_date} (quarterly)</div>
-            <div style="font-size: 0.75em; color: #7f8c8d; margin-top: 5px;">→ ${prov.feeder_for}</div>
+          <div class="metric-card" style="padding: 16px;">
+            <h4 style="font-size: 1.1em; margin-bottom: 4px;">${prov.name} <span class="tooltip-icon" title="Primary US ski destinations: ${prov.feeder_for}">ⓘ</span></h4>
+            <div class="value" style="font-size: 1.8em; font-weight: 700; color: #2c3e50;">${prov.latest.toLocaleString()}K visits</div>
+            <div class="period" style="color: #7f8c8d;">${prov.latest_date} (quarterly)</div>
+            ${vs2019Badge}
+            <div style="font-size: 0.85em; color: #7f8c8d; margin-top: 8px;">→ ${prov.feeder_for}</div>
           </div>
         `;
       }).join('');
@@ -809,8 +809,10 @@
         derby_line: 'Derby Line, VT',
         highgate_springs: 'Highgate Springs, VT',
         blaine: 'Blaine, WA',
+        sumas: 'Sumas, WA',
         champlain: 'Champlain, NY',
         houlton: 'Houlton, ME',
+        calais: 'Calais, ME',
         piegan: 'Piegan, MT'
       };
 
@@ -821,15 +823,16 @@
         const vs2019 = port.vs_2019;
         const vs2019Color = vs2019 >= 0 ? '#27ae60' : '#e74c3c';
         const vs2019Sign = vs2019 >= 0 ? '+' : '';
-        const vs2019Badge = vs2019 !== null ? `<span style="display: inline-block; padding: 2px 6px; border-radius: 3px; font-size: 0.7em; font-weight: 600; background: ${vs2019Color}22; color: ${vs2019Color};">${vs2019Sign}${vs2019.toFixed(0)}%</span>` : '';
+        const vs2019Badge = vs2019 !== null ? `<div style="display: inline-block; padding: 6px 12px; border-radius: 4px; font-size: 1.1em; font-weight: 700; background: ${vs2019Color}18; color: ${vs2019Color}; margin-top: 8px;">${vs2019Sign}${vs2019.toFixed(0)}% vs 2019</div>` : '';
 
         return `
-          <div class="metric-card">
-            <h4>${portNames[key] || key} ${vs2019Badge}</h4>
-            <div class="value">${latest.value.toLocaleString()}</div>
-            <div class="period">${formatDate(latest.date)}</div>
-            <div class="resort-tag" style="font-size: 0.75em; color: #7f8c8d; margin-top: 5px;">⛷️ ${port.resorts}</div>
-            <div style="font-size: 0.7em; color: #95a5a6;">${port.route}</div>
+          <div class="metric-card" style="padding: 18px;">
+            <h4 style="font-size: 1.15em; margin-bottom: 6px; color: #2c3e50;">${portNames[key] || key}</h4>
+            <div class="value" style="font-size: 2.2em; font-weight: 700; color: #2c3e50; line-height: 1.1;">${latest.value.toLocaleString()}</div>
+            <div class="period" style="color: #7f8c8d; font-size: 0.85em;">${formatDate(latest.date)}</div>
+            ${vs2019Badge}
+            <div class="resort-tag" style="font-size: 0.9em; color: #27ae60; margin-top: 12px; font-weight: 500;">⛷️ ${port.resorts}</div>
+            <div style="font-size: 0.8em; color: #7f8c8d; font-style: italic;">${port.route}</div>
           </div>
         `;
       }).join('');
