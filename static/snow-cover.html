@@ -783,10 +783,6 @@
         }
 
         /* Trend Chart */
-        .trend-container {
-            height: 200px;
-        }
-
         #trend-chart {
             width: 100%;
             height: 100%;
@@ -867,16 +863,24 @@
             font-weight: 500;
         }
 
-        /* National Overview Card */
-        .national-overview {
-            grid-column: 1 / -1;
+        /* Bottom Section - National Overview + 30-Day Trend side by side */
+        .bottom-section {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 1.25rem;
+            margin-top: 1.25rem;
         }
 
+        .bottom-section .trend-container {
+            height: 280px;
+        }
+
+        /* National Overview Card */
         .national-stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-bottom: 1rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
         }
 
         .national-stat-card {
@@ -951,6 +955,14 @@
 
             .map-container {
                 height: 450px;
+            }
+
+            .bottom-section {
+                grid-template-columns: 1fr;
+            }
+
+            .bottom-section .trend-container {
+                height: 200px;
             }
         }
 
@@ -1418,6 +1430,44 @@
                     </div>
                 </div>
 
+            </div>
+
+            <!-- Bottom Section: National Overview + 30-Day Trend side by side -->
+            <div class="bottom-section">
+                <div class="card national-overview">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">National Snow Cover Overview</div>
+                            <div class="card-subtitle">Combined US and Canada snow cover with historical comparison</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="national-stats" id="national-stats">
+                            <div class="national-stat-card">
+                                <div class="national-stat-country">United States</div>
+                                <div class="national-stat-value" id="usa-cover">--</div>
+                                <div class="national-stat-label">Snow Coverage</div>
+                                <div class="national-stat-temp" id="usa-temp"></div>
+                            </div>
+                            <div class="national-stat-card">
+                                <div class="national-stat-country">Canada</div>
+                                <div class="national-stat-value" id="canada-cover">--</div>
+                                <div class="national-stat-label">Snow Coverage</div>
+                                <div class="national-stat-temp" id="canada-temp"></div>
+                            </div>
+                            <div class="national-stat-card">
+                                <div class="national-stat-country">Combined</div>
+                                <div class="national-stat-value" id="combined-cover">--</div>
+                                <div class="national-stat-label">North America</div>
+                                <div class="national-stat-temp" id="combined-temp"></div>
+                            </div>
+                        </div>
+                        <div class="national-chart-container">
+                            <canvas id="national-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="card">
                     <div class="card-header">
                         <div>
@@ -1427,41 +1477,6 @@
                     </div>
                     <div class="card-body trend-container">
                         <svg id="trend-chart"></svg>
-                    </div>
-                </div>
-            </div>
-
-            <!-- National Overview -->
-            <div class="card national-overview">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">National Snow Cover Overview</div>
-                        <div class="card-subtitle">Combined US and Canada snow cover with historical comparison</div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="national-stats" id="national-stats">
-                        <div class="national-stat-card">
-                            <div class="national-stat-country">United States</div>
-                            <div class="national-stat-value" id="usa-cover">--</div>
-                            <div class="national-stat-label">Snow Coverage</div>
-                            <div class="national-stat-temp" id="usa-temp"></div>
-                        </div>
-                        <div class="national-stat-card">
-                            <div class="national-stat-country">Canada</div>
-                            <div class="national-stat-value" id="canada-cover">--</div>
-                            <div class="national-stat-label">Snow Coverage</div>
-                            <div class="national-stat-temp" id="canada-temp"></div>
-                        </div>
-                        <div class="national-stat-card">
-                            <div class="national-stat-country">Combined</div>
-                            <div class="national-stat-value" id="combined-cover">--</div>
-                            <div class="national-stat-label">North America</div>
-                            <div class="national-stat-temp" id="combined-temp"></div>
-                        </div>
-                    </div>
-                    <div class="national-chart-container">
-                        <canvas id="national-chart"></canvas>
                     </div>
                 </div>
             </div>
