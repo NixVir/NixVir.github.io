@@ -2157,13 +2157,13 @@
             let title, subtitle, badgeClass, badgeText;
 
             if (highAwareness === currentMarkets.length) {
-                title = `${config.name}: Winter is top-of-mind`;
-                subtitle = `All ${currentMarkets.length} feeder markets have snow on the ground. Consumers are likely thinking about skiing.`;
+                title = `${config.name}: Snow in all feeder markets`;
+                subtitle = `All ${currentMarkets.length} markets have snow on the ground with seasonable temperatures.`;
                 badgeClass = 'positive';
                 badgeText = 'High Awareness';
             } else if (lowAwareness >= Math.ceil(currentMarkets.length * 0.6)) {
-                title = `${config.name}: Below-average snow awareness`;
-                subtitle = `${lowAwareness} of ${currentMarkets.length} markets have no snow and warm temps. Consider increasing marketing in these areas.`;
+                title = `${config.name}: Limited snow visibility`;
+                subtitle = `${lowAwareness} of ${currentMarkets.length} markets have no snow and above-normal temperatures.`;
                 badgeClass = 'negative';
                 badgeText = 'Low Awareness';
             } else if (marketsWithSnow === 0) {
@@ -2172,13 +2172,13 @@
                 badgeClass = 'negative';
                 badgeText = 'No Snow';
             } else if (avgTempAnomaly > 5) {
-                title = `${config.name}: Warm conditions limiting awareness`;
-                subtitle = `Temperatures are ${Math.round(avgTempAnomaly)}° above normal. ${marketsWithSnow} of ${currentMarkets.length} markets have some snow.`;
+                title = `${config.name}: Above-normal temperatures`;
+                subtitle = `Temps ${Math.round(avgTempAnomaly)}° above normal. ${marketsWithSnow} of ${currentMarkets.length} markets have snow.`;
                 badgeClass = 'neutral';
                 badgeText = 'Warm Spell';
             } else {
-                title = `${config.name}: Mixed winter conditions`;
-                subtitle = `${marketsWithSnow} of ${currentMarkets.length} markets have snow. ${highAwareness} showing high winter awareness.`;
+                title = `${config.name}: Mixed conditions`;
+                subtitle = `${marketsWithSnow} of ${currentMarkets.length} markets have snow. ${highAwareness} with high winter awareness.`;
                 badgeClass = marketsWithSnow > currentMarkets.length / 2 ? 'positive' : 'neutral';
                 badgeText = `${marketsWithSnow}/${currentMarkets.length} Snow`;
             }
