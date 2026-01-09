@@ -2072,10 +2072,10 @@
                 insightText = 'No market data available for this region.';
             } else if (lowAwareness.length >= 4) {
                 const names = lowAwareness.slice(0, 3).map(m => m.name).join(', ');
-                insightText = `${lowAwareness.length} markets (${names}, etc.) have no snow and above-normal temperatures. Skiing is unlikely to be top-of-mind for consumers in these areas.`;
+                insightText = `${lowAwareness.length} markets (${names}, etc.) have no cover and above-normal temperatures. Skiing is unlikely to be top-of-mind for consumers in these areas.`;
             } else if (lowAwareness.length > 0) {
                 const names = lowAwareness.map(m => m.name).join(', ');
-                insightText = `${names} ${lowAwareness.length === 1 ? 'has' : 'have'} no visible snow and warm conditions. Winter awareness is likely low in ${lowAwareness.length === 1 ? 'this market' : 'these markets'}.`;
+                insightText = `${names} ${lowAwareness.length === 1 ? 'has' : 'have'} no visible cover and warm conditions. Winter awareness is likely low in ${lowAwareness.length === 1 ? 'this market' : 'these markets'}.`;
             } else if (highAwareness.length === currentMarkets.length) {
                 insightText = `All feeder markets are experiencing winter conditions with snow on the ground. Organic awareness of ski season is likely high.`;
             } else {
@@ -2209,14 +2209,14 @@
                 badgeText = 'High Awareness';
             } else if (lowAwareness >= Math.ceil(currentMarkets.length * 0.6)) {
                 title = `${config.name}: Limited snow visibility`;
-                subtitle = `${lowAwareness} of ${currentMarkets.length} markets have no snow and above-normal temperatures.`;
+                subtitle = `${lowAwareness} of ${currentMarkets.length} markets have no cover and above-normal temperatures.`;
                 badgeClass = 'negative';
                 badgeText = 'Low Awareness';
             } else if (marketsWithSnow === 0) {
-                title = `${config.name}: No snow in feeder markets`;
+                title = `${config.name}: No cover in feeder markets`;
                 subtitle = `None of the ${currentMarkets.length} tracked markets currently have visible snow cover.`;
                 badgeClass = 'negative';
-                badgeText = 'No Snow';
+                badgeText = 'No Cover';
             } else if (avgTempAnomaly > 5) {
                 title = `${config.name}: Above-normal temperatures`;
                 subtitle = `Temps ${Math.round(avgTempAnomaly)}° above normal. ${marketsWithSnow} of ${currentMarkets.length} markets have snow.`;
