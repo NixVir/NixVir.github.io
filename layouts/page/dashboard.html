@@ -460,6 +460,72 @@
       });
     }
 
+    // Create chart with horizontal threshold line
+    function createChartWithThreshold(canvasId, labels, values, color, thresholdValue, thresholdLabel, options) {
+      options = options || {};
+      const ctx = document.getElementById(canvasId);
+      if (!ctx) return;
+      if (charts[canvasId]) charts[canvasId].destroy();
+
+      // Create threshold line data (same value for all points)
+      const thresholdData = labels.map(() => thresholdValue);
+
+      charts[canvasId] = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: 'Value',
+              data: values,
+              borderColor: color,
+              backgroundColor: color + '20',
+              borderWidth: 2,
+              fill: true,
+              pointRadius: 2,
+              pointHoverRadius: 5,
+              tension: 0.3
+            },
+            {
+              label: thresholdLabel,
+              data: thresholdData,
+              borderColor: '#e74c3c',
+              borderWidth: 2,
+              borderDash: [5, 5],
+              fill: false,
+              pointRadius: 0,
+              pointHoverRadius: 0
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: true, position: 'bottom', labels: { font: { size: 9 }, boxWidth: 12, padding: 5 } },
+            tooltip: {
+              mode: 'index',
+              intersect: false,
+              displayColors: true,
+              callbacks: {
+                label: function(context) {
+                  if (context.datasetIndex === 1) return thresholdLabel + ': ' + thresholdValue + (options.suffix || '');
+                  return (options.prefix || '') + context.parsed.y.toLocaleString(undefined, {
+                    minimumFractionDigits: options.decimals || 2,
+                    maximumFractionDigits: options.decimals || 2
+                  }) + (options.suffix || '');
+                }
+              }
+            }
+          },
+          scales: {
+            x: { display: true, ticks: { maxRotation: 45, minRotation: 45, font: { size: 9 }, color: '#7f8c8d', maxTicksLimit: 5 }, grid: { display: false } },
+            y: { display: true, ticks: { font: { size: 9 }, color: '#7f8c8d' }, grid: { color: '#ecf0f1' } }
+          }
+        }
+      });
+    }
+
     function renderMetric(id, data, label, opts) {
       opts = opts || {};
       const el = document.getElementById(id);
@@ -837,21 +903,28 @@
         renderMetric('jet-fuel', data.jet_fuel, 'Jet Fuel', { format: v => '$' + Number(v).toFixed(2) + '/gal' });
         if (data.jet_fuel && data.jet_fuel.length > 0) createChart('chart-jet-fuel', data.jet_fuel.map(d => formatDate(d.date)), data.jet_fuel.map(d => d.value), '#e74c3c', { suffix: '', decimals: 2 });
 
-        // National Enplanements
-        renderMetric('enplanements', data.enplanements, 'Enplane', { format: v => (Number(v) / 1000000).toFixed(1) + 'M passengers' });
-        if (data.enplanements && data.enplanements.length > 0) createChart('chart-enplanements', data.enplanements.map(d => formatDate(d.date)), data.enplanements.map(d => d.value / 1000000), '#3498db', { suffix: 'M', decimals: 1 });
+        // National Enplanements (FRED data is in thousands, so divide by 1000 to get millions)
+        renderMetric('enplanements', data.enplanements, 'Enplane', { format: v => (Number(v) / 1000).toFixed(1) + 'M passengers' });
+        if (data.enplanements && data.enplanements.length > 0) createChart('chart-enplanements', data.enplanements.map(d => formatDate(d.date)), data.enplanements.map(d => d.value / 1000), '#3498db', { suffix: 'M', decimals: 1 });
 
-        // Domestic Load Factor
+        // Domestic Load Factor (85% threshold = capacity pressure indicator)
         renderMetric('load-factor', data.load_factor, 'Load', { format: v => Number(v).toFixed(1) + '%' });
-        if (data.load_factor && data.load_factor.length > 0) createChart('chart-load-factor', data.load_factor.map(d => formatDate(d.date)), data.load_factor.map(d => d.value), '#9b59b6', { suffix: '%', decimals: 1 });
+        if (data.load_factor && data.load_factor.length > 0) createChartWithThreshold('chart-load-factor', data.load_factor.map(d => formatDate(d.date)), data.load_factor.map(d => d.value), '#9b59b6', 85, '85% Threshold', { suffix: '%', decimals: 1 });
 
         // T-100 Passengers
         renderMetric('t100-passengers', data.t100_passengers, 'T-100', { format: v => (Number(v) / 1000000).toFixed(1) + 'M passengers' });
         if (data.t100_passengers && data.t100_passengers.length > 0) createChart('chart-t100', data.t100_passengers.map(d => formatDate(d.date)), data.t100_passengers.map(d => d.value / 1000000), '#3498db', { suffix: 'M', decimals: 1 });
 
-        // TSA Checkpoint (daily data - show last value prominently)
-        renderMetric('tsa-checkpoint', data.tsa_checkpoint, 'TSA', { format: v => Number(v).toLocaleString() + ' travelers' });
-        if (data.tsa_checkpoint && data.tsa_checkpoint.length > 0) createChart('chart-tsa', data.tsa_checkpoint.map(d => formatDate(d.date)), data.tsa_checkpoint.map(d => d.value / 1000000), '#27ae60', { suffix: 'M', decimals: 2 });
+        // TSA Checkpoint (daily data - use 7-day rolling average to smooth volatility)
+        if (data.tsa_checkpoint && data.tsa_checkpoint.length > 0) {
+          // Calculate 7-day rolling average
+          const tsa7dayAvg = data.tsa_checkpoint.slice(0, 7).reduce((sum, d) => sum + d.value, 0) / Math.min(7, data.tsa_checkpoint.length);
+          renderMetric('tsa-checkpoint', data.tsa_checkpoint, 'TSA', {
+            format: v => (tsa7dayAvg / 1000000).toFixed(2) + 'M/day (7d avg)',
+            customValue: tsa7dayAvg
+          });
+          createChart('chart-tsa', data.tsa_checkpoint.map(d => formatDate(d.date)), data.tsa_checkpoint.map(d => d.value / 1000000), '#27ae60', { suffix: 'M', decimals: 2 });
+        }
 
       } catch (error) {
         console.error("Failed to load dashboard:", error);
