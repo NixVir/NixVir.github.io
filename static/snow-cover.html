@@ -1083,6 +1083,7 @@
             const usaData = snowData.usa.history;
             const canadaData = snowData.canada.history;
             const usaPrior = snowData.usa.priorYearHistory || [];
+            const canadaPrior = snowData.canada.priorYearHistory || [];
 
             nationalChart = new Chart(ctx, {
                 type: 'line',
@@ -1113,11 +1114,22 @@
                         {
                             label: 'USA Prior Year',
                             data: usaPrior.map(h => h.value),
-                            borderColor: '#6b7280',
+                            borderColor: 'rgba(59, 130, 246, 0.4)',
                             borderDash: [5, 5],
                             fill: false,
                             tension: 0.3,
-                            borderWidth: 1.5
+                            borderWidth: 1.5,
+                            pointRadius: 0
+                        },
+                        {
+                            label: 'Canada Prior Year',
+                            data: canadaPrior.map(h => h.value),
+                            borderColor: 'rgba(239, 68, 68, 0.4)',
+                            borderDash: [5, 5],
+                            fill: false,
+                            tension: 0.3,
+                            borderWidth: 1.5,
+                            pointRadius: 0
                         }
                     ]
                 },
@@ -1129,7 +1141,9 @@
                             position: 'top',
                             labels: {
                                 color: '#8892a2',
-                                usePointStyle: true,
+                                usePointStyle: false,
+                                boxWidth: 30,
+                                boxHeight: 2,
                                 padding: 15,
                                 font: { size: 11 }
                             }
