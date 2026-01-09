@@ -137,6 +137,78 @@
             color: var(--text-muted);
         }
 
+        /* Site Navigation Bar - Matching main site */
+        .site-nav {
+            background: #000;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .site-nav-left {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .site-nav-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .site-nav-logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .site-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .site-nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .site-nav-links a:hover {
+            color: #fff;
+        }
+
+        .site-nav-links .current {
+            color: var(--accent-cold-bright);
+            font-weight: 500;
+        }
+
+        .site-nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .site-nav {
+                padding: 0.75rem 1rem;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .site-nav-logo img {
+                height: 36px;
+            }
+
+            .site-nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+        }
+
         /* Region Control Panel - Prominent Selector */
         .region-control-panel {
             background: var(--bg-card);
@@ -1031,15 +1103,29 @@
         </div>
     </aside>
 
+    <!-- Site Navigation - Consistent with main site -->
+    <nav class="site-nav">
+        <div class="site-nav-left">
+            <a href="/" class="site-nav-logo">
+                <img src="/images/nixvirlogo.png" alt="NixVir">
+            </a>
+            <ul class="site-nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/snow-cover/" class="current">Snow Cover</a></li>
+                <li><a href="/contact/">Contact</a></li>
+            </ul>
+        </div>
+        <div class="site-nav-right">
+            <div class="last-updated" id="last-updated">Loading...</div>
+        </div>
+    </nav>
+
     <div class="dashboard">
         <header class="header">
             <div class="header-left">
                 <h1>Snow Cover <span>Intelligence</span></h1>
                 <p class="subtitle">Is skiing top-of-mind for consumers in your feeder markets?</p>
-            </div>
-            <div class="header-right">
-                <a href="/" class="back-link">&larr; Back to NixVir</a>
-                <div class="last-updated" id="last-updated">Loading...</div>
             </div>
         </header>
 
