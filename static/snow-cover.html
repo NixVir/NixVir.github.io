@@ -1748,31 +1748,36 @@
 
             // Build full season date range (Oct 1 2025 - Apr 30 2026)
             const seasonDates = [];
-            let date = new Date(2025, 9, 1); // Oct 1, 2025
+            const seasonLabels = [];
+            let d = new Date(2025, 9, 1); // Oct 1, 2025
             const endDate = new Date(2026, 3, 30); // Apr 30, 2026
 
-            while (date <= endDate) {
-                seasonDates.push(new Date(date));
-                date.setDate(date.getDate() + 1);
+            while (d <= endDate) {
+                seasonDates.push({
+                    date: new Date(d),
+                    mmdd: `${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`,
+                    fullDate: `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+                });
+                d.setDate(d.getDate() + 1);
             }
 
             // Create lookup for 5-year averages by MM-DD
             const usaAvgLookup = {};
             const canadaAvgLookup = {};
-            (historicalData.usa || []).forEach(d => { usaAvgLookup[d.date] = d.value; });
-            (historicalData.canada || []).forEach(d => { canadaAvgLookup[d.date] = d.value; });
+            (historicalData.usa || []).forEach(item => { usaAvgLookup[item.date] = item.value; });
+            (historicalData.canada || []).forEach(item => { canadaAvgLookup[item.date] = item.value; });
 
-            // Create lookup for current season data
+            // Create lookup for current season data by YYYY-MM-DD
             const usaCurrentLookup = {};
             const canadaCurrentLookup = {};
-            (snowData?.usa?.history || []).forEach(d => {
-                usaCurrentLookup[d.date] = d.value;
+            (snowData?.usa?.history || []).forEach(item => {
+                usaCurrentLookup[item.date] = item.value;
             });
-            (snowData?.canada?.history || []).forEach(d => {
-                canadaCurrentLookup[d.date] = d.value;
+            (snowData?.canada?.history || []).forEach(item => {
+                canadaCurrentLookup[item.date] = item.value;
             });
 
-            // Build data arrays aligned to season dates
+            // Build data arrays
             const labels = [];
             const usaAvgData = [];
             const canadaAvgData = [];
@@ -1780,62 +1785,55 @@
             const canadaCurrentData = [];
 
             const today = new Date();
-            today.setHours(0, 0, 0, 0);
+            today.setHours(23, 59, 59, 999);
 
-            seasonDates.forEach(d => {
-                const mmdd = `${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-                const fullDate = d.toISOString().split('T')[0];
+            seasonDates.forEach(item => {
+                // Create label showing month name on 1st of each month
+                if (item.date.getDate() === 1) {
+                    labels.push(item.date.toLocaleDateString('en-US', { month: 'short' }));
+                } else {
+                    labels.push('');
+                }
 
-                labels.push(d);
+                // 5-year averages (full season) - lookup by MM-DD
+                usaAvgData.push(usaAvgLookup[item.mmdd] ?? null);
+                canadaAvgData.push(canadaAvgLookup[item.mmdd] ?? null);
 
-                // 5-year averages (full season)
-                usaAvgData.push(usaAvgLookup[mmdd] ?? null);
-                canadaAvgData.push(canadaAvgLookup[mmdd] ?? null);
-
-                // Current season data (only up to today)
-                if (d <= today) {
-                    usaCurrentData.push(usaCurrentLookup[fullDate] ?? null);
-                    canadaCurrentData.push(canadaCurrentLookup[fullDate] ?? null);
+                // Current season data (only up to today) - lookup by YYYY-MM-DD
+                if (item.date <= today) {
+                    usaCurrentData.push(usaCurrentLookup[item.fullDate] ?? null);
+                    canadaCurrentData.push(canadaCurrentLookup[item.fullDate] ?? null);
                 } else {
                     usaCurrentData.push(null);
                     canadaCurrentData.push(null);
                 }
             });
 
-            // Holiday annotation boxes
+            // Holiday annotation boxes - use array indices
             const holidayAnnotations = {};
             WINTER_HOLIDAYS.forEach((holiday, idx) => {
-                const startDate = new Date(holiday.start);
-                const endDate = new Date(holiday.end);
+                const hStart = new Date(holiday.start + 'T00:00:00');
+                const hEnd = new Date(holiday.end + 'T00:00:00');
 
                 // Find indices in our data
-                const startIdx = seasonDates.findIndex(d =>
-                    d.getFullYear() === startDate.getFullYear() &&
-                    d.getMonth() === startDate.getMonth() &&
-                    d.getDate() === startDate.getDate()
+                const startIdx = seasonDates.findIndex(item =>
+                    item.date.getFullYear() === hStart.getFullYear() &&
+                    item.date.getMonth() === hStart.getMonth() &&
+                    item.date.getDate() === hStart.getDate()
                 );
-                const endIdx = seasonDates.findIndex(d =>
-                    d.getFullYear() === endDate.getFullYear() &&
-                    d.getMonth() === endDate.getMonth() &&
-                    d.getDate() === endDate.getDate()
+                const endIdx = seasonDates.findIndex(item =>
+                    item.date.getFullYear() === hEnd.getFullYear() &&
+                    item.date.getMonth() === hEnd.getMonth() &&
+                    item.date.getDate() === hEnd.getDate()
                 );
 
                 if (startIdx >= 0 && endIdx >= 0) {
                     holidayAnnotations[`holiday${idx}`] = {
                         type: 'box',
-                        xMin: startIdx,
-                        xMax: endIdx,
-                        backgroundColor: 'rgba(128, 128, 128, 0.15)',
-                        borderWidth: 0,
-                        label: {
-                            display: true,
-                            content: holiday.name,
-                            position: 'start',
-                            color: 'rgba(136, 146, 162, 0.7)',
-                            font: { size: 9 },
-                            rotation: -90,
-                            yAdjust: 50
-                        }
+                        xMin: startIdx - 0.5,
+                        xMax: endIdx + 0.5,
+                        backgroundColor: 'rgba(128, 128, 128, 0.12)',
+                        borderWidth: 0
                     };
                 }
             });
@@ -1914,11 +1912,16 @@
                             borderWidth: 1,
                             callbacks: {
                                 title: function(context) {
-                                    const date = context[0].label;
-                                    if (date instanceof Date) {
-                                        return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                                    const idx = context[0].dataIndex;
+                                    const dateInfo = seasonDates[idx];
+                                    if (dateInfo) {
+                                        return dateInfo.date.toLocaleDateString('en-US', {
+                                            month: 'short',
+                                            day: 'numeric',
+                                            year: 'numeric'
+                                        });
                                     }
-                                    return date;
+                                    return '';
                                 },
                                 label: function(context) {
                                     if (context.parsed.y === null) return null;
@@ -1935,17 +1938,20 @@
                     },
                     scales: {
                         x: {
-                            type: 'time',
-                            time: {
-                                unit: 'month',
-                                displayFormats: {
-                                    month: 'MMM'
-                                }
-                            },
+                            type: 'category',
                             grid: { color: 'rgba(42, 52, 68, 0.5)' },
                             ticks: {
                                 color: '#5c6678',
-                                maxRotation: 0
+                                maxRotation: 0,
+                                autoSkip: false,
+                                callback: function(value, index) {
+                                    // Show label only on 1st of month
+                                    const dateInfo = seasonDates[index];
+                                    if (dateInfo && dateInfo.date.getDate() === 1) {
+                                        return dateInfo.date.toLocaleDateString('en-US', { month: 'short' });
+                                    }
+                                    return '';
+                                }
                             }
                         },
                         y: {
