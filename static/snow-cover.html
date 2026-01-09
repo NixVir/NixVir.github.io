@@ -209,6 +209,89 @@
             }
         }
 
+        /* Headline Insight Banner */
+        .headline-insight {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(16, 185, 129, 0.1) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .headline-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(59, 130, 246, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .headline-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--accent-cold-bright);
+        }
+
+        .headline-content {
+            flex: 1;
+        }
+
+        .headline-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .headline-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .headline-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-left: 0.5rem;
+        }
+
+        .headline-badge.positive {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--success);
+        }
+
+        .headline-badge.negative {
+            background: rgba(239, 68, 68, 0.2);
+            color: var(--danger);
+        }
+
+        .headline-badge.neutral {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--warning);
+        }
+
+        @media (max-width: 768px) {
+            .headline-insight {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .headline-title {
+                font-size: 1rem;
+            }
+        }
+
         /* Region Control Panel - Prominent Selector */
         .region-control-panel {
             background: var(--bg-card);
@@ -465,10 +548,11 @@
         }
 
         .legend-title {
-            font-size: 0.6rem;
-            color: var(--text-muted);
+            font-size: 0.75rem;
+            color: var(--text-secondary);
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            font-weight: 500;
         }
 
         .legend-scale {
@@ -485,8 +569,8 @@
         .legend-labels {
             display: flex;
             justify-content: space-between;
-            font-size: 0.55rem;
-            color: var(--text-secondary);
+            font-size: 0.7rem;
+            color: var(--text-primary);
         }
 
         .legend-size {
@@ -508,8 +592,8 @@
         }
 
         .legend-size span {
-            font-size: 0.55rem;
-            color: var(--text-secondary);
+            font-size: 0.7rem;
+            color: var(--text-primary);
         }
 
         /* Right Column */
@@ -534,9 +618,10 @@
         }
 
         .summary-label {
-            font-size: 0.65rem;
-            color: var(--text-muted);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
             margin-bottom: 0.25rem;
+            font-weight: 500;
         }
 
         .summary-value {
@@ -568,15 +653,15 @@
         }
 
         .insight-title {
-            font-size: 0.7rem;
+            font-size: 0.85rem;
             font-weight: 600;
             color: var(--accent-cold-bright);
         }
 
         .insight-text {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            line-height: 1.45;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            line-height: 1.5;
         }
 
         /* Market Table */
@@ -588,15 +673,15 @@
         .market-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 0.7rem;
+            font-size: 0.85rem;
         }
 
         .market-table th {
             text-align: left;
             padding: 0.5rem 0.6rem;
-            color: var(--text-muted);
-            font-weight: 500;
-            font-size: 0.6rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             position: sticky;
@@ -1128,6 +1213,21 @@
                 <p class="subtitle">Is skiing top-of-mind for consumers in your feeder markets?</p>
             </div>
         </header>
+
+        <!-- Headline Insight Banner -->
+        <div class="headline-insight" id="headline-insight">
+            <div class="headline-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                </svg>
+            </div>
+            <div class="headline-content">
+                <div class="headline-title" id="headline-title">Loading conditions...</div>
+                <div class="headline-subtitle" id="headline-subtitle">Analyzing snow cover data for your selected region.</div>
+            </div>
+        </div>
 
         <!-- Region Selector - Front and Center -->
         <div class="region-control-panel">
@@ -2028,6 +2128,66 @@
         }
 
         // ============================================
+        // Headline Insight
+        // ============================================
+        function updateHeadlineInsight() {
+            const titleEl = document.getElementById("headline-title");
+            const subtitleEl = document.getElementById("headline-subtitle");
+            const config = getRegionConfig();
+
+            if (currentMarkets.length === 0) {
+                titleEl.textContent = 'Select a region to view conditions';
+                subtitleEl.textContent = 'Choose a feeder market region above to see snow cover insights.';
+                return;
+            }
+
+            // Calculate key metrics
+            const avgSnow = currentMarkets.reduce((sum, m) => sum + (m.cover || 0), 0) / currentMarkets.length;
+            const marketsWithSnow = currentMarkets.filter(m => m.cover > 0).length;
+            const lowAwareness = currentMarkets.filter(m => m.awareness === 'low').length;
+            const highAwareness = currentMarkets.filter(m => m.awareness === 'high').length;
+
+            // Calculate avg temp anomaly
+            const tempAnomalies = currentMarkets.filter(m => m.tempAnomaly !== undefined).map(m => m.tempAnomaly);
+            const avgTempAnomaly = tempAnomalies.length > 0
+                ? tempAnomalies.reduce((a, b) => a + b, 0) / tempAnomalies.length
+                : 0;
+
+            // Generate headline based on conditions
+            let title, subtitle, badgeClass, badgeText;
+
+            if (highAwareness === currentMarkets.length) {
+                title = `${config.name}: Winter is top-of-mind`;
+                subtitle = `All ${currentMarkets.length} feeder markets have snow on the ground. Consumers are likely thinking about skiing.`;
+                badgeClass = 'positive';
+                badgeText = 'High Awareness';
+            } else if (lowAwareness >= Math.ceil(currentMarkets.length * 0.6)) {
+                title = `${config.name}: Below-average snow awareness`;
+                subtitle = `${lowAwareness} of ${currentMarkets.length} markets have no snow and warm temps. Consider increasing marketing in these areas.`;
+                badgeClass = 'negative';
+                badgeText = 'Low Awareness';
+            } else if (marketsWithSnow === 0) {
+                title = `${config.name}: No snow in feeder markets`;
+                subtitle = `None of the ${currentMarkets.length} tracked markets currently have visible snow cover.`;
+                badgeClass = 'negative';
+                badgeText = 'No Snow';
+            } else if (avgTempAnomaly > 5) {
+                title = `${config.name}: Warm conditions limiting awareness`;
+                subtitle = `Temperatures are ${Math.round(avgTempAnomaly)}° above normal. ${marketsWithSnow} of ${currentMarkets.length} markets have some snow.`;
+                badgeClass = 'neutral';
+                badgeText = 'Warm Spell';
+            } else {
+                title = `${config.name}: Mixed winter conditions`;
+                subtitle = `${marketsWithSnow} of ${currentMarkets.length} markets have snow. ${highAwareness} showing high winter awareness.`;
+                badgeClass = marketsWithSnow > currentMarkets.length / 2 ? 'positive' : 'neutral';
+                badgeText = `${marketsWithSnow}/${currentMarkets.length} Snow`;
+            }
+
+            titleEl.innerHTML = title + ` <span class="headline-badge ${badgeClass}">${badgeText}</span>`;
+            subtitleEl.textContent = subtitle;
+        }
+
+        // ============================================
         // Dashboard Update
         // ============================================
         function updateDashboard() {
@@ -2036,6 +2196,7 @@
 
             document.getElementById("region-display").textContent = config.name;
 
+            updateHeadlineInsight();
             drawMap();
             renderMarketTable();
             renderSummaryStats();
