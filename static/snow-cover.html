@@ -11,6 +11,8 @@
 
     <!-- Chart.js for trend chart -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -1438,7 +1440,7 @@
                     <div class="card-header">
                         <div>
                             <div class="card-title">National Snow Cover Overview</div>
-                            <div class="card-subtitle">Combined US and Canada snow cover with historical comparison</div>
+                            <div class="card-subtitle">Full 2025-26 ski season (Oct 1 - Apr 30) vs 5-year average</div>
                         </div>
                     </div>
                     <div class="card-body">
@@ -1490,6 +1492,7 @@
         // State
         // ============================================
         let snowData = null;
+        let historicalData = null;  // 5-year seasonal averages
         let currentRegion = 'rocky-mountain';
         let currentMarkets = [];
         let usGeoData = null;
@@ -1497,13 +1500,36 @@
         let nationalChart = null;
         let customSelectedMarkets = new Set(); // For custom region builder
 
+        // 2025/2026 Winter Holiday Markers
+        const WINTER_HOLIDAYS = [
+            { name: 'Canadian Thanksgiving', start: '2025-10-13', end: '2025-10-13', country: 'CA' },
+            { name: 'US Thanksgiving', start: '2025-11-27', end: '2025-11-30', country: 'US' },
+            { name: 'Christmas/New Year', start: '2025-12-20', end: '2026-01-05', country: 'Both' },
+            { name: 'MLK Day', start: '2026-01-19', end: '2026-01-19', country: 'US' },
+            { name: "Presidents' Day", start: '2026-02-16', end: '2026-02-16', country: 'US' },
+            { name: 'Spring Break', start: '2026-03-14', end: '2026-03-28', country: 'Both' },
+            { name: 'Easter', start: '2026-04-05', end: '2026-04-05', country: 'Both' }
+        ];
+
         // ============================================
         // Data Loading
         // ============================================
         async function loadSnowData() {
             try {
-                const response = await fetch('/data/snow-cover.json');
-                snowData = await response.json();
+                // Load both current data and historical averages in parallel
+                const [snowResponse, historicalResponse] = await Promise.all([
+                    fetch('/data/snow-cover.json'),
+                    fetch('/data/snow-cover-historical.json')
+                ]);
+
+                snowData = await snowResponse.json();
+
+                try {
+                    historicalData = await historicalResponse.json();
+                } catch (e) {
+                    console.warn('Historical data not available:', e);
+                    historicalData = null;
+                }
 
                 // Update timestamp
                 document.getElementById('last-updated').textContent = `Updated ${snowData.updated}`;
@@ -1712,7 +1738,7 @@
         }
 
         function drawNationalChart() {
-            if (!snowData?.usa?.history || !snowData?.canada?.history) return;
+            if (!historicalData?.usa) return;
 
             const ctx = document.getElementById('national-chart').getContext('2d');
 
@@ -1720,40 +1746,130 @@
                 nationalChart.destroy();
             }
 
-            const usaData = snowData.usa.history;
-            const canadaData = snowData.canada.history;
-            const usaPrior = snowData.usa.priorYearHistory || [];
-            const canadaPrior = snowData.canada.priorYearHistory || [];
+            // Build full season date range (Oct 1 2025 - Apr 30 2026)
+            const seasonDates = [];
+            let date = new Date(2025, 9, 1); // Oct 1, 2025
+            const endDate = new Date(2026, 3, 30); // Apr 30, 2026
+
+            while (date <= endDate) {
+                seasonDates.push(new Date(date));
+                date.setDate(date.getDate() + 1);
+            }
+
+            // Create lookup for 5-year averages by MM-DD
+            const usaAvgLookup = {};
+            const canadaAvgLookup = {};
+            (historicalData.usa || []).forEach(d => { usaAvgLookup[d.date] = d.value; });
+            (historicalData.canada || []).forEach(d => { canadaAvgLookup[d.date] = d.value; });
+
+            // Create lookup for current season data
+            const usaCurrentLookup = {};
+            const canadaCurrentLookup = {};
+            (snowData?.usa?.history || []).forEach(d => {
+                usaCurrentLookup[d.date] = d.value;
+            });
+            (snowData?.canada?.history || []).forEach(d => {
+                canadaCurrentLookup[d.date] = d.value;
+            });
+
+            // Build data arrays aligned to season dates
+            const labels = [];
+            const usaAvgData = [];
+            const canadaAvgData = [];
+            const usaCurrentData = [];
+            const canadaCurrentData = [];
+
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            seasonDates.forEach(d => {
+                const mmdd = `${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+                const fullDate = d.toISOString().split('T')[0];
+
+                labels.push(d);
+
+                // 5-year averages (full season)
+                usaAvgData.push(usaAvgLookup[mmdd] ?? null);
+                canadaAvgData.push(canadaAvgLookup[mmdd] ?? null);
+
+                // Current season data (only up to today)
+                if (d <= today) {
+                    usaCurrentData.push(usaCurrentLookup[fullDate] ?? null);
+                    canadaCurrentData.push(canadaCurrentLookup[fullDate] ?? null);
+                } else {
+                    usaCurrentData.push(null);
+                    canadaCurrentData.push(null);
+                }
+            });
+
+            // Holiday annotation boxes
+            const holidayAnnotations = {};
+            WINTER_HOLIDAYS.forEach((holiday, idx) => {
+                const startDate = new Date(holiday.start);
+                const endDate = new Date(holiday.end);
+
+                // Find indices in our data
+                const startIdx = seasonDates.findIndex(d =>
+                    d.getFullYear() === startDate.getFullYear() &&
+                    d.getMonth() === startDate.getMonth() &&
+                    d.getDate() === startDate.getDate()
+                );
+                const endIdx = seasonDates.findIndex(d =>
+                    d.getFullYear() === endDate.getFullYear() &&
+                    d.getMonth() === endDate.getMonth() &&
+                    d.getDate() === endDate.getDate()
+                );
+
+                if (startIdx >= 0 && endIdx >= 0) {
+                    holidayAnnotations[`holiday${idx}`] = {
+                        type: 'box',
+                        xMin: startIdx,
+                        xMax: endIdx,
+                        backgroundColor: 'rgba(128, 128, 128, 0.15)',
+                        borderWidth: 0,
+                        label: {
+                            display: true,
+                            content: holiday.name,
+                            position: 'start',
+                            color: 'rgba(136, 146, 162, 0.7)',
+                            font: { size: 9 },
+                            rotation: -90,
+                            yAdjust: 50
+                        }
+                    };
+                }
+            });
 
             nationalChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: usaData.map(h => {
-                        const date = new Date(h.date);
-                        return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-                    }),
+                    labels: labels,
                     datasets: [
                         {
-                            label: 'USA 2026',
-                            data: usaData.map(h => h.value),
+                            label: 'USA 2025-26',
+                            data: usaCurrentData,
                             borderColor: '#3b82f6',
                             backgroundColor: 'rgba(59, 130, 246, 0.1)',
                             fill: true,
                             tension: 0.3,
-                            borderWidth: 2
+                            borderWidth: 2,
+                            pointRadius: 0,
+                            spanGaps: false
                         },
                         {
-                            label: 'Canada 2026',
-                            data: canadaData.map(h => h.value),
+                            label: 'Canada 2025-26',
+                            data: canadaCurrentData,
                             borderColor: '#ef4444',
                             backgroundColor: 'rgba(239, 68, 68, 0.1)',
                             fill: true,
                             tension: 0.3,
-                            borderWidth: 2
+                            borderWidth: 2,
+                            pointRadius: 0,
+                            spanGaps: false
                         },
                         {
-                            label: 'USA Prior Year',
-                            data: usaPrior.map(h => h.value),
+                            label: 'USA 5-Year Avg',
+                            data: usaAvgData,
                             borderColor: 'rgba(59, 130, 246, 0.4)',
                             borderDash: [5, 5],
                             fill: false,
@@ -1762,8 +1878,8 @@
                             pointRadius: 0
                         },
                         {
-                            label: 'Canada Prior Year',
-                            data: canadaPrior.map(h => h.value),
+                            label: 'Canada 5-Year Avg',
+                            data: canadaAvgData,
                             borderColor: 'rgba(239, 68, 68, 0.4)',
                             borderDash: [5, 5],
                             fill: false,
@@ -1797,16 +1913,40 @@
                             borderColor: '#2a3444',
                             borderWidth: 1,
                             callbacks: {
+                                title: function(context) {
+                                    const date = context[0].label;
+                                    if (date instanceof Date) {
+                                        return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                                    }
+                                    return date;
+                                },
                                 label: function(context) {
+                                    if (context.parsed.y === null) return null;
                                     return `${context.dataset.label}: ${context.parsed.y}%`;
                                 }
+                            },
+                            filter: function(tooltipItem) {
+                                return tooltipItem.parsed.y !== null;
                             }
+                        },
+                        annotation: {
+                            annotations: holidayAnnotations
                         }
                     },
                     scales: {
                         x: {
+                            type: 'time',
+                            time: {
+                                unit: 'month',
+                                displayFormats: {
+                                    month: 'MMM'
+                                }
+                            },
                             grid: { color: 'rgba(42, 52, 68, 0.5)' },
-                            ticks: { color: '#5c6678' }
+                            ticks: {
+                                color: '#5c6678',
+                                maxRotation: 0
+                            }
                         },
                         y: {
                             min: 0,

@@ -1,0 +1,2135 @@
+{
+  "generated": "2026-01-09 12:25 UTC",
+  "description": "5-year average snow cover for ski season (Oct 1 - Apr 30)",
+  "winters_included": [
+    "2020/2021",
+    "2021/2022",
+    "2022/2023",
+    "2023/2024",
+    "2024/2025"
+  ],
+  "usa": [
+    {
+      "date": "10-01",
+      "value": 0.2,
+      "count": 5
+    },
+    {
+      "date": "10-02",
+      "value": 0.3,
+      "count": 5
+    },
+    {
+      "date": "10-03",
+      "value": 0.3,
+      "count": 5
+    },
+    {
+      "date": "10-04",
+      "value": 0.3,
+      "count": 5
+    },
+    {
+      "date": "10-05",
+      "value": 0.2,
+      "count": 5
+    },
+    {
+      "date": "10-06",
+      "value": 0.1,
+      "count": 5
+    },
+    {
+      "date": "10-07",
+      "value": 0.1,
+      "count": 5
+    },
+    {
+      "date": "10-08",
+      "value": 0.1,
+      "count": 5
+    },
+    {
+      "date": "10-09",
+      "value": 0.2,
+      "count": 5
+    },
+    {
+      "date": "10-10",
+      "value": 0.3,
+      "count": 5
+    },
+    {
+      "date": "10-11",
+      "value": 0.5,
+      "count": 5
+    },
+    {
+      "date": "10-12",
+      "value": 2.2,
+      "count": 5
+    },
+    {
+      "date": "10-13",
+      "value": 3.4,
+      "count": 5
+    },
+    {
+      "date": "10-14",
+      "value": 3.2,
+      "count": 5
+    },
+    {
+      "date": "10-15",
+      "value": 3.1,
+      "count": 5
+    },
+    {
+      "date": "10-16",
+      "value": 2.0,
+      "count": 5
+    },
+    {
+      "date": "10-17",
+      "value": 1.4,
+      "count": 5
+    },
+    {
+      "date": "10-18",
+      "value": 2.7,
+      "count": 5
+    },
+    {
+      "date": "10-19",
+      "value": 3.5,
+      "count": 5
+    },
+    {
+      "date": "10-20",
+      "value": 3.4,
+      "count": 5
+    },
+    {
+      "date": "10-21",
+      "value": 3.4,
+      "count": 5
+    },
+    {
+      "date": "10-22",
+      "value": 3.6,
+      "count": 5
+    },
+    {
+      "date": "10-23",
+      "value": 4.9,
+      "count": 5
+    },
+    {
+      "date": "10-24",
+      "value": 6.4,
+      "count": 5
+    },
+    {
+      "date": "10-25",
+      "value": 7.5,
+      "count": 5
+    },
+    {
+      "date": "10-26",
+      "value": 10.0,
+      "count": 5
+    },
+    {
+      "date": "10-27",
+      "value": 12.7,
+      "count": 5
+    },
+    {
+      "date": "10-28",
+      "value": 12.4,
+      "count": 5
+    },
+    {
+      "date": "10-29",
+      "value": 9.8,
+      "count": 5
+    },
+    {
+      "date": "10-30",
+      "value": 8.6,
+      "count": 5
+    },
+    {
+      "date": "10-31",
+      "value": 7.8,
+      "count": 5
+    },
+    {
+      "date": "11-01",
+      "value": 7.7,
+      "count": 5
+    },
+    {
+      "date": "11-02",
+      "value": 8.1,
+      "count": 5
+    },
+    {
+      "date": "11-03",
+      "value": 7.7,
+      "count": 5
+    },
+    {
+      "date": "11-04",
+      "value": 7.9,
+      "count": 5
+    },
+    {
+      "date": "11-05",
+      "value": 7.0,
+      "count": 5
+    },
+    {
+      "date": "11-06",
+      "value": 5.3,
+      "count": 5
+    },
+    {
+      "date": "11-07",
+      "value": 6.8,
+      "count": 5
+    },
+    {
+      "date": "11-08",
+      "value": 8.7,
+      "count": 5
+    },
+    {
+      "date": "11-09",
+      "value": 11.1,
+      "count": 5
+    },
+    {
+      "date": "11-10",
+      "value": 13.3,
+      "count": 5
+    },
+    {
+      "date": "11-11",
+      "value": 14.2,
+      "count": 5
+    },
+    {
+      "date": "11-12",
+      "value": 13.8,
+      "count": 5
+    },
+    {
+      "date": "11-13",
+      "value": 14.7,
+      "count": 5
+    },
+    {
+      "date": "11-14",
+      "value": 14.0,
+      "count": 5
+    },
+    {
+      "date": "11-15",
+      "value": 15.5,
+      "count": 5
+    },
+    {
+      "date": "11-16",
+      "value": 16.0,
+      "count": 5
+    },
+    {
+      "date": "11-17",
+      "value": 15.5,
+      "count": 5
+    },
+    {
+      "date": "11-18",
+      "value": 13.9,
+      "count": 5
+    },
+    {
+      "date": "11-19",
+      "value": 13.4,
+      "count": 5
+    },
+    {
+      "date": "11-20",
+      "value": 14.3,
+      "count": 5
+    },
+    {
+      "date": "11-21",
+      "value": 14.0,
+      "count": 5
+    },
+    {
+      "date": "11-22",
+      "value": 14.8,
+      "count": 5
+    },
+    {
+      "date": "11-23",
+      "value": 13.7,
+      "count": 5
+    },
+    {
+      "date": "11-24",
+      "value": 14.4,
+      "count": 5
+    },
+    {
+      "date": "11-25",
+      "value": 16.4,
+      "count": 5
+    },
+    {
+      "date": "11-26",
+      "value": 17.2,
+      "count": 5
+    },
+    {
+      "date": "11-27",
+      "value": 17.8,
+      "count": 5
+    },
+    {
+      "date": "11-28",
+      "value": 18.0,
+      "count": 5
+    },
+    {
+      "date": "11-29",
+      "value": 17.7,
+      "count": 5
+    },
+    {
+      "date": "11-30",
+      "value": 17.8,
+      "count": 5
+    },
+    {
+      "date": "12-01",
+      "value": 17.9,
+      "count": 5
+    },
+    {
+      "date": "12-02",
+      "value": 18.6,
+      "count": 5
+    },
+    {
+      "date": "12-03",
+      "value": 18.4,
+      "count": 5
+    },
+    {
+      "date": "12-04",
+      "value": 17.6,
+      "count": 5
+    },
+    {
+      "date": "12-05",
+      "value": 16.7,
+      "count": 5
+    },
+    {
+      "date": "12-06",
+      "value": 17.7,
+      "count": 5
+    },
+    {
+      "date": "12-07",
+      "value": 17.4,
+      "count": 5
+    },
+    {
+      "date": "12-08",
+      "value": 17.8,
+      "count": 5
+    },
+    {
+      "date": "12-09",
+      "value": 18.3,
+      "count": 5
+    },
+    {
+      "date": "12-10",
+      "value": 20.7,
+      "count": 5
+    },
+    {
+      "date": "12-11",
+      "value": 21.5,
+      "count": 5
+    },
+    {
+      "date": "12-12",
+      "value": 23.6,
+      "count": 5
+    },
+    {
+      "date": "12-13",
+      "value": 24.9,
+      "count": 5
+    },
+    {
+      "date": "12-14",
+      "value": 27.0,
+      "count": 5
+    },
+    {
+      "date": "12-15",
+      "value": 29.1,
+      "count": 5
+    },
+    {
+      "date": "12-16",
+      "value": 30.1,
+      "count": 5
+    },
+    {
+      "date": "12-17",
+      "value": 30.2,
+      "count": 5
+    },
+    {
+      "date": "12-18",
+      "value": 29.1,
+      "count": 5
+    },
+    {
+      "date": "12-19",
+      "value": 29.1,
+      "count": 5
+    },
+    {
+      "date": "12-20",
+      "value": 28.6,
+      "count": 5
+    },
+    {
+      "date": "12-21",
+      "value": 28.0,
+      "count": 5
+    },
+    {
+      "date": "12-22",
+      "value": 27.0,
+      "count": 5
+    },
+    {
+      "date": "12-23",
+      "value": 28.0,
+      "count": 5
+    },
+    {
+      "date": "12-24",
+      "value": 29.1,
+      "count": 5
+    },
+    {
+      "date": "12-25",
+      "value": 30.0,
+      "count": 5
+    },
+    {
+      "date": "12-26",
+      "value": 29.8,
+      "count": 5
+    },
+    {
+      "date": "12-27",
+      "value": 30.4,
+      "count": 5
+    },
+    {
+      "date": "12-28",
+      "value": 30.0,
+      "count": 5
+    },
+    {
+      "date": "12-29",
+      "value": 29.3,
+      "count": 5
+    },
+    {
+      "date": "12-30",
+      "value": 30.9,
+      "count": 5
+    },
+    {
+      "date": "12-31",
+      "value": 31.4,
+      "count": 5
+    },
+    {
+      "date": "01-01",
+      "value": 32.0,
+      "count": 5
+    },
+    {
+      "date": "01-02",
+      "value": 35.6,
+      "count": 5
+    },
+    {
+      "date": "01-03",
+      "value": 35.5,
+      "count": 5
+    },
+    {
+      "date": "01-04",
+      "value": 35.5,
+      "count": 5
+    },
+    {
+      "date": "01-05",
+      "value": 35.6,
+      "count": 5
+    },
+    {
+      "date": "01-06",
+      "value": 37.7,
+      "count": 5
+    },
+    {
+      "date": "01-07",
+      "value": 40.6,
+      "count": 5
+    },
+    {
+      "date": "01-08",
+      "value": 41.6,
+      "count": 5
+    },
+    {
+      "date": "01-09",
+      "value": 41.2,
+      "count": 5
+    },
+    {
+      "date": "01-10",
+      "value": 41.5,
+      "count": 5
+    },
+    {
+      "date": "01-11",
+      "value": 43.1,
+      "count": 5
+    },
+    {
+      "date": "01-12",
+      "value": 42.1,
+      "count": 5
+    },
+    {
+      "date": "01-13",
+      "value": 39.8,
+      "count": 5
+    },
+    {
+      "date": "01-14",
+      "value": 36.6,
+      "count": 5
+    },
+    {
+      "date": "01-15",
+      "value": 36.9,
+      "count": 5
+    },
+    {
+      "date": "01-16",
+      "value": 39.1,
+      "count": 5
+    },
+    {
+      "date": "01-17",
+      "value": 40.6,
+      "count": 5
+    },
+    {
+      "date": "01-18",
+      "value": 39.4,
+      "count": 5
+    },
+    {
+      "date": "01-19",
+      "value": 39.1,
+      "count": 5
+    },
+    {
+      "date": "01-20",
+      "value": 39.4,
+      "count": 5
+    },
+    {
+      "date": "01-21",
+      "value": 39.6,
+      "count": 5
+    },
+    {
+      "date": "01-22",
+      "value": 40.3,
+      "count": 5
+    },
+    {
+      "date": "01-23",
+      "value": 40.7,
+      "count": 5
+    },
+    {
+      "date": "01-24",
+      "value": 40.4,
+      "count": 5
+    },
+    {
+      "date": "01-25",
+      "value": 41.9,
+      "count": 5
+    },
+    {
+      "date": "01-26",
+      "value": 43.6,
+      "count": 5
+    },
+    {
+      "date": "01-27",
+      "value": 42.3,
+      "count": 5
+    },
+    {
+      "date": "01-28",
+      "value": 41.2,
+      "count": 5
+    },
+    {
+      "date": "01-29",
+      "value": 39.5,
+      "count": 5
+    },
+    {
+      "date": "01-30",
+      "value": 36.8,
+      "count": 5
+    },
+    {
+      "date": "01-31",
+      "value": 35.4,
+      "count": 5
+    },
+    {
+      "date": "02-01",
+      "value": 34.5,
+      "count": 5
+    },
+    {
+      "date": "02-02",
+      "value": 33.9,
+      "count": 5
+    },
+    {
+      "date": "02-03",
+      "value": 36.6,
+      "count": 5
+    },
+    {
+      "date": "02-04",
+      "value": 36.9,
+      "count": 5
+    },
+    {
+      "date": "02-05",
+      "value": 35.9,
+      "count": 5
+    },
+    {
+      "date": "02-06",
+      "value": 33.4,
+      "count": 5
+    },
+    {
+      "date": "02-07",
+      "value": 33.5,
+      "count": 5
+    },
+    {
+      "date": "02-08",
+      "value": 34.0,
+      "count": 5
+    },
+    {
+      "date": "02-09",
+      "value": 33.7,
+      "count": 5
+    },
+    {
+      "date": "02-10",
+      "value": 33.3,
+      "count": 5
+    },
+    {
+      "date": "02-11",
+      "value": 33.8,
+      "count": 5
+    },
+    {
+      "date": "02-12",
+      "value": 36.0,
+      "count": 5
+    },
+    {
+      "date": "02-13",
+      "value": 37.4,
+      "count": 5
+    },
+    {
+      "date": "02-14",
+      "value": 38.2,
+      "count": 5
+    },
+    {
+      "date": "02-15",
+      "value": 42.0,
+      "count": 5
+    },
+    {
+      "date": "02-16",
+      "value": 44.5,
+      "count": 5
+    },
+    {
+      "date": "02-17",
+      "value": 46.6,
+      "count": 5
+    },
+    {
+      "date": "02-18",
+      "value": 46.1,
+      "count": 5
+    },
+    {
+      "date": "02-19",
+      "value": 44.5,
+      "count": 5
+    },
+    {
+      "date": "02-20",
+      "value": 41.4,
+      "count": 5
+    },
+    {
+      "date": "02-21",
+      "value": 37.5,
+      "count": 5
+    },
+    {
+      "date": "02-22",
+      "value": 36.8,
+      "count": 5
+    },
+    {
+      "date": "02-23",
+      "value": 36.2,
+      "count": 5
+    },
+    {
+      "date": "02-24",
+      "value": 33.8,
+      "count": 5
+    },
+    {
+      "date": "02-25",
+      "value": 32.4,
+      "count": 5
+    },
+    {
+      "date": "02-26",
+      "value": 31.0,
+      "count": 5
+    },
+    {
+      "date": "02-27",
+      "value": 30.5,
+      "count": 5
+    },
+    {
+      "date": "02-28",
+      "value": 28.2,
+      "count": 5
+    },
+    {
+      "date": "03-01",
+      "value": 25.1,
+      "count": 5
+    },
+    {
+      "date": "03-02",
+      "value": 24.2,
+      "count": 5
+    },
+    {
+      "date": "03-03",
+      "value": 24.2,
+      "count": 5
+    },
+    {
+      "date": "03-04",
+      "value": 25.1,
+      "count": 5
+    },
+    {
+      "date": "03-05",
+      "value": 26.4,
+      "count": 5
+    },
+    {
+      "date": "03-06",
+      "value": 27.4,
+      "count": 5
+    },
+    {
+      "date": "03-07",
+      "value": 28.3,
+      "count": 5
+    },
+    {
+      "date": "03-08",
+      "value": 29.1,
+      "count": 5
+    },
+    {
+      "date": "03-09",
+      "value": 27.6,
+      "count": 5
+    },
+    {
+      "date": "03-10",
+      "value": 26.1,
+      "count": 5
+    },
+    {
+      "date": "03-11",
+      "value": 26.8,
+      "count": 5
+    },
+    {
+      "date": "03-12",
+      "value": 27.1,
+      "count": 5
+    },
+    {
+      "date": "03-13",
+      "value": 25.2,
+      "count": 5
+    },
+    {
+      "date": "03-14",
+      "value": 23.5,
+      "count": 5
+    },
+    {
+      "date": "03-15",
+      "value": 22.4,
+      "count": 5
+    },
+    {
+      "date": "03-16",
+      "value": 22.7,
+      "count": 5
+    },
+    {
+      "date": "03-17",
+      "value": 22.0,
+      "count": 5
+    },
+    {
+      "date": "03-18",
+      "value": 21.2,
+      "count": 5
+    },
+    {
+      "date": "03-19",
+      "value": 19.8,
+      "count": 5
+    },
+    {
+      "date": "03-20",
+      "value": 18.4,
+      "count": 5
+    },
+    {
+      "date": "03-21",
+      "value": 17.0,
+      "count": 5
+    },
+    {
+      "date": "03-22",
+      "value": 17.6,
+      "count": 5
+    },
+    {
+      "date": "03-23",
+      "value": 18.7,
+      "count": 5
+    },
+    {
+      "date": "03-24",
+      "value": 19.6,
+      "count": 5
+    },
+    {
+      "date": "03-25",
+      "value": 21.2,
+      "count": 5
+    },
+    {
+      "date": "03-26",
+      "value": 21.0,
+      "count": 5
+    },
+    {
+      "date": "03-27",
+      "value": 20.2,
+      "count": 5
+    },
+    {
+      "date": "03-28",
+      "value": 18.0,
+      "count": 5
+    },
+    {
+      "date": "03-29",
+      "value": 16.4,
+      "count": 5
+    },
+    {
+      "date": "03-30",
+      "value": 17.9,
+      "count": 5
+    },
+    {
+      "date": "03-31",
+      "value": 18.6,
+      "count": 5
+    },
+    {
+      "date": "04-01",
+      "value": 18.6,
+      "count": 5
+    },
+    {
+      "date": "04-02",
+      "value": 18.2,
+      "count": 5
+    },
+    {
+      "date": "04-03",
+      "value": 16.9,
+      "count": 5
+    },
+    {
+      "date": "04-04",
+      "value": 17.5,
+      "count": 5
+    },
+    {
+      "date": "04-05",
+      "value": 17.7,
+      "count": 5
+    },
+    {
+      "date": "04-06",
+      "value": 17.0,
+      "count": 5
+    },
+    {
+      "date": "04-07",
+      "value": 15.5,
+      "count": 5
+    },
+    {
+      "date": "04-08",
+      "value": 13.5,
+      "count": 5
+    },
+    {
+      "date": "04-09",
+      "value": 11.8,
+      "count": 5
+    },
+    {
+      "date": "04-10",
+      "value": 10.8,
+      "count": 5
+    },
+    {
+      "date": "04-11",
+      "value": 10.5,
+      "count": 5
+    },
+    {
+      "date": "04-12",
+      "value": 10.5,
+      "count": 5
+    },
+    {
+      "date": "04-13",
+      "value": 11.7,
+      "count": 5
+    },
+    {
+      "date": "04-14",
+      "value": 11.8,
+      "count": 5
+    },
+    {
+      "date": "04-15",
+      "value": 12.7,
+      "count": 5
+    },
+    {
+      "date": "04-16",
+      "value": 12.4,
+      "count": 5
+    },
+    {
+      "date": "04-17",
+      "value": 12.2,
+      "count": 5
+    },
+    {
+      "date": "04-18",
+      "value": 12.8,
+      "count": 5
+    },
+    {
+      "date": "04-19",
+      "value": 12.9,
+      "count": 5
+    },
+    {
+      "date": "04-20",
+      "value": 12.9,
+      "count": 5
+    },
+    {
+      "date": "04-21",
+      "value": 12.2,
+      "count": 5
+    },
+    {
+      "date": "04-22",
+      "value": 10.8,
+      "count": 5
+    },
+    {
+      "date": "04-23",
+      "value": 9.4,
+      "count": 5
+    },
+    {
+      "date": "04-24",
+      "value": 8.9,
+      "count": 5
+    },
+    {
+      "date": "04-25",
+      "value": 8.1,
+      "count": 5
+    },
+    {
+      "date": "04-26",
+      "value": 7.7,
+      "count": 5
+    },
+    {
+      "date": "04-27",
+      "value": 7.1,
+      "count": 5
+    },
+    {
+      "date": "04-28",
+      "value": 6.6,
+      "count": 5
+    },
+    {
+      "date": "04-29",
+      "value": 5.7,
+      "count": 5
+    },
+    {
+      "date": "04-30",
+      "value": 5.5,
+      "count": 5
+    }
+  ],
+  "canada": [
+    {
+      "date": "10-01",
+      "value": 0.4,
+      "count": 5
+    },
+    {
+      "date": "10-02",
+      "value": 0.6,
+      "count": 5
+    },
+    {
+      "date": "10-03",
+      "value": 0.6,
+      "count": 5
+    },
+    {
+      "date": "10-04",
+      "value": 0.6,
+      "count": 5
+    },
+    {
+      "date": "10-05",
+      "value": 0.4,
+      "count": 5
+    },
+    {
+      "date": "10-06",
+      "value": 0.2,
+      "count": 5
+    },
+    {
+      "date": "10-07",
+      "value": 0.2,
+      "count": 5
+    },
+    {
+      "date": "10-08",
+      "value": 0.2,
+      "count": 5
+    },
+    {
+      "date": "10-09",
+      "value": 0.4,
+      "count": 5
+    },
+    {
+      "date": "10-10",
+      "value": 0.6,
+      "count": 5
+    },
+    {
+      "date": "10-11",
+      "value": 1.0,
+      "count": 5
+    },
+    {
+      "date": "10-12",
+      "value": 4.4,
+      "count": 5
+    },
+    {
+      "date": "10-13",
+      "value": 6.8,
+      "count": 5
+    },
+    {
+      "date": "10-14",
+      "value": 6.4,
+      "count": 5
+    },
+    {
+      "date": "10-15",
+      "value": 6.2,
+      "count": 5
+    },
+    {
+      "date": "10-16",
+      "value": 4.0,
+      "count": 5
+    },
+    {
+      "date": "10-17",
+      "value": 2.8,
+      "count": 5
+    },
+    {
+      "date": "10-18",
+      "value": 5.4,
+      "count": 5
+    },
+    {
+      "date": "10-19",
+      "value": 7.0,
+      "count": 5
+    },
+    {
+      "date": "10-20",
+      "value": 6.8,
+      "count": 5
+    },
+    {
+      "date": "10-21",
+      "value": 6.8,
+      "count": 5
+    },
+    {
+      "date": "10-22",
+      "value": 7.2,
+      "count": 5
+    },
+    {
+      "date": "10-23",
+      "value": 9.8,
+      "count": 5
+    },
+    {
+      "date": "10-24",
+      "value": 12.8,
+      "count": 5
+    },
+    {
+      "date": "10-25",
+      "value": 15.0,
+      "count": 5
+    },
+    {
+      "date": "10-26",
+      "value": 20.0,
+      "count": 5
+    },
+    {
+      "date": "10-27",
+      "value": 25.4,
+      "count": 5
+    },
+    {
+      "date": "10-28",
+      "value": 24.8,
+      "count": 5
+    },
+    {
+      "date": "10-29",
+      "value": 19.6,
+      "count": 5
+    },
+    {
+      "date": "10-30",
+      "value": 17.2,
+      "count": 5
+    },
+    {
+      "date": "10-31",
+      "value": 15.6,
+      "count": 5
+    },
+    {
+      "date": "11-01",
+      "value": 15.4,
+      "count": 5
+    },
+    {
+      "date": "11-02",
+      "value": 16.2,
+      "count": 5
+    },
+    {
+      "date": "11-03",
+      "value": 15.4,
+      "count": 5
+    },
+    {
+      "date": "11-04",
+      "value": 15.8,
+      "count": 5
+    },
+    {
+      "date": "11-05",
+      "value": 14.0,
+      "count": 5
+    },
+    {
+      "date": "11-06",
+      "value": 10.6,
+      "count": 5
+    },
+    {
+      "date": "11-07",
+      "value": 13.6,
+      "count": 5
+    },
+    {
+      "date": "11-08",
+      "value": 17.4,
+      "count": 5
+    },
+    {
+      "date": "11-09",
+      "value": 22.2,
+      "count": 5
+    },
+    {
+      "date": "11-10",
+      "value": 26.6,
+      "count": 5
+    },
+    {
+      "date": "11-11",
+      "value": 28.4,
+      "count": 5
+    },
+    {
+      "date": "11-12",
+      "value": 27.6,
+      "count": 5
+    },
+    {
+      "date": "11-13",
+      "value": 29.4,
+      "count": 5
+    },
+    {
+      "date": "11-14",
+      "value": 28.0,
+      "count": 5
+    },
+    {
+      "date": "11-15",
+      "value": 31.0,
+      "count": 5
+    },
+    {
+      "date": "11-16",
+      "value": 32.0,
+      "count": 5
+    },
+    {
+      "date": "11-17",
+      "value": 31.0,
+      "count": 5
+    },
+    {
+      "date": "11-18",
+      "value": 27.8,
+      "count": 5
+    },
+    {
+      "date": "11-19",
+      "value": 26.8,
+      "count": 5
+    },
+    {
+      "date": "11-20",
+      "value": 28.6,
+      "count": 5
+    },
+    {
+      "date": "11-21",
+      "value": 28.0,
+      "count": 5
+    },
+    {
+      "date": "11-22",
+      "value": 29.6,
+      "count": 5
+    },
+    {
+      "date": "11-23",
+      "value": 27.4,
+      "count": 5
+    },
+    {
+      "date": "11-24",
+      "value": 28.8,
+      "count": 5
+    },
+    {
+      "date": "11-25",
+      "value": 32.8,
+      "count": 5
+    },
+    {
+      "date": "11-26",
+      "value": 34.4,
+      "count": 5
+    },
+    {
+      "date": "11-27",
+      "value": 35.6,
+      "count": 5
+    },
+    {
+      "date": "11-28",
+      "value": 36.0,
+      "count": 5
+    },
+    {
+      "date": "11-29",
+      "value": 35.4,
+      "count": 5
+    },
+    {
+      "date": "11-30",
+      "value": 35.6,
+      "count": 5
+    },
+    {
+      "date": "12-01",
+      "value": 35.8,
+      "count": 5
+    },
+    {
+      "date": "12-02",
+      "value": 37.2,
+      "count": 5
+    },
+    {
+      "date": "12-03",
+      "value": 36.8,
+      "count": 5
+    },
+    {
+      "date": "12-04",
+      "value": 35.2,
+      "count": 5
+    },
+    {
+      "date": "12-05",
+      "value": 33.4,
+      "count": 5
+    },
+    {
+      "date": "12-06",
+      "value": 35.4,
+      "count": 5
+    },
+    {
+      "date": "12-07",
+      "value": 34.8,
+      "count": 5
+    },
+    {
+      "date": "12-08",
+      "value": 35.6,
+      "count": 5
+    },
+    {
+      "date": "12-09",
+      "value": 36.6,
+      "count": 5
+    },
+    {
+      "date": "12-10",
+      "value": 41.4,
+      "count": 5
+    },
+    {
+      "date": "12-11",
+      "value": 43.0,
+      "count": 5
+    },
+    {
+      "date": "12-12",
+      "value": 47.2,
+      "count": 5
+    },
+    {
+      "date": "12-13",
+      "value": 49.8,
+      "count": 5
+    },
+    {
+      "date": "12-14",
+      "value": 54.0,
+      "count": 5
+    },
+    {
+      "date": "12-15",
+      "value": 58.2,
+      "count": 5
+    },
+    {
+      "date": "12-16",
+      "value": 60.2,
+      "count": 5
+    },
+    {
+      "date": "12-17",
+      "value": 60.4,
+      "count": 5
+    },
+    {
+      "date": "12-18",
+      "value": 58.2,
+      "count": 5
+    },
+    {
+      "date": "12-19",
+      "value": 58.2,
+      "count": 5
+    },
+    {
+      "date": "12-20",
+      "value": 57.2,
+      "count": 5
+    },
+    {
+      "date": "12-21",
+      "value": 56.0,
+      "count": 5
+    },
+    {
+      "date": "12-22",
+      "value": 54.0,
+      "count": 5
+    },
+    {
+      "date": "12-23",
+      "value": 56.0,
+      "count": 5
+    },
+    {
+      "date": "12-24",
+      "value": 58.2,
+      "count": 5
+    },
+    {
+      "date": "12-25",
+      "value": 60.0,
+      "count": 5
+    },
+    {
+      "date": "12-26",
+      "value": 59.6,
+      "count": 5
+    },
+    {
+      "date": "12-27",
+      "value": 60.8,
+      "count": 5
+    },
+    {
+      "date": "12-28",
+      "value": 60.0,
+      "count": 5
+    },
+    {
+      "date": "12-29",
+      "value": 58.6,
+      "count": 5
+    },
+    {
+      "date": "12-30",
+      "value": 61.8,
+      "count": 5
+    },
+    {
+      "date": "12-31",
+      "value": 62.8,
+      "count": 5
+    },
+    {
+      "date": "01-01",
+      "value": 64.0,
+      "count": 5
+    },
+    {
+      "date": "01-02",
+      "value": 71.2,
+      "count": 5
+    },
+    {
+      "date": "01-03",
+      "value": 71.0,
+      "count": 5
+    },
+    {
+      "date": "01-04",
+      "value": 71.0,
+      "count": 5
+    },
+    {
+      "date": "01-05",
+      "value": 71.2,
+      "count": 5
+    },
+    {
+      "date": "01-06",
+      "value": 75.4,
+      "count": 5
+    },
+    {
+      "date": "01-07",
+      "value": 81.2,
+      "count": 5
+    },
+    {
+      "date": "01-08",
+      "value": 83.2,
+      "count": 5
+    },
+    {
+      "date": "01-09",
+      "value": 82.4,
+      "count": 5
+    },
+    {
+      "date": "01-10",
+      "value": 83.0,
+      "count": 5
+    },
+    {
+      "date": "01-11",
+      "value": 86.2,
+      "count": 5
+    },
+    {
+      "date": "01-12",
+      "value": 84.2,
+      "count": 5
+    },
+    {
+      "date": "01-13",
+      "value": 79.6,
+      "count": 5
+    },
+    {
+      "date": "01-14",
+      "value": 73.2,
+      "count": 5
+    },
+    {
+      "date": "01-15",
+      "value": 73.8,
+      "count": 5
+    },
+    {
+      "date": "01-16",
+      "value": 78.2,
+      "count": 5
+    },
+    {
+      "date": "01-17",
+      "value": 81.2,
+      "count": 5
+    },
+    {
+      "date": "01-18",
+      "value": 78.8,
+      "count": 5
+    },
+    {
+      "date": "01-19",
+      "value": 78.2,
+      "count": 5
+    },
+    {
+      "date": "01-20",
+      "value": 78.8,
+      "count": 5
+    },
+    {
+      "date": "01-21",
+      "value": 79.2,
+      "count": 5
+    },
+    {
+      "date": "01-22",
+      "value": 80.6,
+      "count": 5
+    },
+    {
+      "date": "01-23",
+      "value": 81.4,
+      "count": 5
+    },
+    {
+      "date": "01-24",
+      "value": 80.8,
+      "count": 5
+    },
+    {
+      "date": "01-25",
+      "value": 83.8,
+      "count": 5
+    },
+    {
+      "date": "01-26",
+      "value": 87.2,
+      "count": 5
+    },
+    {
+      "date": "01-27",
+      "value": 84.6,
+      "count": 5
+    },
+    {
+      "date": "01-28",
+      "value": 82.4,
+      "count": 5
+    },
+    {
+      "date": "01-29",
+      "value": 79.0,
+      "count": 5
+    },
+    {
+      "date": "01-30",
+      "value": 73.6,
+      "count": 5
+    },
+    {
+      "date": "01-31",
+      "value": 70.8,
+      "count": 5
+    },
+    {
+      "date": "02-01",
+      "value": 69.0,
+      "count": 5
+    },
+    {
+      "date": "02-02",
+      "value": 67.8,
+      "count": 5
+    },
+    {
+      "date": "02-03",
+      "value": 73.2,
+      "count": 5
+    },
+    {
+      "date": "02-04",
+      "value": 73.8,
+      "count": 5
+    },
+    {
+      "date": "02-05",
+      "value": 71.8,
+      "count": 5
+    },
+    {
+      "date": "02-06",
+      "value": 66.8,
+      "count": 5
+    },
+    {
+      "date": "02-07",
+      "value": 67.0,
+      "count": 5
+    },
+    {
+      "date": "02-08",
+      "value": 68.0,
+      "count": 5
+    },
+    {
+      "date": "02-09",
+      "value": 67.4,
+      "count": 5
+    },
+    {
+      "date": "02-10",
+      "value": 66.6,
+      "count": 5
+    },
+    {
+      "date": "02-11",
+      "value": 67.6,
+      "count": 5
+    },
+    {
+      "date": "02-12",
+      "value": 72.0,
+      "count": 5
+    },
+    {
+      "date": "02-13",
+      "value": 74.8,
+      "count": 5
+    },
+    {
+      "date": "02-14",
+      "value": 76.4,
+      "count": 5
+    },
+    {
+      "date": "02-15",
+      "value": 84.0,
+      "count": 5
+    },
+    {
+      "date": "02-16",
+      "value": 89.0,
+      "count": 5
+    },
+    {
+      "date": "02-17",
+      "value": 93.2,
+      "count": 5
+    },
+    {
+      "date": "02-18",
+      "value": 92.2,
+      "count": 5
+    },
+    {
+      "date": "02-19",
+      "value": 89.0,
+      "count": 5
+    },
+    {
+      "date": "02-20",
+      "value": 82.8,
+      "count": 5
+    },
+    {
+      "date": "02-21",
+      "value": 75.0,
+      "count": 5
+    },
+    {
+      "date": "02-22",
+      "value": 73.6,
+      "count": 5
+    },
+    {
+      "date": "02-23",
+      "value": 72.4,
+      "count": 5
+    },
+    {
+      "date": "02-24",
+      "value": 67.6,
+      "count": 5
+    },
+    {
+      "date": "02-25",
+      "value": 64.8,
+      "count": 5
+    },
+    {
+      "date": "02-26",
+      "value": 62.0,
+      "count": 5
+    },
+    {
+      "date": "02-27",
+      "value": 61.0,
+      "count": 5
+    },
+    {
+      "date": "02-28",
+      "value": 56.4,
+      "count": 5
+    },
+    {
+      "date": "03-01",
+      "value": 50.2,
+      "count": 5
+    },
+    {
+      "date": "03-02",
+      "value": 48.4,
+      "count": 5
+    },
+    {
+      "date": "03-03",
+      "value": 48.4,
+      "count": 5
+    },
+    {
+      "date": "03-04",
+      "value": 50.2,
+      "count": 5
+    },
+    {
+      "date": "03-05",
+      "value": 52.8,
+      "count": 5
+    },
+    {
+      "date": "03-06",
+      "value": 54.8,
+      "count": 5
+    },
+    {
+      "date": "03-07",
+      "value": 56.6,
+      "count": 5
+    },
+    {
+      "date": "03-08",
+      "value": 58.2,
+      "count": 5
+    },
+    {
+      "date": "03-09",
+      "value": 55.2,
+      "count": 5
+    },
+    {
+      "date": "03-10",
+      "value": 52.2,
+      "count": 5
+    },
+    {
+      "date": "03-11",
+      "value": 53.6,
+      "count": 5
+    },
+    {
+      "date": "03-12",
+      "value": 54.2,
+      "count": 5
+    },
+    {
+      "date": "03-13",
+      "value": 50.4,
+      "count": 5
+    },
+    {
+      "date": "03-14",
+      "value": 47.0,
+      "count": 5
+    },
+    {
+      "date": "03-15",
+      "value": 44.8,
+      "count": 5
+    },
+    {
+      "date": "03-16",
+      "value": 45.4,
+      "count": 5
+    },
+    {
+      "date": "03-17",
+      "value": 44.0,
+      "count": 5
+    },
+    {
+      "date": "03-18",
+      "value": 42.4,
+      "count": 5
+    },
+    {
+      "date": "03-19",
+      "value": 39.6,
+      "count": 5
+    },
+    {
+      "date": "03-20",
+      "value": 36.8,
+      "count": 5
+    },
+    {
+      "date": "03-21",
+      "value": 34.0,
+      "count": 5
+    },
+    {
+      "date": "03-22",
+      "value": 35.2,
+      "count": 5
+    },
+    {
+      "date": "03-23",
+      "value": 37.4,
+      "count": 5
+    },
+    {
+      "date": "03-24",
+      "value": 39.2,
+      "count": 5
+    },
+    {
+      "date": "03-25",
+      "value": 42.4,
+      "count": 5
+    },
+    {
+      "date": "03-26",
+      "value": 42.0,
+      "count": 5
+    },
+    {
+      "date": "03-27",
+      "value": 40.4,
+      "count": 5
+    },
+    {
+      "date": "03-28",
+      "value": 36.0,
+      "count": 5
+    },
+    {
+      "date": "03-29",
+      "value": 32.8,
+      "count": 5
+    },
+    {
+      "date": "03-30",
+      "value": 35.8,
+      "count": 5
+    },
+    {
+      "date": "03-31",
+      "value": 37.2,
+      "count": 5
+    },
+    {
+      "date": "04-01",
+      "value": 37.2,
+      "count": 5
+    },
+    {
+      "date": "04-02",
+      "value": 36.4,
+      "count": 5
+    },
+    {
+      "date": "04-03",
+      "value": 33.8,
+      "count": 5
+    },
+    {
+      "date": "04-04",
+      "value": 35.0,
+      "count": 5
+    },
+    {
+      "date": "04-05",
+      "value": 35.4,
+      "count": 5
+    },
+    {
+      "date": "04-06",
+      "value": 34.0,
+      "count": 5
+    },
+    {
+      "date": "04-07",
+      "value": 31.0,
+      "count": 5
+    },
+    {
+      "date": "04-08",
+      "value": 27.0,
+      "count": 5
+    },
+    {
+      "date": "04-09",
+      "value": 23.6,
+      "count": 5
+    },
+    {
+      "date": "04-10",
+      "value": 21.6,
+      "count": 5
+    },
+    {
+      "date": "04-11",
+      "value": 21.0,
+      "count": 5
+    },
+    {
+      "date": "04-12",
+      "value": 21.0,
+      "count": 5
+    },
+    {
+      "date": "04-13",
+      "value": 23.4,
+      "count": 5
+    },
+    {
+      "date": "04-14",
+      "value": 23.6,
+      "count": 5
+    },
+    {
+      "date": "04-15",
+      "value": 25.4,
+      "count": 5
+    },
+    {
+      "date": "04-16",
+      "value": 24.8,
+      "count": 5
+    },
+    {
+      "date": "04-17",
+      "value": 24.4,
+      "count": 5
+    },
+    {
+      "date": "04-18",
+      "value": 25.6,
+      "count": 5
+    },
+    {
+      "date": "04-19",
+      "value": 25.8,
+      "count": 5
+    },
+    {
+      "date": "04-20",
+      "value": 25.8,
+      "count": 5
+    },
+    {
+      "date": "04-21",
+      "value": 24.4,
+      "count": 5
+    },
+    {
+      "date": "04-22",
+      "value": 21.6,
+      "count": 5
+    },
+    {
+      "date": "04-23",
+      "value": 18.8,
+      "count": 5
+    },
+    {
+      "date": "04-24",
+      "value": 17.8,
+      "count": 5
+    },
+    {
+      "date": "04-25",
+      "value": 16.2,
+      "count": 5
+    },
+    {
+      "date": "04-26",
+      "value": 15.4,
+      "count": 5
+    },
+    {
+      "date": "04-27",
+      "value": 14.2,
+      "count": 5
+    },
+    {
+      "date": "04-28",
+      "value": 13.2,
+      "count": 5
+    },
+    {
+      "date": "04-29",
+      "value": 11.4,
+      "count": 5
+    },
+    {
+      "date": "04-30",
+      "value": 11.0,
+      "count": 5
+    }
+  ]
+}
