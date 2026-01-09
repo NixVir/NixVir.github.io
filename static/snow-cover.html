@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snow Cover Intelligence Dashboard | NixVir</title>
+
+    <!-- D3.js and TopoJSON -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+
+    <!-- Chart.js for trend chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E2QD5PNRWE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-E2QD5PNRWE');
+    </script>
+
+    <style>
+        :root {
+            --bg-deep: #0a0e14;
+            --bg-card: #111820;
+            --bg-elevated: #1a2230;
+            --border: #2a3444;
+            --border-light: #3a4454;
+            --text-primary: #e8ecf2;
+            --text-secondary: #8892a2;
+            --text-muted: #5c6678;
+            --accent-cold: #3b82f6;
+            --accent-cold-bright: #60a5fa;
+            --accent-warm: #f97316;
+            --accent-warm-bright: #fb923c;
+            --snow-heavy: #dbeafe;
+            --snow-moderate: #60a5fa;
+            --snow-light: #1e40af;
+            --snow-none: #475569;
+            --geo-fill: #1e293b;
+            --geo-stroke: #334155;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 15% 10%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 85% 90%, rgba(249, 115, 22, 0.04) 0%, transparent 50%),
+                var(--bg-deep);
+            z-index: -1;
+        }
+
+        .dashboard {
+            max-width: 1700px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .header-left h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.35rem;
+        }
+
+        .header-left h1 span {
+            color: var(--accent-cold-bright);
+        }
+
+        .header-left .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--text-primary);
+        }
+
+        .last-updated {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .region-selector {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .region-selector label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .region-selector select {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 0.5rem 0.875rem;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.8rem;
+            cursor: pointer;
+            min-width: 200px;
+        }
+
+        .region-selector select:focus {
+            outline: none;
+            border-color: var(--accent-cold);
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            grid-template-rows: auto auto;
+            gap: 1.25rem;
+        }
+
+        /* Card */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .card-subtitle {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            margin-top: 0.15rem;
+        }
+
+        .card-body {
+            padding: 0.875rem;
+        }
+
+        /* Map */
+        .map-card {
+            grid-column: 1;
+            grid-row: 1 / 3;
+        }
+
+        .map-container {
+            height: 620px;
+            position: relative;
+            background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
+        }
+
+        #feeder-map {
+            width: 100%;
+            height: 100%;
+        }
+
+        .state-path {
+            fill: var(--geo-fill);
+            stroke: var(--geo-stroke);
+            stroke-width: 0.5;
+        }
+
+        .metro-bubble {
+            stroke: var(--bg-deep);
+            stroke-width: 1.5;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .metro-bubble:hover {
+            opacity: 1 !important;
+            stroke-width: 2.5;
+        }
+
+        .metro-label {
+            fill: var(--text-secondary);
+            font-size: 0.6rem;
+            font-weight: 500;
+            pointer-events: none;
+        }
+
+        .region-badge {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background: rgba(17, 24, 32, 0.92);
+            backdrop-filter: blur(8px);
+            padding: 0.5rem 0.875rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        .region-badge-title {
+            font-size: 0.55rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .region-badge-name {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .map-legend {
+            position: absolute;
+            bottom: 0.875rem;
+            left: 0.875rem;
+            background: rgba(17, 24, 32, 0.92);
+            backdrop-filter: blur(8px);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .legend-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .legend-title {
+            font-size: 0.6rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .legend-scale {
+            display: flex;
+            gap: 2px;
+            height: 8px;
+        }
+
+        .legend-scale div {
+            width: 24px;
+            border-radius: 2px;
+        }
+
+        .legend-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.55rem;
+            color: var(--text-secondary);
+        }
+
+        .legend-size {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .legend-size-item {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .legend-circle {
+            background: var(--snow-moderate);
+            border-radius: 50%;
+            opacity: 0.7;
+        }
+
+        .legend-size span {
+            font-size: 0.55rem;
+            color: var(--text-secondary);
+        }
+
+        /* Right Column */
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        /* Summary Grid */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        .summary-stat {
+            background: var(--bg-elevated);
+            padding: 0.75rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .summary-label {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            margin-bottom: 0.25rem;
+        }
+
+        .summary-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        /* Insight Box */
+        .insight-box {
+            background: rgba(59, 130, 246, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 6px;
+            padding: 0.75rem;
+            margin-top: 0.75rem;
+        }
+
+        .insight-header {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .insight-icon {
+            width: 14px;
+            height: 14px;
+            color: var(--accent-cold);
+        }
+
+        .insight-title {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--accent-cold-bright);
+        }
+
+        .insight-text {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.45;
+        }
+
+        /* Market Table */
+        .market-table-container {
+            max-height: 240px;
+            overflow-y: auto;
+        }
+
+        .market-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.7rem;
+        }
+
+        .market-table th {
+            text-align: left;
+            padding: 0.5rem 0.6rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: sticky;
+            top: 0;
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .market-table td {
+            padding: 0.5rem 0.6rem;
+            border-bottom: 1px solid var(--border);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+        }
+
+        .market-table tr:hover {
+            background: var(--bg-elevated);
+        }
+
+        .market-name-cell {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .snow-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .market-name {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+        }
+
+        .market-state {
+            color: var(--text-muted);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.6rem;
+        }
+
+        .temp-warm { color: var(--accent-warm-bright); }
+        .temp-cool { color: var(--accent-cold-bright); }
+        .temp-normal { color: var(--text-secondary); }
+
+        .awareness-badge {
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.55rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .awareness-high {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--success);
+        }
+
+        .awareness-moderate {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--warning);
+        }
+
+        .awareness-low {
+            background: rgba(239, 68, 68, 0.2);
+            color: var(--danger);
+        }
+
+        /* Trend Chart */
+        .trend-container {
+            height: 160px;
+        }
+
+        #trend-chart {
+            width: 100%;
+            height: 100%;
+        }
+
+        .trend-line {
+            fill: none;
+            stroke: var(--accent-cold);
+            stroke-width: 2;
+        }
+
+        .trend-area {
+            fill: url(#trendGradient);
+        }
+
+        .norm-line {
+            fill: none;
+            stroke: var(--text-muted);
+            stroke-width: 1.5;
+            stroke-dasharray: 4,3;
+        }
+
+        .axis text {
+            fill: var(--text-muted);
+            font-size: 0.55rem;
+        }
+
+        .axis line,
+        .axis path {
+            stroke: var(--border);
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: fixed;
+            background: rgba(17, 24, 32, 0.95);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 0.75rem;
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.15s;
+            backdrop-filter: blur(8px);
+            min-width: 160px;
+        }
+
+        .tooltip.visible {
+            opacity: 1;
+        }
+
+        .tooltip-title {
+            font-weight: 600;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .tooltip-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            font-size: 0.75rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .tooltip-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .tooltip-label {
+            color: var(--text-secondary);
+        }
+
+        .tooltip-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
+        }
+
+        /* National Overview Card */
+        .national-overview {
+            grid-column: 1 / -1;
+            margin-top: 1rem;
+        }
+
+        .national-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .national-stat-card {
+            background: var(--bg-elevated);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .national-stat-country {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .national-stat-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .national-stat-label {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+        }
+
+        .national-stat-temp {
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .national-chart-container {
+            height: 200px;
+        }
+
+        /* Loading State */
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 300px;
+            color: var(--text-muted);
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent-cold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 1300px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .map-card {
+                grid-row: auto;
+            }
+
+            .map-container {
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .dashboard {
+                padding: 1rem;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header-right {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .map-container {
+                height: 350px;
+            }
+
+            .national-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <div class="dashboard">
+        <header class="header">
+            <div class="header-left">
+                <h1>Snow Cover <span>Intelligence</span></h1>
+                <p class="subtitle">Is skiing top-of-mind for consumers in your feeder markets?</p>
+            </div>
+            <div class="header-right">
+                <a href="/" class="back-link">&larr; Back to NixVir</a>
+                <div class="last-updated" id="last-updated">Loading...</div>
+                <div class="region-selector">
+                    <label>Region:</label>
+                    <select id="region-select">
+                        <optgroup label="NSAA Regions">
+                            <option value="rocky-mountain">Rocky Mountain</option>
+                            <option value="pacific-northwest">Pacific Northwest</option>
+                            <option value="pacific-southwest">Pacific Southwest</option>
+                            <option value="midwest">Midwest</option>
+                            <option value="northeast">Northeast</option>
+                            <option value="southeast">Southeast</option>
+                        </optgroup>
+                        <optgroup label="Canada Ski Council">
+                            <option value="canada-bc">British Columbia</option>
+                            <option value="canada-alberta">Alberta</option>
+                            <option value="canada-prairies">Prairies (SK/MB)</option>
+                            <option value="canada-ontario">Ontario</option>
+                            <option value="canada-quebec">Quebec</option>
+                            <option value="canada-atlantic">Atlantic Canada</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <div class="card map-card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Feeder Market Conditions</div>
+                        <div class="card-subtitle">Bubble size = relative market importance (population) | Color = snow depth</div>
+                    </div>
+                </div>
+                <div class="map-container" id="map-container">
+                    <div class="loading" id="map-loading">
+                        <div class="loading-spinner"></div>
+                        <span>Loading map data...</span>
+                    </div>
+                    <svg id="feeder-map" style="display: none;"></svg>
+                    <div class="region-badge">
+                        <div class="region-badge-title">Viewing</div>
+                        <div class="region-badge-name" id="region-display">Rocky Mountain</div>
+                    </div>
+                    <div class="map-legend">
+                        <div class="legend-group">
+                            <div class="legend-title">Snow Depth</div>
+                            <div class="legend-scale">
+                                <div style="background: var(--snow-none)"></div>
+                                <div style="background: var(--snow-light)"></div>
+                                <div style="background: var(--snow-moderate)"></div>
+                                <div style="background: var(--snow-heavy)"></div>
+                            </div>
+                            <div class="legend-labels">
+                                <span>0"</span>
+                                <span>6"+</span>
+                            </div>
+                        </div>
+                        <div class="legend-group">
+                            <div class="legend-title">Market Size</div>
+                            <div class="legend-size">
+                                <div class="legend-size-item">
+                                    <div class="legend-circle" style="width: 10px; height: 10px;"></div>
+                                    <span>Small</span>
+                                </div>
+                                <div class="legend-size-item">
+                                    <div class="legend-circle" style="width: 18px; height: 18px;"></div>
+                                    <span>Large</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Regional Summary</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="summary-grid" id="summary-stats">
+                            <div class="summary-stat">
+                                <div class="summary-label">Avg Snow</div>
+                                <div class="summary-value">--</div>
+                            </div>
+                            <div class="summary-stat">
+                                <div class="summary-label">Temp Anomaly</div>
+                                <div class="summary-value">--</div>
+                            </div>
+                            <div class="summary-stat">
+                                <div class="summary-label">Markets w/ Snow</div>
+                                <div class="summary-value">--</div>
+                            </div>
+                            <div class="summary-stat">
+                                <div class="summary-label">Low Awareness</div>
+                                <div class="summary-value">--</div>
+                            </div>
+                        </div>
+                        <div class="insight-box" id="insight-box">
+                            <div class="insight-header">
+                                <svg class="insight-icon" viewBox="0 0 16 16" fill="currentColor">
+                                    <path d="M8 1.5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V2a.5.5 0 0 1 .5-.5zm0 9a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5z"/>
+                                    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zM1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8z"/>
+                                </svg>
+                                <span class="insight-title">Market Insight</span>
+                            </div>
+                            <div class="insight-text">Loading market conditions...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">Feeder Markets</div>
+                            <div class="card-subtitle">Winter awareness = snow visible + seasonable temps</div>
+                        </div>
+                    </div>
+                    <div class="card-body" style="padding: 0;">
+                        <div class="market-table-container">
+                            <table class="market-table">
+                                <thead>
+                                    <tr>
+                                        <th>Market</th>
+                                        <th>Snow</th>
+                                        <th>Depth</th>
+                                        <th>Temp</th>
+                                        <th>vs Norm</th>
+                                        <th>Awareness</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="market-table-body">
+                                    <tr><td colspan="6" style="text-align: center; color: var(--text-muted);">Loading...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">30-Day Regional Trend</div>
+                            <div class="card-subtitle">Population-weighted avg snow cover</div>
+                        </div>
+                    </div>
+                    <div class="card-body trend-container">
+                        <svg id="trend-chart"></svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- National Overview -->
+            <div class="card national-overview">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">National Snow Cover Overview</div>
+                        <div class="card-subtitle">Combined US and Canada snow cover with historical comparison</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="national-stats" id="national-stats">
+                        <div class="national-stat-card">
+                            <div class="national-stat-country">United States</div>
+                            <div class="national-stat-value" id="usa-cover">--</div>
+                            <div class="national-stat-label">Snow Coverage</div>
+                            <div class="national-stat-temp" id="usa-temp"></div>
+                        </div>
+                        <div class="national-stat-card">
+                            <div class="national-stat-country">Canada</div>
+                            <div class="national-stat-value" id="canada-cover">--</div>
+                            <div class="national-stat-label">Snow Coverage</div>
+                            <div class="national-stat-temp" id="canada-temp"></div>
+                        </div>
+                        <div class="national-stat-card">
+                            <div class="national-stat-country">Combined</div>
+                            <div class="national-stat-value" id="combined-cover">--</div>
+                            <div class="national-stat-label">North America</div>
+                            <div class="national-stat-temp" id="combined-temp"></div>
+                        </div>
+                    </div>
+                    <div class="national-chart-container">
+                        <canvas id="national-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tooltip" id="tooltip"></div>
+
+    <script>
+        // ============================================
+        // State
+        // ============================================
+        let snowData = null;
+        let currentRegion = 'rocky-mountain';
+        let currentMarkets = [];
+        let usGeoData = null;
+        let canadaGeoData = null;
+        let nationalChart = null;
+
+        // ============================================
+        // Data Loading
+        // ============================================
+        async function loadSnowData() {
+            try {
+                const response = await fetch('/data/snow-cover.json');
+                snowData = await response.json();
+
+                // Update timestamp
+                document.getElementById('last-updated').textContent = `Updated ${snowData.updated}`;
+
+                // Update national overview
+                updateNationalOverview();
+
+                // Update regional dashboard
+                updateDashboard();
+
+            } catch (error) {
+                console.error('Error loading snow data:', error);
+                document.getElementById('last-updated').textContent = 'Error loading data';
+            }
+        }
+
+        async function loadGeoData() {
+            try {
+                // Load US states
+                const usResponse = await fetch('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json');
+                const usData = await usResponse.json();
+                usGeoData = topojson.feature(usData, usData.objects.states);
+
+                // Load Canada provinces
+                const caResponse = await fetch('https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/canada.geojson');
+                canadaGeoData = await caResponse.json();
+
+                // Hide loading, show map
+                document.getElementById('map-loading').style.display = 'none';
+                document.getElementById('feeder-map').style.display = 'block';
+
+            } catch (e) {
+                console.error('Error loading geo data:', e);
+                document.getElementById('map-loading').innerHTML =
+                    '<span style="color: var(--danger);">Error loading map data</span>';
+            }
+
+            if (snowData) {
+                drawMap();
+            }
+        }
+
+        // ============================================
+        // Data Processing
+        // ============================================
+
+        // Get markets for current region from snow data
+        function getRegionMarkets() {
+            if (!snowData || !snowData.feederRegions || !snowData.metros) {
+                return [];
+            }
+
+            const regionConfig = snowData.feederRegions[currentRegion];
+            if (!regionConfig) return [];
+
+            const marketNames = regionConfig.markets;
+
+            // Find metro data for each market in the region
+            return marketNames.map(name => {
+                // Find the metro in our data (handle slight name variations)
+                const metro = snowData.metros.find(m =>
+                    m.city === name ||
+                    m.city.includes(name) ||
+                    name.includes(m.city)
+                );
+
+                if (!metro) {
+                    console.warn(`Metro not found: ${name}`);
+                    return null;
+                }
+
+                // Calculate winter awareness based on conditions
+                const snowCover = metro.cover || 0;
+                const tempAnomaly = metro.temperature?.anomaly_f || 0;
+
+                let awareness;
+                if (snowCover >= 50 && tempAnomaly <= 5) {
+                    awareness = 'high';
+                } else if (snowCover > 0 || tempAnomaly <= 8) {
+                    awareness = 'moderate';
+                } else {
+                    awareness = 'low';
+                }
+
+                return {
+                    name: metro.city,
+                    state: metro.region,
+                    lat: metro.lat,
+                    lng: metro.lng,
+                    importance: metro.importance || 100,
+                    snowCover: snowCover,
+                    snowDepth: metro.depthInches || 0,
+                    temp: metro.temperature?.temp_f || null,
+                    tempAnomaly: Math.round(tempAnomaly),
+                    awareness: awareness
+                };
+            }).filter(m => m !== null);
+        }
+
+        // Get region config with projection settings
+        function getRegionConfig() {
+            const configs = {
+                'rocky-mountain': { name: 'Rocky Mountain', center: [-106, 40], scale: 1100 },
+                'pacific-northwest': { name: 'Pacific Northwest', center: [-120, 46], scale: 1400 },
+                'pacific-southwest': { name: 'Pacific Southwest', center: [-118, 35], scale: 1200 },
+                'midwest': { name: 'Midwest', center: [-89, 43], scale: 1400 },
+                'northeast': { name: 'Northeast', center: [-74, 42], scale: 1600 },
+                'southeast': { name: 'Southeast', center: [-82, 35], scale: 1400 },
+                'canada-bc': { name: 'British Columbia', center: [-124, 52], scale: 1000 },
+                'canada-alberta': { name: 'Alberta', center: [-114, 53], scale: 1100 },
+                'canada-prairies': { name: 'Prairies', center: [-102, 52], scale: 1000 },
+                'canada-ontario': { name: 'Ontario', center: [-81, 45], scale: 1200 },
+                'canada-quebec': { name: 'Quebec', center: [-72, 48], scale: 1100 },
+                'canada-atlantic': { name: 'Atlantic Canada', center: [-63, 46], scale: 1200 }
+            };
+
+            // Merge with feederRegions name if available
+            const config = configs[currentRegion] || configs['rocky-mountain'];
+            if (snowData?.feederRegions?.[currentRegion]) {
+                config.name = snowData.feederRegions[currentRegion].name;
+            }
+            return config;
+        }
+
+        // ============================================
+        // National Overview
+        // ============================================
+        function updateNationalOverview() {
+            if (!snowData) return;
+
+            // USA stats
+            document.getElementById('usa-cover').textContent = snowData.usa.cover + '%';
+            if (snowData.usa.temperature) {
+                const anomaly = snowData.usa.temperature.avg_anomaly_f;
+                const color = anomaly > 5 ? 'var(--accent-warm-bright)' : anomaly < -5 ? 'var(--accent-cold-bright)' : 'var(--text-secondary)';
+                document.getElementById('usa-temp').innerHTML =
+                    `<span style="color: ${color}">${anomaly > 0 ? '+' : ''}${anomaly.toFixed(1)}°F vs normal</span>`;
+            }
+
+            // Canada stats
+            document.getElementById('canada-cover').textContent = snowData.canada.cover + '%';
+            if (snowData.canada.temperature) {
+                const anomaly = snowData.canada.temperature.avg_anomaly_f;
+                const color = anomaly > 5 ? 'var(--accent-warm-bright)' : anomaly < -5 ? 'var(--accent-cold-bright)' : 'var(--text-secondary)';
+                document.getElementById('canada-temp').innerHTML =
+                    `<span style="color: ${color}">${anomaly > 0 ? '+' : ''}${anomaly.toFixed(1)}°F vs normal</span>`;
+            }
+
+            // Combined stats
+            document.getElementById('combined-cover').textContent = snowData.combined.cover + '%';
+            if (snowData.combined.temperature) {
+                const anomaly = snowData.combined.temperature.avg_anomaly_f;
+                const color = anomaly > 5 ? 'var(--accent-warm-bright)' : anomaly < -5 ? 'var(--accent-cold-bright)' : 'var(--text-secondary)';
+                document.getElementById('combined-temp').innerHTML =
+                    `<span style="color: ${color}">${anomaly > 0 ? '+' : ''}${anomaly.toFixed(1)}°F vs normal</span>`;
+            }
+
+            // Draw national chart
+            drawNationalChart();
+        }
+
+        function drawNationalChart() {
+            if (!snowData?.usa?.history || !snowData?.canada?.history) return;
+
+            const ctx = document.getElementById('national-chart').getContext('2d');
+
+            if (nationalChart) {
+                nationalChart.destroy();
+            }
+
+            const usaData = snowData.usa.history;
+            const canadaData = snowData.canada.history;
+            const usaPrior = snowData.usa.priorYearHistory || [];
+
+            nationalChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: usaData.map(h => {
+                        const date = new Date(h.date);
+                        return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+                    }),
+                    datasets: [
+                        {
+                            label: 'USA 2026',
+                            data: usaData.map(h => h.value),
+                            borderColor: '#3b82f6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            fill: true,
+                            tension: 0.3,
+                            borderWidth: 2
+                        },
+                        {
+                            label: 'Canada 2026',
+                            data: canadaData.map(h => h.value),
+                            borderColor: '#ef4444',
+                            backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                            fill: true,
+                            tension: 0.3,
+                            borderWidth: 2
+                        },
+                        {
+                            label: 'USA Prior Year',
+                            data: usaPrior.map(h => h.value),
+                            borderColor: '#6b7280',
+                            borderDash: [5, 5],
+                            fill: false,
+                            tension: 0.3,
+                            borderWidth: 1.5
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                color: '#8892a2',
+                                usePointStyle: true,
+                                padding: 15,
+                                font: { size: 11 }
+                            }
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                            backgroundColor: 'rgba(17, 24, 32, 0.95)',
+                            titleColor: '#e8ecf2',
+                            bodyColor: '#8892a2',
+                            borderColor: '#2a3444',
+                            borderWidth: 1,
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.dataset.label}: ${context.parsed.y}%`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { color: 'rgba(42, 52, 68, 0.5)' },
+                            ticks: { color: '#5c6678' }
+                        },
+                        y: {
+                            min: 0,
+                            max: 100,
+                            grid: { color: 'rgba(42, 52, 68, 0.5)' },
+                            ticks: {
+                                color: '#5c6678',
+                                callback: value => value + '%'
+                            }
+                        }
+                    },
+                    interaction: {
+                        intersect: false,
+                        mode: 'index'
+                    }
+                }
+            });
+        }
+
+        // ============================================
+        // Tooltip
+        // ============================================
+        const tooltip = d3.select("#tooltip");
+
+        function showTooltip(event, d) {
+            const tempClass = d.tempAnomaly > 8 ? 'temp-warm' : d.tempAnomaly < 3 ? 'temp-cool' : 'temp-normal';
+            const tempDisplay = d.temp !== null ? `${Math.round(d.temp)}°F` : 'N/A';
+            const anomalyDisplay = d.tempAnomaly !== null ? `${d.tempAnomaly > 0 ? '+' : ''}${d.tempAnomaly}°F` : 'N/A';
+
+            tooltip
+                .classed("visible", true)
+                .style("left", (event.clientX + 12) + "px")
+                .style("top", (event.clientY - 10) + "px")
+                .html(`
+                    <div class="tooltip-title">${d.name}, ${d.state}</div>
+                    <div class="tooltip-row">
+                        <span class="tooltip-label">Snow Cover</span>
+                        <span class="tooltip-value">${d.snowCover}%</span>
+                    </div>
+                    <div class="tooltip-row">
+                        <span class="tooltip-label">Snow Depth</span>
+                        <span class="tooltip-value">${d.snowDepth}"</span>
+                    </div>
+                    <div class="tooltip-row">
+                        <span class="tooltip-label">Temperature</span>
+                        <span class="tooltip-value">${tempDisplay}</span>
+                    </div>
+                    <div class="tooltip-row">
+                        <span class="tooltip-label">vs Normal</span>
+                        <span class="tooltip-value ${tempClass}">${anomalyDisplay}</span>
+                    </div>
+                `);
+        }
+
+        function hideTooltip() {
+            tooltip.classed("visible", false);
+        }
+
+        // ============================================
+        // Map Drawing
+        // ============================================
+        function drawMap() {
+            if (!usGeoData || !canadaGeoData || currentMarkets.length === 0) return;
+
+            const container = document.getElementById("feeder-map");
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+            const config = getRegionConfig();
+
+            const svg = d3.select("#feeder-map")
+                .attr("width", width)
+                .attr("height", height);
+
+            svg.selectAll("*").remove();
+
+            // Projection
+            let projection;
+
+            if (currentRegion.startsWith('canada-')) {
+                projection = d3.geoConicConformal()
+                    .parallels([49, 77])
+                    .rotate([config.center[0] * -1, 0])
+                    .center([0, config.center[1]])
+                    .scale(config.scale)
+                    .translate([width / 2, height / 2]);
+            } else {
+                projection = d3.geoConicEqualArea()
+                    .parallels([29.5, 45.5])
+                    .rotate([config.center[0] * -1, 0])
+                    .center([0, config.center[1]])
+                    .scale(config.scale)
+                    .translate([width / 2, height / 2]);
+            }
+
+            const path = d3.geoPath().projection(projection);
+
+            // Draw US states
+            if (usGeoData) {
+                svg.append("g")
+                    .selectAll("path.us-state")
+                    .data(usGeoData.features)
+                    .enter()
+                    .append("path")
+                    .attr("class", "state-path")
+                    .attr("d", path);
+            }
+
+            // Draw Canada provinces
+            if (canadaGeoData) {
+                svg.append("g")
+                    .selectAll("path.ca-province")
+                    .data(canadaGeoData.features)
+                    .enter()
+                    .append("path")
+                    .attr("class", "state-path")
+                    .attr("d", path);
+            }
+
+            // Color scale for snow depth
+            const colorScale = d3.scaleLinear()
+                .domain([0, 2, 4, 6])
+                .range(["#475569", "#1e40af", "#60a5fa", "#dbeafe"])
+                .clamp(true);
+
+            // Size scale for importance
+            const maxPop = d3.max(currentMarkets, d => d.importance);
+            const sizeScale = d3.scaleSqrt()
+                .domain([0, maxPop])
+                .range([5, 32]);
+
+            // Draw market bubbles
+            svg.selectAll(".metro-bubble")
+                .data(currentMarkets)
+                .enter()
+                .append("circle")
+                .attr("class", "metro-bubble")
+                .attr("cx", d => {
+                    const coords = projection([d.lng, d.lat]);
+                    return coords ? coords[0] : 0;
+                })
+                .attr("cy", d => {
+                    const coords = projection([d.lng, d.lat]);
+                    return coords ? coords[1] : 0;
+                })
+                .attr("r", d => sizeScale(d.importance))
+                .attr("fill", d => colorScale(d.snowDepth))
+                .attr("opacity", 0.85)
+                .on("mouseover", showTooltip)
+                .on("mouseout", hideTooltip);
+
+            // Labels for large markets
+            svg.selectAll(".metro-label")
+                .data(currentMarkets.filter(d => d.importance >= 1000))
+                .enter()
+                .append("text")
+                .attr("class", "metro-label")
+                .attr("x", d => {
+                    const coords = projection([d.lng, d.lat]);
+                    return coords ? coords[0] : 0;
+                })
+                .attr("y", d => {
+                    const coords = projection([d.lng, d.lat]);
+                    return coords ? coords[1] + sizeScale(d.importance) + 10 : 0;
+                })
+                .attr("text-anchor", "middle")
+                .text(d => d.name);
+        }
+
+        // ============================================
+        // Market Table
+        // ============================================
+        function renderMarketTable() {
+            const tbody = document.getElementById("market-table-body");
+            const sorted = [...currentMarkets].sort((a, b) => b.importance - a.importance);
+
+            const colorScale = d3.scaleLinear()
+                .domain([0, 2, 4, 6])
+                .range(["#475569", "#1e40af", "#60a5fa", "#dbeafe"])
+                .clamp(true);
+
+            tbody.innerHTML = sorted.map(d => {
+                const tempClass = d.tempAnomaly > 8 ? 'temp-warm' : d.tempAnomaly < 3 ? 'temp-cool' : 'temp-normal';
+                const awarenessClass = `awareness-${d.awareness}`;
+                const tempDisplay = d.temp !== null ? `${Math.round(d.temp)}°` : '--';
+                const anomalyDisplay = d.tempAnomaly !== null ? `${d.tempAnomaly > 0 ? '+' : ''}${d.tempAnomaly}°` : '--';
+
+                return `
+                    <tr>
+                        <td>
+                            <div class="market-name-cell">
+                                <div class="snow-dot" style="background: ${colorScale(d.snowDepth)}"></div>
+                                <span class="market-name">${d.name}</span>
+                                <span class="market-state">${d.state}</span>
+                            </div>
+                        </td>
+                        <td>${d.snowCover}%</td>
+                        <td>${d.snowDepth}"</td>
+                        <td>${tempDisplay}</td>
+                        <td class="${tempClass}">${anomalyDisplay}</td>
+                        <td><span class="awareness-badge ${awarenessClass}">${d.awareness}</span></td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        // ============================================
+        // Summary Stats
+        // ============================================
+        function renderSummaryStats() {
+            const container = document.getElementById("summary-stats");
+
+            if (currentMarkets.length === 0) {
+                container.innerHTML = '<div style="color: var(--text-muted); text-align: center;">No data available</div>';
+                return;
+            }
+
+            const totalImportance = currentMarkets.reduce((s, m) => s + m.importance, 0);
+
+            const avgSnowCover = Math.round(
+                currentMarkets.reduce((s, m) => s + m.snowCover * m.importance, 0) / totalImportance
+            );
+
+            const validTempMarkets = currentMarkets.filter(m => m.tempAnomaly !== null);
+            const avgTempAnomaly = validTempMarkets.length > 0
+                ? (validTempMarkets.reduce((s, m) => s + m.tempAnomaly * m.importance, 0) /
+                   validTempMarkets.reduce((s, m) => s + m.importance, 0)).toFixed(1)
+                : '--';
+
+            const marketsWithSnow = currentMarkets.filter(m => m.snowCover > 0).length;
+            const lowAwarenessCount = currentMarkets.filter(m => m.awareness === 'low').length;
+
+            container.innerHTML = `
+                <div class="summary-stat">
+                    <div class="summary-label">Avg Snow</div>
+                    <div class="summary-value" style="color: ${avgSnowCover < 30 ? 'var(--accent-warm)' : 'var(--text-primary)'}">${avgSnowCover}%</div>
+                </div>
+                <div class="summary-stat">
+                    <div class="summary-label">Temp Anomaly</div>
+                    <div class="summary-value" style="color: ${avgTempAnomaly !== '--' && parseFloat(avgTempAnomaly) > 5 ? 'var(--accent-warm-bright)' : 'var(--text-primary)'}">${avgTempAnomaly !== '--' ? (avgTempAnomaly > 0 ? '+' : '') + avgTempAnomaly + '°' : '--'}</div>
+                </div>
+                <div class="summary-stat">
+                    <div class="summary-label">w/ Snow</div>
+                    <div class="summary-value">${marketsWithSnow}/${currentMarkets.length}</div>
+                </div>
+                <div class="summary-stat">
+                    <div class="summary-label">Low Aware</div>
+                    <div class="summary-value" style="color: ${lowAwarenessCount > 3 ? 'var(--danger)' : 'var(--text-primary)'}">${lowAwarenessCount}</div>
+                </div>
+            `;
+        }
+
+        // ============================================
+        // Market Insight
+        // ============================================
+        function renderInsight() {
+            const container = document.getElementById("insight-box");
+            const lowAwareness = currentMarkets.filter(m => m.awareness === 'low');
+            const highAwareness = currentMarkets.filter(m => m.awareness === 'high');
+            const config = getRegionConfig();
+
+            let insightText;
+            if (currentMarkets.length === 0) {
+                insightText = 'No market data available for this region.';
+            } else if (lowAwareness.length >= 4) {
+                const names = lowAwareness.slice(0, 3).map(m => m.name).join(', ');
+                insightText = `${lowAwareness.length} markets (${names}, etc.) have no snow and above-normal temperatures. Skiing is unlikely to be top-of-mind for consumers in these areas.`;
+            } else if (lowAwareness.length > 0) {
+                const names = lowAwareness.map(m => m.name).join(', ');
+                insightText = `${names} ${lowAwareness.length === 1 ? 'has' : 'have'} no visible snow and warm conditions. Winter awareness is likely low in ${lowAwareness.length === 1 ? 'this market' : 'these markets'}.`;
+            } else if (highAwareness.length === currentMarkets.length) {
+                insightText = `All feeder markets are experiencing winter conditions with snow on the ground. Organic awareness of ski season is likely high.`;
+            } else {
+                insightText = `Most feeder markets are seeing some winter conditions. ${highAwareness.length} of ${currentMarkets.length} markets have significant snow cover.`;
+            }
+
+            container.innerHTML = `
+                <div class="insight-header">
+                    <svg class="insight-icon" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 1.5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V2a.5.5 0 0 1 .5-.5zm0 9a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5z"/>
+                        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zM1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8z"/>
+                    </svg>
+                    <span class="insight-title">Market Insight</span>
+                </div>
+                <div class="insight-text">${insightText}</div>
+            `;
+        }
+
+        // ============================================
+        // Regional Trend Chart (D3)
+        // ============================================
+        function drawTrendChart() {
+            const container = document.getElementById("trend-chart");
+            if (!container) return;
+
+            const width = container.clientWidth || 280;
+            const height = container.clientHeight || 140;
+            const margin = { top: 10, right: 15, bottom: 25, left: 35 };
+            const innerWidth = width - margin.left - margin.right;
+            const innerHeight = height - margin.top - margin.bottom;
+
+            const svg = d3.select("#trend-chart")
+                .attr("width", width)
+                .attr("height", height);
+
+            svg.selectAll("*").remove();
+
+            // Gradient definition
+            const defs = svg.append("defs");
+            const gradient = defs.append("linearGradient")
+                .attr("id", "trendGradient")
+                .attr("x1", "0%").attr("y1", "0%")
+                .attr("x2", "0%").attr("y2", "100%");
+            gradient.append("stop").attr("offset", "0%").attr("stop-color", "var(--accent-cold)").attr("stop-opacity", 0.3);
+            gradient.append("stop").attr("offset", "100%").attr("stop-color", "var(--accent-cold)").attr("stop-opacity", 0.02);
+
+            const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+            // Generate trend data from market history if available
+            const days = 30;
+            const data = [];
+
+            // Calculate weighted average from markets with history
+            const avgSnow = currentMarkets.length > 0
+                ? currentMarkets.reduce((s, m) => s + m.snowCover, 0) / currentMarkets.length
+                : 30;
+
+            for (let i = 0; i < days; i++) {
+                const date = new Date();
+                date.setDate(date.getDate() - (days - 1 - i));
+                data.push({
+                    date,
+                    current: Math.max(0, Math.min(100, avgSnow + 15 - i * 0.3 + Math.sin(i / 3) * 8)),
+                    historical: 35 + Math.sin(i / 5) * 5
+                });
+            }
+
+            const x = d3.scaleTime().domain(d3.extent(data, d => d.date)).range([0, innerWidth]);
+            const y = d3.scaleLinear().domain([0, 70]).range([innerHeight, 0]);
+
+            // Historical norm line
+            const lineNorm = d3.line().x(d => x(d.date)).y(d => y(d.historical)).curve(d3.curveMonotoneX);
+            g.append("path").datum(data).attr("class", "norm-line").attr("d", lineNorm);
+
+            // Current area
+            const area = d3.area().x(d => x(d.date)).y0(innerHeight).y1(d => y(d.current)).curve(d3.curveMonotoneX);
+            g.append("path").datum(data).attr("class", "trend-area").attr("d", area);
+
+            // Current line
+            const line = d3.line().x(d => x(d.date)).y(d => y(d.current)).curve(d3.curveMonotoneX);
+            g.append("path").datum(data).attr("class", "trend-line").attr("d", line);
+
+            // Axes
+            g.append("g").attr("class", "axis").attr("transform", `translate(0,${innerHeight})`)
+                .call(d3.axisBottom(x).ticks(5).tickFormat(d3.timeFormat("%b %d")));
+            g.append("g").attr("class", "axis").call(d3.axisLeft(y).ticks(4).tickFormat(d => d + "%"));
+
+            // Legend
+            const legend = g.append("g").attr("transform", `translate(${innerWidth - 80}, 0)`);
+            legend.append("line").attr("x1", 0).attr("x2", 16).attr("y1", 0).attr("y2", 0)
+                .attr("stroke", "var(--accent-cold)").attr("stroke-width", 2);
+            legend.append("text").attr("x", 20).attr("y", 3).attr("class", "axis").text("Current");
+            legend.append("line").attr("x1", 0).attr("x2", 16).attr("y1", 14).attr("y2", 14)
+                .attr("stroke", "var(--text-muted)").attr("stroke-dasharray", "4,3");
+            legend.append("text").attr("x", 20).attr("y", 17).attr("class", "axis").text("Norm");
+        }
+
+        // ============================================
+        // Dashboard Update
+        // ============================================
+        function updateDashboard() {
+            const config = getRegionConfig();
+            currentMarkets = getRegionMarkets();
+
+            document.getElementById("region-display").textContent = config.name;
+
+            drawMap();
+            renderMarketTable();
+            renderSummaryStats();
+            renderInsight();
+            drawTrendChart();
+
+            // Analytics
+            gtag('event', 'region_view', {
+                region: currentRegion,
+                region_name: config.name
+            });
+        }
+
+        // ============================================
+        // Event Listeners
+        // ============================================
+        document.getElementById("region-select").addEventListener("change", function() {
+            currentRegion = this.value;
+            updateDashboard();
+        });
+
+        window.addEventListener("resize", () => {
+            drawMap();
+            drawTrendChart();
+        });
+
+        // ============================================
+        // Initialize
+        // ============================================
+        async function init() {
+            await loadSnowData();
+            await loadGeoData();
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+
+        // Refresh data every 5 minutes
+        setInterval(loadSnowData, 300000);
+    </script>
+</body>
+</html>

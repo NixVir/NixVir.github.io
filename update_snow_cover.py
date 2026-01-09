@@ -64,31 +64,127 @@ PROVINCE_CODES = {
 
 # Metro areas to track with correct station IDs
 # skiMarket=True for cities that are major ski destination feeder markets
+# importance = metro population in thousands (used for market size weighting)
 METRO_AREAS = [
     # USA Cities - using NWS API
-    {'city': 'New York City', 'region': 'NY', 'country': 'usa', 'lat': 40.7128, 'lon': -74.0060, 'skiMarket': True},  # VT, NH, NY resorts
-    {'city': 'Chicago', 'region': 'IL', 'country': 'usa', 'lat': 41.8781, 'lon': -87.6298, 'skiMarket': True},  # CO, WI, MI resorts
-    {'city': 'Denver', 'region': 'CO', 'country': 'usa', 'lat': 39.7392, 'lon': -104.9903, 'skiMarket': True},  # CO resorts hub
-    {'city': 'Minneapolis', 'region': 'MN', 'country': 'usa', 'lat': 44.9778, 'lon': -93.2650, 'skiMarket': True},  # MN, CO resorts
-    {'city': 'Boston', 'region': 'MA', 'country': 'usa', 'lat': 42.3601, 'lon': -71.0589, 'skiMarket': True},  # VT, NH, ME resorts
-    {'city': 'Seattle', 'region': 'WA', 'country': 'usa', 'lat': 47.6062, 'lon': -122.3321, 'skiMarket': True},  # WA, BC resorts
-    {'city': 'Detroit', 'region': 'MI', 'country': 'usa', 'lat': 42.3314, 'lon': -83.0458, 'skiMarket': False},
-    {'city': 'Salt Lake City', 'region': 'UT', 'country': 'usa', 'lat': 40.7608, 'lon': -111.8910, 'skiMarket': True},  # UT resorts hub
-    {'city': 'Buffalo', 'region': 'NY', 'country': 'usa', 'lat': 42.8864, 'lon': -78.8784, 'skiMarket': False},
-    {'city': 'Cleveland', 'region': 'OH', 'country': 'usa', 'lat': 41.4993, 'lon': -81.6944, 'skiMarket': False},
-    {'city': 'Milwaukee', 'region': 'WI', 'country': 'usa', 'lat': 43.0389, 'lon': -87.9065, 'skiMarket': False},
-    {'city': 'Portland', 'region': 'OR', 'country': 'usa', 'lat': 45.5152, 'lon': -122.6784, 'skiMarket': True},  # OR, WA resorts
+    {'city': 'New York City', 'region': 'NY', 'country': 'usa', 'lat': 40.7128, 'lon': -74.0060, 'skiMarket': True, 'importance': 19980},
+    {'city': 'Chicago', 'region': 'IL', 'country': 'usa', 'lat': 41.8781, 'lon': -87.6298, 'skiMarket': True, 'importance': 9460},
+    {'city': 'Denver', 'region': 'CO', 'country': 'usa', 'lat': 39.7392, 'lon': -104.9903, 'skiMarket': True, 'importance': 2965},
+    {'city': 'Minneapolis', 'region': 'MN', 'country': 'usa', 'lat': 44.9778, 'lon': -93.2650, 'skiMarket': True, 'importance': 3690},
+    {'city': 'Boston', 'region': 'MA', 'country': 'usa', 'lat': 42.3601, 'lon': -71.0589, 'skiMarket': True, 'importance': 4900},
+    {'city': 'Seattle', 'region': 'WA', 'country': 'usa', 'lat': 47.6062, 'lon': -122.3321, 'skiMarket': True, 'importance': 4020},
+    {'city': 'Detroit', 'region': 'MI', 'country': 'usa', 'lat': 42.3314, 'lon': -83.0458, 'skiMarket': False, 'importance': 4340},
+    {'city': 'Salt Lake City', 'region': 'UT', 'country': 'usa', 'lat': 40.7608, 'lon': -111.8910, 'skiMarket': True, 'importance': 1340},
+    {'city': 'Buffalo', 'region': 'NY', 'country': 'usa', 'lat': 42.8864, 'lon': -78.8784, 'skiMarket': False, 'importance': 1150},
+    {'city': 'Cleveland', 'region': 'OH', 'country': 'usa', 'lat': 41.4993, 'lon': -81.6944, 'skiMarket': False, 'importance': 2060},
+    {'city': 'Milwaukee', 'region': 'WI', 'country': 'usa', 'lat': 43.0389, 'lon': -87.9065, 'skiMarket': False, 'importance': 1575},
+    {'city': 'Portland', 'region': 'OR', 'country': 'usa', 'lat': 45.5152, 'lon': -122.6784, 'skiMarket': True, 'importance': 2510},
+    # Additional US metros for feeder market coverage
+    {'city': 'Los Angeles', 'region': 'CA', 'country': 'usa', 'lat': 34.0522, 'lon': -118.2437, 'skiMarket': True, 'importance': 12870},
+    {'city': 'San Francisco', 'region': 'CA', 'country': 'usa', 'lat': 37.7749, 'lon': -122.4194, 'skiMarket': True, 'importance': 4565},
+    {'city': 'Phoenix', 'region': 'AZ', 'country': 'usa', 'lat': 33.4484, 'lon': -112.0740, 'skiMarket': True, 'importance': 4950},
+    {'city': 'Dallas', 'region': 'TX', 'country': 'usa', 'lat': 32.7767, 'lon': -96.7970, 'skiMarket': True, 'importance': 7900},
+    {'city': 'Houston', 'region': 'TX', 'country': 'usa', 'lat': 29.7604, 'lon': -95.3698, 'skiMarket': True, 'importance': 7340},
+    {'city': 'Atlanta', 'region': 'GA', 'country': 'usa', 'lat': 33.7490, 'lon': -84.3880, 'skiMarket': True, 'importance': 6200},
+    {'city': 'Philadelphia', 'region': 'PA', 'country': 'usa', 'lat': 39.9526, 'lon': -75.1652, 'skiMarket': True, 'importance': 6250},
+    {'city': 'Washington', 'region': 'DC', 'country': 'usa', 'lat': 38.9072, 'lon': -77.0369, 'skiMarket': True, 'importance': 6385},
+    {'city': 'Las Vegas', 'region': 'NV', 'country': 'usa', 'lat': 36.1699, 'lon': -115.1398, 'skiMarket': True, 'importance': 2320},
+    {'city': 'San Diego', 'region': 'CA', 'country': 'usa', 'lat': 32.7157, 'lon': -117.1611, 'skiMarket': True, 'importance': 3280},
+    {'city': 'Austin', 'region': 'TX', 'country': 'usa', 'lat': 30.2672, 'lon': -97.7431, 'skiMarket': True, 'importance': 2475},
+    {'city': 'Charlotte', 'region': 'NC', 'country': 'usa', 'lat': 35.2271, 'lon': -80.8431, 'skiMarket': True, 'importance': 2750},
+    {'city': 'Raleigh', 'region': 'NC', 'country': 'usa', 'lat': 35.7796, 'lon': -78.6382, 'skiMarket': True, 'importance': 1500},
+    {'city': 'Nashville', 'region': 'TN', 'country': 'usa', 'lat': 36.1627, 'lon': -86.7816, 'skiMarket': True, 'importance': 2050},
+    {'city': 'Indianapolis', 'region': 'IN', 'country': 'usa', 'lat': 39.7684, 'lon': -86.1581, 'skiMarket': False, 'importance': 2140},
+    {'city': 'St. Louis', 'region': 'MO', 'country': 'usa', 'lat': 38.6270, 'lon': -90.1994, 'skiMarket': False, 'importance': 2810},
+    {'city': 'Kansas City', 'region': 'MO', 'country': 'usa', 'lat': 39.0997, 'lon': -94.5786, 'skiMarket': False, 'importance': 2220},
+    {'city': 'Oklahoma City', 'region': 'OK', 'country': 'usa', 'lat': 35.4676, 'lon': -97.5164, 'skiMarket': False, 'importance': 1440},
+    {'city': 'Albuquerque', 'region': 'NM', 'country': 'usa', 'lat': 35.0844, 'lon': -106.6504, 'skiMarket': True, 'importance': 920},
+    {'city': 'Boise', 'region': 'ID', 'country': 'usa', 'lat': 43.6150, 'lon': -116.2023, 'skiMarket': True, 'importance': 810},
+    {'city': 'Spokane', 'region': 'WA', 'country': 'usa', 'lat': 47.6588, 'lon': -117.4260, 'skiMarket': True, 'importance': 600},
+    {'city': 'Sacramento', 'region': 'CA', 'country': 'usa', 'lat': 38.5816, 'lon': -121.4944, 'skiMarket': True, 'importance': 2420},
+    {'city': 'Pittsburgh', 'region': 'PA', 'country': 'usa', 'lat': 40.4406, 'lon': -79.9959, 'skiMarket': True, 'importance': 2370},
+    {'city': 'Hartford', 'region': 'CT', 'country': 'usa', 'lat': 41.7658, 'lon': -72.6734, 'skiMarket': True, 'importance': 1210},
+    {'city': 'Albany', 'region': 'NY', 'country': 'usa', 'lat': 42.6526, 'lon': -73.7562, 'skiMarket': True, 'importance': 900},
+    {'city': 'Providence', 'region': 'RI', 'country': 'usa', 'lat': 41.8240, 'lon': -71.4128, 'skiMarket': True, 'importance': 1680},
+    {'city': 'Richmond', 'region': 'VA', 'country': 'usa', 'lat': 37.5407, 'lon': -77.4360, 'skiMarket': True, 'importance': 1340},
+    {'city': 'Madison', 'region': 'WI', 'country': 'usa', 'lat': 43.0731, 'lon': -89.4012, 'skiMarket': False, 'importance': 690},
     # Canadian Cities - Environment Canada site codes (format: s0000XXX)
     # See: https://dd.weather.gc.ca/citypage_weather/docs/site_list_en.csv
-    {'city': 'Toronto', 'region': 'ON', 'country': 'canada', 'province': 'ON', 'site': 's0000458', 'lat': 43.6532, 'lon': -79.3832, 'skiMarket': True},  # ON, QC resorts
-    {'city': 'Montreal', 'region': 'QC', 'country': 'canada', 'province': 'QC', 'site': 's0000635', 'lat': 45.5017, 'lon': -73.5673, 'skiMarket': True},  # QC, VT resorts
-    {'city': 'Vancouver', 'region': 'BC', 'country': 'canada', 'province': 'BC', 'site': 's0000141', 'lat': 49.2827, 'lon': -123.1207, 'skiMarket': True},  # Whistler, BC resorts
-    {'city': 'Calgary', 'region': 'AB', 'country': 'canada', 'province': 'AB', 'site': 's0000047', 'lat': 51.0447, 'lon': -114.0719, 'skiMarket': True},  # Banff, AB resorts
-    {'city': 'Edmonton', 'region': 'AB', 'country': 'canada', 'province': 'AB', 'site': 's0000045', 'lat': 53.5461, 'lon': -113.4938, 'skiMarket': True},  # Jasper, AB resorts
-    {'city': 'Ottawa', 'region': 'ON', 'country': 'canada', 'province': 'ON', 'site': 's0000623', 'lat': 45.4215, 'lon': -75.6972, 'skiMarket': False},
-    {'city': 'Winnipeg', 'region': 'MB', 'country': 'canada', 'province': 'MB', 'site': 's0000193', 'lat': 49.8951, 'lon': -97.1384, 'skiMarket': False},
-    {'city': 'Quebec City', 'region': 'QC', 'country': 'canada', 'province': 'QC', 'site': 's0000620', 'lat': 46.8139, 'lon': -71.2080, 'skiMarket': True},  # Mont-Tremblant, QC resorts
+    {'city': 'Toronto', 'region': 'ON', 'country': 'canada', 'province': 'ON', 'site': 's0000458', 'lat': 43.6532, 'lon': -79.3832, 'skiMarket': True, 'importance': 6710},
+    {'city': 'Montreal', 'region': 'QC', 'country': 'canada', 'province': 'QC', 'site': 's0000635', 'lat': 45.5017, 'lon': -73.5673, 'skiMarket': True, 'importance': 4290},
+    {'city': 'Vancouver', 'region': 'BC', 'country': 'canada', 'province': 'BC', 'site': 's0000141', 'lat': 49.2827, 'lon': -123.1207, 'skiMarket': True, 'importance': 2640},
+    {'city': 'Calgary', 'region': 'AB', 'country': 'canada', 'province': 'AB', 'site': 's0000047', 'lat': 51.0447, 'lon': -114.0719, 'skiMarket': True, 'importance': 1580},
+    {'city': 'Edmonton', 'region': 'AB', 'country': 'canada', 'province': 'AB', 'site': 's0000045', 'lat': 53.5461, 'lon': -113.4938, 'skiMarket': True, 'importance': 1520},
+    {'city': 'Ottawa', 'region': 'ON', 'country': 'canada', 'province': 'ON', 'site': 's0000623', 'lat': 45.4215, 'lon': -75.6972, 'skiMarket': True, 'importance': 1490},
+    {'city': 'Winnipeg', 'region': 'MB', 'country': 'canada', 'province': 'MB', 'site': 's0000193', 'lat': 49.8951, 'lon': -97.1384, 'skiMarket': True, 'importance': 850},
+    {'city': 'Quebec City', 'region': 'QC', 'country': 'canada', 'province': 'QC', 'site': 's0000620', 'lat': 46.8139, 'lon': -71.2080, 'skiMarket': True, 'importance': 840},
+    # Additional Canadian metros for feeder market coverage
+    {'city': 'Victoria', 'region': 'BC', 'country': 'canada', 'province': 'BC', 'site': 's0000775', 'lat': 48.4284, 'lon': -123.3656, 'skiMarket': True, 'importance': 415},
+    {'city': 'Kelowna', 'region': 'BC', 'country': 'canada', 'province': 'BC', 'site': 's0000568', 'lat': 49.8880, 'lon': -119.4960, 'skiMarket': True, 'importance': 225},
+    {'city': 'Hamilton', 'region': 'ON', 'country': 'canada', 'province': 'ON', 'site': 's0000494', 'lat': 43.2557, 'lon': -79.8711, 'skiMarket': False, 'importance': 785},
+    {'city': 'Halifax', 'region': 'NS', 'country': 'canada', 'province': 'NS', 'site': 's0000318', 'lat': 44.6488, 'lon': -63.5752, 'skiMarket': True, 'importance': 465},
+    {'city': 'Saskatoon', 'region': 'SK', 'country': 'canada', 'province': 'SK', 'site': 's0000797', 'lat': 52.1332, 'lon': -106.6700, 'skiMarket': True, 'importance': 335},
+    {'city': 'Regina', 'region': 'SK', 'country': 'canada', 'province': 'SK', 'site': 's0000788', 'lat': 50.4452, 'lon': -104.6189, 'skiMarket': True, 'importance': 265},
 ]
+
+# Regional feeder market configurations (NSAA + Canadian Ski Council regions)
+# Used for the regional dashboard view - maps region to its primary feeder markets
+FEEDER_REGIONS = {
+    'rocky-mountain': {
+        'name': 'Rocky Mountain',
+        'markets': ['Denver', 'Phoenix', 'Dallas', 'Houston', 'Austin', 'Albuquerque',
+                    'Oklahoma City', 'Kansas City', 'Chicago', 'Los Angeles', 'Salt Lake City']
+    },
+    'pacific-northwest': {
+        'name': 'Pacific Northwest',
+        'markets': ['Seattle', 'Portland', 'Vancouver', 'Spokane', 'Boise',
+                    'San Francisco', 'Sacramento']
+    },
+    'pacific-southwest': {
+        'name': 'Pacific Southwest',
+        'markets': ['Los Angeles', 'San Diego', 'Phoenix', 'Las Vegas',
+                    'San Francisco', 'Sacramento']
+    },
+    'midwest': {
+        'name': 'Midwest',
+        'markets': ['Chicago', 'Minneapolis', 'Detroit', 'Milwaukee', 'Indianapolis',
+                    'Cleveland', 'St. Louis', 'Madison']
+    },
+    'northeast': {
+        'name': 'Northeast',
+        'markets': ['New York City', 'Boston', 'Philadelphia', 'Washington', 'Hartford',
+                    'Albany', 'Providence', 'Pittsburgh', 'Buffalo']
+    },
+    'southeast': {
+        'name': 'Southeast',
+        'markets': ['Atlanta', 'Charlotte', 'Raleigh', 'Nashville', 'Washington',
+                    'Richmond']
+    },
+    'canada-bc': {
+        'name': 'British Columbia',
+        'markets': ['Vancouver', 'Victoria', 'Kelowna', 'Seattle', 'Portland', 'Calgary']
+    },
+    'canada-alberta': {
+        'name': 'Alberta',
+        'markets': ['Calgary', 'Edmonton', 'Vancouver', 'Saskatoon', 'Regina']
+    },
+    'canada-prairies': {
+        'name': 'Prairies',
+        'markets': ['Winnipeg', 'Saskatoon', 'Regina', 'Calgary', 'Edmonton', 'Minneapolis']
+    },
+    'canada-ontario': {
+        'name': 'Ontario',
+        'markets': ['Toronto', 'Ottawa', 'Hamilton', 'Buffalo', 'Detroit']
+    },
+    'canada-quebec': {
+        'name': 'Quebec',
+        'markets': ['Montreal', 'Quebec City', 'Ottawa', 'Toronto']
+    },
+    'canada-atlantic': {
+        'name': 'Atlantic Canada',
+        'markets': ['Halifax', 'Montreal']
+    }
+}
 
 # ============================================
 # Helper Functions
@@ -1509,13 +1605,16 @@ def collect_snow_data():
             'city': city_name,
             'region': metro['region'],
             'country': metro['country'],
+            'lat': metro['lat'],
+            'lng': metro['lon'],  # Use 'lng' to match D3 prototype convention
             'cover': round(cover),
             'depthInches': round(depth_inches, 1),  # Numeric for sorting
             'depthCm': depth_cm,  # Numeric for sorting
             'trend': metro_trend,
             'history': metro_history,
             'temperature': temp_data,
-            'skiMarket': metro.get('skiMarket', False)
+            'skiMarket': metro.get('skiMarket', False),
+            'importance': metro.get('importance', 100)  # Population in thousands
         })
 
     # Sort metros by snow cover descending
@@ -1656,7 +1755,8 @@ def collect_snow_data():
             'priorYearHistory': canada_prior_year_history,
             'temperature': canada_temp
         },
-        'metros': metros
+        'metros': metros,
+        'feederRegions': FEEDER_REGIONS
     }
 
     return data
