@@ -688,10 +688,267 @@
                 grid-template-columns: 1fr 1fr;
             }
         }
+
+        /* Custom Market Selector Sidebar */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .sidebar-overlay.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .market-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            max-width: 90vw;
+            height: 100vh;
+            background: var(--bg-card);
+            border-left: 1px solid var(--border);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            transition: right 0.3s ease;
+        }
+
+        .market-sidebar.open {
+            right: 0;
+        }
+
+        .sidebar-header {
+            padding: 1.25rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sidebar-header h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .sidebar-close {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.25rem;
+            line-height: 1;
+        }
+
+        .sidebar-close:hover {
+            color: var(--text-primary);
+        }
+
+        .sidebar-actions {
+            padding: 0.75rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .sidebar-btn {
+            padding: 0.4rem 0.75rem;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            background: var(--bg-elevated);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .sidebar-btn:hover {
+            border-color: var(--accent-cold);
+            color: var(--text-primary);
+        }
+
+        .sidebar-btn.primary {
+            background: var(--accent-cold);
+            border-color: var(--accent-cold);
+            color: white;
+        }
+
+        .sidebar-btn.primary:hover {
+            background: var(--accent-cold-bright);
+        }
+
+        .sidebar-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem 1.25rem;
+        }
+
+        .market-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .market-group-header {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent-cold-bright);
+            margin-top: 1.25rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.35rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .market-group-header:first-child {
+            margin-top: 0;
+        }
+
+        .market-region {
+            margin-bottom: 1rem;
+            background: var(--bg-elevated);
+            border-radius: 6px;
+            padding: 0.75rem;
+        }
+
+        .market-region-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .market-region-header .region-name {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .region-select-all {
+            font-size: 0.65rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .region-select-all:hover {
+            border-color: var(--accent-cold);
+            color: var(--accent-cold-bright);
+        }
+
+        .market-checkboxes {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .market-checkbox-label {
+            display: flex;
+            align-items: center;
+            padding: 0.35rem 0.5rem;
+            margin: 0 -0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .market-checkbox-label:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .market-checkbox {
+            margin-right: 0.6rem;
+            accent-color: var(--accent-cold);
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+        }
+
+        .market-checkbox-label .market-name {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .market-checkbox:checked + .market-name {
+            color: var(--text-primary);
+        }
+
+        .sidebar-footer {
+            padding: 1rem 1.25rem;
+            border-top: 1px solid var(--border);
+            background: var(--bg-elevated);
+        }
+
+        .selected-count {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .selected-count strong {
+            color: var(--accent-cold-bright);
+        }
+
+        .customize-btn {
+            padding: 0.4rem 0.75rem;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            background: var(--bg-elevated);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-left: 0.5rem;
+        }
+
+        .customize-btn:hover {
+            border-color: var(--accent-cold);
+            color: var(--text-primary);
+        }
+
+        .customize-btn.active {
+            border-color: var(--accent-cold);
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-cold-bright);
+        }
     </style>
 </head>
 <body>
     <div class="bg-gradient"></div>
+
+    <!-- Market Selector Sidebar -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <aside class="market-sidebar" id="market-sidebar">
+        <div class="sidebar-header">
+            <h3>Build Custom Region</h3>
+            <button class="sidebar-close" id="sidebar-close">&times;</button>
+        </div>
+        <div class="sidebar-actions">
+            <button class="sidebar-btn" id="select-all-btn">Select All</button>
+            <button class="sidebar-btn" id="clear-all-btn">Clear All</button>
+            <button class="sidebar-btn primary" id="apply-selection-btn">Apply Selection</button>
+        </div>
+        <div class="sidebar-content" id="market-list">
+            <!-- Market checkboxes populated by JavaScript -->
+        </div>
+        <div class="sidebar-footer">
+            <div class="selected-count"><strong id="selected-count">0</strong> markets selected</div>
+        </div>
+    </aside>
 
     <div class="dashboard">
         <header class="header">
@@ -721,7 +978,11 @@
                             <option value="canada-quebec">Quebec</option>
                             <option value="canada-atlantic">Atlantic Canada</option>
                         </optgroup>
+                        <optgroup label="Custom">
+                            <option value="custom">Custom Selection</option>
+                        </optgroup>
                     </select>
+                    <button class="customize-btn" id="customize-btn" title="Build custom market selection">Customize</button>
                 </div>
             </div>
         </header>
@@ -902,6 +1163,7 @@
         let usGeoData = null;
         let canadaGeoData = null;
         let nationalChart = null;
+        let customSelectedMarkets = new Set(); // For custom region builder
 
         // ============================================
         // Data Loading
@@ -958,14 +1220,21 @@
 
         // Get markets for current region from snow data
         function getRegionMarkets() {
-            if (!snowData || !snowData.feederRegions || !snowData.metros) {
+            if (!snowData || !snowData.metros) {
                 return [];
             }
 
-            const regionConfig = snowData.feederRegions[currentRegion];
-            if (!regionConfig) return [];
-
-            const marketNames = regionConfig.markets;
+            // Handle custom region selection
+            let marketNames;
+            if (currentRegion === 'custom') {
+                marketNames = Array.from(customSelectedMarkets);
+                if (marketNames.length === 0) return [];
+            } else {
+                if (!snowData.feederRegions) return [];
+                const regionConfig = snowData.feederRegions[currentRegion];
+                if (!regionConfig) return [];
+                marketNames = regionConfig.markets;
+            }
 
             // Find metro data for each market in the region
             return marketNames.map(name => {
@@ -1025,6 +1294,45 @@
                 'canada-quebec': { name: 'Quebec', center: [-72, 48], scale: 1100 },
                 'canada-atlantic': { name: 'Atlantic Canada', center: [-63, 46], scale: 1200 }
             };
+
+            // Handle custom region - calculate center and scale from selected markets
+            if (currentRegion === 'custom') {
+                const markets = getRegionMarkets();
+                if (markets.length === 0) {
+                    return { name: 'Custom Selection', center: [-98, 40], scale: 600 };
+                }
+
+                // Calculate bounding box of selected markets
+                const lngs = markets.map(m => m.lng);
+                const lats = markets.map(m => m.lat);
+                const minLng = Math.min(...lngs);
+                const maxLng = Math.max(...lngs);
+                const minLat = Math.min(...lats);
+                const maxLat = Math.max(...lats);
+
+                // Center point
+                const centerLng = (minLng + maxLng) / 2;
+                const centerLat = (minLat + maxLat) / 2;
+
+                // Calculate appropriate scale based on geographic span
+                const lngSpan = maxLng - minLng;
+                const latSpan = maxLat - minLat;
+                const maxSpan = Math.max(lngSpan, latSpan);
+
+                // Scale heuristic: smaller span = higher zoom
+                let scale;
+                if (maxSpan < 5) scale = 2000;
+                else if (maxSpan < 10) scale = 1400;
+                else if (maxSpan < 20) scale = 900;
+                else if (maxSpan < 40) scale = 600;
+                else scale = 400;
+
+                return {
+                    name: `Custom (${markets.length} markets)`,
+                    center: [centerLng, centerLat],
+                    scale: scale
+                };
+            }
 
             // Merge with feederRegions name if available
             const config = configs[currentRegion] || configs['rocky-mountain'];
@@ -1560,13 +1868,190 @@
         // ============================================
         document.getElementById("region-select").addEventListener("change", function() {
             currentRegion = this.value;
-            updateDashboard();
+            if (currentRegion === 'custom' && customSelectedMarkets.size === 0) {
+                // Open sidebar to let user select markets
+                openSidebar();
+            } else {
+                updateDashboard();
+            }
         });
 
         window.addEventListener("resize", () => {
             drawMap();
             drawTrendChart();
         });
+
+        // ============================================
+        // Custom Market Selector Sidebar
+        // ============================================
+
+        function openSidebar() {
+            document.getElementById('market-sidebar').classList.add('open');
+            document.getElementById('sidebar-overlay').classList.add('visible');
+            populateMarketList();
+        }
+
+        function closeSidebar() {
+            document.getElementById('market-sidebar').classList.remove('open');
+            document.getElementById('sidebar-overlay').classList.remove('visible');
+        }
+
+        function populateMarketList() {
+            const container = document.getElementById('market-list');
+            if (!snowData?.feederRegions) {
+                container.innerHTML = '<p style="color: var(--text-muted); padding: 1rem;">No market data available</p>';
+                return;
+            }
+
+            // Define region groupings - NSAA regions first, then Canada
+            const regionOrder = [
+                { id: 'rocky-mountain', group: 'NSAA Regions' },
+                { id: 'pacific-northwest', group: 'NSAA Regions' },
+                { id: 'pacific-southwest', group: 'NSAA Regions' },
+                { id: 'midwest', group: 'NSAA Regions' },
+                { id: 'northeast', group: 'NSAA Regions' },
+                { id: 'southeast', group: 'NSAA Regions' },
+                { id: 'canada-bc', group: 'Canada Ski Council' },
+                { id: 'canada-alberta', group: 'Canada Ski Council' },
+                { id: 'canada-prairies', group: 'Canada Ski Council' },
+                { id: 'canada-ontario', group: 'Canada Ski Council' },
+                { id: 'canada-quebec', group: 'Canada Ski Council' },
+                { id: 'canada-atlantic', group: 'Canada Ski Council' }
+            ];
+
+            // Collect all unique markets with their regions
+            const allMarkets = new Map(); // market name -> Set of region ids
+            regionOrder.forEach(r => {
+                const regionConfig = snowData.feederRegions[r.id];
+                if (regionConfig?.markets) {
+                    regionConfig.markets.forEach(market => {
+                        if (!allMarkets.has(market)) {
+                            allMarkets.set(market, new Set());
+                        }
+                        allMarkets.get(market).add(r.id);
+                    });
+                }
+            });
+
+            let html = '';
+            let currentGroup = '';
+
+            regionOrder.forEach(r => {
+                const regionConfig = snowData.feederRegions[r.id];
+                if (!regionConfig?.markets) return;
+
+                // Add group header if this is a new group
+                if (r.group !== currentGroup) {
+                    currentGroup = r.group;
+                    html += `<div class="market-group-header">${currentGroup}</div>`;
+                }
+
+                // Add region header
+                html += `<div class="market-region">
+                    <div class="market-region-header">
+                        <span class="region-name">${regionConfig.name}</span>
+                        <button class="region-select-all" data-region="${r.id}">Select All</button>
+                    </div>
+                    <div class="market-checkboxes">`;
+
+                // Add markets for this region
+                regionConfig.markets.forEach(market => {
+                    const isChecked = customSelectedMarkets.has(market);
+                    const metro = snowData.metros?.find(m => m.city === market);
+                    const snowIcon = metro?.cover > 0 ? '❄️ ' : '';
+                    html += `
+                        <label class="market-checkbox-label">
+                            <input type="checkbox" class="market-checkbox" value="${market}" ${isChecked ? 'checked' : ''}>
+                            <span class="market-name">${snowIcon}${market}</span>
+                        </label>`;
+                });
+
+                html += `</div></div>`;
+            });
+
+            container.innerHTML = html;
+
+            // Add event listeners to checkboxes
+            container.querySelectorAll('.market-checkbox').forEach(cb => {
+                cb.addEventListener('change', handleMarketToggle);
+            });
+
+            // Add event listeners to region "Select All" buttons
+            container.querySelectorAll('.region-select-all').forEach(btn => {
+                btn.addEventListener('click', handleRegionSelectAll);
+            });
+
+            updateSelectedCount();
+        }
+
+        function handleMarketToggle(e) {
+            const market = e.target.value;
+            if (e.target.checked) {
+                customSelectedMarkets.add(market);
+            } else {
+                customSelectedMarkets.delete(market);
+            }
+            updateSelectedCount();
+        }
+
+        function handleRegionSelectAll(e) {
+            const regionId = e.target.dataset.region;
+            const regionConfig = snowData?.feederRegions?.[regionId];
+            if (!regionConfig?.markets) return;
+
+            // Select all markets in this region
+            regionConfig.markets.forEach(market => {
+                customSelectedMarkets.add(market);
+            });
+
+            // Update checkboxes in the sidebar
+            document.querySelectorAll('.market-checkbox').forEach(cb => {
+                if (customSelectedMarkets.has(cb.value)) {
+                    cb.checked = true;
+                }
+            });
+
+            updateSelectedCount();
+        }
+
+        function updateSelectedCount() {
+            document.getElementById('selected-count').textContent = customSelectedMarkets.size;
+        }
+
+        function selectAllMarkets() {
+            document.querySelectorAll('.market-checkbox').forEach(cb => {
+                cb.checked = true;
+                customSelectedMarkets.add(cb.value);
+            });
+            updateSelectedCount();
+        }
+
+        function clearAllMarkets() {
+            document.querySelectorAll('.market-checkbox').forEach(cb => {
+                cb.checked = false;
+            });
+            customSelectedMarkets.clear();
+            updateSelectedCount();
+        }
+
+        function applyCustomSelection() {
+            if (customSelectedMarkets.size === 0) {
+                alert('Please select at least one market');
+                return;
+            }
+            closeSidebar();
+            currentRegion = 'custom';
+            document.getElementById('region-select').value = 'custom';
+            updateDashboard();
+        }
+
+        // Sidebar event listeners
+        document.getElementById('customize-btn').addEventListener('click', openSidebar);
+        document.getElementById('sidebar-close').addEventListener('click', closeSidebar);
+        document.getElementById('sidebar-overlay').addEventListener('click', closeSidebar);
+        document.getElementById('select-all-btn').addEventListener('click', selectAllMarkets);
+        document.getElementById('clear-all-btn').addEventListener('click', clearAllMarkets);
+        document.getElementById('apply-selection-btn').addEventListener('click', applyCustomSelection);
 
         // ============================================
         // Initialize
