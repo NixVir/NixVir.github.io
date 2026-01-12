@@ -5,6 +5,7 @@ North American Snow Cover Data Aggregator
 
 Fetches snow cover data from multiple real sources:
 - NOAA NOHRSC (National Operational Hydrologic Remote Sensing Center) - U.S. snow statistics
+- NOAA IMS (Interactive Multisensor Snow and Ice Mapping System) - Canada & regional snow cover
 - Rutgers Global Snow Lab - North American snow extent
 - Copernicus CLMS Snow Cover Extent - Satellite-derived snow cover (via Sentinel Hub)
 - Environment Canada - Canadian city weather data
@@ -25,6 +26,14 @@ import ssl
 from datetime import datetime, timedelta
 from html import unescape
 import xml.etree.ElementTree as ET
+
+# Import IMS data fetcher for real Canada snow cover
+from fetch_ims_snow_data import (
+    fetch_ims_file,
+    calculate_snow_cover_percentage,
+    get_metro_snow_cover,
+    REGION_BOUNDS
+)
 
 # ============================================
 # Configuration
@@ -852,6 +861,105 @@ def fetch_copernicus_snow_data():
 
     return result
 
+
+# ============================================
+# NOAA IMS (Real Canada Snow Cover)
+# ============================================
+
+def fetch_ims_snow_data():
+    """
+    Fetch REAL snow cover data from NOAA IMS for USA, Canada, and regions.
+
+    IMS provides actual satellite-derived snow cover for the Northern Hemisphere,
+    including Canada (unlike NOHRSC which is USA-only).
+
+    Returns dict with cover percentages for usa, canada, and regional breakdowns.
+    """
+    print_safe("Fetching NOAA IMS snow cover data...")
+
+    result = {
+        'usa_cover': None,
+        'canada_cover': None,
+        'regions': {},
+        'source': 'NOAA IMS'
+    }
+
+    # Try yesterday first (today's data may not be available yet)
+    today = datetime.now()
+
+    for days_back in range(3):  # Try today, yesterday, day before
+        check_date = today - timedelta(days=days_back)
+        year = check_date.year
+        doy = check_date.timetuple().tm_yday
+
+        print_safe(f"  Trying {check_date.strftime('%Y-%m-%d')} (DOY {doy})...")
+
+        grid = fetch_ims_file(year, doy)
+        if grid:
+            print_safe(f"  IMS grid loaded: {len(grid)}x{len(grid[0])}")
+
+            # Calculate USA snow cover
+            usa_bounds = REGION_BOUNDS.get('usa')
+            if usa_bounds:
+                usa_stats = calculate_snow_cover_percentage(grid, usa_bounds)
+                if usa_stats:
+                    result['usa_cover'] = usa_stats['cover']
+                    print_safe(f"  USA cover: {usa_stats['cover']}% ({usa_stats['snow_cells']:,} snow / {usa_stats['land_cells']:,} land)")
+
+            # Calculate Canada snow cover - THIS IS THE REAL DATA
+            canada_bounds = REGION_BOUNDS.get('canada')
+            if canada_bounds:
+                canada_stats = calculate_snow_cover_percentage(grid, canada_bounds)
+                if canada_stats:
+                    result['canada_cover'] = canada_stats['cover']
+                    print_safe(f"  Canada cover: {canada_stats['cover']}% ({canada_stats['snow_cells']:,} snow / {canada_stats['land_cells']:,} land)")
+
+            # Calculate regional breakdowns
+            regional_keys = [
+                'rocky_mountain', 'pacific_northwest', 'pacific_southwest',
+                'midwest', 'northeast', 'southeast',
+                'british_columbia', 'alberta', 'ontario', 'quebec', 'atlantic'
+            ]
+            for region_key in regional_keys:
+                bounds = REGION_BOUNDS.get(region_key)
+                if bounds:
+                    stats = calculate_snow_cover_percentage(grid, bounds)
+                    if stats:
+                        result['regions'][region_key] = stats['cover']
+
+            result['date'] = check_date.strftime('%Y-%m-%d')
+            return result
+
+    print_safe("  WARNING: Could not fetch IMS data for last 3 days")
+    return result
+
+
+def fetch_ims_metro_snow_cover(grid, metros):
+    """
+    Get snow cover for each metro area using real IMS satellite data.
+
+    Args:
+        grid: IMS data grid
+        metros: List of metro dictionaries with lat/lng
+
+    Returns:
+        Dict mapping metro city name to snow cover percentage
+    """
+    metro_covers = {}
+
+    for metro in metros:
+        city = metro.get('city')
+        lat = metro.get('lat')
+        lng = metro.get('lng')
+
+        if city and lat and lng:
+            cover = get_metro_snow_cover(grid, lat, lng, radius_km=50)
+            if cover is not None:
+                metro_covers[city] = cover
+
+    return metro_covers
+
+
 # ============================================
 # Environment Canada (Canadian Weather)
 # ============================================
@@ -1385,80 +1493,53 @@ def collect_snow_data():
 
     # ========== Fetch Real Data ==========
 
-    # 1. NOHRSC U.S. Snow Statistics
+    # 1. NOHRSC U.S. Snow Statistics (primary source for USA)
     nohrsc_data = fetch_nohrsc_snow_statistics()
-    # Regional stats URLs are returning 404, so skip for now
-    nohrsc_regions = {}  # fetch_nohrsc_regional_stats()
 
-    # 2. Rutgers Global Snow Lab - Primary source for North America extent
+    # 2. NOAA IMS - REAL satellite data for USA and Canada
+    # This is the PRIMARY source for Canada snow cover
+    ims_data = fetch_ims_snow_data()
+
+    # 3. Rutgers Global Snow Lab - North America extent (backup)
     rutgers_data = fetch_rutgers_snow_extent()
 
-    # 3. Copernicus CLMS Snow Cover Extent - Satellite-derived data
+    # 4. Copernicus CLMS Snow Cover Extent (backup)
     copernicus_data = fetch_copernicus_snow_data()
 
     # ========== Determine U.S. Snow Cover ==========
 
-    # Get historical estimates as baseline
-    estimates = estimate_regional_snow_cover(today.month, today.day)
-
-    # Priority: 1) NOHRSC (most reliable for US), 2) Copernicus, 3) Historical estimate
+    # Priority: 1) NOHRSC (most reliable for US), 2) IMS, 3) Copernicus, 4) Error
     if nohrsc_data.get('cover_percent') is not None:
         usa_cover = nohrsc_data['cover_percent']
         usa_source = 'NOHRSC'
+    elif ims_data.get('usa_cover') is not None:
+        usa_cover = ims_data['usa_cover']
+        usa_source = 'NOAA IMS'
     elif copernicus_data.get('usa_cover') is not None:
         usa_cover = copernicus_data['usa_cover']
         usa_source = 'Copernicus SCE'
-    elif nohrsc_regions:
-        # Average regional data
-        usa_cover = sum(nohrsc_regions.values()) / len(nohrsc_regions)
-        usa_source = 'NOHRSC Regional'
     else:
-        usa_cover = estimates['usa']
-        usa_source = 'Historical Estimate'
+        print_safe("ERROR: No real USA snow cover data available!")
+        print_safe("All data sources failed. Cannot generate valid output.")
+        return None
 
     print_safe(f"\nU.S. Snow Cover: {usa_cover:.1f}% (Source: {usa_source})")
 
     # ========== Determine Canada Snow Cover ==========
+    # IMPORTANT: Use ONLY real satellite data - NO derived/synthetic data!
 
-    # Priority: 1) Copernicus (direct satellite measurement), 2) Derived from Rutgers, 3) Historical
-    if copernicus_data.get('canada_cover') is not None:
-        # Use Copernicus satellite data - this is actual measured snow cover!
+    # Priority: 1) IMS (best for Canada), 2) Copernicus, 3) Error
+    if ims_data.get('canada_cover') is not None:
+        # IMS provides REAL satellite-derived Canada snow cover
+        canada_cover = ims_data['canada_cover']
+        canada_source = 'NOAA IMS'
+    elif copernicus_data.get('canada_cover') is not None:
         canada_cover = copernicus_data['canada_cover']
         canada_source = 'Copernicus SCE'
-    elif rutgers_data.get('north_america_extent_km2'):
-        na_extent = rutgers_data['north_america_extent_km2']
-
-        # Calculate NA-wide snow cover percentage
-        # Include Alaska and Northern territories in total area calculation
-        # Rutgers NA extent includes: Canada, USA (with Alaska), Greenland, and parts of Mexico
-        # Approximate total land area covered by Rutgers NA:
-        RUTGERS_NA_LAND_AREA_KM2 = (
-            CANADA_LAND_AREA_SQ_KM +          # ~10M km²
-            USA_LAND_AREA_SQ_KM +              # ~9.8M km²
-            2_166_086                          # Greenland ~2.2M km²
-        )  # Total ~22M km²
-
-        na_cover_percent = (na_extent / RUTGERS_NA_LAND_AREA_KM2) * 100
-
-        # Since Canada is further north than US, estimate Canada's snow cover
-        # as proportionally higher. Historical data suggests Canada typically
-        # has 2-3x the snow coverage percentage of the US in winter
-        # Use the ratio between estimated values as a guide
-        usa_historical = estimates['usa']
-        canada_historical = estimates['canada']
-
-        if usa_historical > 0:
-            ratio = canada_historical / usa_historical
-            # Apply the historical ratio to actual NOHRSC USA data
-            canada_cover = min(100, usa_cover * ratio)
-        else:
-            canada_cover = estimates['canada']
-
-        canada_source = 'Derived (NOHRSC ratio)'
-        print_safe(f"  NA extent: {na_extent:,.0f} km², NA cover: {na_cover_percent:.1f}%")
     else:
-        canada_cover = estimates['canada']
-        canada_source = 'Historical Estimate'
+        print_safe("ERROR: No real Canada snow cover data available!")
+        print_safe("IMS and Copernicus both failed. Cannot generate valid output.")
+        return None
 
     print_safe(f"Canada Snow Cover: {canada_cover:.1f}% (Source: {canada_source})")
 
@@ -1634,24 +1715,42 @@ def collect_snow_data():
     metros.sort(key=lambda x: x['cover'], reverse=True)
 
     # ========== Fetch Prior Year History (Real Data) ==========
-    # Fetch real prior year data from NOHRSC for comparison
+    # Fetch real prior year data from NOHRSC for USA
     print_safe("\nFetching prior year data for comparison...")
     usa_prior_year_history, usa_prior_depth_avg = fetch_prior_year_history(usa_history[-30:] if len(usa_history) > 30 else usa_history)
 
-    # For Canada, use the same dates but we don't have direct historical data
-    # So we'll derive from USA ratio
+    # Fetch REAL prior year data from IMS for Canada
+    # IMS has daily data going back to 1997
     canada_prior_year_history = []
     if usa_prior_year_history:
+        print_safe("Fetching real IMS data for Canada prior year history...")
         for entry in usa_prior_year_history:
-            if entry['value'] is not None:
-                # Apply historical USA/Canada ratio (Canada typically ~2x USA)
-                canada_value = min(100, round(entry['value'] * 2.0, 1))
-            else:
-                canada_value = None
-            canada_prior_year_history.append({
-                'date': entry['date'],
-                'value': canada_value
-            })
+            if entry['date']:
+                try:
+                    # Parse the prior year date
+                    prior_date = datetime.strptime(entry['date'], '%Y-%m-%d')
+                    year = prior_date.year
+                    doy = prior_date.timetuple().tm_yday
+
+                    # Fetch IMS grid for this date
+                    grid = fetch_ims_file(year, doy)
+                    if grid:
+                        canada_bounds = REGION_BOUNDS.get('canada')
+                        if canada_bounds:
+                            stats = calculate_snow_cover_percentage(grid, canada_bounds)
+                            canada_value = stats['cover'] if stats else None
+                        else:
+                            canada_value = None
+                    else:
+                        canada_value = None
+                except Exception as e:
+                    print_safe(f"  Warning: Could not fetch IMS for {entry['date']}: {e}")
+                    canada_value = None
+
+                canada_prior_year_history.append({
+                    'date': entry['date'],
+                    'value': canada_value
+                })
 
     # ========== Build Output ==========
 
@@ -1661,21 +1760,20 @@ def collect_snow_data():
     canada_snow_area_sq_km = int(CANADA_LAND_AREA_SQ_KM * canada_cover / 100)
     canada_snow_area_sq_mi = int(canada_snow_area_sq_km / 2.58999)
 
-    # Estimate average depths in both units
+    # Get average depths - ONLY from REAL sources
+    # USA: NOHRSC provides real depth data
     usa_avg_depth_inches = nohrsc_data.get('avg_depth_inches')
-    if usa_avg_depth_inches is None:
-        usa_avg_depth_inches = max(1, int(2 + usa_cover / 12))
-    usa_avg_depth_cm = round(usa_avg_depth_inches * 2.54, 1)
+    usa_avg_depth_cm = round(usa_avg_depth_inches * 2.54, 1) if usa_avg_depth_inches else None
 
-    canada_avg_depth_cm = max(5, int(8 + canada_cover / 6))
-    canada_avg_depth_inches = round(canada_avg_depth_cm / 2.54, 1)
+    # Canada: NO REAL SOURCE FOR DEPTH DATA
+    # IMS only provides snow cover (yes/no), not depth
+    # NOHRSC only covers USA
+    # We set to None rather than make up fake data
+    canada_avg_depth_cm = None
+    canada_avg_depth_inches = None
 
-    # Estimate Canada prior year depth from USA ratio (using real USA prior depth data)
+    # Canada prior year depth - NO REAL SOURCE, set to None
     canada_prior_depth_avg = None
-    if usa_prior_depth_avg is not None and usa_avg_depth_inches is not None and usa_avg_depth_inches > 0:
-        # Use current Canada/USA depth ratio to estimate Canada prior year depth
-        depth_ratio = canada_avg_depth_inches / usa_avg_depth_inches if usa_avg_depth_inches > 0 else 1.5
-        canada_prior_depth_avg = round(usa_prior_depth_avg * depth_ratio, 1)
 
     # Calculate country-level temperature anomalies from metro data
     usa_temp = fetch_country_temperature_anomaly(metros, 'usa')

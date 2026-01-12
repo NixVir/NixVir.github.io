@@ -3,7 +3,10 @@
 """
 One-time script to fetch 5-year historical snow cover averages.
 
-This fetches NOHRSC data for the full ski season (Oct 1 - Apr 30)
+This fetches:
+- NOHRSC data for USA for the full ski season (Oct 1 - Apr 30)
+- NOAA IMS satellite data for Canada (REAL data, NOT derived)
+
 for the past 5 complete winters and computes daily averages.
 
 Output is saved to static/data/snow-cover-historical.json and should
@@ -23,6 +26,13 @@ import urllib.request
 import urllib.error
 import ssl
 from datetime import datetime, timedelta
+
+# Import IMS fetcher for REAL Canada data
+from fetch_ims_snow_data import (
+    fetch_ims_file,
+    calculate_snow_cover_percentage,
+    REGION_BOUNDS
+)
 
 
 def print_safe(msg):
@@ -211,18 +221,65 @@ def main():
 
     usa_seasonal_avg, years_used = fetch_five_year_seasonal_average()
 
-    # Derive Canada averages from USA using typical ratio (~2x)
+    # Fetch REAL Canada averages from IMS satellite data - NO DERIVATION!
+    print_safe("\n" + "=" * 60)
+    print_safe("Fetching REAL Canada historical averages from NOAA IMS...")
+    print_safe("=" * 60)
+
+    canada_bounds = REGION_BOUNDS.get('canada')
+
+    # Build Canada seasonal averages from real IMS data
+    # Use same date format (MM-DD) and average across the same years
     canada_seasonal_avg = []
+
     for entry in usa_seasonal_avg:
-        if entry['value'] is not None:
-            canada_value = min(100, round(entry['value'] * 2.0, 1))
+        date_key = entry['date']  # MM-DD format
+
+        # Collect values from each year
+        canada_values = []
+
+        for year_start in years_used:
+            # Determine actual date based on season
+            month = int(date_key.split('-')[0])
+            day = int(date_key.split('-')[1])
+
+            if month >= 10:  # Oct, Nov, Dec
+                actual_year = year_start
+            else:  # Jan, Feb, Mar, Apr
+                actual_year = year_start + 1
+
+            try:
+                date_obj = datetime(actual_year, month, day)
+                doy = date_obj.timetuple().tm_yday
+
+                # Fetch IMS grid
+                grid = fetch_ims_file(actual_year, doy)
+                if grid and canada_bounds:
+                    stats = calculate_snow_cover_percentage(grid, canada_bounds)
+                    if stats:
+                        canada_values.append(stats['cover'])
+            except Exception as e:
+                pass  # Skip invalid dates or fetch errors
+
+            time.sleep(0.05)  # Small delay for IMS server
+
+        # Calculate average if we have values
+        if canada_values:
+            canada_avg = round(sum(canada_values) / len(canada_values), 1)
         else:
-            canada_value = None
+            canada_avg = None
+
         canada_seasonal_avg.append({
-            'date': entry['date'],
-            'value': canada_value,
-            'count': entry['count']
+            'date': date_key,
+            'value': canada_avg,
+            'count': len(canada_values)
         })
+
+        # Progress update
+        if len(canada_seasonal_avg) % 30 == 0:
+            print_safe(f"  Canada progress: {len(canada_seasonal_avg)}/{len(usa_seasonal_avg)} days processed")
+
+    print_safe(f"Canada historical data complete: {len([e for e in canada_seasonal_avg if e['value'] is not None])}/{len(canada_seasonal_avg)} days with data")
 
     # Build output data
     data = {

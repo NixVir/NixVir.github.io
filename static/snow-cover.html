@@ -1475,11 +1475,28 @@
     <div class="tooltip" id="tooltip"></div>
 
     <script>
+        console.log('Snow Cover Dashboard: JavaScript loaded');
+        console.log('Page URL:', window.location.href);
+        console.log('Protocol:', window.location.protocol);
+
+        // Check if loaded via file:// protocol (fetch won't work)
+        if (window.location.protocol === 'file:') {
+            console.error('Page loaded via file:// protocol - data fetching will fail!');
+            document.addEventListener('DOMContentLoaded', () => {
+                const errorDiv = document.createElement('div');
+                errorDiv.style.cssText = 'background: #ff4444; color: white; padding: 20px; margin: 20px; border-radius: 8px; text-align: center;';
+                errorDiv.innerHTML = '<strong>Cannot load via file:// protocol</strong><br>Please serve this page via a web server (e.g., Hugo or Python http.server)';
+                document.querySelector('.dashboard')?.prepend(errorDiv);
+                document.getElementById('last-updated').textContent = 'Error: file:// not supported';
+            });
+        }
+
         // ============================================
         // State
         // ============================================
         let snowData = null;
         let historicalData = null;  // 5-year seasonal averages
+        let temperatureHistoryData = null;  // Per-metro temperature history (REAL data)
         let currentRegion = 'north-america';
         let currentMarkets = [];
         let usGeoData = null;
@@ -1589,33 +1606,78 @@
         // ============================================
         async function loadSnowData() {
             try {
-                // Load both current data and historical averages in parallel
+                console.log('Loading snow data...');
+                document.getElementById('last-updated').textContent = 'Loading data...';
+
+                // Load core data files (required)
+                console.log('Fetching /data/snow-cover.json and /data/snow-cover-historical.json...');
                 const [snowResponse, historicalResponse] = await Promise.all([
                     fetch('/data/snow-cover.json'),
                     fetch('/data/snow-cover-historical.json')
                 ]);
 
-                snowData = await snowResponse.json();
+                console.log('Snow response status:', snowResponse.status);
+                console.log('Historical response status:', historicalResponse.status);
 
-                try {
-                    historicalData = await historicalResponse.json();
-                } catch (e) {
-                    console.warn('Historical data not available:', e);
+                if (!snowResponse.ok) {
+                    throw new Error(`Failed to load snow-cover.json: ${snowResponse.status}`);
+                }
+
+                snowData = await snowResponse.json();
+                console.log('Snow data loaded:', snowData?.updated);
+                console.log('Snow data has usa.history:', snowData?.usa?.history?.length, 'entries');
+                console.log('Snow data has canada.history:', snowData?.canada?.history?.length, 'entries');
+
+                if (!historicalResponse.ok) {
+                    console.warn('Historical response not ok:', historicalResponse.status);
                     historicalData = null;
+                } else {
+                    try {
+                        historicalData = await historicalResponse.json();
+                        console.log('Historical data loaded, usa:', historicalData?.usa?.length, 'entries');
+                        console.log('Historical data loaded, canada:', historicalData?.canada?.length, 'entries');
+                    } catch (e) {
+                        console.warn('Historical data parse error:', e);
+                        historicalData = null;
+                    }
+                }
+
+                // Load temperature history separately (optional, large file)
+                try {
+                    const tempHistoryResponse = await fetch('/data/temperature-history.json');
+                    if (tempHistoryResponse.ok) {
+                        temperatureHistoryData = await tempHistoryResponse.json();
+                        console.log('Temperature history loaded:', Object.keys(temperatureHistoryData?.metros || {}).length, 'metros');
+                    } else {
+                        console.warn('Temperature history not available:', tempHistoryResponse.status);
+                        temperatureHistoryData = null;
+                    }
+                } catch (e) {
+                    console.warn('Temperature history load error:', e);
+                    temperatureHistoryData = null;
                 }
 
                 // Update timestamp
                 document.getElementById('last-updated').textContent = `Updated ${snowData.updated}`;
 
                 // Update national overview
+                console.log('Calling updateNationalOverview...');
                 updateNationalOverview();
+                console.log('updateNationalOverview complete');
 
                 // Update regional dashboard
+                console.log('Calling updateDashboard...');
                 updateDashboard();
+                console.log('updateDashboard complete');
 
             } catch (error) {
                 console.error('Error loading snow data:', error);
                 document.getElementById('last-updated').textContent = 'Error loading data';
+                // Show more visible error on page
+                const errorDiv = document.createElement('div');
+                errorDiv.style.cssText = 'background: #ff4444; color: white; padding: 20px; margin: 20px; border-radius: 8px; text-align: center;';
+                errorDiv.innerHTML = `<strong>Data Load Error:</strong> ${error.message}<br><small>Check browser console (F12) for details</small>`;
+                document.querySelector('.dashboard')?.prepend(errorDiv);
             }
         }
 
@@ -1877,7 +1939,12 @@
         // National Overview
         // ============================================
         function updateNationalOverview() {
-            if (!snowData) return;
+            console.log('updateNationalOverview called, snowData:', !!snowData);
+            if (!snowData) {
+                console.warn('updateNationalOverview: No snowData, returning early');
+                return;
+            }
+            console.log('updateNationalOverview: snowData.usa:', !!snowData.usa, 'snowData.canada:', !!snowData.canada);
 
             // Update chart titles based on current region
             const regionConfig = getRegionConfig();
@@ -1900,43 +1967,72 @@
             }
 
             // USA stats
-            document.getElementById('usa-cover').textContent = snowData.usa.cover + '%';
-            if (snowData.usa.temperature) {
-                const anomaly = snowData.usa.temperature.avg_anomaly_f;
-                const color = anomaly > 5 ? 'var(--accent-warm-bright)' : anomaly < -5 ? 'var(--accent-cold-bright)' : 'var(--text-secondary)';
-                document.getElementById('usa-temp').innerHTML =
-                    `<span style="color: ${color}">${anomaly > 0 ? '+' : ''}${anomaly.toFixed(1)}°F vs normal</span>`;
+            try {
+                document.getElementById('usa-cover').textContent = (snowData.usa?.cover ?? '--') + '%';
+                if (snowData.usa?.temperature) {
+                    const anomaly = snowData.usa.temperature.avg_anomaly_f;
+                    const color = anomaly > 5 ? 'var(--accent-warm-bright)' : anomaly < -5 ? 'var(--accent-cold-bright)' : 'var(--text-secondary)';
+                    document.getElementById('usa-temp').innerHTML =
+                        `<span style="color: ${color}">${anomaly > 0 ? '+' : ''}${anomaly.toFixed(1)}°F vs normal</span>`;
+                }
+            } catch (e) {
+                console.error('Error updating USA stats:', e);
             }
 
             // Canada stats
-            document.getElementById('canada-cover').textContent = snowData.canada.cover + '%';
-            if (snowData.canada.temperature) {
-                const anomaly = snowData.canada.temperature.avg_anomaly_f;
-                const color = anomaly > 5 ? 'var(--accent-warm-bright)' : anomaly < -5 ? 'var(--accent-cold-bright)' : 'var(--text-secondary)';
-                document.getElementById('canada-temp').innerHTML =
-                    `<span style="color: ${color}">${anomaly > 0 ? '+' : ''}${anomaly.toFixed(1)}°F vs normal</span>`;
+            try {
+                document.getElementById('canada-cover').textContent = (snowData.canada?.cover ?? '--') + '%';
+                if (snowData.canada?.temperature) {
+                    const anomaly = snowData.canada.temperature.avg_anomaly_f;
+                    const color = anomaly > 5 ? 'var(--accent-warm-bright)' : anomaly < -5 ? 'var(--accent-cold-bright)' : 'var(--text-secondary)';
+                    document.getElementById('canada-temp').innerHTML =
+                        `<span style="color: ${color}">${anomaly > 0 ? '+' : ''}${anomaly.toFixed(1)}°F vs normal</span>`;
+                }
+            } catch (e) {
+                console.error('Error updating Canada stats:', e);
             }
 
             // Combined stats
-            document.getElementById('combined-cover').textContent = snowData.combined.cover + '%';
-            if (snowData.combined.temperature) {
-                const anomaly = snowData.combined.temperature.avg_anomaly_f;
-                const color = anomaly > 5 ? 'var(--accent-warm-bright)' : anomaly < -5 ? 'var(--accent-cold-bright)' : 'var(--text-secondary)';
-                document.getElementById('combined-temp').innerHTML =
-                    `<span style="color: ${color}">${anomaly > 0 ? '+' : ''}${anomaly.toFixed(1)}°F vs normal</span>`;
+            try {
+                document.getElementById('combined-cover').textContent = (snowData.combined?.cover ?? '--') + '%';
+                if (snowData.combined?.temperature) {
+                    const anomaly = snowData.combined.temperature.avg_anomaly_f;
+                    const color = anomaly > 5 ? 'var(--accent-warm-bright)' : anomaly < -5 ? 'var(--accent-cold-bright)' : 'var(--text-secondary)';
+                    document.getElementById('combined-temp').innerHTML =
+                        `<span style="color: ${color}">${anomaly > 0 ? '+' : ''}${anomaly.toFixed(1)}°F vs normal</span>`;
+                }
+            } catch (e) {
+                console.error('Error updating combined stats:', e);
             }
 
             // Draw national chart
-            drawNationalChart();
+            try {
+                console.log('About to call drawNationalChart');
+                drawNationalChart();
+                console.log('drawNationalChart completed');
+            } catch (e) {
+                console.error('Error in drawNationalChart:', e);
+            }
 
             // Draw temperature anomaly chart
-            drawTemperatureChart();
+            try {
+                console.log('About to call drawTemperatureChart');
+                drawTemperatureChart();
+                console.log('drawTemperatureChart completed');
+            } catch (e) {
+                console.error('Error in drawTemperatureChart:', e);
+            }
         }
 
         function drawNationalChart() {
-            if (!historicalData?.usa) return;
+            console.log('drawNationalChart called, historicalData?.usa:', historicalData?.usa?.length, 'entries');
+            if (!historicalData?.usa) {
+                console.warn('drawNationalChart: No historical data for USA, returning early');
+                return;
+            }
 
             const ctx = document.getElementById('national-chart').getContext('2d');
+            console.log('drawNationalChart: Got canvas context, creating chart...');
 
             if (nationalChart) {
                 nationalChart.destroy();
@@ -2233,12 +2329,17 @@
 
         // Draw Temperature Anomaly Chart
         function drawTemperatureChart() {
+            console.log('drawTemperatureChart called');
             const ctx = document.getElementById('temperature-chart');
-            if (!ctx) return;
+            if (!ctx) {
+                console.warn('drawTemperatureChart: No canvas element found');
+                return;
+            }
 
             if (temperatureChart) {
                 temperatureChart.destroy();
             }
+            console.log('drawTemperatureChart: temperatureHistoryData available:', !!temperatureHistoryData);
 
             // Build full season date range (Oct 1 2025 - Apr 30 2026)
             const seasonDates = [];
@@ -2254,30 +2355,61 @@
                 d.setDate(d.getDate() + 1);
             }
 
-            // For now, show aggregated metro temperature anomalies from current data
-            // Calculate average USA and Canada anomalies from metro data
-            const usaMetros = (snowData?.metros || []).filter(m => m.country === 'usa' || !m.country);
-            const canadaMetros = (snowData?.metros || []).filter(m => m.country === 'canada');
+            // Build temperature anomaly data from REAL temperature-history.json
+            // This contains per-metro historical data from Open-Meteo
+            // Fallback: if temperature history not available, use current snowData temps
 
-            // Calculate weighted average anomaly (by population)
-            function calcWeightedAnomaly(metros) {
-                let totalWeight = 0;
-                let weightedSum = 0;
-                metros.forEach(m => {
-                    if (m.tempAnomaly !== null && m.tempAnomaly !== undefined) {
-                        const pop = m.population || 1000000;
-                        weightedSum += m.tempAnomaly * pop;
-                        totalWeight += pop;
+            // Build indexed lookup of anomalies by date
+            const usaAnomalyByDate = {};
+            const canadaAnomalyByDate = {};
+
+            // Process temperature history - average anomalies across metros for each date
+            if (temperatureHistoryData?.metros) {
+                // Collect all anomalies by date
+                const usaDateAnomalies = {};
+                const canadaDateAnomalies = {};
+
+                Object.entries(temperatureHistoryData.metros).forEach(([metroName, metroData]) => {
+                    const isCanada = metroData.country === 'canada';
+                    const targetMap = isCanada ? canadaDateAnomalies : usaDateAnomalies;
+
+                    (metroData.history || []).forEach(entry => {
+                        // Only include current season (2025-10-01 onwards)
+                        if (entry.date >= '2025-10-01' && entry.anomaly_c !== null && entry.anomaly_c !== undefined) {
+                            if (!targetMap[entry.date]) {
+                                targetMap[entry.date] = [];
+                            }
+                            // Convert C to F for display
+                            targetMap[entry.date].push(entry.anomaly_c * 9/5);
+                        }
+                    });
+                });
+
+                // Calculate average anomaly for each date
+                Object.entries(usaDateAnomalies).forEach(([date, anomalies]) => {
+                    if (anomalies.length > 0) {
+                        usaAnomalyByDate[date] = anomalies.reduce((a, b) => a + b, 0) / anomalies.length;
                     }
                 });
-                return totalWeight > 0 ? weightedSum / totalWeight : null;
+
+                Object.entries(canadaDateAnomalies).forEach(([date, anomalies]) => {
+                    if (anomalies.length > 0) {
+                        canadaAnomalyByDate[date] = anomalies.reduce((a, b) => a + b, 0) / anomalies.length;
+                    }
+                });
             }
 
-            const usaAnomaly = calcWeightedAnomaly(usaMetros);
-            const canadaAnomaly = calcWeightedAnomaly(canadaMetros);
+            // Fallback: Get current day anomaly from snowData if temperature history not available
+            let fallbackUsaAnomaly = null;
+            let fallbackCanadaAnomaly = null;
+            if (!temperatureHistoryData && snowData) {
+                const usaTemp = snowData.usa?.temperature;
+                const canadaTemp = snowData.canada?.temperature;
+                fallbackUsaAnomaly = usaTemp?.avg_anomaly_f ?? null;
+                fallbackCanadaAnomaly = canadaTemp?.avg_anomaly_f ?? null;
+            }
 
-            // Build data arrays - for now just show current day's value as a point
-            // TODO: Load from temperature-history.json once backfill is complete
+            // Build data arrays using REAL historical data
             const labels = [];
             const usaData = [];
             const canadaData = [];
@@ -2285,6 +2417,7 @@
 
             const today = new Date();
             today.setHours(23, 59, 59, 999);
+            const todayStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
 
             seasonDates.forEach((item, idx) => {
                 // Create label showing month name on 1st of each month
@@ -2296,15 +2429,24 @@
 
                 zeroLine.push(0); // Baseline (normal)
 
-                // Only show current data point for today
-                // This will be expanded when temperature-history.json is available
-                if (item.date.toDateString() === today.toDateString()) {
-                    usaData.push(usaAnomaly);
-                    canadaData.push(canadaAnomaly);
-                } else if (item.date <= today) {
-                    // Placeholder: show null for past dates until history is loaded
-                    usaData.push(null);
-                    canadaData.push(null);
+                // Use REAL historical data from temperature-history.json
+                if (item.date <= today) {
+                    const dateKey = item.fullDate;
+
+                    // Try temperature history first, fallback to current day snowData
+                    let usaVal = usaAnomalyByDate[dateKey];
+                    let canadaVal = canadaAnomalyByDate[dateKey];
+
+                    // For today, use fallback if no history data
+                    if (usaVal === undefined && dateKey === todayStr) {
+                        usaVal = fallbackUsaAnomaly;
+                    }
+                    if (canadaVal === undefined && dateKey === todayStr) {
+                        canadaVal = fallbackCanadaAnomaly;
+                    }
+
+                    usaData.push(usaVal !== undefined && usaVal !== null ? Math.round(usaVal * 10) / 10 : null);
+                    canadaData.push(canadaVal !== undefined && canadaVal !== null ? Math.round(canadaVal * 10) / 10 : null);
                 } else {
                     usaData.push(null);
                     canadaData.push(null);
@@ -3228,11 +3370,25 @@
         // Initialize
         // ============================================
         async function init() {
-            await loadSnowData();
-            await loadGeoData();
+            console.log('init() called - DOMContentLoaded fired');
+            try {
+                await loadSnowData();
+                console.log('loadSnowData complete, snowData:', !!snowData, 'historicalData:', !!historicalData);
+            } catch (e) {
+                console.error('init: loadSnowData failed:', e);
+            }
+            try {
+                await loadGeoData();
+                console.log('loadGeoData complete');
+            } catch (e) {
+                console.error('init: loadGeoData failed:', e);
+            }
         }
 
-        document.addEventListener('DOMContentLoaded', init);
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOMContentLoaded event fired');
+            init();
+        });
 
         // Refresh data every 5 minutes
         setInterval(loadSnowData, 300000);

@@ -3,9 +3,11 @@
 """
 One-time script to backfill current season snow cover data.
 
-This fetches NOHRSC data from Oct 1, 2025 to today and saves it
-to static/data/snow-cover-season.json. This file will then be
-loaded and appended to by the daily update script.
+This fetches:
+- NOHRSC data for USA (Oct 1, 2025 to today)
+- IMS satellite data for Canada (REAL data, NOT derived)
+
+Saves to static/data/snow-cover-season.json.
 
 Usage:
     python backfill_current_season.py
@@ -20,6 +22,13 @@ import urllib.request
 import urllib.error
 import ssl
 from datetime import datetime, timedelta
+
+# Import IMS fetcher for REAL Canada data
+from fetch_ims_snow_data import (
+    fetch_ims_file,
+    calculate_snow_cover_percentage,
+    REGION_BOUNDS
+)
 
 
 def print_safe(msg):
@@ -144,14 +153,55 @@ def backfill_current_season():
         time.sleep(0.15)
         current_date += timedelta(days=1)
 
-    # Derive Canada data using typical ratio (~2x USA, capped at 100%)
+    # Fetch REAL Canada data from IMS satellite - NO DERIVATION!
+    print_safe("\n" + "=" * 60)
+    print_safe("Fetching REAL Canada data from NOAA IMS...")
+    print_safe("=" * 60)
+
     canada_history = []
+    canada_bounds = REGION_BOUNDS.get('canada')
+    canada_fetched = 0
+    canada_missing = 0
+
     for entry in usa_history:
-        canada_value = min(100, round(entry['value'] * 2.0, 1))
+        try:
+            # Parse the date
+            date_obj = datetime.strptime(entry['date'], '%Y-%m-%d')
+            year = date_obj.year
+            doy = date_obj.timetuple().tm_yday
+
+            # Fetch IMS grid for this date
+            grid = fetch_ims_file(year, doy)
+            if grid and canada_bounds:
+                stats = calculate_snow_cover_percentage(grid, canada_bounds)
+                if stats:
+                    canada_value = stats['cover']
+                    canada_fetched += 1
+                else:
+                    canada_value = None
+                    canada_missing += 1
+            else:
+                canada_value = None
+                canada_missing += 1
+        except Exception as e:
+            print_safe(f"  Warning: Could not fetch IMS for {entry['date']}: {e}")
+            canada_value = None
+            canada_missing += 1
+
         canada_history.append({
             'date': entry['date'],
             'value': canada_value
         })
+
+        # Progress update every 10 days
+        total_canada = canada_fetched + canada_missing
+        if total_canada % 10 == 0:
+            print_safe(f"  Canada progress: {total_canada}/{len(usa_history)} (fetched: {canada_fetched}, missing: {canada_missing})")
+
+        # Small delay for IMS server
+        time.sleep(0.1)
+
+    print_safe(f"\nCanada IMS data: {canada_fetched} fetched, {canada_missing} missing")
 
     # Summary
     print_safe("\n" + "=" * 40)
