@@ -1549,7 +1549,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div>
-                            <div class="card-title">Feeder Markets</div>
+                            <div class="card-title">Ski Markets</div>
                             <div class="card-subtitle">Winter awareness = snow visible + seasonable temps</div>
                         </div>
                     </div>
@@ -2444,7 +2444,20 @@
                             pan: {
                                 enabled: true,
                                 mode: 'x',
-                                modifierKey: 'shift'
+                                modifierKey: 'shift',
+                                onPanComplete: function({chart}) {
+                                    if (window.chartSyncInProgress) return;
+                                    window.chartSyncInProgress = true;
+                                    try {
+                                        // Sync temperature chart to same zoom range
+                                        if (temperatureChart) {
+                                            const xScale = chart.scales.x;
+                                            temperatureChart.zoomScale('x', {min: xScale.min, max: xScale.max}, 'none');
+                                        }
+                                    } finally {
+                                        window.chartSyncInProgress = false;
+                                    }
+                                }
                             },
                             zoom: {
                                 drag: {
@@ -2455,9 +2468,23 @@
                                 },
                                 mode: 'x',
                                 onZoomComplete: function({chart}) {
-                                    // Show reset button when zoomed
+                                    // Show reset buttons when zoomed
                                     const resetBtn = document.getElementById('reset-zoom-btn');
+                                    const resetTempBtn = document.getElementById('reset-temp-zoom-btn');
                                     if (resetBtn) resetBtn.style.display = 'block';
+                                    if (resetTempBtn) resetTempBtn.style.display = 'block';
+
+                                    // Sync temperature chart to same zoom range
+                                    if (window.chartSyncInProgress) return;
+                                    window.chartSyncInProgress = true;
+                                    try {
+                                        if (temperatureChart) {
+                                            const xScale = chart.scales.x;
+                                            temperatureChart.zoomScale('x', {min: xScale.min, max: xScale.max}, 'none');
+                                        }
+                                    } finally {
+                                        window.chartSyncInProgress = false;
+                                    }
                                 }
                             }
                         }
@@ -2512,20 +2539,28 @@
                 }
             });
 
-            // Set up reset zoom button
+            // Set up reset zoom button - resets both charts
             const resetBtn = document.getElementById('reset-zoom-btn');
             if (resetBtn) {
                 resetBtn.addEventListener('click', function() {
-                    nationalChart.resetZoom();
-                    resetBtn.style.display = 'none';
+                    resetBothCharts();
                 });
             }
 
-            // Double-click to reset zoom
+            // Double-click to reset zoom - resets both charts
             ctx.canvas.addEventListener('dblclick', function() {
-                nationalChart.resetZoom();
-                if (resetBtn) resetBtn.style.display = 'none';
+                resetBothCharts();
             });
+        }
+
+        // Reset both charts to full view
+        function resetBothCharts() {
+            const resetBtn = document.getElementById('reset-zoom-btn');
+            const resetTempBtn = document.getElementById('reset-temp-zoom-btn');
+            if (nationalChart) nationalChart.resetZoom();
+            if (temperatureChart) temperatureChart.resetZoom();
+            if (resetBtn) resetBtn.style.display = 'none';
+            if (resetTempBtn) resetTempBtn.style.display = 'none';
         }
 
         // Draw Temperature Anomaly Chart
@@ -2797,7 +2832,20 @@
                             pan: {
                                 enabled: true,
                                 mode: 'x',
-                                modifierKey: 'shift'
+                                modifierKey: 'shift',
+                                onPanComplete: function({chart}) {
+                                    if (window.chartSyncInProgress) return;
+                                    window.chartSyncInProgress = true;
+                                    try {
+                                        // Sync snow cover chart to same zoom range
+                                        if (nationalChart) {
+                                            const xScale = chart.scales.x;
+                                            nationalChart.zoomScale('x', {min: xScale.min, max: xScale.max}, 'none');
+                                        }
+                                    } finally {
+                                        window.chartSyncInProgress = false;
+                                    }
+                                }
                             },
                             zoom: {
                                 drag: {
@@ -2808,8 +2856,23 @@
                                 },
                                 mode: 'x',
                                 onZoomComplete: function({chart}) {
-                                    const resetBtn = document.getElementById('reset-temp-zoom-btn');
+                                    // Show reset buttons when zoomed
+                                    const resetBtn = document.getElementById('reset-zoom-btn');
+                                    const resetTempBtn = document.getElementById('reset-temp-zoom-btn');
                                     if (resetBtn) resetBtn.style.display = 'block';
+                                    if (resetTempBtn) resetTempBtn.style.display = 'block';
+
+                                    // Sync snow cover chart to same zoom range
+                                    if (window.chartSyncInProgress) return;
+                                    window.chartSyncInProgress = true;
+                                    try {
+                                        if (nationalChart) {
+                                            const xScale = chart.scales.x;
+                                            nationalChart.zoomScale('x', {min: xScale.min, max: xScale.max}, 'none');
+                                        }
+                                    } finally {
+                                        window.chartSyncInProgress = false;
+                                    }
                                 }
                             }
                         }
@@ -2864,19 +2927,17 @@
                 }
             });
 
-            // Set up reset zoom button for temperature chart
+            // Set up reset zoom button for temperature chart - resets both charts
             const resetTempBtn = document.getElementById('reset-temp-zoom-btn');
             if (resetTempBtn) {
                 resetTempBtn.addEventListener('click', function() {
-                    temperatureChart.resetZoom();
-                    resetTempBtn.style.display = 'none';
+                    resetBothCharts();
                 });
             }
 
-            // Double-click to reset zoom
+            // Double-click to reset zoom - resets both charts
             ctx.addEventListener('dblclick', function() {
-                temperatureChart.resetZoom();
-                if (resetTempBtn) resetTempBtn.style.display = 'none';
+                resetBothCharts();
             });
         }
 
@@ -3169,17 +3230,11 @@
                 return;
             }
 
-            const totalImportance = currentMarkets.reduce((s, m) => s + m.importance, 0);
+            // Use national combined snow cover instead of market average
+            const avgSnowCover = snowData?.combined?.cover ?? '--';
 
-            const avgSnowCover = Math.round(
-                currentMarkets.reduce((s, m) => s + m.snowCover * m.importance, 0) / totalImportance
-            );
-
-            const validTempMarkets = currentMarkets.filter(m => m.tempAnomaly !== null);
-            const avgTempAnomaly = validTempMarkets.length > 0
-                ? (validTempMarkets.reduce((s, m) => s + m.tempAnomaly * m.importance, 0) /
-                   validTempMarkets.reduce((s, m) => s + m.importance, 0)).toFixed(1)
-                : '--';
+            // Use national combined temperature anomaly
+            const avgTempAnomaly = snowData?.combined?.temperature?.avg_anomaly_f ?? '--';
 
             const marketsWithSnow = currentMarkets.filter(m => m.snowCover > 0).length;
             const lowAwarenessCount = currentMarkets.filter(m => m.awareness === 'low').length;
@@ -3187,11 +3242,11 @@
             container.innerHTML = `
                 <div class="summary-stat">
                     <div class="summary-label">Avg Snow Cover</div>
-                    <div class="summary-value" style="color: ${avgSnowCover < 30 ? 'var(--accent-warm)' : 'var(--text-primary)'}">${avgSnowCover}%</div>
+                    <div class="summary-value" style="color: ${avgSnowCover !== '--' && avgSnowCover < 30 ? 'var(--accent-warm)' : 'var(--text-primary)'}">${avgSnowCover !== '--' ? Math.round(avgSnowCover) + '%' : '--'}</div>
                 </div>
                 <div class="summary-stat">
                     <div class="summary-label">Temp Anomaly</div>
-                    <div class="summary-value" style="color: ${avgTempAnomaly !== '--' && parseFloat(avgTempAnomaly) > 5 ? 'var(--accent-warm-bright)' : 'var(--text-primary)'}">${avgTempAnomaly !== '--' ? (avgTempAnomaly > 0 ? '+' : '') + avgTempAnomaly + '°' : '--'}</div>
+                    <div class="summary-value" style="color: ${avgTempAnomaly !== '--' && avgTempAnomaly > 5 ? 'var(--accent-warm-bright)' : 'var(--text-primary)'}">${avgTempAnomaly !== '--' ? (avgTempAnomaly > 0 ? '+' : '') + avgTempAnomaly.toFixed(1) + '°' : '--'}</div>
                 </div>
                 <div class="summary-stat">
                     <div class="summary-label">w/ Snow</div>
@@ -3223,9 +3278,9 @@
                 const names = lowAwareness.map(m => m.name).join(', ');
                 insightText = `${names} ${lowAwareness.length === 1 ? 'has' : 'have'} no visible snow cover and warm conditions. Winter awareness is likely low in ${lowAwareness.length === 1 ? 'this market' : 'these markets'}.`;
             } else if (highAwareness.length === currentMarkets.length) {
-                insightText = `All feeder markets are experiencing winter conditions with snow on the ground. Organic awareness of ski season is likely high.`;
+                insightText = `All ski markets are experiencing winter conditions with snow on the ground. Organic awareness of ski season is likely high.`;
             } else {
-                insightText = `Most feeder markets are seeing some winter conditions. ${highAwareness.length} of ${currentMarkets.length} markets have significant snow cover.`;
+                insightText = `Most ski markets are seeing some winter conditions. ${highAwareness.length} of ${currentMarkets.length} markets have significant snow cover.`;
             }
 
             container.innerHTML = `
@@ -3253,7 +3308,7 @@
 
             if (currentMarkets.length === 0) {
                 titleEl.textContent = 'Select a region to view conditions';
-                subtitleEl.textContent = 'Choose a feeder market region above to see snow cover insights.';
+                subtitleEl.textContent = 'Choose a ski market region above to see snow cover insights.';
                 return;
             }
 
@@ -3273,7 +3328,7 @@
             let title, subtitle, badgeClass, badgeText;
 
             if (highAwareness === currentMarkets.length) {
-                title = `${config.name}: Snow in all feeder markets`;
+                title = `${config.name}: Snow in all ski markets`;
                 subtitle = `All ${currentMarkets.length} markets have snow on the ground with seasonable temperatures.`;
                 badgeClass = 'positive';
                 badgeText = 'High Awareness';
@@ -3283,7 +3338,7 @@
                 badgeClass = 'negative';
                 badgeText = 'Low Awareness';
             } else if (marketsWithSnow === 0) {
-                title = `${config.name}: No snow cover in feeder markets`;
+                title = `${config.name}: No snow cover in ski markets`;
                 subtitle = `None of the ${currentMarkets.length} tracked markets currently have visible snow cover.`;
                 badgeClass = 'negative';
                 badgeText = 'No Snow Cover';
