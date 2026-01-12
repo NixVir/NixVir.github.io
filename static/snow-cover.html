@@ -2216,6 +2216,7 @@
                             borderWidth: 1,
                             callbacks: {
                                 title: function(context) {
+                                    if (!context || !context[0]) return '';
                                     const idx = context[0].dataIndex;
                                     const dateInfo = seasonDates[idx];
                                     if (dateInfo) {
@@ -2565,6 +2566,7 @@
                             borderWidth: 1,
                             callbacks: {
                                 title: function(context) {
+                                    if (!context || !context[0]) return '';
                                     const idx = context[0].dataIndex;
                                     const dateInfo = seasonDates[idx];
                                     if (dateInfo) {
@@ -3045,6 +3047,9 @@
             const titleEl = document.getElementById("headline-title");
             const subtitleEl = document.getElementById("headline-subtitle");
             const config = getRegionConfig();
+
+            // Skip if elements don't exist
+            if (!titleEl || !subtitleEl) return;
 
             if (currentMarkets.length === 0) {
                 titleEl.textContent = 'Select a region to view conditions';
