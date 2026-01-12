@@ -839,6 +839,36 @@
             margin-top: 1.25rem;
         }
 
+        /* Units Toggle */
+        .units-toggle {
+            display: flex;
+            background: var(--bg-elevated);
+            border-radius: 6px;
+            padding: 3px;
+            gap: 2px;
+        }
+
+        .units-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            padding: 0.4rem 0.8rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .units-btn:hover {
+            color: var(--text-primary);
+        }
+
+        .units-btn.active {
+            background: var(--accent-cold);
+            color: white;
+        }
+
         /* National Overview Card */
         .national-stats {
             display: grid;
@@ -849,19 +879,57 @@
 
         .national-stat-card {
             background: var(--bg-elevated);
-            padding: 1rem;
-            border-radius: 8px;
+            padding: 1.5rem 1.25rem;
+            border-radius: 10px;
             text-align: center;
         }
 
         .national-stat-country {
-            font-size: 0.7rem;
-            color: var(--text-muted);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.5rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.25rem;
         }
 
+        .national-stat-metrics {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .stat-metric {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-metric-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .stat-metric-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-weight: 500;
+        }
+
+        /* Metric colors */
+        .stat-positive { color: var(--accent-cold-bright); }
+        .stat-negative { color: var(--accent-warm-bright); }
+        .stat-neutral { color: var(--text-primary); }
+
+        /* Temperature colors (inverted - warm is bad for snow) */
+        .temp-warm { color: var(--accent-warm-bright); }
+        .temp-cold { color: var(--accent-cold-bright); }
+
+        /* Legacy styles for backward compatibility */
         .national-stat-value {
             font-family: 'JetBrains Mono', monospace;
             font-size: 2rem;
@@ -1260,6 +1328,12 @@
                 <h1>Snow Cover <span>Intelligence</span></h1>
                 <p class="subtitle">Tracking ski industry conditions across North America</p>
             </div>
+            <div class="header-right">
+                <div class="units-toggle">
+                    <button class="units-btn active" id="units-english" data-units="english">English</button>
+                    <button class="units-btn" id="units-metric" data-units="metric">Metric</button>
+                </div>
+            </div>
         </header>
 
         <!-- Hidden region selector for JS compatibility -->
@@ -1331,23 +1405,56 @@
 
         <!-- National Stats Cards -->
         <div class="national-stats" id="national-stats" style="margin-bottom: 1.25rem;">
-            <div class="national-stat-card">
+            <div class="national-stat-card" id="usa-stat-card">
                 <div class="national-stat-country">United States</div>
-                <div class="national-stat-value" id="usa-cover">--</div>
-                <div class="national-stat-label">Snow Coverage</div>
-                <div class="national-stat-temp" id="usa-temp"></div>
+                <div class="national-stat-metrics">
+                    <div class="stat-metric">
+                        <div class="stat-metric-value stat-neutral" id="usa-cover">--</div>
+                        <div class="stat-metric-label">Snow Coverage</div>
+                    </div>
+                    <div class="stat-metric">
+                        <div class="stat-metric-value" id="usa-snow-diff">--</div>
+                        <div class="stat-metric-label">vs 5-Year Average</div>
+                    </div>
+                    <div class="stat-metric">
+                        <div class="stat-metric-value" id="usa-temp">--</div>
+                        <div class="stat-metric-label">Temp vs Normal</div>
+                    </div>
+                </div>
             </div>
-            <div class="national-stat-card">
+            <div class="national-stat-card" id="canada-stat-card">
                 <div class="national-stat-country">Canada</div>
-                <div class="national-stat-value" id="canada-cover">--</div>
-                <div class="national-stat-label">Snow Coverage</div>
-                <div class="national-stat-temp" id="canada-temp"></div>
+                <div class="national-stat-metrics">
+                    <div class="stat-metric">
+                        <div class="stat-metric-value stat-neutral" id="canada-cover">--</div>
+                        <div class="stat-metric-label">Snow Coverage</div>
+                    </div>
+                    <div class="stat-metric">
+                        <div class="stat-metric-value" id="canada-snow-diff">--</div>
+                        <div class="stat-metric-label">vs 5-Year Average</div>
+                    </div>
+                    <div class="stat-metric">
+                        <div class="stat-metric-value" id="canada-temp">--</div>
+                        <div class="stat-metric-label">Temp vs Normal</div>
+                    </div>
+                </div>
             </div>
-            <div class="national-stat-card">
-                <div class="national-stat-country">Combined</div>
-                <div class="national-stat-value" id="combined-cover">--</div>
-                <div class="national-stat-label">North America</div>
-                <div class="national-stat-temp" id="combined-temp"></div>
+            <div class="national-stat-card" id="combined-stat-card">
+                <div class="national-stat-country">North America</div>
+                <div class="national-stat-metrics">
+                    <div class="stat-metric">
+                        <div class="stat-metric-value stat-neutral" id="combined-cover">--</div>
+                        <div class="stat-metric-label">Snow Coverage</div>
+                    </div>
+                    <div class="stat-metric">
+                        <div class="stat-metric-value" id="combined-snow-diff">--</div>
+                        <div class="stat-metric-label">vs 5-Year Average</div>
+                    </div>
+                    <div class="stat-metric">
+                        <div class="stat-metric-value" id="combined-temp">--</div>
+                        <div class="stat-metric-label">Temp vs Normal</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1966,44 +2073,8 @@
                     : `${regionName} Temperature Anomaly`;
             }
 
-            // USA stats
-            try {
-                document.getElementById('usa-cover').textContent = (snowData.usa?.cover ?? '--') + '%';
-                if (snowData.usa?.temperature) {
-                    const anomaly = snowData.usa.temperature.avg_anomaly_f;
-                    const color = anomaly > 5 ? 'var(--accent-warm-bright)' : anomaly < -5 ? 'var(--accent-cold-bright)' : 'var(--text-secondary)';
-                    document.getElementById('usa-temp').innerHTML =
-                        `<span style="color: ${color}">${anomaly > 0 ? '+' : ''}${anomaly.toFixed(1)}°F vs normal</span>`;
-                }
-            } catch (e) {
-                console.error('Error updating USA stats:', e);
-            }
-
-            // Canada stats
-            try {
-                document.getElementById('canada-cover').textContent = (snowData.canada?.cover ?? '--') + '%';
-                if (snowData.canada?.temperature) {
-                    const anomaly = snowData.canada.temperature.avg_anomaly_f;
-                    const color = anomaly > 5 ? 'var(--accent-warm-bright)' : anomaly < -5 ? 'var(--accent-cold-bright)' : 'var(--text-secondary)';
-                    document.getElementById('canada-temp').innerHTML =
-                        `<span style="color: ${color}">${anomaly > 0 ? '+' : ''}${anomaly.toFixed(1)}°F vs normal</span>`;
-                }
-            } catch (e) {
-                console.error('Error updating Canada stats:', e);
-            }
-
-            // Combined stats
-            try {
-                document.getElementById('combined-cover').textContent = (snowData.combined?.cover ?? '--') + '%';
-                if (snowData.combined?.temperature) {
-                    const anomaly = snowData.combined.temperature.avg_anomaly_f;
-                    const color = anomaly > 5 ? 'var(--accent-warm-bright)' : anomaly < -5 ? 'var(--accent-cold-bright)' : 'var(--text-secondary)';
-                    document.getElementById('combined-temp').innerHTML =
-                        `<span style="color: ${color}">${anomaly > 0 ? '+' : ''}${anomaly.toFixed(1)}°F vs normal</span>`;
-                }
-            } catch (e) {
-                console.error('Error updating combined stats:', e);
-            }
+            // Update all national stat cards with new 3-metric format
+            updateNationalStatCards();
 
             // Draw national chart
             try {
@@ -2021,6 +2092,135 @@
                 console.log('drawTemperatureChart completed');
             } catch (e) {
                 console.error('Error in drawTemperatureChart:', e);
+            }
+        }
+
+        // Units toggle state (english or metric)
+        let currentUnits = 'english';
+
+        // Function to update a single stat card with 3 metrics
+        function updateStatCard(prefix, coverValue, snowDiff, tempAnomaly) {
+            const coverEl = document.getElementById(`${prefix}-cover`);
+            const snowDiffEl = document.getElementById(`${prefix}-snow-diff`);
+            const tempEl = document.getElementById(`${prefix}-temp`);
+
+            if (!coverEl || !snowDiffEl || !tempEl) return;
+
+            // Get absolute values for proportional sizing
+            const absValues = [
+                Math.abs(coverValue ?? 0),
+                Math.abs(snowDiff ?? 0),
+                Math.abs(tempAnomaly ?? 0)
+            ];
+
+            // Base font size - the snow coverage percentage sets the scale
+            const baseFontSize = 2.2; // rem for the cover percentage
+            const minFontSize = 1.0; // minimum readable size
+
+            // Calculate font sizes proportional to absolute values
+            // Cover is the reference (always shown at base size)
+            const coverFontSize = baseFontSize;
+
+            // Snow diff and temp scale relative to cover value, but with min size
+            const snowDiffFontSize = coverValue > 0
+                ? Math.max(minFontSize, baseFontSize * (Math.abs(snowDiff) / coverValue))
+                : minFontSize;
+            const tempFontSize = coverValue > 0
+                ? Math.max(minFontSize, baseFontSize * (Math.abs(tempAnomaly) / coverValue) * 3) // Scale temp more aggressively
+                : minFontSize;
+
+            // Cap the font sizes to prevent them from being too large
+            const cappedSnowDiffSize = Math.min(snowDiffFontSize, baseFontSize * 0.9);
+            const cappedTempSize = Math.min(tempFontSize, baseFontSize * 0.8);
+
+            // Update snow coverage (white/neutral)
+            coverEl.textContent = coverValue != null ? `${coverValue.toFixed(1)}%` : '--';
+            coverEl.style.fontSize = `${coverFontSize}rem`;
+            coverEl.className = 'stat-metric-value stat-neutral';
+
+            // Update snow diff vs 5-year average (blue positive = more snow, red negative = less snow)
+            if (snowDiff != null) {
+                const sign = snowDiff >= 0 ? '+' : '';
+                snowDiffEl.textContent = `${sign}${snowDiff.toFixed(1)}%`;
+                snowDiffEl.style.fontSize = `${cappedSnowDiffSize}rem`;
+                snowDiffEl.className = `stat-metric-value ${snowDiff >= 0 ? 'stat-positive' : 'stat-negative'}`;
+            } else {
+                snowDiffEl.textContent = '--';
+                snowDiffEl.className = 'stat-metric-value stat-neutral';
+            }
+
+            // Update temperature anomaly (red warm = above normal, blue cold = below normal)
+            if (tempAnomaly != null) {
+                const sign = tempAnomaly >= 0 ? '+' : '';
+                const tempValue = currentUnits === 'english' ? tempAnomaly : (tempAnomaly * 5 / 9);
+                const tempUnit = currentUnits === 'english' ? '°F' : '°C';
+                tempEl.textContent = `${sign}${tempValue.toFixed(1)}${tempUnit}`;
+                tempEl.style.fontSize = `${cappedTempSize}rem`;
+                // Warm (above normal) = red, Cold (below normal) = blue
+                tempEl.className = `stat-metric-value ${tempAnomaly >= 0 ? 'temp-warm' : 'temp-cold'}`;
+            } else {
+                tempEl.textContent = '--';
+                tempEl.className = 'stat-metric-value stat-neutral';
+            }
+        }
+
+        // Get historical average for a specific date (MM-DD format)
+        function getHistoricalAverage(country, dateMMDD) {
+            if (!historicalData || !historicalData[country]) return null;
+            const entry = historicalData[country].find(e => e.date === dateMMDD);
+            return entry ? entry.value : null;
+        }
+
+        // Update all national stat cards
+        function updateNationalStatCards() {
+            if (!snowData) return;
+
+            // Get current date in MM-DD format for looking up historical averages
+            const now = new Date();
+            const dateMMDD = `${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+
+            // USA
+            const usaCover = snowData.usa?.cover ?? null;
+            const usaHistorical = getHistoricalAverage('usa', dateMMDD);
+            const usaSnowDiff = (usaCover != null && usaHistorical != null) ? (usaCover - usaHistorical) : null;
+            const usaTempAnomaly = snowData.usa?.temperature?.avg_anomaly_f ?? null;
+            updateStatCard('usa', usaCover, usaSnowDiff, usaTempAnomaly);
+
+            // Canada
+            const canadaCover = snowData.canada?.cover ?? null;
+            const canadaHistorical = getHistoricalAverage('canada', dateMMDD);
+            const canadaSnowDiff = (canadaCover != null && canadaHistorical != null) ? (canadaCover - canadaHistorical) : null;
+            const canadaTempAnomaly = snowData.canada?.temperature?.avg_anomaly_f ?? null;
+            updateStatCard('canada', canadaCover, canadaSnowDiff, canadaTempAnomaly);
+
+            // Combined (North America) - use real historical data if available
+            const combinedCover = snowData.combined?.cover ?? null;
+            const combinedHistorical = getHistoricalAverage('combined', dateMMDD);
+            const combinedSnowDiff = (combinedCover != null && combinedHistorical != null)
+                ? (combinedCover - combinedHistorical) : null;
+            const combinedTempAnomaly = snowData.combined?.temperature?.avg_anomaly_f ?? null;
+            updateStatCard('combined', combinedCover, combinedSnowDiff, combinedTempAnomaly);
+        }
+
+        // Units toggle event handlers
+        function initUnitsToggle() {
+            const englishBtn = document.getElementById('units-english');
+            const metricBtn = document.getElementById('units-metric');
+
+            if (englishBtn && metricBtn) {
+                englishBtn.addEventListener('click', () => {
+                    currentUnits = 'english';
+                    englishBtn.classList.add('active');
+                    metricBtn.classList.remove('active');
+                    updateNationalStatCards();
+                });
+
+                metricBtn.addEventListener('click', () => {
+                    currentUnits = 'metric';
+                    metricBtn.classList.add('active');
+                    englishBtn.classList.remove('active');
+                    updateNationalStatCards();
+                });
             }
         }
 
@@ -3392,6 +3592,7 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             console.log('DOMContentLoaded event fired');
+            initUnitsToggle();
             init();
         });
 

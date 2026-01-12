@@ -87,43 +87,32 @@ def fetch_nohrsc_historical(year, month, day):
     return None
 
 
-def fetch_five_year_seasonal_average():
-    """
-    Fetch 5-year average snow cover data for the full ski season (Oct 1 - Apr 30).
-    """
-    print_safe("=" * 60)
-    print_safe("Fetching 5-year seasonal averages (Oct 1 - Apr 30)")
-    print_safe("=" * 60)
-
-    today = datetime.now()
-    current_year = today.year
+def main():
+    """Main entry point"""
+    print_safe(f"Starting historical data fetch at {datetime.now().isoformat()}\n")
 
     # Determine which 5 winters to use
-    # If we're after Apr 30, include the just-completed winter
+    today = datetime.now()
+    current_year = today.year
     if today.month >= 5:
         last_complete_winter_end_year = current_year
     else:
         last_complete_winter_end_year = current_year - 1
 
-    # The 5 complete winters
-    years_to_fetch = []
+    years_used = []
     for i in range(5, 0, -1):
         winter_start_year = last_complete_winter_end_year - i
-        years_to_fetch.append(winter_start_year)
+        years_used.append(winter_start_year)
 
-    print_safe(f"Using winters: {', '.join([f'{y}/{y+1}' for y in years_to_fetch])}")
+    print_safe(f"Using winters: {', '.join([f'{y}/{y+1}' for y in years_used])}")
 
     # Generate all dates in the ski season (Oct 1 to Apr 30)
     season_dates = []
-
-    # Oct 1 to Dec 31
     ref_year = 2024  # Leap year to include Feb 29
     date = datetime(ref_year, 10, 1)
     while date.month >= 10:
         season_dates.append((date.month, date.day))
         date += timedelta(days=1)
-
-    # Jan 1 to Apr 30
     date = datetime(ref_year + 1, 1, 1)
     while date.month <= 4:
         season_dates.append((date.month, date.day))
@@ -131,17 +120,25 @@ def fetch_five_year_seasonal_average():
 
     print_safe(f"Season spans {len(season_dates)} days (Oct 1 - Apr 30)")
 
-    # Dictionary to accumulate values for each day
-    daily_data = {d: [] for d in season_dates}
+    canada_bounds = REGION_BOUNDS.get('canada')
 
-    # Track data by year for debugging
-    yearly_stats = {y: {'fetched': 0, 'missing': 0} for y in years_to_fetch}
+    # Store raw daily values for each (date, year) combination
+    # This allows us to compute USA, Canada, and Combined averages without re-fetching
+    usa_raw = {}    # (month, day, year) -> value
+    canada_raw = {} # (month, day, year) -> value
 
-    total_requests = len(season_dates) * len(years_to_fetch)
+    # =========================================================================
+    # PHASE 1: Fetch all USA data
+    # =========================================================================
+    print_safe("\n" + "=" * 60)
+    print_safe("Phase 1: Fetching USA historical data from NOHRSC...")
+    print_safe("=" * 60)
+
+    total_requests = len(season_dates) * len(years_used)
     completed = 0
     start_time = time.time()
 
-    for winter_start_year in years_to_fetch:
+    for winter_start_year in years_used:
         print_safe(f"\nFetching {winter_start_year}/{winter_start_year + 1} winter...")
 
         for month, day in season_dates:
@@ -152,134 +149,136 @@ def fetch_five_year_seasonal_average():
                     completed += 1
                     continue
 
-            # Determine the actual year for this date
             if month >= 10:
                 year = winter_start_year
             else:
                 year = winter_start_year + 1
 
             data = fetch_nohrsc_historical(year, month, day)
-
             if data is not None and data['cover'] is not None:
-                daily_data[(month, day)].append(data['cover'])
-                yearly_stats[winter_start_year]['fetched'] += 1
-            else:
-                yearly_stats[winter_start_year]['missing'] += 1
+                usa_raw[(month, day, year)] = data['cover']
 
             completed += 1
-
-            # Progress update every 25 requests
-            if completed % 25 == 0:
+            if completed % 50 == 0:
                 elapsed = time.time() - start_time
                 rate = completed / elapsed if elapsed > 0 else 0
                 remaining = (total_requests - completed) / rate if rate > 0 else 0
                 print_safe(f"  Progress: {completed}/{total_requests} ({100*completed//total_requests}%) - ETA: {remaining:.0f}s")
 
-            # Small delay to be nice to the server
             time.sleep(0.1)
 
-    # Calculate averages for each day
-    seasonal_avg = []
-    for month, day in season_dates:
-        values = daily_data[(month, day)]
-        if values:
-            avg = round(sum(values) / len(values), 1)
-        else:
-            avg = None
+    print_safe(f"\nUSA: {len(usa_raw)} daily values collected")
 
-        seasonal_avg.append({
-            'date': f'{month:02d}-{day:02d}',
-            'value': avg,
-            'count': len(values)
-        })
-
-    # Summary stats
-    print_safe("\n" + "=" * 40)
-    print_safe("SUMMARY")
-    print_safe("=" * 40)
-
-    for year in years_to_fetch:
-        stats = yearly_stats[year]
-        print_safe(f"  {year}/{year+1}: {stats['fetched']} fetched, {stats['missing']} missing")
-
-    valid_days = [d for d in seasonal_avg if d['value'] is not None]
-    print_safe(f"\nSeasonal average computed for {len(valid_days)}/{len(season_dates)} days")
-
-    if valid_days:
-        avg_cover = sum(d['value'] for d in valid_days) / len(valid_days)
-        print_safe(f"Overall season average: {avg_cover:.1f}%")
-
-    elapsed = time.time() - start_time
-    print_safe(f"Total time: {elapsed:.1f} seconds")
-
-    return seasonal_avg, years_to_fetch
-
-
-def main():
-    """Main entry point"""
-    print_safe(f"Starting historical data fetch at {datetime.now().isoformat()}\n")
-
-    usa_seasonal_avg, years_used = fetch_five_year_seasonal_average()
-
-    # Fetch REAL Canada averages from IMS satellite data - NO DERIVATION!
+    # =========================================================================
+    # PHASE 2: Fetch all Canada data
+    # =========================================================================
     print_safe("\n" + "=" * 60)
-    print_safe("Fetching REAL Canada historical averages from NOAA IMS...")
+    print_safe("Phase 2: Fetching Canada historical data from NOAA IMS...")
     print_safe("=" * 60)
 
-    canada_bounds = REGION_BOUNDS.get('canada')
+    completed = 0
+    start_time = time.time()
 
-    # Build Canada seasonal averages from real IMS data
-    # Use same date format (MM-DD) and average across the same years
-    canada_seasonal_avg = []
+    for winter_start_year in years_used:
+        print_safe(f"\nFetching {winter_start_year}/{winter_start_year + 1} winter...")
 
-    for entry in usa_seasonal_avg:
-        date_key = entry['date']  # MM-DD format
+        for month, day in season_dates:
+            # Skip Feb 29 for non-leap years
+            if month == 2 and day == 29:
+                year_to_check = winter_start_year + 1
+                if not (year_to_check % 4 == 0 and (year_to_check % 100 != 0 or year_to_check % 400 == 0)):
+                    completed += 1
+                    continue
 
-        # Collect values from each year
-        canada_values = []
-
-        for year_start in years_used:
-            # Determine actual date based on season
-            month = int(date_key.split('-')[0])
-            day = int(date_key.split('-')[1])
-
-            if month >= 10:  # Oct, Nov, Dec
-                actual_year = year_start
-            else:  # Jan, Feb, Mar, Apr
-                actual_year = year_start + 1
+            if month >= 10:
+                year = winter_start_year
+            else:
+                year = winter_start_year + 1
 
             try:
-                date_obj = datetime(actual_year, month, day)
+                date_obj = datetime(year, month, day)
                 doy = date_obj.timetuple().tm_yday
-
-                # Fetch IMS grid
-                grid = fetch_ims_file(actual_year, doy)
+                grid = fetch_ims_file(year, doy)
                 if grid and canada_bounds:
                     stats = calculate_snow_cover_percentage(grid, canada_bounds)
                     if stats:
-                        canada_values.append(stats['cover'])
-            except Exception as e:
-                pass  # Skip invalid dates or fetch errors
+                        canada_raw[(month, day, year)] = stats['cover']
+            except Exception:
+                pass
 
-            time.sleep(0.05)  # Small delay for IMS server
+            completed += 1
+            if completed % 50 == 0:
+                elapsed = time.time() - start_time
+                rate = completed / elapsed if elapsed > 0 else 0
+                remaining = (total_requests - completed) / rate if rate > 0 else 0
+                print_safe(f"  Progress: {completed}/{total_requests} ({100*completed//total_requests}%) - ETA: {remaining:.0f}s")
 
-        # Calculate average if we have values
-        if canada_values:
-            canada_avg = round(sum(canada_values) / len(canada_values), 1)
-        else:
-            canada_avg = None
+            time.sleep(0.05)
 
+    print_safe(f"\nCanada: {len(canada_raw)} daily values collected")
+
+    # =========================================================================
+    # PHASE 3: Compute averages from stored raw data (NO re-fetching)
+    # =========================================================================
+    print_safe("\n" + "=" * 60)
+    print_safe("Phase 3: Computing seasonal averages from collected data...")
+    print_safe("=" * 60)
+
+    usa_seasonal_avg = []
+    canada_seasonal_avg = []
+    combined_seasonal_avg = []
+
+    for month, day in season_dates:
+        date_key = f'{month:02d}-{day:02d}'
+
+        # Collect values for this date across all years
+        usa_values = []
+        canada_values = []
+        combined_values = []
+
+        for year_start in years_used:
+            if month >= 10:
+                year = year_start
+            else:
+                year = year_start + 1
+
+            usa_val = usa_raw.get((month, day, year))
+            canada_val = canada_raw.get((month, day, year))
+
+            if usa_val is not None:
+                usa_values.append(usa_val)
+            if canada_val is not None:
+                canada_values.append(canada_val)
+
+            # Combined requires BOTH values for that specific day
+            if usa_val is not None and canada_val is not None:
+                combined_values.append((usa_val + canada_val) / 2)
+
+        # USA average
+        usa_seasonal_avg.append({
+            'date': date_key,
+            'value': round(sum(usa_values) / len(usa_values), 1) if usa_values else None,
+            'count': len(usa_values)
+        })
+
+        # Canada average
         canada_seasonal_avg.append({
             'date': date_key,
-            'value': canada_avg,
+            'value': round(sum(canada_values) / len(canada_values), 1) if canada_values else None,
             'count': len(canada_values)
         })
 
-        # Progress update
-        if len(canada_seasonal_avg) % 30 == 0:
-            print_safe(f"  Canada progress: {len(canada_seasonal_avg)}/{len(usa_seasonal_avg)} days processed")
+        # Combined average (from raw daily pairs, not from country averages)
+        combined_seasonal_avg.append({
+            'date': date_key,
+            'value': round(sum(combined_values) / len(combined_values), 1) if combined_values else None,
+            'count': len(combined_values)
+        })
 
-    print_safe(f"Canada historical data complete: {len([e for e in canada_seasonal_avg if e['value'] is not None])}/{len(canada_seasonal_avg)} days with data")
+    # Summary
+    print_safe(f"\nUSA: {len([e for e in usa_seasonal_avg if e['value'] is not None])}/{len(season_dates)} days with data")
+    print_safe(f"Canada: {len([e for e in canada_seasonal_avg if e['value'] is not None])}/{len(season_dates)} days with data")
+    print_safe(f"Combined: {len([e for e in combined_seasonal_avg if e['value'] is not None])}/{len(season_dates)} days with data")
 
     # Build output data
     data = {
@@ -287,7 +286,8 @@ def main():
         'description': '5-year average snow cover for ski season (Oct 1 - Apr 30)',
         'winters_included': [f'{y}/{y+1}' for y in years_used],
         'usa': usa_seasonal_avg,
-        'canada': canada_seasonal_avg
+        'canada': canada_seasonal_avg,
+        'combined': combined_seasonal_avg
     }
 
     # Save to file
