@@ -3358,13 +3358,13 @@
             updateDashboard();
         }
 
-        // Sidebar event listeners
-        document.getElementById('customize-btn').addEventListener('click', openSidebar);
-        document.getElementById('sidebar-close').addEventListener('click', closeSidebar);
-        document.getElementById('sidebar-overlay').addEventListener('click', closeSidebar);
-        document.getElementById('select-all-btn').addEventListener('click', selectAllMarkets);
-        document.getElementById('clear-all-btn').addEventListener('click', clearAllMarkets);
-        document.getElementById('apply-selection-btn').addEventListener('click', applyCustomSelection);
+        // Sidebar event listeners (only if elements exist)
+        document.getElementById('customize-btn')?.addEventListener('click', openSidebar);
+        document.getElementById('sidebar-close')?.addEventListener('click', closeSidebar);
+        document.getElementById('sidebar-overlay')?.addEventListener('click', closeSidebar);
+        document.getElementById('select-all-btn')?.addEventListener('click', selectAllMarkets);
+        document.getElementById('clear-all-btn')?.addEventListener('click', clearAllMarkets);
+        document.getElementById('apply-selection-btn')?.addEventListener('click', applyCustomSelection);
 
         // ============================================
         // Initialize
