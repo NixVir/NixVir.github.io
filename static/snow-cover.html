@@ -1258,76 +1258,108 @@
         <header class="header">
             <div class="header-left">
                 <h1>Snow Cover <span>Intelligence</span></h1>
-                <p class="subtitle">Is skiing top-of-mind for consumers in your feeder markets?</p>
+                <p class="subtitle">Tracking ski industry conditions across North America</p>
             </div>
         </header>
 
-        <!-- Headline Insight Banner -->
-        <div class="headline-insight" id="headline-insight">
-            <div class="headline-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                    <path d="M2 17l10 5 10-5"/>
-                    <path d="M2 12l10 5 10-5"/>
-                </svg>
+        <!-- Hidden region selector for JS compatibility -->
+        <select id="region-select" style="display: none;">
+            <optgroup label="NSAA Regions">
+                <option value="rocky-mountain">Rocky Mountain</option>
+                <option value="pacific-northwest">Pacific Northwest</option>
+                <option value="pacific-southwest">Pacific Southwest</option>
+                <option value="midwest">Midwest</option>
+                <option value="northeast">Northeast</option>
+                <option value="southeast">Southeast</option>
+            </optgroup>
+            <optgroup label="Canada Ski Council">
+                <option value="canada-bc">British Columbia</option>
+                <option value="canada-alberta">Alberta</option>
+                <option value="canada-prairies">Prairies (SK/MB)</option>
+                <option value="canada-ontario">Ontario</option>
+                <option value="canada-quebec">Quebec</option>
+                <option value="canada-atlantic">Atlantic Canada</option>
+            </optgroup>
+            <optgroup label="View All">
+                <option value="north-america" selected>North America</option>
+            </optgroup>
+        </select>
+
+        <!-- National Snow Cover Chart - Front and Center -->
+        <div class="card national-overview" style="margin-bottom: 1.25rem;">
+            <div class="card-header">
+                <div>
+                    <div class="card-title" id="snow-chart-title">National Snow Cover</div>
+                    <div class="card-subtitle">Full 2025-26 ski season (Oct 1 - Apr 30) vs 5-year average</div>
+                </div>
             </div>
-            <div class="headline-content">
-                <div class="headline-title" id="headline-title">Loading conditions...</div>
-                <div class="headline-subtitle" id="headline-subtitle">Analyzing snow cover data for your selected region.</div>
+            <div class="card-body">
+                <div class="chart-header-row">
+                    <div>
+                        <h3 class="chart-title">Current Winter of 2025/26 Percent Snow Cover vs. Prior 5-Year Average</h3>
+                        <p class="chart-note">Gray bars show holidays. <strong>Click and drag</strong> on chart to zoom in. Double-click to reset.</p>
+                    </div>
+                    <button id="reset-zoom-btn" class="reset-zoom-btn" style="display: none;">Reset Zoom</button>
+                </div>
+                <div class="national-chart-container" style="height: 320px;">
+                    <canvas id="national-chart"></canvas>
+                </div>
             </div>
         </div>
 
-        <!-- Region Selector - Front and Center -->
-        <div class="region-control-panel">
-            <div class="region-control-header">
-                <h2>Select Your Feeder Markets</h2>
-                <p class="region-control-desc">Choose a preset region or build a custom selection of the metro areas that feed your resort.</p>
-            </div>
-            <div class="region-control-actions">
-                <div class="region-preset">
-                    <label>Quick Select:</label>
-                    <select id="region-select">
-                        <optgroup label="NSAA Regions">
-                            <option value="rocky-mountain">Rocky Mountain</option>
-                            <option value="pacific-northwest">Pacific Northwest</option>
-                            <option value="pacific-southwest">Pacific Southwest</option>
-                            <option value="midwest">Midwest</option>
-                            <option value="northeast">Northeast</option>
-                            <option value="southeast">Southeast</option>
-                        </optgroup>
-                        <optgroup label="Canada Ski Council">
-                            <option value="canada-bc">British Columbia</option>
-                            <option value="canada-alberta">Alberta</option>
-                            <option value="canada-prairies">Prairies (SK/MB)</option>
-                            <option value="canada-ontario">Ontario</option>
-                            <option value="canada-quebec">Quebec</option>
-                            <option value="canada-atlantic">Atlantic Canada</option>
-                        </optgroup>
-                        <optgroup label="Custom">
-                            <option value="custom">Custom Selection</option>
-                        </optgroup>
-                    </select>
+        <!-- Temperature Anomaly Chart -->
+        <div class="card national-overview" style="margin-bottom: 1.25rem;">
+            <div class="card-header">
+                <div>
+                    <div class="card-title" id="temp-chart-title">Temperature Anomaly</div>
+                    <div class="card-subtitle">How current temperatures compare to historical averages</div>
                 </div>
-                <div class="region-divider">
-                    <span>or</span>
-                </div>
-                <button class="customize-btn-large" id="customize-btn">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 5v14M5 12h14"/>
-                    </svg>
-                    Build Custom Region
-                </button>
             </div>
-            <p class="region-control-hint">Custom regions let you pick specific cities from any combination of markets across North America.</p>
+            <div class="card-body">
+                <div class="chart-header-row">
+                    <div>
+                        <h3 class="chart-title">Current Winter of 2025/26 Temperature Anomaly vs. Normal</h3>
+                        <p class="chart-note">Positive values = warmer than normal (red), Negative = colder (blue)</p>
+                    </div>
+                    <button id="reset-temp-zoom-btn" class="reset-zoom-btn" style="display: none;">Reset Zoom</button>
+                </div>
+                <div class="national-chart-container" style="height: 280px;">
+                    <canvas id="temperature-chart"></canvas>
+                </div>
+            </div>
         </div>
 
+        <!-- National Stats Cards -->
+        <div class="national-stats" id="national-stats" style="margin-bottom: 1.25rem;">
+            <div class="national-stat-card">
+                <div class="national-stat-country">United States</div>
+                <div class="national-stat-value" id="usa-cover">--</div>
+                <div class="national-stat-label">Snow Coverage</div>
+                <div class="national-stat-temp" id="usa-temp"></div>
+            </div>
+            <div class="national-stat-card">
+                <div class="national-stat-country">Canada</div>
+                <div class="national-stat-value" id="canada-cover">--</div>
+                <div class="national-stat-label">Snow Coverage</div>
+                <div class="national-stat-temp" id="canada-temp"></div>
+            </div>
+            <div class="national-stat-card">
+                <div class="national-stat-country">Combined</div>
+                <div class="national-stat-value" id="combined-cover">--</div>
+                <div class="national-stat-label">North America</div>
+                <div class="national-stat-temp" id="combined-temp"></div>
+            </div>
+        </div>
+
+        <!-- Map Section -->
         <div class="main-layout">
             <div class="card map-card">
                 <div class="card-header">
                     <div>
-                        <div class="card-title">Feeder Market Conditions</div>
-                        <div class="card-subtitle">Bubble size = relative market importance (population) | Color = snow depth</div>
+                        <div class="card-title">Detailed Market Conditions</div>
+                        <div class="card-subtitle">Click on an NSAA or CSC region below for detailed breakdowns | Bubble size = population | Color = snow depth</div>
                     </div>
+                    <button id="reset-map-btn" class="reset-zoom-btn" style="display: none;">Reset to North America</button>
                 </div>
                 <div class="map-container" id="map-container">
                     <div class="loading" id="map-loading">
@@ -1337,7 +1369,7 @@
                     <svg id="feeder-map" style="display: none;"></svg>
                     <div class="region-badge">
                         <div class="region-badge-title">Viewing</div>
-                        <div class="region-badge-name" id="region-display">Rocky Mountain</div>
+                        <div class="region-badge-name" id="region-display">North America</div>
                     </div>
                     <div class="map-legend">
                         <div class="legend-group">
@@ -1437,49 +1469,6 @@
 
             </div>
 
-            <!-- Bottom Section: National Overview + 30-Day Trend side by side -->
-            <div class="bottom-section">
-                <div class="card national-overview">
-                    <div class="card-header">
-                        <div>
-                            <div class="card-title">National Snow Cover Overview</div>
-                            <div class="card-subtitle">Full 2025-26 ski season (Oct 1 - Apr 30) vs 5-year average</div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="national-stats" id="national-stats">
-                            <div class="national-stat-card">
-                                <div class="national-stat-country">United States</div>
-                                <div class="national-stat-value" id="usa-cover">--</div>
-                                <div class="national-stat-label">Snow Coverage</div>
-                                <div class="national-stat-temp" id="usa-temp"></div>
-                            </div>
-                            <div class="national-stat-card">
-                                <div class="national-stat-country">Canada</div>
-                                <div class="national-stat-value" id="canada-cover">--</div>
-                                <div class="national-stat-label">Snow Coverage</div>
-                                <div class="national-stat-temp" id="canada-temp"></div>
-                            </div>
-                            <div class="national-stat-card">
-                                <div class="national-stat-country">Combined</div>
-                                <div class="national-stat-value" id="combined-cover">--</div>
-                                <div class="national-stat-label">North America</div>
-                                <div class="national-stat-temp" id="combined-temp"></div>
-                            </div>
-                        </div>
-                        <div class="chart-header-row">
-                            <div>
-                                <h3 class="chart-title">Current Winter of 2025/26 Percent Snow Cover vs. Prior 5-Year Average</h3>
-                                <p class="chart-note">Gray bars show holidays. <strong>Click and drag</strong> on chart to zoom in. Double-click to reset.</p>
-                            </div>
-                            <button id="reset-zoom-btn" class="reset-zoom-btn" style="display: none;">Reset Zoom</button>
-                        </div>
-                        <div class="national-chart-container">
-                            <canvas id="national-chart"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -1491,11 +1480,12 @@
         // ============================================
         let snowData = null;
         let historicalData = null;  // 5-year seasonal averages
-        let currentRegion = 'rocky-mountain';
+        let currentRegion = 'north-america';
         let currentMarkets = [];
         let usGeoData = null;
         let canadaGeoData = null;
         let nationalChart = null;
+        let temperatureChart = null;
         let customSelectedMarkets = new Set(); // For custom region builder
 
         // 2025/2026 Winter Holiday Markers
@@ -1508,6 +1498,91 @@
             { name: 'Spring Break', start: '2026-03-14', end: '2026-03-28', country: 'Both' },
             { name: 'Easter', start: '2026-04-05', end: '2026-04-05', country: 'Both' }
         ];
+
+        // NSAA/CSC Region Definitions (state/province groupings)
+        const NSAA_REGIONS = {
+            'rocky-mountain': {
+                name: 'Rocky Mountain',
+                states: ['Colorado', 'Utah', 'Wyoming', 'Montana', 'Idaho', 'New Mexico', 'Arizona'],
+                abbrevs: ['CO', 'UT', 'WY', 'MT', 'ID', 'NM', 'AZ'],
+                stateIds: [8, 49, 56, 30, 16, 35, 4],
+                color: 'rgba(59, 130, 246, 0.15)'
+            },
+            'pacific-northwest': {
+                name: 'Pacific Northwest',
+                states: ['Washington', 'Oregon', 'Alaska'],
+                abbrevs: ['WA', 'OR', 'AK'],
+                stateIds: [53, 41, 2],
+                color: 'rgba(16, 185, 129, 0.15)'
+            },
+            'pacific-southwest': {
+                name: 'Pacific Southwest',
+                states: ['California', 'Nevada'],
+                abbrevs: ['CA', 'NV'],
+                stateIds: [6, 32],
+                color: 'rgba(249, 115, 22, 0.15)'
+            },
+            'midwest': {
+                name: 'Midwest',
+                states: ['Michigan', 'Wisconsin', 'Minnesota', 'Iowa', 'Illinois', 'Indiana', 'Ohio', 'Missouri', 'Nebraska', 'Kansas', 'South Dakota', 'North Dakota'],
+                abbrevs: ['MI', 'WI', 'MN', 'IA', 'IL', 'IN', 'OH', 'MO', 'NE', 'KS', 'SD', 'ND'],
+                stateIds: [26, 55, 27, 19, 17, 18, 39, 29, 31, 20, 46, 38],
+                color: 'rgba(147, 51, 234, 0.15)'
+            },
+            'northeast': {
+                name: 'Northeast',
+                states: ['Maine', 'New Hampshire', 'Vermont', 'Massachusetts', 'Rhode Island', 'Connecticut', 'New York', 'New Jersey', 'Pennsylvania'],
+                abbrevs: ['ME', 'NH', 'VT', 'MA', 'RI', 'CT', 'NY', 'NJ', 'PA'],
+                stateIds: [23, 33, 50, 25, 44, 9, 36, 34, 42],
+                color: 'rgba(236, 72, 153, 0.15)'
+            },
+            'southeast': {
+                name: 'Southeast',
+                states: ['Virginia', 'West Virginia', 'North Carolina', 'Tennessee', 'Kentucky', 'Maryland', 'Delaware'],
+                abbrevs: ['VA', 'WV', 'NC', 'TN', 'KY', 'MD', 'DE'],
+                stateIds: [51, 54, 37, 47, 21, 24, 10],
+                color: 'rgba(245, 158, 11, 0.15)'
+            }
+        };
+
+        const CSC_REGIONS = {
+            'canada-bc': {
+                name: 'British Columbia',
+                provinces: ['British Columbia'],
+                abbrevs: ['BC'],
+                color: 'rgba(59, 130, 246, 0.15)'
+            },
+            'canada-alberta': {
+                name: 'Alberta',
+                provinces: ['Alberta'],
+                abbrevs: ['AB'],
+                color: 'rgba(16, 185, 129, 0.15)'
+            },
+            'canada-prairies': {
+                name: 'Prairies',
+                provinces: ['Saskatchewan', 'Manitoba'],
+                abbrevs: ['SK', 'MB'],
+                color: 'rgba(249, 115, 22, 0.15)'
+            },
+            'canada-ontario': {
+                name: 'Ontario',
+                provinces: ['Ontario'],
+                abbrevs: ['ON'],
+                color: 'rgba(147, 51, 234, 0.15)'
+            },
+            'canada-quebec': {
+                name: 'Quebec',
+                provinces: ['Quebec', 'Québec'],
+                abbrevs: ['QC'],
+                color: 'rgba(236, 72, 153, 0.15)'
+            },
+            'canada-atlantic': {
+                name: 'Atlantic Canada',
+                provinces: ['New Brunswick', 'Nova Scotia', 'Prince Edward Island', 'Newfoundland and Labrador'],
+                abbrevs: ['NB', 'NS', 'PE', 'NL'],
+                color: 'rgba(245, 158, 11, 0.15)'
+            }
+        };
 
         // ============================================
         // Data Loading
@@ -1580,12 +1655,110 @@
                 return [];
             }
 
+            // Handle "North America" - show all markets
+            if (currentRegion === 'north-america') {
+                return snowData.metros.map(metro => {
+                    const snowCover = metro.cover || 0;
+                    const tempAnomaly = metro.temperature?.anomaly_f || 0;
+
+                    let awareness;
+                    if (snowCover >= 50 && tempAnomaly <= 5) {
+                        awareness = 'high';
+                    } else if (snowCover > 0 || tempAnomaly <= 8) {
+                        awareness = 'moderate';
+                    } else {
+                        awareness = 'low';
+                    }
+
+                    return {
+                        name: metro.city,
+                        state: metro.region,
+                        country: metro.country || 'usa',
+                        lat: metro.lat,
+                        lng: metro.lng,
+                        importance: metro.importance || 100,
+                        snowCover: snowCover,
+                        snowDepth: metro.depthInches || 0,
+                        temp: metro.temperature?.temp_f || null,
+                        tempAnomaly: Math.round(tempAnomaly),
+                        awareness: awareness
+                    };
+                });
+            }
+
+            // Handle NSAA regions (US states)
+            if (NSAA_REGIONS[currentRegion]) {
+                const regionDef = NSAA_REGIONS[currentRegion];
+                return snowData.metros.filter(metro => {
+                    // Match by state abbreviation
+                    return regionDef.abbrevs.includes(metro.region) && metro.country !== 'canada';
+                }).map(metro => {
+                    const snowCover = metro.cover || 0;
+                    const tempAnomaly = metro.temperature?.anomaly_f || 0;
+                    let awareness;
+                    if (snowCover >= 50 && tempAnomaly <= 5) {
+                        awareness = 'high';
+                    } else if (snowCover > 0 || tempAnomaly <= 8) {
+                        awareness = 'moderate';
+                    } else {
+                        awareness = 'low';
+                    }
+                    return {
+                        name: metro.city,
+                        state: metro.region,
+                        country: metro.country || 'usa',
+                        lat: metro.lat,
+                        lng: metro.lng,
+                        importance: metro.importance || 100,
+                        snowCover: snowCover,
+                        snowDepth: metro.depthInches || 0,
+                        temp: metro.temperature?.temp_f || null,
+                        tempAnomaly: Math.round(tempAnomaly),
+                        awareness: awareness
+                    };
+                });
+            }
+
+            // Handle CSC regions (Canadian provinces)
+            if (CSC_REGIONS[currentRegion]) {
+                const regionDef = CSC_REGIONS[currentRegion];
+                return snowData.metros.filter(metro => {
+                    // Match by province abbreviation
+                    return regionDef.abbrevs.includes(metro.region) && metro.country === 'canada';
+                }).map(metro => {
+                    const snowCover = metro.cover || 0;
+                    const tempAnomaly = metro.temperature?.anomaly_f || 0;
+                    let awareness;
+                    if (snowCover >= 50 && tempAnomaly <= 5) {
+                        awareness = 'high';
+                    } else if (snowCover > 0 || tempAnomaly <= 8) {
+                        awareness = 'moderate';
+                    } else {
+                        awareness = 'low';
+                    }
+                    return {
+                        name: metro.city,
+                        state: metro.region,
+                        country: metro.country || 'canada',
+                        lat: metro.lat,
+                        lng: metro.lng,
+                        importance: metro.importance || 100,
+                        snowCover: snowCover,
+                        snowDepth: metro.depthInches || 0,
+                        temp: metro.temperature?.temp_f || null,
+                        tempAnomaly: Math.round(tempAnomaly),
+                        awareness: awareness
+                    };
+                });
+            }
+
             // Handle custom region selection
             let marketNames;
             if (currentRegion === 'custom') {
                 marketNames = Array.from(customSelectedMarkets);
                 if (marketNames.length === 0) return [];
             } else {
+                // Fallback to feederRegions from JSON data
                 if (!snowData.feederRegions) return [];
                 const regionConfig = snowData.feederRegions[currentRegion];
                 if (!regionConfig) return [];
@@ -1622,6 +1795,7 @@
                 return {
                     name: metro.city,
                     state: metro.region,
+                    country: metro.country || 'usa',
                     lat: metro.lat,
                     lng: metro.lng,
                     importance: metro.importance || 100,
@@ -1637,6 +1811,7 @@
         // Get region config with projection settings
         function getRegionConfig() {
             const configs = {
+                'north-america': { name: 'North America', center: [-98, 48], scale: 450 },
                 'rocky-mountain': { name: 'Rocky Mountain', center: [-106, 40], scale: 1100 },
                 'pacific-northwest': { name: 'Pacific Northwest', center: [-120, 46], scale: 1400 },
                 'pacific-southwest': { name: 'Pacific Southwest', center: [-118, 35], scale: 1200 },
@@ -1704,6 +1879,26 @@
         function updateNationalOverview() {
             if (!snowData) return;
 
+            // Update chart titles based on current region
+            const regionConfig = getRegionConfig();
+            const regionName = regionConfig.name || 'North America';
+
+            // Update snow cover chart title
+            const snowChartTitle = document.getElementById('snow-chart-title');
+            if (snowChartTitle) {
+                snowChartTitle.textContent = currentRegion === 'north-america'
+                    ? 'National Snow Cover'
+                    : `${regionName} Snow Cover`;
+            }
+
+            // Update temperature chart title
+            const tempChartTitle = document.getElementById('temp-chart-title');
+            if (tempChartTitle) {
+                tempChartTitle.textContent = currentRegion === 'north-america'
+                    ? 'Temperature Anomaly'
+                    : `${regionName} Temperature Anomaly`;
+            }
+
             // USA stats
             document.getElementById('usa-cover').textContent = snowData.usa.cover + '%';
             if (snowData.usa.temperature) {
@@ -1733,6 +1928,9 @@
 
             // Draw national chart
             drawNationalChart();
+
+            // Draw temperature anomaly chart
+            drawTemperatureChart();
         }
 
         function drawNationalChart() {
@@ -2033,6 +2231,311 @@
             });
         }
 
+        // Draw Temperature Anomaly Chart
+        function drawTemperatureChart() {
+            const ctx = document.getElementById('temperature-chart');
+            if (!ctx) return;
+
+            if (temperatureChart) {
+                temperatureChart.destroy();
+            }
+
+            // Build full season date range (Oct 1 2025 - Apr 30 2026)
+            const seasonDates = [];
+            let d = new Date(2025, 9, 1); // Oct 1, 2025
+            const endDate = new Date(2026, 3, 30); // Apr 30, 2026
+
+            while (d <= endDate) {
+                seasonDates.push({
+                    date: new Date(d),
+                    mmdd: `${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`,
+                    fullDate: `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+                });
+                d.setDate(d.getDate() + 1);
+            }
+
+            // For now, show aggregated metro temperature anomalies from current data
+            // Calculate average USA and Canada anomalies from metro data
+            const usaMetros = (snowData?.metros || []).filter(m => m.country === 'usa' || !m.country);
+            const canadaMetros = (snowData?.metros || []).filter(m => m.country === 'canada');
+
+            // Calculate weighted average anomaly (by population)
+            function calcWeightedAnomaly(metros) {
+                let totalWeight = 0;
+                let weightedSum = 0;
+                metros.forEach(m => {
+                    if (m.tempAnomaly !== null && m.tempAnomaly !== undefined) {
+                        const pop = m.population || 1000000;
+                        weightedSum += m.tempAnomaly * pop;
+                        totalWeight += pop;
+                    }
+                });
+                return totalWeight > 0 ? weightedSum / totalWeight : null;
+            }
+
+            const usaAnomaly = calcWeightedAnomaly(usaMetros);
+            const canadaAnomaly = calcWeightedAnomaly(canadaMetros);
+
+            // Build data arrays - for now just show current day's value as a point
+            // TODO: Load from temperature-history.json once backfill is complete
+            const labels = [];
+            const usaData = [];
+            const canadaData = [];
+            const zeroLine = [];
+
+            const today = new Date();
+            today.setHours(23, 59, 59, 999);
+
+            seasonDates.forEach((item, idx) => {
+                // Create label showing month name on 1st of each month
+                if (item.date.getDate() === 1) {
+                    labels.push(item.date.toLocaleDateString('en-US', { month: 'short' }));
+                } else {
+                    labels.push('');
+                }
+
+                zeroLine.push(0); // Baseline (normal)
+
+                // Only show current data point for today
+                // This will be expanded when temperature-history.json is available
+                if (item.date.toDateString() === today.toDateString()) {
+                    usaData.push(usaAnomaly);
+                    canadaData.push(canadaAnomaly);
+                } else if (item.date <= today) {
+                    // Placeholder: show null for past dates until history is loaded
+                    usaData.push(null);
+                    canadaData.push(null);
+                } else {
+                    usaData.push(null);
+                    canadaData.push(null);
+                }
+            });
+
+            // Holiday annotations - same as snow chart
+            const holidayAnnotations = {};
+            WINTER_HOLIDAYS.forEach((holiday, idx) => {
+                const hStart = new Date(holiday.start + 'T00:00:00');
+                const hEnd = new Date(holiday.end + 'T00:00:00');
+
+                const startIdx = seasonDates.findIndex(item =>
+                    item.date.getFullYear() === hStart.getFullYear() &&
+                    item.date.getMonth() === hStart.getMonth() &&
+                    item.date.getDate() === hStart.getDate()
+                );
+                const endIdx = seasonDates.findIndex(item =>
+                    item.date.getFullYear() === hEnd.getFullYear() &&
+                    item.date.getMonth() === hEnd.getMonth() &&
+                    item.date.getDate() === hEnd.getDate()
+                );
+
+                if (startIdx >= 0 && endIdx >= 0) {
+                    holidayAnnotations[`holiday${idx}`] = {
+                        type: 'box',
+                        xMin: startIdx - 0.5,
+                        xMax: endIdx + 0.5,
+                        backgroundColor: 'rgba(128, 128, 128, 0.12)',
+                        borderWidth: 0
+                    };
+                }
+            });
+
+            temperatureChart = new Chart(ctx.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'USA Temperature Anomaly',
+                            data: usaData,
+                            borderColor: '#3b82f6',
+                            backgroundColor: function(context) {
+                                const value = context.parsed?.y;
+                                if (value === null || value === undefined) return 'transparent';
+                                return value > 0 ? 'rgba(239, 68, 68, 0.3)' : 'rgba(59, 130, 246, 0.3)';
+                            },
+                            fill: 'origin',
+                            tension: 0.3,
+                            borderWidth: 2,
+                            pointRadius: 3,
+                            pointBackgroundColor: function(context) {
+                                const value = context.parsed?.y;
+                                if (value === null || value === undefined) return '#3b82f6';
+                                return value > 0 ? '#ef4444' : '#3b82f6';
+                            },
+                            spanGaps: false
+                        },
+                        {
+                            label: 'Canada Temperature Anomaly',
+                            data: canadaData,
+                            borderColor: '#ef4444',
+                            backgroundColor: function(context) {
+                                const value = context.parsed?.y;
+                                if (value === null || value === undefined) return 'transparent';
+                                return value > 0 ? 'rgba(239, 68, 68, 0.2)' : 'rgba(59, 130, 246, 0.2)';
+                            },
+                            fill: 'origin',
+                            tension: 0.3,
+                            borderWidth: 2,
+                            pointRadius: 3,
+                            pointBackgroundColor: function(context) {
+                                const value = context.parsed?.y;
+                                if (value === null || value === undefined) return '#ef4444';
+                                return value > 0 ? '#ef4444' : '#3b82f6';
+                            },
+                            spanGaps: false
+                        },
+                        {
+                            label: 'Normal (0°F)',
+                            data: zeroLine,
+                            borderColor: 'rgba(100, 100, 100, 0.5)',
+                            borderDash: [3, 3],
+                            fill: false,
+                            borderWidth: 1,
+                            pointRadius: 0
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                color: '#8892a2',
+                                usePointStyle: false,
+                                boxWidth: 30,
+                                boxHeight: 2,
+                                padding: 15,
+                                font: { size: 11 },
+                                filter: function(item) {
+                                    return item.text !== 'Normal (0°F)';
+                                }
+                            }
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                            backgroundColor: 'rgba(17, 24, 32, 0.95)',
+                            titleColor: '#e8ecf2',
+                            bodyColor: '#8892a2',
+                            borderColor: '#2a3444',
+                            borderWidth: 1,
+                            callbacks: {
+                                title: function(context) {
+                                    const idx = context[0].dataIndex;
+                                    const dateInfo = seasonDates[idx];
+                                    if (dateInfo) {
+                                        return dateInfo.date.toLocaleDateString('en-US', {
+                                            month: 'short',
+                                            day: 'numeric',
+                                            year: 'numeric'
+                                        });
+                                    }
+                                    return '';
+                                },
+                                label: function(context) {
+                                    if (context.parsed.y === null) return null;
+                                    if (context.dataset.label === 'Normal (0°F)') return null;
+                                    const sign = context.parsed.y > 0 ? '+' : '';
+                                    const status = context.parsed.y > 0 ? 'warmer' : 'colder';
+                                    return `${context.dataset.label.replace(' Temperature Anomaly', '')}: ${sign}${context.parsed.y.toFixed(1)}°F (${status} than normal)`;
+                                }
+                            },
+                            filter: function(tooltipItem) {
+                                return tooltipItem.parsed.y !== null && tooltipItem.dataset.label !== 'Normal (0°F)';
+                            }
+                        },
+                        annotation: {
+                            annotations: holidayAnnotations
+                        },
+                        zoom: {
+                            pan: {
+                                enabled: true,
+                                mode: 'x',
+                                modifierKey: 'shift'
+                            },
+                            zoom: {
+                                drag: {
+                                    enabled: true,
+                                    backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                                    borderColor: 'rgba(59, 130, 246, 0.8)',
+                                    borderWidth: 1
+                                },
+                                mode: 'x',
+                                onZoomComplete: function({chart}) {
+                                    const resetBtn = document.getElementById('reset-temp-zoom-btn');
+                                    if (resetBtn) resetBtn.style.display = 'block';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            type: 'category',
+                            title: {
+                                display: true,
+                                text: 'Winter 2025/26',
+                                color: '#8892a2',
+                                font: { size: 11, weight: 500 }
+                            },
+                            grid: { color: 'rgba(42, 52, 68, 0.5)' },
+                            ticks: {
+                                color: '#5c6678',
+                                maxRotation: 0,
+                                autoSkip: true,
+                                maxTicksLimit: 12,
+                                callback: function(value, index) {
+                                    const dateInfo = seasonDates[index];
+                                    if (dateInfo && dateInfo.date.getDate() === 1) {
+                                        const month = dateInfo.date.toLocaleDateString('en-US', { month: 'short' });
+                                        const year = String(dateInfo.date.getFullYear()).slice(-2);
+                                        return `${month} ${year}`;
+                                    }
+                                    return '';
+                                }
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Temperature Anomaly (°F vs Normal)',
+                                color: '#8892a2',
+                                font: { size: 11, weight: 500 }
+                            },
+                            grid: { color: 'rgba(42, 52, 68, 0.5)' },
+                            ticks: {
+                                color: '#5c6678',
+                                callback: function(value) {
+                                    const sign = value > 0 ? '+' : '';
+                                    return `${sign}${value}°F`;
+                                }
+                            }
+                        }
+                    },
+                    interaction: {
+                        intersect: false,
+                        mode: 'index'
+                    }
+                }
+            });
+
+            // Set up reset zoom button for temperature chart
+            const resetTempBtn = document.getElementById('reset-temp-zoom-btn');
+            if (resetTempBtn) {
+                resetTempBtn.addEventListener('click', function() {
+                    temperatureChart.resetZoom();
+                    resetTempBtn.style.display = 'none';
+                });
+            }
+
+            // Double-click to reset zoom
+            ctx.addEventListener('dblclick', function() {
+                temperatureChart.resetZoom();
+                if (resetTempBtn) resetTempBtn.style.display = 'none';
+            });
+        }
+
         // ============================================
         // Tooltip
         // ============================================
@@ -2089,10 +2592,18 @@
 
             svg.selectAll("*").remove();
 
-            // Projection
+            // Projection - use Albers USA-like for North America view
             let projection;
 
-            if (currentRegion.startsWith('canada-')) {
+            if (currentRegion === 'north-america') {
+                // Lambert conformal conic for full North America
+                projection = d3.geoConicConformal()
+                    .parallels([33, 55])
+                    .rotate([98, 0])
+                    .center([0, 48])
+                    .scale(config.scale)
+                    .translate([width / 2, height / 2]);
+            } else if (currentRegion.startsWith('canada-')) {
                 projection = d3.geoConicConformal()
                     .parallels([49, 77])
                     .rotate([config.center[0] * -1, 0])
@@ -2110,7 +2621,27 @@
 
             const path = d3.geoPath().projection(projection);
 
-            // Draw US states
+            // Helper function to get region for a US state
+            function getUSRegionForState(stateId) {
+                for (const [regionKey, region] of Object.entries(NSAA_REGIONS)) {
+                    if (region.stateIds.includes(+stateId)) {
+                        return { key: regionKey, ...region };
+                    }
+                }
+                return null;
+            }
+
+            // Helper function to get region for a Canadian province
+            function getCARegionForProvince(provinceName) {
+                for (const [regionKey, region] of Object.entries(CSC_REGIONS)) {
+                    if (region.provinces.some(p => provinceName.includes(p) || p.includes(provinceName))) {
+                        return { key: regionKey, ...region };
+                    }
+                }
+                return null;
+            }
+
+            // Draw US states with region coloring
             if (usGeoData) {
                 svg.append("g")
                     .selectAll("path.us-state")
@@ -2118,10 +2649,40 @@
                     .enter()
                     .append("path")
                     .attr("class", "state-path")
-                    .attr("d", path);
+                    .attr("d", path)
+                    .attr("fill", d => {
+                        if (currentRegion === 'north-america') {
+                            const region = getUSRegionForState(d.id);
+                            return region ? region.color : 'var(--geo-fill)';
+                        }
+                        return 'var(--geo-fill)';
+                    })
+                    .style("cursor", currentRegion === 'north-america' ? 'pointer' : 'default')
+                    .on("click", function(event, d) {
+                        if (currentRegion === 'north-america') {
+                            const region = getUSRegionForState(d.id);
+                            if (region) {
+                                selectRegion(region.key);
+                            }
+                        }
+                    })
+                    .on("mouseover", function(event, d) {
+                        if (currentRegion === 'north-america') {
+                            const region = getUSRegionForState(d.id);
+                            if (region) {
+                                d3.select(this).attr("fill", region.color.replace('0.15', '0.35'));
+                            }
+                        }
+                    })
+                    .on("mouseout", function(event, d) {
+                        if (currentRegion === 'north-america') {
+                            const region = getUSRegionForState(d.id);
+                            d3.select(this).attr("fill", region ? region.color : 'var(--geo-fill)');
+                        }
+                    });
             }
 
-            // Draw Canada provinces
+            // Draw Canada provinces with region coloring
             if (canadaGeoData) {
                 svg.append("g")
                     .selectAll("path.ca-province")
@@ -2129,7 +2690,37 @@
                     .enter()
                     .append("path")
                     .attr("class", "state-path")
-                    .attr("d", path);
+                    .attr("d", path)
+                    .attr("fill", d => {
+                        if (currentRegion === 'north-america') {
+                            const region = getCARegionForProvince(d.properties.name);
+                            return region ? region.color : 'var(--geo-fill)';
+                        }
+                        return 'var(--geo-fill)';
+                    })
+                    .style("cursor", currentRegion === 'north-america' ? 'pointer' : 'default')
+                    .on("click", function(event, d) {
+                        if (currentRegion === 'north-america') {
+                            const region = getCARegionForProvince(d.properties.name);
+                            if (region) {
+                                selectRegion(region.key);
+                            }
+                        }
+                    })
+                    .on("mouseover", function(event, d) {
+                        if (currentRegion === 'north-america') {
+                            const region = getCARegionForProvince(d.properties.name);
+                            if (region) {
+                                d3.select(this).attr("fill", region.color.replace('0.15', '0.35'));
+                            }
+                        }
+                    })
+                    .on("mouseout", function(event, d) {
+                        if (currentRegion === 'north-america') {
+                            const region = getCARegionForProvince(d.properties.name);
+                            d3.select(this).attr("fill", region ? region.color : 'var(--geo-fill)');
+                        }
+                    });
             }
 
             // Color scale for snow depth
@@ -2138,11 +2729,13 @@
                 .range(["#475569", "#1e40af", "#60a5fa", "#dbeafe"])
                 .clamp(true);
 
-            // Size scale for importance
+            // Size scale for importance - smaller bubbles for North America view
             const maxPop = d3.max(currentMarkets, d => d.importance);
+            const minRadius = currentRegion === 'north-america' ? 3 : 5;
+            const maxRadius = currentRegion === 'north-america' ? 18 : 32;
             const sizeScale = d3.scaleSqrt()
                 .domain([0, maxPop])
-                .range([5, 32]);
+                .range([minRadius, maxRadius]);
 
             // Draw market bubbles
             svg.selectAll(".metro-bubble")
@@ -2164,22 +2757,24 @@
                 .on("mouseover", showTooltip)
                 .on("mouseout", hideTooltip);
 
-            // Labels for large markets
-            svg.selectAll(".metro-label")
-                .data(currentMarkets.filter(d => d.importance >= 1000))
-                .enter()
-                .append("text")
-                .attr("class", "metro-label")
-                .attr("x", d => {
-                    const coords = projection([d.lng, d.lat]);
-                    return coords ? coords[0] : 0;
-                })
-                .attr("y", d => {
-                    const coords = projection([d.lng, d.lat]);
-                    return coords ? coords[1] + sizeScale(d.importance) + 10 : 0;
-                })
-                .attr("text-anchor", "middle")
-                .text(d => d.name);
+            // Labels for large markets (skip for North America to reduce clutter)
+            if (currentRegion !== 'north-america') {
+                svg.selectAll(".metro-label")
+                    .data(currentMarkets.filter(d => d.importance >= 1000))
+                    .enter()
+                    .append("text")
+                    .attr("class", "metro-label")
+                    .attr("x", d => {
+                        const coords = projection([d.lng, d.lat]);
+                        return coords ? coords[0] : 0;
+                    })
+                    .attr("y", d => {
+                        const coords = projection([d.lng, d.lat]);
+                        return coords ? coords[1] + sizeScale(d.importance) + 10 : 0;
+                    })
+                    .attr("text-anchor", "middle")
+                    .text(d => d.name);
+            }
         }
 
         // ============================================
@@ -2370,6 +2965,20 @@
 
             document.getElementById("region-display").textContent = config.name;
 
+            // Update chart titles based on current region
+            const snowChartTitle = document.getElementById('snow-chart-title');
+            if (snowChartTitle) {
+                snowChartTitle.textContent = currentRegion === 'north-america'
+                    ? 'National Snow Cover'
+                    : `${config.name} Snow Cover`;
+            }
+            const tempChartTitle = document.getElementById('temp-chart-title');
+            if (tempChartTitle) {
+                tempChartTitle.textContent = currentRegion === 'north-america'
+                    ? 'Temperature Anomaly'
+                    : `${config.name} Temperature Anomaly`;
+            }
+
             updateHeadlineInsight();
             drawMap();
             renderMarketTable();
@@ -2384,6 +2993,38 @@
         }
 
         // ============================================
+        // Region Selection
+        // ============================================
+        function selectRegion(regionKey) {
+            currentRegion = regionKey;
+
+            // Update the hidden dropdown
+            const select = document.getElementById("region-select");
+            if (select) {
+                select.value = regionKey;
+            }
+
+            // Show/hide the reset button
+            const resetMapBtn = document.getElementById('reset-map-btn');
+            if (resetMapBtn) {
+                resetMapBtn.style.display = regionKey === 'north-america' ? 'none' : 'block';
+            }
+
+            // Update dashboard
+            updateDashboard();
+
+            // Analytics
+            gtag('event', 'region_select', {
+                region: regionKey,
+                method: 'map_click'
+            });
+        }
+
+        function resetToNorthAmerica() {
+            selectRegion('north-america');
+        }
+
+        // ============================================
         // Event Listeners
         // ============================================
         document.getElementById("region-select").addEventListener("change", function() {
@@ -2392,9 +3033,20 @@
                 // Open sidebar to let user select markets
                 openSidebar();
             } else {
+                // Update reset button visibility
+                const resetMapBtn = document.getElementById('reset-map-btn');
+                if (resetMapBtn) {
+                    resetMapBtn.style.display = currentRegion === 'north-america' ? 'none' : 'block';
+                }
                 updateDashboard();
             }
         });
+
+        // Reset to North America button
+        const resetMapBtn = document.getElementById('reset-map-btn');
+        if (resetMapBtn) {
+            resetMapBtn.addEventListener('click', resetToNorthAmerica);
+        }
 
         window.addEventListener("resize", () => {
             drawMap();
