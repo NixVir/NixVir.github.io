@@ -3128,6 +3128,119 @@
                     });
             }
 
+            // Draw region borders (thicker outlines around NSAA/CSC regions)
+            if (currentRegion === 'north-america') {
+                // US NSAA region borders
+                const usRegionBordersGroup = svg.append("g").attr("class", "region-borders");
+
+                for (const [regionKey, region] of Object.entries(NSAA_REGIONS)) {
+                    // Filter states in this region
+                    const regionStates = usGeoData.features.filter(d => region.stateIds.includes(+d.id));
+
+                    if (regionStates.length > 0) {
+                        // Draw each state's border with region color
+                        usRegionBordersGroup.selectAll(`.region-border-${regionKey}`)
+                            .data(regionStates)
+                            .enter()
+                            .append("path")
+                            .attr("class", `region-border region-border-${regionKey}`)
+                            .attr("d", path)
+                            .attr("fill", "none")
+                            .attr("stroke", region.color.replace('0.15', '0.6'))
+                            .attr("stroke-width", 2)
+                            .style("pointer-events", "none");
+                    }
+                }
+
+                // Canadian CSC region borders
+                const caRegionBordersGroup = svg.append("g").attr("class", "ca-region-borders");
+
+                for (const [regionKey, region] of Object.entries(CSC_REGIONS)) {
+                    // Filter provinces in this region
+                    const regionProvinces = canadaGeoData.features.filter(d =>
+                        region.provinces.some(p => d.properties.name && (d.properties.name.includes(p) || p.includes(d.properties.name)))
+                    );
+
+                    if (regionProvinces.length > 0) {
+                        caRegionBordersGroup.selectAll(`.region-border-${regionKey}`)
+                            .data(regionProvinces)
+                            .enter()
+                            .append("path")
+                            .attr("class", `region-border region-border-${regionKey}`)
+                            .attr("d", path)
+                            .attr("fill", "none")
+                            .attr("stroke", region.color.replace('0.15', '0.6'))
+                            .attr("stroke-width", 2)
+                            .style("pointer-events", "none");
+                    }
+                }
+
+                // Add region labels
+                const labelsGroup = svg.append("g").attr("class", "region-labels");
+
+                // NSAA region label positions (approximate centroids)
+                const nsaaLabelPositions = {
+                    'rocky-mountain': { lng: -108, lat: 40.5 },
+                    'pacific-northwest': { lng: -121, lat: 46 },
+                    'pacific-southwest': { lng: -119, lat: 37 },
+                    'midwest': { lng: -92, lat: 43 },
+                    'northeast': { lng: -74, lat: 43 },
+                    'southeast': { lng: -80, lat: 37 }
+                };
+
+                // CSC region label positions
+                const cscLabelPositions = {
+                    'canada-bc': { lng: -125, lat: 54 },
+                    'canada-alberta': { lng: -115, lat: 54 },
+                    'canada-prairies': { lng: -102, lat: 52 },
+                    'canada-ontario': { lng: -85, lat: 50 },
+                    'canada-quebec': { lng: -72, lat: 52 },
+                    'canada-atlantic': { lng: -63, lat: 47 }
+                };
+
+                // Draw NSAA labels
+                for (const [regionKey, region] of Object.entries(NSAA_REGIONS)) {
+                    const pos = nsaaLabelPositions[regionKey];
+                    if (pos) {
+                        const coords = projection([pos.lng, pos.lat]);
+                        if (coords) {
+                            labelsGroup.append("text")
+                                .attr("class", "region-label")
+                                .attr("x", coords[0])
+                                .attr("y", coords[1])
+                                .attr("text-anchor", "middle")
+                                .attr("fill", region.color.replace('0.15', '0.9'))
+                                .attr("font-size", "10px")
+                                .attr("font-weight", "600")
+                                .style("pointer-events", "none")
+                                .style("text-shadow", "0 0 3px rgba(0,0,0,0.8), 0 0 6px rgba(0,0,0,0.5)")
+                                .text(region.name);
+                        }
+                    }
+                }
+
+                // Draw CSC labels
+                for (const [regionKey, region] of Object.entries(CSC_REGIONS)) {
+                    const pos = cscLabelPositions[regionKey];
+                    if (pos) {
+                        const coords = projection([pos.lng, pos.lat]);
+                        if (coords) {
+                            labelsGroup.append("text")
+                                .attr("class", "region-label")
+                                .attr("x", coords[0])
+                                .attr("y", coords[1])
+                                .attr("text-anchor", "middle")
+                                .attr("fill", region.color.replace('0.15', '0.9'))
+                                .attr("font-size", "10px")
+                                .attr("font-weight", "600")
+                                .style("pointer-events", "none")
+                                .style("text-shadow", "0 0 3px rgba(0,0,0,0.8), 0 0 6px rgba(0,0,0,0.5)")
+                                .text(region.name);
+                        }
+                    }
+                }
+            }
+
             // Color scale for snow depth
             const colorScale = d3.scaleLinear()
                 .domain([0, 2, 4, 6])
