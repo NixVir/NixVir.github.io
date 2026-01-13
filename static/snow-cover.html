@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snow Cover Intelligence Dashboard | NixVir</title>
+    <title>Snow Cover and Temperature Perceptions Dashboard | NixVir</title>
 
     <!-- D3.js and TopoJSON -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
@@ -480,14 +480,15 @@
         }
 
         .card-title {
-            font-size: 0.8rem;
-            font-weight: 600;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
 
         .card-subtitle {
-            font-size: 0.65rem;
-            color: var(--text-muted);
-            margin-top: 0.15rem;
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
         }
 
         .card-body {
@@ -696,37 +697,59 @@
             line-height: 1.5;
         }
 
-        /* Market Table */
+        /* Market Table - Full Width Section */
+        .market-table-section {
+            margin-top: 1.25rem;
+        }
+
         .market-table-container {
-            max-height: 240px;
+            max-height: 500px;
             overflow-y: auto;
         }
 
         .market-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
 
         .market-table th {
             text-align: left;
-            padding: 0.5rem 0.6rem;
+            padding: 0.75rem 1rem;
             color: var(--text-secondary);
             font-weight: 600;
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             position: sticky;
             top: 0;
             background: var(--bg-card);
             border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            user-select: none;
+            transition: color 0.15s ease;
+        }
+
+        .market-table th:hover {
+            color: var(--text-primary);
+        }
+
+        .market-table th .sort-indicator {
+            margin-left: 6px;
+            opacity: 0.4;
+            font-size: 0.7rem;
+        }
+
+        .market-table th.sort-active .sort-indicator {
+            opacity: 1;
+            color: #60a5fa;
         }
 
         .market-table td {
-            padding: 0.55rem 0.6rem;
+            padding: 0.65rem 1rem;
             border-bottom: 1px solid var(--border);
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
         }
 
         .market-table tr:hover {
@@ -757,6 +780,7 @@
             font-size: 0.6rem;
         }
 
+        .temp-hot { color: #ef4444; }  /* Red - extremely warm (20°F+ above normal) */
         .temp-warm { color: var(--accent-warm-bright); }
         .temp-cool { color: var(--accent-cold-bright); }
         .temp-normal { color: var(--text-secondary); }
@@ -877,32 +901,100 @@
             margin-bottom: 0.75rem;
         }
 
+        /* National Stats Table */
+        .national-stats-table-container {
+            background: var(--bg-elevated);
+            padding: 1rem 1.25rem;
+            border-radius: 10px;
+            overflow-x: auto;
+        }
+
+        .national-stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .national-stats-table th,
+        .national-stats-table td {
+            padding: 0.6rem 0.75rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .national-stats-table thead th {
+            font-weight: 700;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.85rem;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .national-stats-table .metric-header {
+            text-align: left;
+            width: 35%;
+        }
+
+        .national-stats-table .country-header {
+            width: 21.67%;
+        }
+
+        .national-stats-table .metric-label {
+            text-align: left;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .national-stats-table .metric-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .national-stats-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .national-stats-table tbody tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Table section headers */
+        .table-section-header {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Regional table styles */
+        .regional-table .region-header {
+            width: 12%;
+            font-size: 0.75rem;
+            padding: 0.5rem 0.4rem;
+        }
+
+        .regional-table .metric-header {
+            width: 28%;
+        }
+
+        .regional-table .metric-value {
+            font-size: 0.9rem;
+            padding: 0.5rem 0.4rem;
+        }
+
+        /* Legacy card styles - kept for backward compatibility */
         .national-stat-card {
             background: var(--bg-elevated);
             padding: 1.5rem 1.25rem;
             border-radius: 10px;
             text-align: center;
-        }
-
-        .national-stat-country {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1.25rem;
-        }
-
-        .national-stat-metrics {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .stat-metric {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
         .stat-metric-value {
@@ -911,21 +1003,23 @@
             line-height: 1.1;
         }
 
-        .stat-metric-label {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            margin-top: 0.3rem;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            font-weight: 500;
-        }
-
         /* Metric colors */
         .stat-positive { color: var(--accent-cold-bright); }
         .stat-negative { color: var(--accent-warm-bright); }
         .stat-neutral { color: var(--text-primary); }
 
+        /* 4-tier favorability scale for ski operators */
+        .stat-very-unfavorable { color: #ef4444; }  /* Red - very bad */
+        .stat-unfavorable { color: #f97316; }       /* Orange - moderately bad */
+        .stat-favorable { color: #60a5fa; }         /* Blue - moderately good */
+        .stat-very-favorable { color: #22c55e; }    /* Green - very good */
+
+        /* Legacy aliases */
+        .stat-warm { color: #f97316; }
+        .stat-cold { color: #60a5fa; }
+
         /* Temperature colors (inverted - warm is bad for snow) */
+        .temp-hot { color: #ef4444; }  /* Red - extremely warm (20°F+ above normal) */
         .temp-warm { color: var(--accent-warm-bright); }
         .temp-cold { color: var(--accent-cold-bright); }
 
@@ -959,20 +1053,80 @@
             flex: 1;
         }
 
-        .chart-title {
-            font-size: 0.95rem;
-            font-weight: 600;
+        /* Chart summary stat badge */
+        .chart-stat-badge {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background: rgba(17, 24, 32, 0.95);
+            backdrop-filter: blur(8px);
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            text-align: center;
+            z-index: 10;
+        }
+
+        .chart-stat-badge .stat-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.4rem;
+            font-weight: 700;
             color: var(--text-primary);
-            margin: 0 0 0.25rem 0;
+            line-height: 1.2;
+        }
+
+        .chart-stat-badge .stat-value.warm {
+            color: #f97316;
+        }
+
+        .chart-stat-badge .stat-value.cold {
+            color: #60a5fa;
+        }
+
+        .chart-stat-badge .stat-label {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-top: 0.2rem;
+            line-height: 1.3;
+        }
+
+        .chart-title,
+        h3.chart-title {
+            font-size: 1.5rem !important;
+            font-weight: 700 !important;
+            color: var(--text-primary);
+            margin: 0 0 0.5rem 0;
+            text-align: center;
+            letter-spacing: -0.02em;
+        }
+
+        .chart-note,
+        p.chart-note {
+            font-size: 1.1rem !important;
+            color: var(--text-secondary);
+            margin: 0;
             text-align: center;
         }
 
-        .chart-note {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            margin: 0;
-            text-align: center;
-            font-style: italic;
+        .data-through-date {
+            display: inline-block;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            margin-left: 0.75rem;
+            vertical-align: middle;
+        }
+
+        .table-section-header .data-through-date {
+            float: right;
+            margin-left: 0;
+            margin-top: -0.1rem;
         }
 
         .reset-zoom-btn {
@@ -1060,6 +1214,16 @@
 
             .national-stats {
                 grid-template-columns: 1fr 1fr;
+            }
+
+            .market-table-container {
+                max-height: 350px;
+            }
+
+            .market-table th,
+            .market-table td {
+                padding: 0.5rem 0.6rem;
+                font-size: 0.75rem;
             }
         }
 
@@ -1325,8 +1489,8 @@
     <div class="dashboard">
         <header class="header">
             <div class="header-left">
-                <h1>Snow Cover <span>Intelligence</span></h1>
-                <p class="subtitle">Tracking ski industry conditions across North America</p>
+                <h1>Snow Cover and Temperature <span>Perceptions</span></h1>
+                <p class="subtitle">The Backyard Effect: Tracking Perceived Winter Snow and Temperature Salience</p>
             </div>
             <div class="header-right">
                 <div class="units-toggle">
@@ -1363,7 +1527,7 @@
         <div class="card national-overview" style="margin-bottom: 1.25rem;">
             <div class="card-header">
                 <div>
-                    <div class="card-title" id="snow-chart-title">National Snow Cover</div>
+                    <div class="card-title" id="snow-chart-title">National Snow Cover<span class="data-through-date" id="snow-chart-date">Data through --</span></div>
                     <div class="card-subtitle">Full 2025-26 ski season (Oct 1 - Apr 30) vs 5-year average</div>
                 </div>
             </div>
@@ -1385,77 +1549,181 @@
         <div class="card national-overview" style="margin-bottom: 1.25rem;">
             <div class="card-header">
                 <div>
-                    <div class="card-title" id="temp-chart-title">Temperature Anomaly</div>
+                    <div class="card-title" id="temp-chart-title">Temperature Anomaly<span class="data-through-date" id="temp-chart-date">Data through --</span></div>
                     <div class="card-subtitle">How current temperatures compare to historical averages</div>
                 </div>
             </div>
             <div class="card-body">
                 <div class="chart-header-row">
                     <div>
-                        <h3 class="chart-title">Current Winter of 2025/26 Temperature Anomaly vs. Normal</h3>
+                        <h3 class="chart-title">Current Winter of 2025/26 Temperature Anomaly vs. Prior 5-Year Average</h3>
                         <p class="chart-note">Positive values = warmer than normal (red), Negative = colder (blue)</p>
                     </div>
                     <button id="reset-temp-zoom-btn" class="reset-zoom-btn" style="display: none;">Reset Zoom</button>
                 </div>
-                <div class="national-chart-container" style="height: 280px;">
+                <div class="national-chart-container" style="height: 280px; position: relative;">
                     <canvas id="temperature-chart"></canvas>
                 </div>
             </div>
         </div>
 
-        <!-- National Stats Cards -->
-        <div class="national-stats" id="national-stats" style="margin-bottom: 1.25rem;">
-            <div class="national-stat-card" id="usa-stat-card">
-                <div class="national-stat-country">United States</div>
-                <div class="national-stat-metrics">
-                    <div class="stat-metric">
-                        <div class="stat-metric-value stat-neutral" id="usa-cover">--</div>
-                        <div class="stat-metric-label">Snow Coverage</div>
-                    </div>
-                    <div class="stat-metric">
-                        <div class="stat-metric-value" id="usa-snow-diff">--</div>
-                        <div class="stat-metric-label">vs 5-Year Average</div>
-                    </div>
-                    <div class="stat-metric">
-                        <div class="stat-metric-value" id="usa-temp">--</div>
-                        <div class="stat-metric-label">Temp vs Normal</div>
-                    </div>
-                </div>
-            </div>
-            <div class="national-stat-card" id="canada-stat-card">
-                <div class="national-stat-country">Canada</div>
-                <div class="national-stat-metrics">
-                    <div class="stat-metric">
-                        <div class="stat-metric-value stat-neutral" id="canada-cover">--</div>
-                        <div class="stat-metric-label">Snow Coverage</div>
-                    </div>
-                    <div class="stat-metric">
-                        <div class="stat-metric-value" id="canada-snow-diff">--</div>
-                        <div class="stat-metric-label">vs 5-Year Average</div>
-                    </div>
-                    <div class="stat-metric">
-                        <div class="stat-metric-value" id="canada-temp">--</div>
-                        <div class="stat-metric-label">Temp vs Normal</div>
-                    </div>
-                </div>
-            </div>
-            <div class="national-stat-card" id="combined-stat-card">
-                <div class="national-stat-country">North America</div>
-                <div class="national-stat-metrics">
-                    <div class="stat-metric">
-                        <div class="stat-metric-value stat-neutral" id="combined-cover">--</div>
-                        <div class="stat-metric-label">Snow Coverage</div>
-                    </div>
-                    <div class="stat-metric">
-                        <div class="stat-metric-value" id="combined-snow-diff">--</div>
-                        <div class="stat-metric-label">vs 5-Year Average</div>
-                    </div>
-                    <div class="stat-metric">
-                        <div class="stat-metric-value" id="combined-temp">--</div>
-                        <div class="stat-metric-label">Temp vs Normal</div>
-                    </div>
-                </div>
-            </div>
+        <!-- National Stats Table -->
+        <div class="national-stats-table-container" id="national-stats" style="margin-bottom: 1rem;">
+            <div class="table-section-header">National Overview<span class="data-through-date" id="national-table-date">Data through --</span></div>
+            <table class="national-stats-table">
+                <thead>
+                    <tr>
+                        <th class="metric-header">Metric</th>
+                        <th class="country-header">United States</th>
+                        <th class="country-header">Canada</th>
+                        <th class="country-header">North America</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="metric-label">Snow Coverage</td>
+                        <td class="metric-value"><span class="stat-neutral" id="usa-cover">--</span></td>
+                        <td class="metric-value"><span class="stat-neutral" id="canada-cover">--</span></td>
+                        <td class="metric-value"><span class="stat-neutral" id="combined-cover">--</span></td>
+                    </tr>
+                    <tr>
+                        <td class="metric-label">vs 5-Year Average</td>
+                        <td class="metric-value"><span id="usa-snow-diff">--</span></td>
+                        <td class="metric-value"><span id="canada-snow-diff">--</span></td>
+                        <td class="metric-value"><span id="combined-snow-diff">--</span></td>
+                    </tr>
+                    <tr>
+                        <td class="metric-label">Temp vs Normal</td>
+                        <td class="metric-value"><span id="usa-temp">--</span></td>
+                        <td class="metric-value"><span id="canada-temp">--</span></td>
+                        <td class="metric-value"><span id="combined-temp">--</span></td>
+                    </tr>
+                    <tr>
+                        <td class="metric-label">% of Days Above Avg Snow Cover</td>
+                        <td class="metric-value"><span id="usa-snow-pct-above">--</span></td>
+                        <td class="metric-value"><span id="canada-snow-pct-above">--</span></td>
+                        <td class="metric-value"><span id="combined-snow-pct-above">--</span></td>
+                    </tr>
+                    <tr>
+                        <td class="metric-label">% of Days at or Below Avg Temp</td>
+                        <td class="metric-value"><span id="usa-temp-pct-below">--</span></td>
+                        <td class="metric-value"><span id="canada-temp-pct-below">--</span></td>
+                        <td class="metric-value"><span id="combined-temp-pct-below">--</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- NSAA Regional Stats Table -->
+        <div class="national-stats-table-container" id="nsaa-stats" style="margin-bottom: 1rem;">
+            <div class="table-section-header">NSAA Regions (United States)<span class="data-through-date" id="nsaa-table-date">Data through --</span></div>
+            <table class="national-stats-table regional-table">
+                <thead>
+                    <tr>
+                        <th class="metric-header">Market Metric</th>
+                        <th class="region-header">Rocky Mtn</th>
+                        <th class="region-header">Pacific NW</th>
+                        <th class="region-header">Pacific SW</th>
+                        <th class="region-header">Midwest</th>
+                        <th class="region-header">Northeast</th>
+                        <th class="region-header">Southeast</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="metric-label">% Markets w/ Snow</td>
+                        <td class="metric-value"><span id="nsaa-rocky-snow">--</span></td>
+                        <td class="metric-value"><span id="nsaa-pacnw-snow">--</span></td>
+                        <td class="metric-value"><span id="nsaa-pacsw-snow">--</span></td>
+                        <td class="metric-value"><span id="nsaa-midwest-snow">--</span></td>
+                        <td class="metric-value"><span id="nsaa-northeast-snow">--</span></td>
+                        <td class="metric-value"><span id="nsaa-southeast-snow">--</span></td>
+                    </tr>
+                    <tr>
+                        <td class="metric-label">% Markets w/ Low Snow Cover</td>
+                        <td class="metric-value"><span id="nsaa-rocky-lowsnow">--</span></td>
+                        <td class="metric-value"><span id="nsaa-pacnw-lowsnow">--</span></td>
+                        <td class="metric-value"><span id="nsaa-pacsw-lowsnow">--</span></td>
+                        <td class="metric-value"><span id="nsaa-midwest-lowsnow">--</span></td>
+                        <td class="metric-value"><span id="nsaa-northeast-lowsnow">--</span></td>
+                        <td class="metric-value"><span id="nsaa-southeast-lowsnow">--</span></td>
+                    </tr>
+                    <tr>
+                        <td class="metric-label">% Markets w/ Low Salience</td>
+                        <td class="metric-value"><span id="nsaa-rocky-lowsal">--</span></td>
+                        <td class="metric-value"><span id="nsaa-pacnw-lowsal">--</span></td>
+                        <td class="metric-value"><span id="nsaa-pacsw-lowsal">--</span></td>
+                        <td class="metric-value"><span id="nsaa-midwest-lowsal">--</span></td>
+                        <td class="metric-value"><span id="nsaa-northeast-lowsal">--</span></td>
+                        <td class="metric-value"><span id="nsaa-southeast-lowsal">--</span></td>
+                    </tr>
+                    <tr>
+                        <td class="metric-label">% Markets w/ Above Normal Temp</td>
+                        <td class="metric-value"><span id="nsaa-rocky-warmtemp">--</span></td>
+                        <td class="metric-value"><span id="nsaa-pacnw-warmtemp">--</span></td>
+                        <td class="metric-value"><span id="nsaa-pacsw-warmtemp">--</span></td>
+                        <td class="metric-value"><span id="nsaa-midwest-warmtemp">--</span></td>
+                        <td class="metric-value"><span id="nsaa-northeast-warmtemp">--</span></td>
+                        <td class="metric-value"><span id="nsaa-southeast-warmtemp">--</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- CSC Regional Stats Table -->
+        <div class="national-stats-table-container" id="csc-stats" style="margin-bottom: 1.25rem;">
+            <div class="table-section-header">Canadian Ski Council Regions (Canada)<span class="data-through-date" id="csc-table-date">Data through --</span></div>
+            <table class="national-stats-table regional-table">
+                <thead>
+                    <tr>
+                        <th class="metric-header">Market Metric</th>
+                        <th class="region-header">BC</th>
+                        <th class="region-header">Alberta</th>
+                        <th class="region-header">Prairies</th>
+                        <th class="region-header">Ontario</th>
+                        <th class="region-header">Quebec</th>
+                        <th class="region-header">Atlantic</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="metric-label">% Markets w/ Snow</td>
+                        <td class="metric-value"><span id="csc-bc-snow">--</span></td>
+                        <td class="metric-value"><span id="csc-alberta-snow">--</span></td>
+                        <td class="metric-value"><span id="csc-prairies-snow">--</span></td>
+                        <td class="metric-value"><span id="csc-ontario-snow">--</span></td>
+                        <td class="metric-value"><span id="csc-quebec-snow">--</span></td>
+                        <td class="metric-value"><span id="csc-atlantic-snow">--</span></td>
+                    </tr>
+                    <tr>
+                        <td class="metric-label">% Markets w/ Low Snow Cover</td>
+                        <td class="metric-value"><span id="csc-bc-lowsnow">--</span></td>
+                        <td class="metric-value"><span id="csc-alberta-lowsnow">--</span></td>
+                        <td class="metric-value"><span id="csc-prairies-lowsnow">--</span></td>
+                        <td class="metric-value"><span id="csc-ontario-lowsnow">--</span></td>
+                        <td class="metric-value"><span id="csc-quebec-lowsnow">--</span></td>
+                        <td class="metric-value"><span id="csc-atlantic-lowsnow">--</span></td>
+                    </tr>
+                    <tr>
+                        <td class="metric-label">% Markets w/ Low Salience</td>
+                        <td class="metric-value"><span id="csc-bc-lowsal">--</span></td>
+                        <td class="metric-value"><span id="csc-alberta-lowsal">--</span></td>
+                        <td class="metric-value"><span id="csc-prairies-lowsal">--</span></td>
+                        <td class="metric-value"><span id="csc-ontario-lowsal">--</span></td>
+                        <td class="metric-value"><span id="csc-quebec-lowsal">--</span></td>
+                        <td class="metric-value"><span id="csc-atlantic-lowsal">--</span></td>
+                    </tr>
+                    <tr>
+                        <td class="metric-label">% Markets w/ Above Normal Temp</td>
+                        <td class="metric-value"><span id="csc-bc-warmtemp">--</span></td>
+                        <td class="metric-value"><span id="csc-alberta-warmtemp">--</span></td>
+                        <td class="metric-value"><span id="csc-prairies-warmtemp">--</span></td>
+                        <td class="metric-value"><span id="csc-ontario-warmtemp">--</span></td>
+                        <td class="metric-value"><span id="csc-quebec-warmtemp">--</span></td>
+                        <td class="metric-value"><span id="csc-atlantic-warmtemp">--</span></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <!-- Map Section -->
@@ -1463,8 +1731,8 @@
             <div class="card map-card">
                 <div class="card-header">
                     <div>
-                        <div class="card-title">Detailed Market Conditions</div>
-                        <div class="card-subtitle">Click on an NSAA or CSC region below for detailed breakdowns | Bubble size = population | Color = snow depth</div>
+                        <div class="card-title">Snow Perceptions by NSAA and Canadian Ski Council Regions</div>
+                        <div class="card-subtitle">Click on a region for details | Bubble size = population | Color = winter salience</div>
                     </div>
                     <button id="reset-map-btn" class="reset-zoom-btn" style="display: none;">Reset to North America</button>
                 </div>
@@ -1480,16 +1748,20 @@
                     </div>
                     <div class="map-legend">
                         <div class="legend-group">
-                            <div class="legend-title">Snow Depth</div>
-                            <div class="legend-scale">
-                                <div style="background: var(--snow-none)"></div>
-                                <div style="background: var(--snow-light)"></div>
-                                <div style="background: var(--snow-moderate)"></div>
-                                <div style="background: var(--snow-heavy)"></div>
-                            </div>
-                            <div class="legend-labels">
-                                <span>0"</span>
-                                <span>6"+</span>
+                            <div class="legend-title">Winter Salience</div>
+                            <div class="legend-size">
+                                <div class="legend-size-item">
+                                    <div class="legend-circle" style="width: 12px; height: 12px; background: #10b981;"></div>
+                                    <span>High</span>
+                                </div>
+                                <div class="legend-size-item">
+                                    <div class="legend-circle" style="width: 12px; height: 12px; background: #f59e0b;"></div>
+                                    <span>Moderate</span>
+                                </div>
+                                <div class="legend-size-item">
+                                    <div class="legend-circle" style="width: 12px; height: 12px; background: #ef4444;"></div>
+                                    <span>Low</span>
+                                </div>
                             </div>
                         </div>
                         <div class="legend-group">
@@ -1512,7 +1784,7 @@
             <div class="right-column">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">Regional Summary</div>
+                        <div class="card-title" id="regional-summary-title">North America Summary</div>
                     </div>
                     <div class="card-body">
                         <div class="summary-grid" id="summary-stats">
@@ -1529,7 +1801,7 @@
                                 <div class="summary-value">--</div>
                             </div>
                             <div class="summary-stat">
-                                <div class="summary-label">Low Awareness</div>
+                                <div class="summary-label">Markets w/ Low Winter Salience</div>
                                 <div class="summary-value">--</div>
                             </div>
                         </div>
@@ -1546,37 +1818,41 @@
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="card-header">
-                        <div>
-                            <div class="card-title">Ski Markets</div>
-                            <div class="card-subtitle">Winter awareness = snow visible + seasonable temps</div>
-                        </div>
-                    </div>
-                    <div class="card-body" style="padding: 0;">
-                        <div class="market-table-container">
-                            <table class="market-table">
-                                <thead>
-                                    <tr>
-                                        <th>Market</th>
-                                        <th>Snow</th>
-                                        <th>Depth</th>
-                                        <th>Temp</th>
-                                        <th>vs Norm</th>
-                                        <th>Awareness</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="market-table-body">
-                                    <tr><td colspan="6" style="text-align: center; color: var(--text-muted);">Loading...</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
         </div>
+
+        <!-- Ski Markets Table - Full Width Section -->
+        <div class="market-table-section">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Ski Markets</div>
+                        <div class="card-subtitle">Winter salience = snow visible + seasonable temps | Click column headers to sort</div>
+                    </div>
+                </div>
+                <div class="card-body" style="padding: 0;">
+                    <div class="market-table-container">
+                        <table class="market-table">
+                            <thead>
+                                <tr>
+                                    <th data-sort="name">Market<span class="sort-indicator">▼</span></th>
+                                    <th data-sort="snowCover">Snow Cover<span class="sort-indicator">▼</span></th>
+                                    <th data-sort="snowDepth">Snow Depth<span class="sort-indicator">▼</span></th>
+                                    <th data-sort="temp">Temperature<span class="sort-indicator">▼</span></th>
+                                    <th data-sort="tempAnomaly">vs Normal<span class="sort-indicator">▼</span></th>
+                                    <th data-sort="awareness">Winter Salience<span class="sort-indicator">▼</span></th>
+                                </tr>
+                            </thead>
+                            <tbody id="market-table-body">
+                                <tr><td colspan="6" style="text-align: center; color: var(--text-muted);">Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <div class="tooltip" id="tooltip"></div>
@@ -1606,11 +1882,19 @@
         let temperatureHistoryData = null;  // Per-metro temperature history (REAL data)
         let currentRegion = 'north-america';
         let currentMarkets = [];
+        let tableSortColumn = 'importance';  // Default sort column
+        let tableSortDirection = 'desc';     // 'asc' or 'desc'
         let usGeoData = null;
         let canadaGeoData = null;
         let nationalChart = null;
         let temperatureChart = null;
         let customSelectedMarkets = new Set(); // For custom region builder
+        let tempChartUsaData = [];  // Store for zoom stat calculation
+        let tempChartCanadaData = [];  // Store for zoom stat calculation
+        let snowChartUsaCurrentData = [];  // Store for season-to-date stats
+        let snowChartCanadaCurrentData = [];
+        let snowChartUsaAvgData = [];
+        let snowChartCanadaAvgData = [];
 
         // 2025/2026 Winter Holiday Markers
         const WINTER_HOLIDAYS = [
@@ -1767,6 +2051,9 @@
                 // Update timestamp
                 document.getElementById('last-updated').textContent = `Updated ${snowData.updated}`;
 
+                // Update "Data through" badges on charts and tables
+                updateDataThroughDates();
+
                 // Update national overview
                 console.log('Calling updateNationalOverview...');
                 updateNationalOverview();
@@ -1831,7 +2118,9 @@
                     const tempAnomaly = metro.temperature?.anomaly_f || 0;
 
                     let awareness;
-                    if (snowCover >= 50 && tempAnomaly <= 5) {
+                    if (tempAnomaly >= 20) {
+                        awareness = 'low';  // Extremely warm = low salience regardless of snow
+                    } else if (snowCover >= 50 && tempAnomaly <= 5) {
                         awareness = 'high';
                     } else if (snowCover > 0 || tempAnomaly <= 8) {
                         awareness = 'moderate';
@@ -1865,7 +2154,9 @@
                     const snowCover = metro.cover || 0;
                     const tempAnomaly = metro.temperature?.anomaly_f || 0;
                     let awareness;
-                    if (snowCover >= 50 && tempAnomaly <= 5) {
+                    if (tempAnomaly >= 20) {
+                        awareness = 'low';  // Extremely warm = low salience regardless of snow
+                    } else if (snowCover >= 50 && tempAnomaly <= 5) {
                         awareness = 'high';
                     } else if (snowCover > 0 || tempAnomaly <= 8) {
                         awareness = 'moderate';
@@ -1898,7 +2189,9 @@
                     const snowCover = metro.cover || 0;
                     const tempAnomaly = metro.temperature?.anomaly_f || 0;
                     let awareness;
-                    if (snowCover >= 50 && tempAnomaly <= 5) {
+                    if (tempAnomaly >= 20) {
+                        awareness = 'low';  // Extremely warm = low salience regardless of snow
+                    } else if (snowCover >= 50 && tempAnomaly <= 5) {
                         awareness = 'high';
                     } else if (snowCover > 0 || tempAnomaly <= 8) {
                         awareness = 'moderate';
@@ -1948,12 +2241,14 @@
                     return null;
                 }
 
-                // Calculate winter awareness based on conditions
+                // Calculate winter salience based on conditions
                 const snowCover = metro.cover || 0;
                 const tempAnomaly = metro.temperature?.anomaly_f || 0;
 
                 let awareness;
-                if (snowCover >= 50 && tempAnomaly <= 5) {
+                if (tempAnomaly >= 20) {
+                    awareness = 'low';  // Extremely warm = low salience regardless of snow
+                } else if (snowCover >= 50 && tempAnomaly <= 5) {
                     awareness = 'high';
                 } else if (snowCover > 0 || tempAnomaly <= 8) {
                     awareness = 'moderate';
@@ -2053,25 +2348,8 @@
             }
             console.log('updateNationalOverview: snowData.usa:', !!snowData.usa, 'snowData.canada:', !!snowData.canada);
 
-            // Update chart titles based on current region
+            // Get region config for map updates (charts always show national data)
             const regionConfig = getRegionConfig();
-            const regionName = regionConfig.name || 'North America';
-
-            // Update snow cover chart title
-            const snowChartTitle = document.getElementById('snow-chart-title');
-            if (snowChartTitle) {
-                snowChartTitle.textContent = currentRegion === 'north-america'
-                    ? 'National Snow Cover'
-                    : `${regionName} Snow Cover`;
-            }
-
-            // Update temperature chart title
-            const tempChartTitle = document.getElementById('temp-chart-title');
-            if (tempChartTitle) {
-                tempChartTitle.textContent = currentRegion === 'north-america'
-                    ? 'Temperature Anomaly'
-                    : `${regionName} Temperature Anomaly`;
-            }
 
             // Update all national stat cards with new 3-metric format
             updateNationalStatCards();
@@ -2098,7 +2376,7 @@
         // Units toggle state (english or metric)
         let currentUnits = 'english';
 
-        // Function to update a single stat card with 3 metrics
+        // Function to update a single stat row with 3 metrics (now in table format)
         function updateStatCard(prefix, coverValue, snowDiff, tempAnomaly) {
             const coverEl = document.getElementById(`${prefix}-cover`);
             const snowDiffEl = document.getElementById(`${prefix}-snow-diff`);
@@ -2106,47 +2384,18 @@
 
             if (!coverEl || !snowDiffEl || !tempEl) return;
 
-            // Get absolute values for proportional sizing
-            const absValues = [
-                Math.abs(coverValue ?? 0),
-                Math.abs(snowDiff ?? 0),
-                Math.abs(tempAnomaly ?? 0)
-            ];
-
-            // Base font size - the snow coverage percentage sets the scale
-            const baseFontSize = 2.2; // rem for the cover percentage
-            const minFontSize = 1.0; // minimum readable size
-
-            // Calculate font sizes proportional to absolute values
-            // Cover is the reference (always shown at base size)
-            const coverFontSize = baseFontSize;
-
-            // Snow diff and temp scale relative to cover value, but with min size
-            const snowDiffFontSize = coverValue > 0
-                ? Math.max(minFontSize, baseFontSize * (Math.abs(snowDiff) / coverValue))
-                : minFontSize;
-            const tempFontSize = coverValue > 0
-                ? Math.max(minFontSize, baseFontSize * (Math.abs(tempAnomaly) / coverValue) * 3) // Scale temp more aggressively
-                : minFontSize;
-
-            // Cap the font sizes to prevent them from being too large
-            const cappedSnowDiffSize = Math.min(snowDiffFontSize, baseFontSize * 0.9);
-            const cappedTempSize = Math.min(tempFontSize, baseFontSize * 0.8);
-
             // Update snow coverage (white/neutral)
             coverEl.textContent = coverValue != null ? `${coverValue.toFixed(1)}%` : '--';
-            coverEl.style.fontSize = `${coverFontSize}rem`;
-            coverEl.className = 'stat-metric-value stat-neutral';
+            coverEl.className = 'stat-neutral';
 
             // Update snow diff vs 5-year average (blue positive = more snow, red negative = less snow)
             if (snowDiff != null) {
                 const sign = snowDiff >= 0 ? '+' : '';
                 snowDiffEl.textContent = `${sign}${snowDiff.toFixed(1)}%`;
-                snowDiffEl.style.fontSize = `${cappedSnowDiffSize}rem`;
-                snowDiffEl.className = `stat-metric-value ${snowDiff >= 0 ? 'stat-positive' : 'stat-negative'}`;
+                snowDiffEl.className = snowDiff >= 0 ? 'stat-positive' : 'stat-negative';
             } else {
                 snowDiffEl.textContent = '--';
-                snowDiffEl.className = 'stat-metric-value stat-neutral';
+                snowDiffEl.className = 'stat-neutral';
             }
 
             // Update temperature anomaly (red warm = above normal, blue cold = below normal)
@@ -2155,12 +2404,11 @@
                 const tempValue = currentUnits === 'english' ? tempAnomaly : (tempAnomaly * 5 / 9);
                 const tempUnit = currentUnits === 'english' ? '°F' : '°C';
                 tempEl.textContent = `${sign}${tempValue.toFixed(1)}${tempUnit}`;
-                tempEl.style.fontSize = `${cappedTempSize}rem`;
                 // Warm (above normal) = red, Cold (below normal) = blue
-                tempEl.className = `stat-metric-value ${tempAnomaly >= 0 ? 'temp-warm' : 'temp-cold'}`;
+                tempEl.className = tempAnomaly >= 0 ? 'temp-warm' : 'temp-cold';
             } else {
                 tempEl.textContent = '--';
-                tempEl.className = 'stat-metric-value stat-neutral';
+                tempEl.className = 'stat-neutral';
             }
         }
 
@@ -2169,6 +2417,34 @@
             if (!historicalData || !historicalData[country]) return null;
             const entry = historicalData[country].find(e => e.date === dateMMDD);
             return entry ? entry.value : null;
+        }
+
+        // Update all "Data through" date badges
+        function updateDataThroughDates() {
+            // Format today's date as "Jan 13, 2026"
+            const today = new Date();
+            const formattedDate = today.toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric'
+            });
+            const dateText = `Data through ${formattedDate}`;
+
+            // Update all date badges
+            const dateElementIds = [
+                'snow-chart-date',
+                'temp-chart-date',
+                'national-table-date',
+                'nsaa-table-date',
+                'csc-table-date'
+            ];
+
+            dateElementIds.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.textContent = dateText;
+                }
+            });
         }
 
         // Update all national stat cards
@@ -2204,24 +2480,77 @@
 
         // Units toggle event handlers
         function initUnitsToggle() {
+            console.log('initUnitsToggle called');
             const englishBtn = document.getElementById('units-english');
             const metricBtn = document.getElementById('units-metric');
+            console.log('englishBtn found:', !!englishBtn, 'metricBtn found:', !!metricBtn);
 
             if (englishBtn && metricBtn) {
                 englishBtn.addEventListener('click', () => {
+                    console.log('English button clicked');
                     currentUnits = 'english';
                     englishBtn.classList.add('active');
                     metricBtn.classList.remove('active');
-                    updateNationalStatCards();
+                    updateAllUnits();
                 });
 
                 metricBtn.addEventListener('click', () => {
+                    console.log('Metric button clicked');
                     currentUnits = 'metric';
                     metricBtn.classList.add('active');
                     englishBtn.classList.remove('active');
-                    updateNationalStatCards();
+                    updateAllUnits();
                 });
+                console.log('Unit toggle event listeners attached');
+            } else {
+                console.error('Could not find unit toggle buttons!');
             }
+        }
+
+        // Update all components when units change
+        function updateAllUnits() {
+            console.log('updateAllUnits called, currentUnits:', currentUnits);
+            updateNationalStatCards();
+            renderSummaryStats();
+            renderMarketTable();
+            updateTemperatureChartUnits();
+            // Note: Map tooltips update dynamically on hover, so no refresh needed
+        }
+
+        // Update temperature chart axis and tooltips based on current units
+        function updateTemperatureChartUnits() {
+            console.log('updateTemperatureChartUnits called, temperatureChart exists:', !!temperatureChart);
+            if (!temperatureChart) return;
+
+            const unitSymbol = currentUnits === 'english' ? '°F' : '°C';
+
+            // Update Y-axis title
+            temperatureChart.options.scales.y.title.text = `Temperature Anomaly (${unitSymbol} vs Normal)`;
+
+            // Update Y-axis tick callback
+            temperatureChart.options.scales.y.ticks.callback = function(value) {
+                const displayValue = currentUnits === 'english' ? value : (value * 5 / 9);
+                const sign = displayValue > 0 ? '+' : '';
+                return `${sign}${displayValue.toFixed(0)}${unitSymbol}`;
+            };
+
+            // Update tooltip callback
+            temperatureChart.options.plugins.tooltip.callbacks.label = function(context) {
+                if (context.parsed.y === null) return null;
+                if (context.dataset.label === 'Normal (0°F)' || context.dataset.label === 'Normal (0°C)') return null;
+                const rawValue = context.parsed.y;
+                const displayValue = currentUnits === 'english' ? rawValue : (rawValue * 5 / 9);
+                const sign = displayValue > 0 ? '+' : '';
+                const status = displayValue > 0 ? 'warmer' : 'colder';
+                return `${context.dataset.label.replace(' Temperature Anomaly', '')}: ${sign}${displayValue.toFixed(1)}${unitSymbol} (${status} than normal)`;
+            };
+
+            // Update the zero line label
+            if (temperatureChart.data.datasets[2]) {
+                temperatureChart.data.datasets[2].label = `Normal (0${unitSymbol})`;
+            }
+
+            temperatureChart.update();
         }
 
         function drawNationalChart() {
@@ -2300,6 +2629,12 @@
                     canadaCurrentData.push(null);
                 }
             });
+
+            // Store data globally for season-to-date stats
+            snowChartUsaCurrentData = usaCurrentData;
+            snowChartCanadaCurrentData = canadaCurrentData;
+            snowChartUsaAvgData = usaAvgData;
+            snowChartCanadaAvgData = canadaAvgData;
 
             // Holiday annotation boxes - use array indices
             const holidayAnnotations = {};
@@ -2501,16 +2836,32 @@
                             grid: { color: 'rgba(42, 52, 68, 0.5)' },
                             ticks: {
                                 color: '#5c6678',
-                                maxRotation: 0,
-                                autoSkip: true,
-                                maxTicksLimit: 12,
+                                maxRotation: 45,
+                                autoSkip: false,
                                 callback: function(value, index) {
-                                    // Show label only on 1st of month with year
-                                    const dateInfo = seasonDates[index];
-                                    if (dateInfo && dateInfo.date.getDate() === 1) {
-                                        const month = dateInfo.date.toLocaleDateString('en-US', { month: 'short' });
-                                        const year = String(dateInfo.date.getFullYear()).slice(-2);
-                                        return `${month} ${year}`;
+                                    // value = actual data index, index = visible tick position
+                                    const dateInfo = seasonDates[value];
+                                    if (dateInfo) {
+                                        const day = dateInfo.date.getDate();
+                                        // Show labels on 1st and 15th of each month (full view)
+                                        // When zoomed, show more detail
+                                        const chart = this.chart;
+                                        const xScale = chart.scales.x;
+                                        const visibleRange = xScale.max - xScale.min;
+
+                                        // If showing less than 60 days, show weekly labels
+                                        if (visibleRange < 60) {
+                                            if (day === 1 || day === 8 || day === 15 || day === 22 || day === 29) {
+                                                const month = dateInfo.date.toLocaleDateString('en-US', { month: 'short' });
+                                                return `${month} ${day}`;
+                                            }
+                                        } else {
+                                            // Full season view - show 1st and 15th only
+                                            if (day === 1 || day === 15) {
+                                                const month = dateInfo.date.toLocaleDateString('en-US', { month: 'short' });
+                                                return `${month} ${day}`;
+                                            }
+                                        }
                                     }
                                     return '';
                                 }
@@ -2561,6 +2912,9 @@
             if (temperatureChart) temperatureChart.resetZoom();
             if (resetBtn) resetBtn.style.display = 'none';
             if (resetTempBtn) resetTempBtn.style.display = 'none';
+
+            // Reset the temp above normal stat to full season
+            updateTempAboveNormalStat(tempChartUsaData, tempChartCanadaData, 0, tempChartUsaData.length - 1);
         }
 
         // Draw Temperature Anomaly Chart
@@ -2689,6 +3043,10 @@
                 }
             });
 
+            // Store data globally for zoom stat calculation
+            tempChartUsaData = usaData;
+            tempChartCanadaData = canadaData;
+
             // Holiday annotations - same as snow chart
             const holidayAnnotations = {};
             WINTER_HOLIDAYS.forEach((holiday, idx) => {
@@ -2712,7 +3070,19 @@
                         xMin: startIdx - 0.5,
                         xMax: endIdx + 0.5,
                         backgroundColor: 'rgba(128, 128, 128, 0.12)',
-                        borderWidth: 0
+                        borderWidth: 0,
+                        label: {
+                            display: true,
+                            content: holiday.name,
+                            position: 'start',
+                            font: {
+                                size: 9,
+                                weight: 'normal'
+                            },
+                            color: 'rgba(100, 100, 100, 0.8)',
+                            rotation: -90,
+                            yAdjust: 40
+                        }
                     };
                 }
             });
@@ -2765,10 +3135,10 @@
                         {
                             label: 'Normal (0°F)',
                             data: zeroLine,
-                            borderColor: 'rgba(100, 100, 100, 0.5)',
-                            borderDash: [3, 3],
+                            borderColor: '#E65100',
+                            borderDash: [6, 4],
                             fill: false,
-                            borderWidth: 1,
+                            borderWidth: 2.5,
                             pointRadius: 0
                         }
                     ]
@@ -2834,12 +3204,15 @@
                                 mode: 'x',
                                 modifierKey: 'shift',
                                 onPanComplete: function({chart}) {
+                                    // Update the "above normal" stat for visible range
+                                    const xScale = chart.scales.x;
+                                    updateTempAboveNormalStat(tempChartUsaData, tempChartCanadaData, xScale.min, xScale.max);
+
                                     if (window.chartSyncInProgress) return;
                                     window.chartSyncInProgress = true;
                                     try {
                                         // Sync snow cover chart to same zoom range
                                         if (nationalChart) {
-                                            const xScale = chart.scales.x;
                                             nationalChart.zoomScale('x', {min: xScale.min, max: xScale.max}, 'none');
                                         }
                                     } finally {
@@ -2862,12 +3235,15 @@
                                     if (resetBtn) resetBtn.style.display = 'block';
                                     if (resetTempBtn) resetTempBtn.style.display = 'block';
 
+                                    // Update the "above normal" stat for visible range
+                                    const xScale = chart.scales.x;
+                                    updateTempAboveNormalStat(tempChartUsaData, tempChartCanadaData, xScale.min, xScale.max);
+
                                     // Sync snow cover chart to same zoom range
                                     if (window.chartSyncInProgress) return;
                                     window.chartSyncInProgress = true;
                                     try {
                                         if (nationalChart) {
-                                            const xScale = chart.scales.x;
                                             nationalChart.zoomScale('x', {min: xScale.min, max: xScale.max}, 'none');
                                         }
                                     } finally {
@@ -2889,15 +3265,32 @@
                             grid: { color: 'rgba(42, 52, 68, 0.5)' },
                             ticks: {
                                 color: '#5c6678',
-                                maxRotation: 0,
-                                autoSkip: true,
-                                maxTicksLimit: 12,
+                                maxRotation: 45,
+                                autoSkip: false,
                                 callback: function(value, index) {
-                                    const dateInfo = seasonDates[index];
-                                    if (dateInfo && dateInfo.date.getDate() === 1) {
-                                        const month = dateInfo.date.toLocaleDateString('en-US', { month: 'short' });
-                                        const year = String(dateInfo.date.getFullYear()).slice(-2);
-                                        return `${month} ${year}`;
+                                    // value = actual data index, index = visible tick position
+                                    const dateInfo = seasonDates[value];
+                                    if (dateInfo) {
+                                        const day = dateInfo.date.getDate();
+                                        // Show labels on 1st and 15th of each month (full view)
+                                        // When zoomed, show more detail
+                                        const chart = this.chart;
+                                        const xScale = chart.scales.x;
+                                        const visibleRange = xScale.max - xScale.min;
+
+                                        // If showing less than 60 days, show weekly labels
+                                        if (visibleRange < 60) {
+                                            if (day === 1 || day === 8 || day === 15 || day === 22 || day === 29) {
+                                                const month = dateInfo.date.toLocaleDateString('en-US', { month: 'short' });
+                                                return `${month} ${day}`;
+                                            }
+                                        } else {
+                                            // Full season view - show 1st and 15th only
+                                            if (day === 1 || day === 15) {
+                                                const month = dateInfo.date.toLocaleDateString('en-US', { month: 'short' });
+                                                return `${month} ${day}`;
+                                            }
+                                        }
                                     }
                                     return '';
                                 }
@@ -2939,6 +3332,348 @@
             ctx.addEventListener('dblclick', function() {
                 resetBothCharts();
             });
+
+            // Initial calculation of percent above normal
+            updateTempAboveNormalStat(usaData, canadaData, 0, seasonDates.length - 1);
+
+            // Update season-to-date stats for national cards
+            updateSeasonToDateStats();
+        }
+
+        // Calculate and update the "Percent Above Normal" statistic for temperature chart
+        function updateTempAboveNormalStat(usaData, canadaData, minIdx, maxIdx) {
+            const badge = document.getElementById('temp-above-normal-badge');
+            const valueEl = document.getElementById('temp-above-normal-value');
+            if (!badge || !valueEl) return;
+
+            // Combine USA and Canada data for the visible range
+            let aboveCount = 0;
+            let totalCount = 0;
+
+            for (let i = Math.floor(minIdx); i <= Math.ceil(maxIdx); i++) {
+                const usaVal = usaData?.[i];
+                const canadaVal = canadaData?.[i];
+
+                // Count USA data points
+                if (usaVal !== null && usaVal !== undefined) {
+                    totalCount++;
+                    if (usaVal > 0) aboveCount++;
+                }
+
+                // Count Canada data points
+                if (canadaVal !== null && canadaVal !== undefined) {
+                    totalCount++;
+                    if (canadaVal > 0) aboveCount++;
+                }
+            }
+
+            if (totalCount === 0) {
+                valueEl.textContent = '--';
+                valueEl.className = 'stat-value';
+                return;
+            }
+
+            const percent = Math.round((aboveCount / totalCount) * 100);
+            valueEl.textContent = `${percent}%`;
+
+            // Color based on whether more warm or cold
+            if (percent > 50) {
+                valueEl.className = 'stat-value warm';
+            } else if (percent < 50) {
+                valueEl.className = 'stat-value cold';
+            } else {
+                valueEl.className = 'stat-value';
+            }
+        }
+
+        // Calculate and update the season-to-date stats for national stat cards
+        function updateSeasonToDateStats() {
+            // Calculate for USA and Canada
+            let usaSnowAbove = 0, usaSnowTotal = 0;
+            let canadaSnowAbove = 0, canadaSnowTotal = 0;
+            let usaTempBelow = 0, usaTempTotal = 0;
+            let canadaTempBelow = 0, canadaTempTotal = 0;
+
+            // Snow cover: current vs 5-year average
+            for (let i = 0; i < snowChartUsaCurrentData.length; i++) {
+                const usaCurrent = snowChartUsaCurrentData[i];
+                const usaAvg = snowChartUsaAvgData[i];
+                const canadaCurrent = snowChartCanadaCurrentData[i];
+                const canadaAvg = snowChartCanadaAvgData[i];
+
+                // USA snow
+                if (usaCurrent !== null && usaCurrent !== undefined && usaAvg !== null && usaAvg !== undefined) {
+                    usaSnowTotal++;
+                    if (usaCurrent > usaAvg) usaSnowAbove++;
+                }
+
+                // Canada snow
+                if (canadaCurrent !== null && canadaCurrent !== undefined && canadaAvg !== null && canadaAvg !== undefined) {
+                    canadaSnowTotal++;
+                    if (canadaCurrent > canadaAvg) canadaSnowAbove++;
+                }
+            }
+
+            // Temperature: at or below normal (anomaly <= 0) - favorable for ski operators
+            for (let i = 0; i < tempChartUsaData.length; i++) {
+                const usaTemp = tempChartUsaData[i];
+                const canadaTemp = tempChartCanadaData[i];
+
+                // USA temp - count days at or below normal
+                if (usaTemp !== null && usaTemp !== undefined) {
+                    usaTempTotal++;
+                    if (usaTemp <= 0) usaTempBelow++;
+                }
+
+                // Canada temp - count days at or below normal
+                if (canadaTemp !== null && canadaTemp !== undefined) {
+                    canadaTempTotal++;
+                    if (canadaTemp <= 0) canadaTempBelow++;
+                }
+            }
+
+            // Update USA card
+            const usaSnowPct = usaSnowTotal > 0 ? Math.round((usaSnowAbove / usaSnowTotal) * 100) : null;
+            const usaTempPct = usaTempTotal > 0 ? Math.round((usaTempBelow / usaTempTotal) * 100) : null;
+            updateStatCardValue('usa-snow-pct-above', usaSnowPct);
+            updateStatCardValue('usa-temp-pct-below', usaTempPct);
+
+            // Update Canada card
+            const canadaSnowPct = canadaSnowTotal > 0 ? Math.round((canadaSnowAbove / canadaSnowTotal) * 100) : null;
+            const canadaTempPct = canadaTempTotal > 0 ? Math.round((canadaTempBelow / canadaTempTotal) * 100) : null;
+            updateStatCardValue('canada-snow-pct-above', canadaSnowPct);
+            updateStatCardValue('canada-temp-pct-below', canadaTempPct);
+
+            // Update Combined/North America card
+            const combinedSnowTotal = usaSnowTotal + canadaSnowTotal;
+            const combinedSnowAbove = usaSnowAbove + canadaSnowAbove;
+            const combinedSnowPct = combinedSnowTotal > 0 ? Math.round((combinedSnowAbove / combinedSnowTotal) * 100) : null;
+
+            const combinedTempTotal = usaTempTotal + canadaTempTotal;
+            const combinedTempBelow = usaTempBelow + canadaTempBelow;
+            const combinedTempPct = combinedTempTotal > 0 ? Math.round((combinedTempBelow / combinedTempTotal) * 100) : null;
+
+            updateStatCardValue('combined-snow-pct-above', combinedSnowPct);
+            updateStatCardValue('combined-temp-pct-below', combinedTempPct);
+
+            // Update regional tables (NSAA and CSC)
+            updateRegionalTables();
+        }
+
+        // Apply 4-tier color scale based on ski operator favorability
+        // Both snow and temp metrics use the same scale: higher % = more favorable
+        function updateStatCardValue(elementId, percent) {
+            const el = document.getElementById(elementId);
+            if (!el) return;
+
+            if (percent === null) {
+                el.textContent = '--';
+                el.className = '';
+                return;
+            }
+
+            el.textContent = `${percent}%`;
+
+            // 4-tier favorability scale (same for both snow and temp now)
+            // Red (<40%): Very unfavorable
+            // Orange (40-50%): Moderately unfavorable
+            // Blue (50-60%): Moderately favorable
+            // Green (>60%): Very favorable
+            if (percent < 40) {
+                el.className = 'stat-very-unfavorable';
+            } else if (percent < 50) {
+                el.className = 'stat-unfavorable';
+            } else if (percent <= 60) {
+                el.className = 'stat-favorable';
+            } else {
+                el.className = 'stat-very-favorable';
+            }
+        }
+
+        // ============================================
+        // Regional Tables - Calculate market stats per region
+        // ============================================
+
+        // Get markets for a specific region (NSAA or CSC)
+        function getMarketsForRegion(regionKey, isCanada = false) {
+            if (!snowData || !snowData.metros) return [];
+
+            const regionDef = isCanada ? CSC_REGIONS[regionKey] : NSAA_REGIONS[regionKey];
+            if (!regionDef) return [];
+
+            return snowData.metros.filter(metro => {
+                if (isCanada) {
+                    return regionDef.abbrevs.includes(metro.region) && metro.country === 'canada';
+                } else {
+                    return regionDef.abbrevs.includes(metro.region) && metro.country !== 'canada';
+                }
+            }).map(metro => {
+                const snowCover = metro.cover || 0;
+                const tempAnomaly = metro.temperature?.anomaly_f || 0;
+
+                // Calculate awareness (same logic as getRegionMarkets)
+                let awareness;
+                if (tempAnomaly >= 20) {
+                    awareness = 'low';  // Extremely warm = low salience regardless of snow
+                } else if (snowCover >= 50 && tempAnomaly <= 5) {
+                    awareness = 'high';
+                } else if (snowCover > 0 || tempAnomaly <= 8) {
+                    awareness = 'moderate';
+                } else {
+                    awareness = 'low';
+                }
+
+                return {
+                    name: metro.city,
+                    state: metro.region,
+                    snowCover: snowCover,
+                    tempAnomaly: tempAnomaly,
+                    awareness: awareness,
+                    // Historical average for this market (if available)
+                    historicalCover: metro.historical_cover || null
+                };
+            });
+        }
+
+        // Determine if snow cover is statistically "low" using z-score approach
+        // Low = significantly below historical norm (more than 1 standard deviation below)
+        function isLowSnowCover(currentCover, historicalCover) {
+            // If no historical data, use a simple threshold (< 20% is low)
+            if (historicalCover === null || historicalCover === undefined) {
+                return currentCover < 20;
+            }
+
+            // Calculate percent departure from historical
+            // If historical is 0, any positive value is "normal"
+            if (historicalCover === 0) {
+                return currentCover === 0;  // 0 is normal when historical is 0
+            }
+
+            // Calculate relative departure
+            const departurePercent = ((currentCover - historicalCover) / historicalCover) * 100;
+
+            // "Low" = more than 30% below historical average
+            // This is a practical threshold that captures significant departures
+            return departurePercent < -30;
+        }
+
+        // Calculate regional stats for a given region
+        function calculateRegionalStats(regionKey, isCanada = false) {
+            const markets = getMarketsForRegion(regionKey, isCanada);
+
+            if (markets.length === 0) {
+                return {
+                    total: 0,
+                    withSnow: 0,
+                    withLowSnow: 0,
+                    withLowSalience: 0,
+                    withWarmTemp: 0,
+                    pctWithSnow: null,
+                    pctWithLowSnow: null,
+                    pctWithLowSalience: null,
+                    pctWithWarmTemp: null
+                };
+            }
+
+            const total = markets.length;
+            const withSnow = markets.filter(m => m.snowCover > 0).length;
+            const withLowSnow = markets.filter(m => isLowSnowCover(m.snowCover, m.historicalCover)).length;
+            const withLowSalience = markets.filter(m => m.awareness === 'low').length;
+            const withWarmTemp = markets.filter(m => m.tempAnomaly > 0).length;
+
+            return {
+                total,
+                withSnow,
+                withLowSnow,
+                withLowSalience,
+                withWarmTemp,
+                pctWithSnow: Math.round((withSnow / total) * 100),
+                pctWithLowSnow: Math.round((withLowSnow / total) * 100),
+                pctWithLowSalience: Math.round((withLowSalience / total) * 100),
+                pctWithWarmTemp: Math.round((withWarmTemp / total) * 100)
+            };
+        }
+
+        // Update a regional table cell with appropriate coloring
+        function updateRegionalCell(elementId, percent, invertColor = false) {
+            const el = document.getElementById(elementId);
+            if (!el) return;
+
+            if (percent === null) {
+                el.textContent = '--';
+                el.className = '';
+                return;
+            }
+
+            el.textContent = `${percent}%`;
+
+            // Color scheme depends on the metric type
+            // For "% with Snow" - higher is better (green)
+            // For "% with Low Snow/Low Salience/Warm Temp" - lower is better (invert)
+            if (invertColor) {
+                // Lower is better: green for low, red for high
+                if (percent <= 25) {
+                    el.className = 'stat-very-favorable';  // green
+                } else if (percent <= 40) {
+                    el.className = 'stat-favorable';  // blue
+                } else if (percent <= 60) {
+                    el.className = 'stat-unfavorable';  // orange
+                } else {
+                    el.className = 'stat-very-unfavorable';  // red
+                }
+            } else {
+                // Higher is better (same as updateStatCardValue)
+                if (percent < 40) {
+                    el.className = 'stat-very-unfavorable';
+                } else if (percent < 50) {
+                    el.className = 'stat-unfavorable';
+                } else if (percent <= 60) {
+                    el.className = 'stat-favorable';
+                } else {
+                    el.className = 'stat-very-favorable';
+                }
+            }
+        }
+
+        // Update all regional tables (NSAA and CSC)
+        function updateRegionalTables() {
+            // NSAA Regions mapping: region key -> element ID prefix
+            const nsaaRegionMap = {
+                'rocky-mountain': 'nsaa-rocky',
+                'pacific-northwest': 'nsaa-pacnw',
+                'pacific-southwest': 'nsaa-pacsw',
+                'midwest': 'nsaa-midwest',
+                'northeast': 'nsaa-northeast',
+                'southeast': 'nsaa-southeast'
+            };
+
+            // CSC Regions mapping
+            const cscRegionMap = {
+                'canada-bc': 'csc-bc',
+                'canada-alberta': 'csc-alberta',
+                'canada-prairies': 'csc-prairies',
+                'canada-ontario': 'csc-ontario',
+                'canada-quebec': 'csc-quebec',
+                'canada-atlantic': 'csc-atlantic'
+            };
+
+            // Update NSAA regional stats
+            for (const [regionKey, idPrefix] of Object.entries(nsaaRegionMap)) {
+                const stats = calculateRegionalStats(regionKey, false);
+                updateRegionalCell(`${idPrefix}-snow`, stats.pctWithSnow, false);  // Higher is better
+                updateRegionalCell(`${idPrefix}-lowsnow`, stats.pctWithLowSnow, true);  // Lower is better
+                updateRegionalCell(`${idPrefix}-lowsal`, stats.pctWithLowSalience, true);  // Lower is better
+                updateRegionalCell(`${idPrefix}-warmtemp`, stats.pctWithWarmTemp, true);  // Lower is better
+            }
+
+            // Update CSC regional stats
+            for (const [regionKey, idPrefix] of Object.entries(cscRegionMap)) {
+                const stats = calculateRegionalStats(regionKey, true);
+                updateRegionalCell(`${idPrefix}-snow`, stats.pctWithSnow, false);
+                updateRegionalCell(`${idPrefix}-lowsnow`, stats.pctWithLowSnow, true);
+                updateRegionalCell(`${idPrefix}-lowsal`, stats.pctWithLowSalience, true);
+                updateRegionalCell(`${idPrefix}-warmtemp`, stats.pctWithWarmTemp, true);
+            }
         }
 
         // ============================================
@@ -2947,9 +3682,28 @@
         const tooltip = d3.select("#tooltip");
 
         function showTooltip(event, d) {
-            const tempClass = d.tempAnomaly > 8 ? 'temp-warm' : d.tempAnomaly < 3 ? 'temp-cool' : 'temp-normal';
-            const tempDisplay = d.temp !== null ? `${Math.round(d.temp)}°F` : 'N/A';
-            const anomalyDisplay = d.tempAnomaly !== null ? `${d.tempAnomaly > 0 ? '+' : ''}${d.tempAnomaly}°F` : 'N/A';
+            const tempClass = d.tempAnomaly >= 20 ? 'temp-hot' : d.tempAnomaly > 8 ? 'temp-warm' : d.tempAnomaly < 3 ? 'temp-cool' : 'temp-normal';
+
+            // Convert temperature and anomaly based on current units
+            const unitSymbol = currentUnits === 'english' ? '°F' : '°C';
+            let tempDisplay = 'N/A';
+            if (d.temp !== null) {
+                const convertedTemp = currentUnits === 'english' ? d.temp : ((d.temp - 32) * 5 / 9);
+                tempDisplay = `${Math.round(convertedTemp)}${unitSymbol}`;
+            }
+            let anomalyDisplay = 'N/A';
+            if (d.tempAnomaly !== null) {
+                const convertedAnomaly = currentUnits === 'english' ? d.tempAnomaly : (d.tempAnomaly * 5 / 9);
+                anomalyDisplay = `${convertedAnomaly > 0 ? '+' : ''}${convertedAnomaly.toFixed(1)}${unitSymbol}`;
+            }
+
+            // Convert snow depth based on units
+            const depthUnit = currentUnits === 'english' ? '"' : ' cm';
+            let depthDisplay = 'N/A';
+            if (d.snowDepth !== null && d.snowDepth !== undefined) {
+                const convertedDepth = currentUnits === 'english' ? d.snowDepth : (d.snowDepth * 2.54);
+                depthDisplay = currentUnits === 'english' ? `${convertedDepth}${depthUnit}` : `${convertedDepth.toFixed(1)}${depthUnit}`;
+            }
 
             tooltip
                 .classed("visible", true)
@@ -2963,7 +3717,7 @@
                     </div>
                     <div class="tooltip-row">
                         <span class="tooltip-label">Snow Depth</span>
-                        <span class="tooltip-value">${d.snowDepth}"</span>
+                        <span class="tooltip-value">${depthDisplay}</span>
                     </div>
                     <div class="tooltip-row">
                         <span class="tooltip-label">Temperature</span>
@@ -3239,13 +3993,116 @@
                         }
                     }
                 }
+            } else {
+                // When zoomed into a specific region, draw that region's border and label
+                const selectedRegionBordersGroup = svg.append("g").attr("class", "selected-region-border");
+
+                // Check if it's a US NSAA region
+                if (NSAA_REGIONS[currentRegion]) {
+                    const region = NSAA_REGIONS[currentRegion];
+                    const regionStates = usGeoData.features.filter(d => region.stateIds.includes(+d.id));
+
+                    if (regionStates.length > 0) {
+                        selectedRegionBordersGroup.selectAll('.selected-border')
+                            .data(regionStates)
+                            .enter()
+                            .append("path")
+                            .attr("class", "selected-border")
+                            .attr("d", path)
+                            .attr("fill", "none")
+                            .attr("stroke", region.color.replace('0.15', '0.7'))
+                            .attr("stroke-width", 3)
+                            .style("pointer-events", "none");
+                    }
+
+                    // Add region label
+                    const nsaaLabelPositions = {
+                        'rocky-mountain': { lng: -108, lat: 40.5 },
+                        'pacific-northwest': { lng: -121, lat: 46 },
+                        'pacific-southwest': { lng: -119, lat: 37 },
+                        'midwest': { lng: -92, lat: 43 },
+                        'northeast': { lng: -74, lat: 43 },
+                        'southeast': { lng: -80, lat: 37 }
+                    };
+
+                    const pos = nsaaLabelPositions[currentRegion];
+                    if (pos) {
+                        const coords = projection([pos.lng, pos.lat]);
+                        if (coords) {
+                            selectedRegionBordersGroup.append("text")
+                                .attr("class", "selected-region-label")
+                                .attr("x", coords[0])
+                                .attr("y", coords[1])
+                                .attr("text-anchor", "middle")
+                                .attr("fill", region.color.replace('0.15', '0.9'))
+                                .attr("font-size", "14px")
+                                .attr("font-weight", "700")
+                                .style("pointer-events", "none")
+                                .style("text-shadow", "0 0 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.6)")
+                                .text(region.name);
+                        }
+                    }
+                }
+
+                // Check if it's a Canadian CSC region
+                if (CSC_REGIONS[currentRegion]) {
+                    const region = CSC_REGIONS[currentRegion];
+                    const regionProvinces = canadaGeoData.features.filter(d =>
+                        region.provinces.some(p => d.properties.name && (d.properties.name.includes(p) || p.includes(d.properties.name)))
+                    );
+
+                    if (regionProvinces.length > 0) {
+                        selectedRegionBordersGroup.selectAll('.selected-border')
+                            .data(regionProvinces)
+                            .enter()
+                            .append("path")
+                            .attr("class", "selected-border")
+                            .attr("d", path)
+                            .attr("fill", "none")
+                            .attr("stroke", region.color.replace('0.15', '0.7'))
+                            .attr("stroke-width", 3)
+                            .style("pointer-events", "none");
+                    }
+
+                    // Add region label
+                    const cscLabelPositions = {
+                        'canada-bc': { lng: -125, lat: 54 },
+                        'canada-alberta': { lng: -115, lat: 54 },
+                        'canada-prairies': { lng: -102, lat: 52 },
+                        'canada-ontario': { lng: -85, lat: 50 },
+                        'canada-quebec': { lng: -72, lat: 52 },
+                        'canada-atlantic': { lng: -63, lat: 47 }
+                    };
+
+                    const pos = cscLabelPositions[currentRegion];
+                    if (pos) {
+                        const coords = projection([pos.lng, pos.lat]);
+                        if (coords) {
+                            selectedRegionBordersGroup.append("text")
+                                .attr("class", "selected-region-label")
+                                .attr("x", coords[0])
+                                .attr("y", coords[1])
+                                .attr("text-anchor", "middle")
+                                .attr("fill", region.color.replace('0.15', '0.9'))
+                                .attr("font-size", "14px")
+                                .attr("font-weight", "700")
+                                .style("pointer-events", "none")
+                                .style("text-shadow", "0 0 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.6)")
+                                .text(region.name);
+                        }
+                    }
+                }
             }
 
-            // Color scale for snow depth
-            const colorScale = d3.scaleLinear()
-                .domain([0, 2, 4, 6])
-                .range(["#475569", "#1e40af", "#60a5fa", "#dbeafe"])
-                .clamp(true);
+            // Color function for winter salience
+            function getSalienceColor(awareness) {
+                switch (awareness) {
+                    case 'high': return '#10b981';     // Green - high salience
+                    case 'moderate': return '#f59e0b'; // Orange - moderate salience
+                    case 'low': return '#ef4444';      // Red - low salience
+                    default: return '#6b7280';
+                }
+            }
 
             // Size scale for importance - smaller bubbles for North America view
             const maxPop = d3.max(currentMarkets, d => d.importance);
@@ -3270,7 +4127,7 @@
                     return coords ? coords[1] : 0;
                 })
                 .attr("r", d => sizeScale(d.importance))
-                .attr("fill", d => colorScale(d.snowDepth))
+                .attr("fill", d => getSalienceColor(d.awareness))
                 .attr("opacity", 0.85)
                 .on("mouseover", showTooltip)
                 .on("mouseout", hideTooltip);
@@ -3298,32 +4155,137 @@
         // ============================================
         // Market Table
         // ============================================
+
+        // Salience level ordering for sorting (lowercase to match data)
+        const salienceOrder = { 'high': 3, 'moderate': 2, 'low': 1 };
+
+        function sortMarkets(markets) {
+            return [...markets].sort((a, b) => {
+                let aVal, bVal;
+
+                if (tableSortColumn === 'name') {
+                    aVal = a.name.toLowerCase();
+                    bVal = b.name.toLowerCase();
+                } else if (tableSortColumn === 'awareness') {
+                    aVal = salienceOrder[a.awareness] || 0;
+                    bVal = salienceOrder[b.awareness] || 0;
+                } else if (tableSortColumn === 'importance') {
+                    aVal = a.importance ?? 0;
+                    bVal = b.importance ?? 0;
+                } else {
+                    aVal = a[tableSortColumn] ?? -Infinity;
+                    bVal = b[tableSortColumn] ?? -Infinity;
+                }
+
+                if (tableSortColumn === 'name') {
+                    // String comparison
+                    if (tableSortDirection === 'asc') {
+                        return aVal.localeCompare(bVal);
+                    } else {
+                        return bVal.localeCompare(aVal);
+                    }
+                } else {
+                    // Numeric comparison
+                    if (tableSortDirection === 'asc') {
+                        return aVal - bVal;
+                    } else {
+                        return bVal - aVal;
+                    }
+                }
+            });
+        }
+
+        function updateTableHeaderStyles() {
+            const headers = document.querySelectorAll('.market-table th[data-sort]');
+            headers.forEach(th => {
+                const sortKey = th.dataset.sort;
+                const indicator = th.querySelector('.sort-indicator');
+
+                if (sortKey === tableSortColumn) {
+                    th.classList.add('sort-active');
+                    indicator.textContent = tableSortDirection === 'asc' ? '▲' : '▼';
+                } else {
+                    th.classList.remove('sort-active');
+                    indicator.textContent = '▼';
+                }
+            });
+        }
+
+        function initTableSorting() {
+            const headers = document.querySelectorAll('.market-table th[data-sort]');
+            headers.forEach(th => {
+                th.addEventListener('click', () => {
+                    const sortKey = th.dataset.sort;
+
+                    if (tableSortColumn === sortKey) {
+                        // Toggle direction
+                        tableSortDirection = tableSortDirection === 'asc' ? 'desc' : 'asc';
+                    } else {
+                        // New column - default to descending (except name which defaults to asc)
+                        tableSortColumn = sortKey;
+                        tableSortDirection = sortKey === 'name' ? 'asc' : 'desc';
+                    }
+
+                    updateTableHeaderStyles();
+                    renderMarketTable();
+                });
+            });
+        }
+
         function renderMarketTable() {
             const tbody = document.getElementById("market-table-body");
-            const sorted = [...currentMarkets].sort((a, b) => b.importance - a.importance);
+            const sorted = sortMarkets(currentMarkets);
 
-            const colorScale = d3.scaleLinear()
-                .domain([0, 2, 4, 6])
-                .range(["#475569", "#1e40af", "#60a5fa", "#dbeafe"])
-                .clamp(true);
+            // Color function for winter salience
+            function getSalienceColor(awareness) {
+                switch (awareness) {
+                    case 'high': return '#10b981';     // Green - high salience
+                    case 'moderate': return '#f59e0b'; // Orange - moderate salience
+                    case 'low': return '#ef4444';      // Red - low salience
+                    default: return '#6b7280';
+                }
+            }
+
+            // Unit conversion based on current units
+            const tempUnit = currentUnits === 'english' ? '°' : '°C';
+            const depthUnit = currentUnits === 'english' ? '"' : 'cm';
 
             tbody.innerHTML = sorted.map(d => {
-                const tempClass = d.tempAnomaly > 8 ? 'temp-warm' : d.tempAnomaly < 3 ? 'temp-cool' : 'temp-normal';
+                const tempClass = d.tempAnomaly >= 20 ? 'temp-hot' : d.tempAnomaly > 8 ? 'temp-warm' : d.tempAnomaly < 3 ? 'temp-cool' : 'temp-normal';
                 const awarenessClass = `awareness-${d.awareness}`;
-                const tempDisplay = d.temp !== null ? `${Math.round(d.temp)}°` : '--';
-                const anomalyDisplay = d.tempAnomaly !== null ? `${d.tempAnomaly > 0 ? '+' : ''}${d.tempAnomaly}°` : '--';
+
+                // Convert temperature
+                let tempDisplay = '--';
+                if (d.temp !== null) {
+                    const convertedTemp = currentUnits === 'english' ? d.temp : ((d.temp - 32) * 5 / 9);
+                    tempDisplay = `${Math.round(convertedTemp)}${tempUnit}`;
+                }
+
+                // Convert anomaly
+                let anomalyDisplay = '--';
+                if (d.tempAnomaly !== null) {
+                    const convertedAnomaly = currentUnits === 'english' ? d.tempAnomaly : (d.tempAnomaly * 5 / 9);
+                    anomalyDisplay = `${convertedAnomaly > 0 ? '+' : ''}${convertedAnomaly.toFixed(1)}${tempUnit}`;
+                }
+
+                // Convert snow depth
+                let depthDisplay = '--';
+                if (d.snowDepth !== null && d.snowDepth !== undefined) {
+                    const convertedDepth = currentUnits === 'english' ? d.snowDepth : (d.snowDepth * 2.54);
+                    depthDisplay = currentUnits === 'english' ? `${convertedDepth}${depthUnit}` : `${convertedDepth.toFixed(1)}${depthUnit}`;
+                }
 
                 return `
                     <tr>
                         <td>
                             <div class="market-name-cell">
-                                <div class="snow-dot" style="background: ${colorScale(d.snowDepth)}"></div>
+                                <div class="snow-dot" style="background: ${getSalienceColor(d.awareness)}"></div>
                                 <span class="market-name">${d.name}</span>
                                 <span class="market-state">${d.state}</span>
                             </div>
                         </td>
                         <td>${d.snowCover}%</td>
-                        <td>${d.snowDepth}"</td>
+                        <td>${depthDisplay}</td>
                         <td>${tempDisplay}</td>
                         <td class="${tempClass}">${anomalyDisplay}</td>
                         <td><span class="awareness-badge ${awarenessClass}">${d.awareness}</span></td>
@@ -3343,14 +4305,38 @@
                 return;
             }
 
-            // Use national combined snow cover instead of market average
-            const avgSnowCover = snowData?.combined?.cover ?? '--';
+            let avgSnowCover, avgTempAnomaly;
 
-            // Use national combined temperature anomaly
-            const avgTempAnomaly = snowData?.combined?.temperature?.avg_anomaly_f ?? '--';
+            if (currentRegion === 'north-america') {
+                // For North America view, use national combined data (land area coverage)
+                avgSnowCover = snowData?.combined?.cover ?? '--';
+                avgTempAnomaly = snowData?.combined?.temperature?.avg_anomaly_f ?? '--';
+            } else {
+                // For specific regions, calculate average from visible markets
+                const validSnowMarkets = currentMarkets.filter(m => m.snowCover !== null && m.snowCover !== undefined);
+                avgSnowCover = validSnowMarkets.length > 0
+                    ? validSnowMarkets.reduce((sum, m) => sum + m.snowCover, 0) / validSnowMarkets.length
+                    : '--';
+
+                const validTempMarkets = currentMarkets.filter(m => m.tempAnomaly !== null && m.tempAnomaly !== undefined);
+                avgTempAnomaly = validTempMarkets.length > 0
+                    ? validTempMarkets.reduce((sum, m) => sum + m.tempAnomaly, 0) / validTempMarkets.length
+                    : '--';
+            }
 
             const marketsWithSnow = currentMarkets.filter(m => m.snowCover > 0).length;
-            const lowAwarenessCount = currentMarkets.filter(m => m.awareness === 'low').length;
+            const lowSalienceMarkets = currentMarkets.filter(m => m.awareness === 'low').length;
+            const lowSaliencePct = currentMarkets.length > 0
+                ? Math.round((lowSalienceMarkets / currentMarkets.length) * 100)
+                : 0;
+
+            // Convert temperature to appropriate units
+            const unitSymbol = currentUnits === 'english' ? '°F' : '°C';
+            let displayTempAnomaly = '--';
+            if (avgTempAnomaly !== '--') {
+                const convertedTemp = currentUnits === 'english' ? avgTempAnomaly : (avgTempAnomaly * 5 / 9);
+                displayTempAnomaly = (convertedTemp > 0 ? '+' : '') + convertedTemp.toFixed(1) + unitSymbol;
+            }
 
             container.innerHTML = `
                 <div class="summary-stat">
@@ -3359,15 +4345,15 @@
                 </div>
                 <div class="summary-stat">
                     <div class="summary-label">Temp Anomaly</div>
-                    <div class="summary-value" style="color: ${avgTempAnomaly !== '--' && avgTempAnomaly > 5 ? 'var(--accent-warm-bright)' : 'var(--text-primary)'}">${avgTempAnomaly !== '--' ? (avgTempAnomaly > 0 ? '+' : '') + avgTempAnomaly.toFixed(1) + '°' : '--'}</div>
+                    <div class="summary-value" style="color: ${avgTempAnomaly !== '--' && avgTempAnomaly > 5 ? 'var(--accent-warm-bright)' : 'var(--text-primary)'}">${displayTempAnomaly}</div>
                 </div>
                 <div class="summary-stat">
                     <div class="summary-label">w/ Snow</div>
                     <div class="summary-value">${marketsWithSnow}/${currentMarkets.length}</div>
                 </div>
                 <div class="summary-stat">
-                    <div class="summary-label">Low Aware</div>
-                    <div class="summary-value" style="color: ${lowAwarenessCount > 3 ? 'var(--danger)' : 'var(--text-primary)'}">${lowAwarenessCount}</div>
+                    <div class="summary-label">Markets w/ Low Winter Salience</div>
+                    <div class="summary-value" style="color: ${lowSalienceMarkets > 3 ? 'var(--danger)' : 'var(--text-primary)'}">${lowSalienceMarkets} (${lowSaliencePct}%)</div>
                 </div>
             `;
         }
@@ -3377,23 +4363,23 @@
         // ============================================
         function renderInsight() {
             const container = document.getElementById("insight-box");
-            const lowAwareness = currentMarkets.filter(m => m.awareness === 'low');
-            const highAwareness = currentMarkets.filter(m => m.awareness === 'high');
+            const lowSalience = currentMarkets.filter(m => m.awareness === 'low');
+            const highSalience = currentMarkets.filter(m => m.awareness === 'high');
             const config = getRegionConfig();
 
             let insightText;
             if (currentMarkets.length === 0) {
                 insightText = 'No market data available for this region.';
-            } else if (lowAwareness.length >= 4) {
-                const names = lowAwareness.slice(0, 3).map(m => m.name).join(', ');
-                insightText = `${lowAwareness.length} markets (${names}, etc.) have no snow cover and above-normal temperatures. Skiing is unlikely to be top-of-mind for consumers in these areas.`;
-            } else if (lowAwareness.length > 0) {
-                const names = lowAwareness.map(m => m.name).join(', ');
-                insightText = `${names} ${lowAwareness.length === 1 ? 'has' : 'have'} no visible snow cover and warm conditions. Winter awareness is likely low in ${lowAwareness.length === 1 ? 'this market' : 'these markets'}.`;
-            } else if (highAwareness.length === currentMarkets.length) {
-                insightText = `All ski markets are experiencing winter conditions with snow on the ground. Organic awareness of ski season is likely high.`;
+            } else if (lowSalience.length >= 4) {
+                const names = lowSalience.slice(0, 3).map(m => m.name).join(', ');
+                insightText = `${lowSalience.length} markets (${names}, etc.) have no snow cover and above-normal temperatures. Skiing may not be top-of-mind for consumers in these areas.`;
+            } else if (lowSalience.length > 0) {
+                const names = lowSalience.map(m => m.name).join(', ');
+                insightText = `${names} ${lowSalience.length === 1 ? 'has' : 'have'} no visible snow cover and warm conditions. Winter may feel distant in ${lowSalience.length === 1 ? 'this market' : 'these markets'}.`;
+            } else if (highSalience.length === currentMarkets.length) {
+                insightText = `All ski markets have snow on the ground and winter-like temperatures.`;
             } else {
-                insightText = `Most ski markets are seeing some winter conditions. ${highAwareness.length} of ${currentMarkets.length} markets have significant snow cover.`;
+                insightText = `${highSalience.length} of ${currentMarkets.length} markets have snow cover with seasonal temperatures.`;
             }
 
             container.innerHTML = `
@@ -3428,8 +4414,8 @@
             // Calculate key metrics
             const avgSnow = currentMarkets.reduce((sum, m) => sum + (m.cover || 0), 0) / currentMarkets.length;
             const marketsWithSnow = currentMarkets.filter(m => m.cover > 0).length;
-            const lowAwareness = currentMarkets.filter(m => m.awareness === 'low').length;
-            const highAwareness = currentMarkets.filter(m => m.awareness === 'high').length;
+            const lowSalienceCount = currentMarkets.filter(m => m.awareness === 'low').length;
+            const highSalienceCount = currentMarkets.filter(m => m.awareness === 'high').length;
 
             // Calculate avg temp anomaly
             const tempAnomalies = currentMarkets.filter(m => m.tempAnomaly !== undefined).map(m => m.tempAnomaly);
@@ -3440,16 +4426,16 @@
             // Generate headline based on conditions
             let title, subtitle, badgeClass, badgeText;
 
-            if (highAwareness === currentMarkets.length) {
+            if (highSalienceCount === currentMarkets.length) {
                 title = `${config.name}: Snow in all ski markets`;
                 subtitle = `All ${currentMarkets.length} markets have snow on the ground with seasonable temperatures.`;
                 badgeClass = 'positive';
-                badgeText = 'High Awareness';
-            } else if (lowAwareness >= Math.ceil(currentMarkets.length * 0.6)) {
+                badgeText = 'High Salience';
+            } else if (lowSalienceCount >= Math.ceil(currentMarkets.length * 0.6)) {
                 title = `${config.name}: Limited snow visibility`;
-                subtitle = `${lowAwareness} of ${currentMarkets.length} markets have no snow cover and above-normal temperatures.`;
+                subtitle = `${lowSalienceCount} of ${currentMarkets.length} markets have no snow cover and above-normal temperatures.`;
                 badgeClass = 'negative';
-                badgeText = 'Low Awareness';
+                badgeText = 'Low Salience';
             } else if (marketsWithSnow === 0) {
                 title = `${config.name}: No snow cover in ski markets`;
                 subtitle = `None of the ${currentMarkets.length} tracked markets currently have visible snow cover.`;
@@ -3462,7 +4448,7 @@
                 badgeText = 'Warm Spell';
             } else {
                 title = `${config.name}: Mixed conditions`;
-                subtitle = `${marketsWithSnow} of ${currentMarkets.length} markets have snow. ${highAwareness} with high winter awareness.`;
+                subtitle = `${marketsWithSnow} of ${currentMarkets.length} markets have snow. ${highSalienceCount} with high winter salience.`;
                 badgeClass = marketsWithSnow > currentMarkets.length / 2 ? 'positive' : 'neutral';
                 badgeText = `${marketsWithSnow}/${currentMarkets.length} Snow`;
             }
@@ -3481,17 +4467,12 @@
             document.getElementById("region-display").textContent = config.name;
 
             // Update chart titles based on current region
-            const snowChartTitle = document.getElementById('snow-chart-title');
-            if (snowChartTitle) {
-                snowChartTitle.textContent = currentRegion === 'north-america'
-                    ? 'National Snow Cover'
-                    : `${config.name} Snow Cover`;
-            }
-            const tempChartTitle = document.getElementById('temp-chart-title');
-            if (tempChartTitle) {
-                tempChartTitle.textContent = currentRegion === 'north-america'
-                    ? 'Temperature Anomaly'
-                    : `${config.name} Temperature Anomaly`;
+            // Charts always show national data, so we don't update their titles here
+
+            // Update Regional Summary title based on current region
+            const regionalSummaryTitle = document.getElementById('regional-summary-title');
+            if (regionalSummaryTitle) {
+                regionalSummaryTitle.textContent = `${config.name} Summary`;
             }
 
             updateHeadlineInsight();
@@ -3761,6 +4742,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             console.log('DOMContentLoaded event fired');
             initUnitsToggle();
+            initTableSorting();
             init();
         });
 
