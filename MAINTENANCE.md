@@ -40,9 +40,10 @@ cd c:\nixvir\nixvirweb
 python update_snow_cover.py
 ```
 - Fetches USA snow cover from NOHRSC (National Operational Hydrologic Remote Sensing Center)
-- Calculates Canada snow cover using historical ratios
-- Updates metro area snow coverage for 20 major cities
+- Fetches Canada snow cover from NOAA IMS (Interactive Multisensor Snow and Ice Mapping System)
+- Updates metro area snow coverage for 50 ski market cities
 - Includes 30-day history and prior year comparisons
+- Calculates temperature anomalies for each metro using Open-Meteo
 
 ### Dashboard Data
 ```powershell
@@ -138,7 +139,9 @@ c:\nixvir\nixvirweb\
 │   ├── dashboard.json
 │   ├── ski-news.json
 │   ├── ski-news-review.json
-│   └── snow-cover.json
+│   ├── snow-cover.json
+│   ├── snow-cover-historical.json  # 5-year seasonal averages
+│   └── temperature-history.json    # Daily temperature anomalies by metro
 ├── update_dashboard.py        # Economic data fetcher
 ├── update_ski_news.py         # News aggregator
 └── update_snow_cover.py       # Snow cover fetcher
@@ -148,7 +151,11 @@ c:\nixvir\nixvirweb\
 
 ### Snow Cover
 - **NOHRSC**: https://www.nohrsc.noaa.gov/snow_model/ (USA official)
-- **Rutgers GSL**: https://climate.rutgers.edu/snowcover/ (North America extent)
+- **NOAA IMS**: https://nsidc.org/data/g02156 (Canada - Interactive Multisensor Snow and Ice Mapping)
+- **Rutgers GSL**: https://climate.rutgers.edu/snowcover/ (North America extent - historical reference)
+
+### Temperature
+- **Open-Meteo**: https://open-meteo.com/ (Metro temperature and climate normals)
 
 ### Economic Indicators
 - **FRED**: https://fred.stlouisfed.org/ (Federal Reserve Economic Data)
