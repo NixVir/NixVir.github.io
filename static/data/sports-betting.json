@@ -1,0 +1,662 @@
+{
+  "fetched_at": "2026-01-14T00:01:07.224451Z",
+  "sources": {
+    "us": "Sports Handle (sportshandle.com)",
+    "ontario": "iGaming Ontario (igamingontario.ca)"
+  },
+  "us_monthly": [
+    {
+      "type": "monthly",
+      "date": "2019-01-01",
+      "handle_usd": 1000954918.0,
+      "revenue_usd": null,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2019-03-01",
+      "handle_usd": 1097866953.0,
+      "revenue_usd": null,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2019-09-01",
+      "handle_usd": 1379969161.0,
+      "revenue_usd": 143155118.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2019-10-01",
+      "handle_usd": 1554873093.0,
+      "revenue_usd": 157394117.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2019-11-01",
+      "handle_usd": 1882843954.0,
+      "revenue_usd": 111465507.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2019-12-01",
+      "handle_usd": 1866617387.0,
+      "revenue_usd": 113677366.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2020-01-01",
+      "handle_usd": 1796838279.0,
+      "revenue_usd": 139653659.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2020-02-01",
+      "handle_usd": 1739002161.0,
+      "revenue_usd": null,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2020-08-01",
+      "handle_usd": 2191901959.0,
+      "revenue_usd": 126640139.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2020-09-01",
+      "handle_usd": 2872540202.0,
+      "revenue_usd": 154703919.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2020-10-01",
+      "handle_usd": 3285146315.0,
+      "revenue_usd": 282956341.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2020-11-01",
+      "handle_usd": 3481190653.0,
+      "revenue_usd": 312520025.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2020-12-01",
+      "handle_usd": 3790077775.0,
+      "revenue_usd": 274716946.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2021-01-01",
+      "handle_usd": 4383158696.0,
+      "revenue_usd": 376337777.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2021-02-01",
+      "handle_usd": 4013727683.0,
+      "revenue_usd": 252875646.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2021-03-01",
+      "handle_usd": 4627373465.0,
+      "revenue_usd": 350355235.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2021-04-01",
+      "handle_usd": 3703619608.0,
+      "revenue_usd": 285401587.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2021-05-01",
+      "handle_usd": 3719650369.0,
+      "revenue_usd": 274386790.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2021-06-01",
+      "handle_usd": 3679111789.0,
+      "revenue_usd": 334208566.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2021-07-01",
+      "handle_usd": 2799556063.0,
+      "revenue_usd": 267726183.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2021-08-01",
+      "handle_usd": 3068510943.0,
+      "revenue_usd": 217217457.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2021-09-01",
+      "handle_usd": 5479721824.0,
+      "revenue_usd": 440012075.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2021-10-01",
+      "handle_usd": 7549015866.0,
+      "revenue_usd": 446892105.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2021-11-01",
+      "handle_usd": 7402684743.0,
+      "revenue_usd": 723345748.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2021-12-01",
+      "handle_usd": 7328172806.0,
+      "revenue_usd": 375193198.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2022-01-01",
+      "handle_usd": 9836753021.0,
+      "revenue_usd": 648955282.0,
+      "taxes_usd": 128860684.0,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2022-02-01",
+      "handle_usd": 7924344380.0,
+      "revenue_usd": 387524253.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2022-03-01",
+      "handle_usd": 9258701274.0,
+      "revenue_usd": 603036595.0,
+      "taxes_usd": 117171545.0,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2022-04-01",
+      "handle_usd": 7489681875.0,
+      "revenue_usd": 528133428.0,
+      "taxes_usd": 109192797.0,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2022-05-01",
+      "handle_usd": 6682076493.0,
+      "revenue_usd": 608545106.0,
+      "taxes_usd": 120308042.0,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2022-06-01",
+      "handle_usd": 5479562767.0,
+      "revenue_usd": 332907847.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2022-07-01",
+      "handle_usd": 4531064305.0,
+      "revenue_usd": 405246400.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2022-08-01",
+      "handle_usd": 4903994100.0,
+      "revenue_usd": 507132080.0,
+      "taxes_usd": 107727727.0,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2022-09-01",
+      "handle_usd": 7919050171.0,
+      "revenue_usd": 927064398.0,
+      "taxes_usd": 171928113.0,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2022-10-01",
+      "handle_usd": 9690932161.0,
+      "revenue_usd": 855319340.0,
+      "taxes_usd": 167214251.0,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2022-11-01",
+      "handle_usd": 10015886089.0,
+      "revenue_usd": 799630182.0,
+      "taxes_usd": 171634012.0,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2022-12-01",
+      "handle_usd": 10060796886.0,
+      "revenue_usd": 955767989.0,
+      "taxes_usd": 170823098.0,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2023-01-01",
+      "handle_usd": 11493350840.0,
+      "revenue_usd": 187319390.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2023-02-01",
+      "handle_usd": 9014982358.0,
+      "revenue_usd": 713786076.0,
+      "taxes_usd": 132950404.0,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2023-03-01",
+      "handle_usd": 11250189095.0,
+      "revenue_usd": 201806103.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2023-04-01",
+      "handle_usd": 9180316258.0,
+      "revenue_usd": 870398153.0,
+      "taxes_usd": 170365382.0,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2023-05-01",
+      "handle_usd": 8139786064.0,
+      "revenue_usd": 916636052.0,
+      "taxes_usd": 182064910.0,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2023-06-01",
+      "handle_usd": 6621067957.0,
+      "revenue_usd": 549937488.0,
+      "taxes_usd": 113976132.0,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2023-07-01",
+      "handle_usd": 5900904093.0,
+      "revenue_usd": 595140762.0,
+      "taxes_usd": 127071323.0,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2023-08-01",
+      "handle_usd": 6669942996.0,
+      "revenue_usd": 583772453.0,
+      "taxes_usd": 119855006.0,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2023-09-01",
+      "handle_usd": 11611766835.0,
+      "revenue_usd": 206548297.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2023-10-01",
+      "handle_usd": 12798000590.0,
+      "revenue_usd": 233023266.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2023-11-01",
+      "handle_usd": 14473351732.0,
+      "revenue_usd": 887508717.0,
+      "taxes_usd": 178356455.0,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2023-12-01",
+      "handle_usd": 13977985867.0,
+      "revenue_usd": 262926256.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2024-01-01",
+      "handle_usd": 13877195289.0,
+      "revenue_usd": 293204804.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2024-02-01",
+      "handle_usd": 11333689214.0,
+      "revenue_usd": 869622200.0,
+      "taxes_usd": 173657868.0,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2024-03-01",
+      "handle_usd": 13934277169.0,
+      "revenue_usd": 208993657.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2024-04-01",
+      "handle_usd": 12092308322.0,
+      "revenue_usd": 238573018.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2024-05-01",
+      "handle_usd": 11061489939.0,
+      "revenue_usd": 244100190.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2024-06-01",
+      "handle_usd": 9125370851.0,
+      "revenue_usd": 830210997.0,
+      "taxes_usd": 175689275.0,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2024-07-01",
+      "handle_usd": 7928115413.0,
+      "revenue_usd": 850562977.0,
+      "taxes_usd": 183218143.0,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2024-08-01",
+      "handle_usd": 8594577511.0,
+      "revenue_usd": 733020813.0,
+      "taxes_usd": 161297867.0,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2024-09-01",
+      "handle_usd": 14012299236.0,
+      "revenue_usd": 309792956.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2024-10-01",
+      "handle_usd": 15210896408.0,
+      "revenue_usd": 228909781.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2024-11-01",
+      "handle_usd": 16253414563.0,
+      "revenue_usd": 361097369.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2024-12-01",
+      "handle_usd": 15780083536.0,
+      "revenue_usd": 888384657.0,
+      "taxes_usd": 211067826.0,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2025-01-01",
+      "handle_usd": 15788638056.0,
+      "revenue_usd": 374774005.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2025-02-01",
+      "handle_usd": 12523460817.0,
+      "revenue_usd": 262111644.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2025-03-01",
+      "handle_usd": 15548804198.0,
+      "revenue_usd": 964341120.0,
+      "taxes_usd": 218752719.0,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2025-04-01",
+      "handle_usd": 13184449237.0,
+      "revenue_usd": 271634016.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2025-05-01",
+      "handle_usd": 12810171742.0,
+      "revenue_usd": 326192691.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2025-06-01",
+      "handle_usd": 9683032983.0,
+      "revenue_usd": 282828747.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2025-07-01",
+      "handle_usd": 8005410579.0,
+      "revenue_usd": 842084395.0,
+      "taxes_usd": 185858051.0,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2025-08-01",
+      "handle_usd": 6160128846.0,
+      "revenue_usd": 611975648.0,
+      "taxes_usd": 176967346.0,
+      "source": "Sports Handle"
+    }
+  ],
+  "us_annual": [
+    {
+      "type": "annual",
+      "year": 2018,
+      "handle_usd": 4618927053.0,
+      "revenue_usd": 334579931.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "annual",
+      "year": 2019,
+      "handle_usd": 13138741263.0,
+      "revenue_usd": 920092650.0,
+      "taxes_usd": 125914064.0,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "annual",
+      "year": 2020,
+      "handle_usd": 21545027984.0,
+      "revenue_usd": 247918492.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "annual",
+      "year": 2021,
+      "handle_usd": 57754303855.0,
+      "revenue_usd": 569273833.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "annual",
+      "year": 2022,
+      "handle_usd": 93792843522.0,
+      "revenue_usd": null,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "annual",
+      "year": 2023,
+      "handle_usd": 121131644685.0,
+      "revenue_usd": null,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "annual",
+      "year": 2024,
+      "handle_usd": 149203717451.0,
+      "revenue_usd": null,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "annual",
+      "year": 2025,
+      "handle_usd": 93704096457.0,
+      "revenue_usd": null,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    }
+  ],
+  "ontario": [
+    {
+      "type": "summary",
+      "region": "Ontario",
+      "fiscal_year": "2024-25",
+      "betting_wagers_cad": 11400000000,
+      "betting_wagers_usd": 7979999999.999999,
+      "betting_revenue_cad": 724000000,
+      "betting_revenue_usd": 506799999.99999994,
+      "note": "Annual fiscal year data - detailed monthly requires Excel parsing",
+      "source": "iGaming Ontario"
+    }
+  ],
+  "summary": {
+    "us": {
+      "latest_month": "2025-08-01",
+      "latest_handle_usd": 6160128846.0,
+      "latest_revenue_usd": 611975648.0,
+      "ttm_handle_usd": 154960790201.0,
+      "ttm_revenue_usd": 5724127029.0,
+      "ttm_yoy_handle_change": 0.10051025886393782,
+      "latest_annual_year": 2025,
+      "latest_annual_handle_usd": 93704096457.0,
+      "latest_annual_revenue_usd": null
+    },
+    "ontario": {
+      "fiscal_year": "2024-25",
+      "betting_wagers_usd": 7979999999.999999,
+      "betting_revenue_usd": 506799999.99999994,
+      "note": "Annual fiscal year data - detailed monthly requires Excel parsing"
+    },
+    "north_america": {
+      "estimated_annual_handle_usd": 101684096457.0
+    }
+  }
+}
