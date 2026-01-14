@@ -1,0 +1,53 @@
+name: Update Airport Passenger Data
+
+on:
+  schedule:
+    # Run monthly on the 15th at 8 AM EST (1 PM UTC)
+    # BTS T-100 data is typically released 2-3 months behind
+    - cron: '0 13 15 * *'
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  update-airport-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install pdfplumber requests
+
+      - name: Run SLC airport scraper
+        run: |
+          python scrape_slc.py || echo "SLC scraper completed (may have partial data)"
+
+      - name: Generate unified airport output
+        run: |
+          python generate_airport_output.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add static/data/airport_passengers.json static/data/slc-monthly.json static/data/airport-monthly.json
+
+          # Check if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes to airport data"
+          else
+            # Get summary info for commit message
+            AIRPORTS=$(python -c "import json; d=json.load(open('static/data/airport_passengers.json')); print(len(d.get('airports', {})))")
+            LATEST=$(python -c "import json; d=json.load(open('static/data/airport_passengers.json')); airports=d.get('airports',{}); latest=max((max(m.keys()) for m in airports.values() if m), default='N/A'); print(latest)")
+            git commit -m "Update airport passenger data - ${AIRPORTS} airports, latest: ${LATEST}"
+            git push
+            echo "Airport data updated and pushed"
+          fi

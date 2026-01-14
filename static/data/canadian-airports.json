@@ -1,0 +1,2789 @@
+{
+  "last_updated": "2026-01-14T22:15:05.635810+00:00",
+  "data_source": "BTS T-100 International Segment",
+  "data_lag_note": "BTS T-100 data typically 2-3 months behind.",
+  "airports": {
+    "YVR": {
+      "2014-10": {
+        "passengers": 394760,
+        "yoy_pct": null
+      },
+      "2014-04": {
+        "passengers": 370429,
+        "yoy_pct": null
+      },
+      "2014-03": {
+        "passengers": 397562,
+        "yoy_pct": null
+      },
+      "2014-01": {
+        "passengers": 357424,
+        "yoy_pct": null
+      },
+      "2014-12": {
+        "passengers": 400166,
+        "yoy_pct": null
+      },
+      "2014-05": {
+        "passengers": 399947,
+        "yoy_pct": null
+      },
+      "2014-02": {
+        "passengers": 347033,
+        "yoy_pct": null
+      },
+      "2014-06": {
+        "passengers": 432204,
+        "yoy_pct": null
+      },
+      "2014-09": {
+        "passengers": 380405,
+        "yoy_pct": null
+      },
+      "2014-07": {
+        "passengers": 487268,
+        "yoy_pct": null
+      },
+      "2014-08": {
+        "passengers": 509631,
+        "yoy_pct": null
+      },
+      "2014-11": {
+        "passengers": 340246,
+        "yoy_pct": null
+      },
+      "2015-10": {
+        "passengers": 366798,
+        "yoy_pct": -7.08
+      },
+      "2015-01": {
+        "passengers": 407330,
+        "yoy_pct": 13.96
+      },
+      "2015-03": {
+        "passengers": 455460,
+        "yoy_pct": 14.56
+      },
+      "2015-04": {
+        "passengers": 404995,
+        "yoy_pct": 9.33
+      },
+      "2015-12": {
+        "passengers": 402956,
+        "yoy_pct": 0.7
+      },
+      "2015-09": {
+        "passengers": 405022,
+        "yoy_pct": 6.47
+      },
+      "2015-11": {
+        "passengers": 356051,
+        "yoy_pct": 4.65
+      },
+      "2015-07": {
+        "passengers": 516938,
+        "yoy_pct": 6.09
+      },
+      "2015-06": {
+        "passengers": 458449,
+        "yoy_pct": 6.07
+      },
+      "2015-08": {
+        "passengers": 529644,
+        "yoy_pct": 3.93
+      },
+      "2015-02": {
+        "passengers": 384028,
+        "yoy_pct": 10.66
+      },
+      "2015-05": {
+        "passengers": 430576,
+        "yoy_pct": 7.66
+      },
+      "2016-02": {
+        "passengers": 412139,
+        "yoy_pct": 7.32
+      },
+      "2016-04": {
+        "passengers": 411889,
+        "yoy_pct": 1.7
+      },
+      "2016-01": {
+        "passengers": 411284,
+        "yoy_pct": 0.97
+      },
+      "2016-11": {
+        "passengers": 393151,
+        "yoy_pct": 10.42
+      },
+      "2016-08": {
+        "passengers": 569275,
+        "yoy_pct": 7.48
+      },
+      "2016-07": {
+        "passengers": 567023,
+        "yoy_pct": 9.69
+      },
+      "2016-09": {
+        "passengers": 460833,
+        "yoy_pct": 13.78
+      },
+      "2016-03": {
+        "passengers": 463718,
+        "yoy_pct": 1.81
+      },
+      "2016-10": {
+        "passengers": 413808,
+        "yoy_pct": 12.82
+      },
+      "2016-12": {
+        "passengers": 459915,
+        "yoy_pct": 14.14
+      },
+      "2016-05": {
+        "passengers": 449582,
+        "yoy_pct": 4.41
+      },
+      "2016-06": {
+        "passengers": 488790,
+        "yoy_pct": 6.62
+      },
+      "2017-08": {
+        "passengers": 636083,
+        "yoy_pct": 11.74
+      },
+      "2017-07": {
+        "passengers": 620542,
+        "yoy_pct": 9.44
+      },
+      "2017-10": {
+        "passengers": 456278,
+        "yoy_pct": 10.26
+      },
+      "2017-06": {
+        "passengers": 552501,
+        "yoy_pct": 13.03
+      },
+      "2017-04": {
+        "passengers": 472163,
+        "yoy_pct": 14.63
+      },
+      "2017-05": {
+        "passengers": 505305,
+        "yoy_pct": 12.39
+      },
+      "2017-09": {
+        "passengers": 494417,
+        "yoy_pct": 7.29
+      },
+      "2017-12": {
+        "passengers": 487198,
+        "yoy_pct": 5.93
+      },
+      "2017-01": {
+        "passengers": 440184,
+        "yoy_pct": 7.03
+      },
+      "2017-03": {
+        "passengers": 508090,
+        "yoy_pct": 9.57
+      },
+      "2017-02": {
+        "passengers": 422225,
+        "yoy_pct": 2.45
+      },
+      "2017-11": {
+        "passengers": 444367,
+        "yoy_pct": 13.03
+      },
+      "2018-07": {
+        "passengers": 645956,
+        "yoy_pct": 4.1
+      },
+      "2018-01": {
+        "passengers": 489535,
+        "yoy_pct": 11.21
+      },
+      "2018-12": {
+        "passengers": 503061,
+        "yoy_pct": 3.26
+      },
+      "2018-03": {
+        "passengers": 540245,
+        "yoy_pct": 6.33
+      },
+      "2018-04": {
+        "passengers": 496577,
+        "yoy_pct": 5.17
+      },
+      "2018-08": {
+        "passengers": 651045,
+        "yoy_pct": 2.35
+      },
+      "2018-09": {
+        "passengers": 516178,
+        "yoy_pct": 4.4
+      },
+      "2018-02": {
+        "passengers": 469705,
+        "yoy_pct": 11.25
+      },
+      "2018-05": {
+        "passengers": 515184,
+        "yoy_pct": 1.96
+      },
+      "2018-11": {
+        "passengers": 463244,
+        "yoy_pct": 4.25
+      },
+      "2018-06": {
+        "passengers": 588951,
+        "yoy_pct": 6.6
+      },
+      "2018-10": {
+        "passengers": 485826,
+        "yoy_pct": 6.48
+      },
+      "2019-01": {
+        "passengers": 505067,
+        "yoy_pct": 3.17
+      },
+      "2019-07": {
+        "passengers": 645998,
+        "yoy_pct": 0.01
+      },
+      "2019-02": {
+        "passengers": 479668,
+        "yoy_pct": 2.12
+      },
+      "2019-06": {
+        "passengers": 583880,
+        "yoy_pct": -0.86
+      },
+      "2019-09": {
+        "passengers": 445938,
+        "yoy_pct": -13.61
+      },
+      "2019-05": {
+        "passengers": 507802,
+        "yoy_pct": -1.43
+      },
+      "2019-04": {
+        "passengers": 520001,
+        "yoy_pct": 4.72
+      },
+      "2019-08": {
+        "passengers": 647101,
+        "yoy_pct": -0.61
+      },
+      "2019-12": {
+        "passengers": 509237,
+        "yoy_pct": 1.23
+      },
+      "2019-03": {
+        "passengers": 550074,
+        "yoy_pct": 1.82
+      },
+      "2019-11": {
+        "passengers": 458564,
+        "yoy_pct": -1.01
+      },
+      "2019-10": {
+        "passengers": 473343,
+        "yoy_pct": -2.57
+      },
+      "2020-11": {
+        "passengers": 25696,
+        "yoy_pct": -94.4
+      },
+      "2020-03": {
+        "passengers": 240235,
+        "yoy_pct": -56.33
+      },
+      "2020-10": {
+        "passengers": 24833,
+        "yoy_pct": -94.75
+      },
+      "2020-07": {
+        "passengers": 18827,
+        "yoy_pct": -97.09
+      },
+      "2020-09": {
+        "passengers": 20534,
+        "yoy_pct": -95.4
+      },
+      "2020-12": {
+        "passengers": 30285,
+        "yoy_pct": -94.05
+      },
+      "2020-08": {
+        "passengers": 21134,
+        "yoy_pct": -96.73
+      },
+      "2020-02": {
+        "passengers": 462602,
+        "yoy_pct": -3.56
+      },
+      "2020-01": {
+        "passengers": 481675,
+        "yoy_pct": -4.63
+      },
+      "2020-05": {
+        "passengers": 6094,
+        "yoy_pct": -98.8
+      },
+      "2020-04": {
+        "passengers": 4957,
+        "yoy_pct": -99.05
+      },
+      "2020-06": {
+        "passengers": 13537,
+        "yoy_pct": -97.68
+      },
+      "2021-12": {
+        "passengers": 209505,
+        "yoy_pct": 591.78
+      },
+      "2021-08": {
+        "passengers": 112143,
+        "yoy_pct": 430.63
+      },
+      "2021-07": {
+        "passengers": 52759,
+        "yoy_pct": 180.23
+      },
+      "2021-05": {
+        "passengers": 13428,
+        "yoy_pct": 120.35
+      },
+      "2021-01": {
+        "passengers": 25039,
+        "yoy_pct": -94.8
+      },
+      "2021-09": {
+        "passengers": 126100,
+        "yoy_pct": 514.1
+      },
+      "2021-11": {
+        "passengers": 185708,
+        "yoy_pct": 622.71
+      },
+      "2021-03": {
+        "passengers": 10511,
+        "yoy_pct": -95.62
+      },
+      "2021-04": {
+        "passengers": 11274,
+        "yoy_pct": 127.44
+      },
+      "2021-10": {
+        "passengers": 179396,
+        "yoy_pct": 622.41
+      },
+      "2021-06": {
+        "passengers": 17316,
+        "yoy_pct": 27.92
+      },
+      "2021-02": {
+        "passengers": 10953,
+        "yoy_pct": -97.63
+      },
+      "2022-03": {
+        "passengers": 283926,
+        "yoy_pct": 2601.23
+      },
+      "2022-01": {
+        "passengers": 131400,
+        "yoy_pct": 424.78
+      },
+      "2022-04": {
+        "passengers": 306308,
+        "yoy_pct": 2616.94
+      },
+      "2022-02": {
+        "passengers": 153100,
+        "yoy_pct": 1297.79
+      },
+      "2022-07": {
+        "passengers": 523502,
+        "yoy_pct": 892.25
+      },
+      "2022-06": {
+        "passengers": 445208,
+        "yoy_pct": 2471.08
+      },
+      "2022-12": {
+        "passengers": 407406,
+        "yoy_pct": 94.46
+      },
+      "2022-09": {
+        "passengers": 444065,
+        "yoy_pct": 252.15
+      },
+      "2022-08": {
+        "passengers": 522268,
+        "yoy_pct": 365.72
+      },
+      "2022-10": {
+        "passengers": 417621,
+        "yoy_pct": 132.79
+      },
+      "2022-05": {
+        "passengers": 326727,
+        "yoy_pct": 2333.18
+      },
+      "2022-11": {
+        "passengers": 400874,
+        "yoy_pct": 115.86
+      },
+      "2023-03": {
+        "passengers": 495681,
+        "yoy_pct": 74.58
+      },
+      "2023-04": {
+        "passengers": 453273,
+        "yoy_pct": 47.98
+      },
+      "2023-12": {
+        "passengers": 482195,
+        "yoy_pct": 18.36
+      },
+      "2023-06": {
+        "passengers": 547984,
+        "yoy_pct": 23.08
+      },
+      "2023-07": {
+        "passengers": 632948,
+        "yoy_pct": 20.91
+      },
+      "2023-10": {
+        "passengers": 473432,
+        "yoy_pct": 13.36
+      },
+      "2023-09": {
+        "passengers": 500316,
+        "yoy_pct": 12.67
+      },
+      "2023-08": {
+        "passengers": 618460,
+        "yoy_pct": 18.42
+      },
+      "2023-05": {
+        "passengers": 463529,
+        "yoy_pct": 41.87
+      },
+      "2023-11": {
+        "passengers": 467731,
+        "yoy_pct": 16.68
+      },
+      "2023-02": {
+        "passengers": 412646,
+        "yoy_pct": 169.53
+      },
+      "2023-01": {
+        "passengers": 426548,
+        "yoy_pct": 224.62
+      },
+      "2024-07": {
+        "passengers": 693254,
+        "yoy_pct": 9.53
+      },
+      "2024-04": {
+        "passengers": 501918,
+        "yoy_pct": 10.73
+      },
+      "2024-05": {
+        "passengers": 579497,
+        "yoy_pct": 25.02
+      },
+      "2024-12": {
+        "passengers": 497822,
+        "yoy_pct": 3.24
+      },
+      "2024-01": {
+        "passengers": 461378,
+        "yoy_pct": 8.17
+      },
+      "2024-02": {
+        "passengers": 456480,
+        "yoy_pct": 10.62
+      },
+      "2024-11": {
+        "passengers": 445518,
+        "yoy_pct": -4.75
+      },
+      "2024-10": {
+        "passengers": 491772,
+        "yoy_pct": 3.87
+      },
+      "2024-08": {
+        "passengers": 690970,
+        "yoy_pct": 11.72
+      },
+      "2024-03": {
+        "passengers": 538827,
+        "yoy_pct": 8.7
+      },
+      "2024-06": {
+        "passengers": 620271,
+        "yoy_pct": 13.19
+      },
+      "2024-09": {
+        "passengers": 565314,
+        "yoy_pct": 12.99
+      },
+      "2025-02": {
+        "passengers": 429671,
+        "yoy_pct": -5.87
+      },
+      "2025-06": {
+        "passengers": 555590,
+        "yoy_pct": -10.43
+      },
+      "2025-07": {
+        "passengers": 664878,
+        "yoy_pct": -4.09
+      },
+      "2025-01": {
+        "passengers": 441664,
+        "yoy_pct": -4.27
+      },
+      "2025-05": {
+        "passengers": 518817,
+        "yoy_pct": -10.47
+      },
+      "2025-10": {
+        "passengers": 446457,
+        "yoy_pct": -9.21
+      },
+      "2025-04": {
+        "passengers": 455930,
+        "yoy_pct": -9.16
+      },
+      "2025-09": {
+        "passengers": 507838,
+        "yoy_pct": -10.17
+      },
+      "2025-08": {
+        "passengers": 520707,
+        "yoy_pct": -24.64
+      },
+      "2025-03": {
+        "passengers": 499024,
+        "yoy_pct": -7.39
+      }
+    },
+    "YYC": {
+      "2014-01": {
+        "passengers": 248208,
+        "yoy_pct": null
+      },
+      "2014-03": {
+        "passengers": 289624,
+        "yoy_pct": null
+      },
+      "2014-04": {
+        "passengers": 269767,
+        "yoy_pct": null
+      },
+      "2014-12": {
+        "passengers": 254085,
+        "yoy_pct": null
+      },
+      "2014-02": {
+        "passengers": 258458,
+        "yoy_pct": null
+      },
+      "2014-07": {
+        "passengers": 272146,
+        "yoy_pct": null
+      },
+      "2014-08": {
+        "passengers": 273445,
+        "yoy_pct": null
+      },
+      "2014-05": {
+        "passengers": 251004,
+        "yoy_pct": null
+      },
+      "2014-10": {
+        "passengers": 268134,
+        "yoy_pct": null
+      },
+      "2014-06": {
+        "passengers": 235111,
+        "yoy_pct": null
+      },
+      "2014-11": {
+        "passengers": 231194,
+        "yoy_pct": null
+      },
+      "2014-09": {
+        "passengers": 238410,
+        "yoy_pct": null
+      },
+      "2015-03": {
+        "passengers": 278873,
+        "yoy_pct": -3.71
+      },
+      "2015-12": {
+        "passengers": 249248,
+        "yoy_pct": -1.9
+      },
+      "2015-04": {
+        "passengers": 252375,
+        "yoy_pct": -6.45
+      },
+      "2015-05": {
+        "passengers": 239998,
+        "yoy_pct": -4.38
+      },
+      "2015-01": {
+        "passengers": 253080,
+        "yoy_pct": 1.96
+      },
+      "2015-10": {
+        "passengers": 241774,
+        "yoy_pct": -9.83
+      },
+      "2015-11": {
+        "passengers": 221106,
+        "yoy_pct": -4.36
+      },
+      "2015-06": {
+        "passengers": 243855,
+        "yoy_pct": 3.72
+      },
+      "2015-09": {
+        "passengers": 239682,
+        "yoy_pct": 0.53
+      },
+      "2015-02": {
+        "passengers": 252524,
+        "yoy_pct": -2.3
+      },
+      "2015-08": {
+        "passengers": 283912,
+        "yoy_pct": 3.83
+      },
+      "2015-07": {
+        "passengers": 284059,
+        "yoy_pct": 4.38
+      },
+      "2016-04": {
+        "passengers": 223141,
+        "yoy_pct": -11.58
+      },
+      "2016-02": {
+        "passengers": 238393,
+        "yoy_pct": -5.6
+      },
+      "2016-10": {
+        "passengers": 238692,
+        "yoy_pct": -1.27
+      },
+      "2016-01": {
+        "passengers": 242259,
+        "yoy_pct": -4.28
+      },
+      "2016-07": {
+        "passengers": 289782,
+        "yoy_pct": 2.01
+      },
+      "2016-12": {
+        "passengers": 237034,
+        "yoy_pct": -4.9
+      },
+      "2016-03": {
+        "passengers": 264189,
+        "yoy_pct": -5.27
+      },
+      "2016-05": {
+        "passengers": 227496,
+        "yoy_pct": -5.21
+      },
+      "2016-06": {
+        "passengers": 241275,
+        "yoy_pct": -1.06
+      },
+      "2016-11": {
+        "passengers": 220127,
+        "yoy_pct": -0.44
+      },
+      "2016-09": {
+        "passengers": 244994,
+        "yoy_pct": 2.22
+      },
+      "2016-08": {
+        "passengers": 285955,
+        "yoy_pct": 0.72
+      },
+      "2017-12": {
+        "passengers": 253846,
+        "yoy_pct": 7.09
+      },
+      "2017-08": {
+        "passengers": 295744,
+        "yoy_pct": 3.42
+      },
+      "2017-02": {
+        "passengers": 243968,
+        "yoy_pct": 2.34
+      },
+      "2017-07": {
+        "passengers": 293727,
+        "yoy_pct": 1.36
+      },
+      "2017-06": {
+        "passengers": 263939,
+        "yoy_pct": 9.39
+      },
+      "2017-10": {
+        "passengers": 256838,
+        "yoy_pct": 7.6
+      },
+      "2017-05": {
+        "passengers": 246483,
+        "yoy_pct": 8.35
+      },
+      "2017-01": {
+        "passengers": 237651,
+        "yoy_pct": -1.9
+      },
+      "2017-03": {
+        "passengers": 281636,
+        "yoy_pct": 6.6
+      },
+      "2017-04": {
+        "passengers": 257636,
+        "yoy_pct": 15.46
+      },
+      "2017-09": {
+        "passengers": 255767,
+        "yoy_pct": 4.4
+      },
+      "2017-11": {
+        "passengers": 237395,
+        "yoy_pct": 7.84
+      },
+      "2018-03": {
+        "passengers": 299758,
+        "yoy_pct": 6.43
+      },
+      "2018-04": {
+        "passengers": 278955,
+        "yoy_pct": 8.27
+      },
+      "2018-07": {
+        "passengers": 299490,
+        "yoy_pct": 1.96
+      },
+      "2018-02": {
+        "passengers": 257412,
+        "yoy_pct": 5.51
+      },
+      "2018-06": {
+        "passengers": 286291,
+        "yoy_pct": 8.47
+      },
+      "2018-08": {
+        "passengers": 307863,
+        "yoy_pct": 4.1
+      },
+      "2018-09": {
+        "passengers": 267888,
+        "yoy_pct": 4.74
+      },
+      "2018-12": {
+        "passengers": 272909,
+        "yoy_pct": 7.51
+      },
+      "2018-01": {
+        "passengers": 254665,
+        "yoy_pct": 7.16
+      },
+      "2018-11": {
+        "passengers": 271166,
+        "yoy_pct": 14.23
+      },
+      "2018-05": {
+        "passengers": 262591,
+        "yoy_pct": 6.54
+      },
+      "2018-10": {
+        "passengers": 269945,
+        "yoy_pct": 5.1
+      },
+      "2019-03": {
+        "passengers": 321431,
+        "yoy_pct": 7.23
+      },
+      "2019-06": {
+        "passengers": 310107,
+        "yoy_pct": 8.32
+      },
+      "2019-10": {
+        "passengers": 289184,
+        "yoy_pct": 7.13
+      },
+      "2019-05": {
+        "passengers": 272603,
+        "yoy_pct": 3.81
+      },
+      "2019-08": {
+        "passengers": 327849,
+        "yoy_pct": 6.49
+      },
+      "2019-09": {
+        "passengers": 282272,
+        "yoy_pct": 5.37
+      },
+      "2019-04": {
+        "passengers": 291119,
+        "yoy_pct": 4.36
+      },
+      "2019-07": {
+        "passengers": 333691,
+        "yoy_pct": 11.42
+      },
+      "2019-12": {
+        "passengers": 276346,
+        "yoy_pct": 1.26
+      },
+      "2019-02": {
+        "passengers": 274886,
+        "yoy_pct": 6.79
+      },
+      "2019-11": {
+        "passengers": 269760,
+        "yoy_pct": -0.52
+      },
+      "2019-01": {
+        "passengers": 268338,
+        "yoy_pct": 5.37
+      },
+      "2020-11": {
+        "passengers": 19757,
+        "yoy_pct": -92.68
+      },
+      "2020-02": {
+        "passengers": 274048,
+        "yoy_pct": -0.3
+      },
+      "2020-09": {
+        "passengers": 9220,
+        "yoy_pct": -96.73
+      },
+      "2020-03": {
+        "passengers": 154613,
+        "yoy_pct": -51.9
+      },
+      "2020-07": {
+        "passengers": 8212,
+        "yoy_pct": -97.54
+      },
+      "2020-08": {
+        "passengers": 10011,
+        "yoy_pct": -96.95
+      },
+      "2020-04": {
+        "passengers": 1654,
+        "yoy_pct": -99.43
+      },
+      "2020-06": {
+        "passengers": 3974,
+        "yoy_pct": -98.72
+      },
+      "2020-12": {
+        "passengers": 30820,
+        "yoy_pct": -88.85
+      },
+      "2020-01": {
+        "passengers": 269287,
+        "yoy_pct": 0.35
+      },
+      "2020-05": {
+        "passengers": 2627,
+        "yoy_pct": -99.04
+      },
+      "2020-10": {
+        "passengers": 13653,
+        "yoy_pct": -95.28
+      },
+      "2021-04": {
+        "passengers": 12447,
+        "yoy_pct": 652.54
+      },
+      "2021-01": {
+        "passengers": 29850,
+        "yoy_pct": -88.92
+      },
+      "2021-07": {
+        "passengers": 28337,
+        "yoy_pct": 245.07
+      },
+      "2021-09": {
+        "passengers": 67906,
+        "yoy_pct": 636.51
+      },
+      "2021-11": {
+        "passengers": 117438,
+        "yoy_pct": 494.41
+      },
+      "2021-03": {
+        "passengers": 9167,
+        "yoy_pct": -94.07
+      },
+      "2021-10": {
+        "passengers": 157950,
+        "yoy_pct": 1056.89
+      },
+      "2021-12": {
+        "passengers": 136152,
+        "yoy_pct": 341.77
+      },
+      "2021-08": {
+        "passengers": 52877,
+        "yoy_pct": 428.19
+      },
+      "2021-06": {
+        "passengers": 13732,
+        "yoy_pct": 245.55
+      },
+      "2021-02": {
+        "passengers": 11921,
+        "yoy_pct": -95.65
+      },
+      "2021-05": {
+        "passengers": 13797,
+        "yoy_pct": 425.2
+      },
+      "2022-07": {
+        "passengers": 258163,
+        "yoy_pct": 811.05
+      },
+      "2022-02": {
+        "passengers": 117046,
+        "yoy_pct": 881.85
+      },
+      "2022-06": {
+        "passengers": 233846,
+        "yoy_pct": 1602.93
+      },
+      "2022-09": {
+        "passengers": 238656,
+        "yoy_pct": 251.45
+      },
+      "2022-01": {
+        "passengers": 93648,
+        "yoy_pct": 213.73
+      },
+      "2022-04": {
+        "passengers": 202492,
+        "yoy_pct": 1526.83
+      },
+      "2022-03": {
+        "passengers": 178473,
+        "yoy_pct": 1846.91
+      },
+      "2022-10": {
+        "passengers": 242689,
+        "yoy_pct": 53.65
+      },
+      "2022-05": {
+        "passengers": 210969,
+        "yoy_pct": 1429.09
+      },
+      "2022-11": {
+        "passengers": 218636,
+        "yoy_pct": 86.17
+      },
+      "2022-08": {
+        "passengers": 248176,
+        "yoy_pct": 369.35
+      },
+      "2022-12": {
+        "passengers": 217390,
+        "yoy_pct": 59.67
+      },
+      "2023-03": {
+        "passengers": 274446,
+        "yoy_pct": 53.77
+      },
+      "2023-08": {
+        "passengers": 376880,
+        "yoy_pct": 51.86
+      },
+      "2023-09": {
+        "passengers": 343398,
+        "yoy_pct": 43.89
+      },
+      "2023-07": {
+        "passengers": 392724,
+        "yoy_pct": 52.12
+      },
+      "2023-05": {
+        "passengers": 278049,
+        "yoy_pct": 31.8
+      },
+      "2023-06": {
+        "passengers": 342314,
+        "yoy_pct": 46.38
+      },
+      "2023-11": {
+        "passengers": 275405,
+        "yoy_pct": 25.97
+      },
+      "2023-01": {
+        "passengers": 223497,
+        "yoy_pct": 138.66
+      },
+      "2023-04": {
+        "passengers": 270229,
+        "yoy_pct": 33.45
+      },
+      "2023-02": {
+        "passengers": 226848,
+        "yoy_pct": 93.81
+      },
+      "2023-12": {
+        "passengers": 281247,
+        "yoy_pct": 29.37
+      },
+      "2023-10": {
+        "passengers": 322506,
+        "yoy_pct": 32.89
+      },
+      "2024-04": {
+        "passengers": 274035,
+        "yoy_pct": 1.41
+      },
+      "2024-07": {
+        "passengers": 430212,
+        "yoy_pct": 9.55
+      },
+      "2024-11": {
+        "passengers": 274857,
+        "yoy_pct": -0.2
+      },
+      "2024-05": {
+        "passengers": 301823,
+        "yoy_pct": 8.55
+      },
+      "2024-02": {
+        "passengers": 275863,
+        "yoy_pct": 21.61
+      },
+      "2024-12": {
+        "passengers": 291041,
+        "yoy_pct": 3.48
+      },
+      "2024-09": {
+        "passengers": 365107,
+        "yoy_pct": 6.32
+      },
+      "2024-03": {
+        "passengers": 307081,
+        "yoy_pct": 11.89
+      },
+      "2024-10": {
+        "passengers": 315158,
+        "yoy_pct": -2.28
+      },
+      "2024-01": {
+        "passengers": 266763,
+        "yoy_pct": 19.36
+      },
+      "2024-06": {
+        "passengers": 358783,
+        "yoy_pct": 4.81
+      },
+      "2024-08": {
+        "passengers": 416665,
+        "yoy_pct": 10.56
+      },
+      "2025-02": {
+        "passengers": 266382,
+        "yoy_pct": -3.44
+      },
+      "2025-01": {
+        "passengers": 261019,
+        "yoy_pct": -2.15
+      },
+      "2025-06": {
+        "passengers": 372335,
+        "yoy_pct": 3.78
+      },
+      "2025-04": {
+        "passengers": 268962,
+        "yoy_pct": -1.85
+      },
+      "2025-05": {
+        "passengers": 307656,
+        "yoy_pct": 1.93
+      },
+      "2025-07": {
+        "passengers": 425247,
+        "yoy_pct": -1.15
+      },
+      "2025-08": {
+        "passengers": 406573,
+        "yoy_pct": -2.42
+      },
+      "2025-03": {
+        "passengers": 303752,
+        "yoy_pct": -1.08
+      },
+      "2025-10": {
+        "passengers": 300878,
+        "yoy_pct": -4.53
+      },
+      "2025-09": {
+        "passengers": 321124,
+        "yoy_pct": -12.05
+      }
+    },
+    "YEG": {
+      "2014-04": {
+        "passengers": 132894,
+        "yoy_pct": null
+      },
+      "2014-12": {
+        "passengers": 119895,
+        "yoy_pct": null
+      },
+      "2014-03": {
+        "passengers": 138991,
+        "yoy_pct": null
+      },
+      "2014-10": {
+        "passengers": 114306,
+        "yoy_pct": null
+      },
+      "2014-05": {
+        "passengers": 110349,
+        "yoy_pct": null
+      },
+      "2014-02": {
+        "passengers": 123884,
+        "yoy_pct": null
+      },
+      "2014-01": {
+        "passengers": 118062,
+        "yoy_pct": null
+      },
+      "2014-11": {
+        "passengers": 120432,
+        "yoy_pct": null
+      },
+      "2014-09": {
+        "passengers": 93401,
+        "yoy_pct": null
+      },
+      "2014-08": {
+        "passengers": 105859,
+        "yoy_pct": null
+      },
+      "2014-06": {
+        "passengers": 91845,
+        "yoy_pct": null
+      },
+      "2014-07": {
+        "passengers": 103556,
+        "yoy_pct": null
+      },
+      "2015-01": {
+        "passengers": 118635,
+        "yoy_pct": 0.49
+      },
+      "2015-10": {
+        "passengers": 96882,
+        "yoy_pct": -15.24
+      },
+      "2015-03": {
+        "passengers": 129972,
+        "yoy_pct": -6.49
+      },
+      "2015-12": {
+        "passengers": 103249,
+        "yoy_pct": -13.88
+      },
+      "2015-04": {
+        "passengers": 119504,
+        "yoy_pct": -10.08
+      },
+      "2015-09": {
+        "passengers": 80236,
+        "yoy_pct": -14.1
+      },
+      "2015-06": {
+        "passengers": 82339,
+        "yoy_pct": -10.35
+      },
+      "2015-07": {
+        "passengers": 92979,
+        "yoy_pct": -10.21
+      },
+      "2015-02": {
+        "passengers": 118100,
+        "yoy_pct": -4.67
+      },
+      "2015-08": {
+        "passengers": 92997,
+        "yoy_pct": -12.15
+      },
+      "2015-05": {
+        "passengers": 95021,
+        "yoy_pct": -13.89
+      },
+      "2015-11": {
+        "passengers": 100294,
+        "yoy_pct": -16.72
+      },
+      "2016-02": {
+        "passengers": 96768,
+        "yoy_pct": -18.06
+      },
+      "2016-03": {
+        "passengers": 95925,
+        "yoy_pct": -26.2
+      },
+      "2016-08": {
+        "passengers": 57454,
+        "yoy_pct": -38.22
+      },
+      "2016-04": {
+        "passengers": 86137,
+        "yoy_pct": -27.92
+      },
+      "2016-06": {
+        "passengers": 62649,
+        "yoy_pct": -23.91
+      },
+      "2016-12": {
+        "passengers": 80216,
+        "yoy_pct": -22.31
+      },
+      "2016-05": {
+        "passengers": 71045,
+        "yoy_pct": -25.23
+      },
+      "2016-01": {
+        "passengers": 100940,
+        "yoy_pct": -14.92
+      },
+      "2016-07": {
+        "passengers": 60671,
+        "yoy_pct": -34.75
+      },
+      "2016-11": {
+        "passengers": 81330,
+        "yoy_pct": -18.91
+      },
+      "2016-10": {
+        "passengers": 72446,
+        "yoy_pct": -25.22
+      },
+      "2016-09": {
+        "passengers": 61855,
+        "yoy_pct": -22.91
+      },
+      "2017-10": {
+        "passengers": 70250,
+        "yoy_pct": -3.03
+      },
+      "2017-05": {
+        "passengers": 64465,
+        "yoy_pct": -9.26
+      },
+      "2017-07": {
+        "passengers": 60792,
+        "yoy_pct": 0.2
+      },
+      "2017-03": {
+        "passengers": 92442,
+        "yoy_pct": -3.63
+      },
+      "2017-01": {
+        "passengers": 85024,
+        "yoy_pct": -15.77
+      },
+      "2017-12": {
+        "passengers": 82409,
+        "yoy_pct": 2.73
+      },
+      "2017-09": {
+        "passengers": 59473,
+        "yoy_pct": -3.85
+      },
+      "2017-11": {
+        "passengers": 82460,
+        "yoy_pct": 1.39
+      },
+      "2017-08": {
+        "passengers": 60960,
+        "yoy_pct": 6.1
+      },
+      "2017-02": {
+        "passengers": 84265,
+        "yoy_pct": -12.92
+      },
+      "2017-06": {
+        "passengers": 54409,
+        "yoy_pct": -13.15
+      },
+      "2017-04": {
+        "passengers": 87349,
+        "yoy_pct": 1.41
+      },
+      "2018-11": {
+        "passengers": 81176,
+        "yoy_pct": -1.56
+      },
+      "2018-01": {
+        "passengers": 88485,
+        "yoy_pct": 4.07
+      },
+      "2018-08": {
+        "passengers": 71629,
+        "yoy_pct": 17.5
+      },
+      "2018-04": {
+        "passengers": 91533,
+        "yoy_pct": 4.79
+      },
+      "2018-02": {
+        "passengers": 91357,
+        "yoy_pct": 8.42
+      },
+      "2018-06": {
+        "passengers": 65086,
+        "yoy_pct": 19.62
+      },
+      "2018-05": {
+        "passengers": 74072,
+        "yoy_pct": 14.9
+      },
+      "2018-09": {
+        "passengers": 65397,
+        "yoy_pct": 9.96
+      },
+      "2018-10": {
+        "passengers": 71838,
+        "yoy_pct": 2.26
+      },
+      "2018-12": {
+        "passengers": 86355,
+        "yoy_pct": 4.79
+      },
+      "2018-03": {
+        "passengers": 99426,
+        "yoy_pct": 7.56
+      },
+      "2018-07": {
+        "passengers": 68828,
+        "yoy_pct": 13.22
+      },
+      "2019-10": {
+        "passengers": 70141,
+        "yoy_pct": -2.36
+      },
+      "2019-05": {
+        "passengers": 63758,
+        "yoy_pct": -13.92
+      },
+      "2019-11": {
+        "passengers": 80256,
+        "yoy_pct": -1.13
+      },
+      "2019-08": {
+        "passengers": 51059,
+        "yoy_pct": -28.72
+      },
+      "2019-07": {
+        "passengers": 49281,
+        "yoy_pct": -28.4
+      },
+      "2019-12": {
+        "passengers": 76629,
+        "yoy_pct": -11.26
+      },
+      "2019-02": {
+        "passengers": 93413,
+        "yoy_pct": 2.25
+      },
+      "2019-03": {
+        "passengers": 94759,
+        "yoy_pct": -4.69
+      },
+      "2019-01": {
+        "passengers": 90167,
+        "yoy_pct": 1.9
+      },
+      "2019-04": {
+        "passengers": 81844,
+        "yoy_pct": -10.59
+      },
+      "2019-09": {
+        "passengers": 52585,
+        "yoy_pct": -19.59
+      },
+      "2019-06": {
+        "passengers": 52038,
+        "yoy_pct": -20.05
+      },
+      "2020-09": {
+        "passengers": 210,
+        "yoy_pct": -99.6
+      },
+      "2020-03": {
+        "passengers": 37711,
+        "yoy_pct": -60.2
+      },
+      "2020-07": {
+        "passengers": 549,
+        "yoy_pct": -98.89
+      },
+      "2020-01": {
+        "passengers": 81530,
+        "yoy_pct": -9.58
+      },
+      "2020-02": {
+        "passengers": 83077,
+        "yoy_pct": -11.06
+      },
+      "2020-08": {
+        "passengers": 201,
+        "yoy_pct": -99.61
+      },
+      "2020-12": {
+        "passengers": 690,
+        "yoy_pct": -99.1
+      },
+      "2020-10": {
+        "passengers": 146,
+        "yoy_pct": -99.79
+      },
+      "2020-04": {
+        "passengers": 399,
+        "yoy_pct": -99.51
+      },
+      "2020-11": {
+        "passengers": 657,
+        "yoy_pct": -99.18
+      },
+      "2020-05": {
+        "passengers": 414,
+        "yoy_pct": -99.35
+      },
+      "2020-06": {
+        "passengers": 747,
+        "yoy_pct": -98.56
+      },
+      "2021-10": {
+        "passengers": 16224,
+        "yoy_pct": 11012.33
+      },
+      "2021-11": {
+        "passengers": 20930,
+        "yoy_pct": 3085.69
+      },
+      "2021-12": {
+        "passengers": 21883,
+        "yoy_pct": 3071.45
+      },
+      "2021-09": {
+        "passengers": 2457,
+        "yoy_pct": 1070.0
+      },
+      "2021-01": {
+        "passengers": 679,
+        "yoy_pct": -99.17
+      },
+      "2021-08": {
+        "passengers": 0,
+        "yoy_pct": -100.0
+      },
+      "2021-03": {
+        "passengers": 457,
+        "yoy_pct": -98.79
+      },
+      "2021-05": {
+        "passengers": 0,
+        "yoy_pct": -100.0
+      },
+      "2021-06": {
+        "passengers": 0,
+        "yoy_pct": -100.0
+      },
+      "2021-04": {
+        "passengers": 6,
+        "yoy_pct": -98.5
+      },
+      "2021-02": {
+        "passengers": 0,
+        "yoy_pct": -100.0
+      },
+      "2021-07": {
+        "passengers": 0,
+        "yoy_pct": -100.0
+      },
+      "2022-04": {
+        "passengers": 42289,
+        "yoy_pct": 704716.67
+      },
+      "2022-10": {
+        "passengers": 44229,
+        "yoy_pct": 172.61
+      },
+      "2022-09": {
+        "passengers": 32287,
+        "yoy_pct": 1214.08
+      },
+      "2022-06": {
+        "passengers": 33458,
+        "yoy_pct": null
+      },
+      "2022-08": {
+        "passengers": 33019,
+        "yoy_pct": null
+      },
+      "2022-01": {
+        "passengers": 13615,
+        "yoy_pct": 1905.15
+      },
+      "2022-05": {
+        "passengers": 36767,
+        "yoy_pct": null
+      },
+      "2022-12": {
+        "passengers": 59945,
+        "yoy_pct": 173.93
+      },
+      "2022-03": {
+        "passengers": 29438,
+        "yoy_pct": 6341.58
+      },
+      "2022-07": {
+        "passengers": 34518,
+        "yoy_pct": null
+      },
+      "2022-11": {
+        "passengers": 60364,
+        "yoy_pct": 188.41
+      },
+      "2022-02": {
+        "passengers": 17648,
+        "yoy_pct": null
+      },
+      "2023-12": {
+        "passengers": 67512,
+        "yoy_pct": 12.62
+      },
+      "2023-04": {
+        "passengers": 71849,
+        "yoy_pct": 69.9
+      },
+      "2023-06": {
+        "passengers": 51735,
+        "yoy_pct": 54.63
+      },
+      "2023-11": {
+        "passengers": 66087,
+        "yoy_pct": 9.48
+      },
+      "2023-02": {
+        "passengers": 67440,
+        "yoy_pct": 282.14
+      },
+      "2023-01": {
+        "passengers": 61476,
+        "yoy_pct": 351.53
+      },
+      "2023-10": {
+        "passengers": 65756,
+        "yoy_pct": 48.67
+      },
+      "2023-07": {
+        "passengers": 54196,
+        "yoy_pct": 57.01
+      },
+      "2023-03": {
+        "passengers": 77462,
+        "yoy_pct": 163.14
+      },
+      "2023-05": {
+        "passengers": 54979,
+        "yoy_pct": 49.53
+      },
+      "2023-09": {
+        "passengers": 53061,
+        "yoy_pct": 64.34
+      },
+      "2023-08": {
+        "passengers": 54605,
+        "yoy_pct": 65.37
+      },
+      "2024-04": {
+        "passengers": 81060,
+        "yoy_pct": 12.82
+      },
+      "2024-05": {
+        "passengers": 76117,
+        "yoy_pct": 38.45
+      },
+      "2024-09": {
+        "passengers": 75722,
+        "yoy_pct": 42.71
+      },
+      "2024-10": {
+        "passengers": 83634,
+        "yoy_pct": 27.19
+      },
+      "2024-03": {
+        "passengers": 85425,
+        "yoy_pct": 10.28
+      },
+      "2024-12": {
+        "passengers": 84554,
+        "yoy_pct": 25.24
+      },
+      "2024-02": {
+        "passengers": 72869,
+        "yoy_pct": 8.05
+      },
+      "2024-07": {
+        "passengers": 85757,
+        "yoy_pct": 58.23
+      },
+      "2024-01": {
+        "passengers": 63134,
+        "yoy_pct": 2.7
+      },
+      "2024-11": {
+        "passengers": 80398,
+        "yoy_pct": 21.65
+      },
+      "2024-06": {
+        "passengers": 77556,
+        "yoy_pct": 49.91
+      },
+      "2024-08": {
+        "passengers": 86532,
+        "yoy_pct": 58.47
+      },
+      "2025-01": {
+        "passengers": 74097,
+        "yoy_pct": 17.36
+      },
+      "2025-02": {
+        "passengers": 78705,
+        "yoy_pct": 8.01
+      },
+      "2025-04": {
+        "passengers": 79008,
+        "yoy_pct": -2.53
+      },
+      "2025-08": {
+        "passengers": 64017,
+        "yoy_pct": -26.02
+      },
+      "2025-05": {
+        "passengers": 63103,
+        "yoy_pct": -17.1
+      },
+      "2025-06": {
+        "passengers": 57717,
+        "yoy_pct": -25.58
+      },
+      "2025-03": {
+        "passengers": 87875,
+        "yoy_pct": 2.87
+      },
+      "2025-10": {
+        "passengers": 66506,
+        "yoy_pct": -20.48
+      },
+      "2025-07": {
+        "passengers": 61327,
+        "yoy_pct": -28.49
+      },
+      "2025-09": {
+        "passengers": 55866,
+        "yoy_pct": -26.22
+      }
+    },
+    "YXE": {
+      "2014-01": {
+        "passengers": 19471,
+        "yoy_pct": null
+      },
+      "2014-10": {
+        "passengers": 15554,
+        "yoy_pct": null
+      },
+      "2014-09": {
+        "passengers": 14623,
+        "yoy_pct": null
+      },
+      "2014-02": {
+        "passengers": 18850,
+        "yoy_pct": null
+      },
+      "2014-04": {
+        "passengers": 18839,
+        "yoy_pct": null
+      },
+      "2014-12": {
+        "passengers": 17286,
+        "yoy_pct": null
+      },
+      "2014-11": {
+        "passengers": 17809,
+        "yoy_pct": null
+      },
+      "2014-03": {
+        "passengers": 19921,
+        "yoy_pct": null
+      },
+      "2014-07": {
+        "passengers": 16693,
+        "yoy_pct": null
+      },
+      "2014-06": {
+        "passengers": 14955,
+        "yoy_pct": null
+      },
+      "2014-05": {
+        "passengers": 15370,
+        "yoy_pct": null
+      },
+      "2014-08": {
+        "passengers": 17131,
+        "yoy_pct": null
+      },
+      "2015-09": {
+        "passengers": 9045,
+        "yoy_pct": -38.15
+      },
+      "2015-02": {
+        "passengers": 16855,
+        "yoy_pct": -10.58
+      },
+      "2015-05": {
+        "passengers": 10540,
+        "yoy_pct": -31.42
+      },
+      "2015-10": {
+        "passengers": 10882,
+        "yoy_pct": -30.04
+      },
+      "2015-04": {
+        "passengers": 12845,
+        "yoy_pct": -31.82
+      },
+      "2015-12": {
+        "passengers": 12009,
+        "yoy_pct": -30.53
+      },
+      "2015-01": {
+        "passengers": 18216,
+        "yoy_pct": -6.45
+      },
+      "2015-11": {
+        "passengers": 12902,
+        "yoy_pct": -27.55
+      },
+      "2015-03": {
+        "passengers": 13992,
+        "yoy_pct": -29.76
+      },
+      "2015-07": {
+        "passengers": 10228,
+        "yoy_pct": -38.73
+      },
+      "2015-08": {
+        "passengers": 10330,
+        "yoy_pct": -39.7
+      },
+      "2015-06": {
+        "passengers": 9456,
+        "yoy_pct": -36.77
+      },
+      "2016-05": {
+        "passengers": 7781,
+        "yoy_pct": -26.18
+      },
+      "2016-11": {
+        "passengers": 12480,
+        "yoy_pct": -3.27
+      },
+      "2016-10": {
+        "passengers": 10882,
+        "yoy_pct": 0.0
+      },
+      "2016-07": {
+        "passengers": 8434,
+        "yoy_pct": -17.54
+      },
+      "2016-03": {
+        "passengers": 13227,
+        "yoy_pct": -5.47
+      },
+      "2016-09": {
+        "passengers": 7125,
+        "yoy_pct": -21.23
+      },
+      "2016-12": {
+        "passengers": 12569,
+        "yoy_pct": 4.66
+      },
+      "2016-02": {
+        "passengers": 12682,
+        "yoy_pct": -24.76
+      },
+      "2016-04": {
+        "passengers": 12452,
+        "yoy_pct": -3.06
+      },
+      "2016-01": {
+        "passengers": 13301,
+        "yoy_pct": -26.98
+      },
+      "2016-08": {
+        "passengers": 8610,
+        "yoy_pct": -16.65
+      },
+      "2016-06": {
+        "passengers": 7708,
+        "yoy_pct": -18.49
+      },
+      "2017-09": {
+        "passengers": 7357,
+        "yoy_pct": 3.26
+      },
+      "2017-01": {
+        "passengers": 12907,
+        "yoy_pct": -2.96
+      },
+      "2017-12": {
+        "passengers": 12264,
+        "yoy_pct": -2.43
+      },
+      "2017-05": {
+        "passengers": 6904,
+        "yoy_pct": -11.27
+      },
+      "2017-10": {
+        "passengers": 11117,
+        "yoy_pct": 2.16
+      },
+      "2017-02": {
+        "passengers": 12445,
+        "yoy_pct": -1.87
+      },
+      "2017-11": {
+        "passengers": 14725,
+        "yoy_pct": 17.99
+      },
+      "2017-03": {
+        "passengers": 13508,
+        "yoy_pct": 2.12
+      },
+      "2017-04": {
+        "passengers": 11895,
+        "yoy_pct": -4.47
+      },
+      "2017-08": {
+        "passengers": 8281,
+        "yoy_pct": -3.82
+      },
+      "2017-07": {
+        "passengers": 7718,
+        "yoy_pct": -8.49
+      },
+      "2017-06": {
+        "passengers": 6926,
+        "yoy_pct": -10.15
+      },
+      "2018-05": {
+        "passengers": 6977,
+        "yoy_pct": 1.06
+      },
+      "2018-11": {
+        "passengers": 13132,
+        "yoy_pct": -10.82
+      },
+      "2018-12": {
+        "passengers": 12326,
+        "yoy_pct": 0.51
+      },
+      "2018-01": {
+        "passengers": 12457,
+        "yoy_pct": -3.49
+      },
+      "2018-10": {
+        "passengers": 10726,
+        "yoy_pct": -3.52
+      },
+      "2018-04": {
+        "passengers": 12304,
+        "yoy_pct": 3.44
+      },
+      "2018-03": {
+        "passengers": 13532,
+        "yoy_pct": 0.18
+      },
+      "2018-02": {
+        "passengers": 13147,
+        "yoy_pct": 5.64
+      },
+      "2018-09": {
+        "passengers": 8374,
+        "yoy_pct": 13.82
+      },
+      "2018-06": {
+        "passengers": 7188,
+        "yoy_pct": 3.78
+      },
+      "2018-08": {
+        "passengers": 8412,
+        "yoy_pct": 1.58
+      },
+      "2018-07": {
+        "passengers": 7898,
+        "yoy_pct": 2.33
+      },
+      "2019-11": {
+        "passengers": 11393,
+        "yoy_pct": -13.24
+      },
+      "2019-01": {
+        "passengers": 13383,
+        "yoy_pct": 7.43
+      },
+      "2019-10": {
+        "passengers": 12009,
+        "yoy_pct": 11.96
+      },
+      "2019-12": {
+        "passengers": 10041,
+        "yoy_pct": -18.54
+      },
+      "2019-02": {
+        "passengers": 13147,
+        "yoy_pct": 0.0
+      },
+      "2019-04": {
+        "passengers": 12047,
+        "yoy_pct": -2.09
+      },
+      "2019-03": {
+        "passengers": 14774,
+        "yoy_pct": 9.18
+      },
+      "2019-05": {
+        "passengers": 6866,
+        "yoy_pct": -1.59
+      },
+      "2019-06": {
+        "passengers": 7306,
+        "yoy_pct": 1.64
+      },
+      "2019-07": {
+        "passengers": 7571,
+        "yoy_pct": -4.14
+      },
+      "2019-09": {
+        "passengers": 9610,
+        "yoy_pct": 14.76
+      },
+      "2019-08": {
+        "passengers": 7539,
+        "yoy_pct": -10.38
+      },
+      "2020-11": {
+        "passengers": 2,
+        "yoy_pct": -99.98
+      },
+      "2020-02": {
+        "passengers": 13349,
+        "yoy_pct": 1.54
+      },
+      "2020-01": {
+        "passengers": 12450,
+        "yoy_pct": -6.97
+      },
+      "2020-03": {
+        "passengers": 7144,
+        "yoy_pct": -51.64
+      },
+      "2020-04": {
+        "passengers": 38,
+        "yoy_pct": -99.68
+      },
+      "2021-08": {
+        "passengers": 5,
+        "yoy_pct": null
+      },
+      "2021-02": {
+        "passengers": 4,
+        "yoy_pct": -99.97
+      },
+      "2021-11": {
+        "passengers": 3,
+        "yoy_pct": 50.0
+      },
+      "2021-01": {
+        "passengers": 2,
+        "yoy_pct": -99.98
+      },
+      "2021-12": {
+        "passengers": 3,
+        "yoy_pct": null
+      },
+      "2022-12": {
+        "passengers": 4076,
+        "yoy_pct": 135766.67
+      },
+      "2022-05": {
+        "passengers": 3,
+        "yoy_pct": null
+      },
+      "2022-04": {
+        "passengers": 667,
+        "yoy_pct": null
+      },
+      "2022-06": {
+        "passengers": 6,
+        "yoy_pct": null
+      },
+      "2022-08": {
+        "passengers": 4,
+        "yoy_pct": -20.0
+      },
+      "2022-10": {
+        "passengers": 10,
+        "yoy_pct": null
+      },
+      "2022-03": {
+        "passengers": 540,
+        "yoy_pct": null
+      },
+      "2022-11": {
+        "passengers": 3432,
+        "yoy_pct": 114300.0
+      },
+      "2023-07": {
+        "passengers": 2942,
+        "yoy_pct": null
+      },
+      "2023-02": {
+        "passengers": 4411,
+        "yoy_pct": null
+      },
+      "2023-03": {
+        "passengers": 6134,
+        "yoy_pct": 1035.93
+      },
+      "2023-10": {
+        "passengers": 5801,
+        "yoy_pct": 57910.0
+      },
+      "2023-04": {
+        "passengers": 3907,
+        "yoy_pct": 485.76
+      },
+      "2023-12": {
+        "passengers": 6559,
+        "yoy_pct": 60.92
+      },
+      "2023-11": {
+        "passengers": 5960,
+        "yoy_pct": 73.66
+      },
+      "2023-01": {
+        "passengers": 3719,
+        "yoy_pct": null
+      },
+      "2023-06": {
+        "passengers": 1317,
+        "yoy_pct": 21850.0
+      },
+      "2023-09": {
+        "passengers": 2719,
+        "yoy_pct": null
+      },
+      "2023-08": {
+        "passengers": 2964,
+        "yoy_pct": 74000.0
+      },
+      "2024-01": {
+        "passengers": 7261,
+        "yoy_pct": 95.24
+      },
+      "2024-03": {
+        "passengers": 9432,
+        "yoy_pct": 53.77
+      },
+      "2024-04": {
+        "passengers": 8917,
+        "yoy_pct": 128.23
+      },
+      "2024-07": {
+        "passengers": 6313,
+        "yoy_pct": 114.58
+      },
+      "2024-02": {
+        "passengers": 8484,
+        "yoy_pct": 92.34
+      },
+      "2024-12": {
+        "passengers": 8398,
+        "yoy_pct": 28.04
+      },
+      "2024-10": {
+        "passengers": 8625,
+        "yoy_pct": 48.68
+      },
+      "2024-05": {
+        "passengers": 9338,
+        "yoy_pct": null
+      },
+      "2024-09": {
+        "passengers": 6256,
+        "yoy_pct": 130.08
+      },
+      "2024-11": {
+        "passengers": 6511,
+        "yoy_pct": 9.24
+      },
+      "2024-06": {
+        "passengers": 5024,
+        "yoy_pct": 281.47
+      },
+      "2024-08": {
+        "passengers": 6833,
+        "yoy_pct": 130.53
+      },
+      "2025-04": {
+        "passengers": 6881,
+        "yoy_pct": -22.83
+      },
+      "2025-10": {
+        "passengers": 6791,
+        "yoy_pct": -21.26
+      },
+      "2025-02": {
+        "passengers": 7783,
+        "yoy_pct": -8.26
+      },
+      "2025-09": {
+        "passengers": 5529,
+        "yoy_pct": -11.62
+      },
+      "2025-07": {
+        "passengers": 6927,
+        "yoy_pct": 9.73
+      },
+      "2025-03": {
+        "passengers": 7230,
+        "yoy_pct": -23.35
+      },
+      "2025-01": {
+        "passengers": 6955,
+        "yoy_pct": -4.21
+      },
+      "2025-08": {
+        "passengers": 7064,
+        "yoy_pct": 3.38
+      },
+      "2025-06": {
+        "passengers": 5685,
+        "yoy_pct": 13.16
+      },
+      "2025-05": {
+        "passengers": 4747,
+        "yoy_pct": -49.16
+      }
+    },
+    "YLW": {
+      "2014-01": {
+        "passengers": 17195,
+        "yoy_pct": null
+      },
+      "2014-10": {
+        "passengers": 10314,
+        "yoy_pct": null
+      },
+      "2014-04": {
+        "passengers": 13059,
+        "yoy_pct": null
+      },
+      "2014-02": {
+        "passengers": 17276,
+        "yoy_pct": null
+      },
+      "2014-12": {
+        "passengers": 15898,
+        "yoy_pct": null
+      },
+      "2014-11": {
+        "passengers": 14194,
+        "yoy_pct": null
+      },
+      "2014-03": {
+        "passengers": 18593,
+        "yoy_pct": null
+      },
+      "2014-06": {
+        "passengers": 7584,
+        "yoy_pct": null
+      },
+      "2014-09": {
+        "passengers": 9169,
+        "yoy_pct": null
+      },
+      "2014-07": {
+        "passengers": 9159,
+        "yoy_pct": null
+      },
+      "2014-08": {
+        "passengers": 10674,
+        "yoy_pct": null
+      },
+      "2014-05": {
+        "passengers": 9425,
+        "yoy_pct": null
+      },
+      "2015-02": {
+        "passengers": 16356,
+        "yoy_pct": -5.33
+      },
+      "2015-10": {
+        "passengers": 7841,
+        "yoy_pct": -23.98
+      },
+      "2015-05": {
+        "passengers": 7144,
+        "yoy_pct": -24.2
+      },
+      "2015-12": {
+        "passengers": 12855,
+        "yoy_pct": -19.14
+      },
+      "2015-03": {
+        "passengers": 17833,
+        "yoy_pct": -4.09
+      },
+      "2015-11": {
+        "passengers": 10916,
+        "yoy_pct": -23.09
+      },
+      "2015-04": {
+        "passengers": 10890,
+        "yoy_pct": -16.61
+      },
+      "2015-01": {
+        "passengers": 16570,
+        "yoy_pct": -3.63
+      },
+      "2015-09": {
+        "passengers": 6767,
+        "yoy_pct": -26.2
+      },
+      "2015-06": {
+        "passengers": 6106,
+        "yoy_pct": -19.49
+      },
+      "2015-08": {
+        "passengers": 7417,
+        "yoy_pct": -30.51
+      },
+      "2015-07": {
+        "passengers": 7105,
+        "yoy_pct": -22.43
+      },
+      "2016-09": {
+        "passengers": 6669,
+        "yoy_pct": -1.45
+      },
+      "2016-01": {
+        "passengers": 13919,
+        "yoy_pct": -16.0
+      },
+      "2016-07": {
+        "passengers": 6642,
+        "yoy_pct": -6.52
+      },
+      "2016-05": {
+        "passengers": 5701,
+        "yoy_pct": -20.2
+      },
+      "2016-10": {
+        "passengers": 8319,
+        "yoy_pct": 6.1
+      },
+      "2016-12": {
+        "passengers": 12872,
+        "yoy_pct": 0.13
+      },
+      "2016-03": {
+        "passengers": 13711,
+        "yoy_pct": -23.11
+      },
+      "2016-08": {
+        "passengers": 7754,
+        "yoy_pct": 4.54
+      },
+      "2016-11": {
+        "passengers": 9877,
+        "yoy_pct": -9.52
+      },
+      "2016-04": {
+        "passengers": 7675,
+        "yoy_pct": -29.52
+      },
+      "2016-02": {
+        "passengers": 13596,
+        "yoy_pct": -16.87
+      },
+      "2016-06": {
+        "passengers": 4823,
+        "yoy_pct": -21.01
+      },
+      "2017-10": {
+        "passengers": 5736,
+        "yoy_pct": -31.05
+      },
+      "2017-01": {
+        "passengers": 14781,
+        "yoy_pct": 6.19
+      },
+      "2017-05": {
+        "passengers": 5932,
+        "yoy_pct": 4.05
+      },
+      "2017-12": {
+        "passengers": 9483,
+        "yoy_pct": -26.33
+      },
+      "2017-04": {
+        "passengers": 9740,
+        "yoy_pct": 26.91
+      },
+      "2017-03": {
+        "passengers": 14840,
+        "yoy_pct": 8.23
+      },
+      "2017-02": {
+        "passengers": 13469,
+        "yoy_pct": -0.93
+      },
+      "2017-06": {
+        "passengers": 4753,
+        "yoy_pct": -1.45
+      },
+      "2017-11": {
+        "passengers": 7157,
+        "yoy_pct": -27.54
+      },
+      "2017-09": {
+        "passengers": 4985,
+        "yoy_pct": -25.25
+      },
+      "2017-08": {
+        "passengers": 6332,
+        "yoy_pct": -18.34
+      },
+      "2017-07": {
+        "passengers": 5443,
+        "yoy_pct": -18.05
+      },
+      "2018-03": {
+        "passengers": 12570,
+        "yoy_pct": -15.3
+      },
+      "2018-01": {
+        "passengers": 11595,
+        "yoy_pct": -21.55
+      },
+      "2018-09": {
+        "passengers": 5385,
+        "yoy_pct": 8.02
+      },
+      "2018-02": {
+        "passengers": 11733,
+        "yoy_pct": -12.89
+      },
+      "2018-11": {
+        "passengers": 7070,
+        "yoy_pct": -1.22
+      },
+      "2018-10": {
+        "passengers": 6117,
+        "yoy_pct": 6.64
+      },
+      "2018-04": {
+        "passengers": 6741,
+        "yoy_pct": -30.79
+      },
+      "2018-12": {
+        "passengers": 8483,
+        "yoy_pct": -10.55
+      },
+      "2018-05": {
+        "passengers": 6099,
+        "yoy_pct": 2.82
+      },
+      "2018-06": {
+        "passengers": 5459,
+        "yoy_pct": 14.85
+      },
+      "2018-08": {
+        "passengers": 6804,
+        "yoy_pct": 7.45
+      },
+      "2018-07": {
+        "passengers": 6588,
+        "yoy_pct": 21.04
+      },
+      "2019-11": {
+        "passengers": 5307,
+        "yoy_pct": -24.94
+      },
+      "2019-03": {
+        "passengers": 12502,
+        "yoy_pct": -0.54
+      },
+      "2019-02": {
+        "passengers": 11292,
+        "yoy_pct": -3.76
+      },
+      "2019-05": {
+        "passengers": 6472,
+        "yoy_pct": 6.12
+      },
+      "2019-01": {
+        "passengers": 10651,
+        "yoy_pct": -8.14
+      },
+      "2019-04": {
+        "passengers": 7200,
+        "yoy_pct": 6.81
+      },
+      "2019-10": {
+        "passengers": 4355,
+        "yoy_pct": -28.8
+      },
+      "2019-12": {
+        "passengers": 7292,
+        "yoy_pct": -14.04
+      },
+      "2019-06": {
+        "passengers": 6177,
+        "yoy_pct": 13.15
+      },
+      "2019-09": {
+        "passengers": 4026,
+        "yoy_pct": -25.24
+      },
+      "2019-08": {
+        "passengers": 6905,
+        "yoy_pct": 1.48
+      },
+      "2019-07": {
+        "passengers": 7213,
+        "yoy_pct": 9.49
+      },
+      "2020-07": {
+        "passengers": 4,
+        "yoy_pct": -99.94
+      },
+      "2020-01": {
+        "passengers": 10802,
+        "yoy_pct": 1.42
+      },
+      "2020-04": {
+        "passengers": 99,
+        "yoy_pct": -98.62
+      },
+      "2020-12": {
+        "passengers": 2,
+        "yoy_pct": -99.97
+      },
+      "2020-02": {
+        "passengers": 10926,
+        "yoy_pct": -3.24
+      },
+      "2020-05": {
+        "passengers": 1,
+        "yoy_pct": -99.98
+      },
+      "2020-03": {
+        "passengers": 7306,
+        "yoy_pct": -41.56
+      },
+      "2021-03": {
+        "passengers": 0,
+        "yoy_pct": -100.0
+      },
+      "2021-01": {
+        "passengers": 0,
+        "yoy_pct": -100.0
+      },
+      "2021-11": {
+        "passengers": 2,
+        "yoy_pct": null
+      },
+      "2021-09": {
+        "passengers": 12,
+        "yoy_pct": null
+      },
+      "2021-12": {
+        "passengers": 1546,
+        "yoy_pct": 77200.0
+      },
+      "2021-02": {
+        "passengers": 0,
+        "yoy_pct": -100.0
+      },
+      "2021-08": {
+        "passengers": 0,
+        "yoy_pct": null
+      },
+      "2022-02": {
+        "passengers": 3103,
+        "yoy_pct": null
+      },
+      "2022-04": {
+        "passengers": 3822,
+        "yoy_pct": null
+      },
+      "2022-06": {
+        "passengers": 2393,
+        "yoy_pct": null
+      },
+      "2022-10": {
+        "passengers": 3922,
+        "yoy_pct": null
+      },
+      "2022-01": {
+        "passengers": 2662,
+        "yoy_pct": null
+      },
+      "2022-05": {
+        "passengers": 2980,
+        "yoy_pct": null
+      },
+      "2022-12": {
+        "passengers": 4674,
+        "yoy_pct": 202.33
+      },
+      "2022-03": {
+        "passengers": 4534,
+        "yoy_pct": null
+      },
+      "2022-07": {
+        "passengers": 3191,
+        "yoy_pct": null
+      },
+      "2022-09": {
+        "passengers": 3731,
+        "yoy_pct": 30991.67
+      },
+      "2022-08": {
+        "passengers": 3392,
+        "yoy_pct": null
+      },
+      "2022-11": {
+        "passengers": 4391,
+        "yoy_pct": 219450.0
+      },
+      "2023-01": {
+        "passengers": 4909,
+        "yoy_pct": 84.41
+      },
+      "2023-04": {
+        "passengers": 2324,
+        "yoy_pct": -39.19
+      },
+      "2023-03": {
+        "passengers": 3837,
+        "yoy_pct": -15.37
+      },
+      "2023-06": {
+        "passengers": 7,
+        "yoy_pct": -99.71
+      },
+      "2023-09": {
+        "passengers": 16,
+        "yoy_pct": -99.57
+      },
+      "2023-08": {
+        "passengers": 17,
+        "yoy_pct": -99.5
+      },
+      "2023-02": {
+        "passengers": 4404,
+        "yoy_pct": 41.93
+      },
+      "2023-07": {
+        "passengers": 4,
+        "yoy_pct": -99.87
+      },
+      "2023-05": {
+        "passengers": 3,
+        "yoy_pct": -99.9
+      },
+      "2023-12": {
+        "passengers": 4631,
+        "yoy_pct": -0.92
+      },
+      "2023-11": {
+        "passengers": 934,
+        "yoy_pct": -78.73
+      },
+      "2024-04": {
+        "passengers": 5228,
+        "yoy_pct": 124.96
+      },
+      "2024-08": {
+        "passengers": 15,
+        "yoy_pct": -11.76
+      },
+      "2024-03": {
+        "passengers": 8449,
+        "yoy_pct": 120.2
+      },
+      "2024-05": {
+        "passengers": 592,
+        "yoy_pct": 19633.33
+      },
+      "2024-06": {
+        "passengers": 29,
+        "yoy_pct": 314.29
+      },
+      "2024-01": {
+        "passengers": 7328,
+        "yoy_pct": 49.28
+      },
+      "2024-07": {
+        "passengers": 3,
+        "yoy_pct": -25.0
+      },
+      "2024-02": {
+        "passengers": 6991,
+        "yoy_pct": 58.74
+      },
+      "2024-12": {
+        "passengers": 6368,
+        "yoy_pct": 37.51
+      },
+      "2024-10": {
+        "passengers": 200,
+        "yoy_pct": null
+      },
+      "2024-11": {
+        "passengers": 2237,
+        "yoy_pct": 139.51
+      },
+      "2025-01": {
+        "passengers": 12801,
+        "yoy_pct": 74.69
+      },
+      "2025-03": {
+        "passengers": 15301,
+        "yoy_pct": 81.1
+      },
+      "2025-07": {
+        "passengers": 4114,
+        "yoy_pct": 137033.33
+      },
+      "2025-10": {
+        "passengers": 4441,
+        "yoy_pct": 2120.5
+      },
+      "2025-02": {
+        "passengers": 15237,
+        "yoy_pct": 117.95
+      },
+      "2025-04": {
+        "passengers": 5847,
+        "yoy_pct": 11.84
+      },
+      "2025-05": {
+        "passengers": 4959,
+        "yoy_pct": 737.67
+      },
+      "2025-06": {
+        "passengers": 3473,
+        "yoy_pct": 11875.86
+      },
+      "2025-09": {
+        "passengers": 3959,
+        "yoy_pct": null
+      },
+      "2025-08": {
+        "passengers": 4147,
+        "yoy_pct": 27546.67
+      }
+    },
+    "YXC": {
+      "2017-08": {
+        "passengers": 2,
+        "yoy_pct": null
+      },
+      "2018-08": {
+        "passengers": 0,
+        "yoy_pct": -100.0
+      },
+      "2018-07": {
+        "passengers": 0,
+        "yoy_pct": null
+      },
+      "2018-11": {
+        "passengers": 0,
+        "yoy_pct": null
+      },
+      "2021-02": {
+        "passengers": 0,
+        "yoy_pct": null
+      },
+      "2022-03": {
+        "passengers": 1,
+        "yoy_pct": null
+      },
+      "2022-04": {
+        "passengers": 147,
+        "yoy_pct": null
+      }
+    }
+  },
+  "data_sources": {
+    "YVR": {
+      "source": "BTS T-100 International",
+      "last_month_available": "2025-10"
+    },
+    "YYC": {
+      "source": "BTS T-100 International",
+      "last_month_available": "2025-10"
+    },
+    "YEG": {
+      "source": "BTS T-100 International",
+      "last_month_available": "2025-10"
+    },
+    "YXE": {
+      "source": "BTS T-100 International",
+      "last_month_available": "2025-10"
+    },
+    "YLW": {
+      "source": "BTS T-100 International",
+      "last_month_available": "2025-10"
+    },
+    "YXC": {
+      "source": "BTS T-100 International",
+      "last_month_available": "2022-04"
+    }
+  }
+}

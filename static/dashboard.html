@@ -1,0 +1,2297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economic Dashboard | NixVir</title>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+
+    <!-- Google Fonts - matching snow-cover -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E2QD5PNRWE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-E2QD5PNRWE');
+    </script>
+
+    <style>
+        :root {
+            --bg-deep: #0a0e14;
+            --bg-card: #111820;
+            --bg-elevated: #1a2230;
+            --border: #2a3444;
+            --border-light: #3a4454;
+            --text-primary: #e8ecf2;
+            --text-secondary: #8892a2;
+            --text-muted: #5c6678;
+            --accent-blue: #3b82f6;
+            --accent-blue-bright: #60a5fa;
+            --accent-green: #10b981;
+            --accent-orange: #f97316;
+            --accent-red: #ef4444;
+            --accent-purple: #a855f7;
+            --accent-yellow: #eab308;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 15% 10%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 85% 90%, rgba(16, 185, 129, 0.04) 0%, transparent 50%),
+                var(--bg-deep);
+            z-index: -1;
+        }
+
+        /* Site Navigation Bar */
+        .site-nav {
+            background: #000;
+            padding: 0.75rem 1rem 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .site-nav-logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .site-nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .site-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            list-style: none;
+        }
+
+        .site-nav-links li {
+            padding-right: 1rem;
+        }
+
+        .site-nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 400;
+            transition: color 0.2s;
+        }
+
+        .site-nav-links a:hover,
+        .site-nav-links .current {
+            color: #fff;
+        }
+
+        .last-updated {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        /* Dashboard Container */
+        .dashboard {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .header-left h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.35rem;
+        }
+
+        .header-left h1 span {
+            color: var(--accent-blue-bright);
+        }
+
+        .header-left .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        /* Accordion Sections */
+        .accordion-section {
+            margin-bottom: 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.25rem;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s;
+        }
+
+        .accordion-header:hover {
+            background: var(--bg-elevated);
+        }
+
+        .accordion-header h3 {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-icon {
+            font-size: 1.1rem;
+        }
+
+        .metric-count {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .accordion-arrow {
+            font-size: 1rem;
+            color: var(--text-muted);
+            transition: transform 0.3s;
+        }
+
+        .accordion-section.open .accordion-arrow {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .accordion-section.open .accordion-content {
+            max-height: none;
+        }
+
+        .accordion-inner {
+            padding: 1.25rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Dashboard Grid */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        /* Metric Cards */
+        .metric-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .metric-card:hover {
+            border-color: var(--border-light);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .metric-card h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .metric-card h4 a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .metric-card h4 a:hover {
+            color: var(--accent-blue-bright);
+        }
+
+        .value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .period {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .chart-container {
+            height: 100px;
+            margin-top: 0.75rem;
+        }
+
+        /* Change Indicators */
+        .change-indicator {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            align-items: center;
+        }
+
+        .change-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .change-pill.positive {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--accent-green);
+        }
+
+        .change-pill.negative {
+            background: rgba(239, 68, 68, 0.2);
+            color: var(--accent-red);
+        }
+
+        .change-pill.neutral {
+            background: rgba(59, 130, 246, 0.2);
+            color: var(--accent-blue-bright);
+        }
+
+        .change-pill .arrow {
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .change-secondary {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            padding: 0.2rem 0.4rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 3px;
+        }
+
+        /* Section Intros */
+        .section-intro {
+            background: rgba(59, 130, 246, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.25rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .section-intro strong {
+            color: var(--text-primary);
+        }
+
+        .section-intro a {
+            color: var(--accent-blue-bright);
+            text-decoration: none;
+        }
+
+        .section-intro a:hover {
+            text-decoration: underline;
+        }
+
+        /* Subsection Headers */
+        .subsection-header {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 1.5rem 0 0.75rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-blue);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .subsection-header.green { border-color: var(--accent-green); }
+        .subsection-header.orange { border-color: var(--accent-orange); }
+        .subsection-header.purple { border-color: var(--accent-purple); }
+        .subsection-header.red { border-color: var(--accent-red); }
+
+        .subsection-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        /* Tooltip Icons */
+        .tooltip-icon {
+            cursor: help;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-left: 0.25rem;
+        }
+
+        .tooltip-icon:hover {
+            color: var(--accent-blue-bright);
+        }
+
+        /* Region Filter Buttons */
+        .region-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .region-filter {
+            padding: 0.5rem 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--bg-elevated);
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .region-filter:hover {
+            background: var(--bg-card);
+            border-color: var(--accent-blue);
+            color: var(--text-primary);
+        }
+
+        .region-filter.active {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+            color: white;
+        }
+
+        /* Special Card Styles */
+        .ski-airport-card .resort-tag {
+            font-size: 0.75rem;
+            color: var(--accent-green);
+            margin-top: 0.5rem;
+        }
+
+        .airport-code {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* Prediction Cards */
+        .prediction-card {
+            min-height: 260px;
+        }
+
+        .consensus-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .consensus-value.positive { color: var(--accent-green); }
+        .consensus-value.negative { color: var(--accent-red); }
+        .consensus-value.neutral { color: var(--accent-blue-bright); }
+
+        .consensus-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        .prediction-meta {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            text-align: right;
+        }
+
+        .prediction-sources {
+            margin-top: 0.5rem;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .resolves-date {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-blue-bright);
+            margin-top: 0.35rem;
+            margin-left: 0;
+        }
+
+        .card-description {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .source-tag {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            background: rgba(71, 85, 105, 0.3);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            text-transform: capitalize;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1200px) {
+            .site-nav-links a {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .site-nav {
+                padding: 0.5rem 1rem;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .site-nav-logo img {
+                height: 32px;
+            }
+
+            .site-nav-links {
+                flex-wrap: wrap;
+            }
+
+            .site-nav-links li {
+                padding-right: 0.5rem;
+            }
+
+            .site-nav-links a {
+                font-size: 0.8rem;
+            }
+
+            .dashboard {
+                padding: 1rem;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header-left h1 {
+                font-size: 1.25rem;
+            }
+
+            .value {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <!-- Site Navigation -->
+    <nav class="site-nav">
+        <div class="site-nav-left">
+            <a href="/" class="site-nav-logo">
+                <img src="/images/nixvirlogo.png" alt="NixVir">
+            </a>
+        </div>
+        <div class="site-nav-right">
+            <ul class="site-nav-links">
+                <li><a href="/dashboard/" class="current">Dashboard</a></li>
+                <li><a href="/snow-cover/">Snow Cover</a></li>
+                <li><a href="/ski-news/">Ski News</a></li>
+                <li><a href="/post/">Insights</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/contact/">Contact</a></li>
+            </ul>
+            <span class="last-updated">Updated: <span id="last-update">Loading...</span></span>
+        </div>
+    </nav>
+
+    <div class="dashboard">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-left">
+                <h1>Economic <span>Dashboard</span></h1>
+                <div class="subtitle">Real-time economic indicators, market data, and ski industry metrics</div>
+            </div>
+        </div>
+
+        <!-- Economic Indicators -->
+        <div class="accordion-section open" data-section="economic">
+            <div class="accordion-header" onclick="toggleSection(this)">
+                <h3><span class="section-icon">📊</span> Economic Indicators <span class="metric-count">(8 metrics)</span></h3>
+                <span class="accordion-arrow">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-inner">
+                    <div class="dashboard-grid">
+                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/GDP" target="_blank" rel="noopener">GDP (Quarterly)</a></h4><div id="gdp">Loading...</div><div class="chart-container"><canvas id="chart-gdp"></canvas></div></div>
+                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/UMCSENT" target="_blank" rel="noopener">Consumer Confidence</a></h4><div id="consumer-confidence">Loading...</div><div class="chart-container"><canvas id="chart-cc"></canvas></div></div>
+                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/CPIAUCSL" target="_blank" rel="noopener">CPI (Consumer Price Index)</a></h4><div id="cpi">Loading...</div><div class="chart-container"><canvas id="chart-cpi"></canvas></div></div>
+                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/UNRATE" target="_blank" rel="noopener">Unemployment Rate</a></h4><div id="unemployment">Loading...</div><div class="chart-container"><canvas id="chart-unemp"></canvas></div></div>
+                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/PAYEMS" target="_blank" rel="noopener">Employment (Thousands)</a></h4><div id="employment">Loading...</div><div class="chart-container"><canvas id="chart-emp"></canvas></div></div>
+                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/CES0500000003" target="_blank" rel="noopener">Average Hourly Wages</a></h4><div id="wages">Loading...</div><div class="chart-container"><canvas id="chart-wages"></canvas></div></div>
+                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/HOUST" target="_blank" rel="noopener">Housing Starts (Thousands)</a></h4><div id="housing">Loading...</div><div class="chart-container"><canvas id="chart-housing"></canvas></div></div>
+                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/BKPPIWCI" target="_blank" rel="noopener">Bankruptcy Activity (PPI)</a></h4><div id="bankruptcy">Loading...</div><div class="chart-container"><canvas id="chart-bankruptcy"></canvas></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Markets & Interest Rates -->
+        <div class="accordion-section" data-section="markets">
+            <div class="accordion-header" onclick="toggleSection(this)">
+                <h3><span class="section-icon">📈</span> Markets & Interest Rates <span class="metric-count">(6 indices + Mag 7)</span></h3>
+                <span class="accordion-arrow">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-inner">
+                    <div class="subsection-header">Major Indices</div>
+                    <div class="dashboard-grid">
+                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/SP500" target="_blank" rel="noopener">S&P 500 Index</a></h4><div id="sp500">Loading...</div><div class="chart-container"><canvas id="chart-spy"></canvas></div></div>
+                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/DJIA" target="_blank" rel="noopener">Dow Jones Industrial</a></h4><div id="djia">Loading...</div><div class="chart-container"><canvas id="chart-djia"></canvas></div></div>
+                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/NASDAQCOM" target="_blank" rel="noopener">NASDAQ Composite</a></h4><div id="nasdaq">Loading...</div><div class="chart-container"><canvas id="chart-nasdaq"></canvas></div></div>
+                        <div class="metric-card"><h4>Hotel & Lodging REITs</h4><div id="hotel-reits">Loading...</div><div class="chart-container"><canvas id="chart-hotel"></canvas></div></div>
+                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/DFF" target="_blank" rel="noopener">Fed Funds Rate</a></h4><div id="fed-rate">Loading...</div><div class="chart-container"><canvas id="chart-fed"></canvas></div></div>
+                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/DGS10" target="_blank" rel="noopener">10-Year Treasury Yield</a></h4><div id="treasury">Loading...</div><div class="chart-container"><canvas id="chart-treasury"></canvas></div></div>
+                    </div>
+
+                    <div class="subsection-header purple">Magnificent 7 Stocks</div>
+                    <div class="dashboard-grid" id="mag7-grid">
+                        <div class="metric-card"><div id="mag7-loading">Loading Magnificent 7...</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Currency & Visitor Purchasing Power -->
+        <div class="accordion-section" data-section="currency">
+            <div class="accordion-header" onclick="toggleSection(this)">
+                <h3><span class="section-icon">💱</span> Currency & Visitor Purchasing Power <span class="metric-count">(19 metrics)</span></h3>
+                <span class="accordion-arrow">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-inner">
+                    <div class="section-intro">
+                        <strong>Visitor Purchasing Power Perspective</strong> — Metrics reoriented to show "what does 100 units of visitor currency buy in USD?" Higher values = more attractive destination. Research shows ski tourism is highly elastic to exchange rates (-1.5 to -2.2).
+                        <br><br>
+                        <strong>Thresholds:</strong> <span style="color: var(--accent-green);">Green = favorable for your resort</span> | <span style="color: var(--text-muted);">Gray = neutral</span> | <span style="color: var(--accent-red);">Red = headwind</span>. Currency impacts lag 3-6 months for destination travel bookings.
+                    </div>
+
+                    <div class="subsection-header">🇺🇸 US Resort Perspective</div>
+                    <div class="subsection-desc">How attractive is skiing in the US for international visitors? Higher = better.</div>
+                    <div class="dashboard-grid">
+                        <div class="metric-card"><h4>100 CAD buys...</h4><div id="pp-cad">Loading...</div><div class="chart-container"><canvas id="chart-pp-cad"></canvas></div></div>
+                        <div class="metric-card"><h4>100 MXN buys...</h4><div id="pp-mxn">Loading...</div><div class="chart-container"><canvas id="chart-pp-mxn"></canvas></div></div>
+                        <div class="metric-card"><h4>100 EUR buys...</h4><div id="pp-eur">Loading...</div><div class="chart-container"><canvas id="chart-pp-eur"></canvas></div></div>
+                        <div class="metric-card"><h4>100 GBP buys...</h4><div id="pp-gbp">Loading...</div><div class="chart-container"><canvas id="chart-pp-gbp"></canvas></div></div>
+                        <div class="metric-card"><h4>100 BRL buys...</h4><div id="pp-brl">Loading...</div><div class="chart-container"><canvas id="chart-pp-brl"></canvas></div></div>
+                        <div class="metric-card"><h4>100 AUD buys...</h4><div id="pp-aud">Loading...</div><div class="chart-container"><canvas id="chart-pp-aud"></canvas></div></div>
+                    </div>
+
+                    <div class="subsection-header red">🇨🇦 Canadian Resort Perspective</div>
+                    <div class="subsection-desc">How attractive is Canada for US/international visitors? + Domestic retention signal.</div>
+                    <div class="dashboard-grid">
+                        <div class="metric-card"><h4>$100 USD buys (CAD)</h4><div id="pp-usd-cad">Loading...</div><div class="chart-container"><canvas id="chart-pp-usd-cad"></canvas></div></div>
+                        <div class="metric-card"><h4>Domestic Retention</h4><div id="ca-retention">Loading...</div><div class="chart-container"><canvas id="chart-ca-retention"></canvas></div></div>
+                        <div class="metric-card"><h4>100 EUR buys (CAD)</h4><div id="pp-eur-cad">Loading...</div><div class="chart-container"><canvas id="chart-pp-eur-cad"></canvas></div></div>
+                        <div class="metric-card"><h4>100 GBP buys (CAD)</h4><div id="pp-gbp-cad">Loading...</div><div class="chart-container"><canvas id="chart-pp-gbp-cad"></canvas></div></div>
+                    </div>
+
+                    <div class="subsection-header purple">💎 Luxury Ski Markets</div>
+                    <div class="subsection-desc">Ultra-high-net-worth markets. Less price-elastic but affects ancillary spend, length of stay, and party size.</div>
+                    <div class="dashboard-grid">
+                        <div class="metric-card"><h4>100 HKD buys...</h4><div id="pp-hkd">Loading...</div><div class="chart-container"><canvas id="chart-pp-hkd"></canvas></div></div>
+                        <div class="metric-card"><h4>100 SGD buys...</h4><div id="pp-sgd">Loading...</div><div class="chart-container"><canvas id="chart-pp-sgd"></canvas></div></div>
+                        <div class="metric-card"><h4>100 AED buys...</h4><div id="pp-aed">Loading...</div><div class="chart-container"><canvas id="chart-pp-aed"></canvas></div></div>
+                        <div class="metric-card"><h4>100 CNY buys...</h4><div id="pp-cny">Loading...</div><div class="chart-container"><canvas id="chart-pp-cny"></canvas></div></div>
+                        <div class="metric-card"><h4>100 JPY buys...</h4><div id="pp-jpy">Loading...</div><div class="chart-container"><canvas id="chart-pp-jpy"></canvas></div></div>
+                        <div class="metric-card"><h4>100 INR buys...</h4><div id="pp-inr">Loading...</div><div class="chart-container"><canvas id="chart-pp-inr"></canvas></div></div>
+                        <div class="metric-card"><h4>100 RUB buys...</h4><div id="pp-rub">Loading...</div><div class="chart-container"><canvas id="chart-pp-rub"></canvas></div></div>
+                    </div>
+
+                    <div class="subsection-header orange">🏔️ Competitive Destination Comparison</div>
+                    <div class="subsection-desc">How does CAD compare vs Alps (EUR/CHF) and Niseko (JPY)?</div>
+                    <div class="dashboard-grid">
+                        <div class="metric-card"><h4>$100 USD → Whistler (CAD)</h4><div id="comp-whistler">Loading...</div><div class="chart-container"><canvas id="chart-comp-whistler"></canvas></div></div>
+                        <div class="metric-card"><h4>$100 USD → Alps/France (EUR)</h4><div id="comp-alps-eur">Loading...</div><div class="chart-container"><canvas id="chart-comp-alps-eur"></canvas></div></div>
+                        <div class="metric-card"><h4>$100 USD → Swiss Alps (CHF)</h4><div id="comp-swiss">Loading...</div><div class="chart-container"><canvas id="chart-comp-swiss"></canvas></div></div>
+                        <div class="metric-card"><h4>$100 USD → Niseko (JPY)</h4><div id="comp-niseko">Loading...</div><div class="chart-container"><canvas id="chart-comp-niseko"></canvas></div></div>
+                    </div>
+
+                    <div class="subsection-header" style="border-color: var(--text-muted);">Dollar Strength Indices (Reference)</div>
+                    <div class="dashboard-grid">
+                        <div class="metric-card"><h4>Trade-Weighted USD (Nominal)</h4><div id="trade-weighted">Loading...</div><div class="chart-container"><canvas id="chart-tw"></canvas></div></div>
+                        <div class="metric-card"><h4>Trade-Weighted USD (Real)</h4><div id="real-trade-weighted">Loading...</div><div class="chart-container"><canvas id="chart-rtw"></canvas></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Commodity Prices -->
+        <div class="accordion-section" data-section="commodities">
+            <div class="accordion-header" onclick="toggleSection(this)">
+                <h3><span class="section-icon">🛢️</span> Commodity Prices <span class="metric-count">(4 commodities)</span></h3>
+                <span class="accordion-arrow">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-inner">
+                    <div class="dashboard-grid">
+                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/GOLDAMGBD228NLBM" target="_blank" rel="noopener">Gold ($/oz)</a></h4><div id="gold">Loading...</div><div class="chart-container"><canvas id="chart-gold"></canvas></div></div>
+                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/DCOILWTICO" target="_blank" rel="noopener">Crude Oil WTI ($/barrel)</a></h4><div id="crude-oil">Loading...</div><div class="chart-container"><canvas id="chart-oil"></canvas></div></div>
+                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/DHHNGSP" target="_blank" rel="noopener">Natural Gas ($/MMBtu)</a></h4><div id="natural-gas">Loading...</div><div class="chart-container"><canvas id="chart-gas"></canvas></div></div>
+                        <div class="metric-card"><h4>Copper ($/lb)</h4><div id="copper">Loading...</div><div class="chart-container"><canvas id="chart-copper"></canvas></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Electricity Pricing -->
+        <div class="accordion-section" data-section="electricity">
+            <div class="accordion-header" onclick="toggleSection(this)">
+                <h3><span class="section-icon">⚡</span> Electricity Pricing <span class="metric-count">(8 ski states)</span></h3>
+                <span class="accordion-arrow">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-inner">
+                    <div class="section-intro">
+                        <strong>Commercial Sector Retail Electricity Rates</strong> (cents/kWh) — Monthly average prices paid by commercial customers including ski resorts, lodges, and related businesses. Data from <a href="https://www.eia.gov/electricity/monthly/" target="_blank" rel="noopener">EIA Electric Power Monthly</a>.
+                        <br><br>
+                        <strong>Why these states?</strong> Selected for major ski markets: <em>Colorado/Utah/Wyoming</em> (Rocky Mountain), <em>California</em> (Tahoe/Mammoth), <em>Vermont/New Hampshire</em> (Northeast), and <em>Washington</em> (Pacific Northwest).
+                    </div>
+                    <div class="dashboard-grid">
+                        <div class="metric-card"><h4>U.S. Average</h4><div id="elec-us">Loading...</div><div class="chart-container"><canvas id="chart-elec-us"></canvas></div></div>
+                        <div class="metric-card"><h4>Colorado (Rockies)</h4><div id="elec-co">Loading...</div><div class="chart-container"><canvas id="chart-elec-co"></canvas></div></div>
+                        <div class="metric-card"><h4>Utah (Wasatch)</h4><div id="elec-ut">Loading...</div><div class="chart-container"><canvas id="chart-elec-ut"></canvas></div></div>
+                        <div class="metric-card"><h4>California (Tahoe/Mammoth)</h4><div id="elec-ca">Loading...</div><div class="chart-container"><canvas id="chart-elec-ca"></canvas></div></div>
+                        <div class="metric-card"><h4>Vermont</h4><div id="elec-vt">Loading...</div><div class="chart-container"><canvas id="chart-elec-vt"></canvas></div></div>
+                        <div class="metric-card"><h4>New Hampshire</h4><div id="elec-nh">Loading...</div><div class="chart-container"><canvas id="chart-elec-nh"></canvas></div></div>
+                        <div class="metric-card"><h4>Washington (PNW)</h4><div id="elec-wa">Loading...</div><div class="chart-container"><canvas id="chart-elec-wa"></canvas></div></div>
+                        <div class="metric-card"><h4>Wyoming (Jackson)</h4><div id="elec-wy">Loading...</div><div class="chart-container"><canvas id="chart-elec-wy"></canvas></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- US/Canada Border Crossings -->
+        <div class="accordion-section" data-section="border">
+            <div class="accordion-header" onclick="toggleSection(this)">
+                <h3><span class="section-icon">🛂</span> US/Canada Border Crossings <span class="metric-count">(16 metrics)</span></h3>
+                <span class="accordion-arrow">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-inner">
+                    <div class="section-intro">
+                        <strong>Personal Vehicle Passengers</strong> — Monthly counts of passengers crossing US/Canada land border ports. Key indicator for Canadian visitor flows to US ski markets. Data from <a href="https://data.bts.gov/Research-and-Statistics/Border-Crossing-Entry-Data/keg4-3bc2" target="_blank" rel="noopener">Bureau of Transportation Statistics</a>.
+                        <br><br>
+                        <strong>Ski Market Relevance:</strong> Canadian visitors represent a significant segment for Montana (Whitefish/Big Sky), Vermont, and Washington resorts.
+                    </div>
+
+                    <div class="subsection-header">🇺🇸 US Border Entry (BTS)</div>
+                    <div class="subsection-desc">Canadian visitors entering US — all land border crossings combined. <span id="border-vs-2019-badge" class="change-pill" style="margin-left: 0.5rem;"></span></div>
+                    <div class="dashboard-grid">
+                        <div class="metric-card" style="grid-column: span 2;">
+                            <h4>US/Canada Total (Monthly) <span class="tooltip-icon" title="Total personal vehicle passengers entering US from Canada">ⓘ</span></h4>
+                            <div id="border-national">Loading...</div>
+                            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">CAD/USD trend shown in orange overlay</div>
+                            <div class="chart-container" style="height: 140px;"><canvas id="chart-border-national"></canvas></div>
+                        </div>
+                    </div>
+
+                    <div class="subsection-header red">🇨🇦 Canadian Origin Markets (StatCan)</div>
+                    <div class="subsection-desc">Quarterly Canadian outbound visits to US by province of origin.</div>
+                    <div id="canadian-outbound-grid" class="dashboard-grid"></div>
+
+                    <div class="subsection-header green">US Entry by State</div>
+                    <div class="subsection-desc">State-level crossings for major ski market corridors. Shaded regions indicate ski season (Nov-Apr).</div>
+                    <div class="dashboard-grid">
+                        <div class="metric-card"><h4>Montana <span class="tooltip-icon" title="Sweetgrass, Roosville. Resorts: Big Sky, Whitefish, Bridger Bowl">ⓘ</span></h4><div id="border-montana">Loading...</div><div class="chart-container"><canvas id="chart-border-montana"></canvas></div></div>
+                        <div class="metric-card"><h4>Vermont <span class="tooltip-icon" title="Derby Line, Highgate Springs. Resorts: Stowe, Jay Peak, Killington">ⓘ</span></h4><div id="border-vermont">Loading...</div><div class="chart-container"><canvas id="chart-border-vermont"></canvas></div></div>
+                        <div class="metric-card"><h4>Washington <span class="tooltip-icon" title="Blaine, Sumas. Resorts: Mt. Baker, Stevens Pass, Crystal Mountain">ⓘ</span></h4><div id="border-washington">Loading...</div><div class="chart-container"><canvas id="chart-border-washington"></canvas></div></div>
+                        <div class="metric-card"><h4>New York <span class="tooltip-icon" title="Champlain. Resorts: Whiteface, Gore Mountain, Lake Placid">ⓘ</span></h4><div id="border-ny">Loading...</div><div class="chart-container"><canvas id="chart-border-ny"></canvas></div></div>
+                        <div class="metric-card"><h4>Maine <span class="tooltip-icon" title="Houlton, Calais. Resorts: Sugarloaf, Sunday River">ⓘ</span></h4><div id="border-maine">Loading...</div><div class="chart-container"><canvas id="chart-border-maine"></canvas></div></div>
+                        <div class="metric-card"><h4>Idaho <span class="tooltip-icon" title="Eastport. Resorts: Sun Valley, Schweitzer">ⓘ</span></h4><div id="border-idaho">Loading...</div><div class="chart-container"><canvas id="chart-border-idaho"></canvas></div></div>
+                    </div>
+
+                    <div class="subsection-header purple">Key Border Ports</div>
+                    <div class="subsection-desc">Major crossing points with resort destinations served.</div>
+                    <div id="border-ports-grid" class="dashboard-grid"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Air Travel Indicators -->
+        <div class="accordion-section" data-section="air-travel">
+            <div class="accordion-header" onclick="toggleSection(this)">
+                <h3><span class="section-icon">✈️</span> Air Travel Indicators <span class="metric-count">(5 metrics + 16 ski airports)</span></h3>
+                <span class="accordion-arrow">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-inner">
+                    <div class="section-intro">
+                        <strong>Air Travel Demand Signals</strong> — Key indicators for understanding air travel patterns affecting ski destination access. Jet fuel prices are a leading indicator for airfare changes; TSA checkpoints provide real-time demand signals.
+                    </div>
+
+                    <div class="subsection-header red">Pricing Indicators</div>
+                    <div class="subsection-desc">Leading indicators for airfare changes. Fuel costs typically pass through to fares within 4-8 weeks.</div>
+                    <div class="dashboard-grid">
+                        <div class="metric-card">
+                            <h4>Jet Fuel Price ($/gal) <span class="tooltip-icon" title="Gulf Coast kerosene-type jet fuel spot price">ⓘ</span></h4>
+                            <div id="jet-fuel">Loading...</div>
+                            <div class="chart-container"><canvas id="chart-jet-fuel"></canvas></div>
+                        </div>
+                    </div>
+
+                    <div class="subsection-header">Demand Indicators</div>
+                    <div class="subsection-desc">Overall air travel demand and capacity utilization signals.</div>
+                    <div class="dashboard-grid">
+                        <div class="metric-card">
+                            <h4>National Enplanements <span class="tooltip-icon" title="Total passengers boarding flights at US airports">ⓘ</span></h4>
+                            <div id="enplanements">Loading...</div>
+                            <div class="chart-container"><canvas id="chart-enplanements"></canvas></div>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Domestic Load Factor <span class="tooltip-icon" title="Percentage of available seats filled. Above 85% indicates capacity pressure">ⓘ</span></h4>
+                            <div id="load-factor">Loading...</div>
+                            <div class="chart-container"><canvas id="chart-load-factor"></canvas></div>
+                        </div>
+                        <div class="metric-card">
+                            <h4>T-100 Passengers <span class="tooltip-icon" title="Total passengers on domestic flight segments">ⓘ</span></h4>
+                            <div id="t100-passengers">Loading...</div>
+                            <div class="chart-container"><canvas id="chart-t100"></canvas></div>
+                        </div>
+                    </div>
+
+                    <div class="subsection-header green">Real-Time Activity</div>
+                    <div class="subsection-desc">Daily TSA checkpoint data provides near-real-time travel demand signals.</div>
+                    <div class="dashboard-grid">
+                        <div class="metric-card">
+                            <h4>TSA Checkpoint Volume <span class="tooltip-icon" title="Daily passenger screenings (7-day rolling average)">ⓘ</span></h4>
+                            <div id="tsa-checkpoint">Loading...</div>
+                            <div class="chart-container"><canvas id="chart-tsa"></canvas></div>
+                        </div>
+                    </div>
+
+                    <div class="subsection-header purple">Ski Gateway Airports <span class="tooltip-icon" title="Monthly passenger volumes at airports serving major North American ski destinations">ⓘ</span></div>
+                    <div class="subsection-desc">Monthly passenger traffic at ski gateway airports with true month-over-month YoY comparisons. Filter by region or view all.</div>
+
+                    <div class="region-filters">
+                        <button class="region-filter active" data-region="all" onclick="filterSkiAirports('all')">All Regions</button>
+                        <button class="region-filter" data-region="colorado" onclick="filterSkiAirports('colorado')">Colorado</button>
+                        <button class="region-filter" data-region="rockies" onclick="filterSkiAirports('rockies')">Northern Rockies</button>
+                        <button class="region-filter" data-region="california" onclick="filterSkiAirports('california')">California/Nevada</button>
+                        <button class="region-filter" data-region="hubs" onclick="filterSkiAirports('hubs')">Major Hubs</button>
+                        <button class="region-filter" data-region="canada" onclick="filterSkiAirports('canada')">Canada</button>
+                    </div>
+
+                    <div id="ski-airports-grid" class="dashboard-grid"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prediction Markets -->
+        <div class="accordion-section" data-section="prediction">
+            <div class="accordion-header" onclick="toggleSection(this)">
+                <h3><span class="section-icon">🎯</span> Prediction Markets <span class="metric-count">(Kalshi + Polymarket)</span></h3>
+                <span class="accordion-arrow">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-inner">
+                    <div class="section-intro">
+                        Market-implied probabilities from <a href="https://kalshi.com" target="_blank" rel="noopener">Kalshi</a> and <a href="https://polymarket.com" target="_blank" rel="noopener">Polymarket</a>. These reflect trader expectations for economic outcomes affecting ski resort demand and operating costs.
+                    </div>
+
+                    <!-- Guest Demand Signals -->
+                    <div class="subsection-header" style="margin-top: 1rem; margin-bottom: 0.75rem;">
+                        <h4 style="color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Guest Demand Signals</h4>
+                        <p style="color: #64748b; font-size: 0.75rem; margin-top: 0.25rem;">Economic factors that influence consumer spending on ski trips</p>
+                    </div>
+                    <div class="dashboard-grid">
+                        <div class="metric-card prediction-card">
+                            <h4>Recession Risk <span class="resolves-date" id="recession-resolves"></span></h4>
+                            <div class="card-description">Traders are betting on whether the US economy will officially enter a recession. Higher = more risk to discretionary travel spending.</div>
+                            <div id="recession-consensus">Loading...</div>
+                            <div class="prediction-sources" id="recession-sources"></div>
+                        </div>
+                        <div class="metric-card prediction-card">
+                            <h4>Fed Rate Decision <span class="resolves-date" id="fed-resolves"></span></h4>
+                            <div class="card-description">What traders expect the Federal Reserve to do at the next meeting. Rate cuts can stimulate consumer spending; hikes can slow it.</div>
+                            <div id="fed-decision">Loading...</div>
+                            <div class="chart-container" style="height: 100px;"><canvas id="chart-fed-probs"></canvas></div>
+                            <div class="prediction-meta" id="fed-meta"></div>
+                        </div>
+                        <div class="metric-card prediction-card">
+                            <h4>Rate Cuts This Year <span class="resolves-date" id="rate-cuts-resolves"></span></h4>
+                            <div class="card-description">How many times traders expect the Fed to lower interest rates this calendar year. More cuts = easier borrowing and more consumer spending.</div>
+                            <div id="rate-cuts-consensus">Loading...</div>
+                            <div class="chart-container" style="height: 140px;"><canvas id="chart-rate-cuts"></canvas></div>
+                        </div>
+                    </div>
+
+                    <!-- Operating Cost Drivers -->
+                    <div class="subsection-header" style="margin-top: 1.5rem; margin-bottom: 0.75rem;">
+                        <h4 style="color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Operating Cost Drivers</h4>
+                        <p style="color: #64748b; font-size: 0.75rem; margin-top: 0.25rem;">Commodity prices that affect resort operating expenses and guest travel costs</p>
+                    </div>
+                    <div class="dashboard-grid">
+                        <div class="metric-card prediction-card">
+                            <h4>WTI Oil Price <span class="resolves-date" id="oil-resolves"></span></h4>
+                            <div class="card-description">West Texas Intermediate crude oil price range traders expect this week. Affects fuel, energy, and transportation costs for resorts and guests.</div>
+                            <div id="oil-consensus">Loading...</div>
+                            <div class="chart-container" style="height: 140px;"><canvas id="chart-oil-dist"></canvas></div>
+                        </div>
+                        <div class="metric-card prediction-card">
+                            <h4>Gas Price Outlook <span class="resolves-date" id="gas-resolves"></span></h4>
+                            <div class="card-description">National average retail gasoline price traders expect. "Settles" = when the bet pays out and we know the actual price.</div>
+                            <div id="gas-direction">Loading...</div>
+                            <div class="prediction-meta" id="gas-meta"></div>
+                        </div>
+                    </div>
+
+                    <div class="prediction-meta" id="prediction-updated" style="margin-top: 1rem; text-align: right;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sports Betting Activity -->
+        <div class="accordion-section" data-section="sports-betting">
+            <div class="accordion-header" onclick="toggleSection(this)">
+                <h3><span class="section-icon">🎰</span> Sports Betting Activity <span class="metric-count">(Competing Discretionary Spend)</span></h3>
+                <span class="accordion-arrow">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-inner">
+                    <!-- Handle Definition - First Thing Shown -->
+                    <div class="section-intro" style="background: rgba(168, 85, 247, 0.1); border-left: 3px solid #a855f7; padding: 0.75rem 1rem; margin-bottom: 1.25rem;">
+                        <strong style="color: #a855f7;">What is "handle"?</strong> Handle is the total amount of money wagered on sports—not the profit kept by sportsbooks. If bettors wager $100 million and win back $93 million, the handle is $100 million. Handle measures consumer spending behavior.
+                    </div>
+
+                    <!-- Why This Matters -->
+                    <div class="section-intro" style="margin-bottom: 1.25rem; line-height: 1.6;">
+                        <p style="margin-bottom: 0.75rem;"><strong>Why track sports betting?</strong> A significant market for new skiers and snowboarders is adult males ages 18-35. To the extent that some of these individuals are more focused on sports betting than in the past, it may reduce their discretionary income and therefore reduce their participation frequency—or their likelihood of picking up skiing or snowboarding at all.</p>
+                        <p style="margin-bottom: 0;"><strong>Regulatory context:</strong> The U.S. Supreme Court struck down PASPA (the Professional and Amateur Sports Protection Act) in May 2018, allowing states to legalize sports betting. In 2019 (the first full year post-legalization), total U.S. handle was $13.1 billion. By 2024, it reached $149.2 billion—an increase of over 1,000%. 38 states plus D.C. now have legal sports betting markets. In Canada, single-game sports betting became legal nationwide in August 2021, with Ontario launching its regulated iGaming market in April 2022.</p>
+                    </div>
+
+                    <div class="section-intro" style="font-size: 0.75rem; color: #64748b; margin-bottom: 1rem;">
+                        Data from <a href="https://sportshandle.com/sports-betting-revenue/" target="_blank" rel="noopener">Sports Handle</a> (U.S.) and <a href="https://igamingontario.ca" target="_blank" rel="noopener">iGaming Ontario</a>.
+                    </div>
+
+                    <!-- Key Metrics -->
+                    <div class="subsection-header" style="margin-top: 1rem; margin-bottom: 0.75rem;">
+                        <h4 style="color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">North America Overview</h4>
+                        <p style="color: #64748b; font-size: 0.75rem; margin-top: 0.25rem;">Growth in sports betting may reduce discretionary income available for ski trips, particularly among males 18-35</p>
+                    </div>
+                    <div class="dashboard-grid">
+                        <div class="metric-card">
+                            <h4>U.S. Trailing 12-Month Handle</h4>
+                            <div class="card-description">Total dollars wagered on sports in the U.S. over the past year. Rapid growth indicates shifting discretionary spending patterns.</div>
+                            <div id="betting-us-ttm-handle">Loading...</div>
+                        </div>
+                        <div class="metric-card">
+                            <h4>U.S. Latest Month</h4>
+                            <div class="card-description">Most recent monthly sports betting handle. Seasonality follows major sports calendars (NFL, NBA, MLB).</div>
+                            <div id="betting-us-latest">Loading...</div>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Ontario Annual Handle</h4>
+                            <div class="card-description">Ontario (Canada's largest sports betting market) fiscal year handle. Ontario launched regulated iGaming in April 2022.</div>
+                            <div id="betting-ontario">Loading...</div>
+                        </div>
+                    </div>
+
+                    <!-- Handle Trend Chart -->
+                    <div class="subsection-header" style="margin-top: 1.5rem; margin-bottom: 0.75rem;">
+                        <h4 style="color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">U.S. Monthly Handle Trend</h4>
+                        <p style="color: #64748b; font-size: 0.75rem; margin-top: 0.25rem;">Monthly sports betting handle since 2019 - note the rapid growth trajectory</p>
+                    </div>
+                    <div class="chart-container" style="height: 200px;">
+                        <canvas id="chart-betting-handle"></canvas>
+                    </div>
+
+                    <!-- Payout Percentage Chart -->
+                    <div class="subsection-header" style="margin-top: 1.5rem; margin-bottom: 0.75rem;">
+                        <h4 style="color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Bettor Payout Percentage</h4>
+                        <p style="color: #64748b; font-size: 0.75rem; margin-top: 0.25rem;">Percentage of wagered money returned to bettors as winnings. The remainder (typically 5-10%) is sportsbook revenue ("hold"). Lower payout = higher cost to bettors.</p>
+                    </div>
+                    <div class="chart-container" style="height: 200px;">
+                        <canvas id="chart-betting-payout"></canvas>
+                    </div>
+
+                    <!-- Historical Context -->
+                    <div class="subsection-header" style="margin-top: 1.5rem; margin-bottom: 0.75rem;">
+                        <h4 style="color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Annual U.S. Handle Totals</h4>
+                        <p style="color: #64748b; font-size: 0.75rem; margin-top: 0.25rem;">Total dollars wagered per year across all U.S. states with legal sports betting. Green percentages show year-over-year growth vs. prior year.</p>
+                    </div>
+                    <div class="dashboard-grid" id="betting-annual-grid">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                    <div style="color: #64748b; font-size: 0.75rem; margin-top: 0.75rem; line-height: 1.5;">
+                        <strong>Context:</strong> In 2019, only a handful of states had legal sports betting. By 2024, 38 states plus D.C. were operational. The growth reflects both new states coming online and increased adoption in existing markets. For comparison, the U.S. ski industry generates approximately $5-6 billion in lift ticket revenue annually—sports betting handle is now 25x larger.
+                    </div>
+
+                    <div class="prediction-meta" id="betting-updated" style="margin-top: 1rem; text-align: right;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    const charts = {};
+
+    function toggleSection(header) {
+        const section = header.parentElement;
+        const wasOpen = section.classList.contains('open');
+        section.classList.toggle('open');
+        if (!wasOpen) {
+            setTimeout(function() {
+                Object.keys(charts).forEach(function(chartId) {
+                    if (charts[chartId]) charts[chartId].resize();
+                });
+            }, 350);
+        }
+    }
+
+    function formatDate(dateStr) {
+        const date = new Date(dateStr);
+        return date.toLocaleDateString('en-US', { month: 'short', year: '2-digit' });
+    }
+
+    function formatShortDate(dateStr) {
+        const date = new Date(dateStr);
+        return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    }
+
+    function calcChange(data, isPercent) {
+        if (!data || data.length < 2) return null;
+        const latest = data[data.length - 1].value;
+        const oldest = data[0].value;
+        if (oldest === 0) return null;
+        if (isPercent) {
+            return { change: latest - oldest, pctChange: null, isPointChange: true };
+        } else {
+            return { change: latest - oldest, pctChange: ((latest - oldest) / oldest) * 100, isPointChange: false };
+        }
+    }
+
+    function calc30DayMomentum(data, isPercent) {
+        if (!data || data.length < 30) return null;
+        const latest = data[data.length - 1].value;
+        const thirtyDaysAgo = data[data.length - 30].value;
+        if (thirtyDaysAgo === 0) return null;
+        if (isPercent) {
+            return { change: latest - thirtyDaysAgo, isPointChange: true };
+        } else {
+            return { pctChange: ((latest - thirtyDaysAgo) / thirtyDaysAgo) * 100, isPointChange: false };
+        }
+    }
+
+    function getTrendArrow(change) {
+        if (change > 0.5) return { arrow: '↑', cls: 'positive' };
+        if (change < -0.5) return { arrow: '↓', cls: 'negative' };
+        return { arrow: '→', cls: 'neutral' };
+    }
+
+    function formatChangeIndicator(changeData, momentumData, invertColors) {
+        if (!changeData) return '';
+        const change = changeData.pctChange !== null ? changeData.pctChange : changeData.change;
+        const trend = getTrendArrow(change);
+        let colorClass = trend.cls;
+        if (invertColors) {
+            if (colorClass === 'positive') colorClass = 'negative';
+            else if (colorClass === 'negative') colorClass = 'positive';
+        }
+        let changeText = changeData.isPointChange
+            ? (changeData.change >= 0 ? '+' : '') + changeData.change.toFixed(2) + ' pts'
+            : (changeData.pctChange >= 0 ? '+' : '') + changeData.pctChange.toFixed(1) + '%';
+        let html = '<div class="change-indicator">';
+        html += '<span class="change-pill ' + colorClass + '"><span class="arrow">' + trend.arrow + '</span> ' + changeText + ' YoY</span>';
+        if (momentumData) {
+            const momChange = momentumData.pctChange !== null ? momentumData.pctChange : momentumData.change;
+            const momTrend = getTrendArrow(momChange);
+            let momColorClass = momTrend.cls;
+            if (invertColors) {
+                if (momColorClass === 'positive') momColorClass = 'negative';
+                else if (momColorClass === 'negative') momColorClass = 'positive';
+            }
+            let momText = momentumData.isPointChange
+                ? (momentumData.change >= 0 ? '+' : '') + momentumData.change.toFixed(2) + ' pts'
+                : (momentumData.pctChange >= 0 ? '+' : '') + momentumData.pctChange.toFixed(1) + '%';
+            html += '<span class="change-secondary">' + momTrend.arrow + ' ' + momText + ' 30d</span>';
+        }
+        return html + '</div>';
+    }
+
+    // Dark theme chart defaults
+    Chart.defaults.color = '#8892a2';
+    Chart.defaults.borderColor = '#2a3444';
+
+    function createChart(canvasId, labels, values, color, options) {
+        options = options || {};
+        const ctx = document.getElementById(canvasId);
+        if (!ctx) return;
+        if (charts[canvasId]) charts[canvasId].destroy();
+        charts[canvasId] = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: values,
+                    borderColor: color,
+                    backgroundColor: color + '20',
+                    borderWidth: 2,
+                    fill: true,
+                    pointRadius: 0,
+                    pointHoverRadius: 4,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false,
+                        displayColors: false,
+                        backgroundColor: 'rgba(17, 24, 32, 0.95)',
+                        borderColor: '#3a4454',
+                        borderWidth: 1,
+                        titleFont: { family: 'DM Sans' },
+                        bodyFont: { family: 'JetBrains Mono' },
+                        callbacks: {
+                            label: function(context) {
+                                return (options.prefix || '') + context.parsed.y.toLocaleString(undefined, {
+                                    minimumFractionDigits: options.decimals || 2,
+                                    maximumFractionDigits: options.decimals || 2
+                                }) + (options.suffix || '');
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        display: true,
+                        ticks: { maxRotation: 0, font: { size: 9 }, maxTicksLimit: 4 },
+                        grid: { display: false }
+                    },
+                    y: {
+                        display: true,
+                        ticks: { font: { size: 9 } },
+                        grid: { color: '#1a2230' }
+                    }
+                }
+            }
+        });
+    }
+
+    function createChartWithThreshold(canvasId, labels, values, color, thresholdValue, thresholdLabel, options) {
+        options = options || {};
+        const ctx = document.getElementById(canvasId);
+        if (!ctx) return;
+        if (charts[canvasId]) charts[canvasId].destroy();
+        const thresholdData = labels.map(() => thresholdValue);
+        charts[canvasId] = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Value',
+                        data: values,
+                        borderColor: color,
+                        backgroundColor: color + '20',
+                        borderWidth: 2,
+                        fill: true,
+                        pointRadius: 0,
+                        pointHoverRadius: 4,
+                        tension: 0.3
+                    },
+                    {
+                        label: thresholdLabel,
+                        data: thresholdData,
+                        borderColor: '#ef4444',
+                        borderWidth: 2,
+                        borderDash: [5, 5],
+                        fill: false,
+                        pointRadius: 0
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: true, position: 'bottom', labels: { font: { size: 9 }, boxWidth: 12, padding: 5 } },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false,
+                        backgroundColor: 'rgba(17, 24, 32, 0.95)',
+                        borderColor: '#3a4454',
+                        borderWidth: 1
+                    }
+                },
+                scales: {
+                    x: { display: true, ticks: { maxRotation: 0, font: { size: 9 }, maxTicksLimit: 4 }, grid: { display: false } },
+                    y: { display: true, ticks: { font: { size: 9 } }, grid: { color: '#1a2230' } }
+                }
+            }
+        });
+    }
+
+    function renderMetric(id, data, label, opts) {
+        opts = opts || {};
+        const el = document.getElementById(id);
+        if (!el) return;
+        if (!data || data.length === 0) {
+            el.innerHTML = '<div class="value">--</div><div class="period">No data</div>';
+            return;
+        }
+        const latest = data[data.length - 1];
+        const val = opts.format ? opts.format(latest.value) : latest.value;
+        const dateStr = opts.shortDate ? formatShortDate(latest.date) : formatDate(latest.date);
+        const change = calcChange(data, opts.isPercent);
+        const momentum = opts.hasMomentum ? calc30DayMomentum(data, opts.isPercent) : null;
+        el.innerHTML = '<div class="value' + (opts.colorClass ? ' ' + opts.colorClass : '') + '">' + val + '</div><div class="period">' + dateStr + (opts.periodSuffix || '') + '</div>' + formatChangeIndicator(change, momentum, opts.invertColors);
+    }
+
+    function renderMetricWithBaseline(id, data, label, vs2019, opts) {
+        opts = opts || {};
+        const el = document.getElementById(id);
+        if (!el) return;
+        if (!data || data.length === 0) {
+            el.innerHTML = '<div class="value">--</div><div class="period">No data</div>';
+            return;
+        }
+        const latest = data[data.length - 1];
+        const val = opts.format ? opts.format(latest.value) : latest.value;
+        const dateStr = opts.shortDate ? formatShortDate(latest.date) : formatDate(latest.date);
+        const change = calcChange(data, opts.isPercent);
+        let baselineBadge = '';
+        if (vs2019 !== undefined && vs2019 !== null) {
+            const colorClass = vs2019 >= 0 ? 'positive' : 'negative';
+            const sign = vs2019 >= 0 ? '+' : '';
+            const arrow = vs2019 >= 0 ? '↑' : '↓';
+            baselineBadge = `<span class="change-pill ${colorClass}"><span class="arrow">${arrow}</span> ${sign}${vs2019.toFixed(0)}% vs 2019</span>`;
+        }
+        let indicatorHtml = formatChangeIndicator(change, null, opts.invertColors);
+        if (baselineBadge) {
+            indicatorHtml = indicatorHtml.replace('</div>', baselineBadge + '</div>');
+        }
+        el.innerHTML = '<div class="value">' + val + '</div><div class="period">' + dateStr + '</div>' + indicatorHtml;
+    }
+
+    function createChartWithSkiSeason(canvasId, data, color) {
+        const ctx = document.getElementById(canvasId);
+        if (!ctx) return;
+        const labels = data.map(d => formatDate(d.date));
+        const values = data.map(d => d.value);
+        const skiSeasonBands = [];
+        let currentBand = null;
+        data.forEach((d, i) => {
+            const month = new Date(d.date).getMonth();
+            const isSkiSeason = (month >= 10 || month <= 3);
+            if (isSkiSeason) {
+                if (currentBand === null) currentBand = { start: i, end: i };
+                else currentBand.end = i;
+            } else {
+                if (currentBand !== null) {
+                    skiSeasonBands.push(currentBand);
+                    currentBand = null;
+                }
+            }
+        });
+        if (currentBand !== null) skiSeasonBands.push(currentBand);
+        const annotations = {};
+        skiSeasonBands.forEach((band, idx) => {
+            annotations['skiSeason' + idx] = {
+                type: 'box',
+                xMin: band.start - 0.5,
+                xMax: band.end + 0.5,
+                backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                borderWidth: 0
+            };
+        });
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Passengers',
+                    data: values,
+                    borderColor: color,
+                    backgroundColor: color + '33',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.3,
+                    pointRadius: 0,
+                    pointHoverRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    annotation: { annotations: annotations }
+                },
+                scales: {
+                    x: { display: true, ticks: { maxRotation: 0, font: { size: 9 }, maxTicksLimit: 5 }, grid: { display: false } },
+                    y: { display: true, ticks: { font: { size: 9 }, callback: v => (v/1000).toFixed(0) + 'K' }, grid: { color: '#1a2230' } }
+                }
+            }
+        });
+    }
+
+    function createChartWithDualAxis(canvasId, borderData, cadData, borderColor, cadColor) {
+        const ctx = document.getElementById(canvasId);
+        if (!ctx) return;
+        const labels = borderData.map(d => formatDate(d.date));
+        const borderValues = borderData.map(d => d.value);
+        let cadValues = [];
+        if (cadData && cadData.length > 0) {
+            const cadMap = {};
+            cadData.forEach(d => { cadMap[d.date.substring(0, 7)] = d.value; });
+            cadValues = borderData.map(d => cadMap[d.date.substring(0, 7)] || null);
+        }
+        const datasets = [{
+            label: 'Border Crossings',
+            data: borderValues,
+            borderColor: borderColor,
+            backgroundColor: borderColor + '33',
+            borderWidth: 2,
+            fill: true,
+            tension: 0.3,
+            pointRadius: 0,
+            yAxisID: 'y'
+        }];
+        if (cadValues.some(v => v !== null)) {
+            datasets.push({
+                label: 'CAD/USD',
+                data: cadValues,
+                borderColor: cadColor,
+                borderWidth: 2,
+                borderDash: [4, 4],
+                fill: false,
+                tension: 0.3,
+                pointRadius: 0,
+                yAxisID: 'y1'
+            });
+        }
+        new Chart(ctx, {
+            type: 'line',
+            data: { labels, datasets },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { mode: 'index', intersect: false },
+                plugins: { legend: { display: true, position: 'bottom', labels: { font: { size: 9 }, boxWidth: 12 } } },
+                scales: {
+                    x: { display: true, ticks: { maxRotation: 0, font: { size: 9 }, maxTicksLimit: 6 }, grid: { display: false } },
+                    y: { type: 'linear', display: true, position: 'left', ticks: { font: { size: 9 }, callback: v => (v/1000000).toFixed(1) + 'M' }, grid: { color: '#1a2230' } },
+                    y1: { type: 'linear', display: cadValues.some(v => v !== null), position: 'right', ticks: { font: { size: 9 } }, grid: { display: false } }
+                }
+            }
+        });
+    }
+
+    function renderCanadianOutbound(outboundData) {
+        const grid = document.getElementById('canadian-outbound-grid');
+        if (!grid || !outboundData) {
+            if (grid) grid.innerHTML = '<div class="metric-card"><div class="value">--</div><div class="period">Data unavailable</div></div>';
+            return;
+        }
+        const provinces = ['alberta', 'british_columbia', 'ontario', 'quebec'];
+        grid.innerHTML = provinces.map(key => {
+            const prov = outboundData[key];
+            if (!prov) return '';
+            const vs2019 = prov.vs_2019;
+            const colorClass = vs2019 >= 0 ? 'positive' : 'negative';
+            const sign = vs2019 >= 0 ? '+' : '';
+            const arrow = vs2019 >= 0 ? '↑' : '↓';
+            const vs2019Badge = vs2019 !== null ? `<div class="change-indicator"><span class="change-pill ${colorClass}"><span class="arrow">${arrow}</span> ${sign}${vs2019.toFixed(0)}% vs 2019</span></div>` : '';
+            return `
+                <div class="metric-card">
+                    <h4>${prov.name} <span class="tooltip-icon" title="Primary US ski destinations: ${prov.feeder_for}">ⓘ</span></h4>
+                    <div class="value">${prov.latest.toLocaleString()}K</div>
+                    <div class="period">${prov.latest_date} (quarterly)</div>
+                    ${vs2019Badge}
+                    <div style="font-size: 0.75rem; color: var(--accent-green); margin-top: 0.5rem;">→ ${prov.feeder_for}</div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    function renderBorderPorts(portsData) {
+        const grid = document.getElementById('border-ports-grid');
+        if (!grid || !portsData) {
+            if (grid) grid.innerHTML = '<div class="metric-card"><div class="value">--</div><div class="period">Data unavailable</div></div>';
+            return;
+        }
+        const portNames = {
+            sweetgrass: 'Sweetgrass, MT',
+            roosville: 'Roosville, MT',
+            derby_line: 'Derby Line, VT',
+            highgate_springs: 'Highgate Springs, VT',
+            blaine: 'Blaine, WA',
+            sumas: 'Sumas, WA',
+            champlain: 'Champlain, NY',
+            houlton: 'Houlton, ME',
+            calais: 'Calais, ME',
+            piegan: 'Piegan, MT'
+        };
+        grid.innerHTML = Object.entries(portsData).map(([key, port]) => {
+            if (!port.data || port.data.length === 0) return '';
+            const latest = port.data[port.data.length - 1];
+            const vs2019 = port.vs_2019;
+            const colorClass = vs2019 >= 0 ? 'positive' : 'negative';
+            const sign = vs2019 >= 0 ? '+' : '';
+            const arrow = vs2019 >= 0 ? '↑' : '↓';
+            const vs2019Badge = vs2019 !== null ? `<div class="change-indicator"><span class="change-pill ${colorClass}"><span class="arrow">${arrow}</span> ${sign}${vs2019.toFixed(0)}% vs 2019</span></div>` : '';
+            return `
+                <div class="metric-card">
+                    <h4>${portNames[key] || key}</h4>
+                    <div class="value">${latest.value.toLocaleString()}</div>
+                    <div class="period">${formatDate(latest.date)} (passengers)</div>
+                    ${vs2019Badge}
+                    <div class="resort-tag">⛷️ ${port.resorts}</div>
+                    <div style="font-size: 0.7rem; color: var(--text-muted); font-style: italic;">${port.route}</div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    async function loadDashboard() {
+        try {
+            const response = await fetch("/data/dashboard.json?t=" + Date.now());
+            const data = await response.json();
+            document.getElementById("last-update").textContent = new Date(data.updated).toLocaleDateString();
+
+            // Economic Indicators
+            renderMetric('gdp', data.gdp, 'GDP', { format: v => '$' + Number(v).toLocaleString() + 'B' });
+            if (data.gdp && data.gdp.length > 0) createChart('chart-gdp', data.gdp.map(d => formatDate(d.date)), data.gdp.map(d => d.value), '#10b981', { prefix: '$', suffix: 'B', decimals: 0 });
+
+            renderMetric('consumer-confidence', data.consumer_confidence, 'CC', { format: v => Number(v).toFixed(1) });
+            if (data.consumer_confidence && data.consumer_confidence.length > 0) createChart('chart-cc', data.consumer_confidence.map(d => formatDate(d.date)), data.consumer_confidence.map(d => d.value), '#3b82f6', { decimals: 1 });
+
+            renderMetric('cpi', data.cpi, 'CPI', { format: v => Number(v).toFixed(1) });
+            if (data.cpi && data.cpi.length > 0) createChart('chart-cpi', data.cpi.map(d => formatDate(d.date)), data.cpi.map(d => d.value), '#a855f7', { decimals: 1 });
+
+            renderMetric('unemployment', data.unemployment, 'Unemployment', { format: v => Number(v).toFixed(1) + '%', isPercent: true, invertColors: true });
+            if (data.unemployment && data.unemployment.length > 0) createChart('chart-unemp', data.unemployment.map(d => formatDate(d.date)), data.unemployment.map(d => d.value), '#f97316', { suffix: '%', decimals: 1 });
+
+            renderMetric('employment', data.employment, 'Employment', { format: v => Number(v).toLocaleString() });
+            if (data.employment && data.employment.length > 0) createChart('chart-emp', data.employment.map(d => formatDate(d.date)), data.employment.map(d => d.value), '#14b8a6', { suffix: 'K', decimals: 0 });
+
+            renderMetric('wages', data.wages, 'Wages', { format: v => '$' + Number(v).toFixed(2) });
+            if (data.wages && data.wages.length > 0) createChart('chart-wages', data.wages.map(d => formatDate(d.date)), data.wages.map(d => d.value), '#06b6d4', { prefix: '$', decimals: 2 });
+
+            renderMetric('housing', data.housing_starts, 'Housing', { format: v => Number(v).toLocaleString() });
+            if (data.housing_starts && data.housing_starts.length > 0) createChart('chart-housing', data.housing_starts.map(d => formatDate(d.date)), data.housing_starts.map(d => d.value), '#8b5cf6', { suffix: 'K', decimals: 0 });
+
+            renderMetric('bankruptcy', data.bankruptcy_ppi, 'Bankruptcy', { format: v => Number(v).toFixed(1) });
+            if (data.bankruptcy_ppi && data.bankruptcy_ppi.length > 0) createChart('chart-bankruptcy', data.bankruptcy_ppi.map(d => formatDate(d.date)), data.bankruptcy_ppi.map(d => d.value), '#ef4444', { decimals: 1 });
+
+            // Markets
+            if (data.markets) {
+                const sp = data.markets.find(m => m.symbol === "SPY");
+                if (sp) {
+                    const spData = sp.history ? sp.history.map(h => ({value: h.close, date: h.date})) : [];
+                    renderMetric('sp500', spData, 'S&P 500', { format: v => Number(v).toLocaleString(undefined, {minimumFractionDigits: 2}), shortDate: true });
+                    if (sp.history && sp.history.length > 0) createChart('chart-spy', sp.history.map(d => formatShortDate(d.date)), sp.history.map(d => d.close), '#10b981', { decimals: 2 });
+                }
+            }
+
+            renderMetric('djia', data.djia, 'DJIA', { format: v => Number(v).toLocaleString(undefined, {minimumFractionDigits: 2}), hasMomentum: true, shortDate: true });
+            if (data.djia && data.djia.length > 0) createChart('chart-djia', data.djia.map(d => formatShortDate(d.date)), data.djia.map(d => d.value), '#3b82f6', { decimals: 0 });
+
+            renderMetric('nasdaq', data.nasdaq, 'NASDAQ', { format: v => Number(v).toLocaleString(undefined, {minimumFractionDigits: 2}), hasMomentum: true, shortDate: true });
+            if (data.nasdaq && data.nasdaq.length > 0) createChart('chart-nasdaq', data.nasdaq.map(d => formatShortDate(d.date)), data.nasdaq.map(d => d.value), '#8b5cf6', { decimals: 0 });
+
+            renderMetric('hotel-reits', data.hotel_reits, 'Hotel REITs', { format: v => Number(v).toFixed(2), hasMomentum: true, shortDate: true });
+            if (data.hotel_reits && data.hotel_reits.length > 0) createChart('chart-hotel', data.hotel_reits.map(d => formatShortDate(d.date)), data.hotel_reits.map(d => d.value), '#f97316', { decimals: 2 });
+
+            renderMetric('fed-rate', data.fed_funds_rate, 'Fed Rate', { format: v => Number(v).toFixed(2) + '%', isPercent: true, hasMomentum: true, shortDate: true });
+            if (data.fed_funds_rate && data.fed_funds_rate.length > 0) createChart('chart-fed', data.fed_funds_rate.map(d => formatShortDate(d.date)), data.fed_funds_rate.map(d => d.value), '#ef4444', { suffix: '%', decimals: 2 });
+
+            renderMetric('treasury', data.treasury_10y, 'Treasury', { format: v => Number(v).toFixed(2) + '%', isPercent: true, hasMomentum: true, shortDate: true });
+            if (data.treasury_10y && data.treasury_10y.length > 0) createChart('chart-treasury', data.treasury_10y.map(d => formatShortDate(d.date)), data.treasury_10y.map(d => d.value), '#dc2626', { suffix: '%', decimals: 2 });
+
+            // Mag 7
+            console.log('Mag 7 data:', data.mag7 ? data.mag7.length + ' stocks' : 'not found');
+            if (data.mag7 && data.mag7.length > 0) {
+                const mag7Grid = document.getElementById('mag7-grid');
+                const stockColors = { 'AAPL': '#64748b', 'MSFT': '#0ea5e9', 'GOOGL': '#3b82f6', 'AMZN': '#f97316', 'NVDA': '#84cc16', 'META': '#06b6d4', 'TSLA': '#ef4444' };
+                mag7Grid.innerHTML = data.mag7.map(stock => {
+                    const change = stock.previousClose ? ((stock.price - stock.previousClose) / stock.previousClose * 100) : 0;
+                    const changeClass = change >= 0 ? 'positive' : 'negative';
+                    const changeArrow = change >= 0 ? '↑' : '↓';
+                    return '<div class="metric-card">' +
+                        '<h4>' + stock.name.replace(' Inc.', '').replace(' Platforms', '').replace(', Inc.', '').replace(' Corp', '') + ' (' + stock.symbol + ')</h4>' +
+                        '<div class="value">$' + stock.price.toFixed(2) + '</div>' +
+                        '<div class="period"><span class="change-pill ' + changeClass + '"><span class="arrow">' + changeArrow + '</span> ' + Math.abs(change).toFixed(2) + '%</span> today</div>' +
+                        '<div class="chart-container"><canvas id="chart-' + stock.symbol.toLowerCase() + '"></canvas></div>' +
+                        '</div>';
+                }).join('');
+                data.mag7.forEach(stock => {
+                    if (stock.history && stock.history.length > 0) {
+                        createChart('chart-' + stock.symbol.toLowerCase(),
+                            stock.history.map(h => formatShortDate(h.date)),
+                            stock.history.map(h => h.value),
+                            stockColors[stock.symbol] || '#3b82f6',
+                            { decimals: 2, prefix: '$' }
+                        );
+                    }
+                });
+            } else {
+                console.log('Mag 7 not loading - data.mag7:', data.mag7);
+                document.getElementById('mag7-grid').innerHTML = '<div class="metric-card"><div class="value">Data unavailable</div></div>';
+            }
+
+            // Currency - abbreviated for length but follows same pattern
+            function toPurchasingPower(rateData, multiplier = 100) {
+                if (!rateData) return null;
+                return rateData.map(d => ({ date: d.date, value: multiplier / d.value }));
+            }
+
+            function toCadPurchasingPower(foreignData, cadData, multiplier = 100) {
+                if (!foreignData || !cadData) return null;
+                return foreignData.map((d, i) => {
+                    const cadRate = cadData[i] ? cadData[i].value : cadData[cadData.length - 1].value;
+                    return { date: d.date, value: (multiplier / d.value) * cadRate };
+                });
+            }
+
+            const ppCad = toPurchasingPower(data.usd_cad);
+            if (ppCad) {
+                renderMetric('pp-cad', ppCad, '100 CAD', { format: v => '$' + Number(v).toFixed(2) + ' USD', hasMomentum: true, shortDate: true, invertColors: true });
+                createChart('chart-pp-cad', ppCad.map(d => formatShortDate(d.date)), ppCad.map(d => d.value), '#10b981', { decimals: 2, prefix: '$' });
+            }
+
+            const ppMxn = toPurchasingPower(data.usd_mxn);
+            if (ppMxn) {
+                renderMetric('pp-mxn', ppMxn, '100 MXN', { format: v => '$' + Number(v).toFixed(2) + ' USD', shortDate: true });
+                createChart('chart-pp-mxn', ppMxn.map(d => formatShortDate(d.date)), ppMxn.map(d => d.value), '#3b82f6', { decimals: 2, prefix: '$' });
+            }
+
+            const ppEur = toPurchasingPower(data.usd_eur);
+            if (ppEur) {
+                renderMetric('pp-eur', ppEur, '100 EUR', { format: v => '$' + Number(v).toFixed(2) + ' USD', shortDate: true });
+                createChart('chart-pp-eur', ppEur.map(d => formatShortDate(d.date)), ppEur.map(d => d.value), '#3b82f6', { decimals: 2, prefix: '$' });
+            }
+
+            const ppGbp = toPurchasingPower(data.usd_gbp);
+            if (ppGbp) {
+                renderMetric('pp-gbp', ppGbp, '100 GBP', { format: v => '$' + Number(v).toFixed(2) + ' USD', shortDate: true });
+                createChart('chart-pp-gbp', ppGbp.map(d => formatShortDate(d.date)), ppGbp.map(d => d.value), '#8b5cf6', { decimals: 2, prefix: '$' });
+            }
+
+            const ppBrl = toPurchasingPower(data.usd_brl);
+            if (ppBrl) {
+                renderMetric('pp-brl', ppBrl, '100 BRL', { format: v => '$' + Number(v).toFixed(2) + ' USD', shortDate: true });
+                createChart('chart-pp-brl', ppBrl.map(d => formatShortDate(d.date)), ppBrl.map(d => d.value), '#f97316', { decimals: 2, prefix: '$' });
+            }
+
+            const ppAud = toPurchasingPower(data.usd_aud);
+            if (ppAud) {
+                renderMetric('pp-aud', ppAud, '100 AUD', { format: v => '$' + Number(v).toFixed(2) + ' USD', shortDate: true });
+                createChart('chart-pp-aud', ppAud.map(d => formatShortDate(d.date)), ppAud.map(d => d.value), '#06b6d4', { decimals: 2, prefix: '$' });
+            }
+
+            // Canadian perspective
+            if (data.usd_cad) {
+                const usdToCad = data.usd_cad.map(d => ({ date: d.date, value: 100 * d.value }));
+                renderMetric('pp-usd-cad', usdToCad, '$100 USD', { format: v => 'C$' + Number(v).toFixed(2), shortDate: true });
+                createChart('chart-pp-usd-cad', usdToCad.map(d => formatShortDate(d.date)), usdToCad.map(d => d.value), '#ef4444', { decimals: 2, prefix: 'C$' });
+
+                const latestRate = data.usd_cad[data.usd_cad.length - 1].value;
+                let retentionStatus = 'Neutral';
+                let retentionColor = 'var(--text-muted)';
+                let retentionNote = 'Normal range';
+                if (latestRate >= 1.40) {
+                    retentionStatus = 'Strong Retention';
+                    retentionColor = 'var(--accent-green)';
+                    retentionNote = 'USD expensive for Canadians - they stay home';
+                } else if (latestRate <= 1.25) {
+                    retentionStatus = 'Weak Retention';
+                    retentionColor = 'var(--accent-red)';
+                    retentionNote = 'USD cheap - Canadians may ski in US';
+                }
+                document.getElementById('ca-retention').innerHTML =
+                    '<div class="value" style="color: ' + retentionColor + ';">' + retentionStatus + '</div>' +
+                    '<div class="period">USD/CAD: ' + latestRate.toFixed(4) + '</div>' +
+                    '<div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 0.25rem;">' + retentionNote + '</div>';
+                createChart('chart-ca-retention', data.usd_cad.map(d => formatShortDate(d.date)), data.usd_cad.map(d => d.value), '#10b981', { decimals: 4 });
+            }
+
+            const ppEurCad = toCadPurchasingPower(data.usd_eur, data.usd_cad);
+            if (ppEurCad) {
+                renderMetric('pp-eur-cad', ppEurCad, '100 EUR', { format: v => 'C$' + Number(v).toFixed(2), shortDate: true });
+                createChart('chart-pp-eur-cad', ppEurCad.map(d => formatShortDate(d.date)), ppEurCad.map(d => d.value), '#3b82f6', { decimals: 2, prefix: 'C$' });
+            }
+
+            const ppGbpCad = toCadPurchasingPower(data.usd_gbp, data.usd_cad);
+            if (ppGbpCad) {
+                renderMetric('pp-gbp-cad', ppGbpCad, '100 GBP', { format: v => 'C$' + Number(v).toFixed(2), shortDate: true });
+                createChart('chart-pp-gbp-cad', ppGbpCad.map(d => formatShortDate(d.date)), ppGbpCad.map(d => d.value), '#6366f1', { decimals: 2, prefix: 'C$' });
+            }
+
+            // Luxury markets
+            const luxuryCurrencies = ['hkd', 'sgd', 'aed', 'cny', 'jpy', 'inr', 'rub'];
+            const luxuryColors = ['#a855f7', '#8b5cf6', '#10b981', '#ef4444', '#f97316', '#eab308', '#64748b'];
+            luxuryCurrencies.forEach((curr, i) => {
+                const pp = toPurchasingPower(data['usd_' + curr]);
+                if (pp) {
+                    renderMetric('pp-' + curr, pp, '100 ' + curr.toUpperCase(), { format: v => '$' + Number(v).toFixed(2) + ' USD', shortDate: true });
+                    createChart('chart-pp-' + curr, pp.map(d => formatShortDate(d.date)), pp.map(d => d.value), luxuryColors[i], { decimals: 2, prefix: '$' });
+                }
+            });
+
+            // Competitive destinations
+            if (data.usd_cad) {
+                const whistlerValue = data.usd_cad.map(d => ({ date: d.date, value: 100 * d.value }));
+                renderMetric('comp-whistler', whistlerValue, 'Whistler', { format: v => 'C$' + Number(v).toFixed(0), shortDate: true });
+                createChart('chart-comp-whistler', whistlerValue.map(d => formatShortDate(d.date)), whistlerValue.map(d => d.value), '#ef4444', { decimals: 0, prefix: 'C$' });
+            }
+            if (data.usd_eur) {
+                const alpsValue = data.usd_eur.map(d => ({ date: d.date, value: 100 * d.value }));
+                renderMetric('comp-alps-eur', alpsValue, 'Alps', { format: v => '€' + Number(v).toFixed(0), shortDate: true });
+                createChart('chart-comp-alps-eur', alpsValue.map(d => formatShortDate(d.date)), alpsValue.map(d => d.value), '#3b82f6', { decimals: 0, prefix: '€' });
+            }
+            if (data.usd_chf) {
+                const swissValue = data.usd_chf.map(d => ({ date: d.date, value: 100 * d.value }));
+                renderMetric('comp-swiss', swissValue, 'Swiss', { format: v => 'CHF ' + Number(v).toFixed(0), shortDate: true });
+                createChart('chart-comp-swiss', swissValue.map(d => formatShortDate(d.date)), swissValue.map(d => d.value), '#dc2626', { decimals: 0, prefix: 'CHF ' });
+            }
+            if (data.usd_jpy) {
+                const nisekoValue = data.usd_jpy.map(d => ({ date: d.date, value: 100 * d.value }));
+                renderMetric('comp-niseko', nisekoValue, 'Niseko', { format: v => '¥' + Number(v).toLocaleString(undefined, {maximumFractionDigits: 0}), shortDate: true });
+                createChart('chart-comp-niseko', nisekoValue.map(d => formatShortDate(d.date)), nisekoValue.map(d => d.value), '#a855f7', { decimals: 0, prefix: '¥' });
+            }
+
+            // Dollar indices
+            renderMetric('trade-weighted', data.trade_weighted_usd, 'TW-USD', { format: v => Number(v).toFixed(2), shortDate: true, periodSuffix: ' (index)' });
+            if (data.trade_weighted_usd && data.trade_weighted_usd.length > 0) createChart('chart-tw', data.trade_weighted_usd.map(d => formatShortDate(d.date)), data.trade_weighted_usd.map(d => d.value), '#64748b', { decimals: 2 });
+
+            renderMetric('real-trade-weighted', data.real_trade_weighted_usd, 'Real TW-USD', { format: v => Number(v).toFixed(2), shortDate: true, periodSuffix: ' (index)' });
+            if (data.real_trade_weighted_usd && data.real_trade_weighted_usd.length > 0) createChart('chart-rtw', data.real_trade_weighted_usd.map(d => formatShortDate(d.date)), data.real_trade_weighted_usd.map(d => d.value), '#94a3b8', { decimals: 2 });
+
+            // Commodities
+            renderMetric('gold', data.gold, 'Gold', { format: v => '$' + Number(v).toLocaleString(undefined, {minimumFractionDigits: 2}), shortDate: true });
+            if (data.gold && data.gold.length > 0) createChart('chart-gold', data.gold.map(d => formatShortDate(d.date)), data.gold.map(d => d.value), '#eab308', { prefix: '$', decimals: 2 });
+
+            renderMetric('crude-oil', data.crude_oil, 'Oil', { format: v => '$' + Number(v).toFixed(2), shortDate: true });
+            if (data.crude_oil && data.crude_oil.length > 0) createChart('chart-oil', data.crude_oil.map(d => formatShortDate(d.date)), data.crude_oil.map(d => d.value), '#64748b', { prefix: '$', decimals: 2 });
+
+            renderMetric('natural-gas', data.natural_gas, 'Gas', { format: v => '$' + Number(v).toFixed(2), shortDate: true });
+            if (data.natural_gas && data.natural_gas.length > 0) createChart('chart-gas', data.natural_gas.map(d => formatShortDate(d.date)), data.natural_gas.map(d => d.value), '#f97316', { prefix: '$', decimals: 2 });
+
+            renderMetric('copper', data.copper, 'Copper', { format: v => '$' + Number(v).toFixed(2), shortDate: true });
+            if (data.copper && data.copper.length > 0) createChart('chart-copper', data.copper.map(d => formatShortDate(d.date)), data.copper.map(d => d.value), '#ea580c', { prefix: '$', decimals: 2 });
+
+            // Electricity
+            const elecStates = ['us', 'co', 'ut', 'ca', 'vt', 'nh', 'wa', 'wy'];
+            const elecColors = ['#f97316', '#3b82f6', '#f97316', '#a855f7', '#10b981', '#ef4444', '#14b8a6', '#8b5cf6'];
+            elecStates.forEach((state, i) => {
+                const dataKey = 'electricity_' + state;
+                renderMetric('elec-' + state, data[dataKey], state.toUpperCase(), { format: v => Number(v).toFixed(2) + '¢', periodSuffix: '/kWh' });
+                if (data[dataKey] && data[dataKey].length > 0) createChart('chart-elec-' + state, data[dataKey].map(d => formatDate(d.date)), data[dataKey].map(d => d.value), elecColors[i], { suffix: '¢', decimals: 2 });
+            });
+
+            // Border crossings
+            const borderFormat = v => Number(v).toLocaleString() + ' passengers';
+            renderMetric('border-national', data.border_national, 'Border', { format: borderFormat });
+
+            const vs2019Badge = document.getElementById('border-vs-2019-badge');
+            if (vs2019Badge && data.border_national_vs_2019 !== undefined) {
+                const vs2019 = data.border_national_vs_2019;
+                const colorClass = vs2019 >= 0 ? 'positive' : 'negative';
+                vs2019Badge.className = 'change-pill ' + colorClass;
+                vs2019Badge.innerHTML = `<span class="arrow">${vs2019 >= 0 ? '↑' : '↓'}</span> ${vs2019 >= 0 ? '+' : ''}${vs2019.toFixed(1)}% vs 2019`;
+            }
+
+            if (data.border_national && data.border_national.length > 0) {
+                createChartWithDualAxis('chart-border-national', data.border_national, data.cad, '#3b82f6', '#f97316');
+            }
+
+            renderCanadianOutbound(data.canadian_outbound);
+
+            const stateBaselines = data.border_state_baselines || {};
+            const borderStates = ['montana', 'vermont', 'washington', 'new_york', 'maine', 'idaho'];
+            const borderIds = ['border-montana', 'border-vermont', 'border-washington', 'border-ny', 'border-maine', 'border-idaho'];
+            const chartIds = ['chart-border-montana', 'chart-border-vermont', 'chart-border-washington', 'chart-border-ny', 'chart-border-maine', 'chart-border-idaho'];
+            borderStates.forEach((state, i) => {
+                const dataKey = 'border_' + state;
+                renderMetricWithBaseline(borderIds[i], data[dataKey], state, stateBaselines[state], { format: borderFormat });
+                if (data[dataKey] && data[dataKey].length > 0) createChartWithSkiSeason(chartIds[i], data[dataKey], '#10b981');
+            });
+
+            renderBorderPorts(data.border_ports);
+
+            // Air travel
+            renderMetric('jet-fuel', data.jet_fuel, 'Jet Fuel', { format: v => '$' + Number(v).toFixed(2) + '/gal' });
+            if (data.jet_fuel && data.jet_fuel.length > 0) createChart('chart-jet-fuel', data.jet_fuel.map(d => formatDate(d.date)), data.jet_fuel.map(d => d.value), '#ef4444', { decimals: 2 });
+
+            renderMetric('enplanements', data.enplanements, 'Enplane', { format: v => (Number(v) / 1000).toFixed(1) + 'M passengers' });
+            if (data.enplanements && data.enplanements.length > 0) createChart('chart-enplanements', data.enplanements.map(d => formatDate(d.date)), data.enplanements.map(d => d.value / 1000), '#3b82f6', { suffix: 'M', decimals: 1 });
+
+            renderMetric('load-factor', data.load_factor, 'Load', { format: v => Number(v).toFixed(1) + '%' });
+            if (data.load_factor && data.load_factor.length > 0) createChartWithThreshold('chart-load-factor', data.load_factor.map(d => formatDate(d.date)), data.load_factor.map(d => d.value), '#a855f7', 85, '85% Threshold', { suffix: '%', decimals: 1 });
+
+            renderMetric('t100-passengers', data.t100_passengers, 'T-100', { format: v => (Number(v) / 1000000).toFixed(1) + 'M passengers' });
+            if (data.t100_passengers && data.t100_passengers.length > 0) createChart('chart-t100', data.t100_passengers.map(d => formatDate(d.date)), data.t100_passengers.map(d => d.value / 1000000), '#3b82f6', { suffix: 'M', decimals: 1 });
+
+            if (data.tsa_checkpoint && data.tsa_checkpoint.length > 0) {
+                const tsa7dayAvg = data.tsa_checkpoint.slice(0, 7).reduce((sum, d) => sum + d.value, 0) / Math.min(7, data.tsa_checkpoint.length);
+                document.getElementById('tsa-checkpoint').innerHTML = '<div class="value">' + (tsa7dayAvg / 1000000).toFixed(2) + 'M/day</div><div class="period">7-day average</div>';
+                createChart('chart-tsa', data.tsa_checkpoint.map(d => formatDate(d.date)), data.tsa_checkpoint.map(d => d.value / 1000000), '#10b981', { suffix: 'M', decimals: 2 });
+            }
+
+            // Ski airports
+            if (data.ski_gateway_airports && data.ski_gateway_airports.length > 0) {
+                window.skiAirportsData = data.ski_gateway_airports;
+                renderSkiAirports('all');
+            }
+
+        } catch (error) {
+            console.error("Failed to load dashboard:", error);
+            document.getElementById("last-update").textContent = "Error loading data";
+        }
+    }
+
+    function renderSkiAirports(region) {
+        const grid = document.getElementById('ski-airports-grid');
+        if (!grid || !window.skiAirportsData) return;
+        const airports = region === 'all'
+            ? window.skiAirportsData
+            : window.skiAirportsData.filter(a => a.region === region);
+        if (airports.length === 0) {
+            grid.innerHTML = '<p style="color: var(--text-muted); font-style: italic;">No airports found for this region.</p>';
+            return;
+        }
+        grid.innerHTML = airports.map(apt => {
+            const paxFormatted = apt.passengers >= 1000000
+                ? (apt.passengers / 1000000).toFixed(1) + 'M'
+                : (apt.passengers / 1000).toFixed(0) + 'K';
+            // True month-over-month YoY (e.g., Nov 2025 vs Nov 2024)
+            const yoyHtml = apt.yoy_change !== null
+                ? '<div class="change-indicator"><span class="change-pill ' + (apt.yoy_change >= 0 ? 'positive' : 'negative') + '">' +
+                  '<span class="arrow">' + (apt.yoy_change >= 0 ? '↑' : '↓') + '</span> ' + (apt.yoy_change >= 0 ? '+' : '') + apt.yoy_change.toFixed(1) + '% YoY</span></div>'
+                : '';
+            // Use month label (e.g., "Nov 2025") from new data format
+            const monthLabel = apt.month || apt.year || '';
+            return '<div class="metric-card ski-airport-card" data-region="' + apt.region + '">' +
+                '<h4>' + apt.city + ' <span class="airport-code">(' + apt.code + ')</span></h4>' +
+                '<div class="value">' + paxFormatted + '</div>' +
+                '<div class="period">' + monthLabel + ' passengers</div>' +
+                yoyHtml +
+                '<div class="resort-tag">⛷️ ' + apt.resorts + '</div>' +
+                '</div>';
+        }).join('');
+    }
+
+    function filterSkiAirports(region) {
+        document.querySelectorAll('.region-filter').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.region === region);
+        });
+        renderSkiAirports(region);
+    }
+
+    // Load prediction markets separately
+    async function loadPredictionMarkets() {
+        try {
+            const response = await fetch("/data/prediction-markets.json?t=" + Date.now());
+            const data = await response.json();
+            const summary = data.summary || {};
+
+            // Helper to format settlement dates
+            // "Settles" = when the market closes and the outcome is determined (bet pays out)
+            function formatResolvesDate(isoDate) {
+                if (!isoDate) return '';
+                const d = new Date(isoDate);
+                return 'Settles ' + d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            }
+
+            // Guest Demand Signals
+
+            // 1. Recession Risk
+            const recessionItem = summary.guest_demand_signals?.find(s => s.metric === 'Recession Probability');
+            const recessionEl = document.getElementById('recession-consensus');
+            if (recessionEl && recessionItem) {
+                const prob = (recessionItem.value * 100).toFixed(0);
+                let riskClass = 'positive';  // Low risk is good
+                if (recessionItem.value >= 0.30) riskClass = 'negative';
+                else if (recessionItem.value >= 0.15) riskClass = 'neutral';
+                recessionEl.innerHTML = '<div class="consensus-value ' + riskClass + '">' + prob + '%</div>' +
+                    '<div class="consensus-label">Market-implied probability of US recession</div>';
+
+                // Show sources
+                const sourcesEl = document.getElementById('recession-sources');
+                if (sourcesEl && recessionItem.sources) {
+                    const sourceHtml = recessionItem.sources.map(s =>
+                        '<span class="source-tag">' + s.source + ': ' + (s.value * 100).toFixed(0) + '%</span>'
+                    ).join(' ');
+                    sourcesEl.innerHTML = sourceHtml;
+                }
+
+                // Show resolves date (use earliest from sources)
+                const recessionResolvesEl = document.getElementById('recession-resolves');
+                if (recessionResolvesEl && recessionItem.sources) {
+                    const earliestResolves = recessionItem.sources
+                        .map(s => s.resolves)
+                        .filter(Boolean)
+                        .sort()[0];
+                    if (earliestResolves) {
+                        recessionResolvesEl.textContent = formatResolvesDate(earliestResolves);
+                    }
+                }
+            } else if (recessionEl) {
+                recessionEl.innerHTML = '<div class="consensus-value">--</div><div class="consensus-label">Data unavailable</div>';
+            }
+
+            // 2. Fed Rate Decision
+            const fedItem = summary.guest_demand_signals?.find(s => s.metric === 'Fed Rate Decision');
+            const fedEl = document.getElementById('fed-decision');
+            if (fedEl && fedItem) {
+                const outcomeColors = { 'Cut': '#22c55e', 'Hold': '#f59e0b', 'Hike': '#ef4444' };
+                const color = outcomeColors[fedItem.outcome] || '#94a3b8';
+                const meeting = fedItem.meeting || 'Next';
+                fedEl.innerHTML = '<div class="consensus-value" style="color: ' + color + '">' + fedItem.outcome + '</div>' +
+                    '<div class="consensus-label">' + (fedItem.value * 100).toFixed(0) + '% probability at ' + meeting + ' meeting</div>';
+
+                // Draw probability bar chart
+                const ctx = document.getElementById('chart-fed-probs');
+                if (ctx && fedItem.all_outcomes) {
+                    if (charts['chart-fed-probs']) charts['chart-fed-probs'].destroy();
+                    const outcomes = fedItem.all_outcomes;
+                    charts['chart-fed-probs'] = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Cut', 'Hold', 'Hike'],
+                            datasets: [{
+                                data: [outcomes.cut * 100, outcomes.hold * 100, outcomes.hike * 100],
+                                backgroundColor: ['#22c55e', '#f59e0b', '#ef4444'],
+                                borderRadius: 4
+                            }]
+                        },
+                        options: {
+                            indexAxis: 'y',
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: { legend: { display: false } },
+                            scales: {
+                                x: { max: 100, grid: { color: '#1a2230' }, ticks: { callback: v => v + '%', font: { size: 9 } } },
+                                y: { grid: { display: false }, ticks: { font: { size: 10 } } }
+                            }
+                        }
+                    });
+                }
+
+                // Show resolves date for Fed decision
+                const fedResolvesEl = document.getElementById('fed-resolves');
+                if (fedResolvesEl && fedItem.resolves) {
+                    fedResolvesEl.textContent = formatResolvesDate(fedItem.resolves);
+                }
+            } else if (fedEl) {
+                fedEl.innerHTML = '<div class="consensus-value">--</div><div class="consensus-label">Data unavailable</div>';
+            }
+
+            // 3. Rate Cuts This Year
+            const rateCutsItem = summary.guest_demand_signals?.find(s => s.metric === 'Rate Cuts This Year');
+            const rateCutsEl = document.getElementById('rate-cuts-consensus');
+            if (rateCutsEl && rateCutsItem && rateCutsItem.distribution) {
+                // Find the most likely number of cuts
+                const dist = rateCutsItem.distribution;
+                const maxProb = Math.max(...dist.map(d => d.probability));
+                const mostLikely = dist.find(d => d.probability === maxProb);
+                // Extract number from title like "Will the Fed cut rates 2 times?"
+                const match = mostLikely?.title?.match(/(\d+)\s*times?/i);
+                const numCuts = match ? match[1] : '?';
+
+                rateCutsEl.innerHTML = '<div class="consensus-value">' + numCuts + '</div>' +
+                    '<div class="consensus-label">Most likely number of Fed rate cuts</div>';
+
+                // Draw distribution chart
+                const ctx = document.getElementById('chart-rate-cuts');
+                if (ctx) {
+                    if (charts['chart-rate-cuts']) charts['chart-rate-cuts'].destroy();
+                    // Sort by number of cuts (extract from title)
+                    const sortedDist = [...dist].sort((a, b) => {
+                        const numA = parseInt(a.title?.match(/(\d+)/)?.[1] || '0');
+                        const numB = parseInt(b.title?.match(/(\d+)/)?.[1] || '0');
+                        return numA - numB;
+                    });
+                    charts['chart-rate-cuts'] = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: sortedDist.map(d => {
+                                const m = d.title?.match(/(\d+)/);
+                                return m ? m[1] : '?';
+                            }),
+                            datasets: [{
+                                data: sortedDist.map(d => d.probability * 100),
+                                backgroundColor: sortedDist.map(d => d.probability === maxProb ? '#3b82f6' : '#475569'),
+                                borderRadius: 4
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: { legend: { display: false } },
+                            scales: {
+                                x: { grid: { display: false }, title: { display: true, text: '# of cuts', font: { size: 9 }, color: '#64748b' }, ticks: { font: { size: 9 } } },
+                                y: { max: Math.ceil(maxProb * 100 / 10) * 10 + 10, grid: { color: '#1a2230' }, ticks: { callback: v => v + '%', font: { size: 9 } } }
+                            }
+                        }
+                    });
+                }
+
+                // Show resolves date for Rate Cuts
+                const rateCutsResolvesEl = document.getElementById('rate-cuts-resolves');
+                if (rateCutsResolvesEl && rateCutsItem.resolves) {
+                    rateCutsResolvesEl.textContent = formatResolvesDate(rateCutsItem.resolves);
+                }
+            } else if (rateCutsEl) {
+                rateCutsEl.innerHTML = '<div class="consensus-value">--</div><div class="consensus-label">Data unavailable</div>';
+            }
+
+            // Operating Cost Drivers
+
+            // 4. WTI Oil Price
+            const oilItem = summary.operating_cost_drivers?.find(s => s.metric === 'WTI Oil Price');
+            const oilEl = document.getElementById('oil-consensus');
+            if (oilEl && oilItem && oilItem.distribution) {
+                const dist = oilItem.distribution;
+                const maxProb = Math.max(...dist.map(d => d.probability));
+                const mostLikely = dist.find(d => d.probability === maxProb);
+                // Extract price from title like "Between 63 and 63.99" or ">63.99"
+                const priceMatch = mostLikely?.title?.match(/(?:Between\s+)?(\d+(?:\.\d+)?)/);
+                const price = priceMatch ? '$' + priceMatch[1] : '--';
+
+                oilEl.innerHTML = '<div class="consensus-value">' + price + '</div>' +
+                    '<div class="consensus-label">Most likely WTI price range this week</div>';
+
+                // Draw distribution chart
+                const ctx = document.getElementById('chart-oil-dist');
+                if (ctx) {
+                    if (charts['chart-oil-dist']) charts['chart-oil-dist'].destroy();
+                    // Sort by price threshold - titles like "Between 63 and 63.99" or ">63.99"
+                    const sortedDist = [...dist].sort((a, b) => {
+                        const priceA = parseFloat(a.title?.match(/(?:Between\s+)?(\d+(?:\.\d+)?)/)?.[1] || '0');
+                        const priceB = parseFloat(b.title?.match(/(?:Between\s+)?(\d+(?:\.\d+)?)/)?.[1] || '0');
+                        return priceA - priceB;
+                    });
+                    charts['chart-oil-dist'] = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: sortedDist.map(d => {
+                                const m = d.title?.match(/(?:Between\s+)?(\d+)/);
+                                return m ? '$' + m[1] : '?';
+                            }),
+                            datasets: [{
+                                data: sortedDist.map(d => d.probability * 100),
+                                backgroundColor: sortedDist.map(d => d.probability === maxProb ? '#f59e0b' : '#475569'),
+                                borderRadius: 4
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: { legend: { display: false } },
+                            scales: {
+                                x: { grid: { display: false }, ticks: { font: { size: 9 }, maxRotation: 45 } },
+                                y: { max: Math.ceil(maxProb * 100 / 10) * 10 + 10, grid: { color: '#1a2230' }, ticks: { callback: v => v + '%', font: { size: 9 } } }
+                            }
+                        }
+                    });
+                }
+
+                // Show resolves date for WTI Oil
+                const oilResolvesEl = document.getElementById('oil-resolves');
+                if (oilResolvesEl && oilItem.resolves) {
+                    oilResolvesEl.textContent = formatResolvesDate(oilItem.resolves);
+                }
+            } else if (oilEl) {
+                oilEl.innerHTML = '<div class="consensus-value">--</div><div class="consensus-label">Data unavailable</div>';
+            }
+
+            // 5. Gas Price Outlook
+            const gasItem = summary.operating_cost_drivers?.find(s => s.metric === 'Gas Price Outlook');
+            const gasEl = document.getElementById('gas-direction');
+            if (gasEl && gasItem) {
+                const price = gasItem.value.toFixed(2);
+                const prob = (gasItem.probability * 100).toFixed(0);
+                // The probability is "chance price is ABOVE this level"
+                // So if 45% chance above $2.85, that means 55% chance it's AT or BELOW $2.85
+                const belowProb = 100 - parseInt(prob);
+                gasEl.innerHTML = '<div class="consensus-value">$' + price + '/gal</div>' +
+                    '<div class="consensus-label">Traders see a ' + belowProb + '% chance gas stays at or below this price</div>';
+
+                // Show the levels with clearer labels
+                const metaEl = document.getElementById('gas-meta');
+                if (metaEl && gasItem.levels) {
+                    const levelsHtml = gasItem.levels.slice(0, 4).map(l => {
+                        const aboveProb = (l.probability * 100).toFixed(0);
+                        return '$' + l.price.toFixed(2) + ' (' + aboveProb + '% above)';
+                    }).join(' · ');
+                    metaEl.innerHTML = '<span style="color: #64748b;">Price thresholds: </span>' + levelsHtml;
+                }
+
+                // Show resolves date for Gas Price
+                const gasResolvesEl = document.getElementById('gas-resolves');
+                if (gasResolvesEl && gasItem.resolves) {
+                    gasResolvesEl.textContent = formatResolvesDate(gasItem.resolves);
+                }
+            } else if (gasEl) {
+                gasEl.innerHTML = '<div class="consensus-value">--</div><div class="consensus-label">Data unavailable</div>';
+            }
+
+            // Update timestamp
+            const updatedEl = document.getElementById('prediction-updated');
+            if (updatedEl && data.fetched_at) {
+                const fetchedDate = new Date(data.fetched_at);
+                updatedEl.textContent = 'Updated: ' + fetchedDate.toLocaleString();
+            }
+
+        } catch (error) {
+            console.error("Failed to load prediction markets:", error);
+            // Set fallback content
+            ['recession-consensus', 'fed-decision', 'rate-cuts-consensus', 'oil-consensus', 'gas-direction'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.innerHTML = '<div class="consensus-value">--</div><div class="consensus-label">Unable to load data</div>';
+            });
+        }
+    }
+
+    // Sports Betting Activity
+    async function loadSportsBetting() {
+        try {
+            const response = await fetch("/data/sports-betting.json?t=" + Date.now());
+            const data = await response.json();
+            const summary = data.summary || {};
+
+            // Helper to format large numbers
+            function formatBillions(n) {
+                if (!n) return '--';
+                return '$' + (n / 1e9).toFixed(1) + 'B';
+            }
+
+            function formatPercent(n) {
+                if (n === null || n === undefined) return '';
+                const sign = n >= 0 ? '+' : '';
+                return sign + (n * 100).toFixed(1) + '%';
+            }
+
+            // U.S. TTM Handle
+            const usTtmEl = document.getElementById('betting-us-ttm-handle');
+            if (usTtmEl && summary.us) {
+                const ttm = summary.us.ttm_handle_usd;
+                const ttmYoy = summary.us.ttm_yoy_handle_change;
+                let yoyHtml = '';
+                if (ttmYoy !== null && ttmYoy !== undefined) {
+                    const yoyClass = ttmYoy >= 0 ? 'positive' : 'negative';
+                    yoyHtml = '<span class="change-pill ' + yoyClass + '">' + formatPercent(ttmYoy) + ' YoY</span>';
+                }
+                usTtmEl.innerHTML = '<div class="value">' + formatBillions(ttm) + '</div>' +
+                    '<div class="change-indicator">' + yoyHtml + '</div>' +
+                    '<div class="period">Trailing 12 months</div>';
+            }
+
+            // U.S. Latest Month - with same-month YoY comparison
+            // Skip Aug 2025 data as it appears incomplete; use most recent reliable month
+            const usLatestEl = document.getElementById('betting-us-latest');
+            const monthlyDataForYoy = data.us_monthly || [];
+            if (usLatestEl && monthlyDataForYoy.length > 0) {
+                // Sort descending and find most recent reliable month (skip 2025-08 due to incomplete data)
+                const sortedMonthly = [...monthlyDataForYoy].sort((a, b) => b.date.localeCompare(a.date));
+                const reliableMonth = sortedMonthly.find(m => m.date !== '2025-08-01');
+
+                if (reliableMonth) {
+                    const handle = reliableMonth.handle_usd;
+                    const monthDate = new Date(reliableMonth.date + 'T00:00:00');
+                    const monthStr = monthDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+
+                    // Find same month from prior year
+                    const priorYearMonth = reliableMonth.date.replace(/^\d{4}/, (y) => String(parseInt(y) - 1));
+                    const priorMonthData = monthlyDataForYoy.find(m => m.date === priorYearMonth);
+
+                    let yoyHtml = '';
+                    if (priorMonthData && priorMonthData.handle_usd && handle) {
+                        const yoy = (handle - priorMonthData.handle_usd) / priorMonthData.handle_usd;
+                        const yoyClass = yoy >= 0 ? 'positive' : 'negative';
+                        const priorMonthName = new Date(priorYearMonth + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+                        yoyHtml = '<span class="change-pill ' + yoyClass + '">' + formatPercent(yoy) + ' vs ' + priorMonthName + '</span>';
+                    }
+
+                    usLatestEl.innerHTML = '<div class="value">' + formatBillions(handle) + '</div>' +
+                        '<div class="change-indicator">' + yoyHtml + '</div>' +
+                        '<div class="period">' + monthStr + '</div>';
+                }
+            }
+
+            // Ontario - with context since we only have one year
+            const ontarioEl = document.getElementById('betting-ontario');
+            if (ontarioEl && summary.ontario) {
+                const handle = summary.ontario.betting_wagers_usd;
+                const fy = summary.ontario.fiscal_year || '';
+                ontarioEl.innerHTML = '<div class="value">' + formatBillions(handle) + '</div>' +
+                    '<div class="period">FY ' + fy + ' (first full year)</div>' +
+                    '<div style="font-size: 0.7rem; color: #64748b; margin-top: 0.5rem;">Ontario launched Apr 2022; limited historical data available</div>';
+            }
+
+            // Monthly Handle Trend Chart
+            // Filter out Aug 2025 due to incomplete data
+            const monthlyData = (data.us_monthly || []).filter(m => m.date !== '2025-08-01');
+            if (monthlyData.length > 0) {
+                // Sort by date
+                monthlyData.sort((a, b) => a.date.localeCompare(b.date));
+
+                const labels = monthlyData.map(d => {
+                    const date = new Date(d.date + 'T00:00:00');
+                    return date.toLocaleDateString('en-US', { month: 'short', year: '2-digit' });
+                });
+                const values = monthlyData.map(d => d.handle_usd / 1e9);  // Convert to billions
+
+                const ctx = document.getElementById('chart-betting-handle');
+                if (ctx) {
+                    if (charts['betting-handle']) {
+                        charts['betting-handle'].destroy();
+                    }
+                    charts['betting-handle'] = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: 'Handle ($B)',
+                                data: values,
+                                borderColor: '#a855f7',
+                                backgroundColor: 'rgba(168, 85, 247, 0.1)',
+                                fill: true,
+                                tension: 0.3,
+                                pointRadius: 2,
+                                pointHoverRadius: 5
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { display: false },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(ctx) {
+                                            return '$' + ctx.parsed.y.toFixed(1) + 'B';
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {
+                                x: {
+                                    ticks: {
+                                        maxTicksLimit: 12,
+                                        color: '#94a3b8',
+                                        font: { size: 12, weight: '500' }
+                                    },
+                                    grid: { display: false }
+                                },
+                                y: {
+                                    ticks: {
+                                        callback: function(value) { return '$' + value + 'B'; },
+                                        color: '#94a3b8',
+                                        font: { size: 12, weight: '500' }
+                                    },
+                                    grid: { color: 'rgba(255,255,255,0.1)' }
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+
+            // Payout Percentage Chart
+            // Filter to months with both handle and revenue data, exclude Aug 2025
+            const payoutData = (data.us_monthly || [])
+                .filter(m => m.handle_usd && m.revenue_usd && m.date !== '2025-08-01')
+                .sort((a, b) => a.date.localeCompare(b.date));
+
+            if (payoutData.length > 0) {
+                const payoutLabels = payoutData.map(d => {
+                    const date = new Date(d.date + 'T00:00:00');
+                    return date.toLocaleDateString('en-US', { month: 'short', year: '2-digit' });
+                });
+                // Payout % = (Handle - Revenue) / Handle * 100
+                const payoutValues = payoutData.map(d => ((d.handle_usd - d.revenue_usd) / d.handle_usd) * 100);
+
+                const payoutCtx = document.getElementById('chart-betting-payout');
+                if (payoutCtx) {
+                    if (charts['betting-payout']) {
+                        charts['betting-payout'].destroy();
+                    }
+                    charts['betting-payout'] = new Chart(payoutCtx, {
+                        type: 'line',
+                        data: {
+                            labels: payoutLabels,
+                            datasets: [{
+                                label: 'Payout %',
+                                data: payoutValues,
+                                borderColor: '#22c55e',
+                                backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                                fill: true,
+                                tension: 0.3,
+                                pointRadius: 2,
+                                pointHoverRadius: 5
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { display: false },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(ctx) {
+                                            return ctx.parsed.y.toFixed(1) + '% returned to bettors';
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {
+                                x: {
+                                    ticks: {
+                                        maxTicksLimit: 12,
+                                        color: '#94a3b8',
+                                        font: { size: 12, weight: '500' }
+                                    },
+                                    grid: { display: false }
+                                },
+                                y: {
+                                    min: 85,
+                                    max: 100,
+                                    ticks: {
+                                        callback: function(value) { return value + '%'; },
+                                        color: '#94a3b8',
+                                        font: { size: 12, weight: '500' }
+                                    },
+                                    grid: { color: 'rgba(255,255,255,0.1)' }
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+
+            // Annual Totals - exclude 2025 YTD since it contains incomplete August data
+            const annualData = (data.us_annual || []).filter(y => y.year !== 2025);
+            const annualGrid = document.getElementById('betting-annual-grid');
+            if (annualGrid && annualData.length > 0) {
+                // Sort by year descending, take last 5 complete years
+                annualData.sort((a, b) => b.year - a.year);
+                const recentYears = annualData.slice(0, 5);
+
+                let html = '';
+                let prevHandle = null;
+                let prevYear = null;
+                for (let i = recentYears.length - 1; i >= 0; i--) {
+                    const yr = recentYears[i];
+                    let yoyHtml = '';
+
+                    // Show YoY for all complete years
+                    if (prevHandle && yr.handle_usd) {
+                        const yoy = (yr.handle_usd - prevHandle) / prevHandle;
+                        const yoyClass = yoy >= 0 ? 'positive' : 'negative';
+                        yoyHtml = '<span class="change-pill ' + yoyClass + '" title="Growth vs ' + prevYear + '">' + formatPercent(yoy) + ' vs ' + prevYear + '</span>';
+                    }
+
+                    html += '<div class="metric-card">' +
+                        '<h4>' + yr.year + '</h4>' +
+                        '<div class="value">' + formatBillions(yr.handle_usd) + '</div>' +
+                        '<div class="change-indicator">' + yoyHtml + '</div>' +
+                        '</div>';
+
+                    prevHandle = yr.handle_usd;
+                    prevYear = yr.year;
+                }
+                annualGrid.innerHTML = html;
+            }
+
+            // Update timestamp
+            const updatedEl = document.getElementById('betting-updated');
+            if (updatedEl && data.fetched_at) {
+                const fetchedDate = new Date(data.fetched_at);
+                updatedEl.textContent = 'Data through: ' + (summary.us?.latest_month ? new Date(summary.us.latest_month + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : 'N/A') +
+                    ' | Updated: ' + fetchedDate.toLocaleString();
+            }
+
+        } catch (error) {
+            console.error("Failed to load sports betting data:", error);
+            ['betting-us-ttm-handle', 'betting-us-latest', 'betting-ontario'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.innerHTML = '<div class="value">--</div><div class="period">Unable to load data</div>';
+            });
+        }
+    }
+
+    loadDashboard();
+    loadPredictionMarkets();
+    loadSportsBetting();
+    setInterval(loadDashboard, 300000);
+    </script>
+</body>
+</html>

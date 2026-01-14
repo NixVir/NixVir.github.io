@@ -228,38 +228,48 @@ def fetch_news_sentiment():
 
 
 def fetch_market_data_yahoo(symbol, historical=False):
-    """Fetch market data from Yahoo Finance"""
+    """Fetch market data from Yahoo Finance using chart API (more reliable)"""
     end_date = datetime.now()
     start_date = end_date - timedelta(days=365 if historical else 7)
 
     period1 = int(start_date.timestamp())
     period2 = int(end_date.timestamp())
 
-    url = f"https://query1.finance.yahoo.com/v7/finance/download/{symbol}"
-    url += f"?period1={period1}&period2={period2}&interval=1d&events=history"
+    # Use the v8 chart API which is more reliable than the download API
+    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}"
+    url += f"?period1={period1}&period2={period2}&interval=1d"
 
     try:
-        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        req = urllib.request.Request(url, headers={
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        })
         with urllib.request.urlopen(req, timeout=30) as response:
-            csv_data = response.read().decode('utf-8')
-            lines = csv_data.strip().split('\n')
+            data = json.loads(response.read().decode('utf-8'))
 
-            if len(lines) < 2:
+            result = data.get('chart', {}).get('result', [])
+            if not result:
+                return None
+
+            chart_data = result[0]
+            timestamps = chart_data.get('timestamp', [])
+            indicators = chart_data.get('indicators', {}).get('quote', [{}])[0]
+            closes = indicators.get('close', [])
+
+            if not timestamps or not closes:
                 return None
 
             if historical:
                 # Return all data points for sparkline
                 history = []
-                for line in lines[1:]:  # Skip header
-                    parts = line.split(',')
-                    if len(parts) >= 7:
-                        try:
-                            history.append({
-                                'date': parts[0],
-                                'close': float(parts[4])
-                            })
-                        except:
-                            continue
+                for i, ts in enumerate(timestamps):
+                    if closes[i] is not None:
+                        date_str = datetime.fromtimestamp(ts).strftime('%Y-%m-%d')
+                        history.append({
+                            'date': date_str,
+                            'close': closes[i]
+                        })
+                if not history:
+                    return None
                 return {
                     'symbol': symbol,
                     'current_date': history[-1]['date'] if history else None,
@@ -268,12 +278,16 @@ def fetch_market_data_yahoo(symbol, historical=False):
                 }
             else:
                 # Just return latest value
-                last_line = lines[-1].split(',')
+                last_idx = len(closes) - 1
+                while last_idx >= 0 and closes[last_idx] is None:
+                    last_idx -= 1
+                if last_idx < 0:
+                    return None
                 return {
                     'symbol': symbol,
-                    'date': last_line[0],
-                    'close': float(last_line[4]),
-                    'volume': int(float(last_line[6])) if last_line[6] != 'null' else 0
+                    'date': datetime.fromtimestamp(timestamps[last_idx]).strftime('%Y-%m-%d'),
+                    'close': closes[last_idx],
+                    'volume': 0
                 }
     except Exception as e:
         print_safe(f"  ! {symbol} unavailable")
@@ -710,69 +724,73 @@ SKI_GATEWAY_AIRPORTS = {
     # California/Nevada
     'RNO': {'name': 'Reno-Tahoe Intl', 'city': 'Reno', 'resorts': 'Lake Tahoe resorts', 'region': 'california'},
     'MMH': {'name': 'Mammoth Yosemite', 'city': 'Mammoth Lakes', 'resorts': 'Mammoth Mountain', 'region': 'california'},
+    'FAT': {'name': 'Fresno Yosemite Intl', 'city': 'Fresno', 'resorts': 'Yosemite, China Peak', 'region': 'california'},
+    'PSP': {'name': 'Palm Springs Intl', 'city': 'Palm Springs', 'resorts': 'Big Bear, Mountain High', 'region': 'california'},
     # Major Hubs (high volume, serve multiple resorts)
     'DEN': {'name': 'Denver Intl', 'city': 'Denver', 'resorts': 'All Colorado resorts', 'region': 'hubs'},
     'SLC': {'name': 'Salt Lake City Intl', 'city': 'Salt Lake City', 'resorts': 'Park City, Snowbird, Alta', 'region': 'hubs'},
+    # Canadian ski gateways (T-100 International data)
+    'YYC': {'name': 'Calgary Intl', 'city': 'Calgary', 'resorts': 'Banff, Lake Louise, Kicking Horse', 'region': 'canada'},
+    'YVR': {'name': 'Vancouver Intl', 'city': 'Vancouver', 'resorts': 'Whistler Blackcomb', 'region': 'canada'},
+    'YLW': {'name': 'Kelowna Intl', 'city': 'Kelowna', 'resorts': 'Big White, Silver Star', 'region': 'canada'},
+    'YXC': {'name': 'Cranbrook/Kimberley', 'city': 'Cranbrook', 'resorts': 'Fernie, Kimberley', 'region': 'canada'},
+    'YEG': {'name': 'Edmonton Intl', 'city': 'Edmonton', 'resorts': 'Marmot Basin, Jasper', 'region': 'canada'},
 }
 
 
 def fetch_ski_gateway_airports():
     """
-    Fetch T-100 passenger data for ski gateway airports.
+    Load ski gateway airport data with true month-over-month YoY comparisons.
 
-    Uses the BTS T-100 Segment Summary By Origin Airport dataset.
+    Uses pre-processed monthly data from airport_passengers.json (generated by
+    generate_airport_output.py from BTS T-100 CSV downloads and direct airport scrapers).
 
     Returns:
-        List of dicts with airport code, passengers, year, and metadata
+        List of dicts with airport code, latest month passengers, and real YoY change
     """
-    url = "https://data.bts.gov/resource/r495-tyji.json?$limit=5000&$order=year%20DESC"
+    airport_json_path = os.path.join(os.path.dirname(__file__), 'static', 'data', 'airport_passengers.json')
 
     try:
-        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-        with urllib.request.urlopen(req, timeout=60) as response:
-            data = json.loads(response.read().decode())
+        with open(airport_json_path, 'r') as f:
+            airport_data = json.load(f)
 
-        if not data:
+        if not airport_data or 'airports' not in airport_data:
+            print_safe("  ! airport_passengers.json missing or invalid")
             return None
 
-        # Filter to ski gateway airports and organize by code
-        airport_data = {}
-        for record in data:
-            code = record.get('origin_airport_code', '')
+        results = []
+        months_abbrev = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+        for code, monthly_data in airport_data['airports'].items():
             if code not in SKI_GATEWAY_AIRPORTS:
                 continue
 
-            year = record.get('year', '')
-            passengers = int(float(record.get('total_passengers', 0)))
-            domestic_passengers = int(float(record.get('domestic_passengers', 0)))
-            load_factor = float(record.get('total_load_factor', 0) or 0)
-
-            if code not in airport_data:
-                airport_data[code] = []
-
-            airport_data[code].append({
-                'year': year,
-                'passengers': passengers,
-                'domestic_passengers': domestic_passengers,
-                'load_factor': load_factor
-            })
-
-        # Build result with latest data and YoY comparison
-        results = []
-        for code, years_data in airport_data.items():
-            if not years_data:
+            # Get all months sorted descending
+            sorted_months = sorted(monthly_data.keys(), reverse=True)
+            if not sorted_months:
                 continue
 
-            # Sort by year descending
-            years_data.sort(key=lambda x: x['year'], reverse=True)
-            latest = years_data[0]
+            # Latest month data
+            latest_month = sorted_months[0]  # e.g., "2025-11"
+            latest = monthly_data[latest_month]
 
-            # Calculate YoY change if prior year available
+            # Parse year and month
+            year, month = latest_month.split('-')
+            year = int(year)
+            month = int(month)
+
+            # Get prior year same month for true YoY comparison
+            prior_month_key = f"{year - 1}-{month:02d}"
             yoy_change = None
-            if len(years_data) >= 2:
-                prior = years_data[1]
-                if prior['passengers'] > 0:
-                    yoy_change = ((latest['passengers'] - prior['passengers']) / prior['passengers']) * 100
+
+            if prior_month_key in monthly_data:
+                prior_pax = monthly_data[prior_month_key]['passengers']
+                if prior_pax > 0:
+                    yoy_change = ((latest['passengers'] - prior_pax) / prior_pax) * 100
+
+            # Also use the pre-computed yoy_pct if available and our calculation failed
+            if yoy_change is None and latest.get('yoy_pct') is not None:
+                yoy_change = latest['yoy_pct']
 
             config = SKI_GATEWAY_AIRPORTS[code]
             results.append({
@@ -781,18 +799,21 @@ def fetch_ski_gateway_airports():
                 'city': config['city'],
                 'resorts': config['resorts'],
                 'region': config['region'],
-                'year': latest['year'],
+                'month': f"{months_abbrev[month - 1]} {year}",
+                'month_key': latest_month,
                 'passengers': latest['passengers'],
-                'domestic_passengers': latest['domestic_passengers'],
-                'load_factor': latest['load_factor'],
                 'yoy_change': round(yoy_change, 1) if yoy_change is not None else None,
-                'years_available': len(years_data)
+                'data_source': airport_data.get('data_sources', {}).get(code, {}).get('source', 'BTS T-100'),
+                'months_available': len(sorted_months)
             })
 
         # Sort by passengers descending
         results.sort(key=lambda x: x['passengers'], reverse=True)
         return results
 
+    except FileNotFoundError:
+        print_safe(f"  ! airport_passengers.json not found - run generate_airport_output.py first")
+        return None
     except Exception as e:
         print_safe(f"  ! Ski gateway airport data unavailable: {e}")
         return None
@@ -856,6 +877,38 @@ def update_dashboard():
     if vix_data:
         dashboard_data['vix'] = vix_data
         print_safe(f"  OK VIX: {vix_data[-1]['value']:.2f} ({len(vix_data)} data points)")
+
+    # 2f. Magnificent 7 Stocks
+    print_safe("\nFetching Magnificent 7 Stocks...")
+    mag7_symbols = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'NVDA', 'META', 'TSLA']
+    mag7_names = {
+        'AAPL': 'Apple Inc.',
+        'MSFT': 'Microsoft Corp',
+        'GOOGL': 'Alphabet Inc.',
+        'AMZN': 'Amazon.com Inc.',
+        'NVDA': 'NVIDIA Corp',
+        'META': 'Meta Platforms',
+        'TSLA': 'Tesla Inc.'
+    }
+    mag7_data = []
+    for symbol in mag7_symbols:
+        stock_data = fetch_market_data_yahoo(symbol, historical=True)
+        if stock_data:
+            # Transform to expected format
+            mag7_data.append({
+                'symbol': symbol,
+                'name': mag7_names[symbol],
+                'price': stock_data['current_close'],
+                'previousClose': stock_data['history'][-2]['close'] if len(stock_data['history']) >= 2 else stock_data['current_close'],
+                'history': [{'date': h['date'], 'value': h['close']} for h in stock_data['history'][-90:]]  # Last 90 days
+            })
+            print_safe(f"  OK {symbol}: ${stock_data['current_close']:.2f}")
+        else:
+            print_safe(f"  ! {symbol}: unavailable")
+        time.sleep(0.5)  # Rate limit
+    if mag7_data:
+        dashboard_data['mag7'] = mag7_data
+        print_safe(f"  Fetched {len(mag7_data)} of 7 stocks")
 
     # 3. Fed Funds Rate (Daily - fetch ~1 year of trading days)
     print_safe("\nFetching Fed Funds Rate...")
@@ -1221,7 +1274,8 @@ def update_dashboard():
         print_safe(f"  OK Ski Airports: {len(ski_airports)} airports loaded")
         # Show top 5 by passenger volume
         for apt in ski_airports[:5]:
-            print_safe(f"    {apt['code']} ({apt['city']}): {apt['passengers']:,} pax ({apt['year']})")
+            period = apt.get('month', apt.get('year', 'N/A'))
+            print_safe(f"    {apt['code']} ({apt['city']}): {apt['passengers']:,} pax ({period})")
 
     # Write to file
     output_path = 'static/data/dashboard.json'
