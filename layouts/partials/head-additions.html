@@ -1,3 +1,8 @@
+<!-- Google Fonts for dark theme dashboard components -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
 /* Fix Data Insights article titles to use consistent sans-serif font */
 /* Override Athelas serif font used in summary-with-image template */
@@ -10,210 +15,153 @@ h3.athelas,
   font-family: 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif !important;
 }
 
-/* Snow Cover Header Widget - 3 Card Design */
-.snow-cover-widget {
+/* Snow Globe Header Widget - Optimized for Readability */
+/* Best practices: 16-22px for primary values, 12-14px for labels, high contrast */
+.snow-globe-widget {
+  display: block;
+  text-decoration: none;
+  color: white;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.snow-globe-widget:hover {
+  transform: translateY(-2px);
+}
+
+.snow-globe-container {
+  display: flex;
+  align-items: stretch;
+  background: rgba(15, 26, 46, 0.95);
+  border: 1px solid rgba(90, 154, 138, 0.4);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.snow-globe-image {
+  width: 280px;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+.snow-globe-overlay {
   display: flex;
   flex-direction: column;
-  padding: 12px 16px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
-  text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-  color: white;
-}
-.snow-cover-widget:hover {
-  background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-1px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  padding: 16px 24px;
+  gap: 10px;
+  min-width: 240px;
 }
 
-/* Widget header */
-.snow-widget-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-.snow-widget-title {
-  font-size: 11px;
+.snow-globe-title {
+  font-size: 20px;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.9);
+  color: white;
+  line-height: 1.2;
+}
+
+.snow-globe-dates {
+  font-size: 15px;
+  font-weight: 600;
+  color: #4ade80;
+  margin-bottom: 6px;
+}
+
+.snow-globe-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.snow-globe-stat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.snow-globe-stat .stat-flag {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.snow-globe-stat .stat-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-}
-.snow-widget-date {
-  font-size: 9px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.5);
+  min-width: 70px;
 }
 
-/* 3 Card Row */
-.snow-cards-row {
-  display: flex;
-  gap: 12px;
-}
-
-/* Individual Card */
-.snow-card {
-  flex: 1;
-  min-width: 140px;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 8px;
-  padding: 10px 12px;
-  border-top: 3px solid #10b981;
-}
-.snow-card-na { border-top-color: #10b981; }
-.snow-card-usa { border-top-color: #3b82f6; }
-.snow-card-ca { border-top-color: #8b5cf6; }
-.snow-card-usa-ski { border-top-color: #f97316; }
-.snow-card-ca-ski { border-top-color: #14b8a6; }
-
-/* Card header with flag and name */
-.snow-card-header {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 6px;
-}
-.snow-card-flag {
-  font-size: 14px;
-}
-.snow-card-name {
-  font-size: 11px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-/* Info icon */
-.snow-card-info {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.4);
-  cursor: help;
-  margin-left: auto;
-  transition: color 0.2s ease;
-}
-.snow-card-info:hover {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-/* Percentage */
-.snow-card-pct {
+.snow-globe-stat .stat-value {
   font-size: 22px;
   font-weight: 700;
+  color: white;
+  min-width: 65px;
   line-height: 1.1;
-  margin-bottom: 4px;
-}
-.snow-card-na .snow-card-pct { color: #10b981; }
-.snow-card-usa .snow-card-pct { color: #3b82f6; }
-.snow-card-ca .snow-card-pct { color: #8b5cf6; }
-.snow-card-usa-ski .snow-card-pct { color: #f97316; }
-.snow-card-ca-ski .snow-card-pct { color: #14b8a6; }
-
-/* Change and YoY */
-.snow-card-change {
-  font-size: 9px;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 2px;
-}
-.snow-card-change .up { color: #22c55e; }
-.snow-card-change .down { color: #ef4444; }
-
-.snow-card-yoy {
-  font-size: 8px;
-  color: rgba(255, 255, 255, 0.5);
-  margin-bottom: 6px;
-}
-.snow-card-yoy .up { color: #3b82f6; }
-.snow-card-yoy .down { color: #f97316; }
-
-/* Sparkline chart */
-.snow-card-chart {
-  height: 40px;
-  margin-bottom: 8px;
-}
-.snow-card-chart canvas {
-  width: 100% !important;
-  height: 40px !important;
 }
 
-/* Stats row */
-.snow-card-stats {
-  display: flex;
-  justify-content: space-around;
-  padding: 6px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 6px;
-}
-.snow-stat {
-  text-align: center;
-}
-.snow-stat-val {
-  display: block;
-  font-size: 11px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
-}
-.snow-stat-lbl {
-  display: block;
-  font-size: 7px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
-  letter-spacing: 0.3px;
+.snow-globe-stat .stat-change {
+  font-size: 13px;
+  font-weight: 500;
 }
 
-/* Temperature anomaly */
-.snow-card-temp {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.4;
+.snow-globe-stat .stat-change .change-up {
+  color: #4ade80;
 }
-.snow-card-temp b {
-  color: rgba(255, 255, 255, 0.95);
+
+.snow-globe-stat .stat-change .change-down {
+  color: #f87171;
+}
+
+.snow-globe-stat.stat-combined {
+  padding-top: 10px;
+  margin-top: 6px;
+  border-top: 1px solid rgba(90, 154, 138, 0.3);
+}
+
+.snow-globe-stat.stat-combined .stat-value {
+  color: #4ade80;
+  font-size: 26px;
+}
+
+.snow-globe-cta {
+  font-size: 18px;
   font-weight: 700;
+  color: #4ade80;
+  padding-top: 12px;
+  margin-top: 8px;
+  border-top: 1px solid rgba(90, 154, 138, 0.3);
 }
-.snow-card-temp .warm { color: #fca5a5; }
-.snow-card-temp .cold { color: #93c5fd; }
 
-/* Widget footer link */
-.snow-widget-footer {
-  text-align: center;
-  margin-top: 10px;
-  padding-top: 8px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.6);
-  letter-spacing: 0.3px;
+.snow-globe-widget:hover .snow-globe-cta {
+  color: white;
 }
-.snow-cover-widget:hover .snow-widget-footer {
-  color: rgba(255, 255, 255, 0.9);
+
+.snow-globe-widget:hover .snow-globe-container {
+  border-color: rgba(90, 154, 138, 0.6);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 /* Mobile responsiveness */
-@media (max-width: 900px) {
-  .snow-cards-row {
-    gap: 8px;
+@media (max-width: 1000px) {
+  .snow-globe-image {
+    width: 220px;
   }
-  .snow-card {
-    min-width: 120px;
-    padding: 8px 10px;
+  .snow-globe-overlay {
+    padding: 12px 16px;
+    min-width: 150px;
   }
-  .snow-card-pct {
+  .snow-globe-stat .stat-value {
     font-size: 18px;
   }
-  .snow-card-name {
-    font-size: 10px;
+  .snow-globe-stat.stat-combined .stat-value {
+    font-size: 22px;
   }
 }
-@media (max-width: 700px) {
-  .snow-cover-widget {
+@media (max-width: 800px) {
+  .snow-globe-widget {
     display: none;
   }
 }

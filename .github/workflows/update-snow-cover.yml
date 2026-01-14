@@ -23,17 +23,21 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests
+          pip install requests numpy matplotlib cartopy
 
       - name: Update snow cover data
         run: |
           python update_snow_cover.py
 
+      - name: Generate snow globe visualization
+        run: |
+          python generate_snow_globe.py
+
       - name: Commit and push if changed
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add static/data/snow-cover.json
+          git add static/data/snow-cover.json static/images/snow-globe.png static/images/snow-globe.json
 
           # Check if there are changes
           if git diff --staged --quiet; then
@@ -43,7 +47,7 @@ jobs:
             USA=$(python -c "import json; d=json.load(open('static/data/snow-cover.json')); print(f\"{d['usa']['cover']}%\")")
             CANADA=$(python -c "import json; d=json.load(open('static/data/snow-cover.json')); print(f\"{d['canada']['cover']}%\")")
             COMBINED=$(python -c "import json; d=json.load(open('static/data/snow-cover.json')); print(f\"{d['combined']['cover']}%\")")
-            git commit -m "Update snow cover data - Combined: ${COMBINED}, USA: ${USA}, Canada: ${CANADA} ($(date +'%Y-%m-%d'))"
+            git commit -m "Update snow cover data & globe - Combined: ${COMBINED}, USA: ${USA}, Canada: ${CANADA} ($(date +'%Y-%m-%d'))"
             git push
             echo "Snow cover data updated and pushed"
           fi

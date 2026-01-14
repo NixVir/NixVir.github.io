@@ -1,5 +1,5 @@
 ---
-description: "Providing research and data analytics that drive effective strategies and tactics. We specialize in all things snow. We are creative, resourceful, cost effective, and high touch. Your unique situation and needs determine the methods and tools we will leverage to help you achieve success. No problem is too big or small for our consideration. <a href='/contact/' class='white-80 underline'>Contact us to learn more.</a>"
+description: "For more than 25 years we've helped organizations solve complex, one-of-a-kind challenges—most often in the ski and snowsports world, but also in lodging, and hospitality, private clubs, boating, and special events. We combine forecasting, economic modeling, operational diagnostics, and consumer research to identify growth opportunities and efficiency gains, and we translate technical findings into persuasive presentations and practical roadmaps. <a href='/contact/' class='white-80 underline'>Contact us to discuss your next project.</a>"
 featured_image: /images/mtnsky.jpg
 title: NixVir
 ---

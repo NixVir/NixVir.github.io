@@ -15,69 +15,69 @@
       {{/* Three column container - Dashboard (20%) | Ski News (40%) | Data Insights (40%) */}}
       <div class="flex-l">
 
-        {{/* Column 1: Economic Dashboard - narrower for better sparklines */}}
+        {{/* Column 1: Economic Dashboard - dark theme matching dashboard.html */}}
         <section class="w-100 ph2-l mb4 mb0-l" style="flex: 1; min-width: 220px; max-width: 280px;">
-          <div class="section-frame ba b--light-gray br2 bg-white pa3 h-100">
-            <h2 class="f4 fw6 mb2 pb2 bb b--light-gray">
-              <a href="/dashboard/" class="link dark-gray dim">Economic Dashboard</a>
+          <div class="econ-dashboard-pane h-100">
+            <h2 class="econ-dashboard-title">
+              <a href="/dashboard.html">Economic Dashboard</a>
             </h2>
 
             <div id="indicators-dashboard" class="section-content">
-              <p class="f7 gray mb2">Updated: <span id="indicators-last-update">Loading...</span></p>
+              <p class="econ-updated">Updated: <span id="indicators-last-update">Loading...</span></p>
 
-              <div class="indicator-card ba b--light-gray br2 pa2 mb2 bg-near-white">
-                <h4 class="f6 fw6 mt0 mb1">
-                  <a href="https://fred.stlouisfed.org/series/UMCSENT" target="_blank" rel="noopener" class="link dark-gray dim" title="University of Michigan Consumer Sentiment">Consumer Confidence</a>
+              <div class="econ-indicator-card">
+                <h4 class="econ-indicator-title">
+                  <a href="https://fred.stlouisfed.org/series/UMCSENT" target="_blank" rel="noopener" title="University of Michigan Consumer Sentiment">Consumer Confidence</a>
                 </h4>
-                <div id="ind-consumer-confidence" class="f5 fw7 mb1">-</div>
+                <div id="ind-consumer-confidence" class="econ-indicator-value">-</div>
                 <div class="sparkline-container">
                   <canvas id="ind-sparkline-cc" class="sparkline-small"></canvas>
                 </div>
               </div>
 
-              <div class="indicator-card ba b--light-gray br2 pa2 mb2 bg-near-white">
-                <h4 class="f6 fw6 mt0 mb1">
-                  <a href="https://fred.stlouisfed.org/series/SP500" target="_blank" rel="noopener" class="link dark-gray dim" title="S&P 500 Index">S&P 500</a>
+              <div class="econ-indicator-card">
+                <h4 class="econ-indicator-title">
+                  <a href="https://fred.stlouisfed.org/series/SP500" target="_blank" rel="noopener" title="S&P 500 Index">S&P 500</a>
                 </h4>
-                <div id="ind-sp500" class="f5 fw7 mb1">-</div>
+                <div id="ind-sp500" class="econ-indicator-value">-</div>
                 <div class="sparkline-container">
                   <canvas id="ind-sparkline-spy" class="sparkline-small"></canvas>
                 </div>
               </div>
 
-              <div class="indicator-card ba b--light-gray br2 pa2 mb2 bg-near-white">
-                <h4 class="f6 fw6 mt0 mb1">
-                  <a href="https://www.frbsf.org/research-and-insights/data-and-indicators/daily-news-sentiment-index/" target="_blank" rel="noopener" class="link dark-gray dim" title="SF Fed Daily News Sentiment Index">News Sentiment</a>
+              <div class="econ-indicator-card">
+                <h4 class="econ-indicator-title">
+                  <a href="https://www.frbsf.org/research-and-insights/data-and-indicators/daily-news-sentiment-index/" target="_blank" rel="noopener" title="SF Fed Daily News Sentiment Index">News Sentiment</a>
                 </h4>
-                <div id="ind-news-sentiment" class="f5 fw7 mb1">-</div>
+                <div id="ind-news-sentiment" class="econ-indicator-value">-</div>
                 <div class="sparkline-container">
                   <canvas id="ind-sparkline-sentiment" class="sparkline-small"></canvas>
                 </div>
               </div>
 
-              <div class="indicator-card ba b--light-gray br2 pa2 mb2 bg-near-white">
-                <h4 class="f6 fw6 mt0 mb1">
-                  <a href="https://fred.stlouisfed.org/series/UNRATE" target="_blank" rel="noopener" class="link dark-gray dim" title="U.S. Unemployment Rate">Unemployment</a>
+              <div class="econ-indicator-card">
+                <h4 class="econ-indicator-title">
+                  <a href="https://fred.stlouisfed.org/series/UNRATE" target="_blank" rel="noopener" title="U.S. Unemployment Rate">Unemployment</a>
                 </h4>
-                <div id="ind-unemployment" class="f5 fw7 mb1">-</div>
+                <div id="ind-unemployment" class="econ-indicator-value">-</div>
                 <div class="sparkline-container">
                   <canvas id="ind-sparkline-unemp" class="sparkline-small"></canvas>
                 </div>
               </div>
 
-              <div class="indicator-card ba b--light-gray br2 pa2 bg-near-white">
-                <h4 class="f6 fw6 mt0 mb1">
-                  <a href="https://fred.stlouisfed.org/series/DFF" target="_blank" rel="noopener" class="link dark-gray dim" title="Federal Funds Rate">Fed Funds Rate</a>
+              <div class="econ-indicator-card">
+                <h4 class="econ-indicator-title">
+                  <a href="https://fred.stlouisfed.org/series/DFF" target="_blank" rel="noopener" title="Federal Funds Rate">Fed Funds Rate</a>
                 </h4>
-                <div id="ind-fed-rate" class="f5 fw7 mb1">-</div>
+                <div id="ind-fed-rate" class="econ-indicator-value">-</div>
                 <div class="sparkline-container">
                   <canvas id="ind-sparkline-fed" class="sparkline-small"></canvas>
                 </div>
               </div>
             </div>
 
-            <div class="tc mt3 pt2 bt b--light-gray">
-              <a href="/dashboard/" class="link blue dim fw6 f6">View Full Dashboard &rarr;</a>
+            <div class="econ-dashboard-footer">
+              <a href="/dashboard.html">View Full Dashboard &rarr;</a>
             </div>
           </div>
         </section>
@@ -168,6 +168,89 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
   <style>
+    /* Economic Dashboard Pane - Dark Theme */
+    .econ-dashboard-pane {
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(135deg, #0a0e14 0%, #111820 100%);
+      border: 1px solid #2a3444;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .econ-dashboard-title {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 0.75rem 0;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #2a3444;
+    }
+    .econ-dashboard-title a {
+      color: #e8ecf2;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .econ-dashboard-title a:hover {
+      color: #60a5fa;
+    }
+    .econ-updated {
+      font-size: 0.7rem;
+      color: #8892a2;
+      margin-bottom: 0.75rem;
+    }
+    .econ-indicator-card {
+      background: #1a2230;
+      border: 1px solid #2a3444;
+      border-radius: 6px;
+      padding: 0.6rem;
+      margin-bottom: 0.5rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .econ-indicator-card:last-child {
+      margin-bottom: 0;
+    }
+    .econ-indicator-card:hover {
+      border-color: #3a4454;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .econ-indicator-title {
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin: 0 0 0.35rem 0;
+    }
+    .econ-indicator-title a {
+      color: #8892a2;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .econ-indicator-title a:hover {
+      color: #60a5fa;
+    }
+    .econ-indicator-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #e8ecf2;
+      margin-bottom: 0.35rem;
+    }
+    .econ-dashboard-footer {
+      text-align: center;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid #2a3444;
+    }
+    .econ-dashboard-footer a {
+      color: #3b82f6;
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .econ-dashboard-footer a:hover {
+      color: #60a5fa;
+    }
+
     /* Section frames */
     .section-frame {
       display: flex;
@@ -188,6 +271,13 @@
       .section-content {
         max-height: 520px;
       }
+      .econ-dashboard-pane {
+        min-height: 600px;
+        max-height: 700px;
+      }
+      .econ-dashboard-pane .section-content {
+        max-height: 520px;
+      }
     }
 
     /* Sparkline containers - compact */
@@ -204,7 +294,7 @@
       max-height: 50px;
     }
 
-    /* Indicator cards */
+    /* Indicator cards (legacy support) */
     .indicator-card {
       transition: box-shadow 0.2s ease;
     }
@@ -212,13 +302,13 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    /* Change indicators */
-    .change-indicator { font-size: 0.7em; margin-top: 2px; }
+    /* Change indicators - updated for dark theme */
+    .change-indicator { font-size: 0.65em; margin-top: 2px; }
     .change-indicator .arrow { font-weight: bold; margin-right: 2px; }
     .change-indicator .yoy { margin-right: 4px; }
-    .positive { color: #27ae60; }
-    .negative { color: #e74c3c; }
-    .neutral { color: #3498db; }
+    .positive { color: #10b981; }
+    .negative { color: #ef4444; }
+    .neutral { color: #3b82f6; }
 
     /* Ski News Cards - compact for column layout */
     .ski-news-card {
@@ -402,7 +492,7 @@
               ticks: {
                 maxRotation: 0,
                 font: { size: 8 },
-                color: '#999',
+                color: '#8892a2',
                 maxTicksLimit: 3
               },
               grid: { display: false }
@@ -431,12 +521,12 @@
           labels: formattedLabels,
           datasets: [{
             data: values,
-            borderColor: '#9b59b6',
+            borderColor: '#c084fc',
             borderWidth: 1.5,
             fill: false,
             pointRadius: 0,
             pointHoverRadius: 2,
-            pointHoverBackgroundColor: '#9b59b6',
+            pointHoverBackgroundColor: '#c084fc',
             tension: 0.1
           }]
         },
@@ -469,28 +559,28 @@
                   type: 'box',
                   yMin: 0.05,
                   yMax: 0.3,
-                  backgroundColor: 'rgba(39, 174, 96, 0.15)',
+                  backgroundColor: 'rgba(16, 185, 129, 0.2)',
                   borderWidth: 0
                 },
                 neutralZone: {
                   type: 'box',
                   yMin: -0.05,
                   yMax: 0.05,
-                  backgroundColor: 'rgba(200, 200, 200, 0.2)',
+                  backgroundColor: 'rgba(100, 116, 139, 0.2)',
                   borderWidth: 0
                 },
                 pessimisticZone: {
                   type: 'box',
                   yMin: -0.3,
                   yMax: -0.05,
-                  backgroundColor: 'rgba(231, 76, 60, 0.15)',
+                  backgroundColor: 'rgba(239, 68, 68, 0.2)',
                   borderWidth: 0
                 },
                 zeroLine: {
                   type: 'line',
                   yMin: 0,
                   yMax: 0,
-                  borderColor: 'rgba(0, 0, 0, 0.2)',
+                  borderColor: 'rgba(136, 146, 162, 0.3)',
                   borderWidth: 1,
                   borderDash: [3, 3]
                 }
@@ -503,7 +593,7 @@
               ticks: {
                 maxRotation: 0,
                 font: { size: 8 },
-                color: '#999',
+                color: '#8892a2',
                 maxTicksLimit: 3
               },
               grid: { display: false }
@@ -528,7 +618,7 @@
         document.getElementById("indicators-last-update").textContent =
           new Date(data.updated).toLocaleDateString();
 
-        // Consumer Confidence
+        // Consumer Confidence - bright blue for dark theme
         if(data.consumer_confidence && data.consumer_confidence.length > 0) {
           const ccSorted = sortByDate(data.consumer_confidence);
           const cc = ccSorted[ccSorted.length - 1];
@@ -537,10 +627,10 @@
             Number(cc.value).toFixed(1) + ' ' + formatChangeIndicator(ccChange);
           createIndicatorSparkline('ind-sparkline-cc',
             ccSorted.map(d => d.date),
-            ccSorted.map(d => d.value), '#3498db');
+            ccSorted.map(d => d.value), '#60a5fa');
         }
 
-        // S&P 500
+        // S&P 500 - bright green for dark theme
         if(data.markets && data.markets.length > 0) {
           const sp = data.markets.find(m => m.symbol === "SPY");
           if (sp) {
@@ -554,7 +644,7 @@
               const historySorted = sortByDate(sp.history.map(h => ({date: h.date, close: h.close})));
               createIndicatorSparkline('ind-sparkline-spy',
                 historySorted.map(d => d.date),
-                historySorted.map(d => d.close), '#27ae60');
+                historySorted.map(d => d.close), '#34d399');
             }
           }
         }
@@ -574,7 +664,7 @@
             recentSentiment.map(d => d.value));
         }
 
-        // Unemployment
+        // Unemployment - bright amber for dark theme
         if(data.unemployment && Array.isArray(data.unemployment) && data.unemployment.length > 0) {
           const unempSorted = sortByDate(data.unemployment);
           const latestUnemp = unempSorted[unempSorted.length - 1];
@@ -583,10 +673,10 @@
             Number(latestUnemp.value).toFixed(1) + '% ' + formatChangeIndicator(unempChange, true);
           createIndicatorSparkline('ind-sparkline-unemp',
             unempSorted.map(d => d.date),
-            unempSorted.map(d => d.value), '#f39c12');
+            unempSorted.map(d => d.value), '#fbbf24');
         }
 
-        // Fed Funds Rate
+        // Fed Funds Rate - bright red for dark theme
         if(data.fed_funds_rate && Array.isArray(data.fed_funds_rate) && data.fed_funds_rate.length > 0) {
           const fedSorted = sortByDate(data.fed_funds_rate);
           const latestFed = fedSorted[fedSorted.length - 1];
@@ -595,7 +685,7 @@
             Number(latestFed.value).toFixed(2) + '% ' + formatChangeIndicator(fedChange);
           createIndicatorSparkline('ind-sparkline-fed',
             fedSorted.map(d => d.date),
-            fedSorted.map(d => d.value), '#e74c3c');
+            fedSorted.map(d => d.value), '#f87171');
         }
 
       } catch (error) {

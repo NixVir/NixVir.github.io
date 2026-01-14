@@ -2,8 +2,14 @@
 title: "Economic Dashboard"
 description: "Real-time economic indicators, market data, commodity prices, and currency exchange rates. Updated daily with year-over-year comparisons."
 featured_image: "images/mtnsky.jpg"
-layout: "dashboard"
+aliases:
+  - /dashboard/
 menu:
   main:
     weight: 1
+    url: "/dashboard.html"
 ---
+
+<meta http-equiv="refresh" content="0; url=/dashboard.html">
+<script>window.location.href = '/dashboard.html';</script>
+<p>Redirecting to <a href="/dashboard.html">Economic Dashboard</a>...</p>

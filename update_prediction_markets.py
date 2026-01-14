@@ -1,300 +1,478 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
-Prediction Markets Data Fetcher
-Fetches prediction market data from Kalshi API for economic indicators
-"""
-import json
-import os
-from datetime import datetime
-import urllib.request
-import urllib.error
+Fetch prediction market data from Kalshi and Polymarket APIs.
+No authentication required for public market data.
 
+Output: static/data/prediction-markets.json
+"""
+
+import json
+import time
+import requests
+from datetime import datetime, timezone
+from pathlib import Path
+
+# Kalshi API configuration
 KALSHI_BASE_URL = "https://api.elections.kalshi.com/trade-api/v2"
 
-def print_safe(msg):
-    """Print with safe encoding for Windows"""
-    try:
-        print(msg)
-    except:
-        print(msg.encode('ascii', 'replace').decode('ascii'))
+# Polymarket API configuration
+POLYMARKET_BASE_URL = "https://gamma-api.polymarket.com"
 
-def fetch_json(url, error_msg="Error fetching data"):
-    """Fetch JSON data from URL with error handling"""
-    try:
-        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (compatible; ski-resort-monitor)'})
-        with urllib.request.urlopen(req, timeout=30) as response:
-            return json.loads(response.read().decode())
-    except urllib.error.HTTPError as e:
-        print_safe(f"  ! {error_msg}: HTTP {e.code}")
-        return None
-    except Exception as e:
-        print_safe(f"  ! {error_msg}: {e}")
-        return None
+# Kalshi market series to fetch
+KALSHI_SERIES = [
+    {"series": "KXRECSSNBER", "category": "recession", "display_name": "US Recession"},
+    {"series": "KXGDP", "category": "gdp", "display_name": "GDP Growth"},
+    {"series": "KXGDPYEAR", "category": "gdp", "display_name": "Annual GDP"},
+    {"series": "KXFEDDECISION", "category": "fed_policy", "display_name": "Fed Decision"},
+    {"series": "KXFED", "category": "fed_policy", "display_name": "Fed Funds Rate"},
+    {"series": "KXRATECUTCOUNT", "category": "fed_policy", "display_name": "Rate Cuts Count"},
+    {"series": "KXCPI", "category": "inflation", "display_name": "Monthly CPI"},
+    {"series": "KXINFLY", "category": "inflation", "display_name": "Annual Inflation"},
+    {"series": "KXPCECORE", "category": "inflation", "display_name": "Core PCE"},
+    {"series": "KXWTIW", "category": "energy", "display_name": "WTI Oil Weekly"},
+    {"series": "KXWTIMAX", "category": "energy", "display_name": "WTI Yearly High"},
+    {"series": "KXAAAGASW", "category": "energy", "display_name": "Gas Price Direction"},
+]
 
-def fetch_kalshi_markets(series_ticker, status="open"):
-    """Fetch markets for a given series"""
-    url = f"{KALSHI_BASE_URL}/markets?series_ticker={series_ticker}&status={status}"
-    data = fetch_json(url, f"Error fetching {series_ticker}")
-    if data and 'markets' in data:
-        return data['markets']
-    return []
+# Polymarket slugs to fetch
+POLYMARKET_SLUGS = [
+    {"slug": "us-recession-in-2025", "category": "recession", "display_name": "US Recession 2025"},
+    {"slug": "how-many-fed-rate-cuts-in-2026", "category": "fed_policy", "display_name": "Fed Rate Cuts 2026"},
+    {"slug": "will-trump-fire-powell-in-2025", "category": "policy_risk", "display_name": "Trump Fires Powell"},
+]
 
-def process_inflation_markets(markets):
-    """Process annual inflation markets to extract implied probability distribution"""
-    if not markets:
-        return None
 
-    # Sort by strike price
-    sorted_markets = []
-    for m in markets:
-        ticker = m.get('ticker', '')
-        # Extract strike from ticker like KXACPI-2025-2.8
-        parts = ticker.split('-')
-        if len(parts) >= 3:
-            try:
-                strike = float(parts[-1])
-                sorted_markets.append({
-                    'ticker': ticker,
-                    'strike': strike,
-                    'title': m.get('title', ''),
-                    'yes_bid': m.get('yes_bid', 0) / 100,  # Convert cents to dollars
-                    'yes_ask': m.get('yes_ask', 0) / 100,
-                    'volume': m.get('volume', 0),
-                    'open_interest': m.get('open_interest', 0),
-                    'close_time': m.get('close_time', '')
-                })
-            except (ValueError, IndexError):
-                continue
-
-    sorted_markets.sort(key=lambda x: x['strike'])
-
-    # Find the "at the money" strike - highest yes_bid
-    atm_market = max(sorted_markets, key=lambda x: x['yes_bid']) if sorted_markets else None
-
-    # Calculate implied expected inflation using probability-weighted average
-    total_prob = 0
-    weighted_sum = 0
-    for m in sorted_markets:
-        mid_price = (m['yes_bid'] + m['yes_ask']) / 2 if m['yes_ask'] > 0 else m['yes_bid']
-        if mid_price > 0:
-            # This represents P(inflation > strike)
-            # To get the PDF, we need the difference between adjacent strikes
-            pass
-
-    return {
-        'series': 'KXACPI',
-        'name': '2025 Annual Inflation',
-        'markets': sorted_markets,
-        'consensus_strike': atm_market['strike'] if atm_market else None,
-        'consensus_probability': atm_market['yes_bid'] if atm_market else None,
-        'total_volume': sum(m['volume'] for m in sorted_markets),
-        'updated': datetime.now().isoformat()
+def fetch_kalshi_series(series_ticker):
+    """
+    Fetch Kalshi market data by series ticker.
+    Returns list of markets in the series.
+    """
+    url = f"{KALSHI_BASE_URL}/markets"
+    params = {
+        "series_ticker": series_ticker,
+        "status": "open"
     }
 
-def process_payrolls_markets(markets):
-    """Process payroll/jobs markets"""
-    if not markets:
-        return None
+    try:
+        response = requests.get(url, params=params, timeout=30)
+        response.raise_for_status()
+        data = response.json()
 
-    # Group by month
-    by_month = {}
-    for m in markets:
-        ticker = m.get('ticker', '')
-        # Extract month and strike from ticker like KXPAYROLLS-26JAN-T50000
-        parts = ticker.split('-')
-        if len(parts) >= 3:
-            month_key = parts[1]  # e.g., "26JAN"
-            strike_part = parts[2]  # e.g., "T50000"
-            try:
-                strike = int(strike_part.replace('T', ''))
-                if month_key not in by_month:
-                    by_month[month_key] = []
-                by_month[month_key].append({
-                    'ticker': ticker,
-                    'strike': strike,
-                    'yes_bid': m.get('yes_bid', 0) / 100,
-                    'yes_ask': m.get('yes_ask', 0) / 100,
-                    'volume': m.get('volume', 0),
-                    'close_time': m.get('close_time', '')
-                })
-            except (ValueError, IndexError):
-                continue
+        markets = []
+        for m in data.get("markets", []):
+            # API returns last_price in cents (0-99), yes_bid/yes_ask for order book
+            last_price = m.get("last_price", 0) or 0
+            yes_bid = m.get("yes_bid", 0) or 0
+            yes_ask = m.get("yes_ask", 0) or 0
+            # Use last_price as primary, or midpoint of bid/ask
+            if last_price > 0:
+                yes_price = last_price
+            elif yes_bid > 0 and yes_ask > 0:
+                yes_price = (yes_bid + yes_ask) / 2
+            else:
+                yes_price = yes_bid or yes_ask or 0
 
-    # Find the nearest month with trading activity
-    result_months = []
-    for month_key, month_markets in sorted(by_month.items()):
-        month_markets.sort(key=lambda x: x['strike'])
-        total_volume = sum(m['volume'] for m in month_markets)
-
-        # Find the strike where probability crosses 50%
-        median_strike = None
-        for m in month_markets:
-            if m['yes_bid'] >= 0.45:  # Close to 50%
-                median_strike = m['strike']
-                break
-
-        result_months.append({
-            'month': month_key,
-            'markets': month_markets,
-            'median_strike': median_strike,
-            'total_volume': total_volume
-        })
-
-    # Only include months with some activity
-    active_months = [m for m in result_months if m['total_volume'] > 0]
-
-    return {
-        'series': 'KXPAYROLLS',
-        'name': 'Monthly Payrolls',
-        'months': active_months[:3],  # Show next 3 active months
-        'updated': datetime.now().isoformat()
-    }
-
-def process_treasury_markets(markets):
-    """Process 10-Year Treasury yield weekly markets"""
-    if not markets:
-        return None
-
-    sorted_markets = []
-    for m in markets:
-        ticker = m.get('ticker', '')
-        # Extract strike from ticker like KXTNOTEW-25DEC26-T4.32 or KXTNOTEW-25DEC26-B4.31
-        parts = ticker.split('-')
-        if len(parts) >= 3:
-            week_key = parts[1]  # e.g., "25DEC26"
-            strike_part = parts[2]  # e.g., "T4.32" or "B4.31"
-            try:
-                is_above = strike_part.startswith('T')
-                strike = float(strike_part[1:])
-                sorted_markets.append({
-                    'ticker': ticker,
-                    'week': week_key,
-                    'strike': strike,
-                    'is_above': is_above,
-                    'yes_bid': m.get('yes_bid', 0) / 100,
-                    'yes_ask': m.get('yes_ask', 0) / 100,
-                    'volume': m.get('volume', 0)
-                })
-            except (ValueError, IndexError):
-                continue
-
-    # Find the consensus range (highest probability)
-    if sorted_markets:
-        active = [m for m in sorted_markets if m['yes_bid'] > 0 or m['yes_ask'] > 0]
-        if active:
-            # Find the highest bid market
-            best = max(active, key=lambda x: x['yes_bid'])
-            return {
-                'series': 'KXTNOTEW',
-                'name': '10Y Treasury Yield',
-                'week': best['week'],
-                'consensus_strike': best['strike'],
-                'consensus_probability': best['yes_bid'],
-                'markets': sorted_markets[:10],  # Limit for display
-                'updated': datetime.now().isoformat()
-            }
-
-    return None
-
-def fetch_recession_markets():
-    """Fetch recession probability markets"""
-    # Try searching events for recession-related markets
-    url = f"{KALSHI_BASE_URL}/events?status=open&limit=200"
-    data = fetch_json(url, "Error fetching events")
-
-    if not data or 'events' not in data:
-        return None
-
-    recession_events = []
-    for event in data['events']:
-        title = event.get('title', '').lower()
-        ticker = event.get('ticker', '')
-        if any(term in title for term in ['recession', 'gdp', 'unemployment', 'economic']):
-            recession_events.append({
-                'ticker': ticker,
-                'title': event.get('title', ''),
-                'category': event.get('category', '')
+            markets.append({
+                "ticker": m.get("ticker"),
+                "title": m.get("title"),
+                "yes_price": yes_price,
+                "no_price": 100 - yes_price if yes_price else 0,
+                "yes_probability": yes_price / 100,
+                "yes_bid": yes_bid,
+                "yes_ask": yes_ask,
+                "volume": m.get("volume"),
+                "volume_24h": m.get("volume_24h"),
+                "open_interest": m.get("open_interest"),
+                "close_time": m.get("close_time"),
             })
 
-    return recession_events if recession_events else None
+        return markets
 
-def update_prediction_markets():
-    """Main function to update prediction markets data"""
-    print_safe("Starting prediction markets update...")
-    print_safe(f"Timestamp: {datetime.now().isoformat()}")
+    except requests.exceptions.RequestException as e:
+        print(f"  Error fetching Kalshi {series_ticker}: {e}")
+        return []
 
-    prediction_data = {
-        'updated': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+def fetch_polymarket_market(slug):
+    """
+    Fetch Polymarket market data by slug.
+    Returns market data dict or None.
+    """
+    url = f"{POLYMARKET_BASE_URL}/markets"
+    params = {"slug": slug}
+
+    try:
+        response = requests.get(url, params=params, timeout=30)
+        response.raise_for_status()
+        data = response.json()
+
+        if not data or len(data) == 0:
+            return None
+
+        m = data[0]
+
+        # Parse outcome prices (JSON string like "[0.05, 0.95]")
+        prices = json.loads(m.get("outcomePrices", "[0, 0]"))
+        yes_prob = float(prices[0]) if len(prices) > 0 else 0
+        no_prob = float(prices[1]) if len(prices) > 1 else 0
+
+        return {
+            "slug": m.get("slug"),
+            "title": m.get("question"),
+            "yes_probability": yes_prob,
+            "no_probability": no_prob,
+            "volume": m.get("volume"),
+            "volume_24h": m.get("volume24hr"),
+            "last_trade_price": m.get("lastTradePrice"),
+            "end_date": m.get("endDate"),
+        }
+
+    except requests.exceptions.RequestException as e:
+        print(f"  Error fetching Polymarket {slug}: {e}")
+        return None
+    except (json.JSONDecodeError, KeyError, IndexError) as e:
+        print(f"  Error parsing Polymarket {slug}: {e}")
+        return None
+
+
+def collect_all_markets():
+    """
+    Collect all prediction market data from Kalshi and Polymarket.
+    Returns structured data for dashboard display.
+    """
+    result = {
+        "fetched_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "kalshi": {},
+        "polymarket": {},
+        "summary": {}
     }
 
-    # 1. Annual Inflation Markets
-    print_safe("\nFetching Annual Inflation Markets (KXACPI)...")
-    inflation_markets = fetch_kalshi_markets('KXACPI')
-    if inflation_markets:
-        processed = process_inflation_markets(inflation_markets)
-        if processed:
-            prediction_data['inflation'] = processed
-            print_safe(f"  OK {len(inflation_markets)} markets, consensus: {processed.get('consensus_strike', 'N/A')}%")
-    else:
-        print_safe("  ! No inflation markets found")
+    # Fetch Kalshi markets
+    print("Fetching Kalshi markets...")
+    for config in KALSHI_SERIES:
+        series = config["series"]
+        category = config["category"]
+        display_name = config["display_name"]
 
-    # 2. Payrolls/Jobs Markets
-    print_safe("\nFetching Payrolls Markets (KXPAYROLLS)...")
-    payrolls_markets = fetch_kalshi_markets('KXPAYROLLS')
-    if payrolls_markets:
-        processed = process_payrolls_markets(payrolls_markets)
-        if processed:
-            prediction_data['payrolls'] = processed
-            print_safe(f"  OK {len(payrolls_markets)} markets across {len(processed.get('months', []))} months")
-    else:
-        print_safe("  ! No payrolls markets found")
+        time.sleep(0.5)  # Rate limiting
+        markets = fetch_kalshi_series(series)
 
-    # 3. Treasury Yield Markets
-    print_safe("\nFetching Treasury 10Y Weekly Markets (KXTNOTEW)...")
-    treasury_markets = fetch_kalshi_markets('KXTNOTEW')
-    if treasury_markets:
-        processed = process_treasury_markets(treasury_markets)
-        if processed:
-            prediction_data['treasury'] = processed
-            print_safe(f"  OK {len(treasury_markets)} markets")
-    else:
-        print_safe("  ! No treasury markets found")
+        if markets:
+            # Store in result
+            if category not in result["kalshi"]:
+                result["kalshi"][category] = []
 
-    # 4. Core CPI Markets
-    print_safe("\nFetching Core CPI Markets (KXECONSTATCPICORE)...")
-    core_cpi_markets = fetch_kalshi_markets('KXECONSTATCPICORE')
-    if core_cpi_markets:
-        # Just store the count and next month's data
-        prediction_data['core_cpi'] = {
-            'series': 'KXECONSTATCPICORE',
-            'name': 'Core CPI Month-over-Month',
-            'market_count': len(core_cpi_markets),
-            'updated': datetime.now().isoformat()
-        }
-        print_safe(f"  OK {len(core_cpi_markets)} markets")
-    else:
-        print_safe("  ! No core CPI markets found")
+            result["kalshi"][category].append({
+                "series": series,
+                "display_name": display_name,
+                "markets": markets
+            })
+            print(f"  OK {series}: {len(markets)} market(s)")
+        else:
+            print(f"  -- {series}: no open markets")
 
-    # Write to file
-    output_path = 'static/data/prediction-markets.json'
-    print_safe(f"\nWriting data to {output_path}...")
+    # Fetch Polymarket markets
+    print("\nFetching Polymarket markets...")
+    for config in POLYMARKET_SLUGS:
+        slug = config["slug"]
+        category = config["category"]
+        display_name = config["display_name"]
 
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        time.sleep(0.5)  # Rate limiting
+        market = fetch_polymarket_market(slug)
 
-    with open(output_path, 'w') as f:
-        json.dump(prediction_data, f, indent=2)
+        if market:
+            if category not in result["polymarket"]:
+                result["polymarket"][category] = []
 
-    print_safe("\nOK Prediction markets update complete!")
-    print_safe(f"Updated {len([k for k in prediction_data.keys() if k != 'updated'])} categories")
+            market["display_name"] = display_name
+            result["polymarket"][category].append(market)
+            print(f"  OK {slug}: {market['yes_probability']*100:.1f}% yes")
+        else:
+            print(f"  -- {slug}: not found or closed")
 
-    return prediction_data
+    # Build summary for quick dashboard display
+    result["summary"] = build_summary(result)
 
-if __name__ == '__main__':
-    try:
-        update_prediction_markets()
-    except Exception as e:
-        print_safe(f"\nERROR: {e}")
-        import traceback
-        traceback.print_exc()
-        exit(1)
+    return result
+
+
+def build_summary(data):
+    """
+    Build summary metrics for dashboard display.
+    Groups data into "Guest Demand Signals" and "Operating Cost Drivers".
+    """
+    summary = {
+        "guest_demand_signals": [],
+        "operating_cost_drivers": []
+    }
+
+    # Guest Demand Signals: Recession, GDP, Fed policy
+
+    # Recession probability (average Kalshi + Polymarket if both available)
+    recession_probs = []
+
+    # Check Kalshi recession
+    if "recession" in data["kalshi"]:
+        for series_data in data["kalshi"]["recession"]:
+            for market in series_data.get("markets", []):
+                if market.get("yes_probability"):
+                    recession_probs.append({
+                        "source": "kalshi",
+                        "value": market["yes_probability"],
+                        "title": market["title"],
+                        "resolves": market.get("close_time")
+                    })
+
+    # Check Polymarket recession
+    if "recession" in data["polymarket"]:
+        for market in data["polymarket"]["recession"]:
+            if market.get("yes_probability"):
+                recession_probs.append({
+                    "source": "polymarket",
+                    "value": market["yes_probability"],
+                    "title": market["title"],
+                    "resolves": market.get("end_date")
+                })
+
+    if recession_probs:
+        avg_prob = sum(p["value"] for p in recession_probs) / len(recession_probs)
+        summary["guest_demand_signals"].append({
+            "metric": "Recession Probability",
+            "value": avg_prob,
+            "format": "percent",
+            "sources": recession_probs,
+            "interpretation": "lower_better"
+        })
+
+    # Fed decision (next meeting only)
+    if "fed_policy" in data["kalshi"]:
+        for series_data in data["kalshi"]["fed_policy"]:
+            if series_data["series"] == "KXFEDDECISION":
+                markets = series_data.get("markets", [])
+                if markets:
+                    # Group markets by meeting date (extract from ticker like KXFEDDECISION-26JAN-H25)
+                    meetings = {}
+                    for m in markets:
+                        ticker = m.get("ticker", "")
+                        # Extract meeting ID (e.g., "26JAN" from "KXFEDDECISION-26JAN-H25")
+                        parts = ticker.split("-")
+                        if len(parts) >= 2:
+                            meeting_id = parts[1]  # e.g., "26JAN", "26MAR"
+                            if meeting_id not in meetings:
+                                meetings[meeting_id] = []
+                            meetings[meeting_id].append(m)
+
+                    # Find the earliest meeting (sort by close_time)
+                    earliest_meeting = None
+                    earliest_close = None
+                    for meeting_id, meeting_markets in meetings.items():
+                        close_time = meeting_markets[0].get("close_time", "")
+                        if earliest_close is None or close_time < earliest_close:
+                            earliest_close = close_time
+                            earliest_meeting = meeting_id
+
+                    if earliest_meeting and earliest_meeting in meetings:
+                        next_meeting_markets = meetings[earliest_meeting]
+
+                        # Aggregate cut/hold/hike for just this meeting
+                        # Ticker format: -C25 = cut 25bps, -C26 = cut >25bps, -H0 = hold (hike 0bps), -H25 = hike 25bps
+                        fed_summary = {"cut": 0, "hold": 0, "hike": 0}
+                        for m in next_meeting_markets:
+                            ticker = m.get("ticker", "")
+                            prob = m.get("yes_probability", 0)
+                            outcome_code = ticker.split("-")[-1] if "-" in ticker else ""
+
+                            if outcome_code.startswith("C"):
+                                fed_summary["cut"] += prob
+                            elif outcome_code == "H0":
+                                fed_summary["hold"] += prob
+                            elif outcome_code.startswith("H"):
+                                fed_summary["hike"] += prob
+
+                        # Determine most likely outcome
+                        if sum(fed_summary.values()) > 0:
+                            most_likely = max(fed_summary, key=fed_summary.get)
+                            # Extract meeting month from meeting_id (e.g., "26JAN" -> "January 2026")
+                            meeting_month = earliest_meeting
+                            summary["guest_demand_signals"].append({
+                                "metric": "Fed Rate Decision",
+                                "meeting": meeting_month,
+                                "value": fed_summary[most_likely],
+                                "format": "percent",
+                                "outcome": most_likely.title(),
+                                "all_outcomes": fed_summary,
+                                "interpretation": "cut_good" if most_likely == "cut" else "neutral",
+                                "resolves": earliest_close
+                            })
+                break
+
+    # Rate cuts count
+    if "fed_policy" in data["kalshi"]:
+        for series_data in data["kalshi"]["fed_policy"]:
+            if series_data["series"] == "KXRATECUTCOUNT":
+                markets = series_data.get("markets", [])
+                if markets:
+                    # Find expected number of cuts
+                    cuts_dist = []
+                    latest_close = None
+                    for m in markets:
+                        cuts_dist.append({
+                            "title": m.get("title"),
+                            "probability": m.get("yes_probability", 0)
+                        })
+                        # Track the latest close time (when this series resolves)
+                        close_time = m.get("close_time")
+                        if close_time and (latest_close is None or close_time > latest_close):
+                            latest_close = close_time
+                    if cuts_dist:
+                        summary["guest_demand_signals"].append({
+                            "metric": "Rate Cuts This Year",
+                            "distribution": cuts_dist,
+                            "format": "distribution",
+                            "resolves": latest_close
+                        })
+                break
+
+    # Operating Cost Drivers: Inflation, Energy
+
+    # Annual inflation
+    if "inflation" in data["kalshi"]:
+        for series_data in data["kalshi"]["inflation"]:
+            if series_data["series"] == "KXINFLY":
+                markets = series_data.get("markets", [])
+                if markets:
+                    # Get inflation range expectations
+                    inflation_dist = []
+                    for m in markets:
+                        inflation_dist.append({
+                            "title": m.get("title"),
+                            "probability": m.get("yes_probability", 0)
+                        })
+                    if inflation_dist:
+                        summary["operating_cost_drivers"].append({
+                            "metric": "Annual Inflation",
+                            "distribution": inflation_dist,
+                            "format": "distribution",
+                            "interpretation": "lower_better"
+                        })
+                break
+
+    # WTI Oil
+    if "energy" in data["kalshi"]:
+        for series_data in data["kalshi"]["energy"]:
+            if series_data["series"] == "KXWTIW":
+                markets = series_data.get("markets", [])
+                if markets:
+                    oil_dist = []
+                    earliest_close = None
+                    for m in markets:
+                        oil_dist.append({
+                            "title": m.get("title"),
+                            "probability": m.get("yes_probability", 0)
+                        })
+                        # WTI weekly resolves at end of week - get earliest close
+                        close_time = m.get("close_time")
+                        if close_time and (earliest_close is None or close_time < earliest_close):
+                            earliest_close = close_time
+                    if oil_dist:
+                        summary["operating_cost_drivers"].append({
+                            "metric": "WTI Oil Price",
+                            "distribution": oil_dist,
+                            "format": "distribution",
+                            "interpretation": "lower_better",
+                            "resolves": earliest_close
+                        })
+                break
+
+    # Gas price outlook - show current gas price expectation
+    if "energy" in data["kalshi"]:
+        for series_data in data["kalshi"]["energy"]:
+            if series_data["series"] == "KXAAAGASW":
+                markets = series_data.get("markets", [])
+                if markets:
+                    # Gas markets are "above $X" format
+                    # Find the price level with ~50% probability (market consensus)
+                    gas_levels = []
+                    earliest_close = None
+                    for m in markets:
+                        title = m.get("title", "")
+                        # Extract price like "$2.830" from title
+                        import re
+                        price_match = re.search(r'\$(\d+\.\d+)', title)
+                        if price_match:
+                            gas_levels.append({
+                                "price": float(price_match.group(1)),
+                                "probability": m.get("yes_probability", 0),
+                                "title": title
+                            })
+                        # Track earliest close time
+                        close_time = m.get("close_time")
+                        if close_time and (earliest_close is None or close_time < earliest_close):
+                            earliest_close = close_time
+
+                    if gas_levels:
+                        # Sort by price
+                        gas_levels.sort(key=lambda x: x["price"])
+                        # Find price with probability closest to 50% (consensus point)
+                        closest = min(gas_levels, key=lambda x: abs(x["probability"] - 0.5))
+                        summary["operating_cost_drivers"].append({
+                            "metric": "Gas Price Outlook",
+                            "value": closest["price"],
+                            "probability": closest["probability"],
+                            "format": "price",
+                            "levels": gas_levels,
+                            "interpretation": "lower_better",
+                            "resolves": earliest_close
+                        })
+                break
+
+    return summary
+
+
+def main():
+    """Main entry point."""
+    print("=" * 60)
+    print("Prediction Markets Data Fetcher")
+    print("=" * 60)
+    print()
+
+    # Collect all market data
+    data = collect_all_markets()
+
+    # Save to JSON file
+    output_path = Path("static/data/prediction-markets.json")
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
+
+    print()
+    print(f"Saved to {output_path}")
+    print(f"Fetched at: {data['fetched_at']}")
+
+    # Print summary
+    print()
+    print("Summary:")
+    summary = data.get("summary", {})
+
+    print("  Guest Demand Signals:")
+    for item in summary.get("guest_demand_signals", []):
+        if item.get("format") == "percent":
+            print(f"    - {item['metric']}: {item['value']*100:.1f}%")
+        elif item.get("format") == "distribution":
+            print(f"    - {item['metric']}: {len(item.get('distribution', []))} outcomes")
+
+    print("  Operating Cost Drivers:")
+    for item in summary.get("operating_cost_drivers", []):
+        if item.get("format") == "percent":
+            print(f"    - {item['metric']}: {item['value']*100:.1f}%")
+        elif item.get("format") == "distribution":
+            print(f"    - {item['metric']}: {len(item.get('distribution', []))} outcomes")
+
+    print()
+    print("Done!")
+
+
+if __name__ == "__main__":
+    main()

@@ -2,98 +2,34 @@
   <div class="flex-l center items-center justify-between">
     <div class="flex items-center" style="gap: 16px;">
       {{ if .IsHome }}
-      <!-- Snow Cover Widget - 3 Card Design matching dashboard -->
-      <a href="/snow-cover/" class="snow-cover-widget" id="header-snow-widget" title="North American Snow Cover">
-        <div class="snow-widget-header">
-          <span class="snow-widget-title">Snow Cover</span>
-          <span class="snow-widget-date" id="snow-widget-date">--</span>
-        </div>
-        <div class="snow-cards-row">
-          <!-- N. America Card -->
-          <div class="snow-card snow-card-na">
-            <div class="snow-card-header">
-              <span class="snow-card-flag">&#127758;</span>
-              <span class="snow-card-name">N. America</span>
+      <!-- Snow Cover Globe Widget - Year-over-Year Comparison -->
+      <a href="/snow-cover/" class="snow-globe-widget" id="header-snow-widget" title="North American Snow Cover - Click for details">
+        <div class="snow-globe-container">
+          <img src="/images/snow-globe.png" alt="North American Snow Cover Comparison" class="snow-globe-image" id="snow-globe-img">
+          <div class="snow-globe-overlay">
+            <div class="snow-globe-title" id="globe-title">Daily Snow Cover Difference</div>
+            <div class="snow-globe-dates" id="globe-dates">Loading...</div>
+            <div class="snow-globe-stats" id="snow-globe-stats">
+              <div class="snow-globe-stat">
+                <span class="stat-flag">&#127482;&#127480;</span>
+                <span class="stat-label">USA</span>
+                <span class="stat-value" id="globe-usa-cover">--</span>
+                <span class="stat-change" id="globe-usa-change">--</span>
+              </div>
+              <div class="snow-globe-stat">
+                <span class="stat-flag">&#127464;&#127462;</span>
+                <span class="stat-label">Canada</span>
+                <span class="stat-value" id="globe-ca-cover">--</span>
+                <span class="stat-change" id="globe-ca-change">--</span>
+              </div>
+              <div class="snow-globe-stat stat-combined">
+                <span class="stat-flag">&#127758;</span>
+                <span class="stat-label">% North America Snow Cover:</span>
+                <span class="stat-value" id="globe-combined-cover">--</span>
+              </div>
             </div>
-            <div class="snow-card-pct" id="snow-na-pct">--%</div>
-            <div class="snow-card-change" id="snow-na-change">--</div>
-            <div class="snow-card-yoy" id="snow-na-yoy">--</div>
-            <div class="snow-card-chart"><canvas id="snow-na-chart"></canvas></div>
-            <div class="snow-card-stats">
-              <div class="snow-stat"><span class="snow-stat-val" id="snow-na-area">--</span><span class="snow-stat-lbl">Sq Mi</span></div>
-              <div class="snow-stat"><span class="snow-stat-val" id="snow-na-depth">--</span><span class="snow-stat-lbl">Depth</span></div>
-            </div>
-            <div class="snow-card-temp" id="snow-na-temp">--</div>
+            <div class="snow-globe-cta">Click for more details</div>
           </div>
-          <!-- USA Card -->
-          <div class="snow-card snow-card-usa">
-            <div class="snow-card-header">
-              <span class="snow-card-flag">&#127482;&#127480;</span>
-              <span class="snow-card-name">United States</span>
-            </div>
-            <div class="snow-card-pct" id="snow-usa-pct">--%</div>
-            <div class="snow-card-change" id="snow-usa-change">--</div>
-            <div class="snow-card-yoy" id="snow-usa-yoy">--</div>
-            <div class="snow-card-chart"><canvas id="snow-usa-chart"></canvas></div>
-            <div class="snow-card-stats">
-              <div class="snow-stat"><span class="snow-stat-val" id="snow-usa-area">--</span><span class="snow-stat-lbl">Sq Mi</span></div>
-              <div class="snow-stat"><span class="snow-stat-val" id="snow-usa-depth">--</span><span class="snow-stat-lbl">Depth</span></div>
-            </div>
-            <div class="snow-card-temp" id="snow-usa-temp">--</div>
-          </div>
-          <!-- Canada Card -->
-          <div class="snow-card snow-card-ca">
-            <div class="snow-card-header">
-              <span class="snow-card-flag">&#127464;&#127462;</span>
-              <span class="snow-card-name">Canada</span>
-            </div>
-            <div class="snow-card-pct" id="snow-ca-pct">--%</div>
-            <div class="snow-card-change" id="snow-ca-change">--</div>
-            <div class="snow-card-yoy" id="snow-ca-yoy">--</div>
-            <div class="snow-card-chart"><canvas id="snow-ca-chart"></canvas></div>
-            <div class="snow-card-stats">
-              <div class="snow-stat"><span class="snow-stat-val" id="snow-ca-area">--</span><span class="snow-stat-lbl">Sq Mi</span></div>
-              <div class="snow-stat"><span class="snow-stat-val" id="snow-ca-depth">--</span><span class="snow-stat-lbl">Depth</span></div>
-            </div>
-            <div class="snow-card-temp" id="snow-ca-temp">--</div>
-          </div>
-          <!-- US Ski Markets Card -->
-          <div class="snow-card snow-card-usa-ski">
-            <div class="snow-card-header">
-              <span class="snow-card-flag">&#9975;</span>
-              <span class="snow-card-name">US Ski Markets</span>
-              <span class="snow-card-info" title="Average snow cover for key US ski destination metro areas: Denver, Salt Lake City, Seattle, Portland, Minneapolis, Reno, Burlington, Boise">&#9432;</span>
-            </div>
-            <div class="snow-card-pct" id="snow-usa-ski-pct">--%</div>
-            <div class="snow-card-change" id="snow-usa-ski-change">--</div>
-            <div class="snow-card-yoy" id="snow-usa-ski-yoy">--</div>
-            <div class="snow-card-chart"><canvas id="snow-usa-ski-chart"></canvas></div>
-            <div class="snow-card-stats">
-              <div class="snow-stat"><span class="snow-stat-val" id="snow-usa-ski-metros">--</span><span class="snow-stat-lbl">Metros</span></div>
-              <div class="snow-stat"><span class="snow-stat-val" id="snow-usa-ski-avg">--</span><span class="snow-stat-lbl">Avg Cover</span></div>
-            </div>
-            <div class="snow-card-temp" id="snow-usa-ski-temp">--</div>
-          </div>
-          <!-- Canada Ski Markets Card -->
-          <div class="snow-card snow-card-ca-ski">
-            <div class="snow-card-header">
-              <span class="snow-card-flag">&#9975;</span>
-              <span class="snow-card-name">CA Ski Markets</span>
-              <span class="snow-card-info" title="Average snow cover for key Canadian ski destination metro areas: Vancouver, Calgary, Edmonton, Montreal, Ottawa, Quebec City">&#9432;</span>
-            </div>
-            <div class="snow-card-pct" id="snow-ca-ski-pct">--%</div>
-            <div class="snow-card-change" id="snow-ca-ski-change">--</div>
-            <div class="snow-card-yoy" id="snow-ca-ski-yoy">--</div>
-            <div class="snow-card-chart"><canvas id="snow-ca-ski-chart"></canvas></div>
-            <div class="snow-card-stats">
-              <div class="snow-stat"><span class="snow-stat-val" id="snow-ca-ski-metros">--</span><span class="snow-stat-lbl">Metros</span></div>
-              <div class="snow-stat"><span class="snow-stat-val" id="snow-ca-ski-avg">--</span><span class="snow-stat-lbl">Avg Cover</span></div>
-            </div>
-            <div class="snow-card-temp" id="snow-ca-ski-temp">--</div>
-          </div>
-        </div>
-        <div class="snow-widget-footer">
-          <span>Click here for metro areas &rarr;</span>
         </div>
       </a>
       {{ end }}
@@ -123,342 +59,63 @@
 </nav>
 
 {{ if .IsHome }}
-<!-- Chart.js for sparklines -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-
-<!-- Snow Cover Widget Data Loader -->
+<!-- Snow Globe Widget Data Loader -->
 <script>
 (function() {
-  var naChart = null, usaChart = null, caChart = null, usaSkiChart = null, caSkiChart = null;
-
-  function formatNumber(num) {
-    if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
-    if (num >= 1000) return (num / 1000).toFixed(0) + 'K';
-    return num.toFixed(0);
-  }
-
-  function calculateYoY(currentValue, priorYearHistory) {
-    if (!priorYearHistory || priorYearHistory.length === 0) return null;
-    var priorValues = priorYearHistory.map(function(h) {
-      return typeof h === 'object' ? h.value : h;
-    }).filter(function(v) { return v !== null && v !== undefined; });
-    if (priorValues.length === 0) return null;
-    var priorAvg = priorValues.reduce(function(a, b) { return a + b; }, 0) / priorValues.length;
-    if (priorAvg === 0) return currentValue > 0 ? 100 : 0;
-    return ((currentValue - priorAvg) / priorAvg) * 100;
-  }
-
-  function createSparkline(canvasId, history, priorHistory, color) {
-    var canvas = document.getElementById(canvasId);
-    if (!canvas) return null;
-    var ctx = canvas.getContext('2d');
-    var data = history.map(function(h) { return typeof h === 'object' ? h.value : h; });
-    var priorData = priorHistory ? priorHistory.map(function(h) { return typeof h === 'object' ? h.value : h; }) : [];
-    var datasets = [{
-      data: data,
-      borderColor: color,
-      backgroundColor: color + '20',
-      fill: true,
-      tension: 0.4,
-      pointRadius: 0,
-      borderWidth: 1.5
-    }];
-    if (priorData.length > 0) {
-      datasets.push({
-        data: priorData,
-        borderColor: '#9ca3af',
-        backgroundColor: 'transparent',
-        fill: false,
-        tension: 0.4,
-        pointRadius: 0,
-        borderWidth: 1,
-        borderDash: [3, 2]
-      });
-    }
-    return new Chart(ctx, {
-      type: 'line',
-      data: { labels: data.map(function(_, i) { return i; }), datasets: datasets },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: { x: { display: false }, y: { display: false, min: 0, max: 100 } },
-        interaction: { intersect: false, mode: 'index' }
-      }
-    });
-  }
-
-  function loadSnowWidgetData() {
-    fetch('/data/snow-cover.json')
+  function loadGlobeData() {
+    fetch('/images/snow-globe.json')
       .then(function(response) {
-        if (!response.ok) throw new Error('Snow data unavailable');
+        if (!response.ok) throw new Error('Globe data unavailable');
         return response.json();
       })
       .then(function(data) {
-        // Update date
-        var dateEl = document.getElementById('snow-widget-date');
-        if (dateEl && data.updated) {
-          var datePart = data.updated.split(' ')[0];
-          dateEl.textContent = datePart;
+        var stats = data.stats;
+
+        // Update dates in title
+        if (data.current_date && data.prior_date) {
+          var currentDate = new Date(data.current_date);
+          var priorDate = new Date(data.prior_date);
+          var options = { month: 'short', day: 'numeric', year: 'numeric' };
+          var currentStr = currentDate.toLocaleDateString('en-US', options);
+          var priorStr = priorDate.toLocaleDateString('en-US', options);
+          document.getElementById('globe-dates').textContent = currentStr + ' vs ' + priorStr;
         }
 
-        // --- N. America Card ---
-        var naData = data.combined;
-        var usaData = data.usa;
-        var caData = data.canada;
+        // USA
+        document.getElementById('globe-usa-cover').textContent = stats.usa_cover.toFixed(1) + '%';
+        var usaChange = stats.usa_change;
+        var usaChangeClass = usaChange > 0 ? 'change-up' : usaChange < 0 ? 'change-down' : '';
+        document.getElementById('globe-usa-change').innerHTML = '<span class="' + usaChangeClass + '">' + (usaChange >= 0 ? '+' : '') + usaChange.toFixed(1) + ' vs last yr</span>';
 
-        document.getElementById('snow-na-pct').textContent = naData.cover + '%';
+        // Canada
+        document.getElementById('globe-ca-cover').textContent = stats.canada_cover.toFixed(1) + '%';
+        var caChange = stats.canada_change;
+        var caChangeClass = caChange > 0 ? 'change-up' : caChange < 0 ? 'change-down' : '';
+        document.getElementById('globe-ca-change').innerHTML = '<span class="' + caChangeClass + '">' + (caChange >= 0 ? '+' : '') + caChange.toFixed(1) + ' vs last yr</span>';
 
-        // Week change (average of USA and Canada)
-        var usaChange = parseFloat(usaData.change) || 0;
-        var caChange = parseFloat(caData.change) || 0;
-        var avgChange = ((usaChange + caChange) / 2).toFixed(1);
-        var changeVal = parseFloat(avgChange);
-        var changeIcon = changeVal > 0 ? '↑' : changeVal < 0 ? '↓' : '→';
-        var changeClass = changeVal > 0 ? 'up' : changeVal < 0 ? 'down' : '';
-        document.getElementById('snow-na-change').innerHTML = '<span class="' + changeClass + '">' + changeIcon + ' ' + (changeVal >= 0 ? '+' : '') + avgChange + ' pts from last week</span>';
+        // Combined
+        document.getElementById('globe-combined-cover').textContent = stats.combined_cover.toFixed(1) + '%';
 
-        // YoY
-        var usaYoY = calculateYoY(usaData.cover, usaData.priorYearHistory);
-        var caYoY = calculateYoY(caData.cover, caData.priorYearHistory);
-        var naYoY = (usaYoY !== null && caYoY !== null) ? (usaYoY + caYoY) / 2 : usaYoY || caYoY;
-        if (naYoY !== null) {
-          var yoyClass = naYoY > 5 ? 'up' : naYoY < -5 ? 'down' : '';
-          document.getElementById('snow-na-yoy').innerHTML = 'vs last year: <span class="' + yoyClass + '">' + (naYoY >= 0 ? '+' : '') + naYoY.toFixed(0) + '%</span>';
-        }
-
-        // Stats - combined area and depth
-        var usaAreaSqMi = usaData.areaSqMi || 0;
-        var caAreaSqMi = caData.areaSqKm ? caData.areaSqKm * 0.386102 : 0;
-        document.getElementById('snow-na-area').textContent = formatNumber(usaAreaSqMi + caAreaSqMi);
-        var usaDepth = usaData.avgDepthInches || 0;
-        var caDepth = caData.avgDepthCm ? caData.avgDepthCm / 2.54 : 0;
-        var totalArea = usaAreaSqMi + caAreaSqMi;
-        var avgDepth = totalArea > 0 ? ((usaDepth * usaAreaSqMi + caDepth * caAreaSqMi) / totalArea).toFixed(1) : '--';
-        document.getElementById('snow-na-depth').textContent = avgDepth + '"';
-
-        // Temp anomaly
-        if (naData.temperature) {
-          var t = naData.temperature;
-          var tempF = t.avg_temp_f !== undefined ? Math.round(t.avg_temp_f) : '--';
-          var anomF = t.avg_anomaly_f !== undefined ? Math.round(t.avg_anomaly_f) : null;
-          var tempClass = anomF > 2 ? 'warm' : anomF < -2 ? 'cold' : '';
-          var icon = anomF > 2 ? '☀️' : anomF < -2 ? '❄️' : '☁️';
-          document.getElementById('snow-na-temp').innerHTML = icon + ' Avg Temp: <b>' + tempF + '°F</b>' + (anomF !== null ? ' <span class="' + tempClass + '">(' + (anomF >= 0 ? '+' : '') + anomF + '° from normal)</span>' : '');
-        }
-
-        // Sparkline
-        var naHistory = [], naPrior = [];
-        var maxLen = Math.max(usaData.history.length, caData.history.length);
-        for (var i = 0; i < maxLen; i++) {
-          var uv = usaData.history[i] ? usaData.history[i].value : null;
-          var cv = caData.history[i] ? caData.history[i].value : null;
-          if (uv !== null && cv !== null) naHistory.push({ value: Math.round((uv + cv) / 2) });
-          else if (uv !== null) naHistory.push({ value: uv });
-          else if (cv !== null) naHistory.push({ value: cv });
-          var up = usaData.priorYearHistory && usaData.priorYearHistory[i] ? usaData.priorYearHistory[i].value : null;
-          var cp = caData.priorYearHistory && caData.priorYearHistory[i] ? caData.priorYearHistory[i].value : null;
-          if (up !== null && cp !== null) naPrior.push({ value: Math.round((up + cp) / 2) });
-          else if (up !== null) naPrior.push({ value: up });
-          else if (cp !== null) naPrior.push({ value: cp });
-        }
-        if (naChart) naChart.destroy();
-        naChart = createSparkline('snow-na-chart', naHistory, naPrior, '#10b981');
-
-        // --- USA Card ---
-        document.getElementById('snow-usa-pct').textContent = usaData.cover + '%';
-        var usaChangeVal = parseFloat(usaData.change) || 0;
-        var usaChangeIcon = usaChangeVal > 0 ? '↑' : usaChangeVal < 0 ? '↓' : '→';
-        var usaChangeClass = usaChangeVal > 0 ? 'up' : usaChangeVal < 0 ? 'down' : '';
-        document.getElementById('snow-usa-change').innerHTML = '<span class="' + usaChangeClass + '">' + usaChangeIcon + ' ' + usaData.change + ' from last week</span>';
-        if (usaYoY !== null) {
-          var usaYoYClass = usaYoY > 5 ? 'up' : usaYoY < -5 ? 'down' : '';
-          document.getElementById('snow-usa-yoy').innerHTML = 'vs last year: <span class="' + usaYoYClass + '">' + (usaYoY >= 0 ? '+' : '') + usaYoY.toFixed(0) + '%</span>';
-        }
-        document.getElementById('snow-usa-area').textContent = formatNumber(usaData.areaSqMi || 0);
-        document.getElementById('snow-usa-depth').textContent = (usaData.avgDepthInches || '--') + '"';
-        if (usaData.temperature) {
-          var ut = usaData.temperature;
-          var utF = ut.avg_temp_f !== undefined ? Math.round(ut.avg_temp_f) : '--';
-          var uaF = ut.avg_anomaly_f !== undefined ? Math.round(ut.avg_anomaly_f) : null;
-          var utClass = uaF > 2 ? 'warm' : uaF < -2 ? 'cold' : '';
-          var uIcon = uaF > 2 ? '☀️' : uaF < -2 ? '❄️' : '☁️';
-          document.getElementById('snow-usa-temp').innerHTML = uIcon + ' Avg Temp: <b>' + utF + '°F</b>' + (uaF !== null ? ' <span class="' + utClass + '">(' + (uaF >= 0 ? '+' : '') + uaF + '° from normal)</span>' : '');
-        }
-        if (usaChart) usaChart.destroy();
-        usaChart = createSparkline('snow-usa-chart', usaData.history, usaData.priorYearHistory, '#3b82f6');
-
-        // --- Canada Card ---
-        document.getElementById('snow-ca-pct').textContent = caData.cover + '%';
-        var caChangeVal = parseFloat(caData.change) || 0;
-        var caChangeIcon = caChangeVal > 0 ? '↑' : caChangeVal < 0 ? '↓' : '→';
-        var caChangeClass = caChangeVal > 0 ? 'up' : caChangeVal < 0 ? 'down' : '';
-        document.getElementById('snow-ca-change').innerHTML = '<span class="' + caChangeClass + '">' + caChangeIcon + ' ' + caData.change + ' from last week</span>';
-        if (caYoY !== null) {
-          var caYoYClass = caYoY > 5 ? 'up' : caYoY < -5 ? 'down' : '';
-          document.getElementById('snow-ca-yoy').innerHTML = 'vs last year: <span class="' + caYoYClass + '">' + (caYoY >= 0 ? '+' : '') + caYoY.toFixed(0) + '%</span>';
-        }
-        var caAreaSqMiDisp = caData.areaSqKm ? caData.areaSqKm * 0.386102 : 0;
-        document.getElementById('snow-ca-area').textContent = formatNumber(caAreaSqMiDisp);
-        var caDepthIn = caData.avgDepthCm ? (caData.avgDepthCm / 2.54).toFixed(1) : '--';
-        document.getElementById('snow-ca-depth').textContent = caDepthIn + '"';
-        if (caData.temperature) {
-          var ct = caData.temperature;
-          var ctF = ct.avg_temp_f !== undefined ? Math.round(ct.avg_temp_f) : '--';
-          var caF = ct.avg_anomaly_f !== undefined ? Math.round(ct.avg_anomaly_f) : null;
-          var ctClass = caF > 2 ? 'warm' : caF < -2 ? 'cold' : '';
-          var cIcon = caF > 2 ? '☀️' : caF < -2 ? '❄️' : '☁️';
-          document.getElementById('snow-ca-temp').innerHTML = cIcon + ' Avg Temp: <b>' + ctF + '°F</b>' + (caF !== null ? ' <span class="' + ctClass + '">(' + (caF >= 0 ? '+' : '') + caF + '° from normal)</span>' : '');
-        }
-        if (caChart) caChart.destroy();
-        caChart = createSparkline('snow-ca-chart', caData.history, caData.priorYearHistory, '#8b5cf6');
-
-        // --- US Ski Markets Card ---
-        var usaSkiData = data.skiMarkets && data.skiMarkets.usa;
-        if (usaSkiData) {
-          document.getElementById('snow-usa-ski-pct').textContent = Math.round(usaSkiData.cover) + '%';
-
-          // Calculate change from metro history
-          var usaSkiMetros = data.metros.filter(function(m) { return m.country === 'usa' && m.skiMarket === true; });
-          var usaSkiCurrentAvg = usaSkiData.cover;
-          var usaSkiWeekAgoAvg = 0;
-          var usaSkiValidMetros = 0;
-          usaSkiMetros.forEach(function(m) {
-            if (m.history && m.history.length >= 7) {
-              usaSkiWeekAgoAvg += m.history[0];
-              usaSkiValidMetros++;
-            }
-          });
-          if (usaSkiValidMetros > 0) {
-            usaSkiWeekAgoAvg = usaSkiWeekAgoAvg / usaSkiValidMetros;
-            var usaSkiChangeNum = (usaSkiCurrentAvg - usaSkiWeekAgoAvg).toFixed(1);
-            var usaSkiChangeVal = parseFloat(usaSkiChangeNum);
-            var usaSkiChangeIcon = usaSkiChangeVal > 0 ? '↑' : usaSkiChangeVal < 0 ? '↓' : '→';
-            var usaSkiChangeClass = usaSkiChangeVal > 0 ? 'up' : usaSkiChangeVal < 0 ? 'down' : '';
-            document.getElementById('snow-usa-ski-change').innerHTML = '<span class="' + usaSkiChangeClass + '">' + usaSkiChangeIcon + ' ' + (usaSkiChangeVal >= 0 ? '+' : '') + usaSkiChangeNum + ' pts from last week</span>';
-          }
-
-          // YoY for ski markets
-          var usaSkiTotalYoY = 0, usaSkiYoYCount = 0;
-          usaSkiMetros.forEach(function(m) {
-            var yoy = calculateYoY(m.cover, m.priorYearHistory);
-            if (yoy !== null) { usaSkiTotalYoY += yoy; usaSkiYoYCount++; }
-          });
-          if (usaSkiYoYCount > 0) {
-            var usaSkiAvgYoY = usaSkiTotalYoY / usaSkiYoYCount;
-            var usaSkiYoYClass = usaSkiAvgYoY > 5 ? 'up' : usaSkiAvgYoY < -5 ? 'down' : '';
-            document.getElementById('snow-usa-ski-yoy').innerHTML = 'vs last year: <span class="' + usaSkiYoYClass + '">' + (usaSkiAvgYoY >= 0 ? '+' : '') + usaSkiAvgYoY.toFixed(0) + '%</span>';
-          }
-
-          // Stats
-          document.getElementById('snow-usa-ski-metros').textContent = usaSkiData.metro_count;
-          document.getElementById('snow-usa-ski-avg').textContent = Math.round(usaSkiData.cover) + '%';
-
-          // Temp anomaly
-          if (usaSkiData.avg_temp_f !== undefined) {
-            var usaSkiTempF = Math.round(usaSkiData.avg_temp_f);
-            var usaSkiAnomF = usaSkiData.avg_anomaly_f !== undefined ? Math.round(usaSkiData.avg_anomaly_f) : null;
-            var usaSkiTempClass = usaSkiAnomF > 2 ? 'warm' : usaSkiAnomF < -2 ? 'cold' : '';
-            var usaSkiIcon = usaSkiAnomF > 2 ? '☀️' : usaSkiAnomF < -2 ? '❄️' : '☁️';
-            document.getElementById('snow-usa-ski-temp').innerHTML = usaSkiIcon + ' Avg Temp: <b>' + usaSkiTempF + '°F</b>' + (usaSkiAnomF !== null ? ' <span class="' + usaSkiTempClass + '">(' + (usaSkiAnomF >= 0 ? '+' : '') + usaSkiAnomF + '° from normal)</span>' : '');
-          }
-
-          // Sparkline from aggregated metro history
-          var usaSkiHistoryLen = usaSkiMetros.length > 0 && usaSkiMetros[0].history ? usaSkiMetros[0].history.length : 0;
-          var usaSkiHistory = [], usaSkiPrior = [];
-          for (var i = 0; i < usaSkiHistoryLen; i++) {
-            var sum = 0, priorSum = 0, priorCount = 0;
-            usaSkiMetros.forEach(function(m) {
-              if (m.history && m.history[i] !== undefined) sum += m.history[i];
-              if (m.priorYearHistory && m.priorYearHistory[i] !== undefined) { priorSum += m.priorYearHistory[i]; priorCount++; }
-            });
-            usaSkiHistory.push({ value: Math.round(sum / usaSkiMetros.length) });
-            if (priorCount > 0) usaSkiPrior.push({ value: Math.round(priorSum / priorCount) });
-          }
-          if (usaSkiChart) usaSkiChart.destroy();
-          usaSkiChart = createSparkline('snow-usa-ski-chart', usaSkiHistory, usaSkiPrior, '#f97316');
-        }
-
-        // --- Canada Ski Markets Card ---
-        var caSkiData = data.skiMarkets && data.skiMarkets.canada;
-        if (caSkiData) {
-          document.getElementById('snow-ca-ski-pct').textContent = Math.round(caSkiData.cover) + '%';
-
-          // Calculate change from metro history
-          var caSkiMetros = data.metros.filter(function(m) { return m.country === 'canada' && m.skiMarket === true; });
-          var caSkiCurrentAvg = caSkiData.cover;
-          var caSkiWeekAgoAvg = 0;
-          var caSkiValidMetros = 0;
-          caSkiMetros.forEach(function(m) {
-            if (m.history && m.history.length >= 7) {
-              caSkiWeekAgoAvg += m.history[0];
-              caSkiValidMetros++;
-            }
-          });
-          if (caSkiValidMetros > 0) {
-            caSkiWeekAgoAvg = caSkiWeekAgoAvg / caSkiValidMetros;
-            var caSkiChangeNum = (caSkiCurrentAvg - caSkiWeekAgoAvg).toFixed(1);
-            var caSkiChangeVal = parseFloat(caSkiChangeNum);
-            var caSkiChangeIcon = caSkiChangeVal > 0 ? '↑' : caSkiChangeVal < 0 ? '↓' : '→';
-            var caSkiChangeClass = caSkiChangeVal > 0 ? 'up' : caSkiChangeVal < 0 ? 'down' : '';
-            document.getElementById('snow-ca-ski-change').innerHTML = '<span class="' + caSkiChangeClass + '">' + caSkiChangeIcon + ' ' + (caSkiChangeVal >= 0 ? '+' : '') + caSkiChangeNum + ' pts from last week</span>';
-          }
-
-          // YoY for ski markets
-          var caSkiTotalYoY = 0, caSkiYoYCount = 0;
-          caSkiMetros.forEach(function(m) {
-            var yoy = calculateYoY(m.cover, m.priorYearHistory);
-            if (yoy !== null) { caSkiTotalYoY += yoy; caSkiYoYCount++; }
-          });
-          if (caSkiYoYCount > 0) {
-            var caSkiAvgYoY = caSkiTotalYoY / caSkiYoYCount;
-            var caSkiYoYClass = caSkiAvgYoY > 5 ? 'up' : caSkiAvgYoY < -5 ? 'down' : '';
-            document.getElementById('snow-ca-ski-yoy').innerHTML = 'vs last year: <span class="' + caSkiYoYClass + '">' + (caSkiAvgYoY >= 0 ? '+' : '') + caSkiAvgYoY.toFixed(0) + '%</span>';
-          }
-
-          // Stats
-          document.getElementById('snow-ca-ski-metros').textContent = caSkiData.metro_count;
-          document.getElementById('snow-ca-ski-avg').textContent = Math.round(caSkiData.cover) + '%';
-
-          // Temp anomaly
-          if (caSkiData.avg_temp_f !== undefined) {
-            var caSkiTempF = Math.round(caSkiData.avg_temp_f);
-            var caSkiAnomF = caSkiData.avg_anomaly_f !== undefined ? Math.round(caSkiData.avg_anomaly_f) : null;
-            var caSkiTempClass = caSkiAnomF > 2 ? 'warm' : caSkiAnomF < -2 ? 'cold' : '';
-            var caSkiIcon = caSkiAnomF > 2 ? '☀️' : caSkiAnomF < -2 ? '❄️' : '☁️';
-            document.getElementById('snow-ca-ski-temp').innerHTML = caSkiIcon + ' Avg Temp: <b>' + caSkiTempF + '°F</b>' + (caSkiAnomF !== null ? ' <span class="' + caSkiTempClass + '">(' + (caSkiAnomF >= 0 ? '+' : '') + caSkiAnomF + '° from normal)</span>' : '');
-          }
-
-          // Sparkline from aggregated metro history
-          var caSkiHistoryLen = caSkiMetros.length > 0 && caSkiMetros[0].history ? caSkiMetros[0].history.length : 0;
-          var caSkiHistory = [], caSkiPrior = [];
-          for (var j = 0; j < caSkiHistoryLen; j++) {
-            var cSum = 0, cPriorSum = 0, cPriorCount = 0;
-            caSkiMetros.forEach(function(m) {
-              if (m.history && m.history[j] !== undefined) cSum += m.history[j];
-              if (m.priorYearHistory && m.priorYearHistory[j] !== undefined) { cPriorSum += m.priorYearHistory[j]; cPriorCount++; }
-            });
-            caSkiHistory.push({ value: Math.round(cSum / caSkiMetros.length) });
-            if (cPriorCount > 0) caSkiPrior.push({ value: Math.round(cPriorSum / cPriorCount) });
-          }
-          if (caSkiChart) caSkiChart.destroy();
-          caSkiChart = createSparkline('snow-ca-ski-chart', caSkiHistory, caSkiPrior, '#14b8a6');
+        // Add cache-busting timestamp to image
+        var img = document.getElementById('snow-globe-img');
+        if (img && data.generated) {
+          img.src = '/images/snow-globe.png?t=' + encodeURIComponent(data.generated);
         }
       })
       .catch(function(err) {
-        console.log('Snow widget: ' + err.message);
+        console.log('Globe widget: ' + err.message);
       });
   }
 
   // Load on DOM ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadSnowWidgetData);
+    document.addEventListener('DOMContentLoaded', loadGlobeData);
   } else {
-    loadSnowWidgetData();
+    loadGlobeData();
   }
 
   // Refresh every 5 minutes
-  setInterval(loadSnowWidgetData, 300000);
+  setInterval(loadGlobeData, 300000);
 })();
 </script>
 {{ end }}
