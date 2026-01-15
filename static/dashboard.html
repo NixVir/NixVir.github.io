@@ -1802,26 +1802,37 @@
             return monthsOld > 12;
         }
 
-        // Helper to check if YoY is unreliable (extreme change or anomalous prior year)
+        // Helper to check if YoY is unreliable (extreme change or anomalous data)
         function isYoyUnreliable(yoyChange, passengers, priorYearPax) {
             if (yoyChange === null) return true;
             // Flag if YoY > 500% (likely data anomaly in prior year)
             if (Math.abs(yoyChange) > 500) return true;
+            // Flag if current passengers are suspiciously low (<500 for an airport)
+            if (passengers < 500) return true;
             // Flag if prior year passengers were suspiciously low (<100 for an airport)
             if (priorYearPax !== undefined && priorYearPax < 100) return true;
             return false;
         }
 
+        // Helper to check if current data is anomalously low
+        function isDataAnomalous(passengers) {
+            // Flag airports with <500 passengers as anomalous
+            return passengers < 500;
+        }
+
         grid.innerHTML = airports.map(apt => {
             const paxFormatted = apt.passengers >= 1000000
                 ? (apt.passengers / 1000000).toFixed(1) + 'M'
-                : (apt.passengers / 1000).toFixed(0) + 'K';
+                : apt.passengers >= 1000
+                    ? (apt.passengers / 1000).toFixed(0) + 'K'
+                    : apt.passengers.toLocaleString(); // Show actual number for tiny values
 
             // Check for data quality issues
             const monthLabel = apt.month || apt.year || '';
             const stale = isDataStale(monthLabel);
             const priorYearPax = apt.prior_year_passengers;
             const yoyUnreliable = isYoyUnreliable(apt.yoy_change, apt.passengers, priorYearPax);
+            const anomalous = isDataAnomalous(apt.passengers);
 
             // Build YoY HTML with quality flags
             let yoyHtml = '';
@@ -1830,7 +1841,7 @@
                   '<span class="arrow">' + (apt.yoy_change >= 0 ? '↑' : '↓') + '</span> ' + (apt.yoy_change >= 0 ? '+' : '') + apt.yoy_change.toFixed(1) + '% YoY</span></div>';
             } else if (apt.yoy_change !== null && yoyUnreliable) {
                 // Show muted indicator for unreliable YoY data
-                yoyHtml = '<div class="change-indicator"><span class="change-pill data-anomaly" title="YoY comparison unreliable due to data anomaly in prior year">' +
+                yoyHtml = '<div class="change-indicator"><span class="change-pill data-anomaly" title="YoY comparison unreliable due to anomalous passenger count">' +
                   '⚠️ Data anomaly</span></div>';
             }
 
@@ -1840,11 +1851,18 @@
                 staleWarning = '<div class="stale-data-warning" title="Data is more than 12 months old">⚠️ Stale data</div>';
             }
 
-            return '<div class="metric-card ski-airport-card' + (stale ? ' stale-data' : '') + '" data-region="' + apt.region + '">' +
+            // Add anomalous data warning (low passenger counts)
+            let anomalyWarning = '';
+            if (anomalous && !stale) {
+                anomalyWarning = '<div class="stale-data-warning" title="Passenger count is unusually low - data may be incomplete">⚠️ Low data</div>';
+            }
+
+            return '<div class="metric-card ski-airport-card' + (stale || anomalous ? ' stale-data' : '') + '" data-region="' + apt.region + '">' +
                 '<h4>' + apt.city + ' <span class="airport-code">(' + apt.code + ')</span></h4>' +
                 '<div class="value">' + paxFormatted + '</div>' +
                 '<div class="period">' + monthLabel + ' passengers</div>' +
                 staleWarning +
+                anomalyWarning +
                 yoyHtml +
                 '<div class="resort-tag">⛷️ ' + apt.resorts + '</div>' +
                 '</div>';
