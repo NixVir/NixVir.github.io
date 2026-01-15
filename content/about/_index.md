@@ -4,7 +4,7 @@ featured_image: "images/mtnsky.jpg"
 title: About
 menu:
   main:
-    weight: 4
+    weight: 5
 ---
 {{< figure src="/images/snowman.jpg" >}}
 By the way, if you were wondering, NixVir roughly means "Snowman" in Latin.  That's our story and we are sticking to it.
