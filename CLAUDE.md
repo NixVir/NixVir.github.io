@@ -204,6 +204,7 @@ The `temp-hot` class specifically highlights markets where winter feels distant 
 6. **Using "Feeder" terminology** - Always use "Ski Markets" instead
 7. **Using definitive language about consumer behavior** - Say "may" not "will" or "likely"
 8. **Forgetting temperature override** - ≥20°F above normal always means low salience
+9. **Blaming browser cache for stale data** - When the user reports stale/old data on the website, the problem is almost never browser caching. Check: (1) Is the file committed to git? (2) Has it been pushed? (3) Is the Netlify deploy complete? (4) Is the correct file path being served? Don't suggest "try hard refresh" or "clear cache" - investigate the actual deployment pipeline first.
 
 ## Related Projects
 
