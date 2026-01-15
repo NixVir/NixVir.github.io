@@ -1,19 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
-  <!-- Resort Operations & Infrastructure - Gondola icon -->
-  <circle cx="24" cy="24" r="22" fill="#2563EB" opacity="0.1"/>
-  <!-- Main cable running across top -->
-  <path d="M6 10L42 6" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"/>
-  <!-- Tower wheels at ends -->
-  <circle cx="6" cy="10" r="3" fill="#2563EB"/>
-  <circle cx="42" cy="6" r="3" fill="#2563EB"/>
-  <!-- Left gondola: hanger from cable DOWN to car -->
-  <path d="M16 9V16" stroke="#2563EB" stroke-width="2"/>
-  <rect x="11" y="16" width="10" height="14" rx="2" fill="#2563EB"/>
-  <!-- Left gondola window -->
-  <rect x="13" y="19" width="6" height="5" rx="1" fill="white" opacity="0.4"/>
-  <!-- Right gondola: hanger from cable DOWN to car -->
-  <path d="M34 7V14" stroke="#2563EB" stroke-width="2"/>
-  <rect x="29" y="14" width="10" height="14" rx="2" fill="#2563EB"/>
-  <!-- Right gondola window -->
-  <rect x="31" y="17" width="6" height="5" rx="1" fill="white" opacity="0.4"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Cable line -->
+  <line x1="2" y1="4" x2="22" y2="4"/>
+  <!-- Hanger -->
+  <line x1="12" y1="4" x2="12" y2="7"/>
+  <!-- Gondola cabin -->
+  <rect x="7" y="7" width="10" height="12" rx="2"/>
+  <!-- Window -->
+  <rect x="9" y="10" width="6" height="4" rx="1"/>
 </svg>

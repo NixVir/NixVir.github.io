@@ -1,10 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
-  <!-- Business & Investment - Chart/Growth icon -->
-  <circle cx="24" cy="24" r="22" fill="#059669" opacity="0.1"/>
-  <path d="M10 38L18 28L26 32L38 16" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M32 16H38V22" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="8" y="32" width="6" height="8" rx="1" fill="#059669" opacity="0.6"/>
-  <rect x="17" y="26" width="6" height="14" rx="1" fill="#059669" opacity="0.6"/>
-  <rect x="26" y="28" width="6" height="12" rx="1" fill="#059669" opacity="0.6"/>
-  <rect x="35" y="20" width="6" height="20" rx="1" fill="#059669" opacity="0.6"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Bold dollar sign -->
+  <path d="M12 2v20"/>
+  <path d="M17 6c0-2-2-3-5-3S7 5 7 7s2 3 5 4 5 2 5 4-2 3-5 3-5-1-5-3"/>
 </svg>
