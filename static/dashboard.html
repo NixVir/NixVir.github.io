@@ -442,6 +442,26 @@
             font-weight: 400;
         }
 
+        /* Stale data and anomaly indicators */
+        .ski-airport-card.stale-data {
+            opacity: 0.7;
+            border-color: #6b5a28;
+        }
+        .stale-data-warning {
+            font-size: 0.7rem;
+            color: #d4a574;
+            margin: 0.25rem 0;
+            padding: 0.2rem 0.5rem;
+            background: rgba(212, 165, 116, 0.15);
+            border-radius: 4px;
+            display: inline-block;
+        }
+        .change-pill.data-anomaly {
+            background: rgba(212, 165, 116, 0.2);
+            color: #d4a574;
+            font-size: 0.7rem;
+        }
+
         /* Prediction Cards */
         .prediction-card {
             min-height: 260px;
@@ -1742,21 +1762,65 @@
             grid.innerHTML = '<p style="color: var(--text-muted); font-style: italic;">No airports found for this region.</p>';
             return;
         }
+
+        // Helper to check if data is stale (>12 months old)
+        function isDataStale(monthStr) {
+            if (!monthStr) return false;
+            // Parse "Oct 2025" or "2025-10" format
+            let dataDate;
+            if (monthStr.includes('-')) {
+                dataDate = new Date(monthStr + '-01');
+            } else {
+                dataDate = new Date(monthStr + ' 1');
+            }
+            const now = new Date();
+            const monthsOld = (now.getFullYear() - dataDate.getFullYear()) * 12 + (now.getMonth() - dataDate.getMonth());
+            return monthsOld > 12;
+        }
+
+        // Helper to check if YoY is unreliable (extreme change or anomalous prior year)
+        function isYoyUnreliable(yoyChange, passengers, priorYearPax) {
+            if (yoyChange === null) return true;
+            // Flag if YoY > 500% (likely data anomaly in prior year)
+            if (Math.abs(yoyChange) > 500) return true;
+            // Flag if prior year passengers were suspiciously low (<100 for an airport)
+            if (priorYearPax !== undefined && priorYearPax < 100) return true;
+            return false;
+        }
+
         grid.innerHTML = airports.map(apt => {
             const paxFormatted = apt.passengers >= 1000000
                 ? (apt.passengers / 1000000).toFixed(1) + 'M'
                 : (apt.passengers / 1000).toFixed(0) + 'K';
-            // True month-over-month YoY (e.g., Nov 2025 vs Nov 2024)
-            const yoyHtml = apt.yoy_change !== null
-                ? '<div class="change-indicator"><span class="change-pill ' + (apt.yoy_change >= 0 ? 'positive' : 'negative') + '">' +
-                  '<span class="arrow">' + (apt.yoy_change >= 0 ? '↑' : '↓') + '</span> ' + (apt.yoy_change >= 0 ? '+' : '') + apt.yoy_change.toFixed(1) + '% YoY</span></div>'
-                : '';
-            // Use month label (e.g., "Nov 2025") from new data format
+
+            // Check for data quality issues
             const monthLabel = apt.month || apt.year || '';
-            return '<div class="metric-card ski-airport-card" data-region="' + apt.region + '">' +
+            const stale = isDataStale(monthLabel);
+            const priorYearPax = apt.prior_year_passengers;
+            const yoyUnreliable = isYoyUnreliable(apt.yoy_change, apt.passengers, priorYearPax);
+
+            // Build YoY HTML with quality flags
+            let yoyHtml = '';
+            if (apt.yoy_change !== null && !yoyUnreliable) {
+                yoyHtml = '<div class="change-indicator"><span class="change-pill ' + (apt.yoy_change >= 0 ? 'positive' : 'negative') + '">' +
+                  '<span class="arrow">' + (apt.yoy_change >= 0 ? '↑' : '↓') + '</span> ' + (apt.yoy_change >= 0 ? '+' : '') + apt.yoy_change.toFixed(1) + '% YoY</span></div>';
+            } else if (apt.yoy_change !== null && yoyUnreliable) {
+                // Show muted indicator for unreliable YoY data
+                yoyHtml = '<div class="change-indicator"><span class="change-pill data-anomaly" title="YoY comparison unreliable due to data anomaly in prior year">' +
+                  '⚠️ Data anomaly</span></div>';
+            }
+
+            // Add stale data warning
+            let staleWarning = '';
+            if (stale) {
+                staleWarning = '<div class="stale-data-warning" title="Data is more than 12 months old">⚠️ Stale data</div>';
+            }
+
+            return '<div class="metric-card ski-airport-card' + (stale ? ' stale-data' : '') + '" data-region="' + apt.region + '">' +
                 '<h4>' + apt.city + ' <span class="airport-code">(' + apt.code + ')</span></h4>' +
                 '<div class="value">' + paxFormatted + '</div>' +
                 '<div class="period">' + monthLabel + ' passengers</div>' +
+                staleWarning +
                 yoyHtml +
                 '<div class="resort-tag">⛷️ ' + apt.resorts + '</div>' +
                 '</div>';
