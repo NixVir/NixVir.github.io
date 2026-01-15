@@ -25,7 +25,7 @@ The new section includes:
 - **Monthly Handle Trend Chart** - Visualizing the rapid growth trajectory since 2019
 - **Annual U.S. Handle Totals** - Year-over-year comparisons showing market expansion
 
-For context, the U.S. ski industry generates approximately $5-6 billion in lift ticket revenue annually—sports betting handle is now 25x larger. In 2019, only a handful of states had legal sports betting. By 2024, 38 states plus D.C. were operational.
+In 2019, only a handful of states had legal sports betting. By 2024, 38 states plus D.C. were operational, and the market continues to expand rapidly.
 
 Data sourced from [Sports Handle](https://sportshandle.com/sports-betting-revenue/) (U.S.) and [iGaming Ontario](https://igamingontario.ca) (Canada).
 
