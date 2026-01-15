@@ -563,6 +563,35 @@ def print_safe(msg):
         print(msg.encode('ascii', 'replace').decode('ascii'))
 
 
+def parse_date(date_str):
+    """Parse various date formats to ISO format for consistent sorting."""
+    if not date_str:
+        return ''
+
+    # Already ISO format
+    if re.match(r'^\d{4}-\d{2}-\d{2}', date_str):
+        return date_str[:10]
+
+    # RFC 2822 format: "Thu, 15 Jan 2026 08:00:00 -0500"
+    try:
+        from email.utils import parsedate_to_datetime
+        dt = parsedate_to_datetime(date_str)
+        return dt.strftime('%Y-%m-%d')
+    except:
+        pass
+
+    # Try common formats
+    for fmt in ['%a, %d %b %Y %H:%M:%S %z', '%a, %d %b %Y %H:%M:%S',
+                '%Y-%m-%dT%H:%M:%S', '%B %d, %Y', '%d %b %Y']:
+        try:
+            dt = datetime.strptime(date_str.strip(), fmt)
+            return dt.strftime('%Y-%m-%d')
+        except:
+            continue
+
+    return date_str  # Return original if parsing fails
+
+
 def fetch_url(url, timeout=30):
     """Fetch content from URL"""
     try:
@@ -643,7 +672,7 @@ def parse_rss_feed(xml_content, source_name):
                 article['content'] = article['description']
 
             if pub_date is not None and pub_date.text:
-                article['pub_date'] = pub_date.text
+                article['pub_date'] = parse_date(pub_date.text)
 
             # Generate unique ID
             if article.get('url'):
@@ -1020,7 +1049,13 @@ def load_existing_articles():
         try:
             with open(path, 'r', encoding='utf-8') as f:
                 data = json.load(f)
-                return {a['id']: a for a in data.get('articles', [])}
+                articles = {}
+                for a in data.get('articles', []):
+                    # Normalize dates for consistent sorting
+                    if 'pub_date' in a:
+                        a['pub_date'] = parse_date(a['pub_date'])
+                    articles[a['id']] = a
+                return articles
         except:
             pass
     return {}
