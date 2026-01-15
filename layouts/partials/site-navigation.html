@@ -1,46 +1,12 @@
 <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l center items-center justify-between">
-    <div class="flex items-center" style="gap: 16px;">
-      {{ if .IsHome }}
-      <!-- Snow Cover Globe Widget - Year-over-Year Comparison -->
-      <a href="/snow-cover/" class="snow-globe-widget" id="header-snow-widget" title="North American Snow Cover - Click for details">
-        <div class="snow-globe-container">
-          <img src="/images/snow-globe.png" alt="North American Snow Cover Comparison" class="snow-globe-image" id="snow-globe-img">
-          <div class="snow-globe-overlay">
-            <div class="snow-globe-title" id="globe-title">Daily Snow Cover Difference</div>
-            <div class="snow-globe-dates" id="globe-dates">Loading...</div>
-            <div class="snow-globe-stats" id="snow-globe-stats">
-              <div class="snow-globe-stat">
-                <span class="stat-flag">&#127482;&#127480;</span>
-                <span class="stat-label">USA</span>
-                <span class="stat-value" id="globe-usa-cover">--</span>
-                <span class="stat-change" id="globe-usa-change">--</span>
-              </div>
-              <div class="snow-globe-stat">
-                <span class="stat-flag">&#127464;&#127462;</span>
-                <span class="stat-label">Canada</span>
-                <span class="stat-value" id="globe-ca-cover">--</span>
-                <span class="stat-change" id="globe-ca-change">--</span>
-              </div>
-              <div class="snow-globe-stat stat-combined">
-                <span class="stat-flag">&#127758;</span>
-                <span class="stat-label">% North America Snow Cover:</span>
-                <span class="stat-value" id="globe-combined-cover">--</span>
-              </div>
-            </div>
-            <div class="snow-globe-cta">Click for more details</div>
-          </div>
-        </div>
+    <div class="flex items-center">
+      <!-- Logo - shown on all pages -->
+      <a href="{{ .Site.Home.RelPermalink }}" class="dib mr3 v-mid" title="Home">
+        <img src="/images/nixvirlogo.png" alt="{{ .Site.Title }}" style="height: 40px; width: auto;" />
       </a>
-      {{ end }}
     </div>
     <div class="flex-l items-center">
-      <!-- Logo as first menu item - hide on homepage where large logo is shown -->
-      {{ if not .IsHome }}
-        <a href="{{ .Site.Home.RelPermalink }}" class="dib mr3 v-mid" title="Home">
-          <img src="/images/nixvirlogo.png" alt="{{ .Site.Title }}" style="height: 40px; width: auto;" />
-        </a>
-      {{ end }}
       {{ partials.Include "i18nlist.html" . }}
       {{ if .Site.Menus.main }}
         <ul class="{{ compare.Conditional (compare.Eq $.Site.Language.LanguageDirection "rtl") "pr0 ml3" "pl0 mr3" }}">
@@ -57,65 +23,3 @@
     </div>
   </div>
 </nav>
-
-{{ if .IsHome }}
-<!-- Snow Globe Widget Data Loader -->
-<script>
-(function() {
-  function loadGlobeData() {
-    fetch('/images/snow-globe.json')
-      .then(function(response) {
-        if (!response.ok) throw new Error('Globe data unavailable');
-        return response.json();
-      })
-      .then(function(data) {
-        var stats = data.stats;
-
-        // Update dates in title
-        if (data.current_date && data.prior_date) {
-          var currentDate = new Date(data.current_date);
-          var priorDate = new Date(data.prior_date);
-          var options = { month: 'short', day: 'numeric', year: 'numeric' };
-          var currentStr = currentDate.toLocaleDateString('en-US', options);
-          var priorStr = priorDate.toLocaleDateString('en-US', options);
-          document.getElementById('globe-dates').textContent = currentStr + ' vs ' + priorStr;
-        }
-
-        // USA
-        document.getElementById('globe-usa-cover').textContent = stats.usa_cover.toFixed(1) + '%';
-        var usaChange = stats.usa_change;
-        var usaChangeClass = usaChange > 0 ? 'change-up' : usaChange < 0 ? 'change-down' : '';
-        document.getElementById('globe-usa-change').innerHTML = '<span class="' + usaChangeClass + '">' + (usaChange >= 0 ? '+' : '') + usaChange.toFixed(1) + ' vs last yr</span>';
-
-        // Canada
-        document.getElementById('globe-ca-cover').textContent = stats.canada_cover.toFixed(1) + '%';
-        var caChange = stats.canada_change;
-        var caChangeClass = caChange > 0 ? 'change-up' : caChange < 0 ? 'change-down' : '';
-        document.getElementById('globe-ca-change').innerHTML = '<span class="' + caChangeClass + '">' + (caChange >= 0 ? '+' : '') + caChange.toFixed(1) + ' vs last yr</span>';
-
-        // Combined
-        document.getElementById('globe-combined-cover').textContent = stats.combined_cover.toFixed(1) + '%';
-
-        // Add cache-busting timestamp to image
-        var img = document.getElementById('snow-globe-img');
-        if (img && data.generated) {
-          img.src = '/images/snow-globe.png?t=' + encodeURIComponent(data.generated);
-        }
-      })
-      .catch(function(err) {
-        console.log('Globe widget: ' + err.message);
-      });
-  }
-
-  // Load on DOM ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadGlobeData);
-  } else {
-    loadGlobeData();
-  }
-
-  // Refresh every 5 minutes
-  setInterval(loadGlobeData, 300000);
-})();
-</script>
-{{ end }}

@@ -11,11 +11,63 @@
   {{ $section_count := len $section }}
 
   {{ if and ($show_recent_posts) (compare.Ge $section_count 1) }}
-    <div class="pa2 pa3-ns w-100 center" style="max-width: 1600px;">
-      {{/* Three column container - Dashboard (20%) | Ski News (40%) | Data Insights (40%) */}}
+    <div class="pa2 pa3-ns w-100 center" style="max-width: 1800px;">
+      {{/* Four column container - Snow Cover | Economic Dashboard | Ski News | Data Insights */}}
       <div class="flex-l">
 
-        {{/* Column 1: Economic Dashboard - dark theme matching dashboard.html */}}
+        {{/* Column 1: Snow Cover - dark theme, vertical layout */}}
+        <section class="w-100 ph2-l mb4 mb0-l" style="flex: 1; min-width: 200px; max-width: 240px;">
+          <div class="snow-pane h-100">
+            <h2 class="snow-pane-title">
+              <a href="/snow-cover/">Snow Cover</a>
+            </h2>
+
+            <div class="section-content">
+              <p class="snow-updated">Updated: <span id="snow-last-update">Loading...</span></p>
+
+              <!-- Globe Image -->
+              <div class="snow-globe-wrapper">
+                <a href="/snow-cover/" title="View detailed snow cover data">
+                  <img src="/images/snow-globe.png" alt="North American Snow Cover" class="snow-globe-img" id="homepage-snow-globe">
+                </a>
+              </div>
+
+              <!-- Legend -->
+              <div class="snow-legend">
+                <span class="legend-item"><span class="legend-color legend-more"></span> More</span>
+                <span class="legend-item"><span class="legend-color legend-same"></span> Same</span>
+                <span class="legend-item"><span class="legend-color legend-less"></span> Less</span>
+              </div>
+
+              <!-- Stats -->
+              <div class="snow-stats">
+                <div class="snow-stat-row">
+                  <span class="snow-stat-flag">&#127482;&#127480;</span>
+                  <span class="snow-stat-label">USA</span>
+                  <span class="snow-stat-value" id="hp-usa-cover">--</span>
+                  <span class="snow-stat-change" id="hp-usa-change">--</span>
+                </div>
+                <div class="snow-stat-row">
+                  <span class="snow-stat-flag">&#127464;&#127462;</span>
+                  <span class="snow-stat-label">Canada</span>
+                  <span class="snow-stat-value" id="hp-ca-cover">--</span>
+                  <span class="snow-stat-change" id="hp-ca-change">--</span>
+                </div>
+                <div class="snow-stat-row snow-stat-combined">
+                  <span class="snow-stat-flag">&#127758;</span>
+                  <span class="snow-stat-label">Combined</span>
+                  <span class="snow-stat-value snow-stat-combined-value" id="hp-combined-cover">--</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="snow-pane-footer">
+              <a href="/snow-cover/">View Details &rarr;</a>
+            </div>
+          </div>
+        </section>
+
+        {{/* Column 2: Economic Dashboard - dark theme matching dashboard.html */}}
         <section class="w-100 ph2-l mb4 mb0-l" style="flex: 1; min-width: 220px; max-width: 280px;">
           <div class="econ-dashboard-pane h-100">
             <h2 class="econ-dashboard-title">
@@ -169,6 +221,136 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
   <style>
+    /* Snow Cover Pane - Dark Theme */
+    .snow-pane {
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(135deg, #0a0e14 0%, #111820 100%);
+      border: 1px solid #2a3444;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .snow-pane-title {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 0.75rem 0;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #2a3444;
+    }
+    .snow-pane-title a {
+      color: #e8ecf2;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .snow-pane-title a:hover {
+      color: #60a5fa;
+    }
+    .snow-updated {
+      font-size: 0.7rem;
+      color: #8892a2;
+      margin: 0 0 0.75rem 0;
+    }
+    .snow-globe-wrapper {
+      text-align: center;
+      margin-bottom: 0.75rem;
+    }
+    .snow-globe-wrapper a {
+      display: block;
+      transition: transform 0.2s;
+    }
+    .snow-globe-wrapper a:hover {
+      transform: scale(1.02);
+    }
+    .snow-globe-img {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid #2a3444;
+    }
+    .snow-legend {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.65rem;
+      color: #8892a2;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .legend-color {
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+    }
+    .legend-more { background: #3b82f6; }
+    .legend-same { background: #e5e7eb; }
+    .legend-less { background: #ef4444; }
+    .snow-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .snow-stat-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.5rem;
+      background: #1a2230;
+      border-radius: 4px;
+    }
+    .snow-stat-flag {
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .snow-stat-label {
+      font-size: 0.7rem;
+      color: #8892a2;
+      flex: 1;
+    }
+    .snow-stat-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #e8ecf2;
+    }
+    .snow-stat-change {
+      font-size: 0.65rem;
+      color: #8892a2;
+    }
+    .snow-stat-change .change-up { color: #34d399; }
+    .snow-stat-change .change-down { color: #f87171; }
+    .snow-stat-combined {
+      border-top: 1px solid #2a3444;
+      margin-top: 0.25rem;
+      padding-top: 0.5rem;
+    }
+    .snow-stat-combined-value {
+      color: #4ade80;
+      font-size: 1.1rem;
+    }
+    .snow-pane-footer {
+      text-align: center;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid #2a3444;
+    }
+    .snow-pane-footer a {
+      color: #3b82f6;
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .snow-pane-footer a:hover {
+      color: #60a5fa;
+    }
+
     /* Economic Dashboard Pane - Dark Theme */
     .econ-dashboard-pane {
       display: flex;
@@ -444,6 +626,7 @@
     /* Constrain height on large screens for equal columns */
     @media screen and (min-width: 60em) {
       .section-frame,
+      .snow-pane,
       .news-pane,
       .insights-pane {
         min-height: 600px;
@@ -886,6 +1069,49 @@
     }
 
     loadIndicatorsDashboard();
+
+    // Load snow cover data for homepage pane
+    async function loadSnowCoverData() {
+      try {
+        const response = await fetch('/images/snow-globe.json');
+        const data = await response.json();
+
+        // Update timestamp
+        if (data.current_date) {
+          const date = new Date(data.current_date);
+          document.getElementById('snow-last-update').textContent =
+            date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        }
+
+        const stats = data.stats;
+
+        // USA
+        document.getElementById('hp-usa-cover').textContent = stats.usa_cover.toFixed(1) + '%';
+        const usaChange = stats.usa_change;
+        const usaClass = usaChange > 0 ? 'change-up' : usaChange < 0 ? 'change-down' : '';
+        document.getElementById('hp-usa-change').innerHTML =
+          `<span class="${usaClass}">${usaChange >= 0 ? '+' : ''}${usaChange.toFixed(1)}</span>`;
+
+        // Canada
+        document.getElementById('hp-ca-cover').textContent = stats.canada_cover.toFixed(1) + '%';
+        const caChange = stats.canada_change;
+        const caClass = caChange > 0 ? 'change-up' : caChange < 0 ? 'change-down' : '';
+        document.getElementById('hp-ca-change').innerHTML =
+          `<span class="${caClass}">${caChange >= 0 ? '+' : ''}${caChange.toFixed(1)}</span>`;
+
+        // Combined
+        document.getElementById('hp-combined-cover').textContent = stats.combined_cover.toFixed(1) + '%';
+
+        // Update image with cache busting
+        const img = document.getElementById('homepage-snow-globe');
+        if (img && data.generated) {
+          img.src = '/images/snow-globe.png?t=' + encodeURIComponent(data.generated);
+        }
+      } catch (error) {
+        console.error('Failed to load snow data:', error);
+      }
+    }
+    loadSnowCoverData();
 
     // Category metadata for ski news
     const CATEGORY_META = {
