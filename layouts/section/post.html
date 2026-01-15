@@ -1,0 +1,113 @@
+{{ define "header" }}
+<!-- Site Banner Header - Compact style matching dashboard/snow-cover pages -->
+<style>
+  .site-banner {
+    background-image: url('/images/mtnsky.jpg');
+    background-size: cover;
+    background-position: center bottom;
+  }
+  .site-banner-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding-bottom: 1rem;
+  }
+  .site-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .site-nav-logo img {
+    height: 40px;
+    width: auto;
+  }
+  .site-nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .site-nav-links a {
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .site-nav-links a:hover,
+  .site-nav-links a.current {
+    color: #fff;
+    text-decoration: underline;
+  }
+  .site-page-title {
+    text-align: center;
+    padding: 1rem 1rem 0.5rem;
+  }
+  .site-page-title h1 {
+    color: white;
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  .site-page-title p {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.95rem;
+    margin: 0.5rem 0 0;
+  }
+  @media screen and (max-width: 600px) {
+    .site-nav {
+      justify-content: center;
+    }
+    .site-nav-links {
+      gap: 1rem;
+      justify-content: center;
+    }
+  }
+</style>
+<header class="site-banner">
+  <div class="site-banner-overlay">
+    <nav class="site-nav">
+      <div class="site-nav-left">
+        <a href="/" class="site-nav-logo">
+          <img src="/images/nixvirlogo.png" alt="NixVir">
+        </a>
+      </div>
+      <div class="site-nav-right">
+        <ul class="site-nav-links">
+          <li><a href="/snow-cover/">Snow</a></li>
+          <li><a href="/dashboard.html">Nixvir Dashboard</a></li>
+          <li><a href="/ski-news/">News</a></li>
+          <li><a href="/post/" class="current">Data Insights</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="site-page-title">
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.description }}
+      <p>{{ . }}</p>
+      {{ end }}
+    </div>
+  </div>
+</header>
+{{ end }}
+
+{{ define "main" }}
+  <article class="pa3 pa4-ns nested-copy-line-height">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links {{ $.Param "text_color" | compare.Default "mid-gray" }}">
+      {{ .Content }}
+    </section>
+    <aside class="flex-ns mt5 flex-wrap justify-around">
+      {{ range .Paginator.Pages }}
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          {{ .Render "summary" }}
+        </div>
+      {{ end }}
+    </aside>
+    {{ template "_internal/pagination.html" . }}
+  </article>
+{{ end }}
