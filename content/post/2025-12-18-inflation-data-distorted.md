@@ -11,7 +11,6 @@ tags:
   - consumer prices
   - economic data
 description: 'November CPI rose 2.7% year-over-year, but economists question data reliability after federal shutdown disrupted collection.'
-featured_image: '/images/inflation-data-2025.png'
 ---
 
 The Labor Department reported November's consumer price index rose 2.7% year-over-year, down from September's 3%. However, economists questioned the reliability of this data due to a 43-day federal shutdown that delayed the report and disrupted data collection.
