@@ -2,25 +2,163 @@
 # -*- coding: utf-8 -*-
 """
 Automated Ski Business News Aggregator with LLM Scoring
-Fetches RSS feeds from curated ski industry sources and uses LLM to score relevance/quality
+
+Fetches RSS feeds from curated ski industry sources and uses keyword-based
+or LLM-based scoring to filter and categorize articles.
+
+Improvements (Jan 2026):
+- Two-stage filtering: strict pre-filter + scoring
+- Story deduplication across sources
+- Contextual penalty patterns (regex-based)
+- Category priority system with phrase matching
+- LLM scoring toggle (default OFF)
+- Source health monitoring
+- Enhanced article metadata
 """
 import json
 import os
 import sys
 import re
 import hashlib
+import difflib
 from datetime import datetime, timedelta
+from collections import defaultdict
 import urllib.request
 import urllib.error
 import xml.etree.ElementTree as ET
 from html import unescape
 
-# API Keys
+# =============================================================================
+# CONFIGURATION TOGGLE - Set to True to enable LLM scoring (costs ~$6-10/month)
+# =============================================================================
+ENABLE_LLM_SCORING = os.environ.get('ENABLE_LLM_SCORING', 'false').lower() == 'true'
+
+# API Keys (only used if ENABLE_LLM_SCORING is True)
 ANTHROPIC_API_KEY = os.environ.get('ANTHROPIC_API_KEY', '')
 OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY', '')
 
-# Article categories with keywords for classification
-# Note: 'canadian' renamed to 'canada', 'racing-events' renamed to 'winter-sports'
+# Scoring thresholds - different values for LLM vs keyword scoring
+if ENABLE_LLM_SCORING:
+    AUTO_APPROVE_THRESHOLD = 7  # LLM is more accurate, can be stricter
+    AUTO_REJECT_THRESHOLD = 3
+else:
+    AUTO_APPROVE_THRESHOLD = 6  # Keyword scoring needs lower threshold
+    AUTO_REJECT_THRESHOLD = 3
+
+# =============================================================================
+# STRICT PRE-FILTER TERMS (Two-tier system from improvement spec)
+# =============================================================================
+
+# Must match AT LEAST ONE from primary group to pass pre-filter
+PRIMARY_SKI_TERMS = {
+    # Core ski/snowboard terms
+    'ski', 'skiing', 'skier', 'skiers', 'snowboard', 'snowboarding', 'snowboarder',
+    'lift ticket', 'season pass', 'ski resort', 'ski area', 'ski mountain',
+    'chairlift', 'gondola', 'ski patrol', 'snowmaking', 'terrain park',
+    'powder', 'grooming', 'base area', 'summit', 'skier visit', 'skier visits',
+    # Major resort operators
+    'vail resorts', 'alterra', 'epic pass', 'ikon pass', 'boyne resorts',
+    'aspen skiing', 'powdr',
+    # Major US resorts
+    'whistler', 'blackcomb', 'aspen', 'park city', 'deer valley', 'jackson hole',
+    'mammoth', 'mammoth mountain', 'palisades tahoe', 'squaw valley',
+    'big sky', 'telluride', 'steamboat', 'steamboat springs',
+    'breckenridge', 'keystone', 'copper mountain', 'winter park', 'vail',
+    'beaver creek', 'arapahoe basin', 'loveland',
+    'snowbird', 'alta', 'brighton', 'solitude', 'snowbasin', 'sundance',
+    'killington', 'stowe', 'sugarbush', 'jay peak', 'stratton', 'okemo',
+    'sun valley', 'taos', 'big bear',
+    # Major Canadian resorts
+    'revelstoke', 'banff', 'lake louise', 'sunshine village', 'sun peaks',
+    'big white', 'silver star', 'fernie', 'kicking horse',
+    'mont tremblant', 'blue mountain', 'mont sainte-anne',
+    # European/international
+    'chamonix', 'zermatt', 'st. moritz', 'courchevel', 'verbier', 'kitzbuhel',
+    'niseko', 'perisher', 'thredbo',
+    # Industry terms
+    'ski industry', 'resort operator', 'lift ticket', 'season pass',
+    'nsaa', 'canada west ski areas', 'ski area management'
+}
+
+# Secondary terms boost score but don't gate entry
+SECONDARY_BUSINESS_TERMS = {
+    'acquisition', 'merger', 'investment', 'earnings', 'revenue',
+    'expansion', 'development', 'ceo', 'layoff', 'bankruptcy',
+    'real estate', 'housing', 'occupancy', 'visitation', 'tourism',
+    'quarterly', 'annual report', 'financial', 'profit', 'growth'
+}
+
+# =============================================================================
+# CATEGORY DEFINITIONS WITH PRIORITY
+# =============================================================================
+
+# Categories in priority order (higher = takes precedence when tied)
+CATEGORY_PRIORITY = {
+    'business-investment': 10,  # Always prioritize business news
+    'safety-incidents': 9,       # Safety is high-signal
+    'weather-snow': 7,
+    'resort-operations': 6,
+    'transportation': 5,
+    'hospitality': 4,
+    'winter-sports': 3,
+    'canada': 2,                 # Geography is secondary
+    'international': 2,
+    'ski-history': 1
+}
+
+# Category-defining phrases (stronger signal than single keywords)
+CATEGORY_PHRASES = {
+    'business-investment': [
+        'acquisition of', 'merger with', 'announces earnings', 'revenue of',
+        'investment in', 'files for bankruptcy', 'names new ceo', 'layoffs at',
+        'skier visits', 'visitation numbers', 'economic impact', 'quarterly results',
+        'annual report', 'profit margin', 'revenue growth', 'market share',
+        'stock price', 'investor', 'funding round', 'private equity',
+        'sells to', 'buys', 'purchase agreement', 'deal worth'
+    ],
+    'safety-incidents': [
+        'ski patrol', 'avalanche', 'injured', 'fatality', 'fatal',
+        'accident', 'lawsuit filed', 'rescue operation', 'emergency response',
+        'collision', 'safety investigation', 'death at', 'died at'
+    ],
+    'weather-snow': [
+        'snow forecast', 'snowfall total', 'la nina', 'la niña', 'el nino', 'el niño',
+        'snowpack', 'drought', 'climate change', 'winter storm', 'powder day',
+        'inches of snow', 'feet of snow', 'snow report', 'base depth',
+        'atmospheric river', 'winter weather'
+    ],
+    'resort-operations': [
+        'opening day', 'closes for', 'season opening', 'first chair', 'last chair',
+        'new lift', 'new chairlift', 'gondola project', 'terrain expansion',
+        'snowmaking system', 'lift upgrade', 'base lodge', 'summit lodge'
+    ],
+    'transportation': [
+        'new flight', 'air service', 'nonstop to', 'airport expansion',
+        'shuttle service', 'bus route', 'traffic on i-70', 'highway closure'
+    ],
+    'hospitality': [
+        'hotel opens', 'lodging', 'room rates', 'occupancy rate', 'vacation rental',
+        'ski-in ski-out', 'slopeside', 'resort hotel'
+    ],
+    'winter-sports': [
+        'world cup', 'fis', 'olympic', 'slalom', 'giant slalom', 'downhill race',
+        'freestyle', 'halfpipe', 'slopestyle', 'ski cross', 'podium'
+    ],
+    'canada': [
+        'canadian ski', 'ski canada', 'canada west', 'british columbia ski',
+        'alberta ski', 'quebec ski', 'ontario ski'
+    ],
+    'international': [
+        'european alps', 'japanese ski', 'ski japan', 'australian ski',
+        'new zealand ski', 'south american ski', 'global ski market'
+    ],
+    'ski-history': [
+        'ski history', 'historic', 'anniversary', 'founded in', 'pioneer',
+        'museum', 'heritage', 'abandoned ski area', 'defunct resort'
+    ]
+}
+
+# Standard category keywords (used as secondary signal)
 ARTICLE_CATEGORIES = {
     'resort-operations': {
         'name': 'Resort Operations',
@@ -106,27 +244,52 @@ ARTICLE_CATEGORIES = {
     }
 }
 
-# Scoring thresholds
-# Without LLM: lower thresholds to let more through
-AUTO_APPROVE_THRESHOLD = 6  # Was 8 for LLM scoring
-AUTO_REJECT_THRESHOLD = 3   # Was 4 for LLM scoring
+# =============================================================================
+# CONTEXTUAL PENALTY PATTERNS (Regex-based for precision)
+# =============================================================================
 
-# Curated RSS sources for ski industry news
+# Only penalize when these patterns appear (not just single words)
+PROMOTIONAL_PATTERNS = [
+    (r'\bsave\s+\$?\d+', -5),                    # "Save $50"
+    (r'\bdeal\s+ends?\b', -5),                   # "Deal ends soon"
+    (r'\b(top|best)\s+\d+\s+(ski|resort|run)', -4),  # "Top 10 ski resorts"
+    (r'\bgear\s+(guide|review)', -4),
+    (r'\bbuying\s+guide\b', -4),
+    (r'\bpromo\s*code\b', -5),
+    (r'\btrip\s+report\b', -3),
+    (r'\bpowder\s+alert\b', -3),
+    (r'\b\d+%\s+off\b', -5),                     # "20% off"
+    (r'\bstarting\s+at\s+\$', -4),               # "Starting at $"
+    (r'\bbook\s+now\b', -5),
+    (r'\bshop\s+now\b', -5),
+    (r'\blimited\s+time\b', -4),
+    (r'\bearly\s+bird\s+(deal|special|price)', -4),
+]
+
+# Don't penalize these (exceptions to above patterns)
+PROMOTIONAL_EXCEPTIONS = [
+    r'\bbest\s+(year|quarter|season|earnings|performance)',  # "Best year on record"
+    r'\btop\s+(executive|ceo|management|official)',          # "Top executive leaves"
+    r'\brecord\s+(revenue|profit|earnings|visits)',          # "Record revenue"
+]
+
+# =============================================================================
+# RSS SOURCES (Including new sources from improvement spec)
+# =============================================================================
+
 RSS_SOURCES = [
     # Major national/international publications (high credibility boost)
     {
         'name': 'New York Times - Travel',
         'url': 'https://rss.nytimes.com/services/xml/rss/nyt/Travel.xml',
         'category': 'major_publication',
-        'boost': 3  # Premium journalism
+        'boost': 3
     },
-    # WSJ feed removed - consistently returns DNS errors (paywall/geo-block)
-    # Economist feed removed - returns 403 Forbidden (paywall)
     {
         'name': 'Reuters Business',
         'url': 'https://www.reutersagency.com/feed/?taxonomy=best-sectors&post_type=best',
         'category': 'major_publication',
-        'boost': 3  # Wire service - reliable business coverage
+        'boost': 3
     },
     {
         'name': 'Washington Post',
@@ -146,141 +309,137 @@ RSS_SOURCES = [
         'category': 'major_publication',
         'boost': 3
     },
-    # Boston Globe feed removed - returns 404 Not Found (paywall restructure)
     {
         'name': 'Associated Press - Top News',
         'url': 'https://feedx.net/rss/ap.xml',
         'category': 'major_publication',
-        'boost': 3  # Wire service - broad news coverage (alternative to rsshub)
+        'boost': 3
     },
     {
         'name': 'Bloomberg Markets',
         'url': 'https://feeds.bloomberg.com/markets/news.rss',
         'category': 'major_publication',
-        'boost': 3  # Premium financial journalism
-    },
-    {
-        'name': 'Google News - Ski Industry',
-        'url': 'https://news.google.com/rss/search?q=ski+resort+business+OR+ski+industry&hl=en-US&gl=US&ceid=US:en',
-        'category': 'aggregator',
-        'boost': 1  # Aggregator - catches stories from many sources
+        'boost': 3
     },
     {
         'name': 'Christian Science Monitor',
         'url': 'https://rss.csmonitor.com/feeds/all',
         'category': 'major_publication',
-        'boost': 3  # Quality journalism
+        'boost': 3
     },
-    # Major Canadian newspapers
+    # Google News Aggregators
     {
-        'name': 'Globe and Mail - Business',
-        'url': 'https://www.theglobeandmail.com/arc/outboundfeeds/rss/category/business/',
-        'category': 'canadian_publication',
-        'boost': 3  # Canada's national newspaper
-    },
-    {
-        'name': 'CBC News - Business',
-        'url': 'https://www.cbc.ca/webfeed/rss/rss-business',
-        'category': 'canadian_publication',
-        'boost': 2  # Canadian public broadcaster
-    },
-    # Canadian ski organizations
-    # Canadian Ski Council feed removed - returns 403 Forbidden
-    {
-        'name': 'Google News - Canada Ski Industry',
-        'url': 'https://news.google.com/rss/search?q=canada+ski+resort+OR+whistler+OR+banff+skiing&hl=en-CA&gl=CA&ceid=CA:en',
-        'category': 'canadian_industry',
-        'boost': 2  # Aggregates Canadian ski news
-    },
-    # European ski news
-    {
-        'name': 'PlanetSKI',
-        'url': 'https://planetski.eu/feed/',
-        'category': 'international',
-        'boost': 1  # European ski news coverage
-    },
-    {
-        'name': 'The Ski Guru',
-        'url': 'https://www.the-ski-guru.com/feed/',
-        'category': 'international',
-        'boost': 1  # European Alps coverage
-    },
-    # 2026 Winter Olympics coverage via Google News
-    {
-        'name': 'Google News - 2026 Winter Olympics Ski',
-        'url': 'https://news.google.com/rss/search?q=2026+Winter+Olympics+Milan+Cortina+skiing&hl=en-US&gl=US&ceid=US:en',
+        'name': 'Google News - Ski Industry',
+        'url': 'https://news.google.com/rss/search?q=ski+resort+business+OR+ski+industry&hl=en-US&gl=US&ceid=US:en',
         'category': 'aggregator',
-        'boost': 1  # Milan-Cortina 2026 coverage
+        'boost': 1
     },
-    # Additional ski-focused Google News aggregators
     {
         'name': 'Google News - Vail Alterra Ski',
         'url': 'https://news.google.com/rss/search?q=Vail+Resorts+OR+Alterra+Mountain+ski&hl=en-US&gl=US&ceid=US:en',
         'category': 'aggregator',
-        'boost': 2  # Major resort company news
+        'boost': 2
     },
     {
         'name': 'Google News - Ski Resort Business',
         'url': 'https://news.google.com/rss/search?q="ski+resort"+business+OR+investment+OR+acquisition&hl=en-US&gl=US&ceid=US:en',
         'category': 'aggregator',
-        'boost': 2  # Ski business news
+        'boost': 2
     },
     {
         'name': 'Google News - Ski Pass Prices',
         'url': 'https://news.google.com/rss/search?q=ski+pass+price+OR+Epic+Pass+OR+Ikon+Pass&hl=en-US&gl=US&ceid=US:en',
         'category': 'aggregator',
-        'boost': 1  # Pass and pricing news
+        'boost': 1
+    },
+    {
+        'name': 'Google News - 2026 Winter Olympics Ski',
+        'url': 'https://news.google.com/rss/search?q=2026+Winter+Olympics+Milan+Cortina+skiing&hl=en-US&gl=US&ceid=US:en',
+        'category': 'aggregator',
+        'boost': 1
+    },
+    {
+        'name': 'Google News - Ropeways & Lifts',
+        'url': 'https://news.google.com/rss/search?q=site:ropeways.net+OR+chairlift+installation+OR+gondola+project+OR+ski+lift+construction&hl=en-US&gl=US&ceid=US:en',
+        'category': 'industry',
+        'boost': 2
+    },
+    # Canadian sources
+    {
+        'name': 'Globe and Mail - Business',
+        'url': 'https://www.theglobeandmail.com/arc/outboundfeeds/rss/category/business/',
+        'category': 'canadian_publication',
+        'boost': 3
+    },
+    {
+        'name': 'CBC News - Business',
+        'url': 'https://www.cbc.ca/webfeed/rss/rss-business',
+        'category': 'canadian_publication',
+        'boost': 2
+    },
+    {
+        'name': 'Google News - Canada Ski Industry',
+        'url': 'https://news.google.com/rss/search?q=canada+ski+resort+OR+whistler+OR+banff+skiing&hl=en-CA&gl=CA&ceid=CA:en',
+        'category': 'canadian_industry',
+        'boost': 2
     },
     # Industry publications
     {
         'name': 'Outside Business Journal',
         'url': 'https://www.outsidebusinessjournal.com/feed/',
         'category': 'business',
-        'boost': 2  # Higher quality business journalism
+        'boost': 2
     },
     {
         'name': 'SIA - Snowsports Industries America',
         'url': 'https://snowsports.org/feed/',
         'category': 'industry',
-        'boost': 2  # Official industry association
+        'boost': 2
     },
     {
         'name': 'Snow Industry News',
         'url': 'https://www.snowindustrynews.com/rss',
         'category': 'industry',
-        'boost': 2  # Dedicated ski industry trade publication
+        'boost': 2
     },
     {
         'name': 'Ski Area Management',
         'url': 'https://www.saminfo.com/headline-news?format=feed&type=rss',
         'category': 'industry',
-        'boost': 2  # Trade magazine for mountain resort industry since 1962
+        'boost': 2
     },
-    {
-        'name': 'Google News - Ropeways & Lifts',
-        'url': 'https://news.google.com/rss/search?q=site:ropeways.net+OR+chairlift+installation+OR+gondola+project+OR+ski+lift+construction&hl=en-US&gl=US&ceid=US:en',
-        'category': 'industry',
-        'boost': 2  # Ropeway/lift industry news (ropeways.net + related)
-    },
-    # Ski news sites (dedicated ski sources get boost for keyword scoring)
+    # Ski news sites
     {
         'name': 'Unofficial Networks',
         'url': 'https://unofficialnetworks.com/feed/',
         'category': 'news',
-        'boost': 2  # Ski-dedicated source
+        'boost': 2
     },
     {
         'name': 'SnowBrains',
         'url': 'https://snowbrains.com/feed/',
         'category': 'news',
-        'boost': 2  # Ski-dedicated source
+        'boost': 2
+    },
+    # European/International
+    {
+        'name': 'PlanetSKI',
+        'url': 'https://planetski.eu/feed/',
+        'category': 'international',
+        'boost': 1
+    },
+    {
+        'name': 'The Ski Guru',
+        'url': 'https://www.the-ski-guru.com/feed/',
+        'category': 'international',
+        'boost': 1
     },
     # Mountain community newspapers
     {
         'name': 'Summit Daily News',
         'url': 'https://www.summitdaily.com/feed/',
         'category': 'local',
-        'boost': 1  # Breckenridge/Summit County
+        'boost': 1
     },
     {
         'name': 'Vail Daily',
@@ -298,7 +457,7 @@ RSS_SOURCES = [
         'name': 'Park Record',
         'url': 'https://www.parkrecord.com/feed/',
         'category': 'local',
-        'boost': 1  # Park City
+        'boost': 1
     },
     {
         'name': 'Jackson Hole News & Guide',
@@ -316,14 +475,14 @@ RSS_SOURCES = [
         'name': 'Mountain Xpress',
         'url': 'https://mountainx.com/feed/',
         'category': 'local',
-        'boost': 0  # Asheville area
+        'boost': 0
     },
     # Environmental/Western news
     {
         'name': 'High Country News',
         'url': 'https://www.hcn.org/feed/',
         'category': 'environment',
-        'boost': 1  # Climate/land use coverage
+        'boost': 1
     },
     # Ski history
     {
@@ -332,95 +491,56 @@ RSS_SOURCES = [
         'category': 'history',
         'boost': 1
     },
-    # Colorado TV stations (good for breaking ski news)
+    # Local TV
     {
         'name': 'Denver7',
         'url': 'https://www.denver7.com/news/local-news.rss',
         'category': 'local_news',
-        'boost': 1  # Colorado ski coverage
+        'boost': 1
     },
-    # Hospitality and hotel industry
+    # Hospitality
     {
         'name': 'CoStar Hotels',
         'url': 'https://www.costar.com/rss/news/hotels',
         'category': 'hospitality',
-        'boost': 2  # Hotel industry news for ski resort hospitality
+        'boost': 2
     },
-    # Government statistics (population, demographics, economic data)
+    # Government statistics
     {
         'name': 'U.S. Census Bureau',
         'url': 'https://www.census.gov/economic-indicators/indicator.xml',
         'category': 'government',
-        'boost': 3  # Official U.S. government statistics
+        'boost': 3
     },
     {
         'name': 'Statistics Canada - Travel & Tourism',
         'url': 'https://www150.statcan.gc.ca/n1/dai-quo/ssi/homepage-eng.xml',
         'category': 'government',
-        'boost': 3  # Official Canadian government statistics
-    }
+        'boost': 3
+    },
+    # NEW SOURCES FROM IMPROVEMENT SPEC
+    # Financial news - Vail Resorts stock (MTN)
+    {
+        'name': 'Google Finance - Vail Resorts MTN',
+        'url': 'https://news.google.com/rss/search?q=MTN+stock+Vail+Resorts+earnings&hl=en-US&gl=US&ceid=US:en',
+        'category': 'financial',
+        'boost': 2
+    },
+    # Canadian business
+    {
+        'name': 'BIV - Tourism',
+        'url': 'https://biv.com/topic/tourism/feed',
+        'category': 'canadian',
+        'boost': 2
+    },
 ]
 
-# Keywords for basic pre-filtering (must contain at least one)
-# This is a broad filter - more specific scoring happens later
-BUSINESS_KEYWORDS = [
-    # Core ski terms (must pass pre-filter)
-    'ski', 'skiing', 'skier', 'snowboard', 'snowboarding', 'powder', 'slopes',
-    # Resort/destination business
-    'resort', 'ski area', 'mountain', 'lift', 'investment', 'acquisition',
-    'merger', 'expansion', 'revenue', 'profit', 'loss', 'earnings', 'quarterly',
-    'annual', 'season pass', 'ikon', 'epic', 'vail', 'alterra', 'boyne',
-    'aspen', 'employee', 'workforce', 'labor', 'snowmaking',
-    'sustainability', 'hotel', 'lodging', 'retail', 'rental', 'terrain park',
-    'gondola', 'chairlift', 'industry', 'market', 'growth', 'decline',
-    'visitor', 'skier visits', 'bankruptcy',
-    'ceo', 'executive', 'management', 'partnership',
-    # Opening/closing dates
-    'opening day', 'opens for', 'season opening', 'closing day', 'closes for',
-    'season closing', 'first chair', 'last chair', 'opening date', 'closing date',
-    # Real estate and development (ski community focus)
-    'real estate', 'development', 'housing', 'condo', 'condominium',
-    'affordable housing', 'workforce housing', 'zoning', 'planning',
-    'construction', 'property', 'residential', 'commercial',
-    'breckenridge', 'park city', 'jackson hole', 'telluride', 'steamboat',
-    'whistler', 'tahoe', 'mammoth', 'big sky', 'deer valley',
-    # Weather and climate (high priority per guidelines)
-    'snowfall', 'snow forecast', 'winter forecast', 'la nina', 'el nino',
-    'climate change', 'climate', 'global warming', 'snow drought', 'snowpack',
-    'weather', 'forecast', 'storm', 'blizzard', 'cold front', 'warm winter',
-    # Canadian ski areas and markets (high priority)
-    'whistler', 'blackcomb', 'banff', 'lake louise', 'revelstoke', 'big white',
-    'sun peaks', 'silver star', 'fernie', 'kicking horse', 'mont tremblant',
-    'blue mountain', 'canadian', 'canada', 'british columbia', 'alberta', 'quebec',
-    # International markets and travel
-    'europe', 'european', 'alps', 'japan', 'international',
-    'australia', 'new zealand', 'chile', 'argentina', 'worldwide',
-    # Lodging and hospitality
-    'hotel', 'lodge', 'lodging', 'inn', 'resort hotel', 'slopeside',
-    'vacation rental', 'airbnb', 'vrbo', 'occupancy', 'room rate',
-    'hospitality', 'accommodation', 'bed tax', 'lodging tax',
-    # Air travel to ski destinations
-    'airport', 'airline', 'flight', 'air service', 'nonstop',
-    'eagle county', 'yampa valley', 'aspen airport', 'jackson hole airport',
-    'salt lake city', 'denver international', 'reno tahoe', 'bozeman',
-    'montrose', 'hayden', 'sun valley airport', 'mammoth airport',
-    # Currency and international visitors
-    'exchange rate', 'currency', 'canadian dollar', 'euro', 'strong dollar',
-    'weak dollar', 'international visitor', 'foreign tourist', 'inbound tourism',
-    'outbound tourism', 'cross-border', 'tourism statistics', 'visitor spending',
-    # Ski history
-    'ski history', 'historic', 'anniversary', 'founded', 'pioneer',
-    # 2026 Winter Olympics
-    'winter olympics', 'olympic', 'milan', 'cortina', 'milano cortina',
-    '2026 games', 'olympic venue', 'alpine skiing', 'downhill',
-    # European ski destinations
-    'chamonix', 'zermatt', 'st. moritz', 'val d\'isere', 'courchevel',
-    'verbier', 'kitzbuhel', 'st. anton', 'lech', 'ischgl', 'dolomites',
-    # Australian ski
-    'perisher', 'thredbo', 'falls creek', 'hotham', 'mt buller',
-    # Additional Canadian
-    'ontario ski', 'quebec ski', 'ski quebec', 'bromont', 'tremblant'
-]
+# Source health tracking (populated during run)
+SOURCE_HEALTH = {}
+
+# =============================================================================
+# UTILITY FUNCTIONS
+# =============================================================================
 
 def print_safe(msg):
     """Print with safe encoding for Windows"""
@@ -428,6 +548,7 @@ def print_safe(msg):
         print(msg)
     except:
         print(msg.encode('ascii', 'replace').decode('ascii'))
+
 
 def fetch_url(url, timeout=30):
     """Fetch content from URL"""
@@ -438,28 +559,26 @@ def fetch_url(url, timeout=30):
         with urllib.request.urlopen(req, timeout=timeout) as response:
             return response.read().decode('utf-8', errors='replace')
     except Exception as e:
-        print_safe(f"  ! Error fetching {url}: {e}")
+        # Track failed sources
+        SOURCE_HEALTH[url] = {'status': 'failed', 'error': str(e)[:100]}
         return None
+
 
 def clean_html(text):
     """Remove HTML tags and clean text"""
     if not text:
         return ""
-    # Remove HTML tags
     text = re.sub(r'<[^>]+>', ' ', text)
-    # Decode HTML entities
     text = unescape(text)
-    # Normalize whitespace
     text = re.sub(r'\s+', ' ', text).strip()
     return text
+
 
 def parse_rss_feed(xml_content, source_name):
     """Parse RSS feed and extract articles"""
     articles = []
     try:
         root = ET.fromstring(xml_content)
-
-        # Handle both RSS and Atom feeds
         namespaces = {
             'atom': 'http://www.w3.org/2005/Atom',
             'content': 'http://purl.org/rss/1.0/modules/content/'
@@ -525,125 +644,309 @@ def parse_rss_feed(xml_content, source_name):
 
     return articles
 
-def basic_relevance_filter(article):
-    """Quick keyword-based pre-filter before LLM scoring"""
+
+# =============================================================================
+# STRICT PRE-FILTER (Improvement: Two-tier system)
+# =============================================================================
+
+def strict_prefilter(article):
+    """
+    Two-tier pre-filter: must have ski term, boost if business term present.
+    Returns (passed, business_score) tuple.
+    """
     text = f"{article.get('title', '')} {article.get('description', '')}".lower()
 
-    for keyword in BUSINESS_KEYWORDS:
-        if keyword.lower() in text:
-            return True
-    return False
+    # Gate 1: Must have explicit ski industry reference
+    has_ski_term = any(term in text for term in PRIMARY_SKI_TERMS)
+    if not has_ski_term:
+        return False, 0
 
-def assign_categories(article):
-    """Assign primary and secondary categories to an article based on keyword matching.
-    Returns a tuple: (primary_category, list_of_secondary_categories)
+    # Gate 2: Count business context terms
+    business_count = sum(1 for term in SECONDARY_BUSINESS_TERMS if term in text)
+
+    return True, business_count
+
+
+# =============================================================================
+# STORY DEDUPLICATION (Improvement: Prevents duplicate stories across sources)
+# =============================================================================
+
+def normalize_title(title):
+    """Extract key terms for fuzzy matching."""
+    stop_words = {'the', 'a', 'an', 'to', 'for', 'of', 'in', 'on', 'at', 'by', 'is', 'are', 'was', 'were'}
+    words = re.findall(r'\b[a-z]+\b', title.lower())
+    key_words = [w for w in words if w not in stop_words and len(w) > 2]
+    return ' '.join(sorted(key_words[:8]))  # First 8 significant words, sorted
+
+
+def deduplicate_articles(articles, similarity_threshold=0.7):
+    """
+    Group articles by title similarity, keep highest-scored from each group.
+    Uses both normalized title matching and fuzzy matching.
+    """
+    if not articles:
+        return []
+
+    # First pass: group by normalized title
+    groups = defaultdict(list)
+    for article in articles:
+        key = normalize_title(article.get('title', ''))
+        groups[key].append(article)
+
+    unique_articles = []
+    processed_keys = set()
+
+    # Sort groups by best score in group
+    sorted_groups = sorted(
+        groups.items(),
+        key=lambda x: max(a.get('score', 0) for a in x[1]),
+        reverse=True
+    )
+
+    for key, group in sorted_groups:
+        if key in processed_keys:
+            continue
+
+        # Get best article from this group
+        best = max(group, key=lambda x: (x.get('score', 0), x.get('source_boost', 0)))
+
+        # Record other sources if duplicates exist
+        if len(group) > 1:
+            best['other_sources'] = [
+                {'source': a['source'], 'url': a['url']}
+                for a in group if a['url'] != best['url']
+            ]
+
+        # Check for fuzzy matches against already-selected articles
+        is_duplicate = False
+        for existing in unique_articles:
+            existing_title = existing.get('title', '').lower()
+            best_title = best.get('title', '').lower()
+            similarity = difflib.SequenceMatcher(None, best_title, existing_title).ratio()
+
+            if similarity >= similarity_threshold:
+                is_duplicate = True
+                # Add to existing article's other sources
+                if 'other_sources' not in existing:
+                    existing['other_sources'] = []
+                existing['other_sources'].append({
+                    'source': best['source'],
+                    'url': best['url']
+                })
+                break
+
+        if not is_duplicate:
+            unique_articles.append(best)
+
+        processed_keys.add(key)
+
+    return unique_articles
+
+
+# =============================================================================
+# CONTEXTUAL PENALTY SCORING (Improvement: Regex-based precision)
+# =============================================================================
+
+def apply_contextual_penalties(text, title):
+    """Apply penalties only when context confirms promotional content."""
+    penalty = 0
+    text_lower = text.lower()
+    title_lower = title.lower()
+
+    for pattern, points in PROMOTIONAL_PATTERNS:
+        # Check in title first (stronger penalty could be applied)
+        if re.search(pattern, title_lower, re.IGNORECASE):
+            # Check exceptions
+            is_exception = any(
+                re.search(exc, text_lower, re.IGNORECASE)
+                for exc in PROMOTIONAL_EXCEPTIONS
+            )
+            if not is_exception:
+                penalty += points
+                continue
+
+        # Check in full text
+        if re.search(pattern, text_lower, re.IGNORECASE):
+            is_exception = any(
+                re.search(exc, text_lower, re.IGNORECASE)
+                for exc in PROMOTIONAL_EXCEPTIONS
+            )
+            if not is_exception:
+                penalty += points // 2  # Lower penalty for body matches
+
+    return penalty
+
+
+# =============================================================================
+# CATEGORY ASSIGNMENT V2 (Improvement: Priority system with phrase matching)
+# =============================================================================
+
+def assign_categories_v2(article, llm_suggested_category=None):
+    """
+    Improved category assignment with phrase matching and priority.
+    If LLM provides category, validate it; otherwise use rules.
     """
     text = f"{article.get('title', '')} {article.get('description', '')} {article.get('content', '')}".lower()
     title = article.get('title', '').lower()
 
-    category_scores = {}
+    scores = {cat: 0 for cat in CATEGORY_PRIORITY}
 
-    for cat_id, cat_info in ARTICLE_CATEGORIES.items():
-        score = 0
-        for keyword in cat_info['keywords']:
-            # Title matches count more
-            if keyword.lower() in title:
-                score += 3
-            elif keyword.lower() in text:
-                score += 1
-        category_scores[cat_id] = score
+    # Phase 1: Phrase matching (high confidence)
+    for cat, phrases in CATEGORY_PHRASES.items():
+        for phrase in phrases:
+            if phrase in title:
+                scores[cat] += 8  # Very high weight for title phrase match
+            elif phrase in text:
+                scores[cat] += 5  # High weight for body phrase match
 
-    # Sort categories by score descending
-    sorted_cats = sorted(category_scores.items(), key=lambda x: x[1], reverse=True)
+    # Phase 2: Single keyword matching (lower weight)
+    for cat, info in ARTICLE_CATEGORIES.items():
+        for keyword in info['keywords']:
+            kw_lower = keyword.lower()
+            if kw_lower in title:
+                scores[cat] += 3
+            elif kw_lower in text:
+                scores[cat] += 1
 
-    # Get primary category (highest score)
-    primary = 'resort-operations'
-    secondary = []
+    # Apply priority tiebreaker
+    def score_with_priority(cat):
+        return (scores[cat], CATEGORY_PRIORITY.get(cat, 0))
 
-    if sorted_cats and sorted_cats[0][1] > 0:
-        primary = sorted_cats[0][0]
+    ranked = sorted(scores.keys(), key=score_with_priority, reverse=True)
 
-        # Get secondary categories (score > 0, not primary, max 3)
-        for cat_id, score in sorted_cats[1:]:
-            if score > 0 and len(secondary) < 3:
-                secondary.append(cat_id)
+    primary = ranked[0] if scores[ranked[0]] > 0 else 'resort-operations'
+    secondary = [c for c in ranked[1:4] if scores[c] > 0 and c != primary]
+
+    # If LLM suggested a category and it scored non-zero, consider it
+    if llm_suggested_category and llm_suggested_category in scores:
+        if scores.get(llm_suggested_category, 0) > 0:
+            if llm_suggested_category != primary:
+                # Move LLM suggestion to primary if it has decent score
+                if scores[llm_suggested_category] >= scores[primary] * 0.5:
+                    secondary = [primary] + [s for s in secondary if s != llm_suggested_category][:2]
+                    primary = llm_suggested_category
 
     return primary, secondary
 
 
-def assign_category(article):
-    """Assign a category to an article based on keyword matching (legacy single-category)"""
-    primary, _ = assign_categories(article)
-    return primary
+# =============================================================================
+# SCORING FUNCTIONS
+# =============================================================================
 
-def score_with_claude(article):
-    """Score article using Claude API"""
+def basic_keyword_score(article):
+    """Score article using improved keyword analysis with contextual penalties."""
+    text = f"{article.get('title', '')} {article.get('description', '')} {article.get('content', '')}".lower()
+    title = article.get('title', '').lower()
+
+    # Use strict pre-filter check
+    passed_prefilter, business_boost = strict_prefilter(article)
+
+    if not passed_prefilter:
+        return 2, {"reason": "No ski industry relevance detected", "method": "keyword"}
+
+    score = 5  # Base score for articles that pass pre-filter
+
+    # Add business term boost from pre-filter
+    score += min(business_boost, 3)  # Cap at +3
+
+    # HIGH PRIORITY: Phrase-based boosts (stronger signals)
+    for cat, phrases in CATEGORY_PHRASES.items():
+        for phrase in phrases:
+            if phrase in title:
+                score += 3
+            elif phrase in text:
+                score += 2
+
+    # MEDIUM PRIORITY: Single keyword boosts
+    business_keywords = ['acquisition', 'merger', 'investment', 'earnings', 'revenue',
+                        'profit', 'bankruptcy', 'layoff', 'ceo', 'executive', 'quarterly']
+    for kw in business_keywords:
+        if kw in title:
+            score += 2
+        elif kw in text:
+            score += 1
+
+    # Weather/climate boost
+    weather_keywords = ['snowfall', 'snow forecast', 'snowpack', 'la nina', 'el nino',
+                       'climate change', 'record snow', 'winter storm']
+    for kw in weather_keywords:
+        if kw in text:
+            score += 2
+            break
+
+    # Canadian/International boost
+    if any(kw in text for kw in ['canada', 'canadian', 'whistler', 'banff', 'british columbia']):
+        score += 2
+    if any(kw in text for kw in ['europe', 'european', 'alps', 'japan', 'australia']):
+        score += 1
+
+    # Apply contextual penalties (regex-based)
+    penalty = apply_contextual_penalties(text, title)
+    score += penalty  # penalties are negative
+
+    # Additional simple penalties for obvious fluff
+    fluff_indicators = ['trip report', 'gear review', 'gift guide', 'bucket list',
+                       'must-visit', 'hidden gem', 'ultimate guide']
+    for indicator in fluff_indicators:
+        if indicator in text:
+            score -= 3
+            break
+
+    # Off-topic penalties
+    offtopic = ['tick', 'mosquito', 'lyme disease', 'hiking trail', 'mountain bike']
+    for kw in offtopic:
+        if kw in text:
+            score -= 4
+            break
+
+    # Source boost
+    source_boost = 0
+    for src in RSS_SOURCES:
+        if src['name'] == article.get('source'):
+            source_boost = src.get('boost', 0)
+            article['source_boost'] = source_boost
+            break
+    score += source_boost
+
+    return max(1, min(10, score)), {"reason": f"Keyword scoring (boost: {source_boost})", "method": "keyword"}
+
+
+def score_with_llm(article):
+    """Score article using Claude API with optimized prompt."""
     if not ANTHROPIC_API_KEY:
-        return None, "No API key"
+        return None, {"reason": "No API key", "method": "llm_failed"}
 
-    prompt = f"""Score this ski industry news article on a scale of 1-10 for inclusion in a ski business news feed.
+    # Optimized prompt from improvement spec
+    prompt = f"""Rate this ski industry article for a resort executive audience.
 
+ARTICLE:
 Title: {article.get('title', 'No title')}
 Source: {article.get('source', 'Unknown')}
-Content: {article.get('content', article.get('description', 'No content'))[:800]}
+Content: {article.get('content', article.get('description', 'No content'))[:600]}
 
-CONTENT GUIDELINES:
+SCORING CRITERIA (1-10):
+- 9-10: Major business news (M&A, earnings, executive changes, large investments)
+- 7-8: Significant operational/industry news (expansion, policy changes, market trends)
+- 5-6: Relevant but routine (weather, openings, minor updates)
+- 3-4: Marginally relevant (local events, competitions)
+- 1-2: Not relevant (promotional, gear reviews, trip reports, lifestyle)
 
-STRICTLY EXCLUDE (score 1-2):
-- Promotional content: ticket deals, pass sales, resort marketing, "book now" messaging
-- Product advertisements, gear reviews, or buying guides
-- Personal trip reports, "best runs" listicles, or travel diary content
-- General skiing tips, how-to guides, or beginner advice
-- Feel-good human interest stories UNLESS they have significant business/industry angle
-- Tangentially related outdoor content (hiking, camping, tick repellent, summer activities at ski areas)
-- Lifestyle fluff pieces without substantive business news
-- Event announcements without business context (concerts, festivals, races unless about economic impact)
+REJECT SIGNALS (score 1-2):
+- Headlines with "deals", "save", "discount", "best", "top 10", "guide"
+- Product reviews or gear recommendations
+- Trip reports or powder alerts
+- Promotional content from resorts
 
-EXCLUDE (score 3-4):
-- Stories mentioning ski areas only in passing
-- General outdoor recreation news not specifically about ski industry business
-- Weather reports without business/operational impact analysis
-- Local news that happens to be near a ski town but isn't about ski industry
+Output JSON only:
+{{"score": N, "category": "...", "reason": "15 words max"}}
 
-INCLUDE AND PRIORITIZE (score 8-10):
-- Major ski resort business news: acquisitions, mergers, investments, ownership changes, billion-dollar developments
-- Real estate development in ski communities: housing projects, base village developments, luxury developments
-- Industry-wide business trends: skier visit statistics, season performance, market analysis
-- Resort financial news: earnings, revenue, profit/loss, bankruptcy, layoffs, executive changes
-- Canadian ski industry news (any stories about Canadian resorts, markets, or developments)
-- Climate change business impacts on ski industry (snowmaking investments, season length trends, adaptation strategies)
-- Workforce and labor issues at ski areas (housing shortages, wage disputes, staffing challenges)
-- 2026 Milan-Cortina Winter Olympics news with ski industry business relevance (venue construction, economic impact, tourism projections)
-- International ski market news (European Alps, Australia, Japan, South America)
-
-MODERATE PRIORITY (score 5-7):
-- Resort opening and closing dates (season openings, delayed openings, early closures)
-- Winter weather forecasts with clear ski industry relevance
-- Lodging and hospitality business in ski markets (hotels, vacation rentals, occupancy rates)
-- Air travel to ski destinations (new routes, airport capacity changes)
-- Ski history and heritage stories with substantive content
-- International ski market news and trends
-- Currency/tourism statistics affecting ski travel
-- Equipment/apparel industry BUSINESS news (not product reviews)
-
-SOURCE QUALITY BONUS:
-Articles from major publications (NYT, WSJ, Economist, Washington Post, Financial Times, Boston Globe, Atlantic) should be given extra consideration for quality journalism.
-
-Scoring criteria (in order of importance):
-1. Direct relevance to ski resort/destination BUSINESS operations
-2. Substantive news value (not fluff or filler)
-3. Quality of reporting (investigative journalism > press release rehash)
-4. Timeliness and newsworthiness
-
-Respond with ONLY a JSON object in this exact format:
-{{"relevance": X, "news_value": X, "quality": X, "overall": X, "reason": "brief explanation"}}
-
-The overall score should be your recommendation for inclusion (1-10). Be strict - only truly relevant ski business news should score 7+."""
+Categories: resort-operations, business-investment, weather-snow, transportation,
+winter-sports, safety-incidents, canada, international, ski-history, hospitality"""
 
     try:
         data = json.dumps({
             "model": "claude-haiku-4-5-20251001",
-            "max_tokens": 200,
+            "max_tokens": 150,
             "messages": [{"role": "user", "content": prompt}]
         }).encode('utf-8')
 
@@ -665,340 +968,37 @@ The overall score should be your recommendation for inclusion (1-10). Be strict 
             json_match = re.search(r'\{[^}]+\}', content)
             if json_match:
                 scores = json.loads(json_match.group())
-                return scores.get('overall', 5), scores
+                return scores.get('score', 5), {
+                    "reason": scores.get('reason', 'LLM scored'),
+                    "category": scores.get('category'),
+                    "method": "llm"
+                }
 
     except urllib.error.HTTPError as e:
         error_body = e.read().decode('utf-8', errors='replace')
         print_safe(f"    ! Claude API error: {e}")
-        print_safe(f"    ! Error details: {error_body[:500]}")
+        print_safe(f"    ! Error details: {error_body[:200]}")
     except Exception as e:
         print_safe(f"    ! Claude API error: {e}")
 
-    return None, "API error"
+    return None, {"reason": "API error", "method": "llm_failed"}
 
-def score_with_openai(article):
-    """Score article using OpenAI API (fallback)"""
-    if not OPENAI_API_KEY:
-        return None, "No API key"
-
-    prompt = f"""Score this ski industry news article on a scale of 1-10 for inclusion in a ski business news feed.
-
-Title: {article.get('title', 'No title')}
-Source: {article.get('source', 'Unknown')}
-Content: {article.get('content', article.get('description', 'No content'))[:800]}
-
-CONTENT GUIDELINES:
-
-STRICTLY EXCLUDE (score 1-2):
-- Promotional content: ticket deals, pass sales, resort marketing, "book now" messaging
-- Product advertisements, gear reviews, or buying guides
-- Personal trip reports, "best runs" listicles, or travel diary content
-- General skiing tips, how-to guides, or beginner advice
-- Feel-good human interest stories UNLESS they have significant business/industry angle
-- Tangentially related outdoor content (hiking, camping, tick repellent, summer activities at ski areas)
-- Lifestyle fluff pieces without substantive business news
-
-EXCLUDE (score 3-4):
-- Stories mentioning ski areas only in passing
-- General outdoor recreation news not specifically about ski industry business
-- Weather reports without business/operational impact analysis
-
-INCLUDE AND PRIORITIZE (score 8-10):
-- Major ski resort business news: acquisitions, mergers, investments, ownership changes, billion-dollar developments
-- Real estate development in ski communities: housing projects, base village developments
-- Industry-wide business trends: skier visit statistics, season performance, market analysis
-- Resort financial news: earnings, revenue, profit/loss, bankruptcy, layoffs, executive changes
-- Canadian ski industry news
-- Climate change business impacts on ski industry
-- Workforce and labor issues at ski areas
-- 2026 Milan-Cortina Winter Olympics business news
-- International ski market news (Europe, Australia, Japan)
-
-MODERATE PRIORITY (score 5-7):
-- Resort opening and closing dates
-- Winter weather forecasts with clear ski industry relevance
-- Lodging and hospitality business in ski markets
-- Air travel to ski destinations
-- Ski history and heritage stories with substantive content
-- Equipment/apparel industry BUSINESS news (not product reviews)
-
-Respond with ONLY a JSON object in this exact format:
-{{"relevance": X, "news_value": X, "quality": X, "overall": X, "reason": "brief explanation"}}
-
-Be strict - only truly relevant ski business news should score 7+."""
-
-    try:
-        data = json.dumps({
-            "model": "gpt-3.5-turbo",
-            "max_tokens": 200,
-            "messages": [{"role": "user", "content": prompt}]
-        }).encode('utf-8')
-
-        req = urllib.request.Request(
-            'https://api.openai.com/v1/chat/completions',
-            data=data,
-            headers={
-                'Content-Type': 'application/json',
-                'Authorization': f'Bearer {OPENAI_API_KEY}'
-            }
-        )
-
-        with urllib.request.urlopen(req, timeout=30) as response:
-            result = json.loads(response.read().decode())
-            content = result['choices'][0]['message']['content']
-
-            json_match = re.search(r'\{[^}]+\}', content)
-            if json_match:
-                scores = json.loads(json_match.group())
-                return scores.get('overall', 5), scores
-
-    except Exception as e:
-        print_safe(f"    ! OpenAI API error: {e}")
-
-    return None, "API error"
-
-def basic_keyword_score(article):
-    """Score article using keyword analysis when no LLM available"""
-    text = f"{article.get('title', '')} {article.get('description', '')} {article.get('content', '')}".lower()
-    title = article.get('title', '').lower()
-
-    # CORE SKI KEYWORDS - article MUST contain at least one to be considered
-    core_ski_keywords = [
-        'ski', 'skiing', 'skier', 'slope', 'slopes', 'chairlift', 'gondola', 'lift',
-        'snowboard', 'snowboarding', 'powder', 'alpine', 'downhill', 'terrain park',
-        'snow sport', 'winter sport', 'après', 'apres', 'backcountry', 'off-piste',
-        'snowmaking', 'grooming', 'base area', 'summit', 'vertical', 'mountain resort',
-        'ski resort', 'ski area', 'ski town', 'ski season', 'ski pass', 'ikon', 'epic pass',
-        'vail resorts', 'alterra', 'aspen skiing', 'boyne', 'powdr',
-        # Major resorts
-        'whistler', 'blackcomb', 'vail', 'aspen', 'park city', 'deer valley', 'jackson hole',
-        'mammoth', 'squaw', 'palisades', 'tahoe', 'big sky', 'telluride', 'steamboat',
-        'breckenridge', 'keystone', 'copper', 'winter park', 'arapahoe', 'loveland',
-        'banff', 'lake louise', 'revelstoke', 'fernie', 'big white', 'sun peaks',
-        'mont tremblant', 'blue mountain', 'killington', 'stowe', 'sugarbush', 'jay peak',
-        'snowbird', 'alta', 'brighton', 'solitude', 'snowbasin', 'sundance',
-        # Winter Olympics ski context
-        'winter olympics', 'winter games', 'olympic ski', 'slalom', 'giant slalom',
-        'super-g', 'downhill race', 'freestyle ski', 'ski cross', 'moguls',
-        # Snow/weather in ski context
-        'snowfall', 'snowpack', 'snow forecast', 'powder day', 'storm ski',
-        # Industry terms
-        'skier visit', 'ski industry', 'resort operator', 'lift ticket', 'season pass'
-    ]
-
-    # Check for core ski relevance
-    has_ski_relevance = any(kw in text for kw in core_ski_keywords)
-
-    # If no ski keywords found, reject with low score
-    if not has_ski_relevance:
-        return 2, {"reason": "No ski industry relevance detected"}
-
-    score = 5  # Base score (only for articles with ski relevance)
-
-    # HIGH PRIORITY: Resort/destination business news (in title = +3, in body = +2)
-    resort_business = ['acquisition', 'merger', 'investment', 'earnings', 'expansion',
-                       'revenue', 'profit', 'growth', 'ipo', 'bankruptcy', 'layoff',
-                       'ceo', 'executive', 'quarterly', 'annual report', 'partnership',
-                       'financial', 'closes', 'sold', 'buys', 'purchase', 'management']
-    for kw in resort_business:
-        if kw in title:
-            score += 3
-        elif kw in text:
-            score += 2
-
-    # HIGH PRIORITY: Weather and climate stories (+2-3)
-    weather_climate = ['snowfall', 'snow forecast', 'winter forecast', 'la nina', 'el nino',
-                       'climate change', 'global warming', 'snow drought', 'early season',
-                       'late season', 'record snow', 'warm winter', 'cold winter',
-                       'weather pattern', 'snowpack', 'water supply', 'drought']
-    for kw in weather_climate:
-        if kw in title:
-            score += 3
-        elif kw in text:
-            score += 2
-
-    # HIGH PRIORITY: International markets (+2)
-    international = ['europe', 'european', 'alps', 'japan', 'japanese',
-                     'australia', 'new zealand', 'south america', 'chile', 'argentina',
-                     'china', 'chinese', 'international', 'global market', 'worldwide']
-    for kw in international:
-        if kw in text:
-            score += 2
-            break  # Only count once
-
-    # HIGH PRIORITY: Canadian ski stories (+2-3)
-    canadian = ['canada', 'canadian', 'whistler', 'blackcomb', 'banff', 'lake louise',
-                'revelstoke', 'big white', 'sun peaks', 'silver star', 'fernie',
-                'kicking horse', 'mont tremblant', 'blue mountain', 'british columbia',
-                'alberta', 'quebec', 'ontario']
-    for kw in canadian:
-        if kw in title:
-            score += 3
-        elif kw in text:
-            score += 2
-            break  # Only count Canadian once if in body
-
-    # HIGH PRIORITY: Opening/closing dates (+2-3)
-    opening_closing = ['opening day', 'opens for season', 'season opening', 'first chair',
-                       'closing day', 'closes for season', 'season closing', 'last chair',
-                       'opening date', 'closing date', 'set to open', 'will open',
-                       'announced opening', 'delayed opening', 'early opening']
-    for kw in opening_closing:
-        if kw in title:
-            score += 3
-        elif kw in text:
-            score += 2
-
-    # HIGH PRIORITY: Real estate/development in ski communities (+2-3)
-    real_estate = ['real estate', 'development project', 'housing development', 'condo',
-                   'condominium', 'affordable housing', 'workforce housing', 'zoning',
-                   'planning commission', 'hotel development', 'mixed-use', 'residential',
-                   'commercial development', 'construction project']
-    for kw in real_estate:
-        if kw in title:
-            score += 3
-        elif kw in text:
-            score += 2
-
-    # Ski community names boost (+1 when combined with development terms)
-    ski_communities = ['breckenridge', 'park city', 'jackson hole', 'telluride', 'steamboat',
-                       'whistler', 'tahoe', 'mammoth', 'big sky', 'deer valley', 'vail',
-                       'aspen', 'snowmass', 'crested butte', 'durango', 'sun valley']
-    has_community = any(c in text for c in ski_communities)
-    has_development = any(d in text for d in ['development', 'housing', 'real estate', 'construction', 'zoning'])
-    if has_community and has_development:
-        score += 2
-
-    # HIGH PRIORITY: Lodging and hospitality in ski markets (+2-3)
-    lodging = ['hotel occupancy', 'room rate', 'lodging tax', 'bed tax', 'vacation rental',
-               'airbnb', 'vrbo', 'resort hotel', 'slopeside lodging', 'ski-in ski-out',
-               'hospitality industry', 'hotel development', 'lodge expansion']
-    for kw in lodging:
-        if kw in title:
-            score += 3
-        elif kw in text:
-            score += 2
-
-    # HIGH PRIORITY: Air travel to ski destinations (+2-3)
-    air_travel = ['airport', 'airline', 'air service', 'nonstop flight', 'direct flight',
-                  'eagle county airport', 'yampa valley', 'aspen airport', 'jackson hole airport',
-                  'bozeman airport', 'montrose airport', 'hayden airport', 'sun valley airport',
-                  'mammoth airport', 'reno tahoe', 'denver international']
-    for kw in air_travel:
-        if kw in title:
-            score += 3
-        elif kw in text:
-            score += 2
-
-    # HIGH PRIORITY: Currency and international visitors (+2-3)
-    intl_tourism = ['exchange rate', 'currency', 'canadian dollar', 'strong dollar', 'weak dollar',
-                    'international visitor', 'foreign tourist', 'inbound tourism', 'outbound tourism',
-                    'cross-border', 'tourism statistics', 'visitor spending', 'travel ban',
-                    'visa', 'border crossing', 'canadian visitor', 'european visitor']
-    for kw in intl_tourism:
-        if kw in title:
-            score += 3
-        elif kw in text:
-            score += 2
-
-    # MEDIUM PRIORITY: Resort operators and industry (+1 each)
-    industry_kw = ['vail resorts', 'alterra', 'ikon', 'boyne', 'aspen skiing',
-                   'skier visits', 'ski industry', 'resort operator', 'new lift',
-                   'new chairlift', 'gondola', 'terrain expansion',
-                   'hotel', 'lodging', 'tariff', 'workforce', 'employees']
-    for kw in industry_kw:
-        if kw in text:
-            score += 1
-
-    # LOWER PRIORITY: Equipment/apparel business (only +0.5, rounded)
-    equipment_biz = ['manufacturer', 'brand', 'retailer', 'supply chain', 'distribution']
-    equip_count = sum(1 for kw in equipment_biz if kw in text)
-    score += equip_count // 2
-
-    # PENALTIES: Promotional content (-4 to -5)
-    promotional = ['buy now', 'save up to', 'discount', 'deal', 'sale ends',
-                   'limited time', 'book now', 'reserve your', 'get your tickets',
-                   'pass sale', 'early bird', 'promo code', 'coupon', '% off',
-                   'starting at $', 'as low as', 'don\'t miss', 'shop now',
-                   'order now', 'special offer', 'exclusive deal']
-    for kw in promotional:
-        if kw in text:
-            score -= 5
-            break  # One penalty is enough
-
-    # PENALTIES: Fluff/listicle content (-3 to -4)
-    fluff_kw = ['powder day', 'best runs', 'trip report', 'gear review',
-                'how to ski', 'beginner tips', 'what to wear', 'packing list',
-                'gift guide', 'top 10', 'best of', 'bucket list', 'must-visit',
-                'hidden gem', 'insider tips', 'what i learned', 'things to do',
-                'ultimate guide', 'complete guide', 'everything you need to know']
-    for kw in fluff_kw:
-        if kw in text:
-            score -= 4
-            break
-
-    # PENALTY: Product-focused content (-3)
-    product_focus = ['gear guide', 'product review', 'tested:', 'we tested',
-                     'best skis', 'best boots', 'best jacket', 'buying guide',
-                     'editor\'s pick', 'our favorite', 'we recommend']
-    for kw in product_focus:
-        if kw in text:
-            score -= 3
-            break
-
-    # PENALTY: Tangentially related outdoor content
-    # Only penalize if NOT in ski resort context (summer ops at resorts are relevant)
-    ski_context_indicators = ['ski resort', 'ski area', 'mountain resort', 'ski season',
-                              'lift', 'chairlift', 'gondola', 'slope', 'trail', 'terrain',
-                              'snowmaking', 'base area', 'summit', 'vertical', 'ski town']
-    has_ski_context = any(indicator in text for indicator in ski_context_indicators)
-
-    # These are ALWAYS off-topic regardless of context
-    always_penalize = ['tick', 'mosquito', 'bug spray', 'repellent', 'lyme disease']
-    for kw in always_penalize:
-        if kw in title.lower():
-            score -= 5
-            break
-        elif kw in text:
-            score -= 3
-            break
-
-    # These are only penalized if NOT in ski resort context
-    if not has_ski_context:
-        summer_activities = ['hiking trail', 'camping', 'mountain bike', 'golf course',
-                             'zip line', 'alpine slide', 'water park', 'fishing', 'hunting',
-                             'rock climbing', 'kayak', 'rafting']
-        for kw in summer_activities:
-            if kw in title.lower():
-                score -= 5
-                break
-            elif kw in text:
-                score -= 3
-                break
-
-    # PENALTY: Feel-good fluff without business angle (-3)
-    feelgood_fluff = ['heartwarming', 'inspiring story', 'feel-good', 'amazing moment',
-                      'viral video', 'cute', 'adorable', 'wholesome', 'incredible footage']
-    for kw in feelgood_fluff:
-        if kw in text:
-            score -= 3
-            break
-
-    # Source boost
-    source_boost = 0
-    for src in RSS_SOURCES:
-        if src['name'] == article.get('source'):
-            source_boost = src.get('boost', 0)
-            break
-    score += source_boost
-
-    return max(1, min(10, score)), {"reason": f"Keyword scoring (boost: {source_boost})"}
 
 def score_article(article):
-    """Score article using keyword-based analysis (no API costs)"""
-    # Use keyword scoring to avoid API costs
-    # LLM scoring functions are preserved but disabled
+    """Score article using configured method (LLM or keyword)."""
+    if ENABLE_LLM_SCORING and ANTHROPIC_API_KEY:
+        score, details = score_with_llm(article)
+        if score is not None:
+            return score, details
+        # Fall back to keyword scoring if LLM fails
+        print_safe("    ! LLM failed, falling back to keyword scoring")
+
     return basic_keyword_score(article)
+
+
+# =============================================================================
+# DATA PERSISTENCE
+# =============================================================================
 
 def load_existing_articles():
     """Load existing articles to avoid duplicates"""
@@ -1012,6 +1012,7 @@ def load_existing_articles():
             pass
     return {}
 
+
 def load_review_queue():
     """Load articles pending review"""
     path = 'static/data/ski-news-review.json'
@@ -1023,6 +1024,7 @@ def load_review_queue():
             pass
     return {'pending': [], 'rejected': []}
 
+
 def save_review_queue(queue):
     """Save review queue"""
     path = 'static/data/ski-news-review.json'
@@ -1030,11 +1032,30 @@ def save_review_queue(queue):
     with open(path, 'w', encoding='utf-8') as f:
         json.dump(queue, f, indent=2)
 
+
+def save_source_health():
+    """Save source health report"""
+    path = 'static/data/ski-news-source-health.json'
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    health_data = {
+        'updated': datetime.now().isoformat(),
+        'sources': SOURCE_HEALTH
+    }
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump(health_data, f, indent=2)
+
+
+# =============================================================================
+# MAIN FUNCTION
+# =============================================================================
+
 def update_ski_news():
     """Main function to fetch and score ski news"""
     print_safe("=" * 60)
-    print_safe("Ski Business News Aggregator")
+    print_safe("Ski Business News Aggregator (Improved)")
     print_safe(f"Timestamp: {datetime.now().isoformat()}")
+    print_safe(f"Scoring Mode: {'LLM (Claude Haiku)' if ENABLE_LLM_SCORING else 'Keyword-based'}")
+    print_safe(f"Thresholds: Approve >= {AUTO_APPROVE_THRESHOLD}, Reject <= {AUTO_REJECT_THRESHOLD}")
     print_safe("=" * 60)
 
     # Load existing data
@@ -1048,6 +1069,8 @@ def update_ski_news():
     print_safe(f"Pending review: {len(review_queue.get('pending', []))}")
 
     all_articles = []
+    sources_ok = 0
+    sources_failed = 0
 
     # Fetch from all sources
     print_safe("\n--- Fetching RSS Feeds ---")
@@ -1056,68 +1079,91 @@ def update_ski_news():
         content = fetch_url(source['url'])
         if content:
             articles = parse_rss_feed(content, source['name'])
-            # Filter out already-seen articles
             new_articles = [a for a in articles if a.get('id') not in existing_ids]
             print_safe(f"  Found {len(articles)} articles, {len(new_articles)} new")
             all_articles.extend(new_articles)
+            SOURCE_HEALTH[source['name']] = {'status': 'ok', 'articles': len(articles)}
+            sources_ok += 1
         else:
             print_safe(f"  ! Failed to fetch")
+            SOURCE_HEALTH[source['name']] = {'status': 'failed'}
+            sources_failed += 1
 
-    print_safe(f"\n--- Processing {len(all_articles)} New Articles ---")
+    print_safe(f"\n--- Source Health: {sources_ok} OK, {sources_failed} Failed ---")
 
-    # Pre-filter with keywords
-    filtered_articles = [a for a in all_articles if basic_relevance_filter(a)]
-    print_safe(f"After keyword filter: {len(filtered_articles)} articles")
+    # Stage 1: Strict Pre-filter
+    print_safe(f"\n--- Stage 1: Pre-filtering {len(all_articles)} Articles ---")
+    prefiltered = []
+    for article in all_articles:
+        passed, business_score = strict_prefilter(article)
+        if passed:
+            article['prefilter_business_score'] = business_score
+            prefiltered.append(article)
 
-    # Prioritize ski-dedicated sources (Unofficial Networks, SnowBrains, PlanetSKI, etc.)
-    # so they get processed first within the 20-article limit
+    reduction_pct = (1 - len(prefiltered) / max(len(all_articles), 1)) * 100
+    print_safe(f"After strict pre-filter: {len(prefiltered)} articles ({reduction_pct:.0f}% reduction)")
+
+    # Prioritize by business score and source
     ski_dedicated_sources = ['Unofficial Networks', 'SnowBrains', 'PlanetSKI', 'The Ski Guru',
                             'Ski Area Management', 'Snow Industry News', 'SIA - Snowsports Industries America']
+
     def source_priority(article):
         source = article.get('source', '')
+        business_score = article.get('prefilter_business_score', 0)
         if source in ski_dedicated_sources:
-            return 0  # Process first
+            return (0, -business_score)
         elif 'ski' in source.lower() or 'snow' in source.lower():
-            return 1  # Second priority
+            return (1, -business_score)
         else:
-            return 2  # Last
-    filtered_articles.sort(key=source_priority)
+            return (2, -business_score)
 
+    prefiltered.sort(key=source_priority)
+
+    # Stage 2: Score and categorize
+    print_safe(f"\n--- Stage 2: Scoring Top {min(len(prefiltered), 30)} Articles ---")
+
+    scored_articles = []
+    for i, article in enumerate(prefiltered[:30]):  # Process up to 30 per run
+        print_safe(f"\n[{i+1}/{min(len(prefiltered), 30)}] {article.get('title', 'No title')[:55]}...")
+
+        score, details = score_article(article)
+
+        article['score'] = score if score else 5
+        article['score_details'] = details
+        article['score_method'] = details.get('method', 'unknown')
+
+        # Get LLM-suggested category if available
+        llm_category = details.get('category') if details.get('method') == 'llm' else None
+
+        # Assign categories using v2 system
+        primary, secondary = assign_categories_v2(article, llm_category)
+        article['category'] = primary
+        article['secondary_categories'] = secondary
+
+        print_safe(f"    Score: {article['score']} | Category: {primary} | Method: {article['score_method']}")
+
+        scored_articles.append(article)
+
+    # Stage 3: Deduplicate
+    print_safe(f"\n--- Stage 3: Deduplicating {len(scored_articles)} Articles ---")
+    deduplicated = deduplicate_articles(scored_articles)
+    print_safe(f"After deduplication: {len(deduplicated)} unique articles")
+
+    # Classify by threshold
     approved = []
     pending = review_queue.get('pending', [])
     rejected = review_queue.get('rejected', [])
 
-    # Score each article (prioritized by source)
-    for i, article in enumerate(filtered_articles[:20]):  # Limit to 20 per run
-        print_safe(f"\n[{i+1}/{min(len(filtered_articles), 20)}] {article.get('title', 'No title')[:60]}...")
+    for article in deduplicated:
+        score = article['score']
 
-        score, details = score_article(article)
-
-        if score is None:
-            print_safe(f"    ? Scoring failed, queuing for review")
-            article['score'] = 5
-            article['score_details'] = {"reason": "Scoring failed"}
-            pending.append(article)
-        elif score >= AUTO_APPROVE_THRESHOLD:
-            print_safe(f"    + Score: {score} - AUTO APPROVED")
-            article['score'] = score
-            article['score_details'] = details
+        if score >= AUTO_APPROVE_THRESHOLD:
             article['approved_date'] = datetime.now().strftime('%Y-%m-%d')
-            primary, secondary = assign_categories(article)
-            article['category'] = primary
-            article['secondary_categories'] = secondary
-            cat_display = primary + (f" (+{', '.join(secondary)})" if secondary else "")
-            print_safe(f"    Category: {cat_display}")
             approved.append(article)
+            print_safe(f"    + APPROVED: {article.get('title', '')[:50]}...")
         elif score <= AUTO_REJECT_THRESHOLD:
-            print_safe(f"    - Score: {score} - REJECTED")
-            article['score'] = score
-            article['score_details'] = details
             rejected.append(article)
         else:
-            print_safe(f"    ~ Score: {score} - PENDING REVIEW")
-            article['score'] = score
-            article['score_details'] = details
             pending.append(article)
 
     # Merge approved with existing
@@ -1138,6 +1184,7 @@ def update_ski_news():
     output_data = {
         'updated': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         'total_articles': len(sorted_articles),
+        'scoring_method': 'llm' if ENABLE_LLM_SCORING else 'keyword',
         'articles': sorted_articles
     }
 
@@ -1149,21 +1196,36 @@ def update_ski_news():
     # Save review queue
     save_review_queue({'pending': pending, 'rejected': rejected})
 
+    # Save source health
+    save_source_health()
+
     print_safe("\n" + "=" * 60)
     print_safe("SUMMARY")
     print_safe("=" * 60)
+    print_safe(f"Scoring Method: {'LLM' if ENABLE_LLM_SCORING else 'Keyword'}")
     print_safe(f"New articles approved: {len(approved)}")
     print_safe(f"Total approved articles: {len(sorted_articles)}")
     print_safe(f"Pending review: {len(pending)}")
     print_safe(f"Rejected: {len(rejected)}")
+    print_safe(f"Sources OK: {sources_ok}, Failed: {sources_failed}")
     print_safe(f"\nOutput: {output_path}")
     print_safe("=" * 60)
 
     return output_data
 
+
+# =============================================================================
+# ENTRY POINT
+# =============================================================================
+
 if __name__ == '__main__':
-    # Using keyword-based scoring (no API costs)
-    print_safe("Using keyword-based scoring (no API costs)\n")
+    if ENABLE_LLM_SCORING:
+        print_safe("LLM Scoring ENABLED (Claude Haiku)")
+        if not ANTHROPIC_API_KEY:
+            print_safe("WARNING: ANTHROPIC_API_KEY not set, will fall back to keyword scoring")
+    else:
+        print_safe("LLM Scoring DISABLED (using keyword-based scoring)")
+    print_safe("")
 
     try:
         update_ski_news()
