@@ -67,9 +67,21 @@
             z-index: -1;
         }
 
+        /* Site Banner Header - Matching main site */
+        .site-banner {
+            background-image: url('/images/mtnsky.jpg');
+            background-size: cover;
+            background-position: center bottom;
+            position: relative;
+        }
+
+        .site-banner-overlay {
+            background: rgba(0, 0, 0, 0.6);
+            padding-bottom: 1rem;
+        }
+
         /* Site Navigation Bar */
         .site-nav {
-            background: #000;
             padding: 0.75rem 1rem 0.75rem 1.5rem;
             display: flex;
             align-items: center;
@@ -114,7 +126,7 @@
         .last-updated {
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.7rem;
-            color: var(--text-muted);
+            color: rgba(255, 255, 255, 0.6);
         }
 
         /* Dashboard Container */
@@ -544,25 +556,29 @@
 <body>
     <div class="bg-gradient"></div>
 
-    <!-- Site Navigation -->
-    <nav class="site-nav">
-        <div class="site-nav-left">
-            <a href="/" class="site-nav-logo">
-                <img src="/images/nixvirlogo.png" alt="NixVir">
-            </a>
+    <!-- Site Banner Header - Matching main site -->
+    <header class="site-banner">
+        <div class="site-banner-overlay">
+            <nav class="site-nav">
+                <div class="site-nav-left">
+                    <a href="/" class="site-nav-logo">
+                        <img src="/images/nixvirlogo.png" alt="NixVir">
+                    </a>
+                </div>
+                <div class="site-nav-right">
+                    <ul class="site-nav-links">
+                        <li><a href="/dashboard.html" class="current">Economic Dashboard</a></li>
+                        <li><a href="/ski-news/">Ski Business News</a></li>
+                        <li><a href="/post/">Data Insights</a></li>
+                        <li><a href="/snow-cover/">Snow Cover</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                    </ul>
+                    <span class="last-updated">Updated: <span id="last-update">Loading...</span></span>
+                </div>
+            </nav>
         </div>
-        <div class="site-nav-right">
-            <ul class="site-nav-links">
-                <li><a href="/dashboard/" class="current">Dashboard</a></li>
-                <li><a href="/snow-cover/">Snow Cover</a></li>
-                <li><a href="/ski-news/">Ski News</a></li>
-                <li><a href="/post/">Insights</a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="/contact/">Contact</a></li>
-            </ul>
-            <span class="last-updated">Updated: <span id="last-update">Loading...</span></span>
-        </div>
-    </nav>
+    </header>
 
     <div class="dashboard">
         <!-- Header -->
