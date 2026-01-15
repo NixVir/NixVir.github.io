@@ -82,80 +82,81 @@
           </div>
         </section>
 
-        {{/* Column 2: Ski Business News - wider */}}
+        {{/* Column 2: Ski Business News - dark theme */}}
         <section class="w-100 ph2-l mb4 mb0-l" style="flex: 2;">
-          <div class="section-frame ba b--light-gray br2 bg-white pa3 h-100">
-            <h2 class="f4 fw6 mb2 pb2 bb b--light-gray">
-              <a href="/ski-news/" class="link dark-gray dim">Ski Business News</a>
+          <div class="news-pane h-100">
+            <h2 class="news-pane-title">
+              <a href="/ski-news/">Ski Business News</a>
             </h2>
 
             <div class="section-content">
-              <p class="f7 gray mb2">Updated: <span id="ski-news-update">Loading...</span></p>
-
-              <div class="flex items-center mb2">
-                <label class="f7 gray mr1">Filter:</label>
-                <select id="ski-news-filter" class="f7 pa1 br2 ba b--light-gray" style="max-width: 120px;">
-                  <option value="all">All</option>
-                  <option value="resort-operations">Resort Ops</option>
-                  <option value="business-investment">Business</option>
-                  <option value="weather-snow">Weather</option>
-                  <option value="transportation">Transport</option>
-                  <option value="winter-sports">Sports</option>
-                  <option value="safety-incidents">Safety</option>
-                  <option value="canada">Canada</option>
-                  <option value="international">Intl</option>
-                  <option value="ski-history">History</option>
-                  <option value="hospitality">Hospitality</option>
-                </select>
+              <div class="news-pane-header">
+                <p class="news-updated">Updated: <span id="ski-news-update">Loading...</span></p>
+                <div class="news-filter">
+                  <label>Filter:</label>
+                  <select id="ski-news-filter">
+                    <option value="all">All</option>
+                    <option value="resort-operations">Resort Ops</option>
+                    <option value="business-investment">Business</option>
+                    <option value="weather-snow">Weather</option>
+                    <option value="transportation">Transport</option>
+                    <option value="winter-sports">Sports</option>
+                    <option value="safety-incidents">Safety</option>
+                    <option value="canada">Canada</option>
+                    <option value="international">Intl</option>
+                    <option value="ski-history">History</option>
+                    <option value="hospitality">Hospitality</option>
+                  </select>
+                </div>
               </div>
 
               <div id="ski-news-container">
-                <p class="f7 gray">Loading...</p>
+                <p class="news-loading">Loading...</p>
               </div>
 
-              <div id="ski-news-empty" class="dn tc pa3 gray f7">
-                <p>No ski news available.</p>
+              <div id="ski-news-empty" class="dn tc pa3">
+                <p class="news-empty-text">No ski news available.</p>
               </div>
             </div>
 
-            <div class="tc mt3 pt2 bt b--light-gray">
-              <a href="/ski-news/" class="link blue dim fw6 f6">View All News &rarr;</a>
+            <div class="news-pane-footer">
+              <a href="/ski-news/">View All News &rarr;</a>
             </div>
           </div>
         </section>
 
-        {{/* Column 3: Data Insights - wider */}}
+        {{/* Column 3: Data Insights - dark theme */}}
         <section class="w-100 ph2-l mb4 mb0-l" style="flex: 2;">
-          <div class="section-frame ba b--light-gray br2 bg-white pa3 h-100">
-            <h2 class="f4 fw6 mb2 pb2 bb b--light-gray">
-              <a href="/post/" class="link dark-gray dim">Data Insights</a>
+          <div class="insights-pane h-100">
+            <h2 class="insights-pane-title">
+              <a href="/post/">Data Insights</a>
             </h2>
             {{ $n_posts := 5 }}
 
             <div class="section-content">
               {{/* Range through posts */}}
               {{ range (collections.First $n_posts $section) }}
-                <div class="data-insight-item mb3 pb2 bb b--near-white flex items-start">
+                <div class="insight-card">
                   {{ if .Params.featured_image }}
-                    <a href="{{ .RelPermalink }}" class="db flex-shrink-0 mr2" style="width: 80px;">
-                      <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="br2" style="width: 80px; height: 60px; object-fit: cover; background: #f8f8f8;">
+                    <a href="{{ .RelPermalink }}" class="insight-image-link">
+                      <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="insight-image">
                     </a>
                   {{ end }}
-                  <div class="flex-auto">
-                    <h4 class="f6 fw6 mt0 mb1 lh-title">
-                      <a href="{{ .RelPermalink }}" class="link dark-gray dim">{{ .Title }}</a>
+                  <div class="insight-content">
+                    <h4 class="insight-title">
+                      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                     </h4>
                     {{ with .Params.description }}
-                      <p class="f7 mid-gray ma0 mb1 lh-copy">{{ . | truncate 80 }}</p>
+                      <p class="insight-description">{{ . | truncate 100 }}</p>
                     {{ end }}
-                    <p class="f7 gray ma0">{{ .Date.Format "Jan 2, 2006" }}</p>
+                    <p class="insight-date">{{ .Date.Format "Jan 2, 2006" }}</p>
                   </div>
                 </div>
               {{ end }}
             </div>
 
-            <div class="tc mt3 pt2 bt b--light-gray">
-              <a href="/post/" class="link blue dim fw6 f6">View All Articles &rarr;</a>
+            <div class="insights-pane-footer">
+              <a href="/post/">View All Articles &rarr;</a>
             </div>
           </div>
         </section>
@@ -262,9 +263,189 @@
       overflow-y: auto;
     }
 
+    /* Ski Business News Pane - Dark Theme */
+    .news-pane {
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(135deg, #0a0e14 0%, #111820 100%);
+      border: 1px solid #2a3444;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .news-pane-title {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 0.75rem 0;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #2a3444;
+    }
+    .news-pane-title a {
+      color: #e8ecf2;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .news-pane-title a:hover {
+      color: #60a5fa;
+    }
+    .news-pane-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+    .news-updated {
+      font-size: 0.7rem;
+      color: #8892a2;
+      margin: 0;
+    }
+    .news-filter {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .news-filter label {
+      font-size: 0.7rem;
+      color: #8892a2;
+    }
+    .news-filter select {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      background: #1a2230;
+      border: 1px solid #2a3444;
+      color: #e8ecf2;
+      cursor: pointer;
+    }
+    .news-filter select:hover {
+      border-color: #3a4454;
+    }
+    .news-loading, .news-empty-text {
+      font-size: 0.75rem;
+      color: #8892a2;
+    }
+    .news-pane-footer {
+      text-align: center;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid #2a3444;
+    }
+    .news-pane-footer a {
+      color: #3b82f6;
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .news-pane-footer a:hover {
+      color: #60a5fa;
+    }
+
+    /* Data Insights Pane - Dark Theme */
+    .insights-pane {
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(135deg, #0a0e14 0%, #111820 100%);
+      border: 1px solid #2a3444;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .insights-pane-title {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 0.75rem 0;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #2a3444;
+    }
+    .insights-pane-title a {
+      color: #e8ecf2;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .insights-pane-title a:hover {
+      color: #60a5fa;
+    }
+    .insight-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #1a2230;
+    }
+    .insight-card:last-child {
+      border-bottom: none;
+    }
+    .insight-card:hover {
+      background: rgba(42, 52, 68, 0.3);
+      margin: 0 -0.5rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      border-radius: 4px;
+    }
+    .insight-image-link {
+      flex-shrink: 0;
+    }
+    .insight-image {
+      width: 80px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 4px;
+      background: #1a2230;
+    }
+    .insight-content {
+      flex: 1;
+      min-width: 0;
+    }
+    .insight-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin: 0 0 0.35rem 0;
+      line-height: 1.3;
+    }
+    .insight-title a {
+      color: #e8ecf2;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .insight-title a:hover {
+      color: #60a5fa;
+    }
+    .insight-description {
+      font-size: 0.75rem;
+      color: #8892a2;
+      margin: 0 0 0.35rem 0;
+      line-height: 1.4;
+    }
+    .insight-date {
+      font-size: 0.7rem;
+      color: #6b7280;
+      margin: 0;
+    }
+    .insights-pane-footer {
+      text-align: center;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid #2a3444;
+    }
+    .insights-pane-footer a {
+      color: #3b82f6;
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .insights-pane-footer a:hover {
+      color: #60a5fa;
+    }
+
     /* Constrain height on large screens for equal columns */
     @media screen and (min-width: 60em) {
-      .section-frame {
+      .section-frame,
+      .news-pane,
+      .insights-pane {
         min-height: 600px;
         max-height: 700px;
       }
@@ -310,13 +491,20 @@
     .negative { color: #ef4444; }
     .neutral { color: #3b82f6; }
 
-    /* Ski News Cards - compact for column layout */
+    /* Ski News Cards - dark theme */
     .ski-news-card {
       padding: 0.5rem 0;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid #1a2230;
     }
     .ski-news-card:last-child {
       border-bottom: none;
+    }
+    .ski-news-card:hover {
+      background: rgba(42, 52, 68, 0.3);
+      margin: 0 -0.5rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      border-radius: 4px;
     }
     .ski-news-header {
       display: flex;
@@ -327,6 +515,7 @@
       width: 20px;
       height: 20px;
       flex-shrink: 0;
+      filter: brightness(0) invert(0.7);
     }
     .ski-news-content {
       flex: 1;
@@ -338,36 +527,38 @@
       line-height: 1.25;
     }
     .ski-news-card h4 a {
-      color: #333;
+      color: #e8ecf2;
       text-decoration: none;
+      transition: color 0.2s;
     }
     .ski-news-card h4 a:hover {
-      color: #0066cc;
+      color: #60a5fa;
     }
     .ski-news-meta {
       font-size: 0.65rem;
-      color: #666;
+      color: #8892a2;
     }
     .ski-news-category {
       display: inline-block;
       font-size: 0.55rem;
-      padding: 1px 4px;
-      border-radius: 2px;
+      padding: 2px 6px;
+      border-radius: 3px;
       font-weight: 600;
       text-transform: uppercase;
+      margin-left: 4px;
     }
 
-    /* Category colors */
-    .cat-resort-operations { background: #dbeafe; color: #2563eb; }
-    .cat-business-investment { background: #d1fae5; color: #059669; }
-    .cat-weather-snow { background: #e0f2fe; color: #0ea5e9; }
-    .cat-transportation { background: #ede9fe; color: #8b5cf6; }
-    .cat-winter-sports { background: #fee2e2; color: #ef4444; }
-    .cat-safety-incidents { background: #fecaca; color: #dc2626; }
-    .cat-canada { background: #fce7f3; color: #e11d48; }
-    .cat-international { background: #e0e7ff; color: #6366f1; }
-    .cat-ski-history { background: #f5f5f4; color: #78716c; }
-    .cat-hospitality { background: #ccfbf1; color: #14b8a6; }
+    /* Category colors - dark theme optimized */
+    .cat-resort-operations { background: rgba(37, 99, 235, 0.2); color: #60a5fa; }
+    .cat-business-investment { background: rgba(5, 150, 105, 0.2); color: #34d399; }
+    .cat-weather-snow { background: rgba(14, 165, 233, 0.2); color: #38bdf8; }
+    .cat-transportation { background: rgba(139, 92, 246, 0.2); color: #a78bfa; }
+    .cat-winter-sports { background: rgba(239, 68, 68, 0.2); color: #f87171; }
+    .cat-safety-incidents { background: rgba(220, 38, 38, 0.25); color: #fca5a5; }
+    .cat-canada { background: rgba(225, 29, 72, 0.2); color: #fb7185; }
+    .cat-international { background: rgba(99, 102, 241, 0.2); color: #a5b4fc; }
+    .cat-ski-history { background: rgba(120, 113, 108, 0.2); color: #a8a29e; }
+    .cat-hospitality { background: rgba(20, 184, 166, 0.2); color: #5eead4; }
 
     /* Mobile stacking */
     @media screen and (max-width: 60em) {
