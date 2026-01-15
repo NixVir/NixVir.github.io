@@ -193,18 +193,18 @@
     color: #a0a0b0;
   }
 
-  /* News cards - dark theme */
+  /* News cards - white background on dark page */
   .ski-news-card {
     padding: 1.25rem;
     margin-bottom: 1rem;
-    border: 1px solid #3a3a5c;
+    border: 1px solid #e0e0e0;
     border-radius: 8px;
-    background: #252540;
+    background: #ffffff;
     transition: all 0.2s ease;
   }
   .ski-news-card:hover {
-    border-color: #5a5a8c;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    border-color: #ccc;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   }
   .ski-news-header {
     display: flex;
@@ -215,7 +215,6 @@
     width: 36px;
     height: 36px;
     flex-shrink: 0;
-    filter: brightness(1.1);
   }
   .ski-news-content {
     flex: 1;
@@ -226,17 +225,17 @@
     line-height: 1.4;
   }
   .ski-news-card h3 a {
-    color: #7dd3fc;
+    color: #0066cc;
     text-decoration: none;
     transition: color 0.2s;
   }
   .ski-news-card h3 a:hover {
-    color: #bae6fd;
+    color: #004499;
     text-decoration: underline;
   }
   .ski-news-meta {
     font-size: 0.8rem;
-    color: #a0a0b0;
+    color: #666;
     margin-bottom: 0.5rem;
   }
   .ski-news-category {
@@ -250,26 +249,26 @@
   }
   .ski-news-desc {
     font-size: 0.9rem;
-    color: #c0c0d0;
+    color: #444;
     line-height: 1.5;
   }
 
-  /* Category colors - adjusted for dark theme */
-  .cat-resort-operations { background: #1e3a5f; color: #7dd3fc; }
-  .cat-business-investment { background: #14532d; color: #86efac; }
-  .cat-weather-snow { background: #164e63; color: #67e8f9; }
-  .cat-transportation { background: #3b0764; color: #c4b5fd; }
-  .cat-winter-sports { background: #7f1d1d; color: #fca5a5; }
-  .cat-safety-incidents { background: #991b1b; color: #fecaca; }
-  .cat-canada { background: #831843; color: #f9a8d4; }
-  .cat-international { background: #312e81; color: #a5b4fc; }
-  .cat-ski-history { background: #3f3f46; color: #d4d4d8; }
-  .cat-hospitality { background: #134e4a; color: #5eead4; }
+  /* Category colors - for white card background */
+  .cat-resort-operations { background: #dbeafe; color: #2563eb; }
+  .cat-business-investment { background: #d1fae5; color: #059669; }
+  .cat-weather-snow { background: #e0f2fe; color: #0ea5e9; }
+  .cat-transportation { background: #ede9fe; color: #8b5cf6; }
+  .cat-winter-sports { background: #fee2e2; color: #ef4444; }
+  .cat-safety-incidents { background: #fecaca; color: #dc2626; }
+  .cat-canada { background: #fce7f3; color: #e11d48; }
+  .cat-international { background: #e0e7ff; color: #6366f1; }
+  .cat-ski-history { background: #f5f5f4; color: #78716c; }
+  .cat-hospitality { background: #ccfbf1; color: #14b8a6; }
   .ski-news-secondary {
     font-size: 0.6rem;
-    opacity: 0.7;
+    opacity: 0.8;
     margin-left: 4px;
-    color: #a0a0b0;
+    color: #666;
   }
 
   /* Mobile responsive for sort/filter controls */

@@ -112,60 +112,80 @@
     min-height: 100vh;
   }
   .contact-content {
-    color: #c0c0d0;
+    color: #a0a0b0;
     line-height: 1.7;
   }
   .contact-content a {
     color: #7dd3fc;
   }
 
-  /* Form styling for dark theme */
-  .contact-page form {
-    max-width: 500px;
+  /* White form card on dark background */
+  .contact-form-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 550px;
     margin: 2rem auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   }
-  .contact-page input[type="text"],
-  .contact-page input[type="email"],
-  .contact-page textarea {
+  .contact-form-card p {
+    color: #444;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Form styling for white card */
+  .contact-form-card form {
+    margin: 0;
+  }
+  .contact-form-card input[type="text"],
+  .contact-form-card input[type="email"],
+  .contact-form-card textarea {
     width: 100%;
     padding: 0.75rem;
     margin-bottom: 1rem;
-    background: #252540;
-    border: 1px solid #3a3a5c;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
     border-radius: 6px;
-    color: #e0e0e0;
+    color: #333;
     font-size: 1rem;
   }
-  .contact-page input[type="text"]:focus,
-  .contact-page input[type="email"]:focus,
-  .contact-page textarea:focus {
+  .contact-form-card input[type="text"]:focus,
+  .contact-form-card input[type="email"]:focus,
+  .contact-form-card textarea:focus {
     outline: none;
-    border-color: #7dd3fc;
+    border-color: #0066cc;
+    background: #fff;
   }
-  .contact-page input::placeholder,
-  .contact-page textarea::placeholder {
-    color: #808090;
+  .contact-form-card input::placeholder,
+  .contact-form-card textarea::placeholder {
+    color: #999;
   }
-  .contact-page label {
+  .contact-form-card label {
     display: block;
-    color: #a0a0b0;
+    color: #333;
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
+    font-weight: 500;
   }
-  .contact-page button,
-  .contact-page input[type="submit"] {
-    background: #3a3a6c;
-    color: #e0e0e0;
+  .contact-form-card button,
+  .contact-form-card input[type="submit"] {
+    background: #1a1a2e;
+    color: #fff;
     border: none;
     padding: 0.75rem 2rem;
     border-radius: 6px;
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.2s;
+    width: 100%;
   }
-  .contact-page button:hover,
-  .contact-page input[type="submit"]:hover {
-    background: #5a5a8c;
+  .contact-form-card button:hover,
+  .contact-form-card input[type="submit"]:hover {
+    background: #2a2a4e;
+  }
+  /* Style form helper text */
+  .contact-form-card .f6 {
+    color: #666 !important;
   }
 
   /* Override footer for dark theme */
@@ -180,7 +200,7 @@
 
 <article class="contact-page pa3 pa4-ns">
   <div class="mw7 center">
-    <div class="contact-content f4 tc nested-links">
+    <div class="contact-form-card nested-links">
       {{ .Content }}
     </div>
   </div>
