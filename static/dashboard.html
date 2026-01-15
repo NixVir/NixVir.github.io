@@ -1056,13 +1056,35 @@
 
     function calcChange(data, isPercent) {
         if (!data || data.length < 2) return null;
-        const latest = data[data.length - 1].value;
-        const oldest = data[0].value;
-        if (oldest === 0) return null;
+        const latest = data[data.length - 1];
+        const latestDate = new Date(latest.date);
+
+        // Find the data point from exactly 12 months ago for true YoY comparison
+        const targetYear = latestDate.getFullYear() - 1;
+        const targetMonth = latestDate.getMonth();
+        const targetDateStr = `${targetYear}-${String(targetMonth + 1).padStart(2, '0')}`;
+
+        // Look for a matching date from one year ago
+        let priorYearEntry = null;
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].date.startsWith(targetDateStr)) {
+                priorYearEntry = data[i];
+                break;
+            }
+        }
+
+        // Fall back to oldest data if no YoY match found
+        const compareEntry = priorYearEntry || data[0];
+        const compareValue = compareEntry.value;
+        if (compareValue === 0) return null;
+
+        // Determine label based on whether we found true YoY data
+        const isYoY = !!priorYearEntry;
+
         if (isPercent) {
-            return { change: latest - oldest, pctChange: null, isPointChange: true };
+            return { change: latest.value - compareValue, pctChange: null, isPointChange: true, isYoY: isYoY };
         } else {
-            return { change: latest - oldest, pctChange: ((latest - oldest) / oldest) * 100, isPointChange: false };
+            return { change: latest.value - compareValue, pctChange: ((latest.value - compareValue) / compareValue) * 100, isPointChange: false, isYoY: isYoY };
         }
     }
 
@@ -1096,8 +1118,10 @@
         let changeText = changeData.isPointChange
             ? (changeData.change >= 0 ? '+' : '') + changeData.change.toFixed(2) + ' pts'
             : (changeData.pctChange >= 0 ? '+' : '') + changeData.pctChange.toFixed(1) + '%';
+        // Use "YoY" only when we have true year-over-year data, otherwise show "chg"
+        const changeLabel = changeData.isYoY !== false ? 'YoY' : 'chg';
         let html = '<div class="change-indicator">';
-        html += '<span class="change-pill ' + colorClass + '"><span class="arrow">' + trend.arrow + '</span> ' + changeText + ' YoY</span>';
+        html += '<span class="change-pill ' + colorClass + '"><span class="arrow">' + trend.arrow + '</span> ' + changeText + ' ' + changeLabel + '</span>';
         if (momentumData) {
             const momChange = momentumData.pctChange !== null ? momentumData.pctChange : momentumData.change;
             const momTrend = getTrendArrow(momChange);
