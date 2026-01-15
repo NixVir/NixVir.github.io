@@ -64,6 +64,9 @@
     color: rgba(255,255,255,0.8);
     font-size: 0.95rem;
     margin: 0.5rem 0 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
   @media screen and (max-width: 600px) {
     .site-nav {
@@ -88,8 +91,8 @@
           <li><a href="/snow-cover/">Snow</a></li>
           <li><a href="/dashboard.html">Nixvir Dashboard</a></li>
           <li><a href="/ski-news/">News</a></li>
-          <li><a href="/post/" class="current">Data Insights</a></li>
-          <li><a href="/about/">About</a></li>
+          <li><a href="/post/">Data Insights</a></li>
+          <li><a href="/about/" class="current">About</a></li>
           <li><a href="/contact/">Contact</a></li>
         </ul>
       </div>
@@ -106,60 +109,21 @@
 
 {{ define "main" }}
 <style>
-  /* Dark theme for Data Insights page */
-  .data-insights-page {
+  /* Dark theme for About page */
+  .about-page {
     background-color: #1a1a2e;
     min-height: 100vh;
   }
-  .data-insights-intro {
-    color: #a0a0b0;
+  .about-content {
+    color: #c0c0d0;
+    line-height: 1.7;
   }
-  .data-insights-intro a {
+  .about-content a {
     color: #7dd3fc;
   }
-
-  /* Post cards - dark theme */
-  .post-card {
-    background: #252540 !important;
-    border: 1px solid #3a3a5c;
+  .about-content img {
     border-radius: 8px;
-    overflow: hidden;
-    transition: all 0.2s ease;
-  }
-  .post-card:hover {
-    border-color: #5a5a8c;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  }
-  .post-card a {
-    color: #7dd3fc !important;
-    text-decoration: none;
-  }
-  .post-card a:hover {
-    color: #bae6fd !important;
-  }
-  .post-card .f5,
-  .post-card .f6,
-  .post-card p {
-    color: #c0c0d0 !important;
-  }
-  .post-card .gray {
-    color: #a0a0b0 !important;
-  }
-  .post-card img {
-    opacity: 0.9;
-  }
-
-  /* Override white backgrounds */
-  .bg-white {
-    background-color: #252540 !important;
-  }
-
-  /* Pagination */
-  .pagination a {
-    color: #7dd3fc;
-  }
-  .pagination .current {
-    color: #e0e0e0;
   }
 
   /* Override footer for dark theme */
@@ -172,17 +136,11 @@
   }
 </style>
 
-<article class="data-insights-page pa3 pa4-ns nested-copy-line-height">
-  <section class="data-insights-intro cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links">
-    {{ .Content }}
-  </section>
-  <aside class="flex-ns mt5 flex-wrap justify-around">
-    {{ range .Paginator.Pages }}
-      <div class="w-100 w-30-l mb4 relative post-card">
-        {{ .Render "summary" }}
-      </div>
-    {{ end }}
-  </aside>
-  {{ template "_internal/pagination.html" . }}
+<article class="about-page pa3 pa4-ns">
+  <div class="mw7 center">
+    <div class="about-content f4 tc nested-links">
+      {{ .Content }}
+    </div>
+  </div>
 </article>
 {{ end }}

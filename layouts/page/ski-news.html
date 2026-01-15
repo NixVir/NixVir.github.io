@@ -1,6 +1,14 @@
 {{ define "header" }}
 <!-- Site Banner Header - Compact style matching dashboard/snow-cover pages -->
 <style>
+  /* Dark theme base */
+  body {
+    background-color: #1a1a2e !important;
+    color: #e0e0e0;
+  }
+  main {
+    background-color: #1a1a2e !important;
+  }
   .site-banner {
     background-image: url('/images/mtnsky.jpg');
     background-size: cover;
@@ -97,20 +105,20 @@
 {{ end }}
 
 {{ define "main" }}
-<article class="pa3 pa4-ns">
+<article class="ski-news-page pa3 pa4-ns">
   <div class="mw8 center">
-    <div class="f5 gray mb3">{{ .Content }}</div>
+    <div class="content-intro mb3">{{ .Content }}</div>
 
-    <div class="flex items-center justify-between mb3 flex-wrap">
-      <p class="f6 gray ma0 mb2 mb0-ns">Last updated: <span id="ski-news-update">Loading...</span></p>
+    <div class="controls-row flex items-center justify-between mb3 flex-wrap">
+      <p class="last-updated ma0 mb2 mb0-ns">Last updated: <span id="ski-news-update">Loading...</span></p>
       <div class="flex items-center flex-wrap" style="gap: 0.5rem;">
-        <label class="f6 gray mr2">Sort:</label>
-        <select id="ski-news-sort" class="f6 pa1 br2 ba b--light-gray">
+        <label class="control-label mr2">Sort:</label>
+        <select id="ski-news-sort" class="control-select">
           <option value="date">Date</option>
           <option value="category">Category</option>
         </select>
-        <label class="f6 gray ml3 mr2">Filter:</label>
-        <select id="ski-news-filter" class="f6 pa1 br2 ba b--light-gray">
+        <label class="control-label ml3 mr2">Filter:</label>
+        <select id="ski-news-filter" class="control-select">
           <option value="all">All Categories</option>
           <option value="resort-operations">Resort Operations</option>
           <option value="business-investment">Business & Investment</option>
@@ -127,33 +135,76 @@
     </div>
 
     <noscript>
-      <div style="background: #fef3cd; border: 1px solid #ffc107; border-radius: 6px; padding: 1rem; margin-bottom: 1.5rem; color: #856404;">
+      <div class="noscript-warning">
         <strong>JavaScript Required:</strong> The Ski Business News feed requires JavaScript to load and display articles.
         Please enable JavaScript in your browser settings to view the latest ski industry news.
       </div>
     </noscript>
 
     <div id="ski-news-container">
-      <p class="gray">Loading ski business news...</p>
+      <p class="loading-text">Loading ski business news...</p>
     </div>
 
-    <div id="ski-news-empty" class="dn tc pa4 gray">
-      <p>No ski business news available yet. Check back soon!</p>
+    <div id="ski-news-empty" class="dn tc pa4">
+      <p class="empty-text">No ski business news available yet. Check back soon!</p>
     </div>
   </div>
 </article>
 
 <style>
+  /* Dark theme for news page */
+  .ski-news-page {
+    background-color: #1a1a2e;
+    min-height: 100vh;
+  }
+  .content-intro {
+    color: #a0a0b0;
+    font-size: 0.95rem;
+  }
+  .last-updated {
+    color: #a0a0b0;
+    font-size: 0.85rem;
+  }
+  .control-label {
+    color: #a0a0b0;
+    font-size: 0.85rem;
+  }
+  .control-select {
+    background: #252540;
+    color: #e0e0e0;
+    border: 1px solid #3a3a5c;
+    border-radius: 4px;
+    padding: 0.35rem 0.5rem;
+    font-size: 0.85rem;
+  }
+  .control-select:focus {
+    outline: none;
+    border-color: #5a5a8c;
+  }
+  .noscript-warning {
+    background: #3d3215;
+    border: 1px solid #6b5a28;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    color: #d4c085;
+  }
+  .loading-text, .empty-text {
+    color: #a0a0b0;
+  }
+
+  /* News cards - dark theme */
   .ski-news-card {
     padding: 1.25rem;
-    margin-bottom: 1.25rem;
-    border: 1px solid #e0e0e0;
-    border-radius: 6px;
-    background: #fafafa;
-    transition: box-shadow 0.2s ease;
+    margin-bottom: 1rem;
+    border: 1px solid #3a3a5c;
+    border-radius: 8px;
+    background: #252540;
+    transition: all 0.2s ease;
   }
   .ski-news-card:hover {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-color: #5a5a8c;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   }
   .ski-news-header {
     display: flex;
@@ -164,6 +215,7 @@
     width: 36px;
     height: 36px;
     flex-shrink: 0;
+    filter: brightness(1.1);
   }
   .ski-news-content {
     flex: 1;
@@ -174,15 +226,17 @@
     line-height: 1.4;
   }
   .ski-news-card h3 a {
-    color: #333;
+    color: #7dd3fc;
     text-decoration: none;
+    transition: color 0.2s;
   }
   .ski-news-card h3 a:hover {
-    color: #0066cc;
+    color: #bae6fd;
+    text-decoration: underline;
   }
   .ski-news-meta {
     font-size: 0.8rem;
-    color: #666;
+    color: #a0a0b0;
     margin-bottom: 0.5rem;
   }
   .ski-news-category {
@@ -196,31 +250,46 @@
   }
   .ski-news-desc {
     font-size: 0.9rem;
-    color: #444;
+    color: #c0c0d0;
     line-height: 1.5;
   }
-  /* Category colors */
-  .cat-resort-operations { background: #dbeafe; color: #2563eb; }
-  .cat-business-investment { background: #d1fae5; color: #059669; }
-  .cat-weather-snow { background: #e0f2fe; color: #0ea5e9; }
-  .cat-transportation { background: #ede9fe; color: #8b5cf6; }
-  .cat-winter-sports { background: #fee2e2; color: #ef4444; }
-  .cat-safety-incidents { background: #fecaca; color: #dc2626; }
-  .cat-canada { background: #fce7f3; color: #e11d48; }
-  .cat-international { background: #e0e7ff; color: #6366f1; }
-  .cat-ski-history { background: #f5f5f4; color: #78716c; }
-  .cat-hospitality { background: #ccfbf1; color: #14b8a6; }
-  .ski-news-secondary { font-size: 0.6rem; opacity: 0.8; margin-left: 4px; }
+
+  /* Category colors - adjusted for dark theme */
+  .cat-resort-operations { background: #1e3a5f; color: #7dd3fc; }
+  .cat-business-investment { background: #14532d; color: #86efac; }
+  .cat-weather-snow { background: #164e63; color: #67e8f9; }
+  .cat-transportation { background: #3b0764; color: #c4b5fd; }
+  .cat-winter-sports { background: #7f1d1d; color: #fca5a5; }
+  .cat-safety-incidents { background: #991b1b; color: #fecaca; }
+  .cat-canada { background: #831843; color: #f9a8d4; }
+  .cat-international { background: #312e81; color: #a5b4fc; }
+  .cat-ski-history { background: #3f3f46; color: #d4d4d8; }
+  .cat-hospitality { background: #134e4a; color: #5eead4; }
+  .ski-news-secondary {
+    font-size: 0.6rem;
+    opacity: 0.7;
+    margin-left: 4px;
+    color: #a0a0b0;
+  }
 
   /* Mobile responsive for sort/filter controls */
   @media screen and (max-width: 60em) {
-    .flex.items-center.justify-between {
+    .controls-row {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: flex-start !important;
     }
-    .flex.items-center.justify-between > div {
+    .controls-row > div {
       margin-top: 0.5rem;
     }
+  }
+
+  /* Override footer for dark theme */
+  footer {
+    background-color: #151525 !important;
+    color: #a0a0b0 !important;
+  }
+  footer a {
+    color: #7dd3fc !important;
   }
 </style>
 
@@ -268,7 +337,7 @@ async function loadSkiNews() {
 
   } catch (error) {
     console.error('Failed to load ski news:', error);
-    container.innerHTML = '<p class="gray">Unable to load ski business news.</p>';
+    container.innerHTML = '<p class="loading-text">Unable to load ski business news.</p>';
   }
 }
 
@@ -343,7 +412,7 @@ function renderSkiNews() {
   });
 
   if (articles.length === 0) {
-    html = '<p class="gray">No articles match the selected filter.</p>';
+    html = '<p class="loading-text">No articles match the selected filter.</p>';
   }
 
   container.innerHTML = html;

@@ -1,6 +1,14 @@
 {{ define "header" }}
 <!-- Site Banner Header - Compact style matching dashboard/snow-cover pages -->
 <style>
+  /* Dark theme base */
+  body {
+    background-color: #1a1a2e !important;
+    color: #e0e0e0;
+  }
+  main {
+    background-color: #1a1a2e !important;
+  }
   .site-banner {
     background-image: url('/images/mtnsky.jpg');
     background-size: cover;
@@ -97,17 +105,84 @@
 {{ end }}
 
 {{ define "main" }}
-  <article class="pa3 pa4-ns nested-copy-line-height">
-    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links {{ $.Param "text_color" | compare.Default "mid-gray" }}">
-      {{ .Content }}
-    </section>
-    <aside class="flex-ns mt5 flex-wrap justify-around">
-      {{ range .Paginator.Pages }}
-        <div class="w-100 w-30-l mb4 relative bg-white">
-          {{ .Render "summary" }}
-        </div>
-      {{ end }}
-    </aside>
-    {{ template "_internal/pagination.html" . }}
-  </article>
+<style>
+  /* Dark theme for Data Insights page */
+  .data-insights-page {
+    background-color: #1a1a2e;
+    min-height: 100vh;
+  }
+  .data-insights-intro {
+    color: #a0a0b0;
+  }
+  .data-insights-intro a {
+    color: #7dd3fc;
+  }
+
+  /* Post cards - dark theme */
+  .post-card {
+    background: #252540 !important;
+    border: 1px solid #3a3a5c;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+  }
+  .post-card:hover {
+    border-color: #5a5a8c;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  .post-card a {
+    color: #7dd3fc !important;
+    text-decoration: none;
+  }
+  .post-card a:hover {
+    color: #bae6fd !important;
+  }
+  .post-card .f5,
+  .post-card .f6,
+  .post-card p {
+    color: #c0c0d0 !important;
+  }
+  .post-card .gray {
+    color: #a0a0b0 !important;
+  }
+  .post-card img {
+    opacity: 0.9;
+  }
+
+  /* Override white backgrounds */
+  .bg-white {
+    background-color: #252540 !important;
+  }
+
+  /* Pagination */
+  .pagination a {
+    color: #7dd3fc;
+  }
+  .pagination .current {
+    color: #e0e0e0;
+  }
+
+  /* Override footer for dark theme */
+  footer {
+    background-color: #151525 !important;
+    color: #a0a0b0 !important;
+  }
+  footer a {
+    color: #7dd3fc !important;
+  }
+</style>
+
+<article class="data-insights-page pa3 pa4-ns nested-copy-line-height">
+  <section class="data-insights-intro cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links">
+    {{ .Content }}
+  </section>
+  <aside class="flex-ns mt5 flex-wrap justify-around">
+    {{ range .Paginator.Pages }}
+      <div class="w-100 w-30-l mb4 relative post-card">
+        {{ .Render "summary" }}
+      </div>
+    {{ end }}
+  </aside>
+  {{ template "_internal/pagination.html" . }}
+</article>
 {{ end }}
