@@ -574,7 +574,7 @@
         </div>
 
         <!-- Economic Indicators -->
-        <div class="accordion-section open" data-section="economic">
+        <div class="accordion-section open" data-section="economic" id="section-economic">
             <div class="accordion-header" onclick="toggleSection(this)">
                 <h3><span class="section-icon">📊</span> Economic Indicators <span class="metric-count">(8 metrics)</span></h3>
                 <span class="accordion-arrow">▼</span>
@@ -596,7 +596,7 @@
         </div>
 
         <!-- Markets & Interest Rates -->
-        <div class="accordion-section" data-section="markets">
+        <div class="accordion-section" data-section="markets" id="section-markets">
             <div class="accordion-header" onclick="toggleSection(this)">
                 <h3><span class="section-icon">📈</span> Markets & Interest Rates <span class="metric-count">(6 indices + Mag 7)</span></h3>
                 <span class="accordion-arrow">▼</span>
@@ -622,7 +622,7 @@
         </div>
 
         <!-- Currency & Visitor Purchasing Power -->
-        <div class="accordion-section" data-section="currency">
+        <div class="accordion-section" data-section="currency" id="section-currency">
             <div class="accordion-header" onclick="toggleSection(this)">
                 <h3><span class="section-icon">💱</span> Currency & Visitor Purchasing Power <span class="metric-count">(19 metrics)</span></h3>
                 <span class="accordion-arrow">▼</span>
@@ -686,7 +686,7 @@
         </div>
 
         <!-- Commodity Prices -->
-        <div class="accordion-section" data-section="commodities">
+        <div class="accordion-section" data-section="commodities" id="section-commodities">
             <div class="accordion-header" onclick="toggleSection(this)">
                 <h3><span class="section-icon">🛢️</span> Commodity Prices <span class="metric-count">(4 commodities)</span></h3>
                 <span class="accordion-arrow">▼</span>
@@ -704,7 +704,7 @@
         </div>
 
         <!-- Electricity Pricing -->
-        <div class="accordion-section" data-section="electricity">
+        <div class="accordion-section" data-section="electricity" id="section-electricity">
             <div class="accordion-header" onclick="toggleSection(this)">
                 <h3><span class="section-icon">⚡</span> Electricity Pricing <span class="metric-count">(8 ski states)</span></h3>
                 <span class="accordion-arrow">▼</span>
@@ -731,7 +731,7 @@
         </div>
 
         <!-- US/Canada Border Crossings -->
-        <div class="accordion-section" data-section="border">
+        <div class="accordion-section" data-section="border" id="section-border">
             <div class="accordion-header" onclick="toggleSection(this)">
                 <h3><span class="section-icon">🛂</span> US/Canada Border Crossings <span class="metric-count">(16 metrics)</span></h3>
                 <span class="accordion-arrow">▼</span>
@@ -778,7 +778,7 @@
         </div>
 
         <!-- Air Travel Indicators -->
-        <div class="accordion-section" data-section="air-travel">
+        <div class="accordion-section" data-section="air-travel" id="section-air-travel">
             <div class="accordion-header" onclick="toggleSection(this)">
                 <h3><span class="section-icon">✈️</span> Air Travel Indicators <span class="metric-count">(5 metrics + 16 ski airports)</span></h3>
                 <span class="accordion-arrow">▼</span>
@@ -847,7 +847,7 @@
         </div>
 
         <!-- Prediction Markets -->
-        <div class="accordion-section" data-section="prediction">
+        <div class="accordion-section" data-section="prediction" id="section-prediction">
             <div class="accordion-header" onclick="toggleSection(this)">
                 <h3><span class="section-icon">🎯</span> Prediction Markets <span class="metric-count">(Kalshi + Polymarket)</span></h3>
                 <span class="accordion-arrow">▼</span>
@@ -911,7 +911,7 @@
         </div>
 
         <!-- Sports Betting Activity -->
-        <div class="accordion-section" data-section="sports-betting">
+        <div class="accordion-section" data-section="sports-betting" id="section-sports-betting">
             <div class="accordion-header" onclick="toggleSection(this)">
                 <h3><span class="section-icon">🎰</span> Sports Betting Activity <span class="metric-count">(Competing Discretionary Spend)</span></h3>
                 <span class="accordion-arrow">▼</span>
@@ -2292,6 +2292,30 @@
     loadPredictionMarkets();
     loadSportsBetting();
     setInterval(loadDashboard, 300000);
+
+    // Handle hash navigation - open and scroll to section
+    function handleHashNavigation() {
+        const hash = window.location.hash;
+        if (hash && hash.startsWith('#section-')) {
+            const section = document.querySelector(hash);
+            if (section && section.classList.contains('accordion-section')) {
+                // Open the section if not already open
+                if (!section.classList.contains('open')) {
+                    section.classList.add('open');
+                }
+                // Scroll into view with some offset for the header
+                setTimeout(() => {
+                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
+        }
+    }
+
+    // Run on page load
+    handleHashNavigation();
+
+    // Also handle when hash changes (e.g., clicking back/forward)
+    window.addEventListener('hashchange', handleHashNavigation);
     </script>
 </body>
 </html>
