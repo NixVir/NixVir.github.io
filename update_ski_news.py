@@ -533,6 +533,19 @@ RSS_SOURCES = [
         'category': 'canadian',
         'boost': 2
     },
+    # DIRECT COMPANY INVESTOR RELATIONS FEEDS
+    {
+        'name': 'Vail Resorts Investor Relations',
+        'url': 'https://investors.vailresorts.com/rss/news-releases.xml',
+        'category': 'financial',
+        'boost': 5  # High priority - official company news
+    },
+    {
+        'name': 'Google News - Alterra Mountain Company',
+        'url': 'https://news.google.com/rss/search?q=%22Alterra+Mountain+Company%22&hl=en-US&gl=US&ceid=US:en',
+        'category': 'financial',
+        'boost': 3
+    },
 ]
 
 # Source health tracking (populated during run)
@@ -1104,13 +1117,19 @@ def update_ski_news():
     print_safe(f"After strict pre-filter: {len(prefiltered)} articles ({reduction_pct:.0f}% reduction)")
 
     # Prioritize by business score and source
-    ski_dedicated_sources = ['Unofficial Networks', 'SnowBrains', 'PlanetSKI', 'The Ski Guru',
-                            'Ski Area Management', 'Snow Industry News', 'SIA - Snowsports Industries America']
+    # Tier 0: Highest priority - official company IR and industry publications
+    top_priority_sources = ['Vail Resorts Investor Relations', 'Ski Area Management',
+                           'Snow Industry News', 'SIA - Snowsports Industries America',
+                           'Outside Business Journal']
+    # Tier 1: Ski-dedicated news sources
+    ski_dedicated_sources = ['Unofficial Networks', 'SnowBrains', 'PlanetSKI', 'The Ski Guru']
 
     def source_priority(article):
         source = article.get('source', '')
         business_score = article.get('prefilter_business_score', 0)
-        if source in ski_dedicated_sources:
+        if source in top_priority_sources:
+            return (-1, -business_score)  # Highest priority
+        elif source in ski_dedicated_sources:
             return (0, -business_score)
         elif 'ski' in source.lower() or 'snow' in source.lower():
             return (1, -business_score)

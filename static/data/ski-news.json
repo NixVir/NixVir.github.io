@@ -1,7 +1,30 @@
 {
-  "updated": "2026-01-15 11:13:41",
+  "updated": "2026-01-15 13:48:46",
   "total_articles": 50,
+  "scoring_method": "keyword",
   "articles": [
+    {
+      "source": "Vail Resorts Investor Relations",
+      "title": "Vail Resorts Announces Fiscal 2026 First Quarter Earnings Release Date",
+      "url": "https://investors.vailresorts.com/news-releases/news-release-details/vail-resorts-announces-fiscal-2026-first-quarter-earnings",
+      "description": "BROOMFIELD, Colo. , Nov. 19, 2025 /PRNewswire/ -- Vail Resorts, Inc. (NYSE: MTN) announced today it will release the Company's financial results for its fiscal first quarter 2026 ended October 31, 2025 after market close on Wednesday, December 10, 2025 .",
+      "content": "BROOMFIELD, Colo. , Nov. 19, 2025 /PRNewswire/ -- Vail Resorts, Inc. (NYSE: MTN) announced today it will release the Company's financial results for its fiscal first quarter 2026 ended October 31, 2025 after market close on Wednesday, December 10, 2025 .",
+      "pub_date": "Wed, 19 Nov 2025 08:00:00 -0500",
+      "id": "464183c6b276",
+      "prefilter_business_score": 2,
+      "source_boost": 5,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 5)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "winter-sports",
+      "secondary_categories": [
+        "business-investment"
+      ],
+      "approved_date": "2026-01-15"
+    },
     {
       "source": "Ski Area Management",
       "title": "Report Details Economic Impact and Visitor Demographics of Idaho Ski Areas",
@@ -17,6 +40,28 @@
       "approved_date": "2026-01-09",
       "category": "business-investment",
       "secondary_categories": []
+    },
+    {
+      "source": "SnowBrains",
+      "title": "SnowBrains Podcast Ep. 98 | Sophie Goldschmidt \u2013 President & CEO of the U.S. Ski & Snowboard Team",
+      "url": "https://snowbrains.com/podcast-us-ski-snowboard-team/",
+      "description": "Sophie Goldschmidt is the President and CEO of the U.S. Ski & Snowboard Team, leading the organization responsible for the future of ski racing and snowboarding in the United States from grassroots development to Olympic podiums. Before stepping into this role, she built a career at the highest level of global sports and media, including senior leadership positions at the [\u2026] The post SnowBrains Podcast Ep. 98 | Sophie Goldschmidt \u2013 President & CEO of the U.S. Ski & Snowboard Team appeared first",
+      "content": "Sophie Goldschmidt is the President and CEO of the U.S. Ski & Snowboard Team, leading the organization responsible for the future of ski racing and snowboarding in the United States from grassroots development to Olympic podiums. Before stepping into this role, she built a career at the highest level of global sports and media, including senior leadership positions at the NBA, the World Surf League, and major international sporting events. At U.S. Ski & Snowboard, she oversees everything from athlete funding and high-performance programs to sponsorship, governance, and long-term health of the sport in a rapidly changing landscape. Her job sits at the intersections of athletes, fans, brands, and the future of skiing and snowboarding in America. In this conversation, we talk about her path leading to the U.S. Ski & Snowboard Team, what it actually takes to support elite athletes behind the scenes, the challenges facing competitive skiing today, and where she sees the sport headed next. T",
+      "pub_date": "Wed, 14 Jan 2026 23:49:10 +0000",
+      "id": "c420c4866b96",
+      "prefilter_business_score": 2,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "winter-sports",
+      "secondary_categories": [
+        "business-investment"
+      ],
+      "approved_date": "2026-01-15"
     },
     {
       "source": "Unofficial Networks",
@@ -38,6 +83,52 @@
       ]
     },
     {
+      "source": "Unofficial Networks",
+      "title": "Why This Could Be The Last Chance To Build A Home At Washington\u2019s Largest Ski Resort",
+      "url": "https://unofficialnetworks.com/2026/01/14/crystal-mountain-final-lots/",
+      "description": "The final two parcels of a real estate development at a Washington ski resort aren't cheap, but provide great access to the mountain.",
+      "content": "Enumclaw, Washington \u2014 Are you trying to avoid paying for parking reservations at Crystal Mountain? One option is to buy a vacant lot up there. However, it\u2019ll cost you a little bit more than a parking reservation. KING 5 reports that the two final lots of a subdivision at Crystal Mountain Resort have gone on sale. These lots are a part of the Gold Hill Estates . According to their website, the two lots are going for $1,399,500 and $1,850,000. These are the final two of the 37 parcels, meaning that this is the last chance to build a home there in Gold Hills. However, there is one new home for sale there priced at nearly $4 million . This land was originally part of the original rope tow operation at Crystal Mountain. In 1962, work began on creating a subdivision. Meeks\u2019 home was even featured in Life Magazine in 1966. \u201cVery few people know about this community,\u201d said Dana Meeks, Gold Hill\u2019s developer and also a former pro ski racer. \u201cThey look over and they see a few roofs up here, and ",
+      "pub_date": "Wed, 14 Jan 2026 21:31:37 +0000",
+      "id": "38bf0a56c99e",
+      "prefilter_business_score": 2,
+      "source_boost": 2,
+      "score": 9,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "transportation",
+        "hospitality",
+        "winter-sports"
+      ],
+      "approved_date": "2026-01-15"
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Drone Operator Fined $2000 For Flying Over Canadian National Park",
+      "url": "https://unofficialnetworks.com/2026/01/14/drone-operator-fined-2000-for-flying-over-canadian-national-park/",
+      "description": "On January 17, 2025, Park Wardens patrolling Banff National Park received a report of a drone about to take off at Lake Louise.",
+      "content": "With commercially available drones becoming more and more prevalent in our airspaces, its important to know the laws that govern where and when they are flown and to abide by them at all times. The following story out of Canada shows not only the legal consequences of illicit drone flights but also the potential danger they pose to air traffic. On January 17, 2025, Park Wardens patrolling Banff National Park received a report of a drone about to take off at Lake Louise. The reporting party took it upon themselves to alert the drone pilot that the activity was prohibited in the national park but they were ultimately ignored, despite \u201cno drone\u201d signage located nearby. While responding to the report, Park Wardens witnessed the operator land the drone along the lakeshore. Park Wardens seized the drone, controller and storage card, and charged the operator with violating Section 2(4) of the National Parks of Canada Air Access Regulations which prohibits take-offs or landings of an aircraft ",
+      "pub_date": "Wed, 14 Jan 2026 21:07:25 +0000",
+      "id": "94a353379af5",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 9,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "canada",
+      "secondary_categories": [
+        "transportation"
+      ],
+      "approved_date": "2026-01-15"
+    },
+    {
       "source": "PlanetSKI",
       "title": "The 2026 Freeride World Tour is Here",
       "url": "https://planetski.eu/2026/01/14/the-2026-freeride-world-tour-is-here/",
@@ -54,6 +145,432 @@
       "secondary_categories": [
         "safety-incidents"
       ]
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Testing The Longest Skis Against The Shortest Skis You Can Buy Today",
+      "url": "https://unofficialnetworks.com/2026/01/14/longest-shortest-skis-compared/",
+      "description": "Professional skier Alex Hackel compared some of the shortest skis available on the market to some of the longest skis.",
+      "content": "The proper ski length for each person is generally a pretty broad range. The typical rule is that the skis should stand somewhere between your chin and the top of your head, but knowing exactly where the skis should lie within that range is a bit more complicated. For those who don\u2019t know, shorter skis are more nimble and easier to turn, but they tend to be less stable at high speeds. Longer, on the other hand, means much more stability at speed, but they can be significantly harder to turn and usually require dialed-in technique. Professional skier Alex Hackel compared some of the shortest skis available on the market to some of the longest, really emphasizing their differences. If you\u2019re a beginner or just generally in the market for a new pair of skis and aren\u2019t sure what to get, you should head into a ski shop and talk to someone who knows what they\u2019re doing. There\u2019s a lot more to choosing the right pair of skis than just length, but it\u2019s still a very important factor. Passersby Re",
+      "pub_date": "Wed, 14 Jan 2026 19:55:30 +0000",
+      "id": "9ac98f020d2e",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 7,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [
+        "transportation",
+        "hospitality"
+      ],
+      "approved_date": "2026-01-15"
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Wild Rabbit Reportedly Keeps Attempting To Jump Into Cars At Colorado Ski Resort",
+      "url": "https://unofficialnetworks.com/2026/01/14/wild-rabbit-jumping-into-cars/",
+      "description": "The Copper Mountain area is reportedly experiencing quite the battle with a local rabbit that's been attempting to jump into cars.",
+      "content": "COPPER MOUNTAIN, Colorado \u2013 The Copper Mountain area is reportedly experiencing quite the battle with a local rabbit that\u2019s been hanging around and attempting to jump into people\u2019s cars. According to the Summit County Sheriff\u2019s Office, Animal Control officers were contacted about the rabbit by area employees who had been seeing it and were worried that it might be a domestic animal that had escaped. Officers attempted to locate the rabbit but were unable, and a day later the employees sent a picture of the rabbit to the animal control. Officers confirmed it was a wild animal. The employees were given the choice to either leave the animal along or set up a live trap to capture and release it within 2 miles of where it was caught. Colorado allows landowners or their agents to hunt, trap, take, or relocate any cottontail rabbit if it\u2019s causing damage to private property. Relocation can only occur if Colorado Parks and Wildlife has been notified in advance, the relocation site is appropria",
+      "pub_date": "Wed, 14 Jan 2026 19:44:01 +0000",
+      "id": "68ae18b1fc84",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 7,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [],
+      "approved_date": "2026-01-15"
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Passersby Rescue Skier Buried Face First In Snow At Swiss Ski Resort",
+      "url": "https://unofficialnetworks.com/2026/01/14/snow-immersed-individual-rescued/",
+      "description": "These skiers just happened to pass by a snow-sunked individual while riding in Switzerland, immediately rushing to help dig him out.",
+      "content": "EGNELBERG, Switzerland \u2013 Most people who love skiing and snowboarding love skiing and snowboarding in powder, but once the depths start to build up it\u2019s important to remember the potential hazards that are created. The most obvious and well known is avalanches, but tree wells and deep snow immersion can be equally as deadly. These skiers just happened to pass by a snow-sunked individual while riding at Engelberg in Switzerland, immediately rushing to help dig him out. They first ensured the skier could breath before working to dig out the rest of his body. View this post on Instagram A post shared by Matteo Zilla (@matteozilla) \u201cShe Spawned Outta Nowhere\u201d Skier Dressed In All White Snowsuit Nearly Slammed By Snowboarder Snow immersion suffocation can occur when a skier or snowboarder falls into a tree well or deep loose snow, usually head first. When this happens, they can become immobilized and trapped, sometimes leading to suffocation. 90% of people involved in Tree Well/ SIS hazard ",
+      "pub_date": "Wed, 14 Jan 2026 19:16:19 +0000",
+      "id": "c9899fb29b00",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 9,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "safety-incidents",
+      "secondary_categories": [
+        "resort-operations"
+      ],
+      "approved_date": "2026-01-15"
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Skiers & Snowboarders Push Limits On \u201cNo Fall Zone\u201d Ridgeline Terrain Park",
+      "url": "https://unofficialnetworks.com/2026/01/14/skiers-snowboarders-push-limits-on-no-fall-zone-ridgeline-terrain-park/",
+      "description": "Falling on this ridgeline ski terrain park could result in death.",
+      "content": "Busting your butt on a terrain park rail can be a painful experience but for these skiers and snowboarders it was a matter of life and death. January 13th, 2026 Felix Georgii, Max Hitzig, Fabian B\u00f6sch, and Ian Matteoli took on this incredibly narrow terrain park line perched high on ridgeline in the Julian Alps of Italy. The skiers and snowboarders faced their fears and hit features with lethal drops to either side: \u201cThe alpine ridge required precision and left no room for error \u2013 a true \u201cno-fall zone\u201d with rocky edges and drops of up to 360 feet.\u201d At only 3 feet wide and 1,150 feet long, this snaky line packed a potentially lethal bite if any mistakes were made. Gnarly: ATHLETES: Felix Georgii (GER) \u2013 Wakeboard pro and passionate snowboarder Max Hitzig (GER) \u2013 2024 Freeride World Tour Champion Ian Matteoli (ITA) \u2013 Member of the Italian Olympic team Fabian B\u00f6sch (SUI) \u2013 Olympian and freestyle skier Categories: Italy Ski News Snowboarding",
+      "pub_date": "Wed, 14 Jan 2026 19:06:14 +0000",
+      "id": "ee1a2be16a4d",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "winter-sports",
+      "secondary_categories": [
+        "safety-incidents",
+        "resort-operations",
+        "transportation"
+      ],
+      "approved_date": "2026-01-15"
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Bode Miller Relaunches Peak Skis For 2026",
+      "url": "https://unofficialnetworks.com/2026/01/14/bode-miller-relaunches-peak-skis-for-2026/",
+      "description": "6-time Olympian and all around ski racing legend Bode Miller took to social media to announce his ski company, Peak Skis, has relaunched for 2026.",
+      "content": "6-time Olympian and all around ski racing legend Bode Miller took to social media to announce his ski company, Peak Skis , has relaunched for 2026. \u201c2026 Peak skis are LIVE! I updated the side cut and geometry to create better balance and performance. Hard to think we could improve the last 88\u2019s but we did it. Can\u2019t wait to show you what we have coming next.\u201d -Bode Miller \u201cShe Spawned Outta Nowhere\u201d Skier Dressed In All White Snowsuit Nearly Slammed By Snowboarder Initially launched by Miller and former ski area CEO Andy Wirth, the Montana based ski company ceased operations mid-2025 amid much rumored mis-management and alleged lack of payments. Miller was upfront about past mistakes and promises to \u201cclean up a mess we didn\u2019t intend to create\u201d : \u201cThank you to all of our supporters! We are working diligently to clean up a mess we didn\u2019t intend to create and at the same time learning from our mistakes so we can bring you the best skis on the market. Thank you again for your support and I",
+      "pub_date": "Wed, 14 Jan 2026 18:38:18 +0000",
+      "id": "64ed5dd3c4e5",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 8,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "winter-sports",
+        "ski-history"
+      ],
+      "approved_date": "2026-01-15"
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Schlosshotel Fiss Launches New Family & Wellbeing Experiences For The 2025/26 Ski Season",
+      "url": "https://unofficialnetworks.com/2026/01/14/austria-ski-hotel-new/",
+      "description": "The second-generation family-run property, which holds a Michelin Key, delivers luxury and mountain spirit for families and couples.",
+      "content": "Tyrol, Austria: Schlosshotel Fiss , a five-star family-friendly resort in western Austria\u2019s Tyrol region, offers wellness, skiing and gourmet dining. The resort announced a redesigned SHF Kids Club, a new Biohacking Wellness Week and winter programming for the 2025/26 ski season. The hotel sits on the slopes of Serfaus-Fiss-Ladis at 4,717 feet elevation in the sunny village of Fiss. It features 135 rooms and suites with mountain views, ski-in/ski-out access from elevators, a 53,820-square-foot SHF Spa and the Michelin-starred Beef Club. Gault&Millau awarded the Beef Club 17 points in 2025. The second-generation family-run property, which holds a Michelin Key, delivers luxury and mountain spirit for families and couples. New for Schlosshotel Fiss : Opened December 2025, the completely redesigned SHF Kids Club is a magical and enchanting place for children ages two and older, inviting them to discover unique play areas including a magic forest, Monti\u2019s Cave, climbing and cuddling corners",
+      "pub_date": "Wed, 14 Jan 2026 17:59:18 +0000",
+      "id": "2e491a4f2aa8",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "winter-sports",
+      "secondary_categories": [
+        "business-investment",
+        "hospitality"
+      ],
+      "approved_date": "2026-01-15"
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Arapahoe Basin, CO, Announces Directed Skiing Opportunities to Combat Limited Terrain Openings",
+      "url": "https://snowbrains.com/arapahoe-basin-co-announces-directed-skiing-opportunities-to-combat-limited-terrain-openings/",
+      "description": "As we approach the midway point of January, it\u2019s evident that Colorado is behind on snowfall not just in the numbers, but in the way skiers are spending their time on the mountain. Ski patrol and mountain operations teams all over the state have had their hands full, to say the least. Opening new terrain and creating space on [\u2026] The post Arapahoe Basin, CO, Announces Directed Skiing Opportunities to Combat Limited Terrain Openings appeared first on SnowBrains .",
+      "content": "Colorado snowpack January 14. Image NCWW As we approach the midway point of January, it\u2019s evident that Colorado is behind on snowfall not just in the numbers, but in the way skiers are spending their time on the mountain. Ski patrol and mountain operations teams all over the state have had their hands full, to say the least. Opening new terrain and creating space on the mountain is directly correlated to guest experience, but more importantly, guest safety. To put it lightly, it has been a madhouse out there. For skiers and riders, new terrain openings mean new opportunities. The ability to mix up line choice, slope angle, and zone on Colorado mountains has been constricted. Beaver Creek, Copper, Winter Park, Breckenridge, and many others still have less than 50 percent of their terrain open. Arapahoe Basin is no different, with just 23 of 147 runs open. Even with this weekend\u2019s opening of the legendary Pallavicini Chair, A-Basin guests are still constricted to mainly frontside blues a",
+      "pub_date": "Wed, 14 Jan 2026 17:57:16 +0000",
+      "id": "e0a2ed05c7d7",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "safety-incidents",
+      "secondary_categories": [
+        "weather-snow",
+        "resort-operations"
+      ],
+      "approved_date": "2026-01-15"
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Salomon Launches Innovative New S/PRO ALPHA C BOA\u00ae Ski Boots",
+      "url": "https://unofficialnetworks.com/2026/01/14/salomon-new-ski-boots/",
+      "description": "Salomon, one of the biggest players in ski gear, has officially announced the launch of their 2026/27 S/PRO ALPHA C BOA\u00ae Ski Boots.",
+      "content": "Salomon , one of the biggest players in ski gear, has officially announced the launch of their 2026/27 S/PRO ALPHA C BOA\u00ae Ski Boots, introducing a reinvented ankle wrap and energy transformation system for improved control, precision, and responsiveness. View this post on Instagram A post shared by Salomon Alpine (@salomonalpine) \u201cThis is the most direct, progressive, and smooth alpine boot Salomon has ever designed,. The evolution of the S/PRO ALPHA C BOA\u00ae is all about giving aggressive skiers more power and control without sacrificing comfort. We reworked this boot from the inside out to deliver a high-performance design that responds instinctively on snow thanks to the new ExoDrive and better heel hold, enhanced energy transmission, and a fit that can be dialed in with absolute precision.\u201d \u2013 Lauren Samuels, Salomon\u2019s North American Alpine Category Manager. The new boots feature a cuff mounted BOA\u00ae Fit System and two lower-shell buckles, allowing for micro-adjustable comfort and inde",
+      "pub_date": "Wed, 14 Jan 2026 17:36:05 +0000",
+      "id": "d24206c7bd16",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 7,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "hospitality",
+      "secondary_categories": [],
+      "approved_date": "2026-01-15"
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Enormous Avalanche Carries Skier At French Ski Resort (WATCH)",
+      "url": "https://unofficialnetworks.com/2026/01/14/enormous-avalanche-carries-skier-at-french-ski-resort-watch/",
+      "description": "This avalanche filmed at Val d'Isere in the French Alps apparently occurred on the Arr\u00eate de Fresse near the Borsat chairlift.",
+      "content": "Ski resorts in Europe tend to work quite a bit differently than ski resorts in North America, with off-piste terrain in-between trails often being \u201cski at your own risk\u201d. As such, avalanches in areas easily accessible by chairlift aren\u2019t uncommon. This avalanche filmed at Val d\u2019Isere in the French Alps apparently occurred on the Arr\u00eate de Fresse near the Borsat chairlift . The slide was triggered remotely by a skier thanks to a persistent weak layer. \u201c The avalanche was caused by a persistent weak layer (deep hoar). These surface hoar layers can persist for weeks or months, making them tricky to forecast, often releasing under low loads or even remotely. \u201d \u2013 Elena Yakimova View this post on Instagram A post shared by Elena Yakimova (@elyzator) Fortunately the skier caught in the slide was wearing an avalanche airbag and managed to escape it in one piece. Remember to always check the avalanche forecast if you\u2019re heading off-piste, not matter in the United States, Canada, Europe, or anyw",
+      "pub_date": "Wed, 14 Jan 2026 17:14:22 +0000",
+      "id": "697cb4697a3b",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "safety-incidents",
+      "secondary_categories": [
+        "resort-operations",
+        "international",
+        "transportation"
+      ],
+      "approved_date": "2026-01-15"
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Washington State Chairlift Requires Rope Evacuation After Mechanical Failure",
+      "url": "https://unofficialnetworks.com/2026/01/14/washington-state-chairlift-requires-rope-evacuation-after-mechanical-failure/",
+      "description": "Skiers and snowboarders were forced to evacuate the Dodge Ridge Chairlift at the Summit-at-Snoqualmie after it stopped spinning due to mechanical issues Sunday morning.",
+      "content": "Snoqualmie Pass, Washington \u2013 Skiers and snowboarders were forced to evacuate the Dodge Ridge Chairlift at the Summit-at-Snoqualmie after it stopped spinning due to mechanical issues Sunday morning. Jeremy Rule captured a video of the rope rescue operation which happened Summit West. The evacuation of the two person chairlift was complicated by foggy rainy conditions but the ski patrol managed to lower all guests safely to the ground below. The evacuation took over an hour. The exact cause of the malfunction has not been released. Cheers the Summit-at-Snoqualmie ski patrollers who by all accounts handled the situation expertly. Categories: Washington Ski News",
+      "pub_date": "Wed, 14 Jan 2026 17:05:01 +0000",
+      "id": "d11869847b58",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "safety-incidents",
+      "secondary_categories": [
+        "resort-operations",
+        "hospitality"
+      ],
+      "approved_date": "2026-01-15"
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "The Freeride World Tour Returns to the Pyrenees Mountains This Thursday",
+      "url": "https://unofficialnetworks.com/2026/01/14/freeride-world-tour-returns-to-the-pyrenees/",
+      "description": "On Thursday, January 15, the world's top freeride skiers will return to Baqueira Beret for the first stop of the 2026 Freeride World Tour.",
+      "content": "The 2026 Freeride World Tour is set to kickoff this Thursday as athletes gear up for big lines against even bigger competition on the Tuc de Baciv\u00e8r face of Baqueira Beret Resort, Spain. This years tour features 10 US athletes, including rookies Joey Leonardo and Mia Jones . Ross Tester and Toby Rafford took first and second last year at the Baqueira Beret Pro in the Ski Men devision and return with hopes of repeating their standout performances. The Tuc de Baciv\u00e8r face hasn\u2019t hosted a competition since 2023 but with stable and soft conditions the tour returns for more. Livestream coverage will begin at 12 p.m. CET / 6 a.m. EST / 4 a.m. MST / 3 a.m. PST , with Snowboard Women being the first to drop. They will be followed by Snowboard Men, Ski Women, and finally Ski Men. Thursday should consist of safe and visible conditions on the west-facing venue; giving in-person and online watchers an optimal view of the worlds best ski/snowboard athletes throwing down big tricks, creative lines, ",
+      "pub_date": "Wed, 14 Jan 2026 16:59:19 +0000",
+      "id": "82b4829ae1ba",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 7,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [],
+      "approved_date": "2026-01-15"
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Six Guests Involved In Two Separate In-Bounds Avalanches at Whistler Blackcomb",
+      "url": "https://unofficialnetworks.com/2026/01/14/six-guests-involved-in-two-separate-in-bounds-avalanches-at-whistler-blackcomb/",
+      "description": "Two separate inbounds avalanches struck Whistler Blackcomb on January 11th with on one guest requiring rescue.",
+      "content": "Two separate inbounds avalanches struck Whistler Blackcomb on January 11th with on one guest requiring rescue. The first occurred in an expert-only area on Blackcomb around 10:00am which caught three people with no injuries. The second followed less than two hours later, also on Blackcomb, catching three more with one requiring rescue again no one was injured. Heavy rain and rising temperatures in the Sea-to-Sky region have increased snowpack instability, elevating avalanche and landslide risk. Avalanche Canada rated the area high danger for January 12 and 13 after extreme warming and heavy precipitation. Here is the latest avalanche danger forecast from Avalanche Canada: Categories: Canada Whistler Avalanche Ski News",
+      "pub_date": "Wed, 14 Jan 2026 16:37:23 +0000",
+      "id": "9249fe54af9e",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "safety-incidents",
+      "secondary_categories": [
+        "canada",
+        "weather-snow"
+      ],
+      "approved_date": "2026-01-15"
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "The Story Of Maryland\u2019s Only Active Ski Resort",
+      "url": "https://unofficialnetworks.com/2026/01/14/marylands-only-ski-resort/",
+      "description": "Opened back in 1965, the former cow pasture has become one of the most popular ski resorts in the Mid-Atlantic.",
+      "content": "McHenry, Maryland \u2014 While Maryland is a small state, it has been home to various ski areas in its history. However, only one remains active. Why\u2019s that the case? In honor of Wisp\u2019s 70th anniversary, a new documentary dives into the history of the ski resort. In Making of Maryland\u2019s Ski Resort\u2013 Tribute to A True Pioneer , the son of founder Helmuth \u201cAce\u201d Heise, Martin Heise, dives into what made Wisp open and survive in an unusual state for skiing. Even if you haven\u2019t skied at Wisp, it\u2019s an insightful video into a little mountain that could. About Wisp Resort Situated in McHenry, Wisp Resort features 33 trails across 132 skiable acres. There are 10 lifts at Wisp, including 7 chairlifts. Off the slopes, there are activities like a mountain coaster, aerial adventure tours, and golf (both mini and 18-hole). First opened during the 1955-56 season, the ski resort began with a rope tow, a small hut, and a truck used for rentals. It\u2019s grown a bit since then. The 2025-26 season features $2.5 mi",
+      "pub_date": "Wed, 14 Jan 2026 16:28:20 +0000",
+      "id": "81acfbc26e75",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "ski-history",
+      "secondary_categories": [
+        "resort-operations",
+        "transportation"
+      ],
+      "approved_date": "2026-01-15"
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Utah Ski Resort To Host Natural Selection Tour In Soon-To-Open Expansion Terrain",
+      "url": "https://unofficialnetworks.com/2026/01/14/natural-selection-tour-powder-mountain/",
+      "description": "Utah's Powder Mountain is officially set to host one of the Natural Selection Tour's new Super Sessions in early February.",
+      "content": "EDEN, Utah \u2013 Utah\u2019s Powder Mountain is officially set to host one of the Natural Selection Tour \u2018s new Super Sessions , bringing the top freeride and freestyle snowboarders into the resort\u2019s DMI Zone , a 1000+ acre area that will soon be lift accessed. View this post on Instagram A post shared by Natural Selection (@naturalselection) The competition will take place in early February, though the exact dates depend on when the snow conditions are optimal. The Super Sessions will air on Red Bull TV starting February 24, featuring the men\u2019s competitions in My\u014dk\u014d, Japan, and Powder Mountain, and the women\u2019s competition at evo\u2019s Journeyman Lodge near Whistler. Super Sessions replace the Natural Selection Tour\u2019s DUELS, introducing a new, collaborative session-style competition. 3 women will be chosen to compete in Canada by the NST selection committee, in addition to a 4th woman chosen via fan vote. The men will be split between Japan and Utah, with 7 chosen by the committee and an 8th chosen",
+      "pub_date": "Wed, 14 Jan 2026 16:14:39 +0000",
+      "id": "452c89eb5a07",
+      "prefilter_business_score": 1,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "winter-sports",
+      "secondary_categories": [
+        "canada",
+        "resort-operations",
+        "hospitality"
+      ],
+      "approved_date": "2026-01-15"
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Banff and Lake Louise, Alberta, See Historic Snowfall as SkiBig3 Surges Into Winter",
+      "url": "https://snowbrains.com/banff-and-lake-louise-alberta-see-historic-snowfall-as-skibig3-surges-into-winter/",
+      "description": "At Lake Louise Ski Resort, December delivered 282 centimeters (111 inches) of snow, breaking a 75-year-old December record and marking the snowiest single winter month the resort has seen since 1970. By the end of December, Lake Louise was sitting at 226% of its seasonal average snowfall, an extraordinary benchmark this early in the season. Nearby, Banff Sunshine Village logged [\u2026] The post Banff and Lake Louise, Alberta, See Historic Snowfall as SkiBig3 Surges Into Winter appeared first on Snow",
+      "content": "Resort goers take up the chair at Lake Louise, part of the SkiBig3 resort network that is currently experiencing a historically snowy start to winter. | Photo: Lake Louise Ski Resort / Sam Hamilton At Lake Louise Ski Resort , December delivered 282 centimeters (111 inches) of snow, breaking a 75-year-old December record and marking the snowiest single winter month the resort has seen since 1970. By the end of December, Lake Louise was sitting at 226% of its seasonal average snowfall, an extraordinary benchmark this early in the season. Nearby, Banff Sunshine Village logged 268 centimeters (106 inches) during December, ranking as the fifth snowiest month ever recorded at the resort. From opening day through the end of December, Sunshine accumulated 416 centimeters (164 inches) of snow, making it the fourth snowiest season start in the resort\u2019s history and placing it at 147% of average. Even Mt. Norquay , traditionally the driest of the three SkiBig3 resorts due to its lower elevation, s",
+      "pub_date": "Wed, 14 Jan 2026 15:31:35 +0000",
+      "id": "75fcab87db80",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "canada",
+      "secondary_categories": [
+        "ski-history",
+        "resort-operations",
+        "weather-snow"
+      ],
+      "approved_date": "2026-01-15"
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Don\u2019t Pizza\u2014These Skis Let You French Fry on French Fries",
+      "url": "https://snowbrains.com/dont-pizza-these-skis-let-you-french-fry-on-french-fries/",
+      "description": "Every skier remembers the moment it finally clicks. One day you are stuck in pizza, legs burning in a wedge, hoping gravity shows mercy. Then suddenly you are French frying, skis parallel, confidence unlocked. It is skiing\u2019s most universal milestone, and now it has officially gone full circle. For the first time ever, skiers can quite literally French fry on [\u2026] The post Don\u2019t Pizza\u2014These Skis Let You French Fry on French Fries appeared first on SnowBrains .",
+      "content": "Ore-Ida is bringing its iconic crinkle-cut fries from the freezer aisle to the frozen slopes with the crispiest drop of the season. | Photo: Ore-Ida Every skier remembers the moment it finally clicks. One day you are stuck in pizza, legs burning in a wedge, hoping gravity shows mercy. Then suddenly you are French frying, skis parallel, confidence unlocked. It is skiing\u2019s most universal milestone, and now it has officially gone full circle. For the first time ever, skiers can quite literally French fry on French fries. Ore-Ida has teamed up with Fischer Sports to release the Ore-Ida French Fry Skis , a limited edition pair inspired by the brand\u2019s iconic crinkle cut fries. Yes, real skis, covered in fries, and still very skiable. The skis bring Ore-Ida\u2019s unmistakable look straight to the slopes, complete with bold crinkle cut ridges, a golden fry themed topsheet, and a ketchup red background that pops against the snow. They are playful, loud, and unapologetically fun, but this is not jus",
+      "pub_date": "Wed, 14 Jan 2026 14:30:37 +0000",
+      "id": "bc6c20549285",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 9,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "winter-sports",
+      "secondary_categories": [],
+      "approved_date": "2026-01-15"
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "New York\u2019s Overlooked And Forgotten Mountain Range",
+      "url": "https://unofficialnetworks.com/2026/01/14/new-york-forgotten-mountain-range/",
+      "description": "The Adirondacks have the height, the Catskills have the vibes, but the Taconics have the history.Here is the geology behind New York\u2019s 'forgotten' third mountain range.",
+      "content": "Stretching about 150 miles along New York\u2019s eastern border with Connecticut, Massachusetts, and Vermont, the Taconic Mountains form a quiet, rugged sub-range of the Appalachians. They lack the towering peaks of the Adirondacks or the dramatic escarpments and resort culture of the Catskills, yet they hold a deeper geological story that shaped much of eastern North America. View this post on Instagram Around 440 million years ago, during the Ordovician period, the ancient Iapetus Ocean began to close off. A volcanic island arc collided with the edge of Laurentia (proto-North America) triggering the Taconic Orogeny (a major mountain-building event) . This collision thrust massive sheets of rock westward, creating what geologists call the Taconic Allochthon where older metamorphic rocks like slate, phyllite, and schist pushed over younger sedimentary layers. The modern Taconics are the eroded remnants of those ancient highlands, with summits like Mount Greylock (3,491 ft in Massachusetts) ",
+      "pub_date": "Wed, 14 Jan 2026 13:55:02 +0000",
+      "id": "1b813b697190",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 9,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "safety-incidents",
+      "secondary_categories": [
+        "business-investment"
+      ],
+      "approved_date": "2026-01-15"
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Chloe Kim Provides Update on Recent Injury, Says She\u2019s Good to Go for Olympic Games",
+      "url": "https://snowbrains.com/chloe-kim-provides-update-on-recent-injury-says-shes-good-to-go-for-olympic-games/",
+      "description": "Two-time Olympic gold medalist snowboarder Chloe Kim, who recently suffered a torn labrum while training, took to Instagram to announce that she would still be competing in this year\u2019s Olympic Winter Games in Milano-Cortina, Italy. This announcement comes just days after she revealed her injury, providing a sigh of relief for Team USA fans who believe that Kim is [\u2026] The post Chloe Kim Provides Update on Recent Injury, Says She\u2019s Good to Go for Olympic Games appeared first on SnowBrains .",
+      "content": "Chloe Kim, who recently tore her labrum while training in Switzerland, will still compete in this years Olympic Winter Games in Milano-Cortina, Italy | Credit: Getty Images Two-time Olympic gold medalist snowboarder Chloe Kim, who recently suffered a torn labrum while training, took to Instagram to announce that she would still be competing in this year\u2019s Olympic Winter Games in Milano-Cortina, Italy. This announcement comes just days after she revealed her injury, providing a sigh of relief for Team USA fans who believe that Kim is well on her way to her third Olympic gold medal in the halfpipe. Kim was one of the first Team USA snowboarders to qualify for this year\u2019s Games when it was announced by the U.S. Snowboard Team that she had qualified on May 1, 2025. \u201cBut again, I am so grateful that I will be good to go for the Olympics,\u201d Kim said in her Instagram video . Chloe Kim is widely considered one of the greatest snowboarders of all time. | Credit: Danielle Parhizkaran, USA TODAY S",
+      "pub_date": "Wed, 14 Jan 2026 13:47:38 +0000",
+      "id": "e4a29675c33c",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "winter-sports",
+      "secondary_categories": [
+        "safety-incidents",
+        "transportation"
+      ],
+      "approved_date": "2026-01-15"
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Teton Mountains, WY, Report: The Iconic Cody Bowl",
+      "url": "https://snowbrains.com/teton-mountains-wy-report-the-iconic-cody-bowl/",
+      "description": "Report from January 10, 2026 My buddy Brendan Barnard reached out to me and asked if I wanted to ski a line off Cody Peak in Jackson, Wyoming, if my work permitted enough time on my ride break. I couldn\u2019t pass up a offer like that especially with the conditions we had that day. We caught the second tram up [\u2026] The post Teton Mountains, WY, Report: The Iconic Cody Bowl appeared first on SnowBrains .",
+      "content": "Report from January 10, 2026 My buddy Brendan Barnard reached out to me and asked if I wanted to ski a line off Cody Peak in Jackson, Wyoming, if my work permitted enough time on my ride break. I couldn\u2019t pass up a offer like that especially with the conditions we had that day. We caught the second tram up from Jackson Hole Mountain Resort to the top of Rendezvous mountain. (Brendan Barnard dropping in ^) The scenery was beautiful and the gusts of wind were plenty. We exited the south gates towards Cody Peak and began our assent. Brendan Barnard looking over the edge. Photo: Russell Parker Reaching our drop in at No Shadows we made our descent. The stoke was electric as we reached the bottom, both having said it was some of the best riding we\u2019ve ever had. The powder was steep and deep. Russell Parker slashing pow. Photo: Brendan Barnard We then zipped through the Rock Springs bowl and I arrived back to my position on the magic carpet just a couple minutes late. Epic run. Trail Map Scre",
+      "pub_date": "Wed, 14 Jan 2026 12:33:23 +0000",
+      "id": "f737606e5701",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 7,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [
+        "transportation"
+      ],
+      "approved_date": "2026-01-15"
     },
     {
       "source": "The Ski Guru",
@@ -73,6 +590,73 @@
         "resort-operations",
         "international"
       ]
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Double U.S. Podium: Mikaela Shiffrin Claims 70th Slalom Victory at Flachau, Austria, While Paula Moltzan Claims 2nd Place",
+      "url": "https://snowbrains.com/double-u-s-podium-mikaela-shiffrin-claims-70th-slalom-victory-at-flachau-austria-while-paula-moltzan-claims-2nd-place/",
+      "description": "What a day for Team USA at Flachau, Austria, on Tuesday, January 13. U.S. ski racer Mikaela Shiffrin skied into a dominant victory in the famous night slalom. Her teammate Paula Moltzan was not far behind in close second, while Austria\u2019s Katharina Truppe claimed third on home territory. \u201cThat was exciting! This is insane how many people are here. It\u2019s [\u2026] The post Double U.S. Podium: Mikaela Shiffrin Claims 70th Slalom Victory at Flachau, Austria, While Paula Moltzan Claims 2nd Place appeared fi",
+      "content": "Mikaela Shiffrin skiing to victory in the Flachau night slalom. | Image:: FIS Alpine What a day for Team USA at Flachau, Austria, on Tuesday, January 13. U.S. ski racer Mikaela Shiffrin skied into a dominant victory in the famous night slalom. Her teammate Paula Moltzan was not far behind in close second, while Austria\u2019s Katharina Truppe claimed third on home territory. \u201cThat was exciting! This is insane how many people are here. It\u2019s so cool! Thank you for coming. This crowd tonight was\u2026 I mean you can see the footprints all the way up the side of the slope. That was special.\u201d \u2014 Mikaela Shiffrin The Flachau podium: Mikaela Shiffrin 1st, Paula Moltazan 2nd, Katharina Truppe 3rd. | Image: FIS Alpine Shiffrin set the tone early on the demanding Hermann Maier course , delivering a clean and controlled first run under the floodlights to take a commanding lead. With conditions holding steady for the second run, the American showed her trademark composure, attacking where needed while minimi",
+      "pub_date": "Wed, 14 Jan 2026 06:41:44 +0000",
+      "id": "be0f435980f8",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "winter-sports",
+      "secondary_categories": [],
+      "approved_date": "2026-01-15"
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Silvertip Lodge, BC, Heliski Report: Stop Wishing for Snow; We\u2019ve Already Got Too Much\u2026",
+      "url": "https://snowbrains.com/silvertip-lodge-bc-heliski-report-stop-wishing-for-snow-weve-already-got-too-much/",
+      "description": "This report is from Silvertip Lodge Heliski on January 9-12, 2026. I\u2019ve always thought there was no such thing as too much snow. The more the better; bring it on. So when our guides at Silvertip Lodge heliski in British Columbia were praying for the snow to stop, I was a little confused. Turns out they\u2019d already had nine feet of [\u2026] The post Silvertip Lodge, BC, Heliski Report: Stop Wishing for Snow; We\u2019ve Already Got Too Much\u2026 appeared first on SnowBrains .",
+      "content": "Faceshots for days. | Photo: SnowBrains This report is from Silvertip Lodge Heliski on January 9-12, 2026. I\u2019ve always thought there was no such thing as too much snow. The more the better; bring it on. So when our guides at Silvertip Lodge heliski in British Columbia were praying for the snow to stop , I was a little confused. Turns out they\u2019d already had nine feet of snow recently. Which is more than enough. And when you\u2019re heliskiing, clear blue skies, free of low-hanging snow clouds, mean you get more runs in. Helicopter pilots don\u2019t like to fly in zero-visibility clouds. Once the clouds cleared, we got two fantastic runs on our first afternoon (Friday). It was waist-deep. When you jumped out of the helicopter at the drop-off, you sank to your waist in soft and light snow. The 116mm underfoot K2 Crescendo skis they recommended I use were exactly what I needed. Our fearless lead guide, Dale, used 140mm underfoot as his daily driver. Pro skiing legend Mark Abma pops around like a rab",
+      "pub_date": "Wed, 14 Jan 2026 05:50:56 +0000",
+      "id": "68bcca916f26",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [
+        "hospitality",
+        "resort-operations",
+        "canada"
+      ],
+      "approved_date": "2026-01-15"
+    },
+    {
+      "source": "Vail Resorts Investor Relations",
+      "title": "Vail Resorts Reports First Quarter Fiscal 2026 and Season Pass Sales Results, Reaffirms Guidance and Announces 2026 Capital Plan",
+      "url": "https://investors.vailresorts.com/news-releases/news-release-details/vail-resorts-reports-first-quarter-fiscal-2026-and-season-pass",
+      "description": "BROOMFIELD, Colo. , Dec. 10, 2025 /PRNewswire/ -- Vail Resorts, Inc. (NYSE: MTN) today reported results for the first quarter of fiscal 2026 ended October 31, 2025 , provided North American season pass sales results for the 2025/2026 ski season, reaffirmed full-year fiscal 2026 guidance and",
+      "content": "BROOMFIELD, Colo. , Dec. 10, 2025 /PRNewswire/ -- Vail Resorts, Inc. (NYSE: MTN) today reported results for the first quarter of fiscal 2026 ended October 31, 2025 , provided North American season pass sales results for the 2025/2026 ski season, reaffirmed full-year fiscal 2026 guidance and",
+      "pub_date": "Wed, 10 Dec 2025 16:05:00 -0500",
+      "id": "c2f98e307b33",
+      "prefilter_business_score": 0,
+      "source_boost": 5,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 5)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "winter-sports",
+      "secondary_categories": [
+        "business-investment",
+        "resort-operations"
+      ],
+      "approved_date": "2026-01-15"
     },
     {
       "source": "PlanetSKI",
@@ -288,605 +872,175 @@
       ]
     },
     {
-      "source": "Ski Area Management",
-      "title": "Jackson Hole Ski Patrol Vote Against Unionization Remains Unresolved After Ballot Challenges",
-      "url": "https://www.saminfo.com/news/sam-headline-news/jackson-hole-ski-patrol-vote-against-unionization-remains-unresolved-after-ballot-challenges",
-      "description": "SAM Magazine\u2014Jackson, Wyo., Jan. 13, 2026\u2014 Jackson Hole Mountain Resort ski patrollers voted against unionizing in a National Labor Relations Board (NLRB) election held over two days last week, but the result is not yet final because challenged ballots are still under review. In a social media statement Jan. 10, the Jackson Hole Ski Patrol said the team \u201chas chosen as a group not to unionize at this time,\u201d and that the petition and vote \u201ccreated space for dialogue and gave new ownership the oppo",
-      "content": "SAM Magazine\u2014Jackson, Wyo., Jan. 13, 2026\u2014 Jackson Hole Mountain Resort ski patrollers voted against unionizing in a National Labor Relations Board (NLRB) election held over two days last week, but the result is not yet final because challenged ballots are still under review. In a social media statement Jan. 10, the Jackson Hole Ski Patrol said the team \u201chas chosen as a group not to unionize at this time,\u201d and that the petition and vote \u201ccreated space for dialogue and gave new ownership the oppo",
-      "pub_date": "Tue, 13 Jan 2026 16:58:48 -0500",
-      "id": "18dd5caed420",
+      "source": "Vail Resorts Investor Relations",
+      "title": "Heavenly Mountain Resort Celebrates 70th Anniversary with Jam-Packed Lineup of High-Energy Events and Music All Season Long",
+      "url": "https://investors.vailresorts.com/news-releases/news-release-details/heavenly-mountain-resort-celebrates-70th-anniversary-jam-packed",
+      "description": "Celebrations kick off Dec. 20 with a headlining DJ set with Foster the People Media Assets: Heavenly Signature Photos SOUTH LAKE TAHOE, Calif. , Dec. 16, 2025 /PRNewswire/ -- Heavenly Mountain Resort turns 70 this winter, and with skiing and riding now underway, the party is just getting started.",
+      "content": "Celebrations kick off Dec. 20 with a headlining DJ set with Foster the People Media Assets: Heavenly Signature Photos SOUTH LAKE TAHOE, Calif. , Dec. 16, 2025 /PRNewswire/ -- Heavenly Mountain Resort turns 70 this winter, and with skiing and riding now underway, the party is just getting started.",
+      "pub_date": "Tue, 16 Dec 2025 11:00:00 -0500",
+      "id": "96801cd03f7a",
+      "prefilter_business_score": 0,
+      "source_boost": 5,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 5)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "ski-history",
+      "secondary_categories": [],
+      "approved_date": "2026-01-15"
+    },
+    {
+      "source": "SnowBrains",
+      "title": "12-Year-Old Skier Dies After Getting Wedged in Avalanche Barrier in Austria",
+      "url": "https://snowbrains.com/12-year-old-skier-dies-after-getting-wedged-in-avalanche-barrier-in-austria/",
+      "description": "A 12-year-old Czech skier has died after being caught in an avalanche at the Sportgastein ski area in Bad Gastein, Austria, on Tuesday afternoon, December 13. The young skier became wedged in an avalanche barrier and could not be saved. The avalanche occurred at around 1:00 p.m. in an off-piste area near the Goldbergbahn, between lift pillars seven and eight. [\u2026] The post 12-Year-Old Skier Dies After Getting Wedged in Avalanche Barrier in Austria appeared first on SnowBrains .",
+      "content": "The young skier became wedged in the avalanche barrier after he had been pushed downhill by an avalanche. | Image: Bergrettung Bad Gastein A 12-year-old Czech skier has died after being caught in an avalanche at the Sportgastein ski area in Bad Gastein, Austria, on Tuesday afternoon, December 13. The young skier became wedged in an avalanche barrier and could not be saved. The avalanche occurred at around 1:00 p.m. in an off-piste area near the Goldbergbahn, between lift pillars seven and eight. The young boy was skiing with a friend of similar age when he triggered an avalanche. The avalanche pushed him into an avalanche barrier. Eyewitnesses immediately alerted emergency services, and rescue crews were on site instantly, including mountain rescue teams and an emergency medical helicopter. Rescue teams were immediately on site. | Image: Bergrettung Bad Gastein From the information provided by the Gasteiner Bergbahnen and photos provided by the Bad Gastein Mountain Services, the avalan",
+      "pub_date": "Tue, 13 Jan 2026 20:40:01 +0000",
+      "id": "8238fafc9691",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "safety-incidents",
+      "secondary_categories": [
+        "resort-operations"
+      ],
+      "approved_date": "2026-01-15"
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Hyalite Canyon, MT, Ice Climbing Report: Refreshing the Ice Skills in Good Company",
+      "url": "https://snowbrains.com/hyalite-canyon-ice-climbing-report-montanka/",
+      "description": "Ice climbing conditions report from Thursday, January 8, 2026 Top roping G1 \u2013 1/8/26 I trekked my way from Jackson Hole four hours north to Bozeman, Montana, where I met with my buddy John. It had been about time I got onto ice, the last time being in 2024. He had the perfect place in mind: Hyalite Canyon, a place [\u2026] The post Hyalite Canyon, MT, Ice Climbing Report: Refreshing the Ice Skills in Good Company appeared first on SnowBrains .",
+      "content": "Ice climbing conditions report from Thursday, January 8, 2026 Top roping G1 \u2013 1/8/26 I trekked my way from Jackson Hole four hours north to Bozeman, Montana, where I met with my buddy John. It had been about time I got onto ice, the last time being in 2024. He had the perfect place in mind: Hyalite Canyon, a place known for its legendary ice flows. The plan was simple: go chip at some ice and get back in the flow with the technique. In ice climbing, you want to try to have a solid base with your footing and to get the ice axes over the tops of each other to have the most leverage. John Kingsland chipping axes one over the other. Photo: Grace We worked on these skills from the comfort of top roping, which entails having a fixed anchor you can rappel down from. This gives the feeling like you are in a climbing gym and greatly reduces the risks. The ice flow we were on is known in the area as Genesis 1. Another group working on their craft. Photo: Russell We enjoyed the crowds at the ice ",
+      "pub_date": "Tue, 13 Jan 2026 20:35:50 +0000",
+      "id": "683dce462897",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
       "score": 7,
       "score_details": {
-        "reason": "Keyword scoring (boost: 2)"
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
       },
-      "approved_date": "2026-01-14",
-      "category": "resort-operations",
-      "secondary_categories": [
-        "safety-incidents",
-        "business-investment"
-      ]
+      "score_method": "keyword",
+      "category": "transportation",
+      "secondary_categories": [],
+      "approved_date": "2026-01-15"
     },
     {
-      "source": "Ski Area Management",
-      "title": "Nederland Board Moves Forward on Eldora Mountain Resort Acquisition",
-      "url": "https://www.saminfo.com/news/sam-headline-news/nederland-board-moves-forward-on-eldora-mountain-resort-acquisition",
-      "description": "SAM Magazine\u2014Nederland, Colo., Jan. 13, 2026\u2014 The Town of Nederland\u2019s Board of Trustees unanimously voted Jan. 6 to approve an asset purchase agreement that would pave the way for the municipal acquisition of Eldora Mountain Resort from Powdr Corp. for roughly $120 million. The approved agreement authorizes Nederland to purchase Eldora through revenue bonds backed solely by Eldora\u2019s operating income, including lift tickets, rentals, and food and beverage sales, with no local tax dollars or gener",
-      "content": "SAM Magazine\u2014Nederland, Colo., Jan. 13, 2026\u2014 The Town of Nederland\u2019s Board of Trustees unanimously voted Jan. 6 to approve an asset purchase agreement that would pave the way for the municipal acquisition of Eldora Mountain Resort from Powdr Corp. for roughly $120 million. The approved agreement authorizes Nederland to purchase Eldora through revenue bonds backed solely by Eldora\u2019s operating income, including lift tickets, rentals, and food and beverage sales, with no local tax dollars or gener",
-      "pub_date": "Tue, 13 Jan 2026 14:19:10 -0500",
-      "id": "b14b300fbeef",
+      "source": "Unofficial Networks",
+      "title": "Influencer Poses In Wild Fit For Makeshift Ski Resort Photoshoot",
+      "url": "https://unofficialnetworks.com/2026/01/13/wild-influencer-outfit-ski-resort/",
+      "description": "A skier at Timberline Lodge in Oregon captured a truly wild influencer sighting on the slopes.",
+      "content": "Dressing fashionable and taking good photos while skiing or snowboarding is understandable. Some people head to the mountain more to show people that they were there than to actually enjoy their day, so they want to look good while doing it. But this scene filmed at Timberline Lodge in Oregon seems like it\u2019s a bit much. This woman and presumed influencer (or wanna-be influencer) went out for an on-mountain photoshoot in a skin-tight suit that certainly wouldn\u2019t be keeping her warm, but that\u2019s not the wildest part of the fit. The wildest part is that\u2019s she\u2019s clipped into the skis wearing a pair of high heels. Obviously she understands that she can\u2019t ski in the high heels and it\u2019s just for the photos, but it still feels like some pretty bizarre behavior. View this post on Instagram A post shared by Kyle Huckabee | OR & WA Realtor (@kylehuckabee) The truly ironic part of it all is that the guy behind the camera, Kyle Huckabee , is basically an influencer himself with 91.2K followers on In",
+      "pub_date": "Tue, 13 Jan 2026 20:29:28 +0000",
+      "id": "578034bdcd06",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 7,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "hospitality",
+      "secondary_categories": [],
+      "approved_date": "2026-01-15"
+    },
+    {
+      "source": "SnowBrains",
+      "title": "The Science Behind a Warming Atmosphere and Unpredictable Winters",
+      "url": "https://snowbrains.com/the-science-behind-a-warming-atmosphere-and-unpredictable-winters/",
+      "description": "It is no secret that weather patterns are changing, and humans are a major driving force behind them. Our pursuit of innovation\u2014while incredibly beneficial for food production, disease prevention, and technological advancement\u2014is also producing changes in our atmosphere with broad and uncertain consequences. Skiers are feeling the weight of these changes particularly quickly. Winters are becoming more variable, bringing either [\u2026] The post The Science Behind a Warming Atmosphere and Unpredictabl",
+      "content": "A side-by-side comparison from 1919 to 2025 of the Gries Glacier in Switzerland, highlighting the dramatic ice loss over that period. | Photo: BBC It is no secret that weather patterns are changing, and humans are a major driving force behind them. Our pursuit of innovation\u2014while incredibly beneficial for food production, disease prevention, and technological advancement\u2014is also producing changes in our atmosphere with broad and uncertain consequences. Skiers are feeling the weight of these changes particularly quickly. Winters are becoming more variable, bringing either relentless snowfall or complete drought, and many mountains are now experiencing winter rain that would have been unprecedented just 30 years ago. So how are elevated human emissions of both greenhouse gases and aerosols affecting our climate and beloved winters? Greenhouse gases and aerosol emissions are atmospheric components that impact the environment in different ways. Greenhouse gases refer specifically to gases ",
+      "pub_date": "Tue, 13 Jan 2026 20:17:44 +0000",
+      "id": "d3689848e672",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
       "score": 10,
       "score_details": {
-        "reason": "Keyword scoring (boost: 2)"
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
       },
-      "approved_date": "2026-01-14",
-      "category": "business-investment",
+      "score_method": "keyword",
+      "category": "weather-snow",
       "secondary_categories": [
-        "resort-operations"
-      ]
-    },
-    {
-      "source": "PlanetSKI",
-      "title": "Vonn Heads to Winter Olympics but Hirscher is Out",
-      "url": "https://planetski.eu/2026/01/13/vonn-heads-to-winter-olympics-but-hirscher-is-out/",
-      "description": "The two returning legends have had very mixed fortunes on their comebacks. One is a gold medal favourite at the Olympics next month, the other is out of contention by his own judgement. NEW The post Vonn Heads to Winter Olympics but Hirscher is Out appeared first on PlanetSKI .",
-      "content": "Lindsey Vonn won four World Cup overall championships. She took the gold medal in the downhill at the 2010 Winter Olympics. Marcel Hirscher is a record eight-time World Cup overall champion and two-time Olympic gold medalist. They both retired at the peak of their powers in 2019 and went down as legends of alpine ski racing. Last season they both returned. Lindsey Vonn set to race again Hirscher is back 41-year old Vonn has had a fairy tale comeback that befits a team of Hollywood scriptwriters. She has had two victories in Downhill this season and is a favourite for gold at the Milan- Cortina Winter Olympics that takes place next month. Last weekend she extended her record as the oldest race winner in the 60-season history of the World Cup circuit. Her 84th career win on the circuit was her record-extending 45th in downhill. She is back on the front cover of ski magazines. Lindsey Vonn \u2013 Cover girl See here for more about the magazine, SNOW . For Marcel Hirscher, 36, it is an altogeth",
-      "pub_date": "Tue, 13 Jan 2026 00:44:08 +0000",
-      "id": "80227e35d2ff",
-      "score": 6,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 1)"
-      },
-      "approved_date": "2026-01-13",
-      "category": "winter-sports",
-      "secondary_categories": [
+        "business-investment",
+        "transportation",
         "hospitality"
-      ]
+      ],
+      "approved_date": "2026-01-15"
     },
     {
-      "source": "The Ski Guru",
-      "title": "Too Many Skiers, Too Much Speed?",
-      "url": "https://www.the-ski-guru.com/2026/01/06/ski-slope-overcrowding-safety/",
-      "description": "What Overcrowded Slopes, High-Speed Lifts & Artificial Snow Mean for Your Safety Too Many Skiers on the Slopes? Crowding, Speed & Safety Explained If you\u2019ve skied during peak weeks in recent seasons, you\u2019ve probably felt it:busier slopes, faster lifts, more people moving at very different speeds \u2014 all at once. While skiing has always involved \u2026 Continue reading \"Too Many Skiers, Too Much Speed?\" The post Too Many Skiers, Too Much Speed? appeared first on The-Ski-Guru .",
-      "content": "What Overcrowded Slopes, High-Speed Lifts & Artificial Snow Mean for Your Safety Too Many Skiers on the Slopes? Crowding, Speed & Safety Explained If you\u2019ve skied during peak weeks in recent seasons, you\u2019ve probably felt it: busier slopes, faster lifts, more people moving at very different speeds \u2014 all at once. While skiing has always involved risk, many skiers are now asking a valid question: Are modern ski resorts becoming less safe \u2014 not because of the mountains, but because of how many of us are on them at the same time? Let\u2019s break this down in a realistic, skier-to-skier way , without panic \u2014 just facts, context, and common sense. 1. When Slopes Get Crowded, Risk Goes Up (It\u2019s Simple Physics) Crowding doesn\u2019t just affect your enjoyment \u2014 it changes how accidents happen . Studies on ski injuries consistently show that: Collision risk increases with slope density Most serious accidents happen on groomed runs , not off-piste The biggest factor is not equipment \u2014 it\u2019s human behaviour",
-      "pub_date": "Tue, 06 Jan 2026 13:39:59 +0000",
-      "id": "7b1a023430a6",
-      "score": 6,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 1)"
-      },
-      "approved_date": "2026-01-08",
-      "category": "safety-incidents",
-      "secondary_categories": [
-        "resort-operations"
-      ]
-    },
-    {
-      "source": "PlanetSKI",
-      "title": "Victims of Crans-Montana Bar Fire Identified",
-      "url": "https://planetski.eu/2026/01/06/victims-of-crans-montana-bar-fire-identified/",
-      "description": "Forty people were killed when a fire tore through a busy venue in Crans-Montana on New Year's Eve. NEW The post Victims of Crans-Montana Bar Fire Identified appeared first on PlanetSKI .",
-      "content": "The victims ranged from 14 to 39 years old. The drinking age at the bar was 16. While the dead had been identified work has been taking place to establish the identities of the injured. Some remain in a critical condition. Swiss police confirmed on Monday that 83 people are still in hospital. Most of the injured suffered severe burns, which in some cases meant they could not be identified. See here for our main news report on the incident: 40 people killed in fire at bar in Crans-Montana Plus a post on the reaction from the snowsport world: Global ski community comes together to support Crans-Montana A criminal investigation has been launched into the French couple that ran the Le Constellation bar. Sparklers on bottles being carried too close to the ceiling were the likely cause of the fire, a preliminary investigation has found. Beatrice Pilloud, Valais canton lead prosecutor, said in a statement that investigators were looking into whether the acoustic foam on the venue\u2019s ceiling wa",
-      "pub_date": "Tue, 06 Jan 2026 02:40:26 +0000",
-      "id": "a0b57e9837d0",
-      "score": 6,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 1)"
-      },
-      "approved_date": "2026-01-08",
-      "category": "resort-operations",
-      "secondary_categories": []
-    },
-    {
-      "source": "SIA - Snowsports Industries America",
-      "title": "K\u00e4stle USA Hires Industry Veteran Justin Heanue to Lead Sales Team",
-      "url": "https://www.snowsports.org/kastle-usa-hires-industry-veteran-justin-heanue-to-lead-sales-team/",
-      "description": "In its ongoing drive to introduce more of K\u00e4stle\u2019s ultra-premium and premium skis to the North American market, K\u00e4stle USA locks in a proven Alpine Sales Director in Justin Heanue. Portsmouth, NH, August 21, 2025 \u2013 Since it was relaunched to the North American market in 2007, K\u00e4stle has won renown as a top manufacturer [\u2026] The post K\u00e4stle USA Hires Industry Veteran Justin Heanue to Lead Sales Team appeared first on Snowsports Industries America .",
-      "content": "In its ongoing drive to introduce more of K\u00e4stle\u2019s ultra-premium and premium skis to the North American market, K\u00e4stle USA locks in a proven Alpine Sales Director in Justin Heanue. Portsmouth, NH, August 21, 2025 \u2013 Since it was relaunched to the North American market in 2007, K\u00e4stle has won renown as a top manufacturer of high-quality and high-performance skis for committed skiers. More recently, the brand has rededicated itself to the ultra premium and premium ski categories. To that order, effective immediately, Justin Heanue is K\u00e4stle USA\u2019s Alpine Sales Director, working alongside President and CEO Steven Poulin in the new Portsmouth headquarters. Heanue joins K\u00e4stle after a lifetime in the industry\u2014as a kid he cleaned rental boots at Pedigree Ski Shop under the supervision of his father. In college, he worked ski shop sales floors and fitted boots. A stint as a tech rep for Nordica followed. But his history with premium and ultra premium brands is most critical to K\u00e4stle\u2019s path for",
-      "pub_date": "Thu, 21 Aug 2025 07:01:00 +0000",
-      "id": "49d7a2d2d62b",
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 2)"
-      },
-      "approved_date": "2026-01-08",
-      "category": "business-investment",
-      "secondary_categories": []
-    },
-    {
-      "source": "PlanetSKI",
-      "title": "13 Year Old Boy is Latest Avalanche Fatality",
-      "url": "https://planetski.eu/2026/01/15/13-year-old-boy-is-latest-avalanche-fatality/",
-      "description": "He was swept into an avalanche barrier in Austria and died. Ten people have died in avalanches in the Alps since last weekend with multiple rescues. NEW The post 13 Year Old Boy is Latest Avalanche Fatality appeared first on PlanetSKI .",
-      "content": "The boy, from the Czech Republic, was skiing off piste in the Austrian resort of Bad Gastein. He was with a friend of similar age when he triggered the snow slide. It was 50m wide and carried the boy 10m into the barrier. Eyewitnesses called the emergency services, and rescue crews were on site within minutes. He was declared dead at the scene despite the efforts of the rescue services to revive him. The incident happened in open terrain above the marked ski runs, where avalanche barriers prevent snow slides from hitting the pistes. Salzburg public prosecutors have opened an investigation into the accident. The mountain rescue chief in central Austria, Gerhard Kremser, has urged people to exercise caution especially above the tree line. Sportgastein, Austria. Image \u00a9 PlanetSKI Last weekend six people died in the French Alps, one in Austria and another in Italy. On Tuesday as ex-Olympic snowboarder, Ueli Kestenholz, died in an avalanche in Switzerland and the young Czech boy has taken t",
-      "pub_date": "Thu, 15 Jan 2026 05:02:51 +0000",
-      "id": "a0a20daf8788",
+      "source": "Unofficial Networks",
+      "title": "Crested Butte Has Narrowed Their New Snowcat\u2019s Name Down To Two Options (Help Them Decide)",
+      "url": "https://unofficialnetworks.com/2026/01/13/crested-butte-snow-plow-name/",
+      "description": "Crested Butte is asking the public to help them name their new snowcat, and they've managed to narrow it down to two options.",
+      "content": "Crested Butte Mountain Resort added a new snowcat to their fleet in December, and while they could simply keep it named \u201csnowcat\u201d or \u201csnowcat #3\u201d, they decided to reach out to the public to help with naming the machine. Originally they asked everyone to drop their name suggestions in the comments, but they\u2019ve since narrowed it down to two choices. The two options for the new snowcat\u2019s name are Pushycat and LeBron. Votes can be placed either in the comments or through a poll in their comments (the poll has three options, the two named above and Winchy McWinch Face, because that\u2019s an absolute necessity) . The winning name is set to be announced next week. View this post on Instagram A post shared by Crested Butte Mountain Resort (@skicrestedbutte) There were quite a few name suggestions that didn\u2019t make the cut, including LePLOWski, McBeer, and Rob Catz (after Rob Katz, the CEO of Vail Resorts) . Make sure to vote before they come to a decision! This Vermont Ski Resort Is Still Dominatin",
+      "pub_date": "Tue, 13 Jan 2026 19:37:54 +0000",
+      "id": "bab3f518cdcb",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
       "score": 8,
       "score_details": {
-        "reason": "Keyword scoring (boost: 1)"
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
       },
-      "approved_date": "2026-01-15",
-      "category": "safety-incidents",
+      "score_method": "keyword",
+      "category": "business-investment",
       "secondary_categories": [
-        "international"
-      ]
-    },
-    {
-      "source": "PlanetSKI",
-      "title": "Another Swiss Canton Bans Pyrotechnic Devices",
-      "url": "https://planetski.eu/2026/01/15/another-swiss-canton-bans-pyrotechnic-devices/",
-      "description": "The Swiss canton of Valais is the latest to ban them in all indoor public places. It follows a fire at a bar in the ski resort of Crans-Montana where 40 people were killed and 116 were injured. NEW The post Another Swiss Canton Bans Pyrotechnic Devices appeared first on PlanetSKI .",
-      "content": "The canton of Vaud was the first to outlaw them and was followed by the canton of Geneva. Switzerland has 26 cantons. The blaze at Le Constellation bar in Crans-Montana is believed to have started when sparklers attached to champagne bottles set light to sound-insulating foam padding on the ceiling. Crans-Montana is in the Valais Canton. See here for PlanetSKI\u2019s coverage of the tragedy: 40 people killed in fire at bar in Crans-Montana Crans-Montana bar not safety checked for five years National day of mourning for Crans-Montana fire victims Co-owners of Crans-Montana bar detained The two co-owners of Le Constallation, French couple Jacques and Jessica Moretti, have been accused of: Manslaughter by negligence Bodily harm by negligence Arson by negligence Jacques Moretti is being held in custody for an initial period of 90 days. His wife has had to surrender her passport and report to police every day. PlanetSKI: Number 1 for digital ski news Your digital platform for ski news, resort in",
-      "pub_date": "Thu, 15 Jan 2026 03:15:00 +0000",
-      "id": "5ff4a75db92c",
-      "score": 6,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 1)"
-      },
-      "approved_date": "2026-01-15",
-      "category": "resort-operations",
-      "secondary_categories": [
-        "safety-incidents"
-      ]
-    },
-    {
-      "source": "SIA - Snowsports Industries America",
-      "title": "The Winter Sports Sustainability Network\u2019s Annual Meeting: A Report from Munich",
-      "url": "https://www.snowsports.org/the-winter-sports-sustainability-networks-annual-meeting-a-report-from-munich/",
-      "description": "Last week, the SIA team attended the Ski Industry Climate Summit, hosted by Atomic, and the Winter Sports Sustainability Network\u2019s (WSN) winter meeting during ISPO in Munich. Over 200 ski industry leaders came together, showcasing remarkable collaboration among the sector\u2019s biggest hardgoods brands \u2013 united to share ideas, data, and best practices. The focus was [\u2026] The post The Winter Sports Sustainability Network\u2019s Annual Meeting: A Report from Munich appeared first on Snowsports Industries Am",
-      "content": "Last week, the SIA team attended the Ski Industry Climate Summit, hosted by Atomic, and the Winter Sports Sustainability Network\u2019s (WSN) winter meeting during ISPO in Munich. Over 200 ski industry leaders came together, showcasing remarkable collaboration among the sector\u2019s biggest hardgoods brands \u2013 united to share ideas, data, and best practices. The focus was clear: the most effective way that the global winter outdoor industry can implement large-scale sustainability and climate action measures is by coming together to collaborate and share the expertise we have. A large part of this urgency is driven by the upcoming EU sustainability regulations, which will enforce stricter requirements on disclosure, traceability, waste, circularity, deforestation, and more. Notably, these regulations affect not only EU-based businesses but also U.S. companies operating in the European market. SIA\u2019s role at the summit was to deepen understanding of these changes, highlight the responsibilities of",
-      "pub_date": "Thu, 12 Dec 2024 00:18:25 +0000",
-      "id": "c0daeacca788",
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 2)"
-      },
-      "approved_date": "2026-01-08",
-      "category": "international",
-      "secondary_categories": []
+        "hospitality"
+      ],
+      "approved_date": "2026-01-15"
     },
     {
       "source": "Unofficial Networks",
       "title": "Passholders\u2019 Paradise: Epic & Ikon Gems Lighting Up Tahoe This January",
-      "url": "https://unofficialnetworks.com/2026/01/08/passholders-paradise-epic-ikon-gems-lighting-up-tahoe-this-january/",
+      "url": "https://unofficialnetworks.com/2026/01/13/passholders-paradise-epic-ikon-gems-lighting-up-tahoe-this-january/",
       "description": "Why Lake Tahoe is the perfect place to use your Epic & Ikon passes this winter.",
-      "content": "If you\u2019re an Epic or Ikon passholder who has had been experiencing underwhelming conditions heading into the heart of the 2026 ski season, it\u2019s high you time to point your skis toward Lake Tahoe. After a slow start to the season, a series of early January storms dumped feet of fresh snow across the region, transforming the Sierra into a powder playground. With bases building and more terrain opening daily, Tahoe\u2019s standout resorts are firing on all cylinders with everything from gladed tree runs to world-class parks and jaw-dropping lake vistas. Here\u2019s why you should take advantage of you Epic & Ikon passes in Tahoe. View this post on Instagram A post shared by Isaac Kaufman (@isaac_a_kaufman) Recent Storms Deliver the Goods Tahoe kicked off 2026 with back-to-back storms in the first week of January, bringing 4-6 feet of snow to upper elevations at spots like Palisades Tahoe and Kirkwood. Palisades reported over a foot in 24 hours during the height of the system, while resorts across t",
-      "pub_date": "Thu, 08 Jan 2026 23:04:27 +0000",
-      "id": "1c44181010e9",
-      "score": 8,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 2)"
-      },
-      "approved_date": "2026-01-10",
-      "category": "resort-operations",
-      "secondary_categories": []
-    },
-    {
-      "source": "Ski Area Management",
-      "title": "Special Report: Swiss Valley: A Michiana Revival",
-      "url": "https://www.saminfo.com/news/sam-headline-news/special-report-swiss-valley-a-michiana-revival",
-      "description": "On the cusp of turning 65, the Wiseman family\u2019s Swiss Valley has done more than persevere, it's found a Perfect future. This is part 1 of Andy Bigford's Revival Road Trip. Knowing what you don\u2019t know is critical to any successful endeavor. It can also help save the life of an endangered ski area in this weather-challenged corner of southwestern Michigan. Jamie Stafne (nee Wiseman), along with her sisters Missy and Susan, was born to a first-generation small ski area operator, the larger-than-lif",
-      "content": "On the cusp of turning 65, the Wiseman family\u2019s Swiss Valley has done more than persevere, it's found a Perfect future. This is part 1 of Andy Bigford's Revival Road Trip. Knowing what you don\u2019t know is critical to any successful endeavor. It can also help save the life of an endangered ski area in this weather-challenged corner of southwestern Michigan. Jamie Stafne (nee Wiseman), along with her sisters Missy and Susan, was born to a first-generation small ski area operator, the larger-than-lif",
-      "pub_date": "Thu, 08 Jan 2026 15:48:54 -0500",
-      "id": "d95041aa77a1",
+      "content": "If you\u2019re an Epic or Ikon passholder who has had been experiencing underwhelming conditions heading into the heart of the 2026 ski season, it\u2019s high you time to point your skis toward Lake Tahoe. After a slow start to the season, a series of early January storms dumped feet of fresh snow across the region, bringing their totals up to 10 feet since Christmas in some areas and transforming the Sierra into a powder playground. With bases building and more terrain opening daily, Tahoe\u2019s standout resorts are firing on all cylinders with everything from gladed tree runs to world-class parks and jaw-dropping lake vistas. With a home base in the Truckee area, skiers and snowboarders can easily reach 12 ski resorts in just 45 minutes, including Palisades and Northstar for Ikon and Epic passholders. Here\u2019s why you should make sure to take advantage of your Epic & Ikon passes in Tahoe this season. View this post on Instagram A post shared by Isaac Kaufman (@isaac_a_kaufman) Recent Storms Deliver ",
+      "pub_date": "Tue, 13 Jan 2026 19:19:36 +0000",
+      "id": "7d00a38cf50c",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
       "score": 7,
       "score_details": {
-        "reason": "Keyword scoring (boost: 2)"
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
       },
-      "approved_date": "2026-01-09",
-      "category": "transportation",
-      "secondary_categories": []
-    },
-    {
-      "source": "Ski Area Management",
-      "title": "Holiday Business Boomed in East, Midwest and Canada, Went Bust in West",
-      "url": "https://www.saminfo.com/news/sam-headline-news/holiday-business-boomed-in-east-midwest-and-canada-went-bust-in-west",
-      "description": "SAM Magazine\u2014Happy Valley, Ore., Jan. 8, 2026\u2014 Killington Resort The two-week 2025-26 holiday period was a tale of haves vs. have-nots. While the East, Midwest, and Canadian Rockies set records with big visitation numbers, the Western U.S. navigated a complex weather pattern that delivered atmospheric rivers in some areas and historically low snowpack in many others. East: A Record-Breaking \u201cBoom\u201d The Northeast emerged as the undisputed winner of the holiday cycle. Fueled by sustained cold and c",
-      "content": "SAM Magazine\u2014Happy Valley, Ore., Jan. 8, 2026\u2014 Killington Resort The two-week 2025-26 holiday period was a tale of haves vs. have-nots. While the East, Midwest, and Canadian Rockies set records with big visitation numbers, the Western U.S. navigated a complex weather pattern that delivered atmospheric rivers in some areas and historically low snowpack in many others. East: A Record-Breaking \u201cBoom\u201d The Northeast emerged as the undisputed winner of the holiday cycle. Fueled by sustained cold and c",
-      "pub_date": "Thu, 08 Jan 2026 14:17:54 -0500",
-      "id": "ab35fdad589d",
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 2)"
-      },
-      "approved_date": "2026-01-09",
-      "category": "canada",
-      "secondary_categories": [
-        "weather-snow",
-        "hospitality"
-      ]
-    },
-    {
-      "source": "The Ski Guru",
-      "title": "\ud83c\uddfa\ud83c\uddf8 Nederland Takes Historic Step Toward Local Ownership of Eldora Mountain Resort",
-      "url": "https://www.the-ski-guru.com/2026/01/08/nederland-eldora-mountain-resort-purchase/",
-      "description": "Nederland Approves $120M Purchase of Eldora Mountain Resort In a landmark decision this week, the Board of Trustees of Nederland, Colorado unanimously voted to approve the town\u2019s purchase of Eldora Mountain Resort for approximately $120 million \u2014 a move that could reshape how regional ski areas are owned and operated. Denver 7 Colorado News (KMGH) Located just west of Nederland in Boulder \u2026 Continue reading \"\ud83c\uddfa\ud83c\uddf8 Nederland Takes Historic Step Toward Local Ownership of Eldora Mountain Resort\" The p",
-      "content": "Nederland Approves $120M Purchase of Eldora Mountain Resort In a landmark decision this week, the Board of Trustees of Nederland, Colorado unanimously voted to approve the town\u2019s purchase of Eldora Mountain Resort for approximately $120 million \u2014 a move that could reshape how regional ski areas are owned and operated. Denver 7 Colorado News (KMGH) Located just west of Nederland in Boulder County, Eldora has long been one of Colorado\u2019s most accessible ski areas for Front Range residents and Denver visitors. The resort was listed for sale by its previous owner, Utah-based POWDR, in 2024. Nederland\u2019s effort to purchase Eldora has been closely followed by local media and community stakeholders for over a year. Wikipedia Eldora-Sam Bass. Colorado Ski Country USA. Nederland Takes Historic Step Toward Local Ownership of Eldora Mountain Resort. What the Vote Means Under the approved plan: Nederland will issue revenue bonds to purchase Eldora \u2014 these bonds are repaid solely from Eldora\u2019s operat",
-      "pub_date": "Thu, 08 Jan 2026 12:36:11 +0000",
-      "id": "d9e7c8635189",
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 1)"
-      },
-      "approved_date": "2026-01-09",
-      "category": "business-investment",
-      "secondary_categories": []
-    },
-    {
-      "source": "SIA - Snowsports Industries America",
-      "title": "Upper Midwest\u2019s premier outdoor & snowsports trade associations merge",
-      "url": "https://www.snowsports.org/upper-midwests-premier-outdoor-snowsports-trade-associations-merge/",
-      "description": "Madison, WI, January 1, 2025\u2013Effective January 1, Midwest Winter Sports Reps Association (MWSRA) and Outdoor Reps Association (ORA) will merge to form Midwest Professional Reps Organization, or M-Pro. The new group will be an all-season resource for sales reps and retailers in outdoor, winter sports, and the various categories that touch them. Founded in the [\u2026] The post Upper Midwest\u2019s premier outdoor & snowsports trade associations merge appeared first on Snowsports Industries America .",
-      "content": "Madison, WI, January 1, 2025\u2013 Effective January 1, Midwest Winter Sports Reps Association (MWSRA) and Outdoor Reps Association (ORA) will merge to form Midwest Professional Reps Organization, or M-Pro. The new group will be an all-season resource for sales reps and retailers in outdoor, winter sports, and the various categories that touch them. Founded in the 70s (MWSRA) and 80s (ORA), the two predecessor organizations have for decades provided trade shows and informational resources to facilitate rep/retailer relationships. With substantial member overlap, the two boards of directors proposed a merger and the combined membership voted overwhelmingly to approve. The new organization is currently planning 4 shows per year, 2 summer and 2 winter, with one per season in Saint Paul, MN and Madison, WI. These show attract retailers from as far west as Nebraska and the Dakotas, south to Missouri, east to Illinois, and north to the Michigan upper peninsula. The association website is configur",
-      "pub_date": "Thu, 02 Jan 2025 20:33:38 +0000",
-      "id": "82f8502a6dfd",
-      "score": 9,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 2)"
-      },
-      "approved_date": "2026-01-08",
-      "category": "business-investment",
-      "secondary_categories": []
-    },
-    {
-      "source": "The Ski Guru",
-      "title": "Telluride Ski Patrol Strike: What\u2019s Happening, What\u2019s Been Agreed \u2014 and Why It Matters",
-      "url": "https://www.the-ski-guru.com/2025/12/28/telluride-ski-patrol-strike-update/",
-      "description": "Telluride Ski Patrol Strike Shuts Down Resort \u2014 What We Know One of Colorado\u2019s most iconic ski resorts has become the focal point of a major labor dispute this winter. The ski patrol strike at Telluride Ski Resort has already led to resort closures during the critical holiday period \u2014 an unusually strong signal of how unresolved workforce issues \u2026 Continue reading \"Telluride Ski Patrol Strike: What\u2019s Happening, What\u2019s Been Agreed \u2014 and Why It Matters\" The post Telluride Ski Patrol Strike: What\u2019s",
-      "content": "Telluride Ski Patrol Strike Shuts Down Resort \u2014 What We Know One of Colorado\u2019s most iconic ski resorts has become the focal point of a major labor dispute this winter. The ski patrol strike at Telluride Ski Resort has already led to resort closures during the critical holiday period \u2014 an unusually strong signal of how unresolved workforce issues are increasingly affecting ski operations in North America. Here\u2019s where things currently stand, what (if anything) has been agreed, and whether similar actions are emerging elsewhere in the U.S. or Canada. The beautiful ski resort of Telluride. Photo: Visit Telluride. Telluride Ski Patrol Strike: What\u2019s Happening, What\u2019s Been Agreed \u2014 and Why It Matters. What Triggered the Telluride Ski Patrol Strike? The dispute involves the Telluride Professional Ski Patrol Association (TPSPA) , which represents the resort\u2019s ski patrollers at Telluride Ski Resort . Contract negotiations between patrol representatives and resort management had been ongoing fo",
-      "pub_date": "Sun, 28 Dec 2025 16:44:42 +0000",
-      "id": "e723bafa4f89",
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 1)"
-      },
-      "approved_date": "2026-01-08",
+      "score_method": "keyword",
       "category": "resort-operations",
-      "secondary_categories": [
-        "safety-incidents",
-        "canada"
-      ]
-    },
-    {
-      "source": "The Ski Guru",
-      "title": "Colorado Ski Resorts Face One of the Weakest Starts on Record",
-      "url": "https://www.the-ski-guru.com/2025/12/28/colorado-ski-resorts-2025-26-season-update/",
-      "description": "Colorado Ski Resorts Face One of the Weakest Starts on Record. Winter 2025\u201326 Season Update The winter season has officially begun in Colorado, but for many of its ski resorts, the start could hardly be described as typical. Historically low snowpack, unusually warm temperatures, and even rain in mountain towns over Christmas have combined to create one of \u2026 Continue reading \"Colorado Ski Resorts Face One of the Weakest Starts on Record\" The post Colorado Ski Resorts Face One of the Weakest Star",
-      "content": "Colorado Ski Resorts Face One of the Weakest Starts on Record. Winter 2025\u201326 Season Update The winter season has officially begun in Colorado , but for many of its ski resorts, the start could hardly be described as typical. Historically low snowpack, unusually warm temperatures, and even rain in mountain towns over Christmas have combined to create one of the weakest early-season openings on record. While January and February still hold the potential to reshape the season, current conditions are raising concerns for ski resorts, travelers, and mountain communities alike. Webcam of the base area of Crested Butte Mountain Resort with some new inches of snow on 28th Decamber 2025. Photo: skicb.com Colorado Ski Resorts Face One of the Weakest Starts on Record . Historic Low Snowpack Across Colorado According to statewide monitoring data, Colorado entered the winter season with snowpack levels around 54% of the historical median \u2014 tied for the lowest start on record . This early deficit i",
-      "pub_date": "Sun, 28 Dec 2025 16:03:15 +0000",
-      "id": "94f4ffa33181",
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 1)"
-      },
-      "approved_date": "2026-01-08",
-      "category": "resort-operations",
-      "secondary_categories": [
-        "weather-snow"
-      ]
-    },
-    {
-      "source": "PlanetSKI",
-      "title": "British Skier Among Six Dead in Multiple Avalanches in French Alps",
-      "url": "https://planetski.eu/2026/01/11/british-skier-is-one-of-six-to-die-in-avalanches-in-french-alps-this-weekend/",
-      "description": "Three people died on Saturday and three more on Sunday. The British fatality was skiing in La Plagne. NEW The post British Skier Among Six Dead in Multiple Avalanches in French Alps appeared first on PlanetSKI .",
-      "content": "It has been a grim weekend and follows heavy snowfall with the authorities advising extreme caution if venturing off piste. In many areas there has been a Level 4 risk, meaning there is a \u2018high\u2019 possibility of avalanches. The British fatality on Sunday in La Plagne was man in his 50s who was caught in an avalanche while skiing off the marked runs in a group. More than 50 rescuers searched for him and found the man buried under 2.5m of snow after nearly an hour of searching. He was pronounced dead at the scene. The authorities say he was not wearing an avalanche transceiver. Elsewhere on Sunday a skier died in an avalanche in Courchevel in Les3Vallees. There was also an avalanche in Orelle in Les3Vallees on Sunday and a victim was taken to the hospital of Saint-Jean-de-Maurienne. The person\u2019s condition has not been released and it is understood the victim was not wearing a transceiver. In Vallorcine near Chamonix a 32-year-old ski paroller skier died after being caught in an avalanche. ",
-      "pub_date": "Sun, 11 Jan 2026 22:47:07 +0000",
-      "id": "dae2a19f5dd5",
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 1)"
-      },
-      "approved_date": "2026-01-12",
-      "category": "safety-incidents",
-      "secondary_categories": [
-        "international",
-        "weather-snow"
-      ]
+      "secondary_categories": [],
+      "approved_date": "2026-01-15"
     },
     {
       "source": "Unofficial Networks",
-      "title": "Chloe Kim\u2019s Olympic Bid At Risk Due To Dislocated Shoulder",
-      "url": "https://unofficialnetworks.com/2026/01/11/chloe-kim-2026-injury/",
-      "description": "While training last week, Chloe Kim suffered an injury that could derail her chances of competing in Italy next month.",
-      "content": "Switzerland \u2014 Getting to the Olympics isn\u2019t an easy thing, even if you\u2019re a two-time gold medalist. A tight window of events means you need to be healthy for that stretch, and an injury can derail everything. That\u2019s currently what Chloe Kim is facing following a nasty crash in the pipe. On Thursday, Chloe Kim shared that she suffered an injury while training at a halfpipe at Laax. It was the second injury she\u2019s suffered this season, as the first one occurred while training at Copper Mountain. This time around, its belioeved that she dislocated her shoulder, which means she needs to undergo an MRI. With the Olympics less than a month away, this could risk her ability to qualify. A recovery time for this type of injury ranges from a couple of weeks to a few months. \u201cThe positive thing is, I have range, I\u2019m not in that much pain, I just don\u2019t want it to keep popping out, which has happened,\u201d said Kim. \u201cI\u2019m just trying to stay really optimistic. I feel really good about where my snowboardi",
-      "pub_date": "Sun, 11 Jan 2026 16:23:51 +0000",
-      "id": "0aeeb0688d51",
-      "score": 7,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 2)"
-      },
-      "approved_date": "2026-01-12",
-      "category": "transportation",
-      "secondary_categories": [
-        "safety-incidents",
-        "hospitality"
-      ]
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "Rocky Mountain National Park Snowboarder & Snowboarder Caught In Avalanche (VIDEO)",
-      "url": "https://unofficialnetworks.com/2026/01/11/rocky-mountain-national-park-snowboarder-snowboarder-caught-in-avalanche-video/",
-      "description": "Always stay vigilant with avalanche forecasting, spacing, and group protocols in the backcountry.",
-      "content": "The following video captured January 10, 2026 documents an human triggered avalanche in within Rocky Mountain National Park . A group of three backcountry skiers/riders was descending the line. They intentionally ski-cut the upper chute to test the slope, which triggered a wind slab avalanche that released and swept clear part of the upper terrain, carrying one member with it. As the third skier entered the untouched lower section of the slope, the snow fractured above him, producing an 8\u201314 inch crown. He was caught, carried downslope, briefly buried, and managed to self-arrest by grabbing a tree \u2014 though the impact dislocated his shoulder in the process. While the other two hurried down to assist their injured partner, another rider was caught in a secondary slide (likely a hangfire triggered by their movement). Fortunately, the group handled the injury, regrouped, and safely made their way out of the area. No other serious injuries were reported. This serves as a stark reminder of h",
-      "pub_date": "Sun, 11 Jan 2026 16:19:57 +0000",
-      "id": "2de55a15bbd2",
-      "score": 7,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 2)"
-      },
-      "approved_date": "2026-01-12",
-      "category": "safety-incidents",
-      "secondary_categories": [
-        "hospitality"
-      ]
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "This Might Be The Wildest Photo Finish In Ski Race History",
-      "url": "https://unofficialnetworks.com/2026/01/11/photo-finish-olympic-ski-cross/",
-      "description": "This ski cross race at the 2014 Sochi Winter Olympics started out pretty normal, but it ended with one of the most dramatic photo finishes in sport history.",
-      "content": "This ski cross race at the 2014 Sochi Winter Olympics started out pretty normal, but it ended with one of the most dramatic photo finishes in sport history, let alone ski racing history. The race was the men\u2019s ski cross quarter-final. The top two finishers would continue to the semi-final, and it looked like Swedish skier Victor Oehling Norberg and Russian skier Egor Korotkov had it locked down heading into the final jump. Unfortunately both Oehling Norberg and Egor Korotkov wiped out alongside Finish skier Jouni Pellinen, leaving the finish line wide open for Swiss skier Armin Niederer. Niederer took first, and the other three went to a photo finish. The photo made it evident that the Russian skier, Korotkov, had taken second, meaning he and Niederer would move on to the semi-finals. Korotkov wound up finishing in 5th overall for the men\u2019s ski cross, and Niederer in 7th place. Terrifying Moment Skier & Her Dog Get Caught In Avalanche (VIDEO) Categories: Russia Olympics Ski Racing Skii",
-      "pub_date": "Sun, 11 Jan 2026 13:42:00 +0000",
-      "id": "d23f70f74e4c",
-      "score": 7,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 2)"
-      },
-      "approved_date": "2026-01-12",
-      "category": "winter-sports",
-      "secondary_categories": [
-        "safety-incidents"
-      ]
-    },
-    {
-      "source": "PlanetSKI",
-      "title": "Three Dead in Avalanches in France",
-      "url": "https://planetski.eu/2026/01/11/three-dead-in-avalanches-in-france/",
-      "description": "Two separate avalanches have claimed the lives of three off-piste skiers in the French Alps. There is a high risk of avalanche across parts of the Alps after a two day snowstorm. NEW The post Three Dead in Avalanches in France appeared first on PlanetSKI .",
-      "content": "In Val d\u2019Isere two French off-piste skiers died after being buried by an avalanche in the Lost Valley in the Bellevarde area of the ski area. They were buried under 2.5m of snow and were not wearing transcievers. The rescue teams located by localising the via their mobile phones and then conducted a probe search in an area measuring 10m by 15m.. The avalanche risk at the time was at Level 4 meaning there was a \u2018high\u2019 risk of avalanche. In another incident in the Areches-Beaufort resort two off piste skiers were caught in an avalanche. One died at the scene and the other is in hospital with serious head injuries. That part of the Alps has seen over 1m of snow in places since Thursday. Heavy snow and high winds have made the situation highly dangerous. We have reported on the snowfall in the rolling PlanetSKI snow report: Heavy snow falls in the Alps The authorities are urging extreme caution as the weather lifts as much of the snow has fallen on an unstable base. In Switzerland there is",
-      "pub_date": "Sun, 11 Jan 2026 01:15:44 +0000",
-      "id": "cf9d70dbb8ae",
+      "title": "This Vermont Ski Resort Is Still Dominating The U.S. Season Snow Totals",
+      "url": "https://unofficialnetworks.com/2026/01/13/season-snow-totals-winners/",
+      "description": "These are the 5 ski areas in the U.S. that have seen the most snow so far this season.",
+      "content": "It\u2019s no secret that this ski season has been a bit lackluster for some areas in the western United States. Many resorts in New England had a much better start than most ski areas in the Rockies or on the Pacific Coast. But as the season has crawled along, most eastern ski resorts have been overtaken in terms of snow totals by the typical powder havens, but one Vermont ski area has stayed at the top. Some ski areas don\u2019t track their season snowfall, but of the ones that do, these are the 5 ski areas in the U.S. that have seen the most snow so far this season. View this post on Instagram A post shared by Jay Peak Resort (@jaypeakresort) The 5 U.S. Ski Resorts That Have Seen The Most Snow This Season 5. Stowe , Vermont \u2013 168 inches this season 36 inch base depth. 15 inch snowfall in the last 7 days. 5 inches in the last 48 hours. 4. Stevens Pass Ski Resort , Washington \u2013 177 inches this season 46 inch base depth. 37 inches in the last 7 days. 0 inches of snowfall in the last 48 hours. 3. ",
+      "pub_date": "Tue, 13 Jan 2026 18:39:05 +0000",
+      "id": "3127bb4e8cca",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
       "score": 10,
       "score_details": {
-        "reason": "Keyword scoring (boost: 1)"
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
       },
-      "approved_date": "2026-01-11",
-      "category": "safety-incidents",
+      "score_method": "keyword",
+      "category": "weather-snow",
       "secondary_categories": [
         "resort-operations",
-        "weather-snow",
-        "international"
-      ]
-    },
-    {
-      "source": "The Ski Guru",
-      "title": "Tourists Arrive, but the Snow Doesn\u2019t: A Worrying Winter Across the Italian Alps",
-      "url": "https://www.the-ski-guru.com/2025/12/20/italian-alps-winter-no-snow-tourism-impact/",
-      "description": "Seiser Alms. Photo: IDM S\u00fcdtirol. One of the best reporting better snow conditions. The post Tourists Arrive, but the Snow Doesn\u2019t: A Worrying Winter Across the Italian Alps appeared first on The-Ski-Guru .",
-      "content": "Tourists Arrive, but Snow Is Missing Across the Italian Alps Introduction The 2025 winter season in the Italian Alps is once again highlighting a difficult and increasingly familiar reality: tourists are arriving on schedule, but snow conditions are not. Skiers may also enjoy sunbathing on a terrace in the wintery landscape of Plan de Corones/Kronplatz, one of the most popular ski resorts of South Tyrol/S\u00fcdtirol. Tourists Arrive, but the Snow Doesn\u2019t: A Worrying Winter Across the Italian Alps. From South Tyrol to Trentino and across the Dolomites, ski resorts are facing closed pistes, rain at altitude, reduced snowpack, and mounting climate-related risks \u2014 all with immediate consequences for tourism and long-term implications for mountain regions. South Tyrol & Trentino: Pistes Closed, Rain Falling at 1,800 Metres In South Tyrol , approximately 25% of ski slopes are currently closed due to insufficient snow cover. Despite peak holiday demand, resorts are struggling to maintain skiable ",
-      "pub_date": "Sat, 20 Dec 2025 16:46:14 +0000",
-      "id": "c0d9e1b8cf61",
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 1)"
-      },
-      "approved_date": "2026-01-08",
-      "category": "international",
-      "secondary_categories": [
-        "weather-snow",
-        "safety-incidents"
-      ]
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "Lindsey Vonn Continues Incredible Comeback With Fourth Podium in Four Downhills",
-      "url": "https://unofficialnetworks.com/2026/01/10/lindsey-vonn-continues-incredible-comeback-with-fourth-podium-in-four-downhills/",
-      "description": "Lindsey Vonn continued her amazing comeback on Saturday, claiming her second downhill World Cup victory of the 2025-26 season.",
-      "content": "Alpine skiing legend Lindsey Vonn continued her extraordinary comeback on Saturday, claiming her second downhill World Cup victory of the 2025-26 season in Zauchensee, Austria. The 41-year-old American, who retired in February 2019 and returned to competition in December 2024 after a partial knee replacement, recorded her 84th career World Cup win with a dominant time of 1:06.24 on a shortened, snowy course. She finished 0.37 seconds ahead of Norway\u2019s Kajsa Vickhoff Lie, while fellow American Jacqueline Wiles took third. \u201cWhat an incredible day!! On the podium again with my teammate Jackie Wiles! Last time we were on the podium together was Cortina 2018 right before the Olympics in Korea. So proud of you Jackie!! You\u2019ve been through so much and fought so hard. Knew you could do it!!\u201d \u2013 Lindsey Vonn The result marks Vonn\u2019s fourth podium in four downhill races this season, further solidifying her lead in the World Cup downhill standings and positioning her as a strong favorite for the Mi",
-      "pub_date": "Sat, 10 Jan 2026 16:51:17 +0000",
-      "id": "21a2d39933ea",
-      "score": 7,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 2)"
-      },
-      "approved_date": "2026-01-11",
-      "category": "winter-sports",
-      "secondary_categories": []
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "Skier Secures First S&S Couloir Send Of The 2025-26 Season",
-      "url": "https://unofficialnetworks.com/2026/01/10/sands-couloir-2026-send/",
-      "description": "The infamous S&S Couloir at Jackson Hole is open for the season, and at least one daring soul has already taken it on.",
-      "content": "Teton Village, Wyoming \u2014 Corbet\u2019s Couloir gets all the hype, but its neighbor is probably the toughest inbounds run not only at Jackson Hole, but maybe the whole country. S&S Couloir required skiers to ride a rock wall down onto the snow and then make a sharp turn to avoid slamming into the rocks. Wile E. Coyote would be proud of you, though. Only the best skiers can put their instincts together for this one. In this video by Killerkilmain\u2019s dad , a skier reportedly is the first to make turns on S&S Couloir for the season. In prior videos, I\u2019ve seen the rock face look a bit snowier. This time around, the skier got a nice base grind out of it. The video is a great showcase of what makes Jackson Hole and its skier different. \u201cWow\u201d is right. View this post on Instagram Brutal Wipeout Captured On Corbet\u2019s Couloir Live Camera Image/Video Credits: Killerkilmain\u2019s dad Categories: Jackson Hole Wyoming Jackson Hole Non-Unofficial Videos Videos",
-      "pub_date": "Sat, 10 Jan 2026 16:12:33 +0000",
-      "id": "18910dab173a",
-      "score": 7,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 2)"
-      },
-      "approved_date": "2026-01-11",
-      "category": "resort-operations",
-      "secondary_categories": []
-    },
-    {
-      "source": "The Ski Guru",
-      "title": "Avalanche at Pila (Aosta Valley): One Person Found Dead Near Pointe de la Pierre",
-      "url": "https://www.the-ski-guru.com/2026/01/10/avalanche-pila-aosta-valley-fatality-pointe-de-la-pierre/",
-      "description": "Avalanche at Pila (Aosta Valley): One Person Found Dead Near Pointe de la Pierre An avalanche above Pila, in Italy\u2019s Aosta Valley, has resulted in one fatality, according to updated reports from Italian media and local authorities. The avalanche occurred in the Pointe de la Pierre area, on steep high-altitude terrain above the ski area and outside the groomed piste \u2026 Continue reading \"Avalanche at Pila (Aosta Valley): One Person Found Dead Near Pointe de la Pierre\" The post Avalanche at Pila (Ao",
-      "content": "Avalanche at Pila (Aosta Valley): One Person Found Dead Near Pointe de la Pierre An avalanche above Pila , in Italy\u2019s Aosta Valley , has resulted in one fatality , according to updated reports from Italian media and local authorities. The avalanche occurred in the Pointe de la Pierre area, on steep high-altitude terrain above the ski area and outside the groomed piste network . After several hours of search and rescue operations, the person involved was located and confirmed dead . Pointe de la Pierre- Peak Visor. Avalanche at Pila (Aosta Valley): One Person Found Dead Near Pointe de la Pierre. Search and Rescue Operations \u2013 Avalanche above Pila Rescue efforts were carried out by Soccorso Alpino Valdostano , with support from SAGF (Italian Finance Police mountain rescue units) and search dog teams . Operations were made particularly challenging by poor visibility and strong winds , which limited helicopter access and required rescuers to proceed on foot in difficult conditions. Authori",
-      "pub_date": "Sat, 10 Jan 2026 15:28:06 +0000",
-      "id": "3d2c19a5ce58",
-      "score": 6,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 1)"
-      },
-      "approved_date": "2026-01-11",
-      "category": "safety-incidents",
-      "secondary_categories": []
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "How Much Should You Expect To Pay For Custom Ski Boots?",
-      "url": "https://unofficialnetworks.com/2026/01/10/how-much-custom-ski-boots/",
-      "description": "This video from Boot Solutions by Powder House does a great job breaking down the different costs involved in custom ski boots.",
-      "content": "Getting a proper pair of ski boots that fits you right, including modifications to the liner, footbed, and shell, is absolutely necessary to ensuring you\u2019re performing at your best and staying comfortable all day long on the slopes. The cost can be scary, but more money spent now almost always means less money spent in the future. So how much exactly should you be prepared to spend? It depends on the person, but this video from Boot Solutions by Powder House does a great job breaking down the different costs. As he explains in the video, there are several parts of getting a properly fitting ski boot that can cost a fair chunk. The first is the ski boot itself, costing between $300-$600 for an entry-level pair and climbing up to $900-$1,200 for a higher-end performance pair. Depending on where you buy the boots, you might have to pay for boot modifications on top of the cost of the boot. Punches are often $30-$50 per punch, and multiple adjustments can cost between $200-$300. Custom foo",
-      "pub_date": "Sat, 10 Jan 2026 12:17:00 +0000",
-      "id": "64db0d0260d8",
-      "score": 7,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 2)"
-      },
-      "approved_date": "2026-01-11",
-      "category": "hospitality",
-      "secondary_categories": []
-    },
-    {
-      "source": "PlanetSKI",
-      "title": "Another Victory for GB\u2019s Kirsty Muir",
-      "url": "https://planetski.eu/2026/01/10/another-victory-for-gbs-kirsty-muir/",
-      "description": "Kirsty Muir has secured the third World Cup victory of her career at the Aspen Freeski Slopestyle World Cup. NEW The post Another Victory for GB\u2019s Kirsty Muir appeared first on PlanetSKI .",
-      "content": "Having qualified for Finals in first place, the 21-year-old Scot held top spot from the first run of the Finals competition. The rest of the field was unable to overhaul her score of 80.62, as Canadians Megan Oldham and Elena Gaskell took second a third spot with scores of 73.02 and 72.90 respectively. Muir\u2019s winning run featured a well put together sequence including her right-side double cork 1080, left-side 720, and closed out with a front-side 630 out. The result marks a seventh career World Cup podium and third victory for Muir, as well as a second podium of the 2025/26 season, following a gold medal winning performance at the Secret Garden. Final Podium Kirsty Muir (GBR) 80.62 \u2013 2. Megan Oldham (CAN) 73.02 \u2013 3. Elena Gaskell (CAN) 72.90 \u201cI\u2019m just very stoked, stoked with how I\u2019m skiing,\u201d said Kirsty. \u201cConditions were slightly tough today, so we just managed to get through it. \u201cI\u2019m just really enjoying myself, enjoying how I\u2019m skiing at the moment \u2013 so everything\u2019s really good.\u201d \u201c",
-      "pub_date": "Sat, 10 Jan 2026 04:43:12 +0000",
-      "id": "738c7ab6387d",
-      "score": 8,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 1)"
-      },
-      "approved_date": "2026-01-10",
-      "category": "winter-sports",
-      "secondary_categories": [
-        "safety-incidents",
-        "canada",
         "hospitality"
-      ]
-    },
-    {
-      "source": "PlanetSKI",
-      "title": "Co-Owner of Crans-Montana Bar Detained As Switzerland Remembers",
-      "url": "https://planetski.eu/2026/01/10/co-owner-of-crans-montana-bar-detained/",
-      "description": "40 people died in the fire at a bar in the ski resort on New Year's Eve. The detention came as Switzerland held a national day of mourning. UPDATED The post Co-Owner of Crans-Montana Bar Detained As Switzerland Remembers appeared first on PlanetSKI .",
-      "content": "Swiss prosecutors said Jacques Moretti, a French national, was a potential flight risk and might flee the country. He and his wife Jessica, who is also French, are being investigated for manslaughter by negligence, bodily harm by negligence and arson by negligence. The blaze at Le Constellation bar in Crans-Montana left another 116 people injured. 40 people killed in fire at bar in Crans-Montana The fire is believed to have been started by sparklers in champagne bottles raised too close to the ceiling during celebrations. It emerged this week that the bar in the popular ski resort had not undergone safety checks for five years. Crans-Montana bar not safety checked for five years Romain Jordan, who represents some of the families, said earlier this week the \u201cstaggering number of breaches and shortcomings in the inspections raises the question of whether the municipality should be investigated with even greater urgency\u201d. The couple were questioned on Friday as Switzerland held a national",
-      "pub_date": "Sat, 10 Jan 2026 01:08:07 +0000",
-      "id": "780d8d1a8a88",
-      "score": 6,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 1)"
-      },
-      "approved_date": "2026-01-10",
-      "category": "transportation",
-      "secondary_categories": [
-        "safety-incidents"
-      ]
-    },
-    {
-      "source": "PlanetSKI",
-      "title": "Two People Die in Avalanches in Italy",
-      "url": "https://planetski.eu/2026/01/03/two-people-die-in-avalanches-in-italy/",
-      "description": "The accidents happened in Piedmont and in the north eastern Italian region of Veneto. Poor weather hindered rescue efforts. The post Two People Die in Avalanches in Italy appeared first on PlanetSKI .",
-      "content": "A first avalanche hit the southwest Alpine Maira Valley, near the French border in the Italian region of Piedmont. It killed one person and injured two others. One of them is in critical condition. Rescue teams had to set out on foot as strong winds prevented helicopters from taking off. In the north eastern Italian region of Veneto, an avalanche on the Vajo Gabene slope in the Small Dolomites killed a 50-year-old ski mountaineer. Rescue teams reached him by helicopter but were unable to save him. A combination of heavy snowfall and strong winds has raised avalanche risks across some parts of the Alps in recent days. A second avalanche occurred near Pragelato \u2013 a ski area about 60 km to the west of Turin. A woman caught in the avalanche was able to free herself, but was unable to move because of injuries. Rescue teams were working to evacuate her, with helicopters again limited by adverse weather conditions. Authorities said they were monitoring reports of a third avalanche in Piedmont",
-      "pub_date": "Sat, 03 Jan 2026 07:14:56 +0000",
-      "id": "b858c560a7f4",
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 1)"
-      },
-      "approved_date": "2026-01-08",
-      "category": "safety-incidents",
-      "secondary_categories": [
-        "international",
-        "weather-snow"
-      ]
-    },
-    {
-      "source": "The Ski Guru",
-      "title": "Madonna di Campiglio Introduces Daily Ski Pass Limits: A First for Major Italian Resorts",
-      "url": "https://www.the-ski-guru.com/2025/12/29/madonna-di-campiglio-ski-pass-limit/",
-      "description": "Madonna di Campiglio Introduces Daily Ski Pass Limits For the first time, Madonna di Campiglio is introducing a daily capacity limit on ski passes, marking an important shift in how Alpine resorts are addressing overcrowding, safety, and guest experience during peak periods. According to Corriere del Trentino, the resort has set a maximum threshold of 14,000 daily ski pass entries during the \u2026 Continue reading \"Madonna di Campiglio Introduces Daily Ski Pass Limits: A First for Major Italian Reso",
-      "content": "Madonna di Campiglio Introduces Daily Ski Pass Limits For the first time, Madonna di Campiglio is introducing a daily capacity limit on ski passes, marking an important shift in how Alpine resorts are addressing overcrowding, safety, and guest experience during peak periods. According to Corriere del Trentino , the resort has set a maximum threshold of 14,000 daily ski pass entries during the busiest hours of the day, in an effort to better manage skier flows on the mountain. Why a Cap on Ski Passes? The reasoning is refreshingly straightforward. Resort management summed it up with a simple analogy: \u201cA restaurant with 200 seats cannot serve 300 people.\u201d The Dolomiti di Brenta. Photo: Visit Trentino. Madonna di Campiglio. Madonna di Campiglio Introduces Daily Ski Pass Limits: A First for Major Italian Resorts. Applied to skiing, the message is clear: pistes, lifts, and mountain services have a natural capacity limit . When that limit is exceeded, the experience deteriorates for everyone",
-      "pub_date": "Mon, 29 Dec 2025 19:08:52 +0000",
-      "id": "263b2adba13a",
-      "score": 8,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 1)"
-      },
-      "approved_date": "2026-01-08",
-      "category": "resort-operations",
-      "secondary_categories": [
-        "safety-incidents"
-      ]
-    },
-    {
-      "source": "The Ski Guru",
-      "title": "West Coast Ski Resorts: From a Slow Start to Extreme Swings",
-      "url": "https://www.the-ski-guru.com/2025/12/29/west-coast-ski-resorts-winter-update/",
-      "description": "Mammoth, Tahoe, Whistler & the Pacific Coast \u2014 Winter Update West Coast Ski Resorts See Extreme Swings as Winter Takes Hold After a hesitant and uneven start to winter, West Coast ski resorts in the United States and Canada are now experiencing some of the most dramatic weather swings of the season \u2014 from drought-like conditions to intense snowstorms, \u2026 Continue reading \"West Coast Ski Resorts: From a Slow Start to Extreme Swings\" The post West Coast Ski Resorts: From a Slow Start to Extreme Swi",
-      "content": "Mammoth, Tahoe, Whistler & the Pacific Coast \u2014 Winter Update West Coast Ski Resorts See Extreme Swings as Winter Takes Hold After a hesitant and uneven start to winter, West Coast ski resorts in the United States and Canada are now experiencing some of the most dramatic weather swings of the season \u2014 from drought-like conditions to intense snowstorms, rapid snowpack gains, and heightened avalanche risk. This volatility is shaping operations, safety decisions, and traveler expectations across the Pacific mountain corridor. Mammoth, Tahoe, Whistler & the Pacific Coast \u2014 Winter Update. Mammoth Mountain: Big Snow Comes With Big Risk At Mammoth Mountain , the season flipped almost overnight. After a slow early December, powerful Sierra Nevada storms delivered several feet of snow in a short period , dramatically improving base depths and terrain coverage. Mammoth\u2019s high elevation allowed it to capitalize quickly on the storms, pushing the resort back into mid-winter conditions. However, the",
-      "pub_date": "Mon, 29 Dec 2025 18:53:52 +0000",
-      "id": "72afaeeba552",
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 1)"
-      },
-      "approved_date": "2026-01-08",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "safety-incidents",
-        "canada",
-        "hospitality"
-      ]
-    },
-    {
-      "source": "Ski Area Management",
-      "title": "Avalanche Kills Mammoth Mountain Ski Patroller",
-      "url": "https://www.saminfo.com/news/sam-headline-news/avalanche-kills-mammoth-mountain-ski-patroller",
-      "description": "SAM Magazine\u2014Mono County, Calif., Dec. 29, 2025\u2014A 30-year-old Mammoth Mountain ski patroller died Sunday from injuries sustained in an avalanche on Friday. One other patroller was injured in the incident, which occurred about 7:30 a.m., Dec. 26, on Lincoln Mountain, while the patrollers were conducting avalanche mitigation work. After both ski patrol members were caught in the slide, one was transported to Mammoth Hospital where they had surgery and are in recovery, according to local news repor",
-      "content": "SAM Magazine\u2014Mono County, Calif., Dec. 29, 2025\u2014A 30-year-old Mammoth Mountain ski patroller died Sunday from injuries sustained in an avalanche on Friday. One other patroller was injured in the incident, which occurred about 7:30 a.m., Dec. 26, on Lincoln Mountain, while the patrollers were conducting avalanche mitigation work. After both ski patrol members were caught in the slide, one was transported to Mammoth Hospital where they had surgery and are in recovery, according to local news repor",
-      "pub_date": "Mon, 29 Dec 2025 13:45:03 -0500",
-      "id": "ddc4c70d7b3e",
-      "score": 7,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 2)"
-      },
-      "approved_date": "2026-01-09",
-      "category": "safety-incidents",
-      "secondary_categories": [
-        "resort-operations"
-      ]
-    },
-    {
-      "source": "The Ski Guru",
-      "title": "Glaciers Are No Longer \u201cStable\u201d: What Alpine Authorities Are Being Told to Do About It",
-      "url": "https://www.the-ski-guru.com/2025/12/22/glacial-periglacial-risk-alps/",
-      "description": "Glacial and Periglacial Risk in the Alps: What Authorities Are Being Told to Do For decades, glaciers in the Alps were treated as slow, predictable features of the mountain landscape. Today, that assumption no longer holds. A new technical document published by Fondazione Montagna Sicura, in collaboration with Italy\u2019s Civil Protection system and scientific partners, makes this \u2026 Continue reading \"Glaciers Are No Longer \u201cStable\u201d: What Alpine Authorities Are Being Told to Do About It\" The post Gla",
-      "content": "Glacial and Periglacial Risk in the Alps: What Authorities Are Being Told to Do For decades, glaciers in the Alps were treated as slow, predictable features of the mountain landscape . Today, that assumption no longer holds. A new technical document published by Fondazione Montagna Sicura , in collaboration with Italy\u2019s Civil Protection system and scientific partners, makes this very clear: glacial and periglacial areas are becoming more unstable, more unpredictable, and more dangerous \u2014 and everyone involved in mountain management needs to adapt. The report, \u201cGlacial and Periglacial Risk in Alpine Environments \u2013 A Methodological Framework\u201d , is not written for tourists. It is written for the people responsible for keeping mountain regions safe \u2014 and its recommendations reveal how deeply climate change is reshaping the Alps. Photo: Mauro Hernandez. Unsplash. Glaciers Are No Longer \u201cStable\u201d: What Alpine Authorities Are Being Told to Do About It. The Core Message: Risk Is No Longer Excep",
-      "pub_date": "Mon, 22 Dec 2025 21:04:16 +0000",
-      "id": "7384b95ea4ca",
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 1)"
-      },
-      "approved_date": "2026-01-08",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "international"
-      ]
-    },
-    {
-      "source": "SIA - Snowsports Industries America",
-      "title": "Protect the U.S. Winter Outdoor Industry from Harmful Tariffs",
-      "url": "https://www.snowsports.org/protect-the-u-s-winter-outdoor-industry-from-harmful-tariffs/",
-      "description": "As the winter season begins, burdensome tariffs are currently applied to key products essential to winter sports participation. These unnecessary tariffs act as a direct tax on our consumers, discouraging them from purchasing new gear and participating in winter outdoor sports. This, in turn, threatens the health of the outdoor recreation economy, which generates $1.2 [\u2026] The post Protect the U.S. Winter Outdoor Industry from Harmful Tariffs appeared first on Snowsports Industries America .",
-      "content": "As the winter season begins, burdensome tariffs are currently applied to key products essential to winter sports participation. These unnecessary tariffs act as a direct tax on our consumers, discouraging them from purchasing new gear and participating in winter outdoor sports. This, in turn, threatens the health of the outdoor recreation economy, which generates $1.2 trillion for the US economy, and the economic stability of our small and medium-sized businesses and local retailers. Please send a note to your Congressperson below, urging them to help eliminate the tariffs on winter outdoor gear. Take Action Now! It\u2019s Easy, Here\u2019s How: Send a letter to your congressperson. We\u2019ve made it very easy with a few clicks. Personal letters are the most powerful, so please edit the copy however you wish by clicking on the yellow \u201cedit message\u201d button or include a personal story about the impacts of the tariffs on your business, employees, etc., at the \u201cshare your story\u201d prompt. Make a phone cal",
-      "pub_date": "Mon, 17 Nov 2025 20:13:01 +0000",
-      "id": "a0ba8c1d600e",
-      "score": 9,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 2)"
-      },
-      "approved_date": "2026-01-08",
-      "category": "resort-operations",
-      "secondary_categories": []
+      ],
+      "approved_date": "2026-01-15"
     }
   ]
 }
