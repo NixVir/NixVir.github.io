@@ -793,6 +793,26 @@
         "business-investment",
         "transportation"
       ]
+    },
+    {
+      "source": "Snow Industry News",
+      "title": "Lower Austrian Ski Resorts Record 190,000 Visits During The Christmas Holidays.",
+      "url": "https://www.snowindustrynews.com/articles/2026/jan/lower-austrian-ski-resorts-record-190-000-visits-during-the-christmas-holidays/",
+      "content": "On January 6, 2026, the last day of the Christmas holidays, 15 ski resorts in Lower Austria were operating with 51 (out of a possible 63) lifts, offering a total of 71 kilometers of slopes \u2013 plus the Rax cable car and the Schneeberg chairlift for hiking. Several ski resorts were able to significantly expand their slope offerings during the second week of the Christmas holidays, such as Gemeindealpe Mitterbach and Erlebnisalm M\u00f6nichkirchen. The most popular were the Hochkar cable cars and the Semmering Hirschenkogel with its traditional tobogganing and night skiing. \u201cThese Christmas holidays were a fantastic start to the ski season! What I find particularly pleasing is that many people are returning to skiing this year after a longer break \u2013 this is evident, for example, in ski rentals or participation in club ski courses. The Lower Austrian Mountain Experience Pass, the joint season ticket for ten ski resorts, has already been used an average of four times, meaning that families with c",
+      "pub_date": "2026-01-17",
+      "id": "1e76838843dc",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 3,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [
+        "business-investment"
+      ]
     }
   ]
 }
