@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Western North America Snowpack Conditions | NixVir</title>
+
+    <!-- Leaflet for interactive maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics (respects Do Not Track) -->
+    <script>
+        var dnt = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+        var doNotTrack = dnt === "1" || dnt === "yes";
+        if (!doNotTrack) {
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-E2QD5PNRWE';
+            document.head.appendChild(script);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-E2QD5PNRWE');
+        }
+    </script>
+
+    <style>
+        :root {
+            --bg-deep: #0a0e14;
+            --bg-card: #111820;
+            --bg-elevated: #1a2230;
+            --border: #2a3444;
+            --border-light: #3a4454;
+            --text-primary: #e8ecf2;
+            --text-secondary: #8892a2;
+            --text-muted: #5c6678;
+            --accent-cold: #3b82f6;
+            --accent-cold-bright: #60a5fa;
+            --accent-warm: #f97316;
+            --accent-warm-bright: #fb923c;
+            --geo-fill: #1e293b;
+            --geo-stroke: #334155;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+
+            /* Snowpack color scale */
+            --swe-drought: #dc2626;
+            --swe-below: #f97316;
+            --swe-low: #facc15;
+            --swe-normal: #22c55e;
+            --swe-above: #3b82f6;
+            --swe-high: #8b5cf6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 15% 10%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 85% 90%, rgba(249, 115, 22, 0.04) 0%, transparent 50%),
+                var(--bg-deep);
+            z-index: -1;
+        }
+
+        /* Site Banner Header */
+        .site-banner {
+            background-image: url('/images/mtnsky.jpg');
+            background-size: cover;
+            background-position: center bottom;
+            position: relative;
+        }
+
+        .site-banner-overlay {
+            background: rgba(0, 0, 0, 0.6);
+            padding-bottom: 1rem;
+        }
+
+        .site-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1700px;
+            margin: 0 auto;
+        }
+
+        .site-nav .logo {
+            height: 40px;
+        }
+
+        .site-nav .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .site-nav .nav-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .site-nav .nav-links a:hover {
+            color: white;
+        }
+
+        .dashboard {
+            max-width: 1700px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .header-left h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.35rem;
+        }
+
+        .header-left h1 span {
+            color: var(--accent-cold-bright);
+        }
+
+        .header-left .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--text-primary);
+        }
+
+        .update-time {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Summary Cards */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+        }
+
+        .summary-card h3 {
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .summary-card .value {
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .summary-card .detail {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-top: 0.25rem;
+        }
+
+        .value-drought { color: var(--swe-drought); }
+        .value-below { color: var(--swe-below); }
+        .value-low { color: var(--swe-low); }
+        .value-normal { color: var(--success); }
+        .value-above { color: var(--accent-cold-bright); }
+
+        /* Main Layout */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 1200px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Map Container */
+        .map-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            min-height: 600px;
+        }
+
+        .map-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .map-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .map-filters {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--border-light);
+            color: var(--text-primary);
+        }
+
+        .filter-btn.active {
+            background: var(--accent-cold);
+            border-color: var(--accent-cold);
+            color: white;
+        }
+
+        #map {
+            width: 100%;
+            height: 500px;
+            border-radius: 8px;
+            z-index: 1;
+        }
+
+        /* Leaflet popup styling */
+        .leaflet-popup-content-wrapper {
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        .leaflet-popup-tip {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+        }
+
+        .leaflet-popup-content {
+            margin: 0.75rem 1rem;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .leaflet-popup-content h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .leaflet-container {
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        /* Custom station marker */
+        .station-marker {
+            border-radius: 50%;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .station-marker:hover {
+            transform: scale(1.3);
+            border-color: white;
+            border-width: 2px;
+        }
+
+        /* Layer control styling */
+        .leaflet-control-layers {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+        }
+
+        .leaflet-control-layers-expanded {
+            padding: 8px 12px;
+        }
+
+        /* Watershed tooltip */
+        .watershed-tooltip {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            font-size: 0.8rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        /* Permanent snowbasin labels */
+        .snowbasin-label {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            color: #fff;
+            font-size: 11px;
+            font-weight: bold;
+            text-align: center;
+            text-shadow:
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000,
+                0 0 4px rgba(0,0,0,0.9);
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        /* Legend */
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .sidebar-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+        }
+
+        .sidebar-card h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* State List */
+        .state-list {
+            max-height: 350px;
+            overflow-y: auto;
+        }
+
+        .state-row {
+            display: grid;
+            grid-template-columns: 50px 1fr 60px;
+            gap: 0.75rem;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid var(--border);
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .state-row:hover {
+            background: var(--bg-elevated);
+            margin: 0 -0.5rem;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            border-radius: 6px;
+        }
+
+        .state-row:last-child {
+            border-bottom: none;
+        }
+
+        .state-code {
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .state-bar {
+            height: 8px;
+            background: var(--bg-elevated);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .state-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.3s;
+        }
+
+        .state-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            text-align: right;
+        }
+
+        /* State Detail Panel */
+        .state-detail-panel {
+            max-height: 450px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .state-station-list {
+            flex: 1;
+            overflow-y: auto;
+            margin-top: 0.5rem;
+        }
+
+        .station-row {
+            display: grid;
+            grid-template-columns: 1fr 50px 60px;
+            gap: 0.5rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+            align-items: center;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        .station-row:hover {
+            background: var(--bg-elevated);
+            margin: 0 -0.5rem;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            border-radius: 4px;
+        }
+
+        .station-row:last-child {
+            border-bottom: none;
+        }
+
+        .station-row-name {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .station-row-swe {
+            font-family: 'JetBrains Mono', monospace;
+            text-align: right;
+            color: var(--text-secondary);
+        }
+
+        .station-row-pct {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            text-align: right;
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: absolute;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            font-size: 0.85rem;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 1000;
+            max-width: 280px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .tooltip.visible {
+            opacity: 1;
+        }
+
+        .tooltip h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .tooltip-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.2rem 0;
+        }
+
+        .tooltip-label {
+            color: var(--text-secondary);
+        }
+
+        .tooltip-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
+        }
+
+        /* Station Details Panel */
+        .station-details {
+            display: none;
+        }
+
+        .station-details.visible {
+            display: block;
+        }
+
+        .station-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .station-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .station-state {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .close-btn {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .close-btn:hover {
+            background: var(--danger);
+            border-color: var(--danger);
+            color: white;
+        }
+
+        .station-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .metric-box {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .metric-label {
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Data Source */
+        .data-source {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            text-align: center;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .data-source a {
+            color: var(--accent-cold);
+            text-decoration: none;
+        }
+
+        .data-source a:hover {
+            text-decoration: underline;
+        }
+
+        /* Loading */
+        .loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 400px;
+            gap: 1rem;
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent-cold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-elevated);
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-light);
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <!-- Site Banner -->
+    <div class="site-banner">
+        <div class="site-banner-overlay">
+            <nav class="site-nav">
+                <a href="/">
+                    <img src="/images/nixvir-logo.svg" alt="NixVir" class="logo">
+                </a>
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/snow-cover.html">Snow Cover</a>
+                    <a href="/dashboard.html">Dashboard</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="dashboard">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1>Western North America <span>Snowpack</span> Conditions</h1>
+                <p class="subtitle">SNOTEL + BC Snow Survey | Snow Water Equivalent vs. Historical Median</p>
+            </div>
+            <div class="header-right">
+                <a href="/snow-cover.html" class="back-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Back to Snow Cover
+                </a>
+                <span class="update-time" id="update-time">Loading...</span>
+            </div>
+        </header>
+
+        <!-- Summary Cards -->
+        <div class="summary-grid" id="summary-cards">
+            <div class="loading">
+                <div class="loading-spinner"></div>
+                <span>Loading data...</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Map -->
+            <div class="map-container">
+                <div class="map-header">
+                    <h2 class="map-title">Snow Monitoring Stations</h2>
+                    <div class="map-filters">
+                        <button class="filter-btn active" data-filter="all">All Stations</button>
+                        <button class="filter-btn" data-filter="drought">Drought (&lt;50%)</button>
+                        <button class="filter-btn" data-filter="below">Below Normal</button>
+                        <button class="filter-btn" data-filter="normal">Normal</button>
+                        <button class="filter-btn" data-filter="above">Above Normal</button>
+                        <span style="border-left: 1px solid var(--border); margin: 0 0.5rem; height: 24px;"></span>
+                        <button class="filter-btn active" id="toggle-stations" title="Toggle US SNOTEL stations">US SNOTEL</button>
+                        <button class="filter-btn active" id="toggle-bc-stations" title="Toggle BC snow stations">BC Stations</button>
+                    </div>
+                </div>
+                <div id="map"></div>
+                <div class="legend">
+                    <span style="color: var(--text-secondary); font-size: 0.8rem; margin-right: 0.5rem;">% of Normal:</span>
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background: var(--swe-drought)"></div>
+                        <span>&lt;50%</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background: var(--swe-below)"></div>
+                        <span>50-75%</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background: var(--swe-low)"></div>
+                        <span>75-90%</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background: var(--swe-normal)"></div>
+                        <span>90-110%</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background: var(--swe-above)"></div>
+                        <span>110-130%</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background: var(--swe-high)"></div>
+                        <span>&gt;130%</span>
+                    </div>
+                    <div class="legend-item" style="margin-left: 1rem; border-left: 1px solid var(--border); padding-left: 1rem;">
+                        <div style="width: 20px; height: 12px; background: #475569; border-radius: 2px; border: 1px solid #333;"></div>
+                        <span>No data</span>
+                    </div>
+                    <div class="legend-item" style="margin-left: 1rem; border-left: 1px solid var(--border); padding-left: 1rem;">
+                        <div class="legend-dot" style="background: #06b6d4; border: 2px solid #0891b2;"></div>
+                        <span>BC Station</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Selected Station Details -->
+                <div class="sidebar-card station-details" id="station-details">
+                    <div class="station-header">
+                        <div>
+                            <div class="station-name" id="station-name">-</div>
+                            <div class="station-state" id="station-location">-</div>
+                        </div>
+                        <button class="close-btn" onclick="closeStationDetails()">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 6L6 18M6 6l12 12"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="station-metrics">
+                        <div class="metric-box">
+                            <div class="metric-label">Snow Water Equiv.</div>
+                            <div class="metric-value" id="station-swe">-</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-label">% of Median</div>
+                            <div class="metric-value" id="station-pct">-</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-label">Elevation</div>
+                            <div class="metric-value" id="station-elev">-</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-label">Station ID</div>
+                            <div class="metric-value" id="station-id">-</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- State Summary -->
+                <div class="sidebar-card">
+                    <h2>Snowpack by State</h2>
+                    <div class="state-list" id="state-list">
+                        <div class="loading">
+                            <div class="loading-spinner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- State Detail Panel (shows stations when state is clicked) -->
+                <div class="sidebar-card state-detail-panel" id="state-detail-panel" style="display: none;">
+                    <div class="station-header">
+                        <div>
+                            <div class="station-name" id="state-detail-name">-</div>
+                            <div class="station-state" id="state-detail-summary">-</div>
+                        </div>
+                        <button class="close-btn" onclick="closeStateDetail()">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 6L6 18M6 6l12 12"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="state-station-list" id="state-station-list">
+                        <!-- Station rows will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Source -->
+        <div class="data-source">
+            Data source: <a href="https://www.nrcs.usda.gov/wps/portal/wcc/home/" target="_blank">NRCS National Water and Climate Center</a> |
+            Baseline: 1991-2020 Median |
+            Updated daily
+        </div>
+    </div>
+
+    <!-- Tooltip -->
+    <div class="tooltip" id="tooltip"></div>
+
+    <script>
+        // Global data and map objects
+        let snotelData = null;
+        let bcSnowData = null;
+        let map = null;
+        let stationMarkers = [];
+        let stationLayerGroup = null;
+        let bcStationLayerGroup = null;
+        let watershedLayer = null;
+        let currentFilter = 'all';
+        let selectedState = null;
+
+        // Color scale for snowpack percentage
+        function getSnowpackColor(pct) {
+            if (pct === null || pct === undefined) return '#475569';
+            if (pct < 50) return getComputedStyle(document.documentElement).getPropertyValue('--swe-drought').trim();
+            if (pct < 75) return getComputedStyle(document.documentElement).getPropertyValue('--swe-below').trim();
+            if (pct < 90) return getComputedStyle(document.documentElement).getPropertyValue('--swe-low').trim();
+            if (pct <= 110) return getComputedStyle(document.documentElement).getPropertyValue('--swe-normal').trim();
+            if (pct <= 130) return getComputedStyle(document.documentElement).getPropertyValue('--swe-above').trim();
+            return getComputedStyle(document.documentElement).getPropertyValue('--swe-high').trim();
+        }
+
+        function getSnowpackClass(pct) {
+            if (pct === null || pct === undefined) return '';
+            if (pct < 50) return 'value-drought';
+            if (pct < 90) return 'value-below';
+            if (pct <= 110) return 'value-normal';
+            return 'value-above';
+        }
+
+        // Load data
+        async function loadData() {
+            try {
+                // Load both US SNOTEL and BC snow data
+                const [snotelResponse, bcResponse] = await Promise.all([
+                    fetch('/data/snotel-snowpack.json'),
+                    fetch('/data/bc-snow-stations.json').catch(() => null)
+                ]);
+
+                snotelData = await snotelResponse.json();
+
+                // BC data is optional - may not be available
+                if (bcResponse && bcResponse.ok) {
+                    bcSnowData = await bcResponse.json();
+                    console.log(`Loaded ${bcSnowData.stations.length} BC stations`);
+                }
+
+                renderSummaryCards();
+                initMap();
+                renderStateList();
+
+                // Update timestamp
+                const generated = new Date(snotelData.generated);
+                document.getElementById('update-time').textContent =
+                    `Updated: ${generated.toLocaleDateString()} ${generated.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`;
+
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.getElementById('summary-cards').innerHTML =
+                    '<div class="summary-card"><p>Error loading data. Please try again later.</p></div>';
+            }
+        }
+
+        // Render summary cards
+        function renderSummaryCards() {
+            const stats = snotelData.statistics.overall;
+            const container = document.getElementById('summary-cards');
+
+            // Calculate drought stations (below 50%)
+            const droughtStations = snotelData.stations.filter(s => s.pct_median !== null && s.pct_median < 50).length;
+
+            container.innerHTML = `
+                <div class="summary-card">
+                    <h3>Current Snowpack</h3>
+                    <div class="value ${getSnowpackClass(stats.mean_pct)}">${stats.mean_pct}%</div>
+                    <div class="detail">of historical average (1991-2020)</div>
+                </div>
+                <div class="summary-card">
+                    <h3>Active SNOTEL Stations</h3>
+                    <div class="value">${stats.count}</div>
+                    <div class="detail">${snotelData.stations.length} stations in network</div>
+                </div>
+                <div class="summary-card">
+                    <h3>Stations Below Normal</h3>
+                    <div class="value value-below">${stats.below_normal}</div>
+                    <div class="detail">${Math.round(100 * stats.below_normal / stats.count)}% have &lt;90% snowpack</div>
+                </div>
+                <div class="summary-card">
+                    <h3>Stations at Normal</h3>
+                    <div class="value value-normal">${stats.normal}</div>
+                    <div class="detail">${Math.round(100 * stats.normal / stats.count)}% have 90-110% snowpack</div>
+                </div>
+                <div class="summary-card">
+                    <h3>Stations Above Normal</h3>
+                    <div class="value value-above">${stats.above_normal}</div>
+                    <div class="detail">${Math.round(100 * stats.above_normal / stats.count)}% have &gt;110% snowpack</div>
+                </div>
+            `;
+        }
+
+        // Render state list
+        function renderStateList() {
+            const byState = snotelData.statistics.by_state;
+            const container = document.getElementById('state-list');
+
+            // Sort by mean percentage (ascending = worst first)
+            const sortedStates = Object.entries(byState)
+                .sort((a, b) => a[1].mean_pct - b[1].mean_pct);
+
+            let html = sortedStates.map(([state, data]) => `
+                <div class="state-row" onclick="filterByState('${state}')">
+                    <span class="state-code">${state}</span>
+                    <div class="state-bar">
+                        <div class="state-bar-fill" style="width: ${Math.min(data.mean_pct, 150)}%; background: ${getSnowpackColor(data.mean_pct)}"></div>
+                    </div>
+                    <span class="state-value ${getSnowpackClass(data.mean_pct)}">${data.mean_pct}%</span>
+                </div>
+            `).join('');
+
+            // Add BC if data is available
+            if (bcSnowData && bcSnowData.statistics) {
+                const bcStats = bcSnowData.statistics;
+                const meanSWE = Math.round(bcStats.mean_swe_mm / 25.4 * 10) / 10; // Convert to inches
+                html += `
+                    <div class="state-row" style="margin-top: 0.5rem; border-top: 1px solid var(--border); padding-top: 0.5rem;" onclick="filterByState('BC')">
+                        <span class="state-code" style="color: #06b6d4;">BC</span>
+                        <div class="state-bar">
+                            <div class="state-bar-fill" style="width: 100%; background: #06b6d4; opacity: 0.6;"></div>
+                        </div>
+                        <span class="state-value" style="color: #06b6d4;" title="${bcStats.count} stations reporting">${meanSWE}" avg</span>
+                    </div>
+                `;
+            }
+
+            container.innerHTML = html;
+        }
+
+        // Initialize Leaflet map
+        function initMap() {
+            // Center on western North America (includes BC)
+            map = L.map('map', {
+                center: [48, -118],
+                zoom: 5,
+                minZoom: 3,
+                maxZoom: 12
+            });
+
+            // Terrain basemap with geographic features
+            // Using Stadia Stamen Terrain (free, shows elevation/terrain)
+            const terrainLayer = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_terrain/{z}/{x}/{y}{r}.png', {
+                maxZoom: 18,
+                attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://stamen.com/">Stamen Design</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            });
+
+            // Alternative: ESRI World Topo (more detailed)
+            const topoLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+                maxZoom: 18,
+                attribution: 'Tiles &copy; Esri'
+            });
+
+            // Satellite view option
+            const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                maxZoom: 18,
+                attribution: 'Tiles &copy; Esri'
+            });
+
+            // Add default terrain layer
+            terrainLayer.addTo(map);
+
+            // Layer control for basemaps
+            const baseMaps = {
+                'Terrain': terrainLayer,
+                'Topographic': topoLayer,
+                'Satellite': satelliteLayer
+            };
+
+            // Create station layer groups
+            stationLayerGroup = L.layerGroup().addTo(map);
+            bcStationLayerGroup = L.layerGroup().addTo(map);
+
+            // Load watershed boundaries (HUC2 - major regions)
+            loadWatershedBoundaries();
+
+            // Add stations to map
+            updateStations();
+            updateBCStations();
+
+            // Layer control - we'll add watersheds after they load
+            const overlayMaps = {
+                'US SNOTEL Stations': stationLayerGroup,
+                'BC Snow Stations': bcStationLayerGroup
+            };
+
+            // Store control reference to add watersheds later
+            window.layerControl = L.control.layers(baseMaps, overlayMaps, { position: 'topright' }).addTo(map);
+
+            // Setup filter buttons (for SNOTEL % of normal filters)
+            document.querySelectorAll('.filter-btn[data-filter]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.filter-btn[data-filter]').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentFilter = btn.dataset.filter;
+                    updateStations();
+                });
+            });
+
+            // Setup US SNOTEL visibility toggle
+            const toggleBtn = document.getElementById('toggle-stations');
+            toggleBtn.addEventListener('click', () => {
+                const isVisible = map.hasLayer(stationLayerGroup);
+                if (isVisible) {
+                    map.removeLayer(stationLayerGroup);
+                    toggleBtn.classList.remove('active');
+                } else {
+                    map.addLayer(stationLayerGroup);
+                    toggleBtn.classList.add('active');
+                }
+            });
+
+            // Setup BC stations visibility toggle
+            const toggleBCBtn = document.getElementById('toggle-bc-stations');
+            toggleBCBtn.addEventListener('click', () => {
+                const isVisible = map.hasLayer(bcStationLayerGroup);
+                if (isVisible) {
+                    map.removeLayer(bcStationLayerGroup);
+                    toggleBCBtn.classList.remove('active');
+                } else {
+                    map.addLayer(bcStationLayerGroup);
+                    toggleBCBtn.classList.add('active');
+                }
+            });
+        }
+
+        // Load watershed boundaries from local files
+        async function loadWatershedBoundaries() {
+            try {
+                // Load both HUC2 (major regions) and HUC4 (snowbasins)
+                console.log('Loading watershed boundaries...');
+
+                const [huc2Response, huc4Response] = await Promise.all([
+                    fetch('/data/huc2-watersheds.json'),
+                    fetch('/data/huc4-snowbasins.json')
+                ]);
+
+                // HUC2 - Major regions (simple outlines)
+                if (huc2Response.ok) {
+                    const huc2Data = await huc2Response.json();
+                    console.log('HUC2 data loaded:', huc2Data.features?.length, 'regions');
+                    addHUC2Layer(huc2Data);
+                }
+
+                // HUC4 - Snowbasins with snowpack data
+                if (huc4Response.ok) {
+                    const huc4Data = await huc4Response.json();
+                    console.log('HUC4 data loaded:', huc4Data.features?.length, 'snowbasins');
+                    addSnowbasinLayer(huc4Data);
+                }
+
+            } catch (error) {
+                console.warn('Failed to load watershed boundaries:', error);
+            }
+        }
+
+        // HUC2 layer - simple region outlines
+        function addHUC2Layer(data) {
+            watershedLayer = L.geoJSON(data, {
+                style: {
+                    color: '#4a90d9',
+                    weight: 3,
+                    opacity: 0.8,
+                    fillColor: 'transparent',
+                    fillOpacity: 0
+                },
+                onEachFeature: (feature, layer) => {
+                    const name = feature.properties.name || feature.properties.NAME;
+                    if (name) {
+                        layer.bindTooltip(name, {
+                            permanent: false,
+                            direction: 'center',
+                            className: 'watershed-tooltip'
+                        });
+                    }
+                }
+            });
+
+            watershedLayer.addTo(map);
+            watershedLayer.bringToBack();
+
+            if (window.layerControl) {
+                window.layerControl.addOverlay(watershedLayer, 'Major Regions (HUC2)');
+            }
+        }
+
+        // HUC4 Snowbasin layer - color-coded by snowpack
+        let snowbasinLayer = null;
+        let snowbasinLabelLayer = null;
+
+        function addSnowbasinLayer(data) {
+            // Store layer references with their data for label creation
+            const layersWithPct = [];
+
+            snowbasinLayer = L.geoJSON(data, {
+                style: feature => {
+                    const pct = feature.properties.mean_pct;
+                    return {
+                        color: '#333',
+                        weight: 1,
+                        opacity: 0.6,
+                        fillColor: getSnowpackColor(pct),
+                        fillOpacity: pct !== null ? 0.5 : 0.1
+                    };
+                },
+                onEachFeature: (feature, layer) => {
+                    const props = feature.properties;
+                    const name = props.name || props.NAME;
+                    const pct = props.mean_pct;
+                    const count = props.station_count || 0;
+
+                    // Store for label creation later
+                    if (pct !== null) {
+                        layersWithPct.push({ layer, pct });
+                    }
+
+                    // Popup with snowpack details
+                    const popupContent = `
+                        <h4 style="margin: 0 0 8px 0;">${name}</h4>
+                        <div style="display: grid; gap: 4px; font-size: 0.9em;">
+                            <div style="display: flex; justify-content: space-between; gap: 1rem;">
+                                <span style="color: #8892a2;">HUC4 Code</span>
+                                <span style="font-family: monospace;">${props.huc4}</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; gap: 1rem;">
+                                <span style="color: #8892a2;">Avg Snowpack</span>
+                                <span style="font-family: monospace; color: ${getSnowpackColor(pct)}; font-weight: bold;">
+                                    ${pct !== null ? pct + '%' : 'No data'}
+                                </span>
+                            </div>
+                            ${pct !== null ? `
+                            <div style="display: flex; justify-content: space-between; gap: 1rem;">
+                                <span style="color: #8892a2;">Range</span>
+                                <span style="font-family: monospace;">${props.min_pct}% - ${props.max_pct}%</span>
+                            </div>
+                            ` : ''}
+                            <div style="display: flex; justify-content: space-between; gap: 1rem;">
+                                <span style="color: #8892a2;">SNOTEL Stations</span>
+                                <span style="font-family: monospace;">${count}</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; gap: 1rem;">
+                                <span style="color: #8892a2;">Area</span>
+                                <span style="font-family: monospace;">${Math.round(props.areasqkm).toLocaleString()} km²</span>
+                            </div>
+                        </div>
+                    `;
+
+                    layer.bindPopup(popupContent);
+
+                    // Hover tooltip with name and snowpack
+                    const tooltipText = pct !== null
+                        ? `${name}: ${pct}% of normal`
+                        : `${name}: No data`;
+                    layer.bindTooltip(tooltipText, {
+                        permanent: false,
+                        direction: 'center',
+                        className: 'watershed-tooltip'
+                    });
+
+                    // Hover highlight
+                    layer.on('mouseover', function() {
+                        this.setStyle({ weight: 3, color: '#fff' });
+                        this.bringToFront();
+                    });
+                    layer.on('mouseout', function() {
+                        snowbasinLayer.resetStyle(this);
+                    });
+                }
+            });
+
+            // Add to map but behind stations
+            snowbasinLayer.addTo(map);
+            snowbasinLayer.bringToBack();
+            if (watershedLayer) watershedLayer.bringToBack();
+
+            if (window.layerControl) {
+                window.layerControl.addOverlay(snowbasinLayer, 'Snowbasins (HUC4)');
+            }
+
+            // Create permanent percentage labels at snowbasin centers
+            snowbasinLabelLayer = L.layerGroup();
+
+            layersWithPct.forEach(({ layer, pct }) => {
+                // Use Leaflet's getBounds().getCenter() for the center point
+                const center = layer.getBounds().getCenter();
+
+                // Create a divIcon marker with the percentage as HTML
+                const labelIcon = L.divIcon({
+                    className: 'snowbasin-label',
+                    html: `${pct}%`,
+                    iconSize: [40, 16],
+                    iconAnchor: [20, 8]
+                });
+
+                const marker = L.marker(center, {
+                    icon: labelIcon,
+                    interactive: false // Don't block clicks on the polygon below
+                });
+
+                snowbasinLabelLayer.addLayer(marker);
+            });
+
+            snowbasinLabelLayer.addTo(map);
+
+            if (window.layerControl) {
+                window.layerControl.addOverlay(snowbasinLabelLayer, 'Snowbasin Labels');
+            }
+
+            console.log('Snowbasin layer added with', layersWithPct.length, 'labels');
+        }
+
+        // Update station markers based on current filter
+        function updateStations() {
+            // Clear existing markers
+            stationLayerGroup.clearLayers();
+            stationMarkers = [];
+
+            // Filter stations
+            const stations = snotelData.stations.filter(s => {
+                // Apply state filter if set
+                if (selectedState && s.state !== selectedState) return false;
+
+                // Apply category filter
+                if (currentFilter === 'all') return true;
+                const pct = s.pct_median;
+                if (pct === null) return false;
+
+                switch (currentFilter) {
+                    case 'drought': return pct < 50;
+                    case 'below': return pct >= 50 && pct < 90;
+                    case 'normal': return pct >= 90 && pct <= 110;
+                    case 'above': return pct > 110;
+                    default: return true;
+                }
+            });
+
+            // Create markers for each station
+            stations.forEach(station => {
+                const color = getSnowpackColor(station.pct_median);
+
+                const marker = L.circleMarker([station.lat, station.lon], {
+                    radius: 6,
+                    fillColor: color,
+                    color: 'rgba(0, 0, 0, 0.5)',
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.9
+                });
+
+                // Popup content
+                const popupContent = `
+                    <h4>${station.name}</h4>
+                    <div style="display: grid; gap: 4px;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: #8892a2;">State</span>
+                            <span style="font-family: monospace;">${station.state}</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: #8892a2;">SWE</span>
+                            <span style="font-family: monospace;">${station.swe_inches !== null ? station.swe_inches + '"' : 'N/A'}</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: #8892a2;">% of Median</span>
+                            <span style="font-family: monospace; color: ${color};">${station.pct_median !== null ? station.pct_median + '%' : 'N/A'}</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: #8892a2;">Elevation</span>
+                            <span style="font-family: monospace;">${station.elevation_ft.toLocaleString()} ft</span>
+                        </div>
+                    </div>
+                `;
+
+                marker.bindPopup(popupContent);
+
+                // Click handler for details panel
+                marker.on('click', () => {
+                    showStationDetails(station);
+                });
+
+                // Hover effect
+                marker.on('mouseover', function() {
+                    this.setRadius(9);
+                    this.setStyle({ weight: 2, color: 'white' });
+                });
+                marker.on('mouseout', function() {
+                    this.setRadius(6);
+                    this.setStyle({ weight: 1, color: 'rgba(0, 0, 0, 0.5)' });
+                });
+
+                marker.stationData = station;
+                stationMarkers.push(marker);
+                marker.addTo(stationLayerGroup);
+            });
+        }
+
+        // Update BC station markers
+        function updateBCStations() {
+            if (!bcSnowData || !bcStationLayerGroup) return;
+
+            bcStationLayerGroup.clearLayers();
+
+            // Filter BC stations with valid SWE data
+            const stations = bcSnowData.stations.filter(s => s.swe_mm !== null);
+
+            // Create markers for each BC station
+            stations.forEach(station => {
+                // BC stations use a distinct cyan color since we don't have % of normal
+                const marker = L.circleMarker([station.lat, station.lon], {
+                    radius: 6,
+                    fillColor: '#06b6d4', // Cyan
+                    color: '#0891b2',
+                    weight: 2,
+                    opacity: 1,
+                    fillOpacity: 0.9
+                });
+
+                // Popup content for BC stations
+                const popupContent = `
+                    <h4>${station.name}</h4>
+                    <div style="display: grid; gap: 4px;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: #8892a2;">Province</span>
+                            <span style="font-family: monospace;">${station.province}</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: #8892a2;">SWE</span>
+                            <span style="font-family: monospace;">${station.swe_inches !== null ? station.swe_inches + '"' : 'N/A'} (${station.swe_mm} mm)</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: #8892a2;">Snow Depth</span>
+                            <span style="font-family: monospace;">${station.snow_depth_inches !== null ? station.snow_depth_inches + '"' : 'N/A'} (${station.snow_depth_cm || '--'} cm)</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: #8892a2;">Elevation</span>
+                            <span style="font-family: monospace;">${station.elevation_ft ? station.elevation_ft.toLocaleString() + ' ft' : 'N/A'}</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 4px; padding-top: 4px; border-top: 1px solid #333;">
+                            <span style="color: #8892a2; font-size: 0.85em;">Source</span>
+                            <span style="font-family: monospace; font-size: 0.85em;">BC Ministry of Env.</span>
+                        </div>
+                    </div>
+                `;
+
+                marker.bindPopup(popupContent);
+
+                // Click handler for details panel
+                marker.on('click', () => {
+                    showBCStationDetails(station);
+                });
+
+                // Hover effect
+                marker.on('mouseover', function() {
+                    this.setRadius(9);
+                    this.setStyle({ weight: 3, color: 'white' });
+                });
+                marker.on('mouseout', function() {
+                    this.setRadius(6);
+                    this.setStyle({ weight: 2, color: '#0891b2' });
+                });
+
+                marker.stationData = station;
+                marker.addTo(bcStationLayerGroup);
+            });
+
+            console.log(`Rendered ${stations.length} BC stations on map`);
+        }
+
+        // BC Station details panel
+        function showBCStationDetails(station) {
+            const panel = document.getElementById('station-details');
+
+            document.getElementById('station-name').textContent = station.name;
+            document.getElementById('station-location').textContent = `${station.province}, Canada | ${station.elevation_ft ? station.elevation_ft.toLocaleString() + ' ft' : '--'} elevation`;
+            document.getElementById('station-swe').textContent = station.swe_inches !== null ? station.swe_inches + '"' : 'N/A';
+            document.getElementById('station-swe').className = 'metric-value';
+
+            const pctEl = document.getElementById('station-pct');
+            pctEl.textContent = 'N/A'; // BC doesn't have % of normal
+            pctEl.className = 'metric-value';
+
+            document.getElementById('station-elev').textContent = station.elevation_ft ? station.elevation_ft.toLocaleString() + ' ft' : 'N/A';
+            document.getElementById('station-id').textContent = station.id;
+
+            panel.classList.add('visible');
+        }
+
+        // Station details panel
+        function showStationDetails(station) {
+            const panel = document.getElementById('station-details');
+
+            document.getElementById('station-name').textContent = station.name;
+            document.getElementById('station-location').textContent = `${station.state} | ${station.elevation_ft.toLocaleString()} ft elevation`;
+            document.getElementById('station-swe').textContent = station.swe_inches !== null ? station.swe_inches + '"' : 'N/A';
+            document.getElementById('station-swe').className = 'metric-value';
+
+            const pctEl = document.getElementById('station-pct');
+            pctEl.textContent = station.pct_median !== null ? station.pct_median + '%' : 'N/A';
+            pctEl.className = 'metric-value ' + getSnowpackClass(station.pct_median);
+
+            document.getElementById('station-elev').textContent = station.elevation_ft.toLocaleString() + ' ft';
+            document.getElementById('station-id').textContent = station.id;
+
+            panel.classList.add('visible');
+        }
+
+        function closeStationDetails() {
+            document.getElementById('station-details').classList.remove('visible');
+        }
+
+        function closeStateDetail() {
+            document.getElementById('state-detail-panel').style.display = 'none';
+            selectedState = null;
+            map.setView([48, -118], 5);
+            document.querySelectorAll('.state-row').forEach(row => {
+                row.style.background = '';
+            });
+            updateStations();
+        }
+
+        // State name lookup
+        const STATE_NAMES = {
+            'AZ': 'Arizona', 'CA': 'California', 'CO': 'Colorado', 'ID': 'Idaho',
+            'MT': 'Montana', 'NV': 'Nevada', 'NM': 'New Mexico', 'OR': 'Oregon',
+            'UT': 'Utah', 'WA': 'Washington', 'WY': 'Wyoming', 'AK': 'Alaska',
+            'BC': 'British Columbia'
+        };
+
+        function showStateDetail(stateCode) {
+            const panel = document.getElementById('state-detail-panel');
+            const listContainer = document.getElementById('state-station-list');
+
+            // Get stations for this state
+            let stations;
+            let isBC = stateCode === 'BC';
+
+            if (isBC && bcSnowData) {
+                stations = bcSnowData.stations.filter(s => s.swe_mm !== null);
+            } else {
+                stations = snotelData.stations.filter(s => s.state === stateCode);
+            }
+
+            // Sort by % of median (ascending = worst first) for SNOTEL, by SWE for BC
+            if (isBC) {
+                stations.sort((a, b) => (b.swe_mm || 0) - (a.swe_mm || 0));
+            } else {
+                stations.sort((a, b) => (a.pct_median || 0) - (b.pct_median || 0));
+            }
+
+            // Update header
+            const stateName = STATE_NAMES[stateCode] || stateCode;
+            document.getElementById('state-detail-name').textContent = stateName;
+
+            // Calculate summary stats
+            if (isBC) {
+                const avgSWE = Math.round(stations.reduce((sum, s) => sum + (s.swe_mm || 0), 0) / stations.length / 25.4 * 10) / 10;
+                document.getElementById('state-detail-summary').textContent = `${stations.length} stations | ${avgSWE}" avg SWE`;
+            } else {
+                const avgPct = Math.round(stations.reduce((sum, s) => sum + (s.pct_median || 0), 0) / stations.length);
+                const belowNormal = stations.filter(s => s.pct_median !== null && s.pct_median < 90).length;
+                document.getElementById('state-detail-summary').textContent = `${stations.length} stations | ${avgPct}% avg | ${belowNormal} below normal`;
+            }
+
+            // Build station list HTML
+            let html = '';
+            stations.forEach(station => {
+                const pct = isBC ? null : station.pct_median;
+                const color = isBC ? '#06b6d4' : getSnowpackColor(pct);
+                const sweDisplay = station.swe_inches !== null ? `${station.swe_inches}"` : '--';
+                const pctDisplay = isBC ? '--' : (pct !== null ? `${pct}%` : '--');
+
+                html += `
+                    <div class="station-row" onclick="zoomToStation('${station.id}', ${isBC})">
+                        <div class="station-row-name" title="${station.name}">${station.name}</div>
+                        <div class="station-row-swe">${sweDisplay}</div>
+                        <div class="station-row-pct" style="color: ${color};">${pctDisplay}</div>
+                    </div>
+                `;
+            });
+
+            listContainer.innerHTML = html;
+            panel.style.display = 'flex';
+        }
+
+        function zoomToStation(stationId, isBC) {
+            let station;
+            if (isBC && bcSnowData) {
+                station = bcSnowData.stations.find(s => s.id === stationId);
+            } else {
+                station = snotelData.stations.find(s => s.id === stationId);
+            }
+
+            if (station) {
+                map.setView([station.lat, station.lon], 10);
+                // Show station details
+                if (isBC) {
+                    showBCStationDetails(station);
+                } else {
+                    showStationDetails(station);
+                }
+            }
+        }
+
+        function filterByState(stateCode) {
+            // Toggle state filter
+            if (selectedState === stateCode) {
+                selectedState = null;
+                // Reset to full western North America view
+                map.setView([48, -118], 5);
+                document.getElementById('state-detail-panel').style.display = 'none';
+            } else {
+                selectedState = stateCode;
+
+                // Handle BC separately
+                if (stateCode === 'BC' && bcSnowData) {
+                    const bcStations = bcSnowData.stations.filter(s => s.swe_mm !== null);
+                    if (bcStations.length > 0) {
+                        const lats = bcStations.map(s => s.lat);
+                        const lons = bcStations.map(s => s.lon);
+                        const bounds = [
+                            [Math.min(...lats) - 0.5, Math.min(...lons) - 0.5],
+                            [Math.max(...lats) + 0.5, Math.max(...lons) + 0.5]
+                        ];
+                        map.fitBounds(bounds, { padding: [20, 20] });
+                    }
+                } else {
+                    // Find bounds of SNOTEL stations in this state
+                    const stateStations = snotelData.stations.filter(s => s.state === stateCode);
+                    if (stateStations.length > 0) {
+                        const lats = stateStations.map(s => s.lat);
+                        const lons = stateStations.map(s => s.lon);
+                        const bounds = [
+                            [Math.min(...lats) - 0.5, Math.min(...lons) - 0.5],
+                            [Math.max(...lats) + 0.5, Math.max(...lons) + 0.5]
+                        ];
+                        map.fitBounds(bounds, { padding: [20, 20] });
+                    }
+                }
+
+                // Show state detail panel with station listing
+                showStateDetail(stateCode);
+            }
+
+            // Highlight selected state in sidebar
+            document.querySelectorAll('.state-row').forEach(row => {
+                const code = row.querySelector('.state-code').textContent;
+                row.style.background = code === selectedState ? 'var(--bg-elevated)' : '';
+            });
+
+            updateStations();
+        }
+
+        // Initialize
+        loadData();
+    </script>
+</body>
+</html>

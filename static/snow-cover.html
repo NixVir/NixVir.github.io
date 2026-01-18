@@ -18,13 +18,20 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E2QD5PNRWE"></script>
+    <!-- Google Analytics (respects Do Not Track) -->
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-E2QD5PNRWE');
+        var dnt = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+        var doNotTrack = dnt === "1" || dnt === "yes";
+        if (!doNotTrack) {
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-E2QD5PNRWE';
+            document.head.appendChild(script);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-E2QD5PNRWE');
+        }
     </script>
 
     <style>
