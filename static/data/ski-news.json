@@ -1,5 +1,5 @@
 {
-  "updated": "2026-01-17 11:11:00",
+  "updated": "2026-01-18 11:11:10",
   "total_articles": 50,
   "scoring_method": "keyword",
   "articles": [
@@ -46,6 +46,82 @@
         "winter-sports"
       ],
       "approved_date": "2026-01-17"
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "18-Year-Old Dead After Fall From Chairlift at Canadian Ski Resort",
+      "url": "https://unofficialnetworks.com/2026/01/17/18-year-old-dead-after-fall-from-chairlift-at-canadian-ski-resort/",
+      "description": "Fatal Incident Confirmed on Cypress Mountain Resort.",
+      "content": "West Vancouver, Canada \u2014 An 18-year-old man from Maple Ridge, British Columbia died after falling from a chairlift at Cypress Mountain Ski Resort on Thursday evening. The West Vancouver Police Department report that it responded to reports of someone in medical distress after a fall from a chairlift around 7:27pm on Thursday, January 15th. The man was then pronounced dead at the scene. \u201cAll available evidence points to this being a tragic accident. There are no obvious indications of technical or mechanical issues with the chairlift. As the death appears to be non-suspicious, the investigation is now with the Coroner\u2019s Office.\u201d \u2013 Suzanne Birch, spokesperson for the West Vancouver Police Department Cypress Mountain has confirmed the fatality involved a resort guest. \u201cCypress Mountain extends our heartfelt condolences and support to the guest\u2019s family and friends during this incredibly difficult time.\u201d -Cypress Mountain Our thoughts are with the victim\u2019s family and friends. images from W",
+      "pub_date": "2026-01-17",
+      "id": "c48ba2b6cea9",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "safety-incidents",
+      "secondary_categories": [
+        "canada",
+        "resort-operations",
+        "hospitality"
+      ],
+      "other_sources": [
+        {
+          "source": "Unofficial Networks",
+          "url": "https://unofficialnetworks.com/2026/01/16/18-chairlift-fall-death-bc/"
+        }
+      ],
+      "approved_date": "2026-01-18"
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Yosemite National Park\u2019s Ski Area Is Officially Opened For The Season",
+      "url": "https://unofficialnetworks.com/2026/01/16/yosemite-np-ski-area-open/",
+      "description": "Badger Pass Ski Area, located inside Yosemite National Park, has officially opened for the season as of Friday, January 16th.",
+      "content": "Badger Pass Ski Area , located inside Yosemite National Park , has officially opened for the season as of Friday, January 16th. The ski area is located on the Glacier Point Road (Badger Pass Road in the winter) five miles east of the junction with Wawona Road. It sits at a base elevation of 7,200 feet and relies entirely on natural snow. View this post on Instagram A post shared by Yosemite National Park (@yosemitenps) \u201c Thanks to the past few weeks\u2019 winter storms, the ski area has enough snow to start up a season of downhill and cross-country skiing, snowboarding, and snowshoeing. Please note that sledding and other snow play is not allowed at Badger Pass. However, Yosemite Hospitality operates a snow tubing hill, with innertubes available to rent for snow sliding. A snow play area is also available at Crane Flat and just outside the park south of South Entrance. \u201d \u2013 Yosemite National Park Badger Pass is open 7 days a week, 9am to 4pm, offering rentals, lessons, a ski shop, and a sund",
+      "pub_date": "2026-01-17",
+      "id": "41564e265acc",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [
+        "hospitality",
+        "resort-operations",
+        "transportation"
+      ],
+      "approved_date": "2026-01-18"
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Line Cutting Insanity On Spanky\u2019s Ladder @ Whistler Blackcomb",
+      "url": "https://unofficialnetworks.com/2026/01/17/spankys-ladder-line-cutting-whistler/",
+      "description": "Spanky's Ladder at Whistler Blackcomb can become quite a choke point on busy days, like it does here.",
+      "content": "As we head into one of the busiest extended ski weekends of the season, its important to remember you manners at all times. The Garnet, Ruby, Sapphire, and Diamond Bowls on Blackcomb Mountain at Whistler Blackcomb offer some seriously incredible expert-only terrain with hairy cliffs, chutes, and other wild features. To access these bowls, skiers and snowboarders travel through Spanky\u2019s Ladder, a choke point that, in extreme cases, can create quite a terrifying crowd. Apparently some skiers and snowboarders decided they were too good to wait in line on a busy day, riding ahead and forging their own path. Usually if someone is moving too slow for you on the uphill, you should have every right to pass them. But this seems like a slightly more complicated situation. Spanky's Ladder, Whistler by u/Raja_Ampat in skiing What do you think? Are these guys in the right to be ripping by the line if they can get up faster than the people ahead of them? Or is this a collapse of structure? Moose Cha",
+      "pub_date": "2026-01-17",
+      "id": "c5dbd7e65985",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 9,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "canada",
+      "secondary_categories": [
+        "resort-operations"
+      ],
+      "approved_date": "2026-01-18"
     },
     {
       "source": "SnowBrains",
@@ -290,6 +366,141 @@
       "category": "resort-operations",
       "secondary_categories": [],
       "approved_date": "2026-01-17"
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Massive Avalanche Sends Onlookers Fleeing At Russian Ski Resort",
+      "url": "https://unofficialnetworks.com/2026/01/16/massive-avalanche-sends-onlookers-fleeing-at-russian-ski-resort/",
+      "description": "Huge avalanche engulfs parking lot at Russian ski resort.",
+      "content": "Kabardino-Balkaria, Russia \u2014 Unnerving footage from Elbrus Ski Resort in Kabardino-Balkaria, Russia where a massive avalanche came crashing down the slopes engulfing the parking lot in a powder cloud and sending onlookers fleeing. Holy shit, this morning this is scary! A massive avalanche struck the Elbrus Resort in Kabardino-Balkaria, Russia on January 15. pic.twitter.com/cl0RxbvlWS \u2014 Weather Monitor (@WeatherMonitors) January 15, 2026 The slide occurred yesterday January, 15, 2026. Thankfully no injuries or deaths have been reported. The slide happened five days after local authorities closed down sections of the mountain due to avalanche danger and it looks like that was a wise decision. Another clip from Elbrus Resort in Kabardino-Balkaria, Russia. pic.twitter.com/LBapYhHhFb \u2014 Weather Monitor (@WeatherMonitors) January 15, 2026 This wouldn\u2019t be the first time this same parking lot has gotten hit by an avalanche. Check out this footage of wet slide that took out multiple vehicles at",
+      "pub_date": "2026-01-16",
+      "id": "0a6e8ef34738",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "safety-incidents",
+      "secondary_categories": [
+        "transportation"
+      ],
+      "approved_date": "2026-01-18"
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Drunken Brawl Breaks Out At French Ski Resort",
+      "url": "https://unofficialnetworks.com/2026/01/16/drunken-brawl-breaks-out-at-french-ski-resort/",
+      "description": "Skiers and snowboarders drunkenly brawl on the slopes of Val Thorens Ski Resort in France.",
+      "content": "Tarentaise Valley, France \u2014 Shocking footage from the French Alps where a wild melee broke out at Val Thorens Ski Resort following an apres ski party. 32-year-old Spaniard, Renan Vitor , was wearing his Ray-Ban Meta Glasses when the fight erupted outside the world famous 360 Val Thorens bar and managed to catch a small fraction of the brouhaha on video (the fight reportedly lasted 10 minutes) . Renan reports the fisticuffs were kicked off after a skier ran over a snowboarder which prompted a violent response from the snowboarder\u2019s friends. 6 men reportedly chased down the skier and repeatedly hit him. As you can from the video, it got pretty vicious as they were throwing kicks with ski boots. The fight was eventually broken up by security from the nearby bar and the French Gendarmerie. Grizzly Bear Deftly Dives Through Fence While Charging Pickup Truck Driver Renan reported no arrests were made. Here is some more videos from his ski vacation to give you an idea of just how raucous thes",
+      "pub_date": "2026-01-16",
+      "id": "f8713f933dcd",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "winter-sports",
+      "secondary_categories": [
+        "safety-incidents",
+        "international"
+      ],
+      "approved_date": "2026-01-18"
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Why Saskatchewan\u2019s Largest Ever Ski Resort Closed For Good",
+      "url": "https://unofficialnetworks.com/2026/01/16/saskatchewan-ski-resort-history/",
+      "description": "Once Saskatchewan's largest ski resort, various factors led to its closure in 2007. However, money has recently been invested in the property.",
+      "content": "Saskatchewan \u2014 Similar to the American Midwest, Saskatchewan isn\u2019t known for its ski areas. However, there is one mountain with decent skiable acreage that is now abandoned. In Skier72\u2019s latest episode of The Lost Resorts series, he breaks down the history of Ochapowace. The video analyzes the history of the ski resort, why it closed, what it looks like today, and how it skied. Click here to watch more episodes of his series. History of Ochapowace Situated less than two hours from Regina, it was operated by four First Nations\u2019 tribes. It first opened in 1968 as a modest rope tow operation and grew in the 1970s. A quad chairlift was installed in the 90s, giving it a bigger operational capacity. Off-Duty State Trooper Delivers Critical Live Saving CPR To Collapsed Skier in Michigan Factors such as a lack of government support, warm winters, and the lack of investments near the end of its tenure led to its demise. The ski area last operated in 2007. Interestingly, the lodge and chairlift ",
+      "pub_date": "2026-01-16",
+      "id": "ab3515c085e6",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 8,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "safety-incidents",
+      "secondary_categories": [
+        "resort-operations",
+        "business-investment",
+        "weather-snow"
+      ],
+      "approved_date": "2026-01-18"
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "New Hampshire Ski Area Opens New Lift For First Time In Decades",
+      "url": "https://unofficialnetworks.com/2026/01/16/vets-new-surface-lift/",
+      "description": "An under-the-radar ski area in New Hampshire has added a new surface lift to improve the beginner experience.",
+      "content": "Franklin, New Hampshire \u2014 It\u2019s been a couple of years of evolution at the Veterans Memorial Recreation Area . The ski area installed a snowmaking system a few years ago and has grown its offseason activities thanks to a dedicated team of mountain bike trail builders. The latest addition, which will help grow the skiing experience, debuted earlier this month. A few weekends ago, The Vets debuted a new magic carpet. Previously, new skiers and riders had to ride the rope tow or T-Bar to access the slopes, which is a tricky introduction to the sport. This magic carpet allows for easy learning and simple loading and unloading. The opening comes as the ski area faces fundraising challenges. There\u2019s this project that they\u2019re raising funds for, as well as the planned T-Bar replacement due to the age of the current one. You can support the Vets by donating here . It\u2019s one of the several new lifts at New Hampshire ski areas/resorts this year. So far, new quad chairlifts have opened at Bretton Wo",
+      "pub_date": "2026-01-16",
+      "id": "3d4d479a5145",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 8,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [
+        "transportation",
+        "hospitality"
+      ],
+      "approved_date": "2026-01-18"
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Massive Buck Sprints Past Ski School Kids @ French Ski Resort",
+      "url": "https://unofficialnetworks.com/2026/01/16/massive-buck-sprints-past-ski-school-kids-french-ski-resort/",
+      "description": "Red Deer blasts through powder and sprints past ski school kids.",
+      "content": "Incredible footage from the French Pyrenees where a group of ski schoolers had a close encounter with a Red Deer buck on the slopes of Val-Louron Ski Resort . Red deer thrive across much of Pyrenean, especially in mid to high elevation valleys . Adult male red deer, like the one featured in the below video, stand roughly 4.5 feet tall at the shoulder and can reach around 550 pounds in favorable enviormental conditions. These powerful cervids usually avoid people and can be dangerous at close range (especially during the autumn rut) . Thankfully this buck was more concerned with high tailing it across the ski trail than in the approaching children in the ski school. View this post on Instagram A post shared by ESF Val Louron (@esf_val_louron) Red deer commonly shift activity toward crepuscular or nocturnal periods to avoid disturbance when cohabitating with humans but encounters can and still do happen. Its very important to respect their distance and give them plenty of room to avoid n",
+      "pub_date": "2026-01-16",
+      "id": "e2f30d6a5cc7",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 7,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "transportation",
+      "secondary_categories": [],
+      "approved_date": "2026-01-18"
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Parking Reservations Begin This Weekend At Arapahoe Basin",
+      "url": "https://unofficialnetworks.com/2026/01/16/arpahoe-basin-parking-reservations/",
+      "description": "This Saturday, January 17th, marks the start of Arapahoe Basin's parking reservation requirements for the 2026 winter season.",
+      "content": "Heads up Colorado skiers and snowboarders, this Saturday, January 17th, marks the start of Arapahoe Basin\u2019s parking reservation requirements for the 2026 winter season. Parking reservations will be required for everyone heading to the mountain on Saturdays and Sundays, with general reservations costing $20 online. Reservations are required for all lots and can be reserved starting the Monday before at 2pm and up to the day of. $20 reservations will be available in all lots with the exception of The Beach (costs vary) and the Admin Lot ($40). Accessible parking reservations are free and available both in the Early Riser and Admin Lot. Free carpool parking is available in the Easy Riser, High Noon, Last Chance, and Upper Last Chance lots for vehicles that have 4 or more passengers. Each account is limited to one reservation per day and can hold up to four active reservations at any given time. You can learn more about the Arapahoe Basin Parking Reservations here . Those who don\u2019t want to",
+      "pub_date": "2026-01-16",
+      "id": "eab3259cf406",
+      "prefilter_business_score": 0,
+      "source_boost": 2,
+      "score": 7,
+      "score_details": {
+        "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "transportation",
+      "secondary_categories": [
+        "hospitality",
+        "resort-operations"
+      ],
+      "approved_date": "2026-01-18"
     },
     {
       "source": "Ski Area Management",
@@ -906,209 +1117,6 @@
       "score_method": "keyword",
       "category": "hospitality",
       "secondary_categories": [],
-      "approved_date": "2026-01-15"
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "Enormous Avalanche Carries Skier At French Ski Resort (WATCH)",
-      "url": "https://unofficialnetworks.com/2026/01/14/enormous-avalanche-carries-skier-at-french-ski-resort-watch/",
-      "description": "This avalanche filmed at Val d'Isere in the French Alps apparently occurred on the Arr\u00eate de Fresse near the Borsat chairlift.",
-      "content": "Ski resorts in Europe tend to work quite a bit differently than ski resorts in North America, with off-piste terrain in-between trails often being \u201cski at your own risk\u201d. As such, avalanches in areas easily accessible by chairlift aren\u2019t uncommon. This avalanche filmed at Val d\u2019Isere in the French Alps apparently occurred on the Arr\u00eate de Fresse near the Borsat chairlift . The slide was triggered remotely by a skier thanks to a persistent weak layer. \u201c The avalanche was caused by a persistent weak layer (deep hoar). These surface hoar layers can persist for weeks or months, making them tricky to forecast, often releasing under low loads or even remotely. \u201d \u2013 Elena Yakimova View this post on Instagram A post shared by Elena Yakimova (@elyzator) Fortunately the skier caught in the slide was wearing an avalanche airbag and managed to escape it in one piece. Remember to always check the avalanche forecast if you\u2019re heading off-piste, not matter in the United States, Canada, Europe, or anyw",
-      "pub_date": "2026-01-14",
-      "id": "697cb4697a3b",
-      "prefilter_business_score": 0,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "safety-incidents",
-      "secondary_categories": [
-        "resort-operations",
-        "international",
-        "transportation"
-      ],
-      "approved_date": "2026-01-15"
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "Washington State Chairlift Requires Rope Evacuation After Mechanical Failure",
-      "url": "https://unofficialnetworks.com/2026/01/14/washington-state-chairlift-requires-rope-evacuation-after-mechanical-failure/",
-      "description": "Skiers and snowboarders were forced to evacuate the Dodge Ridge Chairlift at the Summit-at-Snoqualmie after it stopped spinning due to mechanical issues Sunday morning.",
-      "content": "Snoqualmie Pass, Washington \u2013 Skiers and snowboarders were forced to evacuate the Dodge Ridge Chairlift at the Summit-at-Snoqualmie after it stopped spinning due to mechanical issues Sunday morning. Jeremy Rule captured a video of the rope rescue operation which happened Summit West. The evacuation of the two person chairlift was complicated by foggy rainy conditions but the ski patrol managed to lower all guests safely to the ground below. The evacuation took over an hour. The exact cause of the malfunction has not been released. Cheers the Summit-at-Snoqualmie ski patrollers who by all accounts handled the situation expertly. Categories: Washington Ski News",
-      "pub_date": "2026-01-14",
-      "id": "d11869847b58",
-      "prefilter_business_score": 0,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "safety-incidents",
-      "secondary_categories": [
-        "resort-operations",
-        "hospitality"
-      ],
-      "approved_date": "2026-01-15"
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "The Freeride World Tour Returns to the Pyrenees Mountains This Thursday",
-      "url": "https://unofficialnetworks.com/2026/01/14/freeride-world-tour-returns-to-the-pyrenees/",
-      "description": "On Thursday, January 15, the world's top freeride skiers will return to Baqueira Beret for the first stop of the 2026 Freeride World Tour.",
-      "content": "The 2026 Freeride World Tour is set to kickoff this Thursday as athletes gear up for big lines against even bigger competition on the Tuc de Baciv\u00e8r face of Baqueira Beret Resort, Spain. This years tour features 10 US athletes, including rookies Joey Leonardo and Mia Jones . Ross Tester and Toby Rafford took first and second last year at the Baqueira Beret Pro in the Ski Men devision and return with hopes of repeating their standout performances. The Tuc de Baciv\u00e8r face hasn\u2019t hosted a competition since 2023 but with stable and soft conditions the tour returns for more. Livestream coverage will begin at 12 p.m. CET / 6 a.m. EST / 4 a.m. MST / 3 a.m. PST , with Snowboard Women being the first to drop. They will be followed by Snowboard Men, Ski Women, and finally Ski Men. Thursday should consist of safe and visible conditions on the west-facing venue; giving in-person and online watchers an optimal view of the worlds best ski/snowboard athletes throwing down big tricks, creative lines, ",
-      "pub_date": "2026-01-14",
-      "id": "82b4829ae1ba",
-      "prefilter_business_score": 0,
-      "source_boost": 2,
-      "score": 7,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "resort-operations",
-      "secondary_categories": [],
-      "approved_date": "2026-01-15"
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "Six Guests Involved In Two Separate In-Bounds Avalanches at Whistler Blackcomb",
-      "url": "https://unofficialnetworks.com/2026/01/14/six-guests-involved-in-two-separate-in-bounds-avalanches-at-whistler-blackcomb/",
-      "description": "Two separate inbounds avalanches struck Whistler Blackcomb on January 11th with on one guest requiring rescue.",
-      "content": "Two separate inbounds avalanches struck Whistler Blackcomb on January 11th with on one guest requiring rescue. The first occurred in an expert-only area on Blackcomb around 10:00am which caught three people with no injuries. The second followed less than two hours later, also on Blackcomb, catching three more with one requiring rescue again no one was injured. Heavy rain and rising temperatures in the Sea-to-Sky region have increased snowpack instability, elevating avalanche and landslide risk. Avalanche Canada rated the area high danger for January 12 and 13 after extreme warming and heavy precipitation. Here is the latest avalanche danger forecast from Avalanche Canada: Categories: Canada Whistler Avalanche Ski News",
-      "pub_date": "2026-01-14",
-      "id": "9249fe54af9e",
-      "prefilter_business_score": 0,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "safety-incidents",
-      "secondary_categories": [
-        "canada",
-        "weather-snow"
-      ],
-      "approved_date": "2026-01-15"
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "The Story Of Maryland\u2019s Only Active Ski Resort",
-      "url": "https://unofficialnetworks.com/2026/01/14/marylands-only-ski-resort/",
-      "description": "Opened back in 1965, the former cow pasture has become one of the most popular ski resorts in the Mid-Atlantic.",
-      "content": "McHenry, Maryland \u2014 While Maryland is a small state, it has been home to various ski areas in its history. However, only one remains active. Why\u2019s that the case? In honor of Wisp\u2019s 70th anniversary, a new documentary dives into the history of the ski resort. In Making of Maryland\u2019s Ski Resort\u2013 Tribute to A True Pioneer , the son of founder Helmuth \u201cAce\u201d Heise, Martin Heise, dives into what made Wisp open and survive in an unusual state for skiing. Even if you haven\u2019t skied at Wisp, it\u2019s an insightful video into a little mountain that could. About Wisp Resort Situated in McHenry, Wisp Resort features 33 trails across 132 skiable acres. There are 10 lifts at Wisp, including 7 chairlifts. Off the slopes, there are activities like a mountain coaster, aerial adventure tours, and golf (both mini and 18-hole). First opened during the 1955-56 season, the ski resort began with a rope tow, a small hut, and a truck used for rentals. It\u2019s grown a bit since then. The 2025-26 season features $2.5 mi",
-      "pub_date": "2026-01-14",
-      "id": "81acfbc26e75",
-      "prefilter_business_score": 0,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "ski-history",
-      "secondary_categories": [
-        "resort-operations",
-        "transportation"
-      ],
-      "approved_date": "2026-01-15"
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "Utah Ski Resort To Host Natural Selection Tour In Soon-To-Open Expansion Terrain",
-      "url": "https://unofficialnetworks.com/2026/01/14/natural-selection-tour-powder-mountain/",
-      "description": "Utah's Powder Mountain is officially set to host one of the Natural Selection Tour's new Super Sessions in early February.",
-      "content": "EDEN, Utah \u2013 Utah\u2019s Powder Mountain is officially set to host one of the Natural Selection Tour \u2018s new Super Sessions , bringing the top freeride and freestyle snowboarders into the resort\u2019s DMI Zone , a 1000+ acre area that will soon be lift accessed. View this post on Instagram A post shared by Natural Selection (@naturalselection) The competition will take place in early February, though the exact dates depend on when the snow conditions are optimal. The Super Sessions will air on Red Bull TV starting February 24, featuring the men\u2019s competitions in My\u014dk\u014d, Japan, and Powder Mountain, and the women\u2019s competition at evo\u2019s Journeyman Lodge near Whistler. Super Sessions replace the Natural Selection Tour\u2019s DUELS, introducing a new, collaborative session-style competition. 3 women will be chosen to compete in Canada by the NST selection committee, in addition to a 4th woman chosen via fan vote. The men will be split between Japan and Utah, with 7 chosen by the committee and an 8th chosen",
-      "pub_date": "2026-01-14",
-      "id": "452c89eb5a07",
-      "prefilter_business_score": 1,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "winter-sports",
-      "secondary_categories": [
-        "canada",
-        "resort-operations",
-        "hospitality"
-      ],
-      "approved_date": "2026-01-15"
-    },
-    {
-      "source": "SnowBrains",
-      "title": "Banff and Lake Louise, Alberta, See Historic Snowfall as SkiBig3 Surges Into Winter",
-      "url": "https://snowbrains.com/banff-and-lake-louise-alberta-see-historic-snowfall-as-skibig3-surges-into-winter/",
-      "description": "At Lake Louise Ski Resort, December delivered 282 centimeters (111 inches) of snow, breaking a 75-year-old December record and marking the snowiest single winter month the resort has seen since 1970. By the end of December, Lake Louise was sitting at 226% of its seasonal average snowfall, an extraordinary benchmark this early in the season. Nearby, Banff Sunshine Village logged [\u2026] The post Banff and Lake Louise, Alberta, See Historic Snowfall as SkiBig3 Surges Into Winter appeared first on Snow",
-      "content": "Resort goers take up the chair at Lake Louise, part of the SkiBig3 resort network that is currently experiencing a historically snowy start to winter. | Photo: Lake Louise Ski Resort / Sam Hamilton At Lake Louise Ski Resort , December delivered 282 centimeters (111 inches) of snow, breaking a 75-year-old December record and marking the snowiest single winter month the resort has seen since 1970. By the end of December, Lake Louise was sitting at 226% of its seasonal average snowfall, an extraordinary benchmark this early in the season. Nearby, Banff Sunshine Village logged 268 centimeters (106 inches) during December, ranking as the fifth snowiest month ever recorded at the resort. From opening day through the end of December, Sunshine accumulated 416 centimeters (164 inches) of snow, making it the fourth snowiest season start in the resort\u2019s history and placing it at 147% of average. Even Mt. Norquay , traditionally the driest of the three SkiBig3 resorts due to its lower elevation, s",
-      "pub_date": "2026-01-14",
-      "id": "75fcab87db80",
-      "prefilter_business_score": 0,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "canada",
-      "secondary_categories": [
-        "ski-history",
-        "resort-operations",
-        "weather-snow"
-      ],
-      "approved_date": "2026-01-15"
-    },
-    {
-      "source": "SnowBrains",
-      "title": "Don\u2019t Pizza\u2014These Skis Let You French Fry on French Fries",
-      "url": "https://snowbrains.com/dont-pizza-these-skis-let-you-french-fry-on-french-fries/",
-      "description": "Every skier remembers the moment it finally clicks. One day you are stuck in pizza, legs burning in a wedge, hoping gravity shows mercy. Then suddenly you are French frying, skis parallel, confidence unlocked. It is skiing\u2019s most universal milestone, and now it has officially gone full circle. For the first time ever, skiers can quite literally French fry on [\u2026] The post Don\u2019t Pizza\u2014These Skis Let You French Fry on French Fries appeared first on SnowBrains .",
-      "content": "Ore-Ida is bringing its iconic crinkle-cut fries from the freezer aisle to the frozen slopes with the crispiest drop of the season. | Photo: Ore-Ida Every skier remembers the moment it finally clicks. One day you are stuck in pizza, legs burning in a wedge, hoping gravity shows mercy. Then suddenly you are French frying, skis parallel, confidence unlocked. It is skiing\u2019s most universal milestone, and now it has officially gone full circle. For the first time ever, skiers can quite literally French fry on French fries. Ore-Ida has teamed up with Fischer Sports to release the Ore-Ida French Fry Skis , a limited edition pair inspired by the brand\u2019s iconic crinkle cut fries. Yes, real skis, covered in fries, and still very skiable. The skis bring Ore-Ida\u2019s unmistakable look straight to the slopes, complete with bold crinkle cut ridges, a golden fry themed topsheet, and a ketchup red background that pops against the snow. They are playful, loud, and unapologetically fun, but this is not jus",
-      "pub_date": "2026-01-14",
-      "id": "bc6c20549285",
-      "prefilter_business_score": 0,
-      "source_boost": 2,
-      "score": 9,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "winter-sports",
-      "secondary_categories": [],
-      "approved_date": "2026-01-15"
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "New York\u2019s Overlooked And Forgotten Mountain Range",
-      "url": "https://unofficialnetworks.com/2026/01/14/new-york-forgotten-mountain-range/",
-      "description": "The Adirondacks have the height, the Catskills have the vibes, but the Taconics have the history.Here is the geology behind New York\u2019s 'forgotten' third mountain range.",
-      "content": "Stretching about 150 miles along New York\u2019s eastern border with Connecticut, Massachusetts, and Vermont, the Taconic Mountains form a quiet, rugged sub-range of the Appalachians. They lack the towering peaks of the Adirondacks or the dramatic escarpments and resort culture of the Catskills, yet they hold a deeper geological story that shaped much of eastern North America. View this post on Instagram Around 440 million years ago, during the Ordovician period, the ancient Iapetus Ocean began to close off. A volcanic island arc collided with the edge of Laurentia (proto-North America) triggering the Taconic Orogeny (a major mountain-building event) . This collision thrust massive sheets of rock westward, creating what geologists call the Taconic Allochthon where older metamorphic rocks like slate, phyllite, and schist pushed over younger sedimentary layers. The modern Taconics are the eroded remnants of those ancient highlands, with summits like Mount Greylock (3,491 ft in Massachusetts) ",
-      "pub_date": "2026-01-14",
-      "id": "1b813b697190",
-      "prefilter_business_score": 0,
-      "source_boost": 2,
-      "score": 9,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "safety-incidents",
-      "secondary_categories": [
-        "business-investment"
-      ],
       "approved_date": "2026-01-15"
     }
   ]
