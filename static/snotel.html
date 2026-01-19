@@ -893,8 +893,8 @@
 
         <!-- Data Source -->
         <div class="data-source">
-            Data source: <a href="https://www.nrcs.usda.gov/wps/portal/wcc/home/" target="_blank">NRCS National Water and Climate Center</a> |
-            Baseline: 1991-2020 Median |
+            Data sources: <a href="https://www.nrcs.usda.gov/wps/portal/wcc/home/" target="_blank">NRCS National Water and Climate Center</a> (US) |
+            <a href="https://www2.gov.bc.ca/gov/content/environment/air-land-water/water/drought-flooding-dikes-dams/river-forecast-centre" target="_blank">BC River Forecast Centre</a> (Canada) |
             Updated daily
         </div>
     </div>
@@ -911,10 +911,13 @@
         // Global data and map objects
         let snotelData = null;
         let bcSnowData = null;
+        let bcBasinData = null;  // BC snow basin indices (% of normal)
         let map = null;
         let stationMarkers = [];
         let stationLayerGroup = null;
         let bcStationLayerGroup = null;
+        let bcSnowbasinLayer = null;
+        let bcSnowbasinLabelLayer = null;
         let watershedLayer = null;
         let currentFilter = 'all';
         let selectedState = null;
@@ -941,18 +944,25 @@
         // Load data
         async function loadData() {
             try {
-                // Load both US SNOTEL and BC snow data
-                const [snotelResponse, bcResponse] = await Promise.all([
+                // Load US SNOTEL, BC stations, and BC basins data
+                const [snotelResponse, bcResponse, bcBasinResponse] = await Promise.all([
                     fetch('/data/snotel-snowpack.json'),
-                    fetch('/data/bc-snow-stations.json').catch(() => null)
+                    fetch('/data/bc-snow-stations.json').catch(() => null),
+                    fetch('/data/bc-snow-basins.json').catch(() => null)
                 ]);
 
                 snotelData = await snotelResponse.json();
 
-                // BC data is optional - may not be available
+                // BC station data is optional
                 if (bcResponse && bcResponse.ok) {
                     bcSnowData = await bcResponse.json();
                     console.log(`Loaded ${bcSnowData.stations.length} BC stations`);
+                }
+
+                // BC basin data (% of normal) is optional
+                if (bcBasinResponse && bcBasinResponse.ok) {
+                    bcBasinData = await bcBasinResponse.json();
+                    console.log(`Loaded ${bcBasinData.features.length} BC basins`);
                 }
 
                 renderSummaryCards();
@@ -973,17 +983,35 @@
 
         // Render summary section with pie chart
         function renderSummaryCards() {
-            const stats = snotelData.statistics.overall;
+            const usStats = snotelData.statistics.overall;
             const container = document.getElementById('summary-section');
 
+            // Combine US and BC statistics if BC data is available
+            let totalCount = usStats.count;
+            let totalBelowNormal = usStats.below_normal;
+            let combinedMeanPct = usStats.mean_pct;
+
+            if (bcBasinData && bcBasinData.statistics) {
+                const bcStats = bcBasinData.statistics;
+                totalCount += bcStats.with_data;
+                totalBelowNormal += bcStats.below_normal;
+                // Weighted average for combined mean
+                const usWeight = usStats.count;
+                const bcWeight = bcStats.with_data;
+                combinedMeanPct = Math.round((usStats.mean_pct * usWeight + bcStats.mean_sbi * bcWeight) / (usWeight + bcWeight));
+            }
+
             // Calculate percentages
-            const belowPct = Math.round(100 * stats.below_normal / stats.count);
+            const belowPct = Math.round(100 * totalBelowNormal / totalCount);
             const atAbovePct = 100 - belowPct;
 
             // SVG pie chart calculation (stroke-dasharray trick)
             const circumference = 2 * Math.PI * 40; // radius = 40
             const belowDash = (belowPct / 100) * circumference;
             const atAboveDash = circumference - belowDash;
+
+            // Region label
+            const regionLabel = bcBasinData ? 'Western North America' : 'Western US';
 
             container.innerHTML = `
                 <div class="summary-content">
@@ -997,7 +1025,7 @@
                                 stroke-dasharray="${belowDash} ${circumference}" stroke-dashoffset="${-atAboveDash}"/>
                         </svg>
                         <div class="summary-pie-label">
-                            <div class="summary-pie-value">${stats.mean_pct}%</div>
+                            <div class="summary-pie-value">${combinedMeanPct}%</div>
                             <div class="summary-pie-subtext">of normal</div>
                         </div>
                     </div>
@@ -1012,8 +1040,8 @@
                         </div>
                     </div>
                     <div class="summary-instructions">
-                        <strong>How to use this map:</strong> Colored regions show snowpack as a percentage of the 1991-2020 median.
-                        <strong>Click a region</strong> for details. <strong>Hover</strong> over states in the sidebar to highlight them.
+                        <strong>How to use this map:</strong> Colored regions show snowpack as a percentage of historical normal.
+                        <strong>Click a region</strong> for details. <strong>Hover</strong> over states/provinces in the sidebar.
                         Use the layer control (top right) to show individual monitoring stations or change the base map.
                     </div>
                 </div>
@@ -1039,10 +1067,23 @@
                 </div>
             `).join('');
 
-            // Add BC if data is available
-            if (bcSnowData && bcSnowData.statistics) {
+            // Add BC basins if data is available (with % of normal)
+            if (bcBasinData && bcBasinData.statistics) {
+                const bcStats = bcBasinData.statistics;
+                const meanPct = bcStats.mean_sbi;
+                html += `
+                    <div class="state-row" style="margin-top: 0.5rem; border-top: 1px solid var(--border); padding-top: 0.5rem;" onclick="zoomToBC()">
+                        <span class="state-code">BC</span>
+                        <div class="state-bar">
+                            <div class="state-bar-fill" style="width: ${Math.min(meanPct, 150)}%; background: ${getSnowpackColor(meanPct)}"></div>
+                        </div>
+                        <span class="state-value ${getSnowpackClass(meanPct)}" title="${bcStats.with_data} basins reporting">${meanPct}%</span>
+                    </div>
+                `;
+            } else if (bcSnowData && bcSnowData.statistics) {
+                // Fallback to station data if basin data not available
                 const bcStats = bcSnowData.statistics;
-                const meanSWE = Math.round(bcStats.mean_swe_mm / 25.4 * 10) / 10; // Convert to inches
+                const meanSWE = Math.round(bcStats.mean_swe_mm / 25.4 * 10) / 10;
                 html += `
                     <div class="state-row" style="margin-top: 0.5rem; border-top: 1px solid var(--border); padding-top: 0.5rem;" onclick="filterByState('BC')">
                         <span class="state-code" style="color: #06b6d4;">BC</span>
@@ -1055,6 +1096,22 @@
             }
 
             container.innerHTML = html;
+        }
+
+        // Zoom to BC and show BC basins
+        function zoomToBC() {
+            if (bcBasinData && bcBasinData.features.length > 0) {
+                // Fit map to BC basins bounds
+                if (bcSnowbasinLayer) {
+                    map.fitBounds(bcSnowbasinLayer.getBounds(), { padding: [20, 20] });
+                }
+
+                // Highlight BC row in sidebar
+                document.querySelectorAll('.state-row').forEach(row => {
+                    const code = row.querySelector('.state-code').textContent;
+                    row.style.background = code === 'BC' ? 'var(--bg-elevated)' : '';
+                });
+            }
         }
 
         // Initialize Leaflet map
@@ -1175,6 +1232,12 @@
                     const huc4Data = await huc4Response.json();
                     console.log('HUC4 data loaded:', huc4Data.features?.length, 'snowbasins');
                     addSnowbasinLayer(huc4Data);
+                }
+
+                // BC Snow Basins (% of normal)
+                if (bcBasinData && bcBasinData.features) {
+                    console.log('Adding BC basins:', bcBasinData.features.length);
+                    addBCSnowbasinLayer(bcBasinData);
                 }
 
             } catch (error) {
@@ -1335,6 +1398,122 @@
             }
 
             console.log('Snowbasin layer added with', layersWithPct.length, 'labels');
+        }
+
+        // BC Snow Basin layer - identical styling to US HUC4 snowbasins
+        function addBCSnowbasinLayer(data) {
+            const layersWithPct = [];
+
+            bcSnowbasinLayer = L.geoJSON(data, {
+                style: feature => {
+                    const pct = feature.properties.mean_pct;
+                    return {
+                        color: '#333',
+                        weight: 1,
+                        opacity: 0.6,
+                        fillColor: getSnowpackColor(pct),
+                        fillOpacity: pct !== null ? 0.5 : 0.1
+                    };
+                },
+                onEachFeature: (feature, layer) => {
+                    const props = feature.properties;
+                    const name = props.name;
+                    const pct = props.mean_pct;
+                    const prevYear = props.previous_year_pct;
+
+                    // Store for label creation
+                    if (pct !== null) {
+                        layersWithPct.push({ layer, pct });
+                    }
+
+                    // Popup with snowpack details
+                    const popupContent = `
+                        <h4 style="margin: 0 0 8px 0;">${name}</h4>
+                        <div class="popup-grid">
+                            <div class="popup-row">
+                                <span class="popup-label">Region</span>
+                                <span class="popup-value">British Columbia</span>
+                            </div>
+                            <div class="popup-row">
+                                <span class="popup-label">Snow Basin Index</span>
+                                <span class="popup-value-bold" style="color: ${getSnowpackColor(pct)};">
+                                    ${pct !== null ? pct + '%' : 'No data'}
+                                </span>
+                            </div>
+                            ${prevYear !== null ? `
+                            <div class="popup-row">
+                                <span class="popup-label">Previous Year</span>
+                                <span class="popup-value">${prevYear}%</span>
+                            </div>
+                            ` : ''}
+                            <div class="popup-row" style="margin-top: 4px; padding-top: 4px; border-top: 1px solid #333;">
+                                <span class="popup-label" style="font-size: 0.85em;">Source</span>
+                                <span class="popup-value" style="font-size: 0.85em;">BC River Forecast Centre</span>
+                            </div>
+                        </div>
+                    `;
+
+                    layer.bindPopup(popupContent);
+
+                    // Hover tooltip
+                    const tooltipText = pct !== null
+                        ? `${name}: ${pct}% of normal`
+                        : `${name}: No data`;
+                    layer.bindTooltip(tooltipText, {
+                        permanent: false,
+                        direction: 'center',
+                        className: 'watershed-tooltip'
+                    });
+
+                    // Hover highlight
+                    layer.on('mouseover', function() {
+                        this.setStyle({ weight: 3, color: '#fff' });
+                        this.bringToFront();
+                    });
+                    layer.on('mouseout', function() {
+                        bcSnowbasinLayer.resetStyle(this);
+                    });
+                }
+            });
+
+            // Add to map
+            bcSnowbasinLayer.addTo(map);
+            bcSnowbasinLayer.bringToBack();
+            if (snowbasinLayer) snowbasinLayer.bringToBack();
+            if (watershedLayer) watershedLayer.bringToBack();
+
+            if (window.layerControl) {
+                window.layerControl.addOverlay(bcSnowbasinLayer, 'BC Snow Basins');
+            }
+
+            // Create permanent percentage labels at basin centers
+            bcSnowbasinLabelLayer = L.layerGroup();
+
+            layersWithPct.forEach(({ layer, pct }) => {
+                const center = layer.getBounds().getCenter();
+
+                const labelIcon = L.divIcon({
+                    className: 'snowbasin-label',
+                    html: `${pct}%`,
+                    iconSize: [40, 16],
+                    iconAnchor: [20, 8]
+                });
+
+                const marker = L.marker(center, {
+                    icon: labelIcon,
+                    interactive: false
+                });
+
+                bcSnowbasinLabelLayer.addLayer(marker);
+            });
+
+            bcSnowbasinLabelLayer.addTo(map);
+
+            if (window.layerControl) {
+                window.layerControl.addOverlay(bcSnowbasinLabelLayer, 'BC Basin Labels');
+            }
+
+            console.log('BC Snowbasin layer added with', layersWithPct.length, 'labels');
         }
 
         // Update station markers based on current filter

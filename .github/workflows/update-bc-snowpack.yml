@@ -1,0 +1,50 @@
+name: Update BC Snowpack Data
+
+on:
+  schedule:
+    # Run daily at noon UTC (4 AM PST / 5 AM PDT)
+    # BC River Forecast Centre updates data periodically during snow season
+    - cron: '0 12 * * *'
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  update-bc-snowpack:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Fetch BC Snow Basin Indices
+        run: |
+          python fetch_bc_sbi_data.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add static/data/bc-snow-basins.json
+
+          # Check if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes to BC snowpack data"
+          else
+            # Extract stats for commit message
+            MEAN_SBI=$(python -c "import json; d=json.load(open('static/data/bc-snow-basins.json')); print(d['statistics']['mean_sbi'])")
+            BASINS=$(python -c "import json; d=json.load(open('static/data/bc-snow-basins.json')); print(d['statistics']['with_data'])")
+            git commit -m "Update BC snowpack data - Mean SBI: ${MEAN_SBI}% (${BASINS} basins)"
+            git push
+            echo "BC snowpack data updated and pushed"
+          fi
