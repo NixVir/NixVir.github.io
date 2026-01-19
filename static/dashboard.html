@@ -11,20 +11,23 @@
 
     <!-- NixVir Watermark Plugin for Chart.js -->
     <script>
+    // Pre-load NixVir stamp image for chart watermarks
+    const nixvirStampImg = new Image();
+    nixvirStampImg.src = '/images/nixvir-stamp.svg';
+
     // Global plugin to add NixVir watermark to all charts
     const nixvirWatermarkPlugin = {
         id: 'nixvirWatermark',
         afterDraw: function(chart) {
+            if (!nixvirStampImg.complete) return;
             const ctx = chart.ctx;
             const { width, height } = chart;
+            const imgWidth = 60;
+            const imgHeight = 18;
 
             ctx.save();
-            ctx.globalAlpha = 0.6;
-            ctx.font = '500 9px "DM Sans", Arial, sans-serif';
-            ctx.fillStyle = '#64748b';
-            ctx.textAlign = 'right';
-            ctx.textBaseline = 'bottom';
-            ctx.fillText('NixVir', width - 6, height - 4);
+            ctx.globalAlpha = 0.7;
+            ctx.drawImage(nixvirStampImg, width - imgWidth - 6, height - imgHeight - 4, imgWidth, imgHeight);
             ctx.restore();
         }
     };

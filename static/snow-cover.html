@@ -17,18 +17,22 @@
 
     <!-- NixVir Watermark Plugin for Chart.js -->
     <script>
+    // Pre-load NixVir stamp image for chart watermarks
+    const nixvirStampImg = new Image();
+    nixvirStampImg.src = '/images/nixvir-stamp.svg';
+
     const nixvirWatermarkPlugin = {
         id: 'nixvirWatermark',
         afterDraw: function(chart) {
+            if (!nixvirStampImg.complete) return;
             const ctx = chart.ctx;
             const { width, height } = chart;
+            const imgWidth = 60;
+            const imgHeight = 18;
+
             ctx.save();
-            ctx.globalAlpha = 0.6;
-            ctx.font = '500 9px "DM Sans", Arial, sans-serif';
-            ctx.fillStyle = '#64748b';
-            ctx.textAlign = 'right';
-            ctx.textBaseline = 'bottom';
-            ctx.fillText('NixVir', width - 6, height - 4);
+            ctx.globalAlpha = 0.7;
+            ctx.drawImage(nixvirStampImg, width - imgWidth - 6, height - imgHeight - 4, imgWidth, imgHeight);
             ctx.restore();
         }
     };
@@ -1576,7 +1580,7 @@
                         <td class="metric-value"><span id="combined-temp-pct-below">--</span></td>
                     </tr>
                 </tbody>
-                <tfoot><tr><td colspan="4" style="text-align: right; padding: 4px 8px; font-size: 9px; color: #64748b; opacity: 0.6;">NixVir</td></tr></tfoot>
+                <tfoot><tr><td colspan="4" style="text-align: right; padding: 4px 8px;"><img src="/images/nixvir-stamp.svg" alt="NixVir" height="16" style="opacity: 0.7; vertical-align: middle;"></td></tr></tfoot>
             </table>
         </div>
 
@@ -1633,7 +1637,7 @@
                         <td class="metric-value"><span id="nsaa-southeast-warmtemp">--</span></td>
                     </tr>
                 </tbody>
-                <tfoot><tr><td colspan="7" style="text-align: right; padding: 4px 8px; font-size: 9px; color: #64748b; opacity: 0.6;">NixVir</td></tr></tfoot>
+                <tfoot><tr><td colspan="7" style="text-align: right; padding: 4px 8px;"><img src="/images/nixvir-stamp.svg" alt="NixVir" height="16" style="opacity: 0.7; vertical-align: middle;"></td></tr></tfoot>
             </table>
         </div>
 
@@ -1690,7 +1694,7 @@
                         <td class="metric-value"><span id="csc-atlantic-warmtemp">--</span></td>
                     </tr>
                 </tbody>
-                <tfoot><tr><td colspan="7" style="text-align: right; padding: 4px 8px; font-size: 9px; color: #64748b; opacity: 0.6;">NixVir</td></tr></tfoot>
+                <tfoot><tr><td colspan="7" style="text-align: right; padding: 4px 8px;"><img src="/images/nixvir-stamp.svg" alt="NixVir" height="16" style="opacity: 0.7; vertical-align: middle;"></td></tr></tfoot>
             </table>
         </div>
 
@@ -1821,7 +1825,7 @@
                             <tbody id="market-table-body">
                                 <tr><td colspan="6" style="text-align: center; color: var(--text-muted);">Loading...</td></tr>
                             </tbody>
-                            <tfoot><tr><td colspan="6" style="text-align: right; padding: 4px 8px; font-size: 9px; color: #64748b; opacity: 0.6;">NixVir</td></tr></tfoot>
+                            <tfoot><tr><td colspan="6" style="text-align: right; padding: 4px 8px;"><img src="/images/nixvir-stamp.svg" alt="NixVir" height="16" style="opacity: 0.7; vertical-align: middle;"></td></tr></tfoot>
                         </table>
                     </div>
                 </div>
@@ -4133,18 +4137,15 @@
                     .text(d => d.name);
             }
 
-            // NixVir watermark
-            svg.append("text")
+            // NixVir watermark (SVG image)
+            svg.append("image")
                 .attr("class", "nixvir-watermark")
-                .attr("x", width - 8)
-                .attr("y", height - 8)
-                .attr("text-anchor", "end")
-                .attr("fill", "#64748b")
-                .attr("font-family", "'DM Sans', Arial, sans-serif")
-                .attr("font-size", "10px")
-                .attr("font-weight", "500")
-                .attr("opacity", 0.6)
-                .text("NixVir");
+                .attr("href", "/images/nixvir-stamp.svg")
+                .attr("x", width - 68)
+                .attr("y", height - 24)
+                .attr("width", 60)
+                .attr("height", 18)
+                .attr("opacity", 0.7);
         }
 
         // ============================================
