@@ -137,6 +137,53 @@
             }
         }
 
+        @media (max-width: 768px) {
+            .dashboard {
+                padding: 1rem;
+            }
+
+            .summary-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .map-container {
+                padding: 1rem;
+                min-height: 400px;
+            }
+
+            #map {
+                height: 350px;
+            }
+
+            .map-filters {
+                justify-content: center;
+            }
+
+            .filter-btn {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.7rem;
+            }
+
+            .header-left h1 {
+                font-size: 1.2rem;
+            }
+
+            .sidebar-card {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .map-filters {
+                flex-wrap: wrap;
+                gap: 0.25rem;
+            }
+        }
+
         /* Map Container */
         .map-container {
             background: var(--bg-card);
