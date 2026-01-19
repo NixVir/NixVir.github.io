@@ -1,0 +1,37 @@
+{{ define "header" }}{{ partial "page-header.html" . }}{{ end }}
+{{ define "main" }}
+<article class="center cf pv5 ph3 ph5-l measure-wide">
+  <h1 class="f2 f1-l lh-title mt0 mb3">Page Not Found</h1>
+  <p class="f4 lh-copy mid-gray">The page you're looking for doesn't exist or has been moved.</p>
+
+  <h2 class="f4 mt4 mb3">Try one of these instead:</h2>
+  <ul class="list pl0 f5 lh-copy">
+    <li class="pv2 bb b--light-gray">
+      <a href="/snow-cover/" class="link blue hover-dark-blue">Snow Cover Dashboard</a>
+      <span class="db f6 mid-gray">Real-time North American snow coverage tracking</span>
+    </li>
+    <li class="pv2 bb b--light-gray">
+      <a href="/dashboard.html" class="link blue hover-dark-blue">Economic Dashboard</a>
+      <span class="db f6 mid-gray">Economic indicators and market data</span>
+    </li>
+    <li class="pv2 bb b--light-gray">
+      <a href="/snotel.html" class="link blue hover-dark-blue">SNOTEL Snowpack Map</a>
+      <span class="db f6 mid-gray">Western US snowpack conditions</span>
+    </li>
+    <li class="pv2 bb b--light-gray">
+      <a href="/ski-news/" class="link blue hover-dark-blue">Ski Industry News</a>
+      <span class="db f6 mid-gray">Daily curated ski business news</span>
+    </li>
+    <li class="pv2 bb b--light-gray">
+      <a href="/post/" class="link blue hover-dark-blue">Data Insights</a>
+      <span class="db f6 mid-gray">Analysis and research articles</span>
+    </li>
+    <li class="pv2">
+      <a href="/" class="link blue hover-dark-blue">Homepage</a>
+      <span class="db f6 mid-gray">Return to the main page</span>
+    </li>
+  </ul>
+
+  <p class="f6 mid-gray mt4">Think this page should exist? <a href="/contact/" class="link blue">Let us know</a>.</p>
+</article>
+{{ end }}

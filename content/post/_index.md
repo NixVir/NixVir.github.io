@@ -4,6 +4,6 @@ featured_image: "images/mtnsky.jpg"
 title: Data Insights
 menu:
   main:
-    weight: 4
+    weight: 5
 ---
 Data-driven insights on the snowsports industry, market research, socioeconomic trends, and analytics.

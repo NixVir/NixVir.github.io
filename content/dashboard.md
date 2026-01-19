@@ -6,8 +6,8 @@ aliases:
   - /dashboard/
 menu:
   main:
-    weight: 2
-    url: "/dashboard.html"
+    weight: 3
+    url: "/dashboard"
 ---
 
 <meta http-equiv="refresh" content="0; url=/dashboard.html">

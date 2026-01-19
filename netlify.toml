@@ -1,6 +1,17 @@
 [build]
   publish = "public"
   command = "hugo --minify"
+
+# Rewrites for static HTML dashboards (invisible to users, keeps clean URLs)
+[[redirects]]
+  from = "/dashboard"
+  to = "/dashboard.html"
+  status = 200
+
+[[redirects]]
+  from = "/snotel"
+  to = "/snotel.html"
+  status = 200
 [context.production.environment]
   HUGO_VERSION = "0.139.0"
   HUGO_ENV = "production"
