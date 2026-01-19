@@ -9,6 +9,28 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
 
+    <!-- NixVir Watermark Plugin for Chart.js -->
+    <script>
+    // Global plugin to add NixVir watermark to all charts
+    const nixvirWatermarkPlugin = {
+        id: 'nixvirWatermark',
+        afterDraw: function(chart) {
+            const ctx = chart.ctx;
+            const { width, height } = chart;
+
+            ctx.save();
+            ctx.globalAlpha = 0.6;
+            ctx.font = '500 9px "DM Sans", Arial, sans-serif';
+            ctx.fillStyle = '#64748b';
+            ctx.textAlign = 'right';
+            ctx.textBaseline = 'bottom';
+            ctx.fillText('NixVir', width - 6, height - 4);
+            ctx.restore();
+        }
+    };
+    Chart.register(nixvirWatermarkPlugin);
+    </script>
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 

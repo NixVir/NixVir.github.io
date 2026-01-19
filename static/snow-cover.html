@@ -15,6 +15,26 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
 
+    <!-- NixVir Watermark Plugin for Chart.js -->
+    <script>
+    const nixvirWatermarkPlugin = {
+        id: 'nixvirWatermark',
+        afterDraw: function(chart) {
+            const ctx = chart.ctx;
+            const { width, height } = chart;
+            ctx.save();
+            ctx.globalAlpha = 0.6;
+            ctx.font = '500 9px "DM Sans", Arial, sans-serif';
+            ctx.fillStyle = '#64748b';
+            ctx.textAlign = 'right';
+            ctx.textBaseline = 'bottom';
+            ctx.fillText('NixVir', width - 6, height - 4);
+            ctx.restore();
+        }
+    };
+    Chart.register(nixvirWatermarkPlugin);
+    </script>
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
@@ -1556,6 +1576,7 @@
                         <td class="metric-value"><span id="combined-temp-pct-below">--</span></td>
                     </tr>
                 </tbody>
+                <tfoot><tr><td colspan="4" style="text-align: right; padding: 4px 8px; font-size: 9px; color: #64748b; opacity: 0.6;">NixVir</td></tr></tfoot>
             </table>
         </div>
 
@@ -1612,6 +1633,7 @@
                         <td class="metric-value"><span id="nsaa-southeast-warmtemp">--</span></td>
                     </tr>
                 </tbody>
+                <tfoot><tr><td colspan="7" style="text-align: right; padding: 4px 8px; font-size: 9px; color: #64748b; opacity: 0.6;">NixVir</td></tr></tfoot>
             </table>
         </div>
 
@@ -1668,6 +1690,7 @@
                         <td class="metric-value"><span id="csc-atlantic-warmtemp">--</span></td>
                     </tr>
                 </tbody>
+                <tfoot><tr><td colspan="7" style="text-align: right; padding: 4px 8px; font-size: 9px; color: #64748b; opacity: 0.6;">NixVir</td></tr></tfoot>
             </table>
         </div>
 
@@ -1798,6 +1821,7 @@
                             <tbody id="market-table-body">
                                 <tr><td colspan="6" style="text-align: center; color: var(--text-muted);">Loading...</td></tr>
                             </tbody>
+                            <tfoot><tr><td colspan="6" style="text-align: right; padding: 4px 8px; font-size: 9px; color: #64748b; opacity: 0.6;">NixVir</td></tr></tfoot>
                         </table>
                     </div>
                 </div>
@@ -4108,6 +4132,19 @@
                     .attr("text-anchor", "middle")
                     .text(d => d.name);
             }
+
+            // NixVir watermark
+            svg.append("text")
+                .attr("class", "nixvir-watermark")
+                .attr("x", width - 8)
+                .attr("y", height - 8)
+                .attr("text-anchor", "end")
+                .attr("fill", "#64748b")
+                .attr("font-family", "'DM Sans', Arial, sans-serif")
+                .attr("font-size", "10px")
+                .attr("font-weight", "500")
+                .attr("opacity", 0.6)
+                .text("NixVir");
         }
 
         // ============================================
