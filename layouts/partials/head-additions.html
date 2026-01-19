@@ -5,9 +5,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- Preload LCP image on homepage -->
+<!-- Preload LCP image on homepage (WebP with PNG fallback) -->
 {{ if .IsHome }}
-<link rel="preload" as="image" href="/images/snow-globe.png" fetchpriority="high">
+<link rel="preload" as="image" href="/images/snow-globe.webp" type="image/webp" fetchpriority="high">
 {{ end }}
 
 <!-- Preload featured image on content pages -->
