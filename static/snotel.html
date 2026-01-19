@@ -82,40 +82,92 @@
             font-family: 'JetBrains Mono', monospace;
         }
 
-        /* Summary Cards */
-        .summary-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .summary-card {
+        /* Summary Section */
+        .summary-section {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 1.25rem;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.5rem;
         }
 
-        .summary-card h3 {
-            color: var(--text-secondary);
-            font-size: 0.75rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.5rem;
+        .summary-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
         }
 
-        .summary-card .value {
-            font-size: 2rem;
+        .summary-pie {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            flex-shrink: 0;
+        }
+
+        .summary-pie svg {
+            transform: rotate(-90deg);
+        }
+
+        .summary-pie-label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .summary-pie-value {
+            font-size: 1.5rem;
             font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-primary);
+            line-height: 1;
+        }
+
+        .summary-pie-subtext {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        .summary-stats {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .summary-stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .summary-stat-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .summary-stat-text {
+            font-size: 0.9rem;
+        }
+
+        .summary-stat-value {
+            font-weight: 600;
             font-family: 'JetBrains Mono', monospace;
         }
 
-        .summary-card .detail {
+        .summary-instructions {
+            flex: 1;
+            min-width: 250px;
+            font-size: 0.85rem;
             color: var(--text-secondary);
-            font-size: 0.8rem;
-            margin-top: 0.25rem;
+            line-height: 1.5;
+        }
+
+        .summary-instructions strong {
+            color: var(--text-primary);
         }
 
         .value-drought { color: var(--swe-drought); }
@@ -142,8 +194,18 @@
                 padding: 1rem;
             }
 
-            .summary-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .summary-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .summary-stats {
+                justify-content: center;
+            }
+
+            .summary-instructions {
+                text-align: center;
             }
 
             .map-container {
@@ -174,8 +236,9 @@
         }
 
         @media (max-width: 480px) {
-            .summary-grid {
-                grid-template-columns: 1fr;
+            .summary-stats {
+                flex-direction: column;
+                gap: 0.5rem;
             }
 
             .map-filters {
@@ -307,19 +370,15 @@
 
         /* Permanent snowbasin labels */
         .snowbasin-label {
-            background: transparent !important;
+            background: rgba(0, 0, 0, 0.75) !important;
             border: none !important;
-            box-shadow: none !important;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.4) !important;
+            border-radius: 3px !important;
             color: #fff;
-            font-size: 11px;
-            font-weight: bold;
+            font-size: 10px;
+            font-weight: 600;
             text-align: center;
-            text-shadow:
-                -1px -1px 0 #000,
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000,
-                0 0 4px rgba(0,0,0,0.9);
+            padding: 2px 4px !important;
             white-space: nowrap;
             pointer-events: none;
         }
@@ -704,8 +763,8 @@
             </div>
         </header>
 
-        <!-- Summary Cards -->
-        <div class="summary-grid" id="summary-cards">
+        <!-- Summary Section -->
+        <div class="summary-section" id="summary-section">
             <div class="loading">
                 <div class="loading-spinner"></div>
                 <span>Loading data...</span>
@@ -907,44 +966,56 @@
 
             } catch (error) {
                 console.error('Error loading data:', error);
-                document.getElementById('summary-cards').innerHTML =
-                    '<div class="summary-card"><p>Error loading data. Please try again later.</p></div>';
+                document.getElementById('summary-section').innerHTML =
+                    '<div class="summary-content"><p style="color: var(--text-secondary);">Error loading data. Please try again later.</p></div>';
             }
         }
 
-        // Render summary cards
+        // Render summary section with pie chart
         function renderSummaryCards() {
             const stats = snotelData.statistics.overall;
-            const container = document.getElementById('summary-cards');
+            const container = document.getElementById('summary-section');
 
-            // Calculate drought stations (below 50%)
-            const droughtStations = snotelData.stations.filter(s => s.pct_median !== null && s.pct_median < 50).length;
+            // Calculate percentages
+            const belowPct = Math.round(100 * stats.below_normal / stats.count);
+            const atAbovePct = 100 - belowPct;
+
+            // SVG pie chart calculation (stroke-dasharray trick)
+            const circumference = 2 * Math.PI * 40; // radius = 40
+            const belowDash = (belowPct / 100) * circumference;
+            const atAboveDash = circumference - belowDash;
 
             container.innerHTML = `
-                <div class="summary-card">
-                    <h3>Current Snowpack</h3>
-                    <div class="value ${getSnowpackClass(stats.mean_pct)}">${stats.mean_pct}%</div>
-                    <div class="detail">of historical average (1991-2020)</div>
-                </div>
-                <div class="summary-card">
-                    <h3>Active SNOTEL Stations</h3>
-                    <div class="value">${stats.count}</div>
-                    <div class="detail">${snotelData.stations.length} stations in network</div>
-                </div>
-                <div class="summary-card">
-                    <h3>Stations Below Normal</h3>
-                    <div class="value value-below">${stats.below_normal}</div>
-                    <div class="detail">${Math.round(100 * stats.below_normal / stats.count)}% have &lt;90% snowpack</div>
-                </div>
-                <div class="summary-card">
-                    <h3>Stations at Normal</h3>
-                    <div class="value value-normal">${stats.normal}</div>
-                    <div class="detail">${Math.round(100 * stats.normal / stats.count)}% have 90-110% snowpack</div>
-                </div>
-                <div class="summary-card">
-                    <h3>Stations Above Normal</h3>
-                    <div class="value value-above">${stats.above_normal}</div>
-                    <div class="detail">${Math.round(100 * stats.above_normal / stats.count)}% have &gt;110% snowpack</div>
+                <div class="summary-content">
+                    <div class="summary-pie">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <!-- At/Above Normal (green/blue) - drawn first as background -->
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="var(--success)" stroke-width="20"
+                                stroke-dasharray="${atAboveDash} ${circumference}" stroke-dashoffset="0"/>
+                            <!-- Below Normal (red/orange) - drawn on top -->
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="var(--swe-below)" stroke-width="20"
+                                stroke-dasharray="${belowDash} ${circumference}" stroke-dashoffset="${-atAboveDash}"/>
+                        </svg>
+                        <div class="summary-pie-label">
+                            <div class="summary-pie-value">${stats.mean_pct}%</div>
+                            <div class="summary-pie-subtext">of normal</div>
+                        </div>
+                    </div>
+                    <div class="summary-stats">
+                        <div class="summary-stat-item">
+                            <div class="summary-stat-dot" style="background: var(--swe-below);"></div>
+                            <span class="summary-stat-text"><span class="summary-stat-value">${belowPct}%</span> below normal</span>
+                        </div>
+                        <div class="summary-stat-item">
+                            <div class="summary-stat-dot" style="background: var(--success);"></div>
+                            <span class="summary-stat-text"><span class="summary-stat-value">${atAbovePct}%</span> at or above normal</span>
+                        </div>
+                    </div>
+                    <div class="summary-instructions">
+                        <strong>How to use this map:</strong> Colored regions show snowpack as a percentage of the 1991-2020 median.
+                        <strong>Click a region</strong> for details. <strong>Hover</strong> over states in the sidebar to highlight them.
+                        Use the layer control (top right) to show individual monitoring stations or change the base map.
+                    </div>
                 </div>
             `;
         }
@@ -1024,21 +1095,21 @@
                 'Satellite': satelliteLayer
             };
 
-            // Create station layer groups
-            stationLayerGroup = L.layerGroup().addTo(map);
-            bcStationLayerGroup = L.layerGroup().addTo(map);
+            // Create station layer groups (not added to map by default - too noisy)
+            stationLayerGroup = L.layerGroup();
+            bcStationLayerGroup = L.layerGroup();
 
             // Load watershed boundaries (HUC2 - major regions)
             loadWatershedBoundaries();
 
-            // Add stations to map
+            // Populate stations (but don't show by default)
             updateStations();
             updateBCStations();
 
-            // Layer control - we'll add watersheds after they load
+            // Layer control - stations are overlays user can enable
             const overlayMaps = {
-                'US SNOTEL Stations': stationLayerGroup,
-                'BC Snow Stations': bcStationLayerGroup
+                'Show US SNOTEL Stations': stationLayerGroup,
+                'Show BC Snow Stations': bcStationLayerGroup
             };
 
             // Store control reference to add watersheds later
