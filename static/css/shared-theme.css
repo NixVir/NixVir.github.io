@@ -228,3 +228,50 @@ body {
 .text-success { color: var(--success); }
 .text-warning { color: var(--warning); }
 .text-danger { color: var(--danger); }
+
+/* ============================================
+   NixVir Brand Stamp (for data visualizations)
+   ============================================ */
+.nixvir-brand {
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+    z-index: 1000;
+}
+
+.nixvir-brand:hover {
+    opacity: 1;
+}
+
+.nixvir-brand a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nixvir-brand img {
+    height: 20px;
+    width: auto;
+}
+
+/* Leaflet map control positioning */
+.leaflet-control.nixvir-brand {
+    background: rgba(10, 14, 20, 0.8);
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin: 10px !important;
+}
+
+/* For light map backgrounds */
+.leaflet-control.nixvir-brand.on-light {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Chart overlay positioning (bottom-left corner) */
+.chart-nixvir-brand {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background: rgba(10, 14, 20, 0.7);
+    border-radius: 4px;
+    padding: 3px 6px;
+}

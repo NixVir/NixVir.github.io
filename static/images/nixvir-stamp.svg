@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 24" width="80" height="24">
+  <defs>
+    <linearGradient id="mountainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <!-- Simplified mountain icon -->
+  <path d="M2 18 L8 6 L14 18 Z" fill="url(#mountainGrad)" opacity="0.9"/>
+  <path d="M10 18 L18 4 L26 18 Z" fill="url(#mountainGrad)"/>
+  <!-- NixVir text -->
+  <text x="30" y="16" font-family="'DM Sans', Arial, sans-serif" font-size="12" font-weight="600" fill="#e8ecf2">
+    NixVir
+  </text>
+</svg>
