@@ -949,17 +949,16 @@
                 maxZoom: 12
             });
 
-            // Terrain basemap with geographic features
-            // Using Stadia Stamen Terrain (free, shows elevation/terrain)
-            const terrainLayer = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_terrain/{z}/{x}/{y}{r}.png', {
-                maxZoom: 18,
-                attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://stamen.com/">Stamen Design</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-            });
-
-            // Alternative: ESRI World Topo (more detailed)
+            // ESRI World Topo - default terrain basemap (free, no API key required)
             const topoLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
                 maxZoom: 18,
                 attribution: 'Tiles &copy; Esri'
+            });
+
+            // OpenStreetMap - standard street map
+            const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             });
 
             // Satellite view option
@@ -968,13 +967,13 @@
                 attribution: 'Tiles &copy; Esri'
             });
 
-            // Add default terrain layer
-            terrainLayer.addTo(map);
+            // Add default topo layer
+            topoLayer.addTo(map);
 
             // Layer control for basemaps
             const baseMaps = {
-                'Terrain': terrainLayer,
                 'Topographic': topoLayer,
+                'Street Map': osmLayer,
                 'Satellite': satelliteLayer
             };
 
