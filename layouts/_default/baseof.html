@@ -55,9 +55,11 @@
 
   {{- $environment := hugo.Environment | compare.Default "production" -}}
   <body class="ma0 {{ $.Param "body_classes"  | compare.Default "avenir bg-near-white"}} {{ $environment }}">
+    <!-- Skip link for keyboard navigation (WCAG 2.4.1) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     {{ block "header" . }}{{ partials.Include "site-header.html" .}}{{ end }}
-    <main class="pb7" role="main">
+    <main id="main-content" class="pb7" role="main">
       {{ block "main" . }}{{ end }}
     </main>
     {{ block "footer" . }}{{ partials.IncludeCached "site-footer.html" . }}{{ end }}

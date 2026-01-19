@@ -30,4 +30,42 @@ h3.athelas,
 .nested-copy-line-height h3 {
   font-family: 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif !important;
 }
+
+/* Skip link for keyboard navigation (WCAG 2.4.1) */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #3b82f6;
+  color: white;
+  padding: 8px 16px;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: 500;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Focus indicators for keyboard navigation (WCAG 2.4.7) */
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Higher contrast focus for dark backgrounds */
+.bg-black a:focus-visible,
+.bg-black-60 a:focus-visible,
+.bg-near-black a:focus-visible,
+[class*="snow-pane"] a:focus-visible,
+[class*="news-pane"] a:focus-visible,
+[class*="insights-pane"] a:focus-visible {
+  outline-color: #60a5fa;
+}
 </style>

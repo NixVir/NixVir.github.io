@@ -2,7 +2,7 @@
   <div class="flex-l center items-center justify-between">
     <div class="flex items-center">
       <!-- Logo - shown on all pages -->
-      <a href="{{ .Site.Home.RelPermalink }}" class="dib mr3 v-mid" title="Home">
+      <a href="{{ .Site.Home.RelPermalink }}" class="dib mr3 v-mid nav-touch-target" title="Home">
         <img src="/images/nixvirlogo.png" alt="{{ .Site.Title }}" style="height: 40px; width: auto;" />
       </a>
     </div>
@@ -12,7 +12,7 @@
         <ul class="{{ compare.Conditional (compare.Eq $.Site.Language.LanguageDirection "rtl") "pr0 ml3" "pl0 mr3" }}">
           {{ range .Site.Menus.main }}
           <li class="list f5 f4-ns fw4 dib {{ compare.Conditional (compare.Eq $.Site.Language.LanguageDirection "rtl") "pl3" "pr3" }}">
-            <a class="hover-white white-90 no-underline" href="{{ .URL }}" title="{{ lang.Translate "pageTitle" . }}">
+            <a class="hover-white white-90 no-underline nav-touch-target" href="{{ .URL }}" title="{{ lang.Translate "pageTitle" . }}">
               {{ .Name }}
             </a>
           </li>
@@ -23,3 +23,13 @@
     </div>
   </div>
 </nav>
+
+<style>
+/* Touch target sizing for mobile accessibility (WCAG 2.5.5) */
+.nav-touch-target {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 12px 16px;
+}
+</style>
