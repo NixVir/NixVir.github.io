@@ -12,119 +12,14 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+    <!-- Shared Theme CSS -->
+    <link rel="stylesheet" href="/css/shared-theme.css">
+
     <!-- Google Analytics (respects Do Not Track) -->
-    <script>
-        var dnt = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-        var doNotTrack = dnt === "1" || dnt === "yes";
-        if (!doNotTrack) {
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-E2QD5PNRWE';
-            document.head.appendChild(script);
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-E2QD5PNRWE');
-        }
-    </script>
+    <script src="/js/analytics.js"></script>
 
     <style>
-        :root {
-            --bg-deep: #0a0e14;
-            --bg-card: #111820;
-            --bg-elevated: #1a2230;
-            --border: #2a3444;
-            --border-light: #3a4454;
-            --text-primary: #e8ecf2;
-            --text-secondary: #8892a2;
-            --text-muted: #5c6678;
-            --accent-cold: #3b82f6;
-            --accent-cold-bright: #60a5fa;
-            --accent-warm: #f97316;
-            --accent-warm-bright: #fb923c;
-            --geo-fill: #1e293b;
-            --geo-stroke: #334155;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-
-            /* Snowpack color scale */
-            --swe-drought: #dc2626;
-            --swe-below: #f97316;
-            --swe-low: #facc15;
-            --swe-normal: #22c55e;
-            --swe-above: #3b82f6;
-            --swe-high: #8b5cf6;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: var(--bg-deep);
-            color: var(--text-primary);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        .bg-gradient {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(ellipse at 15% 10%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
-                radial-gradient(ellipse at 85% 90%, rgba(249, 115, 22, 0.04) 0%, transparent 50%),
-                var(--bg-deep);
-            z-index: -1;
-        }
-
-        /* Site Banner Header */
-        .site-banner {
-            background-image: url('/images/mtnsky.jpg');
-            background-size: cover;
-            background-position: center bottom;
-            position: relative;
-        }
-
-        .site-banner-overlay {
-            background: rgba(0, 0, 0, 0.6);
-            padding-bottom: 1rem;
-        }
-
-        .site-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            max-width: 1700px;
-            margin: 0 auto;
-        }
-
-        .site-nav .logo {
-            height: 40px;
-        }
-
-        .site-nav .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .site-nav .nav-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-
-        .site-nav .nav-links a:hover {
-            color: white;
-        }
+        /* Page-specific styles (shared base styles in /css/shared-theme.css) */
 
         .dashboard {
             max-width: 1700px;
@@ -1211,33 +1106,33 @@
                         layersWithPct.push({ layer, pct });
                     }
 
-                    // Popup with snowpack details
+                    // Popup with snowpack details (uses shared popup-* classes from /css/shared-theme.css)
                     const popupContent = `
                         <h4 style="margin: 0 0 8px 0;">${name}</h4>
-                        <div style="display: grid; gap: 4px; font-size: 0.9em;">
-                            <div style="display: flex; justify-content: space-between; gap: 1rem;">
-                                <span style="color: #8892a2;">HUC4 Code</span>
-                                <span style="font-family: monospace;">${props.huc4}</span>
+                        <div class="popup-grid">
+                            <div class="popup-row">
+                                <span class="popup-label">HUC4 Code</span>
+                                <span class="popup-value">${props.huc4}</span>
                             </div>
-                            <div style="display: flex; justify-content: space-between; gap: 1rem;">
-                                <span style="color: #8892a2;">Avg Snowpack</span>
-                                <span style="font-family: monospace; color: ${getSnowpackColor(pct)}; font-weight: bold;">
+                            <div class="popup-row">
+                                <span class="popup-label">Avg Snowpack</span>
+                                <span class="popup-value-bold" style="color: ${getSnowpackColor(pct)};">
                                     ${pct !== null ? pct + '%' : 'No data'}
                                 </span>
                             </div>
                             ${pct !== null ? `
-                            <div style="display: flex; justify-content: space-between; gap: 1rem;">
-                                <span style="color: #8892a2;">Range</span>
-                                <span style="font-family: monospace;">${props.min_pct}% - ${props.max_pct}%</span>
+                            <div class="popup-row">
+                                <span class="popup-label">Range</span>
+                                <span class="popup-value">${props.min_pct}% - ${props.max_pct}%</span>
                             </div>
                             ` : ''}
-                            <div style="display: flex; justify-content: space-between; gap: 1rem;">
-                                <span style="color: #8892a2;">SNOTEL Stations</span>
-                                <span style="font-family: monospace;">${count}</span>
+                            <div class="popup-row">
+                                <span class="popup-label">SNOTEL Stations</span>
+                                <span class="popup-value">${count}</span>
                             </div>
-                            <div style="display: flex; justify-content: space-between; gap: 1rem;">
-                                <span style="color: #8892a2;">Area</span>
-                                <span style="font-family: monospace;">${Math.round(props.areasqkm).toLocaleString()} km²</span>
+                            <div class="popup-row">
+                                <span class="popup-label">Area</span>
+                                <span class="popup-value">${Math.round(props.areasqkm).toLocaleString()} km²</span>
                             </div>
                         </div>
                     `;
@@ -1344,25 +1239,25 @@
                     fillOpacity: 0.9
                 });
 
-                // Popup content
+                // Popup content (uses shared popup-* classes)
                 const popupContent = `
                     <h4>${station.name}</h4>
-                    <div style="display: grid; gap: 4px;">
-                        <div style="display: flex; justify-content: space-between;">
-                            <span style="color: #8892a2;">State</span>
-                            <span style="font-family: monospace;">${station.state}</span>
+                    <div class="popup-grid">
+                        <div class="popup-row">
+                            <span class="popup-label">State</span>
+                            <span class="popup-value">${station.state}</span>
                         </div>
-                        <div style="display: flex; justify-content: space-between;">
-                            <span style="color: #8892a2;">SWE</span>
-                            <span style="font-family: monospace;">${station.swe_inches !== null ? station.swe_inches + '"' : 'N/A'}</span>
+                        <div class="popup-row">
+                            <span class="popup-label">SWE</span>
+                            <span class="popup-value">${station.swe_inches !== null ? station.swe_inches + '"' : 'N/A'}</span>
                         </div>
-                        <div style="display: flex; justify-content: space-between;">
-                            <span style="color: #8892a2;">% of Median</span>
-                            <span style="font-family: monospace; color: ${color};">${station.pct_median !== null ? station.pct_median + '%' : 'N/A'}</span>
+                        <div class="popup-row">
+                            <span class="popup-label">% of Median</span>
+                            <span class="popup-value" style="color: ${color};">${station.pct_median !== null ? station.pct_median + '%' : 'N/A'}</span>
                         </div>
-                        <div style="display: flex; justify-content: space-between;">
-                            <span style="color: #8892a2;">Elevation</span>
-                            <span style="font-family: monospace;">${station.elevation_ft.toLocaleString()} ft</span>
+                        <div class="popup-row">
+                            <span class="popup-label">Elevation</span>
+                            <span class="popup-value">${station.elevation_ft.toLocaleString()} ft</span>
                         </div>
                     </div>
                 `;
@@ -1411,29 +1306,29 @@
                     fillOpacity: 0.9
                 });
 
-                // Popup content for BC stations
+                // Popup content for BC stations (uses shared popup-* classes)
                 const popupContent = `
                     <h4>${station.name}</h4>
-                    <div style="display: grid; gap: 4px;">
-                        <div style="display: flex; justify-content: space-between;">
-                            <span style="color: #8892a2;">Province</span>
-                            <span style="font-family: monospace;">${station.province}</span>
+                    <div class="popup-grid">
+                        <div class="popup-row">
+                            <span class="popup-label">Province</span>
+                            <span class="popup-value">${station.province}</span>
                         </div>
-                        <div style="display: flex; justify-content: space-between;">
-                            <span style="color: #8892a2;">SWE</span>
-                            <span style="font-family: monospace;">${station.swe_inches !== null ? station.swe_inches + '"' : 'N/A'} (${station.swe_mm} mm)</span>
+                        <div class="popup-row">
+                            <span class="popup-label">SWE</span>
+                            <span class="popup-value">${station.swe_inches !== null ? station.swe_inches + '"' : 'N/A'} (${station.swe_mm} mm)</span>
                         </div>
-                        <div style="display: flex; justify-content: space-between;">
-                            <span style="color: #8892a2;">Snow Depth</span>
-                            <span style="font-family: monospace;">${station.snow_depth_inches !== null ? station.snow_depth_inches + '"' : 'N/A'} (${station.snow_depth_cm || '--'} cm)</span>
+                        <div class="popup-row">
+                            <span class="popup-label">Snow Depth</span>
+                            <span class="popup-value">${station.snow_depth_inches !== null ? station.snow_depth_inches + '"' : 'N/A'} (${station.snow_depth_cm || '--'} cm)</span>
                         </div>
-                        <div style="display: flex; justify-content: space-between;">
-                            <span style="color: #8892a2;">Elevation</span>
-                            <span style="font-family: monospace;">${station.elevation_ft ? station.elevation_ft.toLocaleString() + ' ft' : 'N/A'}</span>
+                        <div class="popup-row">
+                            <span class="popup-label">Elevation</span>
+                            <span class="popup-value">${station.elevation_ft ? station.elevation_ft.toLocaleString() + ' ft' : 'N/A'}</span>
                         </div>
-                        <div style="display: flex; justify-content: space-between; margin-top: 4px; padding-top: 4px; border-top: 1px solid #333;">
-                            <span style="color: #8892a2; font-size: 0.85em;">Source</span>
-                            <span style="font-family: monospace; font-size: 0.85em;">BC Ministry of Env.</span>
+                        <div class="popup-row" style="margin-top: 4px; padding-top: 4px; border-top: 1px solid #333;">
+                            <span class="popup-label" style="font-size: 0.85em;">Source</span>
+                            <span class="popup-value" style="font-size: 0.85em;">BC Ministry of Env.</span>
                         </div>
                     </div>
                 `;

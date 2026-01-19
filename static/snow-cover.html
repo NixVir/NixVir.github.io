@@ -18,73 +18,14 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+    <!-- Shared Theme CSS -->
+    <link rel="stylesheet" href="/css/shared-theme.css">
+
     <!-- Google Analytics (respects Do Not Track) -->
-    <script>
-        var dnt = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-        var doNotTrack = dnt === "1" || dnt === "yes";
-        if (!doNotTrack) {
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-E2QD5PNRWE';
-            document.head.appendChild(script);
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-E2QD5PNRWE');
-        }
-    </script>
+    <script src="/js/analytics.js"></script>
 
     <style>
-        :root {
-            --bg-deep: #0a0e14;
-            --bg-card: #111820;
-            --bg-elevated: #1a2230;
-            --border: #2a3444;
-            --border-light: #3a4454;
-            --text-primary: #e8ecf2;
-            --text-secondary: #8892a2;
-            --text-muted: #5c6678;
-            --accent-cold: #3b82f6;
-            --accent-cold-bright: #60a5fa;
-            --accent-warm: #f97316;
-            --accent-warm-bright: #fb923c;
-            --snow-heavy: #dbeafe;
-            --snow-moderate: #60a5fa;
-            --snow-light: #1e40af;
-            --snow-none: #475569;
-            --geo-fill: #1e293b;
-            --geo-stroke: #334155;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: var(--bg-deep);
-            color: var(--text-primary);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        .bg-gradient {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(ellipse at 15% 10%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
-                radial-gradient(ellipse at 85% 90%, rgba(249, 115, 22, 0.04) 0%, transparent 50%),
-                var(--bg-deep);
-            z-index: -1;
-        }
+        /* Page-specific styles (shared base styles in /css/shared-theme.css) */
 
         .dashboard {
             max-width: 1700px;
@@ -1008,21 +949,7 @@
             padding: 0.5rem 0.4rem;
         }
 
-        /* Legacy card styles - kept for backward compatibility */
-        .national-stat-card {
-            background: var(--bg-elevated);
-            padding: 1.5rem 1.25rem;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .stat-metric-value {
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 700;
-            line-height: 1.1;
-        }
-
-        /* Metric colors */
+        /* Metric colors for data display */
         .stat-positive { color: var(--accent-cold-bright); }
         .stat-negative { color: var(--accent-warm-bright); }
         .stat-neutral { color: var(--text-primary); }
@@ -1032,33 +959,6 @@
         .stat-unfavorable { color: #f97316; }       /* Orange - moderately bad */
         .stat-favorable { color: #60a5fa; }         /* Blue - moderately good */
         .stat-very-favorable { color: #22c55e; }    /* Green - very good */
-
-        /* Legacy aliases */
-        .stat-warm { color: #f97316; }
-        .stat-cold { color: #60a5fa; }
-
-        /* Temperature colors (inverted - warm is bad for snow) */
-        .temp-hot { color: #ef4444; }  /* Red - extremely warm (20°F+ above normal) */
-        .temp-warm { color: var(--accent-warm-bright); }
-        .temp-cold { color: var(--accent-cold-bright); }
-
-        /* Legacy styles for backward compatibility */
-        .national-stat-value {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-        }
-
-        .national-stat-label {
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-        }
-
-        .national-stat-temp {
-            font-size: 0.75rem;
-            margin-top: 0.5rem;
-        }
 
         .chart-header-row {
             display: flex;
@@ -1070,45 +970,6 @@
 
         .chart-header-row > div {
             flex: 1;
-        }
-
-        /* Chart summary stat badge */
-        .chart-stat-badge {
-            position: absolute;
-            top: 0.75rem;
-            right: 0.75rem;
-            background: rgba(17, 24, 32, 0.95);
-            backdrop-filter: blur(8px);
-            padding: 0.6rem 1rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            text-align: center;
-            z-index: 10;
-        }
-
-        .chart-stat-badge .stat-value {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            line-height: 1.2;
-        }
-
-        .chart-stat-badge .stat-value.warm {
-            color: #f97316;
-        }
-
-        .chart-stat-badge .stat-value.cold {
-            color: #60a5fa;
-        }
-
-        .chart-stat-badge .stat-label {
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-            margin-top: 0.2rem;
-            line-height: 1.3;
         }
 
         .chart-title,

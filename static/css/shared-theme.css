@@ -1,0 +1,230 @@
+/**
+ * NixVir Shared Theme CSS
+ * Common styles for snow-cover.html, snotel.html, and dashboard.html
+ *
+ * Usage: <link rel="stylesheet" href="/css/shared-theme.css">
+ */
+
+/* ============================================
+   CSS Custom Properties (Design Tokens)
+   ============================================ */
+:root {
+    /* Background colors */
+    --bg-deep: #0a0e14;
+    --bg-card: #111820;
+    --bg-elevated: #1a2230;
+
+    /* Border colors */
+    --border: #2a3444;
+    --border-light: #3a4454;
+
+    /* Text colors */
+    --text-primary: #e8ecf2;
+    --text-secondary: #8892a2;
+    --text-muted: #5c6678;
+
+    /* Accent colors - cold/blue spectrum */
+    --accent-cold: #3b82f6;
+    --accent-cold-bright: #60a5fa;
+    --accent-blue: #3b82f6;
+    --accent-blue-bright: #60a5fa;
+
+    /* Accent colors - warm/orange spectrum */
+    --accent-warm: #f97316;
+    --accent-warm-bright: #fb923c;
+    --accent-orange: #f97316;
+
+    /* Status colors */
+    --success: #10b981;
+    --accent-green: #10b981;
+    --warning: #f59e0b;
+    --accent-yellow: #eab308;
+    --danger: #ef4444;
+    --accent-red: #ef4444;
+    --accent-purple: #a855f7;
+
+    /* Geographic/map colors */
+    --geo-fill: #1e293b;
+    --geo-stroke: #334155;
+
+    /* Snow visualization colors */
+    --snow-heavy: #dbeafe;
+    --snow-moderate: #60a5fa;
+    --snow-light: #1e40af;
+    --snow-none: #475569;
+
+    /* Snowpack color scale (SNOTEL) */
+    --swe-drought: #dc2626;
+    --swe-below: #f97316;
+    --swe-low: #facc15;
+    --swe-normal: #22c55e;
+    --swe-above: #3b82f6;
+    --swe-high: #8b5cf6;
+}
+
+/* ============================================
+   Reset & Base Styles
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg-deep);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ============================================
+   Background Gradient
+   ============================================ */
+.bg-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(ellipse at 15% 10%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 85% 90%, rgba(249, 115, 22, 0.04) 0%, transparent 50%),
+        var(--bg-deep);
+    z-index: -1;
+}
+
+/* Green variant for dashboard */
+.bg-gradient-green {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(ellipse at 15% 10%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 85% 90%, rgba(16, 185, 129, 0.04) 0%, transparent 50%),
+        var(--bg-deep);
+    z-index: -1;
+}
+
+/* ============================================
+   Site Banner & Navigation
+   ============================================ */
+.site-banner {
+    background-image: url('/images/mtnsky.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    position: relative;
+}
+
+.site-banner-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding-bottom: 1rem;
+}
+
+.site-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1700px;
+    margin: 0 auto;
+}
+
+.site-nav .logo,
+.site-nav-logo img {
+    height: 40px;
+    width: auto;
+}
+
+.site-nav .nav-links,
+.site-nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+}
+
+.site-nav .nav-links a,
+.site-nav-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.site-nav .nav-links a:hover,
+.site-nav-links a:hover {
+    color: white;
+}
+
+.site-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.site-nav-links li {
+    padding-right: 1rem;
+}
+
+/* ============================================
+   Popup/Tooltip Row Styles
+   ============================================ */
+.popup-grid {
+    display: grid;
+    gap: 4px;
+    font-size: 0.9em;
+}
+
+.popup-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.popup-label {
+    color: var(--text-secondary);
+}
+
+.popup-value {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.popup-value-bold {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
+}
+
+/* ============================================
+   Common Card Styles
+   ============================================ */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+}
+
+.card-elevated {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+}
+
+/* ============================================
+   Typography Helpers
+   ============================================ */
+.mono {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+.text-success { color: var(--success); }
+.text-warning { color: var(--warning); }
+.text-danger { color: var(--danger); }

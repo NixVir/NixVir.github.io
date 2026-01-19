@@ -9,123 +9,26 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
 
-    <!-- Google Fonts - matching snow-cover -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+    <!-- Shared Theme CSS -->
+    <link rel="stylesheet" href="/css/shared-theme.css">
+
     <!-- Google Analytics (respects Do Not Track) -->
-    <script>
-        var dnt = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-        var doNotTrack = dnt === "1" || dnt === "yes";
-        if (!doNotTrack) {
-            var script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-E2QD5PNRWE';
-            document.head.appendChild(script);
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-E2QD5PNRWE');
-        }
-    </script>
+    <script src="/js/analytics.js"></script>
 
     <style>
-        :root {
-            --bg-deep: #0a0e14;
-            --bg-card: #111820;
-            --bg-elevated: #1a2230;
-            --border: #2a3444;
-            --border-light: #3a4454;
-            --text-primary: #e8ecf2;
-            --text-secondary: #8892a2;
-            --text-muted: #5c6678;
-            --accent-blue: #3b82f6;
-            --accent-blue-bright: #60a5fa;
-            --accent-green: #10b981;
-            --accent-orange: #f97316;
-            --accent-red: #ef4444;
-            --accent-purple: #a855f7;
-            --accent-yellow: #eab308;
-        }
+        /* Page-specific styles (shared base styles in /css/shared-theme.css) */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: var(--bg-deep);
-            color: var(--text-primary);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
+        /* Dashboard uses green accent gradient variant */
         .bg-gradient {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
             background:
                 radial-gradient(ellipse at 15% 10%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
                 radial-gradient(ellipse at 85% 90%, rgba(16, 185, 129, 0.04) 0%, transparent 50%),
                 var(--bg-deep);
-            z-index: -1;
         }
 
-        /* Site Banner Header - Matching main site */
-        .site-banner {
-            background-image: url('/images/mtnsky.jpg');
-            background-size: cover;
-            background-position: center bottom;
-            position: relative;
-        }
-
-        .site-banner-overlay {
-            background: rgba(0, 0, 0, 0.6);
-            padding-bottom: 1rem;
-        }
-
-        /* Site Navigation Bar */
-        .site-nav {
-            padding: 0.75rem 1rem 0.75rem 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .site-nav-logo img {
-            height: 40px;
-            width: auto;
-        }
-
-        .site-nav-right {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .site-nav-links {
-            display: flex;
-            align-items: center;
-            gap: 0;
-            list-style: none;
-        }
-
-        .site-nav-links li {
-            padding-right: 1rem;
-        }
-
-        .site-nav-links a {
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 400;
-            transition: color 0.2s;
-        }
-
-        .site-nav-links a:hover,
         .site-nav-links .current {
             color: #fff;
         }
