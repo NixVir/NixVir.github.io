@@ -28,7 +28,7 @@
               <!-- Globe Image -->
               <div class="snow-globe-wrapper">
                 <a href="/snow-cover/" title="View detailed snow cover data">
-                  <img src="/images/snow-globe.png" alt="North American Snow Cover" class="snow-globe-img" id="homepage-snow-globe">
+                  <img src="/images/snow-globe.png" alt="North American Snow Cover" class="snow-globe-img" id="homepage-snow-globe" width="200" height="222" fetchpriority="high">
                 </a>
               </div>
 
@@ -151,8 +151,8 @@
               <div class="news-pane-header">
                 <p class="news-updated">Updated: <span id="ski-news-update">Loading...</span></p>
                 <div class="news-filter">
-                  <label>Filter:</label>
-                  <select id="ski-news-filter">
+                  <label for="ski-news-filter">Filter:</label>
+                  <select id="ski-news-filter" aria-label="Filter ski news by category">
                     <option value="all">All</option>
                     <option value="resort-operations">Resort Ops</option>
                     <option value="business-investment">Business</option>
@@ -197,13 +197,13 @@
                 <div class="insight-card">
                   {{ if .Params.featured_image }}
                     <a href="{{ .RelPermalink }}" class="insight-image-link">
-                      <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="insight-image">
+                      <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="insight-image" width="80" height="60" loading="lazy">
                     </a>
                   {{ end }}
                   <div class="insight-content">
-                    <h4 class="insight-title">
+                    <h3 class="insight-title">
                       <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                    </h4>
+                    </h3>
                     {{ with .Params.description }}
                       <p class="insight-description">{{ . | truncate 100 }}</p>
                     {{ end }}
@@ -420,7 +420,7 @@
     }
     .topic-count {
       font-size: 0.6rem;
-      color: #6b7280;
+      color: #9ca3af; /* Improved contrast ratio from #6b7280 */
       white-space: nowrap;
     }
     .ski-dashboard-footer {
@@ -680,12 +680,13 @@
       flex: 1;
       min-width: 0;
     }
-    .ski-news-card h4 {
+    .ski-news-headline {
       margin: 0 0 0.25rem 0;
       font-size: 0.8rem;
       line-height: 1.25;
+      font-weight: 600;
     }
-    .ski-news-card h4 a {
+    .ski-news-headline a {
       color: #e8ecf2;
       text-decoration: none;
       transition: color 0.2s;
@@ -857,7 +858,7 @@
             <div class="ski-news-header">
               <img src="${catMeta.icon}" alt="${catMeta.name}" class="ski-news-icon" />
               <div class="ski-news-content">
-                <h4><a href="${article.url}" target="_blank" rel="noopener">${article.title || 'Untitled'}</a></h4>
+                <h3 class="ski-news-headline"><a href="${article.url}" target="_blank" rel="noopener">${article.title || 'Untitled'}</a></h3>
                 <div class="ski-news-meta">
                   ${article.source || ''} ${pubDate ? '&bull; ' + pubDate : ''}
                   <span class="ski-news-category cat-${category}">${catMeta.name}</span>

@@ -16,13 +16,16 @@
   [headers.values]
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
+    # X-XSS-Protection removed - deprecated header that can cause issues in modern browsers
+    # Modern browsers have removed XSS auditors; CSP provides better protection
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
     # HSTS - enforce HTTPS for 1 year
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     # Content Security Policy - restrict script/style sources
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' cdn.jsdelivr.net cdnjs.cloudflare.com www.googletagmanager.com www.google-analytics.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; img-src 'self' data: https:; connect-src 'self' www.google-analytics.com formspree.io cdn.jsdelivr.net raw.githubusercontent.com; font-src 'self' fonts.gstatic.com; frame-ancestors 'none'"
+    # NOTE: 'unsafe-inline' required for Google Analytics; 'unsafe-eval' required for chartjs-plugin-zoom
+    # img-src restricted to known domains instead of blanket https:
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' cdn.jsdelivr.net cdnjs.cloudflare.com www.googletagmanager.com www.google-analytics.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; img-src 'self' data: *.tile.openstreetmap.org unpkg.com cdn.jsdelivr.net; connect-src 'self' www.google-analytics.com formspree.io cdn.jsdelivr.net raw.githubusercontent.com api.open-meteo.com archive-api.open-meteo.com; font-src 'self' fonts.gstatic.com; frame-ancestors 'none'"
 
 # Prevent HTML caching
 [[headers]]
@@ -47,5 +50,22 @@
 
 [[headers]]
   for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Static data files (short cache - updated frequently)
+[[headers]]
+  for = "/data/*.json"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+
+# Font files - long cache
+[[headers]]
+  for = "/*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.woff"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"

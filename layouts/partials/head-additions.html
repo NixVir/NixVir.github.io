@@ -1,7 +1,23 @@
-<!-- Google Fonts for dark theme dashboard components -->
+<!-- Schema.org structured data for SEO -->
+{{ partial "schema.html" . }}
+
+<!-- Preconnect to Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Preload LCP image on homepage -->
+{{ if .IsHome }}
+<link rel="preload" as="image" href="/images/snow-globe.png" fetchpriority="high">
+{{ end }}
+
+<!-- Preload featured image on content pages -->
+{{ if .Params.featured_image }}
+<link rel="preload" as="image" href="{{ .Params.featured_image }}" fetchpriority="high">
+{{ end }}
+
+<!-- Google Fonts - load asynchronously to avoid render blocking -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 
 <style>
 /* Fix Data Insights article titles to use consistent sans-serif font */
