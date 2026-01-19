@@ -604,6 +604,20 @@
         ::-webkit-scrollbar-thumb:hover {
             background: var(--text-muted);
         }
+
+        /* Hide banner/nav when embedded in iframe */
+        .in-iframe .site-banner,
+        .in-iframe .back-link {
+            display: none !important;
+        }
+
+        .in-iframe .dashboard {
+            padding-top: 0.5rem;
+        }
+
+        .in-iframe .bg-gradient {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -783,6 +797,11 @@
     <div class="tooltip" id="tooltip"></div>
 
     <script>
+        // Detect if running in an iframe and add class to body
+        if (window.self !== window.top) {
+            document.body.classList.add('in-iframe');
+        }
+
         // Global data and map objects
         let snotelData = null;
         let bcSnowData = null;

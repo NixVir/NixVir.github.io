@@ -82,6 +82,52 @@
             color: var(--text-primary);
         }
 
+        /* View Tabs */
+        .view-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0;
+        }
+
+        .view-tab {
+            padding: 0.75rem 1.25rem;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid transparent;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: -1px;
+        }
+
+        .view-tab:hover {
+            color: var(--text-primary);
+        }
+
+        .view-tab.active {
+            color: var(--accent-cold-bright);
+            border-bottom-color: var(--accent-cold-bright);
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        .snotel-iframe {
+            width: 100%;
+            min-height: 900px;
+            border: none;
+            border-radius: 8px;
+        }
+
         /* Site Banner Header - Matching main site */
         .site-banner {
             background-image: url('/images/mtnsky.jpg');
@@ -1384,6 +1430,15 @@
             </div>
         </header>
 
+        <!-- View Tabs -->
+        <div class="view-tabs">
+            <button class="view-tab active" data-tab="ski-markets">Ski Markets</button>
+            <button class="view-tab" data-tab="snowpack">Western Snowpack</button>
+        </div>
+
+        <!-- Ski Markets Tab Content -->
+        <div class="tab-pane active" id="ski-markets-pane">
+
         <!-- Hidden region selector for JS compatibility -->
         <select id="region-select" style="display: none;">
             <optgroup label="NSAA Regions">
@@ -1735,6 +1790,13 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        </div><!-- End Ski Markets Tab Pane -->
+
+        <!-- Snowpack Tab Content -->
+        <div class="tab-pane" id="snowpack-pane">
+            <iframe src="/snotel.html" class="snotel-iframe" title="Western Snowpack Map"></iframe>
         </div>
 
     </div>
@@ -4627,11 +4689,38 @@
             console.log('DOMContentLoaded event fired');
             initUnitsToggle();
             initTableSorting();
+            initViewTabs();
             init();
         });
 
         // Refresh data every 5 minutes
         setInterval(loadSnowData, 300000);
+
+        // ============================================
+        // View Tabs (Ski Markets / Snowpack)
+        // ============================================
+        function initViewTabs() {
+            const tabs = document.querySelectorAll('.view-tab');
+            const panes = document.querySelectorAll('.tab-pane');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetId = tab.dataset.tab + '-pane';
+
+                    // Update tab buttons
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    // Update panes
+                    panes.forEach(pane => {
+                        pane.classList.remove('active');
+                        if (pane.id === targetId) {
+                            pane.classList.add('active');
+                        }
+                    });
+                });
+            });
+        }
     </script>
 </body>
 </html>
