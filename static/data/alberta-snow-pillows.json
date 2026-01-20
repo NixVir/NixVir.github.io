@@ -1,117 +1,141 @@
 {
-  "generated": "2026-01-20T00:00:00",
-  "source": "Alberta Environment and Parks",
-  "source_url": "https://rivers.alberta.ca/",
-  "note": "Station locations from CanSWE dataset. Real-time SWE data not available via public API - use rivers.alberta.ca web interface for current conditions.",
+  "metadata": {
+    "source": "rivers.alberta.ca",
+    "fetched_at": "2026-01-20T19:59:00Z",
+    "description": "Real-time Snow Water Equivalent from Alberta mountain snow pillows"
+  },
+  "statistics": {
+    "count": 14,
+    "mean_swe_mm": 238.8,
+    "min_swe_mm": 1.4,
+    "max_swe_mm": 492.0
+  },
   "stations": [
     {
-      "id": "05AA809P",
-      "name": "Gardiner Creek",
-      "lat": 49.3611,
-      "lon": -114.5158,
-      "elevation_m": 1970
+      "station_id": "05AA809",
+      "name": "Gardiner Creek - EPA",
+      "lat": 49.3599410634488,
+      "lon": -114.518235,
+      "swe_mm": 474.7,
+      "snow_depth_cm": 130.8,
+      "timestamp": "2026-01-20 12:00:00"
     },
     {
-      "id": "05AA817P",
-      "name": "South Racehorse Creek",
-      "lat": 49.783333,
-      "lon": -114.6,
-      "elevation_m": 1920
+      "station_id": "05AA817",
+      "name": "South Racehorse Creek - EPA",
+      "lat": 49.7901390586048,
+      "lon": -114.611994,
+      "swe_mm": 255.4,
+      "snow_depth_cm": 97.0,
+      "timestamp": "2026-01-20 12:00:00"
     },
     {
-      "id": "05AD803P",
-      "name": "Akamina Pass",
-      "lat": 49.02728,
-      "lon": -114.05294,
-      "elevation_m": 1761
+      "station_id": "05AB814",
+      "name": "Sentinel Peak - EPA",
+      "lat": 50.2526,
+      "lon": -114.465178,
+      "swe_mm": 1.4,
+      "snow_depth_cm": 1.0,
+      "timestamp": "2026-01-20 12:00:00"
     },
     {
-      "id": "05BB803P",
-      "name": "Sunshine Village",
-      "lat": 51.083332,
-      "lon": -115.78333,
-      "elevation_m": 2230
+      "station_id": "05AD803",
+      "name": "Akamina Pass 2 - EPA",
+      "lat": 49.02727778,
+      "lon": -114.052944,
+      "swe_mm": 187.8,
+      "snow_depth_cm": 60.4,
+      "timestamp": "2026-01-20 12:00:00"
     },
     {
-      "id": "05BF824P",
-      "name": "Three Isle Lake",
-      "lat": 50.63139,
-      "lon": -115.27944,
-      "elevation_m": 2160
+      "station_id": "05BB803",
+      "name": "Sunshine Village - EPA",
+      "lat": 51.077453,
+      "lon": -115.781592,
+      "swe_mm": 492.0,
+      "snow_depth_cm": 195.0,
+      "timestamp": "2026-01-20 11:45:00"
     },
     {
-      "id": "05BJ805P",
-      "name": "Little Elbow Summit",
-      "lat": 50.70553,
-      "lon": -114.989944,
-      "elevation_m": 2120
+      "station_id": "05BF824",
+      "name": "Three Isle Lake - EPA",
+      "lat": 50.632590232417,
+      "lon": -115.28129,
+      "swe_mm": 397.5,
+      "snow_depth_cm": 127.4,
+      "timestamp": "2026-01-20 12:30:00"
     },
     {
-      "id": "05BL811P",
-      "name": "Lost Creek South",
-      "lat": 50.17389,
-      "lon": -114.71,
-      "elevation_m": 2130
+      "station_id": "05BJ805",
+      "name": "Little Elbow Summit - EPA",
+      "lat": 50.70548667,
+      "lon": -114.990015,
+      "swe_mm": 283.8,
+      "snow_depth_cm": null,
+      "timestamp": "2026-01-20 12:30:00"
     },
     {
-      "id": "05BL812P",
-      "name": "Mount Odlum",
-      "lat": 50.485916,
-      "lon": -114.913086,
-      "elevation_m": 2060
+      "station_id": "05BL811",
+      "name": "Lost Creek South - EPA",
+      "lat": 50.1704135164618,
+      "lon": -114.714372,
+      "swe_mm": 461.0,
+      "snow_depth_cm": 145.0,
+      "timestamp": "2026-01-20 12:00:00"
     },
     {
-      "id": "05CA805P",
-      "name": "Skoki Lodge",
-      "lat": 51.540554,
-      "lon": -116.05639,
-      "elevation_m": 2120
+      "station_id": "05CA805",
+      "name": "Skoki Lodge - EPA",
+      "lat": 51.542155,
+      "lon": -116.06097,
+      "swe_mm": 328.3,
+      "snow_depth_cm": null,
+      "timestamp": "2026-01-20 12:30:00"
     },
     {
-      "id": "05DB802P",
-      "name": "Limestone Ridge",
-      "lat": 51.894196,
-      "lon": -115.38347,
-      "elevation_m": 1970
+      "station_id": "05DA807",
+      "name": "Whiterabbit Creek - EPA",
+      "lat": 51.9816683,
+      "lon": -116.168977,
+      "swe_mm": 125.6,
+      "snow_depth_cm": 71.9,
+      "timestamp": "2026-01-20 12:00:00"
     },
     {
-      "id": "05DD804P",
-      "name": "Southesk",
-      "lat": 52.670834,
-      "lon": -117.225555,
-      "elevation_m": 2045
+      "station_id": "05DB802",
+      "name": "Limestone Ridge - EPA",
+      "lat": 51.8942282628268,
+      "lon": -115.384567,
+      "swe_mm": 61.7,
+      "snow_depth_cm": 23.0,
+      "timestamp": "2026-01-20 12:30:00"
     },
     {
-      "id": "07BB811P",
-      "name": "Paddle River Headwaters",
-      "lat": 53.86889,
-      "lon": -115.54305,
-      "elevation_m": 885
+      "station_id": "05DD804",
+      "name": "Southesk - EPA",
+      "lat": 52.670833333,
+      "lon": -117.225556,
+      "swe_mm": 167.7,
+      "snow_depth_cm": 66.1,
+      "timestamp": "2026-01-20 12:00:00"
     },
     {
-      "id": "07BB814P",
-      "name": "Twin Lakes",
-      "lat": 54.058887,
-      "lon": -114.79472,
-      "elevation_m": 655
+      "station_id": "07BB811",
+      "name": "Paddle Headwaters - EPA",
+      "lat": 53.868888889,
+      "lon": -115.543056,
+      "swe_mm": 46.0,
+      "snow_depth_cm": 18.4,
+      "timestamp": "2026-01-20 11:00:00"
     },
     {
-      "id": "07BH801P",
-      "name": "House Mountain Lookout",
-      "lat": 55.0473,
-      "lon": -115.6016,
-      "elevation_m": 1176
-    },
-    {
-      "id": "07CE801P",
-      "name": "Gordon Lake Lookout",
-      "lat": 56.619446,
-      "lon": -110.494446,
-      "elevation_m": null
+      "station_id": "07BB814",
+      "name": "Twin Lakes - EPA",
+      "lat": 54.058888889,
+      "lon": -114.794722,
+      "swe_mm": 60.6,
+      "snow_depth_cm": 30.8,
+      "timestamp": "2026-01-20 11:00:00"
     }
-  ],
-  "statistics": {
-    "count": 15,
-    "elevation_range_m": "655-2230"
-  }
+  ]
 }

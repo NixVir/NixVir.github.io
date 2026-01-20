@@ -981,10 +981,10 @@
                     console.log(`Loaded ${bcBasinData.features.length} BC basins`);
                 }
 
-                // Alberta snow pillow stations (locations only, no real-time data)
+                // Alberta snow pillow stations (real-time SWE from rivers.alberta.ca)
                 if (abResponse && abResponse.ok) {
                     abSnowData = await abResponse.json();
-                    console.log(`Loaded ${abSnowData.stations.length} Alberta snow pillow stations`);
+                    console.log(`Loaded ${abSnowData.stations.length} Alberta snow pillow stations (Mean SWE: ${abSnowData.statistics?.mean_swe_mm || '--'} mm)`);
                 }
 
                 // Quebec Hydro-Québec snow stations (real-time SWE)
@@ -1753,6 +1753,9 @@
             // Create markers for each Alberta station
             // Use orange/amber color to distinguish from BC (cyan) and US (color-coded)
             stations.forEach(station => {
+                // Skip stations without coordinates
+                if (!station.lat || !station.lon) return;
+
                 const marker = L.circleMarker([station.lat, station.lon], {
                     radius: 7,
                     fillColor: '#f59e0b', // Amber/orange
@@ -1762,26 +1765,35 @@
                     fillOpacity: 0.85
                 });
 
-                // Popup content for Alberta stations
-                const elevFt = station.elevation_m ? Math.round(station.elevation_m * 3.281) : null;
+                // Format SWE and snow depth for display
+                const sweDisplay = station.swe_mm ? `${Math.round(station.swe_mm)} mm` : 'N/A';
+                const sweInches = station.swe_mm ? (station.swe_mm / 25.4).toFixed(1) : null;
+                const depthDisplay = station.snow_depth_cm ? `${Math.round(station.snow_depth_cm)} cm (${Math.round(station.snow_depth_cm / 2.54)}")` : 'N/A';
+                const timestamp = station.timestamp ? new Date(station.timestamp).toLocaleString() : 'N/A';
+
+                // Popup content for Alberta stations with real-time SWE
                 const popupContent = `
                     <h4>${station.name}</h4>
                     <div class="popup-grid">
+                        <div class="popup-row">
+                            <span class="popup-label">SWE</span>
+                            <span class="popup-value" style="font-weight: 600; color: #f59e0b;">${sweDisplay}${sweInches ? ` (${sweInches}")` : ''}</span>
+                        </div>
+                        <div class="popup-row">
+                            <span class="popup-label">Snow Depth</span>
+                            <span class="popup-value">${depthDisplay}</span>
+                        </div>
                         <div class="popup-row">
                             <span class="popup-label">Province</span>
                             <span class="popup-value">Alberta, Canada</span>
                         </div>
                         <div class="popup-row">
-                            <span class="popup-label">Elevation</span>
-                            <span class="popup-value">${elevFt ? elevFt.toLocaleString() + ' ft' : 'N/A'} (${station.elevation_m || '--'} m)</span>
-                        </div>
-                        <div class="popup-row">
                             <span class="popup-label">Station ID</span>
-                            <span class="popup-value">${station.id}</span>
+                            <span class="popup-value">${station.station_id}</span>
                         </div>
                         <div class="popup-row" style="margin-top: 4px; padding-top: 4px; border-top: 1px solid #333;">
-                            <span class="popup-label" style="font-size: 0.85em;">Note</span>
-                            <span class="popup-value" style="font-size: 0.85em;">Real-time data at rivers.alberta.ca</span>
+                            <span class="popup-label" style="font-size: 0.85em;">Updated</span>
+                            <span class="popup-value" style="font-size: 0.85em;">${timestamp}</span>
                         </div>
                         <div class="popup-row">
                             <span class="popup-label" style="font-size: 0.85em;">Source</span>
@@ -1817,19 +1829,22 @@
         // Alberta Station details panel
         function showABStationDetails(station) {
             const panel = document.getElementById('station-details');
-            const elevFt = station.elevation_m ? Math.round(station.elevation_m * 3.281) : null;
+
+            // Format SWE for display
+            const sweDisplay = station.swe_mm ? `${Math.round(station.swe_mm)} mm` : '--';
+            const sweInches = station.swe_mm ? (station.swe_mm / 25.4).toFixed(1) + '"' : '';
 
             document.getElementById('station-name').textContent = station.name;
-            document.getElementById('station-location').textContent = `Alberta, Canada | ${elevFt ? elevFt.toLocaleString() + ' ft' : '--'} elevation`;
-            document.getElementById('station-swe').textContent = 'See rivers.alberta.ca';
+            document.getElementById('station-location').textContent = `Alberta, Canada`;
+            document.getElementById('station-swe').textContent = sweDisplay + (sweInches ? ` (${sweInches})` : '');
             document.getElementById('station-swe').className = 'metric-value';
 
             const pctEl = document.getElementById('station-pct');
-            pctEl.textContent = 'N/A';
+            pctEl.textContent = 'N/A'; // Alberta doesn't provide % of normal
             pctEl.className = 'metric-value';
 
-            document.getElementById('station-elev').textContent = elevFt ? elevFt.toLocaleString() + ' ft' : 'N/A';
-            document.getElementById('station-id').textContent = station.id;
+            document.getElementById('station-elev').textContent = '--';
+            document.getElementById('station-id').textContent = station.station_id;
 
             panel.classList.add('visible');
         }

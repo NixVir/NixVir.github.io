@@ -1,0 +1,50 @@
+name: Update Alberta Snow Pillow Data
+
+on:
+  schedule:
+    # Run twice daily at 2 PM and 10 PM UTC
+    # Alberta Environment updates data throughout the day
+    - cron: '0 14,22 * * *'
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  update-alberta-snow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Fetch Alberta snow pillow data
+        run: |
+          python fetch_alberta_snow_pillows.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add static/data/alberta-snow-pillows.json
+
+          # Check if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes to Alberta snow data"
+          else
+            # Extract stats for commit message
+            STATIONS=$(python -c "import json; d=json.load(open('static/data/alberta-snow-pillows.json')); print(d['statistics']['count'])")
+            MEAN_SWE=$(python -c "import json; d=json.load(open('static/data/alberta-snow-pillows.json')); print(d['statistics']['mean_swe_mm'])")
+            git commit -m "Update Alberta snow data - Mean SWE: ${MEAN_SWE}mm (${STATIONS} stations)"
+            git push
+            echo "Alberta snow data updated and pushed"
+          fi
