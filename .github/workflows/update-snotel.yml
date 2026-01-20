@@ -1,0 +1,50 @@
+name: Update SNOTEL Snowpack Data
+
+on:
+  schedule:
+    # Run daily at 2 PM UTC (6 AM PST / 7 AM PDT)
+    # NRCS updates data throughout the day
+    - cron: '0 14 * * *'
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  update-snotel:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Fetch SNOTEL snowpack data
+        run: |
+          python fetch_snotel_data.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add static/data/snotel-snowpack.json
+
+          # Check if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes to SNOTEL data"
+          else
+            # Extract stats for commit message
+            MEAN_PCT=$(python -c "import json; d=json.load(open('static/data/snotel-snowpack.json')); print(d['statistics']['mean_pct_median'])")
+            STATIONS=$(python -c "import json; d=json.load(open('static/data/snotel-snowpack.json')); print(d['statistics']['stations_with_data'])")
+            git commit -m "Update SNOTEL data - Mean: ${MEAN_PCT}% of normal (${STATIONS} stations)"
+            git push
+            echo "SNOTEL data updated and pushed"
+          fi
