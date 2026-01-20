@@ -54,10 +54,15 @@ NixVir.com is a static site built with Hugo, deployed on Netlify, with automated
 │  │ history.json     │  │                  │  │                  │           │
 │  └──────────────────┘  └──────────────────┘  └──────────────────┘           │
 │                                                                              │
-│  ┌──────────────────┐  ┌──────────────────┐                                 │
-│  │ snotel-          │  │ bc-snow-         │                                 │
-│  │ snowpack.json    │  │ stations.json    │                                 │
-│  └──────────────────┘  └──────────────────┘                                 │
+│  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐           │
+│  │ snotel-          │  │ bc-snow-         │  │ alberta-snow-    │           │
+│  │ snowpack.json    │  │ stations.json    │  │ pillows.json     │           │
+│  └──────────────────┘  └──────────────────┘  └──────────────────┘           │
+│                                                                              │
+│  ┌──────────────────┐                                                       │
+│  │ quebec-snow-     │                                                       │
+│  │ stations.json    │                                                       │
+│  └──────────────────┘                                                       │
 │                                                                              │
 └─────────────────────────────────────────────────────────────────────────────┘
                                     │
@@ -116,6 +121,10 @@ nixvirweb/
 │   ├── update-snow-cover.yml   # Snow cover data (2x daily)
 │   ├── update-dashboard.yml    # Economic data (weekdays)
 │   ├── update-ski-news.yml     # News aggregation (daily)
+│   ├── update-snotel.yml       # US SNOTEL snowpack (daily)
+│   ├── update-bc-snow.yml      # BC snow stations (daily)
+│   ├── update-alberta-snow.yml # Alberta snow pillows (2x daily)
+│   ├── update-quebec-snow.yml  # Quebec snow stations (daily)
 │   └── update-airport-data.yml # Airport passenger data
 │
 ├── content/                    # Hugo content (Markdown)
@@ -156,6 +165,10 @@ nixvirweb/
 ├── update_snow_cover.py      # Snow data fetcher
 ├── update_dashboard.py       # Economic data fetcher
 ├── update_ski_news.py        # News aggregator
+├── fetch_snotel_data.py      # US SNOTEL snowpack fetcher
+├── fetch_bc_snow_data.py     # BC snow station fetcher
+├── fetch_alberta_snow_pillows.py  # Alberta snow pillow fetcher
+├── fetch_quebec_snow_stations.py  # Quebec snow station fetcher
 ├── netlify.toml              # Netlify config & headers
 ├── config.toml               # Hugo config
 ├── CLAUDE.md                 # AI assistant instructions

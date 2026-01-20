@@ -206,6 +206,64 @@ The `temp-hot` class specifically highlights markets where winter feels distant 
 8. **Forgetting temperature override** - ≥20°F above normal always means low salience
 9. **Blaming browser cache for stale data** - When the user reports stale/old data on the website, the problem is almost never browser caching. Check: (1) Is the file committed to git? (2) Has it been pushed? (3) Is the Netlify deploy complete? (4) Is the correct file path being served? Don't suggest "try hard refresh" or "clear cache" - investigate the actual deployment pipeline first.
 
+## SNOTEL Snowpack Page (`static/snotel.html`)
+
+Interactive map visualization of snowpack conditions across Western North America.
+
+### Data Sources
+- **US SNOTEL**: NRCS via `fetch_snotel_data.py` → `static/data/snotel-snowpack.json`
+- **BC Snow Stations**: BC Ministry of Environment via `fetch_bc_snow_data.py` → `static/data/bc-snow-stations.json`
+- **Alberta Snow Pillows**: Alberta Environment via `fetch_alberta_snow_pillows.py` → `static/data/alberta-snow-pillows.json`
+  - API: `https://rivers.alberta.ca/EnvironmentalDataService/ReadManifest`
+  - 14 mountain pillow stations with real-time SWE
+  - Updated 2x daily (2 PM & 10 PM UTC)
+- **Quebec Snow Stations**: Hydro-Québec via `fetch_quebec_snow_stations.py` → `static/data/quebec-snow-stations.json`
+- **Watersheds**: `static/data/huc2-watersheds.json` (major regions), `static/data/huc4-snowbasins.json` (snowbasins with aggregated stats)
+
+### Key Features
+1. **HUC4 Snowbasins**: Color-coded polygons showing mean % of normal snowpack
+2. **Permanent Labels**: Each snowbasin displays its % value directly on the polygon using `L.divIcon` markers
+3. **Hover Tooltips**: Basin name and % of normal shown on hover (separate from permanent labels)
+4. **Click Popups**: Detailed info including HUC4 code, range, station count, area
+5. **BC Integration**: BC stations shown in cyan (no % of normal available, only raw SWE)
+6. **Alberta Integration**: Alberta snow pillows shown in orange/amber with real-time SWE
+7. **Quebec Integration**: Quebec stations shown in purple
+8. **State Click Detail**: Clicking a state in sidebar shows all stations with their values
+9. **Auto-Zoom**: Clicking BC/AB/QC toggle buttons auto-zooms to that region
+
+### Snowbasin Label Implementation
+Labels use `L.divIcon` (not tooltips) to allow BOTH permanent labels AND hover tooltips:
+```javascript
+const labelIcon = L.divIcon({
+    className: 'snowbasin-label',
+    html: `${pct}%`,
+    iconSize: [40, 16],
+    iconAnchor: [20, 8]
+});
+const marker = L.marker(center, { icon: labelIcon, interactive: false });
+```
+
+CSS uses white text with black text-shadow outline for visibility on colored backgrounds.
+
+### BC Snow Data Notes
+- Station locations from WFS: `openmaps.gov.bc.ca/geo/pub/wfs`
+- SWE data from CSV: `env.gov.bc.ca/wsd/data_searches/snow/asws/data/SW.csv`
+- CSV header format: "1A01P Yellowhead Lake" (station ID is first part before space)
+- Script finds most complete row from last 48 hours (recent rows may be incomplete)
+
+### Color Scale
+```
+< 50%  → Red (drought)
+50-75% → Orange (below)
+75-90% → Yellow (low)
+90-110% → Green (normal)
+110-130% → Light blue (above)
+> 130% → Blue (exceptional)
+null   → Gray (#475569)
+```
+
+See `docs/SNOTEL_PAGE_SUMMARY.md` for full implementation details.
+
 ## Related Projects
 
 Region boundary work and additional data sources exist in:
