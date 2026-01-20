@@ -1,0 +1,50 @@
+name: Update Quebec Snow Data
+
+on:
+  schedule:
+    # Run twice daily at 6 AM and 6 PM UTC
+    # Hydro-Québec updates data every 6 hours
+    - cron: '0 6,18 * * *'
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  update-quebec-snow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Fetch Quebec snow station data
+        run: |
+          python fetch_quebec_snow_data.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add static/data/quebec-snow-stations.json
+
+          # Check if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes to Quebec snow data"
+          else
+            # Extract stats for commit message
+            STATIONS=$(python -c "import json; d=json.load(open('static/data/quebec-snow-stations.json')); print(d['statistics']['count'])")
+            MEAN_SWE=$(python -c "import json; d=json.load(open('static/data/quebec-snow-stations.json')); print(d['statistics']['mean_swe_mm'])")
+            git commit -m "Update Quebec snow data - Mean SWE: ${MEAN_SWE}mm (${STATIONS} stations)"
+            git push
+            echo "Quebec snow data updated and pushed"
+          fi

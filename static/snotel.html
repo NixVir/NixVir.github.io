@@ -787,6 +787,7 @@
                         <button class="filter-btn active" id="toggle-stations" title="Toggle US SNOTEL stations">US SNOTEL</button>
                         <button class="filter-btn active" id="toggle-bc-stations" title="Toggle BC snow stations">BC Stations</button>
                         <button class="filter-btn" id="toggle-ab-stations" title="Toggle Alberta snow pillow stations">AB Pillows</button>
+                        <button class="filter-btn" id="toggle-qc-stations" title="Toggle Quebec Hydro-Québec snow stations">QC Stations</button>
                     </div>
                 </div>
                 <div id="map"></div>
@@ -827,6 +828,10 @@
                     <div class="legend-item">
                         <div class="legend-dot" style="background: #f59e0b; border: 2px solid #d97706;"></div>
                         <span>AB Pillow</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background: #a855f7; border: 2px solid #9333ea;"></div>
+                        <span>QC Station</span>
                     </div>
                 </div>
             </div>
@@ -918,11 +923,13 @@
         let bcSnowData = null;
         let bcBasinData = null;  // BC snow basin indices (% of normal)
         let abSnowData = null;   // Alberta snow pillow stations
+        let qcSnowData = null;   // Quebec Hydro-Québec snow stations
         let map = null;
         let stationMarkers = [];
         let stationLayerGroup = null;
         let bcStationLayerGroup = null;
         let abStationLayerGroup = null;
+        let qcStationLayerGroup = null;
         let bcSnowbasinLayer = null;
         let bcSnowbasinLabelLayer = null;
         let watershedLayer = null;
@@ -951,12 +958,13 @@
         // Load data
         async function loadData() {
             try {
-                // Load US SNOTEL, BC stations, BC basins, and Alberta stations data
-                const [snotelResponse, bcResponse, bcBasinResponse, abResponse] = await Promise.all([
+                // Load US SNOTEL, BC stations, BC basins, Alberta stations, and Quebec stations data
+                const [snotelResponse, bcResponse, bcBasinResponse, abResponse, qcResponse] = await Promise.all([
                     fetch('/data/snotel-snowpack.json'),
                     fetch('/data/bc-snow-stations.json').catch(() => null),
                     fetch('/data/bc-snow-basins.json').catch(() => null),
-                    fetch('/data/alberta-snow-pillows.json').catch(() => null)
+                    fetch('/data/alberta-snow-pillows.json').catch(() => null),
+                    fetch('/data/quebec-snow-stations.json').catch(() => null)
                 ]);
 
                 snotelData = await snotelResponse.json();
@@ -977,6 +985,12 @@
                 if (abResponse && abResponse.ok) {
                     abSnowData = await abResponse.json();
                     console.log(`Loaded ${abSnowData.stations.length} Alberta snow pillow stations`);
+                }
+
+                // Quebec Hydro-Québec snow stations (real-time SWE)
+                if (qcResponse && qcResponse.ok) {
+                    qcSnowData = await qcResponse.json();
+                    console.log(`Loaded ${qcSnowData.stations.length} Quebec snow stations`);
                 }
 
                 renderSummaryCards();
@@ -1170,6 +1184,7 @@
             stationLayerGroup = L.layerGroup();
             bcStationLayerGroup = L.layerGroup();
             abStationLayerGroup = L.layerGroup();
+            qcStationLayerGroup = L.layerGroup();
 
             // Load watershed boundaries (HUC2 - major regions)
             loadWatershedBoundaries();
@@ -1178,12 +1193,14 @@
             updateStations();
             updateBCStations();
             updateABStations();
+            updateQCStations();
 
             // Layer control - stations are overlays user can enable
             const overlayMaps = {
                 'Show US SNOTEL Stations': stationLayerGroup,
                 'Show BC Snow Stations': bcStationLayerGroup,
-                'Show Alberta Snow Pillows': abStationLayerGroup
+                'Show Alberta Snow Pillows': abStationLayerGroup,
+                'Show Quebec Stations': qcStationLayerGroup
             };
 
             // Store control reference to add watersheds later
@@ -1245,6 +1262,19 @@
                 } else {
                     map.addLayer(abStationLayerGroup);
                     toggleABBtn.classList.add('active');
+                }
+            });
+
+            // Setup Quebec stations visibility toggle
+            const toggleQCBtn = document.getElementById('toggle-qc-stations');
+            toggleQCBtn.addEventListener('click', () => {
+                const isVisible = map.hasLayer(qcStationLayerGroup);
+                if (isVisible) {
+                    map.removeLayer(qcStationLayerGroup);
+                    toggleQCBtn.classList.remove('active');
+                } else {
+                    map.addLayer(qcStationLayerGroup);
+                    toggleQCBtn.classList.add('active');
                 }
             });
         }
@@ -1796,6 +1826,104 @@
 
             const pctEl = document.getElementById('station-pct');
             pctEl.textContent = 'N/A';
+            pctEl.className = 'metric-value';
+
+            document.getElementById('station-elev').textContent = elevFt ? elevFt.toLocaleString() + ' ft' : 'N/A';
+            document.getElementById('station-id').textContent = station.id;
+
+            panel.classList.add('visible');
+        }
+
+        // Update Quebec Hydro-Québec station markers
+        function updateQCStations() {
+            if (!qcSnowData || !qcStationLayerGroup) return;
+
+            qcStationLayerGroup.clearLayers();
+
+            const stations = qcSnowData.stations;
+
+            // Create markers for each Quebec station
+            // Use purple color to distinguish from other regions
+            stations.forEach(station => {
+                const marker = L.circleMarker([station.lat, station.lon], {
+                    radius: 7,
+                    fillColor: '#a855f7', // Purple
+                    color: '#9333ea',
+                    weight: 2,
+                    opacity: 1,
+                    fillOpacity: 0.85
+                });
+
+                // Popup content for Quebec stations
+                const elevFt = station.elevation_m ? Math.round(station.elevation_m * 3.281) : null;
+                const popupContent = `
+                    <h4>${station.name}</h4>
+                    <div class="popup-grid">
+                        <div class="popup-row">
+                            <span class="popup-label">Province</span>
+                            <span class="popup-value">Quebec, Canada</span>
+                        </div>
+                        <div class="popup-row">
+                            <span class="popup-label">SWE</span>
+                            <span class="popup-value">${station.swe_inches}"  (${station.swe_mm} mm)</span>
+                        </div>
+                        ${station.snow_depth_cm ? `
+                        <div class="popup-row">
+                            <span class="popup-label">Snow Depth</span>
+                            <span class="popup-value">${station.snow_depth_inches}" (${station.snow_depth_cm} cm)</span>
+                        </div>
+                        ` : ''}
+                        <div class="popup-row">
+                            <span class="popup-label">Elevation</span>
+                            <span class="popup-value">${elevFt ? elevFt.toLocaleString() + ' ft' : 'N/A'} (${station.elevation_m || '--'} m)</span>
+                        </div>
+                        <div class="popup-row">
+                            <span class="popup-label">Region</span>
+                            <span class="popup-value">${station.region || 'Quebec'}</span>
+                        </div>
+                        <div class="popup-row" style="margin-top: 4px; padding-top: 4px; border-top: 1px solid #333;">
+                            <span class="popup-label" style="font-size: 0.85em;">Source</span>
+                            <span class="popup-value" style="font-size: 0.85em;">Hydro-Québec (CC BY-NC-SA 4.0)</span>
+                        </div>
+                    </div>
+                `;
+
+                marker.bindPopup(popupContent);
+
+                // Click handler for details panel
+                marker.on('click', () => {
+                    showQCStationDetails(station);
+                });
+
+                // Hover effect
+                marker.on('mouseover', function() {
+                    this.setRadius(10);
+                    this.setStyle({ weight: 3, color: 'white' });
+                });
+                marker.on('mouseout', function() {
+                    this.setRadius(7);
+                    this.setStyle({ weight: 2, color: '#9333ea' });
+                });
+
+                marker.stationData = station;
+                marker.addTo(qcStationLayerGroup);
+            });
+
+            console.log(`Rendered ${stations.length} Quebec snow stations on map`);
+        }
+
+        // Quebec Station details panel
+        function showQCStationDetails(station) {
+            const panel = document.getElementById('station-details');
+            const elevFt = station.elevation_m ? Math.round(station.elevation_m * 3.281) : null;
+
+            document.getElementById('station-name').textContent = station.name;
+            document.getElementById('station-location').textContent = `Quebec, Canada | ${elevFt ? elevFt.toLocaleString() + ' ft' : '--'} elevation`;
+            document.getElementById('station-swe').textContent = station.swe_inches + '"';
+            document.getElementById('station-swe').className = 'metric-value';
+
+            const pctEl = document.getElementById('station-pct');
+            pctEl.textContent = 'N/A'; // No % of normal available
             pctEl.className = 'metric-value';
 
             document.getElementById('station-elev').textContent = elevFt ? elevFt.toLocaleString() + ' ft' : 'N/A';
