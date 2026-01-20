@@ -1,0 +1,117 @@
+{
+  "generated": "2026-01-20T00:00:00",
+  "source": "Alberta Environment and Parks",
+  "source_url": "https://rivers.alberta.ca/",
+  "note": "Station locations from CanSWE dataset. Real-time SWE data not available via public API - use rivers.alberta.ca web interface for current conditions.",
+  "stations": [
+    {
+      "id": "05AA809P",
+      "name": "Gardiner Creek",
+      "lat": 49.3611,
+      "lon": -114.5158,
+      "elevation_m": 1970
+    },
+    {
+      "id": "05AA817P",
+      "name": "South Racehorse Creek",
+      "lat": 49.783333,
+      "lon": -114.6,
+      "elevation_m": 1920
+    },
+    {
+      "id": "05AD803P",
+      "name": "Akamina Pass",
+      "lat": 49.02728,
+      "lon": -114.05294,
+      "elevation_m": 1761
+    },
+    {
+      "id": "05BB803P",
+      "name": "Sunshine Village",
+      "lat": 51.083332,
+      "lon": -115.78333,
+      "elevation_m": 2230
+    },
+    {
+      "id": "05BF824P",
+      "name": "Three Isle Lake",
+      "lat": 50.63139,
+      "lon": -115.27944,
+      "elevation_m": 2160
+    },
+    {
+      "id": "05BJ805P",
+      "name": "Little Elbow Summit",
+      "lat": 50.70553,
+      "lon": -114.989944,
+      "elevation_m": 2120
+    },
+    {
+      "id": "05BL811P",
+      "name": "Lost Creek South",
+      "lat": 50.17389,
+      "lon": -114.71,
+      "elevation_m": 2130
+    },
+    {
+      "id": "05BL812P",
+      "name": "Mount Odlum",
+      "lat": 50.485916,
+      "lon": -114.913086,
+      "elevation_m": 2060
+    },
+    {
+      "id": "05CA805P",
+      "name": "Skoki Lodge",
+      "lat": 51.540554,
+      "lon": -116.05639,
+      "elevation_m": 2120
+    },
+    {
+      "id": "05DB802P",
+      "name": "Limestone Ridge",
+      "lat": 51.894196,
+      "lon": -115.38347,
+      "elevation_m": 1970
+    },
+    {
+      "id": "05DD804P",
+      "name": "Southesk",
+      "lat": 52.670834,
+      "lon": -117.225555,
+      "elevation_m": 2045
+    },
+    {
+      "id": "07BB811P",
+      "name": "Paddle River Headwaters",
+      "lat": 53.86889,
+      "lon": -115.54305,
+      "elevation_m": 885
+    },
+    {
+      "id": "07BB814P",
+      "name": "Twin Lakes",
+      "lat": 54.058887,
+      "lon": -114.79472,
+      "elevation_m": 655
+    },
+    {
+      "id": "07BH801P",
+      "name": "House Mountain Lookout",
+      "lat": 55.0473,
+      "lon": -115.6016,
+      "elevation_m": 1176
+    },
+    {
+      "id": "07CE801P",
+      "name": "Gordon Lake Lookout",
+      "lat": 56.619446,
+      "lon": -110.494446,
+      "elevation_m": null
+    }
+  ],
+  "statistics": {
+    "count": 15,
+    "elevation_range_m": "655-2230"
+  }
+}

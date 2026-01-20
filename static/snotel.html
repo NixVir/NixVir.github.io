@@ -786,6 +786,7 @@
                         <span style="border-left: 1px solid var(--border); margin: 0 0.5rem; height: 24px;"></span>
                         <button class="filter-btn active" id="toggle-stations" title="Toggle US SNOTEL stations">US SNOTEL</button>
                         <button class="filter-btn active" id="toggle-bc-stations" title="Toggle BC snow stations">BC Stations</button>
+                        <button class="filter-btn" id="toggle-ab-stations" title="Toggle Alberta snow pillow stations">AB Pillows</button>
                     </div>
                 </div>
                 <div id="map"></div>
@@ -822,6 +823,10 @@
                     <div class="legend-item" style="margin-left: 1rem; border-left: 1px solid var(--border); padding-left: 1rem;">
                         <div class="legend-dot" style="background: #06b6d4; border: 2px solid #0891b2;"></div>
                         <span>BC Station</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background: #f59e0b; border: 2px solid #d97706;"></div>
+                        <span>AB Pillow</span>
                     </div>
                 </div>
             </div>
@@ -912,10 +917,12 @@
         let snotelData = null;
         let bcSnowData = null;
         let bcBasinData = null;  // BC snow basin indices (% of normal)
+        let abSnowData = null;   // Alberta snow pillow stations
         let map = null;
         let stationMarkers = [];
         let stationLayerGroup = null;
         let bcStationLayerGroup = null;
+        let abStationLayerGroup = null;
         let bcSnowbasinLayer = null;
         let bcSnowbasinLabelLayer = null;
         let watershedLayer = null;
@@ -944,11 +951,12 @@
         // Load data
         async function loadData() {
             try {
-                // Load US SNOTEL, BC stations, and BC basins data
-                const [snotelResponse, bcResponse, bcBasinResponse] = await Promise.all([
+                // Load US SNOTEL, BC stations, BC basins, and Alberta stations data
+                const [snotelResponse, bcResponse, bcBasinResponse, abResponse] = await Promise.all([
                     fetch('/data/snotel-snowpack.json'),
                     fetch('/data/bc-snow-stations.json').catch(() => null),
-                    fetch('/data/bc-snow-basins.json').catch(() => null)
+                    fetch('/data/bc-snow-basins.json').catch(() => null),
+                    fetch('/data/alberta-snow-pillows.json').catch(() => null)
                 ]);
 
                 snotelData = await snotelResponse.json();
@@ -963,6 +971,12 @@
                 if (bcBasinResponse && bcBasinResponse.ok) {
                     bcBasinData = await bcBasinResponse.json();
                     console.log(`Loaded ${bcBasinData.features.length} BC basins`);
+                }
+
+                // Alberta snow pillow stations (locations only, no real-time data)
+                if (abResponse && abResponse.ok) {
+                    abSnowData = await abResponse.json();
+                    console.log(`Loaded ${abSnowData.stations.length} Alberta snow pillow stations`);
                 }
 
                 renderSummaryCards();
@@ -1155,6 +1169,7 @@
             // Create station layer groups (not added to map by default - too noisy)
             stationLayerGroup = L.layerGroup();
             bcStationLayerGroup = L.layerGroup();
+            abStationLayerGroup = L.layerGroup();
 
             // Load watershed boundaries (HUC2 - major regions)
             loadWatershedBoundaries();
@@ -1162,11 +1177,13 @@
             // Populate stations (but don't show by default)
             updateStations();
             updateBCStations();
+            updateABStations();
 
             // Layer control - stations are overlays user can enable
             const overlayMaps = {
                 'Show US SNOTEL Stations': stationLayerGroup,
-                'Show BC Snow Stations': bcStationLayerGroup
+                'Show BC Snow Stations': bcStationLayerGroup,
+                'Show Alberta Snow Pillows': abStationLayerGroup
             };
 
             // Store control reference to add watersheds later
@@ -1215,6 +1232,19 @@
                 } else {
                     map.addLayer(bcStationLayerGroup);
                     toggleBCBtn.classList.add('active');
+                }
+            });
+
+            // Setup Alberta stations visibility toggle
+            const toggleABBtn = document.getElementById('toggle-ab-stations');
+            toggleABBtn.addEventListener('click', () => {
+                const isVisible = map.hasLayer(abStationLayerGroup);
+                if (isVisible) {
+                    map.removeLayer(abStationLayerGroup);
+                    toggleABBtn.classList.remove('active');
+                } else {
+                    map.addLayer(abStationLayerGroup);
+                    toggleABBtn.classList.add('active');
                 }
             });
         }
@@ -1680,6 +1710,98 @@
             });
 
             console.log(`Rendered ${stations.length} BC stations on map`);
+        }
+
+        // Update Alberta snow pillow station markers
+        function updateABStations() {
+            if (!abSnowData || !abStationLayerGroup) return;
+
+            abStationLayerGroup.clearLayers();
+
+            const stations = abSnowData.stations;
+
+            // Create markers for each Alberta station
+            // Use orange/amber color to distinguish from BC (cyan) and US (color-coded)
+            stations.forEach(station => {
+                const marker = L.circleMarker([station.lat, station.lon], {
+                    radius: 7,
+                    fillColor: '#f59e0b', // Amber/orange
+                    color: '#d97706',
+                    weight: 2,
+                    opacity: 1,
+                    fillOpacity: 0.85
+                });
+
+                // Popup content for Alberta stations
+                const elevFt = station.elevation_m ? Math.round(station.elevation_m * 3.281) : null;
+                const popupContent = `
+                    <h4>${station.name}</h4>
+                    <div class="popup-grid">
+                        <div class="popup-row">
+                            <span class="popup-label">Province</span>
+                            <span class="popup-value">Alberta, Canada</span>
+                        </div>
+                        <div class="popup-row">
+                            <span class="popup-label">Elevation</span>
+                            <span class="popup-value">${elevFt ? elevFt.toLocaleString() + ' ft' : 'N/A'} (${station.elevation_m || '--'} m)</span>
+                        </div>
+                        <div class="popup-row">
+                            <span class="popup-label">Station ID</span>
+                            <span class="popup-value">${station.id}</span>
+                        </div>
+                        <div class="popup-row" style="margin-top: 4px; padding-top: 4px; border-top: 1px solid #333;">
+                            <span class="popup-label" style="font-size: 0.85em;">Note</span>
+                            <span class="popup-value" style="font-size: 0.85em;">Real-time data at rivers.alberta.ca</span>
+                        </div>
+                        <div class="popup-row">
+                            <span class="popup-label" style="font-size: 0.85em;">Source</span>
+                            <span class="popup-value" style="font-size: 0.85em;">Alberta Environment</span>
+                        </div>
+                    </div>
+                `;
+
+                marker.bindPopup(popupContent);
+
+                // Click handler for details panel
+                marker.on('click', () => {
+                    showABStationDetails(station);
+                });
+
+                // Hover effect
+                marker.on('mouseover', function() {
+                    this.setRadius(10);
+                    this.setStyle({ weight: 3, color: 'white' });
+                });
+                marker.on('mouseout', function() {
+                    this.setRadius(7);
+                    this.setStyle({ weight: 2, color: '#d97706' });
+                });
+
+                marker.stationData = station;
+                marker.addTo(abStationLayerGroup);
+            });
+
+            console.log(`Rendered ${stations.length} Alberta snow pillow stations on map`);
+        }
+
+        // Alberta Station details panel
+        function showABStationDetails(station) {
+            const panel = document.getElementById('station-details');
+            const elevFt = station.elevation_m ? Math.round(station.elevation_m * 3.281) : null;
+
+            document.getElementById('station-name').textContent = station.name;
+            document.getElementById('station-location').textContent = `Alberta, Canada | ${elevFt ? elevFt.toLocaleString() + ' ft' : '--'} elevation`;
+            document.getElementById('station-swe').textContent = 'See rivers.alberta.ca';
+            document.getElementById('station-swe').className = 'metric-value';
+
+            const pctEl = document.getElementById('station-pct');
+            pctEl.textContent = 'N/A';
+            pctEl.className = 'metric-value';
+
+            document.getElementById('station-elev').textContent = elevFt ? elevFt.toLocaleString() + ' ft' : 'N/A';
+            document.getElementById('station-id').textContent = station.id;
+
+            panel.classList.add('visible');
         }
 
         // BC Station details panel
