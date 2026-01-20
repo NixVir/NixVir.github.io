@@ -958,13 +958,16 @@
         // Load data
         async function loadData() {
             try {
+                // Cache buster - changes hourly to ensure fresh data
+                const cacheBust = `?v=${Math.floor(Date.now() / 3600000)}`;
+
                 // Load US SNOTEL, BC stations, BC basins, Alberta stations, and Quebec stations data
                 const [snotelResponse, bcResponse, bcBasinResponse, abResponse, qcResponse] = await Promise.all([
-                    fetch('/data/snotel-snowpack.json'),
-                    fetch('/data/bc-snow-stations.json').catch(() => null),
-                    fetch('/data/bc-snow-basins.json').catch(() => null),
-                    fetch('/data/alberta-snow-pillows.json').catch(() => null),
-                    fetch('/data/quebec-snow-stations.json').catch(() => null)
+                    fetch('/data/snotel-snowpack.json' + cacheBust),
+                    fetch('/data/bc-snow-stations.json' + cacheBust).catch(() => null),
+                    fetch('/data/bc-snow-basins.json' + cacheBust).catch(() => null),
+                    fetch('/data/alberta-snow-pillows.json' + cacheBust).catch(() => null),
+                    fetch('/data/quebec-snow-stations.json' + cacheBust).catch(() => null)
                 ]);
 
                 snotelData = await snotelResponse.json();
