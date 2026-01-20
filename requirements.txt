@@ -1,0 +1,9 @@
+# Python dependencies for GitHub Actions workflows
+requests
+numpy
+matplotlib
+cartopy
+openpyxl
+pdfplumber
+feedparser
+beautifulsoup4
