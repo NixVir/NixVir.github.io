@@ -1242,6 +1242,13 @@
                 }
             });
 
+            // Regional bounds for auto-zoom when toggling station layers
+            const regionBounds = {
+                bc: [[48.3, -139.0], [60.0, -114.0]],      // British Columbia
+                ab: [[49.0, -120.0], [55.0, -110.0]],      // Alberta Rockies
+                qc: [[45.0, -79.5], [52.0, -64.0]]         // Quebec
+            };
+
             // Setup BC stations visibility toggle
             const toggleBCBtn = document.getElementById('toggle-bc-stations');
             toggleBCBtn.addEventListener('click', () => {
@@ -1252,6 +1259,7 @@
                 } else {
                     map.addLayer(bcStationLayerGroup);
                     toggleBCBtn.classList.add('active');
+                    map.fitBounds(regionBounds.bc, { padding: [20, 20] });
                 }
             });
 
@@ -1265,6 +1273,7 @@
                 } else {
                     map.addLayer(abStationLayerGroup);
                     toggleABBtn.classList.add('active');
+                    map.fitBounds(regionBounds.ab, { padding: [20, 20] });
                 }
             });
 
@@ -1278,6 +1287,7 @@
                 } else {
                     map.addLayer(qcStationLayerGroup);
                     toggleQCBtn.classList.add('active');
+                    map.fitBounds(regionBounds.qc, { padding: [20, 20] });
                 }
             });
         }
