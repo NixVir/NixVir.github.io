@@ -58,6 +58,7 @@ jobs:
           echo "Data quality check passed"
 
       - name: Commit and push if changed
+        id: commit
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -66,11 +67,24 @@ jobs:
           # Check if there are changes
           if git diff --staged --quiet; then
             echo "No changes to dashboard data"
+            echo "changes=false" >> $GITHUB_OUTPUT
           else
             git commit -m "Update dashboard data - $(date +'%Y-%m-%d')"
             git push
             echo "Dashboard data updated and pushed"
+            echo "changes=true" >> $GITHUB_OUTPUT
           fi
+
+      - name: Verify Hugo build
+        if: steps.commit.outputs.changes == 'true'
+        run: |
+          # Install Hugo
+          wget -q https://github.com/gohugoio/hugo/releases/download/v0.139.0/hugo_extended_0.139.0_linux-amd64.deb
+          sudo dpkg -i hugo_extended_0.139.0_linux-amd64.deb
+
+          # Test build
+          hugo --minify
+          echo "Hugo build verification passed"
 
       - name: Create issue on failure
         if: failure()

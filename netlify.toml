@@ -8,6 +8,21 @@
   to = "/dashboard.html"
   status = 200
 
+[[redirects]]
+  from = "/data-status"
+  to = "/data-status.html"
+  status = 200
+
+[[redirects]]
+  from = "/health"
+  to = "/data-status.html"
+  status = 200
+
+[[redirects]]
+  from = "/status"
+  to = "/data-status.html"
+  status = 200
+
 [context.production.environment]
   HUGO_VERSION = "0.139.0"
   HUGO_ENV = "production"

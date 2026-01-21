@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Feed Status - NixVir</title>
+    <link rel="icon" href="/favicon.ico">
+    <style>
+        :root {
+            --bg-primary: #1a1a2e;
+            --bg-secondary: #16213e;
+            --bg-card: #0f3460;
+            --text-primary: #eee;
+            --text-secondary: #aaa;
+            --accent: #e94560;
+            --green: #10b981;
+            --yellow: #f59e0b;
+            --red: #ef4444;
+            --gray: #6b7280;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .status-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .status-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            display: grid;
+            grid-template-columns: auto 1fr auto auto;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .status-green { background: var(--green); box-shadow: 0 0 8px var(--green); }
+        .status-yellow { background: var(--yellow); box-shadow: 0 0 8px var(--yellow); }
+        .status-red { background: var(--red); box-shadow: 0 0 8px var(--red); }
+        .status-gray { background: var(--gray); }
+
+        .feed-info h3 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .feed-info .description {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .feed-meta {
+            text-align: right;
+            font-size: 0.85rem;
+        }
+
+        .feed-meta .timestamp {
+            color: var(--text-primary);
+        }
+
+        .feed-meta .frequency {
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+        }
+
+        .status-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            min-width: 70px;
+            text-align: center;
+        }
+
+        .label-green { background: rgba(16, 185, 129, 0.2); color: var(--green); }
+        .label-yellow { background: rgba(245, 158, 11, 0.2); color: var(--yellow); }
+        .label-red { background: rgba(239, 68, 68, 0.2); color: var(--red); }
+        .label-gray { background: rgba(107, 114, 128, 0.2); color: var(--gray); }
+
+        .summary {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .summary-item {
+            text-align: center;
+        }
+
+        .summary-count {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .summary-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--bg-card);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 600px) {
+            .status-card {
+                grid-template-columns: auto 1fr;
+                grid-template-rows: auto auto;
+            }
+
+            .feed-meta {
+                grid-column: 2;
+                text-align: left;
+            }
+
+            .status-label {
+                grid-column: 1 / -1;
+                justify-self: start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Data Feed Status</h1>
+            <p class="subtitle">Real-time health monitoring of NixVir automated data pipelines</p>
+        </header>
+
+        <div class="summary" id="summary">
+            <div class="summary-item">
+                <div class="summary-count" id="count-healthy" style="color: var(--green)">-</div>
+                <div class="summary-label">Healthy</div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-count" id="count-warning" style="color: var(--yellow)">-</div>
+                <div class="summary-label">Warning</div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-count" id="count-stale" style="color: var(--red)">-</div>
+                <div class="summary-label">Stale</div>
+            </div>
+        </div>
+
+        <div class="status-grid" id="status-grid">
+            <div class="loading">Loading data feed status...</div>
+        </div>
+
+        <footer>
+            <p>
+                Last checked: <span id="check-time">-</span> |
+                <a href="https://github.com/NixVir/NixVir.github.io/actions" target="_blank">GitHub Actions</a> |
+                <a href="/">Back to NixVir</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        const DATA_FEEDS = [
+            {
+                name: 'Snow Cover (North America)',
+                file: '/data/snow-cover.json',
+                timestampPath: 'generated',
+                expectedHours: 12,
+                description: 'NOHRSC & NOAA IMS satellite snow coverage'
+            },
+            {
+                name: 'Canadian Snow Data',
+                file: '/data/bc-snow-basins.json',
+                timestampPath: 'generated',
+                expectedHours: 12,
+                description: 'BC, Alberta, and Quebec snow stations'
+            },
+            {
+                name: 'SNOTEL Snowpack',
+                file: '/data/snotel-snowpack.json',
+                timestampPath: 'generated',
+                expectedHours: 24,
+                description: 'Western US NRCS snow water equivalent'
+            },
+            {
+                name: 'Economic Dashboard',
+                file: '/data/dashboard.json',
+                timestampPath: 'generated',
+                expectedHours: 48,  // Weekdays only, so give buffer
+                description: 'FRED, stock market, and commodity data'
+            },
+            {
+                name: 'Ski Industry News',
+                file: '/data/ski-news.json',
+                timestampPath: 'generated',
+                expectedHours: 24,
+                description: 'Aggregated ski business news from RSS feeds'
+            },
+            {
+                name: 'Airport Passenger Data',
+                file: '/data/airport_passengers.json',
+                timestampPath: 'last_updated',
+                expectedHours: 840,  // ~35 days (monthly)
+                description: 'BTS T-100 passenger statistics (monthly)'
+            }
+        ];
+
+        function parseTimestamp(value) {
+            if (!value) return null;
+
+            // Handle various formats
+            // ISO 8601: 2026-01-21T17:31:13.264359
+            // Custom: 2026-01-21 11:26 UTC
+            // With timezone: 2026-01-21T06:19:57.378364+00:00
+
+            let date;
+
+            if (value.includes('UTC')) {
+                // "2026-01-21 11:26 UTC" format
+                date = new Date(value.replace(' UTC', 'Z').replace(' ', 'T') + ':00');
+            } else {
+                date = new Date(value);
+            }
+
+            return isNaN(date.getTime()) ? null : date;
+        }
+
+        function getTimestampFromData(data, path) {
+            const parts = path.split('.');
+            let value = data;
+            for (const part of parts) {
+                if (value && typeof value === 'object') {
+                    value = value[part];
+                } else {
+                    return null;
+                }
+            }
+            return parseTimestamp(value);
+        }
+
+        function getStatus(timestamp, expectedHours) {
+            if (!timestamp) return { status: 'unknown', label: 'Unknown', color: 'gray' };
+
+            const now = new Date();
+            const ageHours = (now - timestamp) / (1000 * 60 * 60);
+
+            if (ageHours <= expectedHours) {
+                return { status: 'healthy', label: 'Healthy', color: 'green' };
+            } else if (ageHours <= expectedHours * 1.5) {
+                return { status: 'warning', label: 'Warning', color: 'yellow' };
+            } else {
+                return { status: 'stale', label: 'Stale', color: 'red' };
+            }
+        }
+
+        function formatTimestamp(date) {
+            if (!date) return 'Unknown';
+
+            const now = new Date();
+            const diffMs = now - date;
+            const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+            const diffMins = Math.floor(diffMs / (1000 * 60));
+
+            let ago;
+            if (diffMins < 60) {
+                ago = `${diffMins}m ago`;
+            } else if (diffHours < 24) {
+                ago = `${diffHours}h ago`;
+            } else {
+                const diffDays = Math.floor(diffHours / 24);
+                ago = `${diffDays}d ago`;
+            }
+
+            const formatted = date.toLocaleString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: '2-digit'
+            });
+
+            return `${formatted} (${ago})`;
+        }
+
+        function formatFrequency(hours) {
+            if (hours < 24) {
+                return `Every ${hours}h`;
+            } else if (hours < 168) {
+                return `Every ${Math.round(hours / 24)}d`;
+            } else {
+                return 'Monthly';
+            }
+        }
+
+        async function checkFeed(feed) {
+            try {
+                const response = await fetch(feed.file + '?t=' + Date.now());
+                if (!response.ok) throw new Error('Fetch failed');
+
+                const data = await response.json();
+                const timestamp = getTimestampFromData(data, feed.timestampPath);
+                const status = getStatus(timestamp, feed.expectedHours);
+
+                return {
+                    ...feed,
+                    timestamp,
+                    ...status
+                };
+            } catch (error) {
+                return {
+                    ...feed,
+                    timestamp: null,
+                    status: 'error',
+                    label: 'Error',
+                    color: 'red'
+                };
+            }
+        }
+
+        function renderCard(result) {
+            return `
+                <div class="status-card">
+                    <div class="status-indicator status-${result.color}"></div>
+                    <div class="feed-info">
+                        <h3>${result.name}</h3>
+                        <div class="description">${result.description}</div>
+                    </div>
+                    <div class="feed-meta">
+                        <div class="timestamp">${formatTimestamp(result.timestamp)}</div>
+                        <div class="frequency">${formatFrequency(result.expectedHours)}</div>
+                    </div>
+                    <div class="status-label label-${result.color}">${result.label}</div>
+                </div>
+            `;
+        }
+
+        async function loadStatus() {
+            const grid = document.getElementById('status-grid');
+            const results = await Promise.all(DATA_FEEDS.map(checkFeed));
+
+            // Count statuses
+            const counts = { healthy: 0, warning: 0, stale: 0, error: 0, unknown: 0 };
+            results.forEach(r => counts[r.status]++);
+
+            document.getElementById('count-healthy').textContent = counts.healthy;
+            document.getElementById('count-warning').textContent = counts.warning;
+            document.getElementById('count-stale').textContent = counts.stale + counts.error;
+
+            // Render cards
+            grid.innerHTML = results.map(renderCard).join('');
+
+            // Update check time
+            document.getElementById('check-time').textContent = new Date().toLocaleTimeString();
+        }
+
+        // Initial load
+        loadStatus();
+
+        // Refresh every 5 minutes
+        setInterval(loadStatus, 5 * 60 * 1000);
+    </script>
+</body>
+</html>
