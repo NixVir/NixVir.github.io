@@ -35,15 +35,12 @@
                 </a>
               </div>
 
-              <!-- Legend -->
-              <div class="snow-legend">
-                <span class="legend-item"><span class="legend-color legend-more"></span> More</span>
-                <span class="legend-item"><span class="legend-color legend-same"></span> Same</span>
-                <span class="legend-item"><span class="legend-color legend-less"></span> Less</span>
-              </div>
-
               <!-- Stats -->
               <div class="snow-stats" aria-live="polite" aria-atomic="true">
+                <div class="snow-stats-header">
+                  <span class="snow-stats-title">Land Area with Snow</span>
+                  <span class="snow-stats-subtitle">vs 5-year avg</span>
+                </div>
                 <div class="snow-stat-row">
                   <span class="snow-stat-flag">&#127482;&#127480;</span>
                   <span class="snow-stat-label">USA</span>
@@ -277,27 +274,24 @@
       border-radius: 6px;
       border: 1px solid #2a3444;
     }
-    .snow-legend {
+    .snow-stats-header {
       display: flex;
-      justify-content: center;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
-      font-size: 0.65rem;
-      color: #8892a2;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid #2a3444;
     }
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 4px;
+    .snow-stats-title {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #c8d0dc;
     }
-    .legend-color {
-      width: 12px;
-      height: 12px;
-      border-radius: 2px;
+    .snow-stats-subtitle {
+      font-size: 0.6rem;
+      color: #6b7280;
+      font-style: italic;
     }
-    .legend-more { background: #3b82f6; }
-    .legend-same { background: #e5e7eb; }
-    .legend-less { background: #ef4444; }
     .snow-stats {
       display: flex;
       flex-direction: column;
