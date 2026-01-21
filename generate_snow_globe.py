@@ -376,14 +376,22 @@ def calculate_stats_from_grids(current_grid, prior_grid):
     usa_prior = calc_cover(prior_grid, usa_bounds) if prior_grid else None
     canada_prior = calc_cover(prior_grid, canada_bounds) if prior_grid else None
 
+    # Calculate combined prior (weighted by land area, same as combined_cover)
+    combined_prior = None
+    if usa_prior is not None and canada_prior is not None:
+        combined_prior = (usa_prior * usa_area + canada_prior * canada_area) / (usa_area + canada_area)
+        combined_prior = round(combined_prior, 1)
+
     return {
         'usa_cover': usa_cover,
         'canada_cover': canada_cover,
         'combined_cover': combined,
         'usa_prior': usa_prior,
         'canada_prior': canada_prior,
+        'combined_prior': combined_prior,
         'usa_change': round(usa_cover - usa_prior, 1) if usa_cover and usa_prior else None,
-        'canada_change': round(canada_cover - canada_prior, 1) if canada_cover and canada_prior else None
+        'canada_change': round(canada_cover - canada_prior, 1) if canada_cover and canada_prior else None,
+        'combined_change': round(combined - combined_prior, 1) if combined and combined_prior else None
     }
 
 

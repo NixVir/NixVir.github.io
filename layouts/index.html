@@ -57,6 +57,7 @@
                   <span class="snow-stat-flag">&#127758;</span>
                   <span class="snow-stat-label">Combined</span>
                   <span class="snow-stat-value snow-stat-combined-value" id="hp-combined-cover">--</span>
+                  <span class="snow-stat-change" id="hp-combined-change">--</span>
                 </div>
               </div>
             </div>
@@ -762,6 +763,12 @@
 
         // Combined
         document.getElementById('hp-combined-cover').textContent = stats.combined_cover.toFixed(1) + '%';
+        if (stats.combined_change !== undefined && stats.combined_change !== null) {
+          const combinedChange = stats.combined_change;
+          const combinedClass = combinedChange > 0 ? 'change-up' : combinedChange < 0 ? 'change-down' : '';
+          document.getElementById('hp-combined-change').innerHTML =
+            `<span class="${combinedClass}">${combinedChange >= 0 ? '+' : ''}${combinedChange.toFixed(1)}</span>`;
+        }
 
         // Update image with cache busting
         const img = document.getElementById('homepage-snow-globe');
