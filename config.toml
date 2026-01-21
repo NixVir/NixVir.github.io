@@ -59,9 +59,6 @@ enableRobotsTXT = true
   [minify.tdewolff.html]
     keepWhitespace = false
   [minify.tdewolff.css]
-    version = 3
+    keepCSS2 = false
   [minify.tdewolff.js]
     keepVarNames = false
-
-# Security: Disable Hugo version disclosure
-disableHugoGeneratorInject = true
