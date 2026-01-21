@@ -370,17 +370,24 @@
 
         /* Permanent snowbasin labels */
         .snowbasin-label {
-            background: rgba(0, 0, 0, 0.75) !important;
-            border: none !important;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.4) !important;
+            background: rgba(0, 0, 0, 0.8) !important;
+            border: 1px solid rgba(255, 255, 255, 0.3) !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.5) !important;
             border-radius: 3px !important;
-            color: #fff;
-            font-size: 10px;
-            font-weight: 600;
+            color: #fff !important;
+            font-size: 11px;
+            font-weight: 700;
+            font-family: 'DM Sans', sans-serif;
             text-align: center;
-            padding: 2px 4px !important;
+            padding: 2px 6px !important;
             white-space: nowrap;
             pointer-events: none;
+            line-height: 1.2;
+        }
+
+        /* Ensure leaflet marker pane doesn't hide labels */
+        .leaflet-marker-icon.snowbasin-label {
+            margin: 0 !important;
         }
 
         /* Legend */

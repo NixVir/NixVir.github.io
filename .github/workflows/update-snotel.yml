@@ -42,8 +42,8 @@ jobs:
             echo "No changes to SNOTEL data"
           else
             # Extract stats for commit message
-            MEAN_PCT=$(python -c "import json; d=json.load(open('static/data/snotel-snowpack.json')); print(d['statistics']['mean_pct_median'])")
-            STATIONS=$(python -c "import json; d=json.load(open('static/data/snotel-snowpack.json')); print(d['statistics']['stations_with_data'])")
+            MEAN_PCT=$(python -c "import json; d=json.load(open('static/data/snotel-snowpack.json')); print(d['statistics']['overall']['mean_pct'])")
+            STATIONS=$(python -c "import json; d=json.load(open('static/data/snotel-snowpack.json')); print(d['statistics']['overall']['count'])")
             git commit -m "Update SNOTEL data - Mean: ${MEAN_PCT}% of normal (${STATIONS} stations)"
             git push
             echo "SNOTEL data updated and pushed"
