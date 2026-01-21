@@ -21,15 +21,41 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'
 
       - name: Install dependencies
         run: |
           pip install requests
 
-      - name: Fetch SNOTEL snowpack data
+      - name: Backup previous data
         run: |
-          python fetch_snotel_data.py
+          if [ -f static/data/snotel-snowpack.json ]; then
+            cp static/data/snotel-snowpack.json static/data/snotel-snowpack.backup.json
+          fi
+
+      - name: Fetch SNOTEL snowpack data with retry
+        run: |
+          for i in 1 2 3; do
+            python fetch_snotel_data.py && break
+            echo "Attempt $i failed, retrying in 30s..."
+            sleep 30
+          done
+
+      - name: Validate JSON output
+        run: |
+          python -c "import json; json.load(open('static/data/snotel-snowpack.json'))"
+
+      - name: Verify data quality
+        run: |
+          # Check file exists and has content
+          test -s static/data/snotel-snowpack.json || exit 1
+
+          # Check minimum record count (expect 700+ stations)
+          COUNT=$(python -c "import json; d=json.load(open('static/data/snotel-snowpack.json')); print(len(d.get('stations', [])))")
+          if [ "$COUNT" -lt 100 ]; then
+            echo "ERROR: Only $COUNT stations found (expected 700+)"
+            exit 1
+          fi
+          echo "Data quality check passed: $COUNT stations"
 
       - name: Commit and push if changed
         run: |
@@ -48,3 +74,18 @@ jobs:
             git push
             echo "SNOTEL data updated and pushed"
           fi
+
+      - name: Create issue on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `Workflow Failed: ${{ github.workflow }}`;
+            const body = `**Run ID**: ${{ github.run_id }}\n**Time**: ${new Date().toISOString()}\n**Logs**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}`;
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: title,
+              body: body,
+              labels: ['workflow-failure']
+            });

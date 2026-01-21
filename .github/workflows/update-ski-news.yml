@@ -20,13 +20,38 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'
 
-      - name: Update ski news data
+      - name: Backup previous data
+        run: |
+          if [ -f static/data/ski-news.json ]; then
+            cp static/data/ski-news.json static/data/ski-news.backup.json
+          fi
+
+      - name: Update ski news data with retry
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          python update_ski_news.py
+          for i in 1 2 3; do
+            python update_ski_news.py && break
+            echo "Attempt $i failed, retrying in 30s..."
+            sleep 30
+          done
+
+      - name: Validate JSON output
+        run: |
+          python -c "import json; json.load(open('static/data/ski-news.json'))"
+
+      - name: Verify data quality
+        run: |
+          # Check file exists and has content
+          test -s static/data/ski-news.json || exit 1
+
+          # Check minimum article count
+          COUNT=$(python -c "import json; d=json.load(open('static/data/ski-news.json')); print(len(d.get('articles', [])))")
+          if [ "$COUNT" -lt 1 ]; then
+            echo "WARNING: Only $COUNT articles found"
+          fi
+          echo "Data quality check passed: $COUNT articles"
 
       - name: Commit and push if changed
         run: |
@@ -42,3 +67,18 @@ jobs:
             git push
             echo "Ski news data updated and pushed"
           fi
+
+      - name: Create issue on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `Workflow Failed: ${{ github.workflow }}`;
+            const body = `**Run ID**: ${{ github.run_id }}\n**Time**: ${new Date().toISOString()}\n**Logs**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}`;
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: title,
+              body: body,
+              labels: ['workflow-failure']
+            });

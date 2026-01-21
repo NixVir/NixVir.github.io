@@ -20,19 +20,52 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'
 
       - name: Install dependencies
         run: |
           pip install requests numpy matplotlib cartopy
 
-      - name: Update snow cover data
+      - name: Backup previous data
         run: |
-          python update_snow_cover.py
+          if [ -f static/data/snow-cover.json ]; then
+            cp static/data/snow-cover.json static/data/snow-cover.backup.json
+          fi
 
-      - name: Generate snow globe visualization
+      - name: Update snow cover data with retry
         run: |
-          python generate_snow_globe.py
+          for i in 1 2 3; do
+            python update_snow_cover.py && break
+            echo "Attempt $i failed, retrying in 30s..."
+            sleep 30
+          done
+
+      - name: Generate snow globe visualization with retry
+        run: |
+          for i in 1 2 3; do
+            python generate_snow_globe.py && break
+            echo "Attempt $i failed, retrying in 30s..."
+            sleep 30
+          done
+
+      - name: Validate JSON output
+        run: |
+          python -c "import json; json.load(open('static/data/snow-cover.json'))"
+
+      - name: Verify data quality
+        run: |
+          # Check file exists and has content
+          test -s static/data/snow-cover.json || exit 1
+
+          # Check required fields exist
+          python -c "
+          import json
+          d = json.load(open('static/data/snow-cover.json'))
+          assert 'usa' in d, 'Missing usa data'
+          assert 'canada' in d, 'Missing canada data'
+          assert 'combined' in d, 'Missing combined data'
+          assert 'cover' in d['usa'], 'Missing usa cover'
+          print('Data quality check passed')
+          "
 
       - name: Commit and push if changed
         run: |
@@ -52,3 +85,18 @@ jobs:
             git push
             echo "Snow cover data updated and pushed"
           fi
+
+      - name: Create issue on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `Workflow Failed: ${{ github.workflow }}`;
+            const body = `**Run ID**: ${{ github.run_id }}\n**Time**: ${new Date().toISOString()}\n**Logs**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}`;
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: title,
+              body: body,
+              labels: ['workflow-failure']
+            });

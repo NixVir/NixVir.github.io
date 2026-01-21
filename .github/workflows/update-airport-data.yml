@@ -21,19 +21,45 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'
 
       - name: Install dependencies
         run: |
           pip install pdfplumber requests
 
-      - name: Run SLC airport scraper
+      - name: Backup previous data
         run: |
-          python scrape_slc.py || echo "SLC scraper completed (may have partial data)"
+          if [ -f static/data/airport_passengers.json ]; then
+            cp static/data/airport_passengers.json static/data/airport_passengers.backup.json
+          fi
+
+      - name: Run SLC airport scraper with retry
+        run: |
+          for i in 1 2 3; do
+            python scrape_slc.py && break || echo "SLC scraper attempt $i failed"
+            sleep 30
+          done
+          echo "SLC scraper completed (may have partial data)"
 
       - name: Generate unified airport output
         run: |
           python generate_airport_output.py
+
+      - name: Validate JSON output
+        run: |
+          python -c "import json; json.load(open('static/data/airport_passengers.json'))"
+
+      - name: Verify data quality
+        run: |
+          # Check file exists and has content
+          test -s static/data/airport_passengers.json || exit 1
+
+          # Check airports exist
+          AIRPORTS=$(python -c "import json; d=json.load(open('static/data/airport_passengers.json')); print(len(d.get('airports', {})))")
+          if [ "$AIRPORTS" -lt 1 ]; then
+            echo "ERROR: No airport data found"
+            exit 1
+          fi
+          echo "Data quality check passed: $AIRPORTS airports"
 
       - name: Commit and push if changed
         run: |
@@ -52,3 +78,18 @@ jobs:
             git push
             echo "Airport data updated and pushed"
           fi
+
+      - name: Create issue on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `Workflow Failed: ${{ github.workflow }}`;
+            const body = `**Run ID**: ${{ github.run_id }}\n**Time**: ${new Date().toISOString()}\n**Logs**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}`;
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: title,
+              body: body,
+              labels: ['workflow-failure']
+            });

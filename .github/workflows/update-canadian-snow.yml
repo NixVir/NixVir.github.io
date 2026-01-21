@@ -1,0 +1,157 @@
+name: Update Canadian Snow Data
+
+on:
+  schedule:
+    # Run twice daily at 6 AM and 6 PM UTC
+    # Covers BC (RFC), Alberta (Environment), and Quebec (Hydro-Québec)
+    - cron: '0 6,18 * * *'
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  update-canadian-snow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      # ===== BC Snow Data =====
+      - name: Backup BC data
+        run: |
+          if [ -f static/data/bc-snow-basins.json ]; then
+            cp static/data/bc-snow-basins.json static/data/bc-snow-basins.backup.json
+          fi
+
+      - name: Fetch BC Snow Basin Indices with retry
+        id: bc
+        continue-on-error: true
+        run: |
+          for i in 1 2 3; do
+            python fetch_bc_sbi_data.py && echo "bc_success=true" >> $GITHUB_OUTPUT && break
+            echo "BC attempt $i failed, retrying in 30s..."
+            sleep 30
+          done
+
+      - name: Validate BC JSON output
+        if: steps.bc.outputs.bc_success == 'true'
+        run: |
+          python -c "import json; json.load(open('static/data/bc-snow-basins.json'))"
+
+      # ===== Alberta Snow Data =====
+      - name: Backup Alberta data
+        run: |
+          if [ -f static/data/alberta-snow-pillows.json ]; then
+            cp static/data/alberta-snow-pillows.json static/data/alberta-snow-pillows.backup.json
+          fi
+
+      - name: Fetch Alberta snow pillow data with retry
+        id: alberta
+        continue-on-error: true
+        run: |
+          for i in 1 2 3; do
+            python fetch_alberta_snow_pillows.py && echo "alberta_success=true" >> $GITHUB_OUTPUT && break
+            echo "Alberta attempt $i failed, retrying in 30s..."
+            sleep 30
+          done
+
+      - name: Validate Alberta JSON output
+        if: steps.alberta.outputs.alberta_success == 'true'
+        run: |
+          python -c "import json; json.load(open('static/data/alberta-snow-pillows.json'))"
+
+      # ===== Quebec Snow Data =====
+      - name: Backup Quebec data
+        run: |
+          if [ -f static/data/quebec-snow-stations.json ]; then
+            cp static/data/quebec-snow-stations.json static/data/quebec-snow-stations.backup.json
+          fi
+
+      - name: Fetch Quebec snow station data with retry
+        id: quebec
+        continue-on-error: true
+        run: |
+          for i in 1 2 3; do
+            python fetch_quebec_snow_data.py && echo "quebec_success=true" >> $GITHUB_OUTPUT && break
+            echo "Quebec attempt $i failed, retrying in 30s..."
+            sleep 30
+          done
+
+      - name: Validate Quebec JSON output
+        if: steps.quebec.outputs.quebec_success == 'true'
+        run: |
+          python -c "import json; json.load(open('static/data/quebec-snow-stations.json'))"
+
+      # ===== Summary & Commit =====
+      - name: Check fetch results
+        run: |
+          echo "=== Canadian Snow Data Fetch Summary ==="
+          echo "BC: ${{ steps.bc.outputs.bc_success || 'failed' }}"
+          echo "Alberta: ${{ steps.alberta.outputs.alberta_success || 'failed' }}"
+          echo "Quebec: ${{ steps.quebec.outputs.quebec_success || 'failed' }}"
+
+          # Fail if all three failed
+          if [ "${{ steps.bc.outputs.bc_success }}" != "true" ] && \
+             [ "${{ steps.alberta.outputs.alberta_success }}" != "true" ] && \
+             [ "${{ steps.quebec.outputs.quebec_success }}" != "true" ]; then
+            echo "ERROR: All Canadian data sources failed"
+            exit 1
+          fi
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add static/data/bc-snow-basins.json static/data/alberta-snow-pillows.json static/data/quebec-snow-stations.json
+
+          # Check if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes to Canadian snow data"
+          else
+            # Build commit message with available stats
+            MSG="Update Canadian snow data -"
+
+            if [ "${{ steps.bc.outputs.bc_success }}" == "true" ]; then
+              BC_SBI=$(python -c "import json; d=json.load(open('static/data/bc-snow-basins.json')); print(d['statistics']['mean_sbi'])" 2>/dev/null || echo "N/A")
+              MSG="$MSG BC:${BC_SBI}%"
+            fi
+
+            if [ "${{ steps.alberta.outputs.alberta_success }}" == "true" ]; then
+              AB_SWE=$(python -c "import json; d=json.load(open('static/data/alberta-snow-pillows.json')); print(d['statistics']['mean_swe_mm'])" 2>/dev/null || echo "N/A")
+              MSG="$MSG AB:${AB_SWE}mm"
+            fi
+
+            if [ "${{ steps.quebec.outputs.quebec_success }}" == "true" ]; then
+              QC_SWE=$(python -c "import json; d=json.load(open('static/data/quebec-snow-stations.json')); print(d['statistics']['mean_swe_mm'])" 2>/dev/null || echo "N/A")
+              MSG="$MSG QC:${QC_SWE}mm"
+            fi
+
+            git commit -m "$MSG"
+            git push
+            echo "Canadian snow data updated and pushed"
+          fi
+
+      - name: Create issue on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `Workflow Failed: ${{ github.workflow }}`;
+            const body = `**Run ID**: ${{ github.run_id }}\n**Time**: ${new Date().toISOString()}\n**Logs**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\n\n**Results**:\n- BC: ${{ steps.bc.outputs.bc_success || 'failed' }}\n- Alberta: ${{ steps.alberta.outputs.alberta_success || 'failed' }}\n- Quebec: ${{ steps.quebec.outputs.quebec_success || 'failed' }}`;
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: title,
+              body: body,
+              labels: ['workflow-failure']
+            });
