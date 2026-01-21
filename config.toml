@@ -59,6 +59,6 @@ enableRobotsTXT = true
   [minify.tdewolff.html]
     keepWhitespace = false
   [minify.tdewolff.css]
-    keepCSS2 = false
+    version = 3
   [minify.tdewolff.js]
     keepVarNames = false

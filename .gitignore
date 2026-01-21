@@ -21,3 +21,18 @@ scripts/
 
 # Workflow backup files (created during GitHub Actions runs)
 *.backup.json
+
+# Temporary files
+tmpclaude-*/
+*.tmp.*
+__pycache__/
+~$*
+nul
+
+# Working/scratch directories
+statcan_temp/
+data/
+
+# Large raw data files (keep processed versions only)
+static/data/*-raw.json
+static/data/raw/
