@@ -28,22 +28,90 @@ import urllib.error
 import xml.etree.ElementTree as ET
 from html import unescape
 
+# Try to import PyYAML for config file support
+try:
+    import yaml
+    YAML_AVAILABLE = True
+except ImportError:
+    YAML_AVAILABLE = False
+
+
+def load_config():
+    """Load configuration from YAML file with fallback to defaults."""
+    config_path = os.path.join(os.path.dirname(__file__), 'config', 'ski-news-config.yaml')
+    defaults = {
+        'scoring': {
+            'enable_llm': False,
+            'thresholds': {'llm': {'approve': 7, 'reject': 3}, 'keyword': {'approve': 6, 'reject': 3}}
+        },
+        'diversity': {'max_per_source': 5},
+        'deduplication': {'title_similarity': 0.85, 'lead_paragraph_similarity': 0.80, 'min_lead_length': 50},
+        'focus_topics': {},
+        'output': {'max_articles': 50, 'max_rejected': 100, 'max_per_run': 30},
+        'logging': {'enable_run_log': True, 'max_log_entries': 30}
+    }
+
+    if not YAML_AVAILABLE:
+        return defaults
+
+    if not os.path.exists(config_path):
+        return defaults
+
+    try:
+        with open(config_path, 'r', encoding='utf-8') as f:
+            user_config = yaml.safe_load(f) or {}
+
+        # Deep merge user config with defaults
+        def merge(base, override):
+            result = base.copy()
+            for k, v in override.items():
+                if k in result and isinstance(result[k], dict) and isinstance(v, dict):
+                    result[k] = merge(result[k], v)
+                else:
+                    result[k] = v
+            return result
+
+        return merge(defaults, user_config)
+    except Exception as e:
+        print(f"Warning: Could not load config file: {e}")
+        return defaults
+
+
+# Load configuration
+CONFIG = load_config()
+
 # =============================================================================
-# CONFIGURATION TOGGLE - Set to True to enable LLM scoring (costs ~$6-10/month)
+# CONFIGURATION - Values loaded from config/ski-news-config.yaml or defaults
 # =============================================================================
-ENABLE_LLM_SCORING = os.environ.get('ENABLE_LLM_SCORING', 'false').lower() == 'true'
+
+# LLM scoring toggle - can be overridden by environment variable
+ENABLE_LLM_SCORING = (
+    os.environ.get('ENABLE_LLM_SCORING', 'false').lower() == 'true' or
+    CONFIG.get('scoring', {}).get('enable_llm', False)
+)
 
 # API Keys (only used if ENABLE_LLM_SCORING is True)
 ANTHROPIC_API_KEY = os.environ.get('ANTHROPIC_API_KEY', '')
 OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY', '')
 
-# Scoring thresholds - different values for LLM vs keyword scoring
+# Scoring thresholds - from config or defaults
 if ENABLE_LLM_SCORING:
-    AUTO_APPROVE_THRESHOLD = 7  # LLM is more accurate, can be stricter
-    AUTO_REJECT_THRESHOLD = 3
+    AUTO_APPROVE_THRESHOLD = CONFIG.get('scoring', {}).get('thresholds', {}).get('llm', {}).get('approve', 7)
+    AUTO_REJECT_THRESHOLD = CONFIG.get('scoring', {}).get('thresholds', {}).get('llm', {}).get('reject', 3)
 else:
-    AUTO_APPROVE_THRESHOLD = 6  # Keyword scoring needs lower threshold
-    AUTO_REJECT_THRESHOLD = 3
+    AUTO_APPROVE_THRESHOLD = CONFIG.get('scoring', {}).get('thresholds', {}).get('keyword', {}).get('approve', 6)
+    AUTO_REJECT_THRESHOLD = CONFIG.get('scoring', {}).get('thresholds', {}).get('keyword', {}).get('reject', 3)
+
+# Source diversity control - from config or default
+MAX_ARTICLES_PER_SOURCE = CONFIG.get('diversity', {}).get('max_per_source', 5)
+
+# Output settings - from config
+MAX_ARTICLES_OUTPUT = CONFIG.get('output', {}).get('max_articles', 50)
+MAX_REJECTED_KEEP = CONFIG.get('output', {}).get('max_rejected', 100)
+MAX_PER_RUN = CONFIG.get('output', {}).get('max_per_run', 30)
+
+# Focus topics - from config
+FOCUS_TOPICS = CONFIG.get('focus_topics', {})
 
 # =============================================================================
 # STRICT PRE-FILTER TERMS (Two-tier system from improvement spec)
@@ -86,6 +154,36 @@ SECONDARY_BUSINESS_TERMS = {
     'expansion', 'development', 'ceo', 'layoff', 'bankruptcy',
     'real estate', 'housing', 'occupancy', 'visitation', 'tourism',
     'quarterly', 'annual report', 'financial', 'profit', 'growth'
+}
+
+# =============================================================================
+# MACRO RELEVANCE TERMS (Adjacent stories affecting ski industry)
+# =============================================================================
+# These terms alone don't pass pre-filter, but combined with mountain region
+# geography, they create a secondary pathway for industry-relevant stories
+
+MACRO_RELEVANCE_TERMS = {
+    # Climate and weather patterns
+    'climate change', 'global warming', 'drought', 'water shortage', 'snowpack',
+    'la nina', 'la niña', 'el nino', 'el niño', 'atmospheric river', 'winter forecast',
+    # Travel and transportation
+    'airline', 'air service', 'airport expansion', 'flight routes', 'tourism statistics',
+    'travel demand', 'visitor spending', 'hotel occupancy', 'lodging rates',
+    # Labor and economics
+    'labor shortage', 'seasonal workers', 'h-2b visa', 'minimum wage', 'workforce',
+    'housing crisis', 'affordable housing', 'employee housing',
+    # Real estate and development
+    'mountain development', 'resort community', 'second home', 'vacation home',
+    # Regional economics
+    'mountain town', 'mountain economy', 'resort town', 'tourism revenue'
+}
+
+# Geographic terms that activate macro relevance pathway
+MOUNTAIN_REGION_TERMS = {
+    'colorado', 'utah', 'montana', 'wyoming', 'idaho', 'california', 'nevada',
+    'vermont', 'new hampshire', 'maine', 'new york', 'tahoe', 'rockies', 'rocky mountain',
+    'sierra', 'cascades', 'british columbia', 'alberta', 'quebec', 'ontario',
+    'alps', 'dolomites', 'pyrenees', 'japan alps', 'southern alps'
 }
 
 # =============================================================================
@@ -616,6 +714,103 @@ def clean_html(text):
     return text
 
 
+def fetch_ropeways_net():
+    """
+    Scrape ropeways.net media clipping page for ski lift/ropeway industry news.
+    Returns list of articles in same format as RSS parser.
+    """
+    url = 'https://ropeways.net/rn/medienclipping/medienclipping.php?nav=2'
+    articles = []
+
+    try:
+        content = fetch_url(url)
+        if not content:
+            return articles
+
+        # Extract articles using regex patterns
+        # Pattern: date (YYYY-MM-DD) followed by title and source in anchor tags
+        # The page has format: <a href="...">TITLE</a> (SOURCE) DATE
+        # or variations thereof
+
+        # Find all anchor tags with their surrounding context
+        # Pattern looks for: <a href="URL">TITLE</a> with nearby date and source
+        link_pattern = re.compile(
+            r'<a[^>]+href="([^"]+)"[^>]*>([^<]+)</a>\s*(?:\(([^)]+)\))?\s*(\d{4}-\d{2}-\d{2})?',
+            re.IGNORECASE
+        )
+
+        # Also try alternate pattern where date comes first
+        date_first_pattern = re.compile(
+            r'(\d{4}-\d{2}-\d{2})\s*<a[^>]+href="([^"]+)"[^>]*>([^<]+)</a>\s*(?:\(([^)]+)\))?',
+            re.IGNORECASE
+        )
+
+        # Categories of interest (filter to ski-relevant)
+        ski_relevant_categories = ['ropeways', 'snowmaking', 'slopes', 'economy', 'tourism']
+
+        found_links = set()
+
+        # Try date-first pattern
+        for match in date_first_pattern.finditer(content):
+            date, link, title, source = match.groups()
+            if link in found_links:
+                continue
+            found_links.add(link)
+
+            # Skip non-ski categories
+            link_lower = link.lower()
+            if not any(cat in link_lower or cat in title.lower() for cat in ski_relevant_categories):
+                # Check if link contains ski-related terms
+                combined = f"{title} {source or ''}".lower()
+                if not any(term in combined for term in ['ski', 'lift', 'gondola', 'cable', 'resort', 'mountain', 'snow']):
+                    continue
+
+            article = {
+                'source': 'Ropeways.net',
+                'title': clean_html(title).strip(),
+                'url': link if link.startswith('http') else f'https://ropeways.net{link}',
+                'pub_date': date,
+                'description': f"From {source.strip()}" if source else "Industry news from Ropeways.net",
+                'id': hashlib.md5(link.encode()).hexdigest()[:12]
+            }
+            articles.append(article)
+
+        # Try link-first pattern for remaining
+        for match in link_pattern.finditer(content):
+            link, title, source, date = match.groups()
+            if link in found_links:
+                continue
+            found_links.add(link)
+
+            # Skip navigation links and non-article links
+            if 'medienclipping1.php' in link or 'nav=' in link:
+                continue
+
+            # Filter to ski-relevant
+            combined = f"{title} {source or ''}".lower()
+            if not any(term in combined for term in ['ski', 'lift', 'gondola', 'cable', 'resort', 'mountain', 'snow', 'ropeway']):
+                continue
+
+            article = {
+                'source': 'Ropeways.net',
+                'title': clean_html(title).strip(),
+                'url': link if link.startswith('http') else f'https://ropeways.net{link}',
+                'pub_date': date or datetime.now().strftime('%Y-%m-%d'),
+                'description': f"From {source.strip()}" if source else "Industry news from Ropeways.net",
+                'id': hashlib.md5(link.encode()).hexdigest()[:12]
+            }
+            articles.append(article)
+
+        print_safe(f"  Scraped {len(articles)} articles from Ropeways.net")
+        SOURCE_HEALTH['Ropeways.net (HTML)'] = {'status': 'ok', 'articles': len(articles)}
+
+    except Exception as e:
+        print_safe(f"  ! Error scraping Ropeways.net: {e}")
+        SOURCE_HEALTH['Ropeways.net (HTML)'] = {'status': 'failed', 'error': str(e)[:100]}
+
+    return articles
+
+
 def parse_rss_feed(xml_content, source_name):
     """Parse RSS feed and extract articles"""
     articles = []
@@ -693,20 +888,33 @@ def parse_rss_feed(xml_content, source_name):
 
 def strict_prefilter(article):
     """
-    Two-tier pre-filter: must have ski term, boost if business term present.
-    Returns (passed, business_score) tuple.
+    Two-tier pre-filter with macro relevance pathway.
+    Returns (passed, business_score, is_macro) tuple.
+
+    Primary pathway: Must have explicit ski industry reference
+    Secondary pathway: Macro relevance term + mountain region geography
     """
     text = f"{article.get('title', '')} {article.get('description', '')}".lower()
 
-    # Gate 1: Must have explicit ski industry reference
+    # Gate 1: Check for explicit ski industry reference (primary pathway)
     has_ski_term = any(term in text for term in PRIMARY_SKI_TERMS)
-    if not has_ski_term:
-        return False, 0
 
-    # Gate 2: Count business context terms
-    business_count = sum(1 for term in SECONDARY_BUSINESS_TERMS if term in text)
+    if has_ski_term:
+        # Primary pathway passed - count business context terms
+        business_count = sum(1 for term in SECONDARY_BUSINESS_TERMS if term in text)
+        return True, business_count, False
 
-    return True, business_count
+    # Gate 2: Check macro relevance pathway (secondary)
+    # Requires BOTH a macro term AND a mountain region term
+    has_macro_term = any(term in text for term in MACRO_RELEVANCE_TERMS)
+    has_region_term = any(term in text for term in MOUNTAIN_REGION_TERMS)
+
+    if has_macro_term and has_region_term:
+        # Macro pathway passed - these get lower priority during sorting
+        business_count = sum(1 for term in SECONDARY_BUSINESS_TERMS if term in text)
+        return True, business_count, True  # True = is_macro (lower priority)
+
+    return False, 0, False
 
 
 # =============================================================================
@@ -721,10 +929,20 @@ def normalize_title(title):
     return ' '.join(sorted(key_words[:8]))  # First 8 significant words, sorted
 
 
-def deduplicate_articles(articles, similarity_threshold=0.7):
+def get_lead_paragraph(article):
+    """Extract first ~100 chars of description for lead paragraph comparison."""
+    desc = article.get('description', '') or article.get('content', '')
+    # Normalize whitespace and truncate
+    lead = ' '.join(desc.split())[:100].lower()
+    return lead
+
+
+def deduplicate_articles(articles, similarity_threshold=0.85):
     """
     Group articles by title similarity, keep highest-scored from each group.
-    Uses both normalized title matching and fuzzy matching.
+    Uses normalized title matching, fuzzy matching, and lead paragraph comparison.
+
+    Threshold increased to 0.85 (from 0.70) to catch more subtle duplicates.
     """
     if not articles:
         return []
@@ -761,12 +979,21 @@ def deduplicate_articles(articles, similarity_threshold=0.7):
 
         # Check for fuzzy matches against already-selected articles
         is_duplicate = False
+        best_title = best.get('title', '').lower()
+        best_lead = get_lead_paragraph(best)
+
         for existing in unique_articles:
             existing_title = existing.get('title', '').lower()
-            best_title = best.get('title', '').lower()
-            similarity = difflib.SequenceMatcher(None, best_title, existing_title).ratio()
+            existing_lead = get_lead_paragraph(existing)
 
-            if similarity >= similarity_threshold:
+            # Check title similarity
+            title_similarity = difflib.SequenceMatcher(None, best_title, existing_title).ratio()
+
+            # Check lead paragraph similarity (catches same story with different headlines)
+            lead_similarity = difflib.SequenceMatcher(None, best_lead, existing_lead).ratio() if best_lead and existing_lead else 0
+
+            # Consider duplicate if either title or lead paragraph is very similar
+            if title_similarity >= similarity_threshold or (lead_similarity >= 0.80 and len(best_lead) > 50):
                 is_duplicate = True
                 # Add to existing article's other sources
                 if 'other_sources' not in existing:
@@ -881,12 +1108,13 @@ def basic_keyword_score(article):
     title = article.get('title', '').lower()
 
     # Use strict pre-filter check
-    passed_prefilter, business_boost = strict_prefilter(article)
+    passed_prefilter, business_boost, is_macro = strict_prefilter(article)
 
     if not passed_prefilter:
         return 2, {"reason": "No ski industry relevance detected", "method": "keyword"}
 
-    score = 5  # Base score for articles that pass pre-filter
+    # Base score: lower for macro relevance pathway articles
+    score = 4 if is_macro else 5
 
     # Add business term boost from pre-filter
     score += min(business_boost, 3)  # Cap at +3
@@ -950,7 +1178,25 @@ def basic_keyword_score(article):
             break
     score += source_boost
 
-    return max(1, min(10, score)), {"reason": f"Keyword scoring (boost: {source_boost})", "method": "keyword"}
+    # Focus topic boost - from config file
+    focus_boost = 0
+    if FOCUS_TOPICS:
+        for topic, boost_value in FOCUS_TOPICS.items():
+            topic_lower = topic.lower()
+            if topic_lower in title:
+                focus_boost = max(focus_boost, boost_value + 1)  # Title match gets +1
+            elif topic_lower in text:
+                focus_boost = max(focus_boost, boost_value)
+        if focus_boost > 0:
+            score += focus_boost
+            article['focus_topic_boost'] = focus_boost
+
+    reason = f"Keyword scoring (source: +{source_boost}"
+    if focus_boost > 0:
+        reason += f", focus: +{focus_boost}"
+    reason += ")"
+
+    return max(1, min(10, score)), {"reason": reason, "method": "keyword"}
 
 
 def score_with_llm(article):
@@ -1093,6 +1339,51 @@ def save_source_health():
         json.dump(health_data, f, indent=2)
 
 
+def save_run_log(run_stats):
+    """
+    Save detailed run log for debugging and monitoring.
+    Keeps history of the last N runs (configured in config file).
+    """
+    if not CONFIG.get('logging', {}).get('enable_run_log', True):
+        return
+
+    path = 'static/data/ski-news-run-log.json'
+    max_entries = CONFIG.get('logging', {}).get('max_log_entries', 30)
+
+    # Load existing log
+    existing_runs = []
+    if os.path.exists(path):
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                existing_runs = data.get('runs', [])
+        except:
+            pass
+
+    # Add current run
+    run_entry = {
+        'timestamp': datetime.now().isoformat(),
+        'scoring_method': 'llm' if ENABLE_LLM_SCORING else 'keyword',
+        **run_stats
+    }
+    existing_runs.insert(0, run_entry)
+
+    # Trim to max entries
+    existing_runs = existing_runs[:max_entries]
+
+    # Save
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    log_data = {
+        'last_updated': datetime.now().isoformat(),
+        'total_runs': len(existing_runs),
+        'runs': existing_runs
+    }
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump(log_data, f, indent=2)
+
+    print_safe(f"Run log saved: {path}")
+
+
 # =============================================================================
 # MAIN FUNCTION
 # =============================================================================
@@ -1137,19 +1428,41 @@ def update_ski_news():
             SOURCE_HEALTH[source['name']] = {'status': 'failed'}
             sources_failed += 1
 
+    # Fetch from HTML sources (non-RSS)
+    print_safe("\n--- Fetching HTML Sources ---")
+    print_safe("\nRopeways.net (HTML scraper)...")
+    ropeways_articles = fetch_ropeways_net()
+    new_ropeways = [a for a in ropeways_articles if a.get('id') not in existing_ids]
+    if new_ropeways:
+        # Give ropeways.net articles a source boost for being industry-specific
+        for a in new_ropeways:
+            a['source_boost'] = 2
+        all_articles.extend(new_ropeways)
+        print_safe(f"  Found {len(ropeways_articles)} articles, {len(new_ropeways)} new")
+        sources_ok += 1
+    elif ropeways_articles:
+        print_safe(f"  Found {len(ropeways_articles)} articles, 0 new")
+        sources_ok += 1
+
     print_safe(f"\n--- Source Health: {sources_ok} OK, {sources_failed} Failed ---")
 
     # Stage 1: Strict Pre-filter
     print_safe(f"\n--- Stage 1: Pre-filtering {len(all_articles)} Articles ---")
     prefiltered = []
+    macro_count = 0
     for article in all_articles:
-        passed, business_score = strict_prefilter(article)
+        passed, business_score, is_macro = strict_prefilter(article)
         if passed:
             article['prefilter_business_score'] = business_score
+            article['is_macro_relevance'] = is_macro
+            if is_macro:
+                macro_count += 1
             prefiltered.append(article)
 
     reduction_pct = (1 - len(prefiltered) / max(len(all_articles), 1)) * 100
     print_safe(f"After strict pre-filter: {len(prefiltered)} articles ({reduction_pct:.0f}% reduction)")
+    if macro_count > 0:
+        print_safe(f"  (includes {macro_count} via macro relevance pathway)")
 
     # Prioritize by business score and source
     # Tier 0: Highest priority - official company IR and industry publications
@@ -1162,23 +1475,41 @@ def update_ski_news():
     def source_priority(article):
         source = article.get('source', '')
         business_score = article.get('prefilter_business_score', 0)
+        is_macro = article.get('is_macro_relevance', False)
+        # Macro relevance articles get lower priority (sorted last within tier)
+        macro_penalty = 10 if is_macro else 0
         if source in top_priority_sources:
-            return (-1, -business_score)  # Highest priority
+            return (-1 + macro_penalty, -business_score)  # Highest priority
         elif source in ski_dedicated_sources:
-            return (0, -business_score)
+            return (0 + macro_penalty, -business_score)
         elif 'ski' in source.lower() or 'snow' in source.lower():
-            return (1, -business_score)
+            return (1 + macro_penalty, -business_score)
         else:
-            return (2, -business_score)
+            return (2 + macro_penalty, -business_score)
 
     prefiltered.sort(key=source_priority)
 
+    # Stage 1.5: Apply source diversity cap
+    source_counts = defaultdict(int)
+    diversity_filtered = []
+    skipped_by_cap = 0
+    for article in prefiltered:
+        source = article.get('source', 'Unknown')
+        if source_counts[source] < MAX_ARTICLES_PER_SOURCE:
+            source_counts[source] += 1
+            diversity_filtered.append(article)
+        else:
+            skipped_by_cap += 1
+
+    if skipped_by_cap > 0:
+        print_safe(f"Source diversity cap ({MAX_ARTICLES_PER_SOURCE}/source): skipped {skipped_by_cap} articles")
+
     # Stage 2: Score and categorize
-    print_safe(f"\n--- Stage 2: Scoring Top {min(len(prefiltered), 30)} Articles ---")
+    print_safe(f"\n--- Stage 2: Scoring Top {min(len(diversity_filtered), MAX_PER_RUN)} Articles ---")
 
     scored_articles = []
-    for i, article in enumerate(prefiltered[:30]):  # Process up to 30 per run
-        print_safe(f"\n[{i+1}/{min(len(prefiltered), 30)}] {article.get('title', 'No title')[:55]}...")
+    for i, article in enumerate(diversity_filtered[:MAX_PER_RUN]):  # Process up to MAX_PER_RUN per run
+        print_safe(f"\n[{i+1}/{min(len(diversity_filtered), MAX_PER_RUN)}] {article.get('title', 'No title')[:55]}...")
 
         score, details = score_article(article)
 
@@ -1224,15 +1555,15 @@ def update_ski_news():
     for article in approved:
         existing_articles[article['id']] = article
 
-    # Sort by date and keep last 50
+    # Sort by date and keep last MAX_ARTICLES_OUTPUT
     sorted_articles = sorted(
         existing_articles.values(),
         key=lambda x: x.get('pub_date', x.get('approved_date', '')),
         reverse=True
-    )[:50]
+    )[:MAX_ARTICLES_OUTPUT]
 
-    # Keep only last 100 rejected
-    rejected = rejected[-100:]
+    # Keep only last MAX_REJECTED_KEEP rejected
+    rejected = rejected[-MAX_REJECTED_KEEP:]
 
     # Save results
     output_data = {
@@ -1252,6 +1583,40 @@ def update_ski_news():
 
     # Save source health
     save_source_health()
+
+    # Collect run statistics for logging
+    run_stats = {
+        'sources': {
+            'total': len(RSS_SOURCES) + 1,  # +1 for ropeways.net
+            'ok': sources_ok,
+            'failed': sources_failed
+        },
+        'articles': {
+            'fetched': len(all_articles),
+            'after_prefilter': len(prefiltered),
+            'macro_relevance': macro_count,
+            'after_diversity_cap': len(diversity_filtered),
+            'scored': len(scored_articles),
+            'after_dedup': len(deduplicated)
+        },
+        'decisions': {
+            'approved': len(approved),
+            'pending': len(pending) - len(review_queue.get('pending', [])),  # New pending
+            'rejected': len([a for a in deduplicated if a['score'] <= AUTO_REJECT_THRESHOLD])
+        },
+        'output': {
+            'total_articles': len(sorted_articles),
+            'pending_queue': len(pending),
+            'rejected_queue': len(rejected)
+        },
+        'approved_articles': [
+            {'title': a.get('title', '')[:60], 'score': a.get('score'), 'source': a.get('source')}
+            for a in approved
+        ]
+    }
+
+    # Save run log
+    save_run_log(run_stats)
 
     print_safe("\n" + "=" * 60)
     print_safe("SUMMARY")

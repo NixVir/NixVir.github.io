@@ -1,0 +1,80 @@
+# Ski News Aggregator Configuration
+# This file allows customization of the news scraping and scoring system
+# without modifying the Python code.
+
+# =============================================================================
+# SCORING SETTINGS
+# =============================================================================
+scoring:
+  # Enable LLM scoring (requires ANTHROPIC_API_KEY environment variable)
+  # Set to false for keyword-only scoring (free, no API calls)
+  enable_llm: false
+
+  # Thresholds for automatic approval/rejection
+  # Articles scoring >= approve_threshold are auto-approved
+  # Articles scoring <= reject_threshold are auto-rejected
+  # Articles in between go to review queue
+  thresholds:
+    llm:
+      approve: 7
+      reject: 3
+    keyword:
+      approve: 6
+      reject: 3
+
+# =============================================================================
+# SOURCE DIVERSITY
+# =============================================================================
+diversity:
+  # Maximum articles from any single source per run
+  # Prevents any one source from dominating the feed
+  max_per_source: 5
+
+# =============================================================================
+# DEDUPLICATION
+# =============================================================================
+deduplication:
+  # Similarity threshold for title matching (0.0 - 1.0)
+  # Higher = stricter matching (fewer false positives, may miss some duplicates)
+  title_similarity: 0.85
+
+  # Similarity threshold for lead paragraph matching
+  lead_paragraph_similarity: 0.80
+
+  # Minimum lead paragraph length to consider for comparison
+  min_lead_length: 50
+
+# =============================================================================
+# FOCUS TOPICS (Optional boost for trending/important topics)
+# =============================================================================
+# Add topics here to boost articles containing these terms
+# Format: topic: boost_value (1-5)
+# Leave empty {} for no focus topics
+focus_topics:
+  # Example topics (uncomment to activate):
+  # "2026 winter olympics": 3
+  # "vail resorts earnings": 2
+  # "climate change snow": 2
+
+# =============================================================================
+# OUTPUT SETTINGS
+# =============================================================================
+output:
+  # Maximum articles to keep in the main feed
+  max_articles: 50
+
+  # Maximum rejected articles to keep in review queue
+  max_rejected: 100
+
+  # Maximum articles to process per run (for rate limiting)
+  max_per_run: 30
+
+# =============================================================================
+# LOGGING
+# =============================================================================
+logging:
+  # Enable detailed run logging to ski-news-run-log.json
+  enable_run_log: true
+
+  # Keep this many historical runs in the log
+  max_log_entries: 30
