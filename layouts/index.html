@@ -35,31 +35,33 @@
                 </a>
               </div>
 
-              <!-- Stats -->
-              <div class="snow-stats" aria-live="polite" aria-atomic="true">
-                <div class="snow-stats-header">
-                  <span class="snow-stats-title">Land Area with Snow</span>
-                  <span class="snow-stats-subtitle">vs 5-year avg</span>
-                </div>
-                <div class="snow-stat-row">
-                  <span class="snow-stat-flag">&#127482;&#127480;</span>
-                  <span class="snow-stat-label">USA</span>
-                  <span class="snow-stat-value" id="hp-usa-cover">--</span>
-                  <span class="snow-stat-change" id="hp-usa-change">--</span>
-                </div>
-                <div class="snow-stat-row">
-                  <span class="snow-stat-flag">&#127464;&#127462;</span>
-                  <span class="snow-stat-label">Canada</span>
-                  <span class="snow-stat-value" id="hp-ca-cover">--</span>
-                  <span class="snow-stat-change" id="hp-ca-change">--</span>
-                </div>
-                <div class="snow-stat-row snow-stat-combined">
-                  <span class="snow-stat-flag">&#127758;</span>
-                  <span class="snow-stat-label">Combined</span>
-                  <span class="snow-stat-value snow-stat-combined-value" id="hp-combined-cover">--</span>
-                  <span class="snow-stat-change" id="hp-combined-change">--</span>
-                </div>
-              </div>
+              <!-- Stats Table -->
+              <table class="snow-stats-table" aria-live="polite" aria-atomic="true">
+                <thead>
+                  <tr>
+                    <th class="col-region" colspan="2"></th>
+                    <th class="col-cover">Snow Cover</th>
+                    <th class="col-change">vs 5yr avg</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="cell-label" colspan="2">USA</td>
+                    <td class="cell-value" id="hp-usa-cover">--</td>
+                    <td class="cell-change" id="hp-usa-change">--</td>
+                  </tr>
+                  <tr>
+                    <td class="cell-label" colspan="2">Canada</td>
+                    <td class="cell-value" id="hp-ca-cover">--</td>
+                    <td class="cell-change" id="hp-ca-change">--</td>
+                  </tr>
+                  <tr class="row-combined">
+                    <td class="cell-label" colspan="2">Combined</td>
+                    <td class="cell-value cell-combined" id="hp-combined-cover">--</td>
+                    <td class="cell-change" id="hp-combined-change">--</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
 
             <div class="snow-pane-footer">
@@ -275,66 +277,67 @@
       border-radius: 6px;
       border: 1px solid #2a3444;
     }
-    .snow-stats-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 0.5rem;
-      padding-bottom: 0.4rem;
+    /* Snow Stats Table */
+    .snow-stats-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.75rem;
+    }
+    .snow-stats-table thead th {
+      font-size: 0.6rem;
+      font-weight: 500;
+      color: #8892a2;
+      text-align: right;
+      padding: 0 0.25rem 0.4rem 0.25rem;
       border-bottom: 1px solid #2a3444;
     }
-    .snow-stats-title {
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: #c8d0dc;
+    .snow-stats-table thead .col-region {
+      text-align: left;
     }
-    .snow-stats-subtitle {
-      font-size: 0.6rem;
-      color: #6b7280;
+    .snow-stats-table thead .col-cover {
+      text-align: right;
+    }
+    .snow-stats-table thead .col-change {
+      text-align: right;
       font-style: italic;
+      color: #6b7280;
     }
-    .snow-stats {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+    .snow-stats-table tbody td {
+      padding: 0.4rem 0.25rem;
     }
-    .snow-stat-row {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.4rem 0.5rem;
+    .snow-stats-table tbody tr {
       background: #1a2230;
-      border-radius: 4px;
     }
-    .snow-stat-flag {
-      font-size: 1rem;
-      flex-shrink: 0;
+    .snow-stats-table tbody tr:first-child td {
+      border-radius: 4px 4px 0 0;
     }
-    .snow-stat-label {
+    .snow-stats-table tbody tr:last-child td {
+      border-radius: 0 0 4px 4px;
+    }
+    .snow-stats-table .cell-label {
       font-size: 0.7rem;
       color: #8892a2;
-      flex: 1;
     }
-    .snow-stat-value {
+    .snow-stats-table .cell-value {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.9rem;
       font-weight: 600;
       color: #e8ecf2;
+      text-align: right;
     }
-    .snow-stat-change {
-      font-size: 0.65rem;
+    .snow-stats-table .cell-change {
+      font-size: 0.7rem;
       color: #8892a2;
+      text-align: right;
     }
-    .snow-stat-change .change-up { color: #34d399; }
-    .snow-stat-change .change-down { color: #f87171; }
-    .snow-stat-combined {
+    .snow-stats-table .cell-change .change-up { color: #34d399; }
+    .snow-stats-table .cell-change .change-down { color: #f87171; }
+    .snow-stats-table .row-combined {
       border-top: 1px solid #2a3444;
-      margin-top: 0.25rem;
-      padding-top: 0.5rem;
     }
-    .snow-stat-combined-value {
+    .snow-stats-table .cell-combined {
       color: #4ade80;
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
     .snow-pane-footer {
       text-align: center;
