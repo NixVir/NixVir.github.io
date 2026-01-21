@@ -1,89 +1,89 @@
 {
-  "updated": "2026-01-21 14:25:28",
+  "updated": "2026-01-21 17:55:28",
   "consumer_confidence": [
     {
       "date": "2024-12-01",
       "series_id": "UMCSENT",
       "value": 74.0,
-      "realtime_start": "2026-01-09",
-      "realtime_end": "2026-01-09"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-01-01",
       "series_id": "UMCSENT",
       "value": 71.7,
-      "realtime_start": "2026-01-09",
-      "realtime_end": "2026-01-09"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-02-01",
       "series_id": "UMCSENT",
       "value": 64.7,
-      "realtime_start": "2026-01-09",
-      "realtime_end": "2026-01-09"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-03-01",
       "series_id": "UMCSENT",
       "value": 57.0,
-      "realtime_start": "2026-01-09",
-      "realtime_end": "2026-01-09"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-04-01",
       "series_id": "UMCSENT",
       "value": 52.2,
-      "realtime_start": "2026-01-09",
-      "realtime_end": "2026-01-09"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-05-01",
       "series_id": "UMCSENT",
       "value": 52.2,
-      "realtime_start": "2026-01-09",
-      "realtime_end": "2026-01-09"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-06-01",
       "series_id": "UMCSENT",
       "value": 60.7,
-      "realtime_start": "2026-01-09",
-      "realtime_end": "2026-01-09"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-07-01",
       "series_id": "UMCSENT",
       "value": 61.7,
-      "realtime_start": "2026-01-09",
-      "realtime_end": "2026-01-09"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-08-01",
       "series_id": "UMCSENT",
       "value": 58.2,
-      "realtime_start": "2026-01-09",
-      "realtime_end": "2026-01-09"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-09-01",
       "series_id": "UMCSENT",
       "value": 55.1,
-      "realtime_start": "2026-01-09",
-      "realtime_end": "2026-01-09"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-10-01",
       "series_id": "UMCSENT",
       "value": 53.6,
-      "realtime_start": "2026-01-09",
-      "realtime_end": "2026-01-09"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     },
     {
       "date": "2025-11-01",
       "series_id": "UMCSENT",
       "value": 51.0,
-      "realtime_start": "2026-01-09",
-      "realtime_end": "2026-01-09"
+      "realtime_start": "2025-12-19",
+      "realtime_end": "2025-12-19"
     }
   ],
   "markets": [
@@ -5467,1816 +5467,1812 @@
   ],
   "vix": [
     {
-      "date": "2025-01-21",
-      "series_id": "VIXCLS",
-      "value": 15.06,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
-    },
-    {
       "date": "2025-01-22",
       "series_id": "VIXCLS",
       "value": 15.1,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-01-23",
       "series_id": "VIXCLS",
       "value": 15.02,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-01-24",
       "series_id": "VIXCLS",
       "value": 14.85,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-01-27",
       "series_id": "VIXCLS",
       "value": 17.9,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-01-28",
       "series_id": "VIXCLS",
       "value": 16.41,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-01-29",
       "series_id": "VIXCLS",
       "value": 16.56,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-01-30",
       "series_id": "VIXCLS",
       "value": 15.84,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-01-31",
       "series_id": "VIXCLS",
       "value": 16.43,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-02-03",
       "series_id": "VIXCLS",
       "value": 18.62,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-02-04",
       "series_id": "VIXCLS",
       "value": 17.21,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-02-05",
       "series_id": "VIXCLS",
       "value": 15.77,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-02-06",
       "series_id": "VIXCLS",
       "value": 15.5,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-02-07",
       "series_id": "VIXCLS",
       "value": 16.54,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-02-10",
       "series_id": "VIXCLS",
       "value": 15.81,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-02-11",
       "series_id": "VIXCLS",
       "value": 16.02,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-02-12",
       "series_id": "VIXCLS",
       "value": 15.89,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-02-13",
       "series_id": "VIXCLS",
       "value": 15.1,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-02-14",
       "series_id": "VIXCLS",
       "value": 14.77,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-02-17",
       "series_id": "VIXCLS",
       "value": 15.37,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-02-18",
       "series_id": "VIXCLS",
       "value": 15.35,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-02-19",
       "series_id": "VIXCLS",
       "value": 15.27,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-02-20",
       "series_id": "VIXCLS",
       "value": 15.66,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-02-21",
       "series_id": "VIXCLS",
       "value": 18.21,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-02-24",
       "series_id": "VIXCLS",
       "value": 18.98,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-02-25",
       "series_id": "VIXCLS",
       "value": 19.43,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-02-26",
       "series_id": "VIXCLS",
       "value": 19.1,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-02-27",
       "series_id": "VIXCLS",
       "value": 21.13,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-02-28",
       "series_id": "VIXCLS",
       "value": 19.63,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-03-03",
       "series_id": "VIXCLS",
       "value": 22.78,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-03-04",
       "series_id": "VIXCLS",
       "value": 23.51,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-03-05",
       "series_id": "VIXCLS",
       "value": 21.93,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-03-06",
       "series_id": "VIXCLS",
       "value": 24.87,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-03-07",
       "series_id": "VIXCLS",
       "value": 23.37,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-03-10",
       "series_id": "VIXCLS",
       "value": 27.86,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-03-11",
       "series_id": "VIXCLS",
       "value": 26.92,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-03-12",
       "series_id": "VIXCLS",
       "value": 24.23,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-03-13",
       "series_id": "VIXCLS",
       "value": 24.66,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-03-14",
       "series_id": "VIXCLS",
       "value": 21.77,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-03-17",
       "series_id": "VIXCLS",
       "value": 20.51,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-03-18",
       "series_id": "VIXCLS",
       "value": 21.7,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-03-19",
       "series_id": "VIXCLS",
       "value": 19.9,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-03-20",
       "series_id": "VIXCLS",
       "value": 19.8,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-03-21",
       "series_id": "VIXCLS",
       "value": 19.28,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-03-24",
       "series_id": "VIXCLS",
       "value": 17.48,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-03-25",
       "series_id": "VIXCLS",
       "value": 17.15,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-03-26",
       "series_id": "VIXCLS",
       "value": 18.33,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-03-27",
       "series_id": "VIXCLS",
       "value": 18.69,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-03-28",
       "series_id": "VIXCLS",
       "value": 21.65,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-03-31",
       "series_id": "VIXCLS",
       "value": 22.28,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-04-01",
       "series_id": "VIXCLS",
       "value": 21.77,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-04-02",
       "series_id": "VIXCLS",
       "value": 21.51,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-04-03",
       "series_id": "VIXCLS",
       "value": 30.02,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-04-04",
       "series_id": "VIXCLS",
       "value": 45.31,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-04-07",
       "series_id": "VIXCLS",
       "value": 46.98,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-04-08",
       "series_id": "VIXCLS",
       "value": 52.33,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-04-09",
       "series_id": "VIXCLS",
       "value": 33.62,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-04-10",
       "series_id": "VIXCLS",
       "value": 40.72,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-04-11",
       "series_id": "VIXCLS",
       "value": 37.56,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-04-14",
       "series_id": "VIXCLS",
       "value": 30.89,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-04-15",
       "series_id": "VIXCLS",
       "value": 30.12,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-04-16",
       "series_id": "VIXCLS",
       "value": 32.64,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-04-17",
       "series_id": "VIXCLS",
       "value": 29.65,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-04-21",
       "series_id": "VIXCLS",
       "value": 33.82,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-04-22",
       "series_id": "VIXCLS",
       "value": 30.57,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-04-23",
       "series_id": "VIXCLS",
       "value": 28.45,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-04-24",
       "series_id": "VIXCLS",
       "value": 26.47,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-04-25",
       "series_id": "VIXCLS",
       "value": 24.84,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-04-28",
       "series_id": "VIXCLS",
       "value": 25.15,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-04-29",
       "series_id": "VIXCLS",
       "value": 24.17,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-04-30",
       "series_id": "VIXCLS",
       "value": 24.7,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-05-01",
       "series_id": "VIXCLS",
       "value": 24.6,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-05-02",
       "series_id": "VIXCLS",
       "value": 22.68,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-05-05",
       "series_id": "VIXCLS",
       "value": 23.64,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-05-06",
       "series_id": "VIXCLS",
       "value": 24.76,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-05-07",
       "series_id": "VIXCLS",
       "value": 23.55,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-05-08",
       "series_id": "VIXCLS",
       "value": 22.48,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-05-09",
       "series_id": "VIXCLS",
       "value": 21.9,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-05-12",
       "series_id": "VIXCLS",
       "value": 18.39,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-05-13",
       "series_id": "VIXCLS",
       "value": 18.22,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-05-14",
       "series_id": "VIXCLS",
       "value": 18.62,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-05-15",
       "series_id": "VIXCLS",
       "value": 17.83,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-05-16",
       "series_id": "VIXCLS",
       "value": 17.24,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-05-19",
       "series_id": "VIXCLS",
       "value": 18.14,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-05-20",
       "series_id": "VIXCLS",
       "value": 18.09,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-05-21",
       "series_id": "VIXCLS",
       "value": 20.87,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-05-22",
       "series_id": "VIXCLS",
       "value": 20.28,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-05-23",
       "series_id": "VIXCLS",
       "value": 22.29,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-05-26",
       "series_id": "VIXCLS",
       "value": 20.57,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-05-27",
       "series_id": "VIXCLS",
       "value": 18.96,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-05-28",
       "series_id": "VIXCLS",
       "value": 19.31,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-05-29",
       "series_id": "VIXCLS",
       "value": 19.18,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-05-30",
       "series_id": "VIXCLS",
       "value": 18.57,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-06-02",
       "series_id": "VIXCLS",
       "value": 18.36,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-06-03",
       "series_id": "VIXCLS",
       "value": 17.69,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-06-04",
       "series_id": "VIXCLS",
       "value": 17.61,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-06-05",
       "series_id": "VIXCLS",
       "value": 18.48,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-06-06",
       "series_id": "VIXCLS",
       "value": 16.77,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-06-09",
       "series_id": "VIXCLS",
       "value": 17.16,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-06-10",
       "series_id": "VIXCLS",
       "value": 16.95,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-06-11",
       "series_id": "VIXCLS",
       "value": 17.26,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-06-12",
       "series_id": "VIXCLS",
       "value": 18.02,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-06-13",
       "series_id": "VIXCLS",
       "value": 20.82,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-06-16",
       "series_id": "VIXCLS",
       "value": 19.11,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-06-17",
       "series_id": "VIXCLS",
       "value": 21.6,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-06-18",
       "series_id": "VIXCLS",
       "value": 20.14,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-06-19",
       "series_id": "VIXCLS",
       "value": 22.17,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-06-20",
       "series_id": "VIXCLS",
       "value": 20.62,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-06-23",
       "series_id": "VIXCLS",
       "value": 19.83,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-06-24",
       "series_id": "VIXCLS",
       "value": 17.48,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-06-25",
       "series_id": "VIXCLS",
       "value": 16.76,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-06-26",
       "series_id": "VIXCLS",
       "value": 16.59,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-06-27",
       "series_id": "VIXCLS",
       "value": 16.32,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-06-30",
       "series_id": "VIXCLS",
       "value": 16.73,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-07-01",
       "series_id": "VIXCLS",
       "value": 16.83,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-07-02",
       "series_id": "VIXCLS",
       "value": 16.64,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-07-03",
       "series_id": "VIXCLS",
       "value": 16.38,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-07-04",
       "series_id": "VIXCLS",
       "value": 17.48,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-07-07",
       "series_id": "VIXCLS",
       "value": 17.79,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-07-08",
       "series_id": "VIXCLS",
       "value": 16.81,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-07-09",
       "series_id": "VIXCLS",
       "value": 15.94,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-07-10",
       "series_id": "VIXCLS",
       "value": 15.78,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-07-11",
       "series_id": "VIXCLS",
       "value": 16.4,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-07-14",
       "series_id": "VIXCLS",
       "value": 17.2,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-07-15",
       "series_id": "VIXCLS",
       "value": 17.38,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-07-16",
       "series_id": "VIXCLS",
       "value": 17.16,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-07-17",
       "series_id": "VIXCLS",
       "value": 16.52,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-07-18",
       "series_id": "VIXCLS",
       "value": 16.41,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-07-21",
       "series_id": "VIXCLS",
       "value": 16.65,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-07-22",
       "series_id": "VIXCLS",
       "value": 16.5,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-07-23",
       "series_id": "VIXCLS",
       "value": 15.37,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-07-24",
       "series_id": "VIXCLS",
       "value": 15.39,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-07-25",
       "series_id": "VIXCLS",
       "value": 14.93,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-07-28",
       "series_id": "VIXCLS",
       "value": 15.03,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-07-29",
       "series_id": "VIXCLS",
       "value": 15.98,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-07-30",
       "series_id": "VIXCLS",
       "value": 15.48,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-07-31",
       "series_id": "VIXCLS",
       "value": 16.72,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-08-01",
       "series_id": "VIXCLS",
       "value": 20.38,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-08-04",
       "series_id": "VIXCLS",
       "value": 17.52,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-08-05",
       "series_id": "VIXCLS",
       "value": 17.85,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-08-06",
       "series_id": "VIXCLS",
       "value": 16.77,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-08-07",
       "series_id": "VIXCLS",
       "value": 16.57,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-08-08",
       "series_id": "VIXCLS",
       "value": 15.15,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-08-11",
       "series_id": "VIXCLS",
       "value": 16.25,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-08-12",
       "series_id": "VIXCLS",
       "value": 14.73,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-08-13",
       "series_id": "VIXCLS",
       "value": 14.49,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-08-14",
       "series_id": "VIXCLS",
       "value": 14.83,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-08-15",
       "series_id": "VIXCLS",
       "value": 15.09,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-08-18",
       "series_id": "VIXCLS",
       "value": 14.99,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-08-19",
       "series_id": "VIXCLS",
       "value": 15.57,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-08-20",
       "series_id": "VIXCLS",
       "value": 15.69,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-08-21",
       "series_id": "VIXCLS",
       "value": 16.6,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-08-22",
       "series_id": "VIXCLS",
       "value": 14.22,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-08-25",
       "series_id": "VIXCLS",
       "value": 14.79,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-08-26",
       "series_id": "VIXCLS",
       "value": 14.62,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-08-27",
       "series_id": "VIXCLS",
       "value": 14.85,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-08-28",
       "series_id": "VIXCLS",
       "value": 14.43,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-08-29",
       "series_id": "VIXCLS",
       "value": 15.36,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-09-01",
       "series_id": "VIXCLS",
       "value": 16.12,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-09-02",
       "series_id": "VIXCLS",
       "value": 17.17,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-09-03",
       "series_id": "VIXCLS",
       "value": 16.35,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-09-04",
       "series_id": "VIXCLS",
       "value": 15.3,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-09-05",
       "series_id": "VIXCLS",
       "value": 15.18,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-09-08",
       "series_id": "VIXCLS",
       "value": 15.11,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-09-09",
       "series_id": "VIXCLS",
       "value": 15.04,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-09-10",
       "series_id": "VIXCLS",
       "value": 15.35,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-09-11",
       "series_id": "VIXCLS",
       "value": 14.71,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-09-12",
       "series_id": "VIXCLS",
       "value": 14.76,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-09-15",
       "series_id": "VIXCLS",
       "value": 15.69,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-09-16",
       "series_id": "VIXCLS",
       "value": 16.36,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-09-17",
       "series_id": "VIXCLS",
       "value": 15.72,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-09-18",
       "series_id": "VIXCLS",
       "value": 15.7,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-09-19",
       "series_id": "VIXCLS",
       "value": 15.45,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-09-22",
       "series_id": "VIXCLS",
       "value": 16.1,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-09-23",
       "series_id": "VIXCLS",
       "value": 16.64,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-09-24",
       "series_id": "VIXCLS",
       "value": 16.18,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-09-25",
       "series_id": "VIXCLS",
       "value": 16.74,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-09-26",
       "series_id": "VIXCLS",
       "value": 15.29,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-09-29",
       "series_id": "VIXCLS",
       "value": 16.12,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-09-30",
       "series_id": "VIXCLS",
       "value": 16.28,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-10-01",
       "series_id": "VIXCLS",
       "value": 16.29,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-10-02",
       "series_id": "VIXCLS",
       "value": 16.63,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-10-03",
       "series_id": "VIXCLS",
       "value": 16.65,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-10-06",
       "series_id": "VIXCLS",
       "value": 16.37,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-10-07",
       "series_id": "VIXCLS",
       "value": 17.24,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-10-08",
       "series_id": "VIXCLS",
       "value": 16.3,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-10-09",
       "series_id": "VIXCLS",
       "value": 16.43,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-10-10",
       "series_id": "VIXCLS",
       "value": 21.66,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-10-13",
       "series_id": "VIXCLS",
       "value": 19.03,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-10-14",
       "series_id": "VIXCLS",
       "value": 20.81,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-10-15",
       "series_id": "VIXCLS",
       "value": 20.64,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-10-16",
       "series_id": "VIXCLS",
       "value": 25.31,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-10-17",
       "series_id": "VIXCLS",
       "value": 20.78,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-10-20",
       "series_id": "VIXCLS",
       "value": 18.23,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-10-21",
       "series_id": "VIXCLS",
       "value": 17.87,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-10-22",
       "series_id": "VIXCLS",
       "value": 18.6,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-10-23",
       "series_id": "VIXCLS",
       "value": 17.3,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-10-24",
       "series_id": "VIXCLS",
       "value": 16.37,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-10-27",
       "series_id": "VIXCLS",
       "value": 15.79,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-10-28",
       "series_id": "VIXCLS",
       "value": 16.42,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-10-29",
       "series_id": "VIXCLS",
       "value": 16.92,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-10-30",
       "series_id": "VIXCLS",
       "value": 16.91,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-10-31",
       "series_id": "VIXCLS",
       "value": 17.44,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-11-03",
       "series_id": "VIXCLS",
       "value": 17.17,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-11-04",
       "series_id": "VIXCLS",
       "value": 19.0,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-11-05",
       "series_id": "VIXCLS",
       "value": 18.01,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-11-06",
       "series_id": "VIXCLS",
       "value": 19.5,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-11-07",
       "series_id": "VIXCLS",
       "value": 19.08,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-11-10",
       "series_id": "VIXCLS",
       "value": 17.6,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-11-11",
       "series_id": "VIXCLS",
       "value": 17.28,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-11-12",
       "series_id": "VIXCLS",
       "value": 17.51,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-11-13",
       "series_id": "VIXCLS",
       "value": 20.0,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-11-14",
       "series_id": "VIXCLS",
       "value": 19.83,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-11-17",
       "series_id": "VIXCLS",
       "value": 22.38,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-11-18",
       "series_id": "VIXCLS",
       "value": 24.69,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-11-19",
       "series_id": "VIXCLS",
       "value": 23.66,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-11-20",
       "series_id": "VIXCLS",
       "value": 26.42,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-11-21",
       "series_id": "VIXCLS",
       "value": 23.43,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-11-24",
       "series_id": "VIXCLS",
       "value": 20.52,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-11-25",
       "series_id": "VIXCLS",
       "value": 18.56,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-11-26",
       "series_id": "VIXCLS",
       "value": 17.19,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-11-27",
       "series_id": "VIXCLS",
       "value": 17.21,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-11-28",
       "series_id": "VIXCLS",
       "value": 16.35,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-12-01",
       "series_id": "VIXCLS",
       "value": 17.24,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-12-02",
       "series_id": "VIXCLS",
       "value": 16.59,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-12-03",
       "series_id": "VIXCLS",
       "value": 16.08,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-12-04",
       "series_id": "VIXCLS",
       "value": 15.78,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-12-05",
       "series_id": "VIXCLS",
       "value": 15.41,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-12-08",
       "series_id": "VIXCLS",
       "value": 16.66,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-12-09",
       "series_id": "VIXCLS",
       "value": 16.93,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-12-10",
       "series_id": "VIXCLS",
       "value": 15.77,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-12-11",
       "series_id": "VIXCLS",
       "value": 14.85,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-12-12",
       "series_id": "VIXCLS",
       "value": 15.74,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-12-15",
       "series_id": "VIXCLS",
       "value": 16.5,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-12-16",
       "series_id": "VIXCLS",
       "value": 16.48,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-12-17",
       "series_id": "VIXCLS",
       "value": 17.62,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-12-18",
       "series_id": "VIXCLS",
       "value": 16.87,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-12-19",
       "series_id": "VIXCLS",
       "value": 14.91,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-12-22",
       "series_id": "VIXCLS",
       "value": 14.08,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-12-23",
       "series_id": "VIXCLS",
       "value": 14.0,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-12-24",
       "series_id": "VIXCLS",
       "value": 13.47,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-12-26",
       "series_id": "VIXCLS",
       "value": 13.6,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-12-29",
       "series_id": "VIXCLS",
       "value": 14.2,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-12-30",
       "series_id": "VIXCLS",
       "value": 14.33,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2025-12-31",
       "series_id": "VIXCLS",
       "value": 14.95,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2026-01-02",
       "series_id": "VIXCLS",
       "value": 14.51,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2026-01-05",
       "series_id": "VIXCLS",
       "value": 14.9,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2026-01-06",
       "series_id": "VIXCLS",
       "value": 14.75,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2026-01-07",
       "series_id": "VIXCLS",
       "value": 15.38,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2026-01-08",
       "series_id": "VIXCLS",
       "value": 15.45,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2026-01-09",
       "series_id": "VIXCLS",
       "value": 14.49,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2026-01-12",
       "series_id": "VIXCLS",
       "value": 15.12,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2026-01-13",
       "series_id": "VIXCLS",
       "value": 15.98,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2026-01-14",
       "series_id": "VIXCLS",
       "value": 16.75,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2026-01-15",
       "series_id": "VIXCLS",
       "value": 15.84,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2026-01-16",
       "series_id": "VIXCLS",
       "value": 15.86,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     },
     {
       "date": "2026-01-19",
       "series_id": "VIXCLS",
       "value": 18.84,
-      "realtime_start": "2026-01-20",
-      "realtime_end": "2026-01-20"
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
+    },
+    {
+      "date": "2026-01-20",
+      "series_id": "VIXCLS",
+      "value": 20.09,
+      "realtime_start": "2026-01-21",
+      "realtime_end": "2026-01-21"
     }
   ],
   "mag7": [
     {
       "symbol": "AAPL",
       "name": "Apple Inc.",
-      "price": 246.6999969482422,
-      "previousClose": 255.52999877929688,
+      "price": 246.38009643554688,
+      "previousClose": 246.6999969482422,
       "history": [
-        {
-          "date": "2025-09-11",
-          "value": 230.02999877929688
-        },
         {
           "date": "2025-09-12",
           "value": 234.07000732421875
@@ -7632,19 +7628,387 @@
         {
           "date": "2026-01-20",
           "value": 246.6999969482422
+        },
+        {
+          "date": "2026-01-21",
+          "value": 246.38009643554688
+        }
+      ]
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft Corp",
+      "price": 442.1499938964844,
+      "previousClose": 454.5199890136719,
+      "history": [
+        {
+          "date": "2025-09-12",
+          "value": 509.8999938964844
+        },
+        {
+          "date": "2025-09-15",
+          "value": 515.3599853515625
+        },
+        {
+          "date": "2025-09-16",
+          "value": 509.0400085449219
+        },
+        {
+          "date": "2025-09-17",
+          "value": 510.0199890136719
+        },
+        {
+          "date": "2025-09-18",
+          "value": 508.45001220703125
+        },
+        {
+          "date": "2025-09-19",
+          "value": 517.9299926757812
+        },
+        {
+          "date": "2025-09-22",
+          "value": 514.4500122070312
+        },
+        {
+          "date": "2025-09-23",
+          "value": 509.2300109863281
+        },
+        {
+          "date": "2025-09-24",
+          "value": 510.1499938964844
+        },
+        {
+          "date": "2025-09-25",
+          "value": 507.0299987792969
+        },
+        {
+          "date": "2025-09-26",
+          "value": 511.4599914550781
+        },
+        {
+          "date": "2025-09-29",
+          "value": 514.5999755859375
+        },
+        {
+          "date": "2025-09-30",
+          "value": 517.9500122070312
+        },
+        {
+          "date": "2025-10-01",
+          "value": 519.7100219726562
+        },
+        {
+          "date": "2025-10-02",
+          "value": 515.739990234375
+        },
+        {
+          "date": "2025-10-03",
+          "value": 517.3499755859375
+        },
+        {
+          "date": "2025-10-06",
+          "value": 528.5700073242188
+        },
+        {
+          "date": "2025-10-07",
+          "value": 523.97998046875
+        },
+        {
+          "date": "2025-10-08",
+          "value": 524.8499755859375
+        },
+        {
+          "date": "2025-10-09",
+          "value": 522.4000244140625
+        },
+        {
+          "date": "2025-10-10",
+          "value": 510.9599914550781
+        },
+        {
+          "date": "2025-10-13",
+          "value": 514.0499877929688
+        },
+        {
+          "date": "2025-10-14",
+          "value": 513.5700073242188
+        },
+        {
+          "date": "2025-10-15",
+          "value": 513.4299926757812
+        },
+        {
+          "date": "2025-10-16",
+          "value": 511.6099853515625
+        },
+        {
+          "date": "2025-10-17",
+          "value": 513.5800170898438
+        },
+        {
+          "date": "2025-10-20",
+          "value": 516.7899780273438
+        },
+        {
+          "date": "2025-10-21",
+          "value": 517.6599731445312
+        },
+        {
+          "date": "2025-10-22",
+          "value": 520.5399780273438
+        },
+        {
+          "date": "2025-10-23",
+          "value": 520.5599975585938
+        },
+        {
+          "date": "2025-10-24",
+          "value": 523.6099853515625
+        },
+        {
+          "date": "2025-10-27",
+          "value": 531.52001953125
+        },
+        {
+          "date": "2025-10-28",
+          "value": 542.0700073242188
+        },
+        {
+          "date": "2025-10-29",
+          "value": 541.5499877929688
+        },
+        {
+          "date": "2025-10-30",
+          "value": 525.760009765625
+        },
+        {
+          "date": "2025-10-31",
+          "value": 517.8099975585938
+        },
+        {
+          "date": "2025-11-03",
+          "value": 517.030029296875
+        },
+        {
+          "date": "2025-11-04",
+          "value": 514.3300170898438
+        },
+        {
+          "date": "2025-11-05",
+          "value": 507.1600036621094
+        },
+        {
+          "date": "2025-11-06",
+          "value": 497.1000061035156
+        },
+        {
+          "date": "2025-11-07",
+          "value": 496.82000732421875
+        },
+        {
+          "date": "2025-11-10",
+          "value": 506.0
+        },
+        {
+          "date": "2025-11-11",
+          "value": 508.67999267578125
+        },
+        {
+          "date": "2025-11-12",
+          "value": 511.1400146484375
+        },
+        {
+          "date": "2025-11-13",
+          "value": 503.2900085449219
+        },
+        {
+          "date": "2025-11-14",
+          "value": 510.17999267578125
+        },
+        {
+          "date": "2025-11-17",
+          "value": 507.489990234375
+        },
+        {
+          "date": "2025-11-18",
+          "value": 493.7900085449219
+        },
+        {
+          "date": "2025-11-19",
+          "value": 487.1199951171875
+        },
+        {
+          "date": "2025-11-20",
+          "value": 478.42999267578125
+        },
+        {
+          "date": "2025-11-21",
+          "value": 472.1199951171875
+        },
+        {
+          "date": "2025-11-24",
+          "value": 474.0
+        },
+        {
+          "date": "2025-11-25",
+          "value": 476.989990234375
+        },
+        {
+          "date": "2025-11-26",
+          "value": 485.5
+        },
+        {
+          "date": "2025-11-28",
+          "value": 492.010009765625
+        },
+        {
+          "date": "2025-12-01",
+          "value": 486.739990234375
+        },
+        {
+          "date": "2025-12-02",
+          "value": 490.0
+        },
+        {
+          "date": "2025-12-03",
+          "value": 477.7300109863281
+        },
+        {
+          "date": "2025-12-04",
+          "value": 480.8399963378906
+        },
+        {
+          "date": "2025-12-05",
+          "value": 483.1600036621094
+        },
+        {
+          "date": "2025-12-08",
+          "value": 491.0199890136719
+        },
+        {
+          "date": "2025-12-09",
+          "value": 492.0199890136719
+        },
+        {
+          "date": "2025-12-10",
+          "value": 478.55999755859375
+        },
+        {
+          "date": "2025-12-11",
+          "value": 483.4700012207031
+        },
+        {
+          "date": "2025-12-12",
+          "value": 478.5299987792969
+        },
+        {
+          "date": "2025-12-15",
+          "value": 474.82000732421875
+        },
+        {
+          "date": "2025-12-16",
+          "value": 476.3900146484375
+        },
+        {
+          "date": "2025-12-17",
+          "value": 476.1199951171875
+        },
+        {
+          "date": "2025-12-18",
+          "value": 483.9800109863281
+        },
+        {
+          "date": "2025-12-19",
+          "value": 485.9200134277344
+        },
+        {
+          "date": "2025-12-22",
+          "value": 484.9200134277344
+        },
+        {
+          "date": "2025-12-23",
+          "value": 486.8500061035156
+        },
+        {
+          "date": "2025-12-24",
+          "value": 488.0199890136719
+        },
+        {
+          "date": "2025-12-26",
+          "value": 487.7099914550781
+        },
+        {
+          "date": "2025-12-29",
+          "value": 487.1000061035156
+        },
+        {
+          "date": "2025-12-30",
+          "value": 487.4800109863281
+        },
+        {
+          "date": "2025-12-31",
+          "value": 483.6199951171875
+        },
+        {
+          "date": "2026-01-02",
+          "value": 472.94000244140625
+        },
+        {
+          "date": "2026-01-05",
+          "value": 472.8500061035156
+        },
+        {
+          "date": "2026-01-06",
+          "value": 478.510009765625
+        },
+        {
+          "date": "2026-01-07",
+          "value": 483.4700012207031
+        },
+        {
+          "date": "2026-01-08",
+          "value": 478.1099853515625
+        },
+        {
+          "date": "2026-01-09",
+          "value": 479.2799987792969
+        },
+        {
+          "date": "2026-01-12",
+          "value": 477.17999267578125
+        },
+        {
+          "date": "2026-01-13",
+          "value": 470.6700134277344
+        },
+        {
+          "date": "2026-01-14",
+          "value": 459.3800048828125
+        },
+        {
+          "date": "2026-01-15",
+          "value": 456.6600036621094
+        },
+        {
+          "date": "2026-01-16",
+          "value": 459.8599853515625
+        },
+        {
+          "date": "2026-01-20",
+          "value": 454.5199890136719
+        },
+        {
+          "date": "2026-01-21",
+          "value": 442.1499938964844
         }
       ]
     },
     {
       "symbol": "GOOGL",
       "name": "Alphabet Inc.",
-      "price": 322.0,
-      "previousClose": 330.0,
+      "price": 327.4949951171875,
+      "previousClose": 322.0,
       "history": [
-        {
-          "date": "2025-09-11",
-          "value": 240.3699951171875
-        },
         {
           "date": "2025-09-12",
           "value": 240.8000030517578
@@ -8000,19 +8364,19 @@
         {
           "date": "2026-01-20",
           "value": 322.0
+        },
+        {
+          "date": "2026-01-21",
+          "value": 327.4949951171875
         }
       ]
     },
     {
       "symbol": "AMZN",
       "name": "Amazon.com Inc.",
-      "price": 231.0,
-      "previousClose": 239.1199951171875,
+      "price": 228.22999572753906,
+      "previousClose": 231.0,
       "history": [
-        {
-          "date": "2025-09-11",
-          "value": 229.9499969482422
-        },
         {
           "date": "2025-09-12",
           "value": 228.14999389648438
@@ -8368,19 +8732,755 @@
         {
           "date": "2026-01-20",
           "value": 231.0
+        },
+        {
+          "date": "2026-01-21",
+          "value": 228.22999572753906
+        }
+      ]
+    },
+    {
+      "symbol": "NVDA",
+      "name": "NVIDIA Corp",
+      "price": 180.16000366210938,
+      "previousClose": 178.07000732421875,
+      "history": [
+        {
+          "date": "2025-09-12",
+          "value": 177.82000732421875
+        },
+        {
+          "date": "2025-09-15",
+          "value": 177.75
+        },
+        {
+          "date": "2025-09-16",
+          "value": 174.8800048828125
+        },
+        {
+          "date": "2025-09-17",
+          "value": 170.2899932861328
+        },
+        {
+          "date": "2025-09-18",
+          "value": 176.24000549316406
+        },
+        {
+          "date": "2025-09-19",
+          "value": 176.6699981689453
+        },
+        {
+          "date": "2025-09-22",
+          "value": 183.61000061035156
+        },
+        {
+          "date": "2025-09-23",
+          "value": 178.42999267578125
+        },
+        {
+          "date": "2025-09-24",
+          "value": 176.97000122070312
+        },
+        {
+          "date": "2025-09-25",
+          "value": 177.69000244140625
+        },
+        {
+          "date": "2025-09-26",
+          "value": 178.19000244140625
+        },
+        {
+          "date": "2025-09-29",
+          "value": 181.85000610351562
+        },
+        {
+          "date": "2025-09-30",
+          "value": 186.5800018310547
+        },
+        {
+          "date": "2025-10-01",
+          "value": 187.24000549316406
+        },
+        {
+          "date": "2025-10-02",
+          "value": 188.88999938964844
+        },
+        {
+          "date": "2025-10-03",
+          "value": 187.6199951171875
+        },
+        {
+          "date": "2025-10-06",
+          "value": 185.5399932861328
+        },
+        {
+          "date": "2025-10-07",
+          "value": 185.0399932861328
+        },
+        {
+          "date": "2025-10-08",
+          "value": 189.11000061035156
+        },
+        {
+          "date": "2025-10-09",
+          "value": 192.57000732421875
+        },
+        {
+          "date": "2025-10-10",
+          "value": 183.16000366210938
+        },
+        {
+          "date": "2025-10-13",
+          "value": 188.32000732421875
+        },
+        {
+          "date": "2025-10-14",
+          "value": 180.02999877929688
+        },
+        {
+          "date": "2025-10-15",
+          "value": 179.8300018310547
+        },
+        {
+          "date": "2025-10-16",
+          "value": 181.80999755859375
+        },
+        {
+          "date": "2025-10-17",
+          "value": 183.22000122070312
+        },
+        {
+          "date": "2025-10-20",
+          "value": 182.63999938964844
+        },
+        {
+          "date": "2025-10-21",
+          "value": 181.16000366210938
+        },
+        {
+          "date": "2025-10-22",
+          "value": 180.27999877929688
+        },
+        {
+          "date": "2025-10-23",
+          "value": 182.16000366210938
+        },
+        {
+          "date": "2025-10-24",
+          "value": 186.25999450683594
+        },
+        {
+          "date": "2025-10-27",
+          "value": 191.49000549316406
+        },
+        {
+          "date": "2025-10-28",
+          "value": 201.02999877929688
+        },
+        {
+          "date": "2025-10-29",
+          "value": 207.0399932861328
+        },
+        {
+          "date": "2025-10-30",
+          "value": 202.88999938964844
+        },
+        {
+          "date": "2025-10-31",
+          "value": 202.49000549316406
+        },
+        {
+          "date": "2025-11-03",
+          "value": 206.8800048828125
+        },
+        {
+          "date": "2025-11-04",
+          "value": 198.69000244140625
+        },
+        {
+          "date": "2025-11-05",
+          "value": 195.2100067138672
+        },
+        {
+          "date": "2025-11-06",
+          "value": 188.0800018310547
+        },
+        {
+          "date": "2025-11-07",
+          "value": 188.14999389648438
+        },
+        {
+          "date": "2025-11-10",
+          "value": 199.0500030517578
+        },
+        {
+          "date": "2025-11-11",
+          "value": 193.16000366210938
+        },
+        {
+          "date": "2025-11-12",
+          "value": 193.8000030517578
+        },
+        {
+          "date": "2025-11-13",
+          "value": 186.86000061035156
+        },
+        {
+          "date": "2025-11-14",
+          "value": 190.1699981689453
+        },
+        {
+          "date": "2025-11-17",
+          "value": 186.60000610351562
+        },
+        {
+          "date": "2025-11-18",
+          "value": 181.36000061035156
+        },
+        {
+          "date": "2025-11-19",
+          "value": 186.52000427246094
+        },
+        {
+          "date": "2025-11-20",
+          "value": 180.63999938964844
+        },
+        {
+          "date": "2025-11-21",
+          "value": 178.8800048828125
+        },
+        {
+          "date": "2025-11-24",
+          "value": 182.5500030517578
+        },
+        {
+          "date": "2025-11-25",
+          "value": 177.82000732421875
+        },
+        {
+          "date": "2025-11-26",
+          "value": 180.25999450683594
+        },
+        {
+          "date": "2025-11-28",
+          "value": 177.0
+        },
+        {
+          "date": "2025-12-01",
+          "value": 179.9199981689453
+        },
+        {
+          "date": "2025-12-02",
+          "value": 181.4600067138672
+        },
+        {
+          "date": "2025-12-03",
+          "value": 179.58999633789062
+        },
+        {
+          "date": "2025-12-04",
+          "value": 183.3800048828125
+        },
+        {
+          "date": "2025-12-05",
+          "value": 182.41000366210938
+        },
+        {
+          "date": "2025-12-08",
+          "value": 185.5500030517578
+        },
+        {
+          "date": "2025-12-09",
+          "value": 184.97000122070312
+        },
+        {
+          "date": "2025-12-10",
+          "value": 183.77999877929688
+        },
+        {
+          "date": "2025-12-11",
+          "value": 180.92999267578125
+        },
+        {
+          "date": "2025-12-12",
+          "value": 175.02000427246094
+        },
+        {
+          "date": "2025-12-15",
+          "value": 176.2899932861328
+        },
+        {
+          "date": "2025-12-16",
+          "value": 177.72000122070312
+        },
+        {
+          "date": "2025-12-17",
+          "value": 170.94000244140625
+        },
+        {
+          "date": "2025-12-18",
+          "value": 174.13999938964844
+        },
+        {
+          "date": "2025-12-19",
+          "value": 180.99000549316406
+        },
+        {
+          "date": "2025-12-22",
+          "value": 183.69000244140625
+        },
+        {
+          "date": "2025-12-23",
+          "value": 189.2100067138672
+        },
+        {
+          "date": "2025-12-24",
+          "value": 188.61000061035156
+        },
+        {
+          "date": "2025-12-26",
+          "value": 190.52999877929688
+        },
+        {
+          "date": "2025-12-29",
+          "value": 188.22000122070312
+        },
+        {
+          "date": "2025-12-30",
+          "value": 187.5399932861328
+        },
+        {
+          "date": "2025-12-31",
+          "value": 186.5
+        },
+        {
+          "date": "2026-01-02",
+          "value": 188.85000610351562
+        },
+        {
+          "date": "2026-01-05",
+          "value": 188.1199951171875
+        },
+        {
+          "date": "2026-01-06",
+          "value": 187.24000549316406
+        },
+        {
+          "date": "2026-01-07",
+          "value": 189.11000061035156
+        },
+        {
+          "date": "2026-01-08",
+          "value": 185.0399932861328
+        },
+        {
+          "date": "2026-01-09",
+          "value": 184.86000061035156
+        },
+        {
+          "date": "2026-01-12",
+          "value": 184.94000244140625
+        },
+        {
+          "date": "2026-01-13",
+          "value": 185.80999755859375
+        },
+        {
+          "date": "2026-01-14",
+          "value": 183.13999938964844
+        },
+        {
+          "date": "2026-01-15",
+          "value": 187.0500030517578
+        },
+        {
+          "date": "2026-01-16",
+          "value": 186.22999572753906
+        },
+        {
+          "date": "2026-01-20",
+          "value": 178.07000732421875
+        },
+        {
+          "date": "2026-01-21",
+          "value": 180.16000366210938
+        }
+      ]
+    },
+    {
+      "symbol": "META",
+      "name": "Meta Platforms",
+      "price": 610.6599731445312,
+      "previousClose": 604.1199951171875,
+      "history": [
+        {
+          "date": "2025-09-12",
+          "value": 755.5900268554688
+        },
+        {
+          "date": "2025-09-15",
+          "value": 764.7000122070312
+        },
+        {
+          "date": "2025-09-16",
+          "value": 779.0
+        },
+        {
+          "date": "2025-09-17",
+          "value": 775.719970703125
+        },
+        {
+          "date": "2025-09-18",
+          "value": 780.25
+        },
+        {
+          "date": "2025-09-19",
+          "value": 778.3800048828125
+        },
+        {
+          "date": "2025-09-22",
+          "value": 765.1599731445312
+        },
+        {
+          "date": "2025-09-23",
+          "value": 755.4000244140625
+        },
+        {
+          "date": "2025-09-24",
+          "value": 760.6599731445312
+        },
+        {
+          "date": "2025-09-25",
+          "value": 748.9099731445312
+        },
+        {
+          "date": "2025-09-26",
+          "value": 743.75
+        },
+        {
+          "date": "2025-09-29",
+          "value": 743.4000244140625
+        },
+        {
+          "date": "2025-09-30",
+          "value": 734.3800048828125
+        },
+        {
+          "date": "2025-10-01",
+          "value": 717.3400268554688
+        },
+        {
+          "date": "2025-10-02",
+          "value": 727.0499877929688
+        },
+        {
+          "date": "2025-10-03",
+          "value": 710.5599975585938
+        },
+        {
+          "date": "2025-10-06",
+          "value": 715.6599731445312
+        },
+        {
+          "date": "2025-10-07",
+          "value": 713.0800170898438
+        },
+        {
+          "date": "2025-10-08",
+          "value": 717.8400268554688
+        },
+        {
+          "date": "2025-10-09",
+          "value": 733.510009765625
+        },
+        {
+          "date": "2025-10-10",
+          "value": 705.2999877929688
+        },
+        {
+          "date": "2025-10-13",
+          "value": 715.7000122070312
+        },
+        {
+          "date": "2025-10-14",
+          "value": 708.6500244140625
+        },
+        {
+          "date": "2025-10-15",
+          "value": 717.5499877929688
+        },
+        {
+          "date": "2025-10-16",
+          "value": 712.0700073242188
+        },
+        {
+          "date": "2025-10-17",
+          "value": 716.9199829101562
+        },
+        {
+          "date": "2025-10-20",
+          "value": 732.1699829101562
+        },
+        {
+          "date": "2025-10-21",
+          "value": 733.27001953125
+        },
+        {
+          "date": "2025-10-22",
+          "value": 733.4099731445312
+        },
+        {
+          "date": "2025-10-23",
+          "value": 734.0
+        },
+        {
+          "date": "2025-10-24",
+          "value": 738.3599853515625
+        },
+        {
+          "date": "2025-10-27",
+          "value": 750.8200073242188
+        },
+        {
+          "date": "2025-10-28",
+          "value": 751.4400024414062
+        },
+        {
+          "date": "2025-10-29",
+          "value": 751.6699829101562
+        },
+        {
+          "date": "2025-10-30",
+          "value": 666.469970703125
+        },
+        {
+          "date": "2025-10-31",
+          "value": 648.3499755859375
+        },
+        {
+          "date": "2025-11-03",
+          "value": 637.7100219726562
+        },
+        {
+          "date": "2025-11-04",
+          "value": 627.3200073242188
+        },
+        {
+          "date": "2025-11-05",
+          "value": 635.9500122070312
+        },
+        {
+          "date": "2025-11-06",
+          "value": 618.9400024414062
+        },
+        {
+          "date": "2025-11-07",
+          "value": 621.7100219726562
+        },
+        {
+          "date": "2025-11-10",
+          "value": 631.760009765625
+        },
+        {
+          "date": "2025-11-11",
+          "value": 627.0800170898438
+        },
+        {
+          "date": "2025-11-12",
+          "value": 609.010009765625
+        },
+        {
+          "date": "2025-11-13",
+          "value": 609.8900146484375
+        },
+        {
+          "date": "2025-11-14",
+          "value": 609.4600219726562
+        },
+        {
+          "date": "2025-11-17",
+          "value": 602.010009765625
+        },
+        {
+          "date": "2025-11-18",
+          "value": 597.6900024414062
+        },
+        {
+          "date": "2025-11-19",
+          "value": 590.3200073242188
+        },
+        {
+          "date": "2025-11-20",
+          "value": 589.1500244140625
+        },
+        {
+          "date": "2025-11-21",
+          "value": 594.25
+        },
+        {
+          "date": "2025-11-24",
+          "value": 613.0499877929688
+        },
+        {
+          "date": "2025-11-25",
+          "value": 636.219970703125
+        },
+        {
+          "date": "2025-11-26",
+          "value": 633.6099853515625
+        },
+        {
+          "date": "2025-11-28",
+          "value": 647.9500122070312
+        },
+        {
+          "date": "2025-12-01",
+          "value": 640.8699951171875
+        },
+        {
+          "date": "2025-12-02",
+          "value": 647.0999755859375
+        },
+        {
+          "date": "2025-12-03",
+          "value": 639.5999755859375
+        },
+        {
+          "date": "2025-12-04",
+          "value": 661.530029296875
+        },
+        {
+          "date": "2025-12-05",
+          "value": 673.4199829101562
+        },
+        {
+          "date": "2025-12-08",
+          "value": 666.7999877929688
+        },
+        {
+          "date": "2025-12-09",
+          "value": 656.9600219726562
+        },
+        {
+          "date": "2025-12-10",
+          "value": 650.1300048828125
+        },
+        {
+          "date": "2025-12-11",
+          "value": 652.7100219726562
+        },
+        {
+          "date": "2025-12-12",
+          "value": 644.22998046875
+        },
+        {
+          "date": "2025-12-15",
+          "value": 647.510009765625
+        },
+        {
+          "date": "2025-12-16",
+          "value": 657.1500244140625
+        },
+        {
+          "date": "2025-12-17",
+          "value": 649.5
+        },
+        {
+          "date": "2025-12-18",
+          "value": 664.4500122070312
+        },
+        {
+          "date": "2025-12-19",
+          "value": 658.77001953125
+        },
+        {
+          "date": "2025-12-22",
+          "value": 661.5
+        },
+        {
+          "date": "2025-12-23",
+          "value": 664.9400024414062
+        },
+        {
+          "date": "2025-12-24",
+          "value": 667.5499877929688
+        },
+        {
+          "date": "2025-12-26",
+          "value": 663.2899780273438
+        },
+        {
+          "date": "2025-12-29",
+          "value": 658.6900024414062
+        },
+        {
+          "date": "2025-12-30",
+          "value": 665.9500122070312
+        },
+        {
+          "date": "2025-12-31",
+          "value": 660.0900268554688
+        },
+        {
+          "date": "2026-01-02",
+          "value": 650.4099731445312
+        },
+        {
+          "date": "2026-01-05",
+          "value": 658.7899780273438
+        },
+        {
+          "date": "2026-01-06",
+          "value": 660.6199951171875
+        },
+        {
+          "date": "2026-01-07",
+          "value": 648.6900024414062
+        },
+        {
+          "date": "2026-01-08",
+          "value": 646.0599975585938
+        },
+        {
+          "date": "2026-01-09",
+          "value": 653.0599975585938
+        },
+        {
+          "date": "2026-01-12",
+          "value": 641.969970703125
+        },
+        {
+          "date": "2026-01-13",
+          "value": 631.0900268554688
+        },
+        {
+          "date": "2026-01-14",
+          "value": 615.52001953125
+        },
+        {
+          "date": "2026-01-15",
+          "value": 620.7999877929688
+        },
+        {
+          "date": "2026-01-16",
+          "value": 620.25
+        },
+        {
+          "date": "2026-01-20",
+          "value": 604.1199951171875
+        },
+        {
+          "date": "2026-01-21",
+          "value": 610.6599731445312
         }
       ]
     },
     {
       "symbol": "TSLA",
       "name": "Tesla Inc.",
-      "price": 419.25,
-      "previousClose": 437.5,
+      "price": 424.30499267578125,
+      "previousClose": 419.25,
       "history": [
-        {
-          "date": "2025-09-11",
-          "value": 368.80999755859375
-        },
         {
           "date": "2025-09-12",
           "value": 395.94000244140625
@@ -8736,6 +9836,10 @@
         {
           "date": "2026-01-20",
           "value": 419.25
+        },
+        {
+          "date": "2026-01-21",
+          "value": 424.30499267578125
         }
       ]
     }
@@ -10725,85 +11829,85 @@
       "date": "2025-01-01",
       "series_id": "PAYEMS",
       "value": 159053.0,
-      "realtime_start": "2026-01-12",
-      "realtime_end": "2026-01-12"
+      "realtime_start": "2026-01-09",
+      "realtime_end": "2026-01-09"
     },
     {
       "date": "2025-02-01",
       "series_id": "PAYEMS",
       "value": 159155.0,
-      "realtime_start": "2026-01-12",
-      "realtime_end": "2026-01-12"
+      "realtime_start": "2026-01-09",
+      "realtime_end": "2026-01-09"
     },
     {
       "date": "2025-03-01",
       "series_id": "PAYEMS",
       "value": 159275.0,
-      "realtime_start": "2026-01-12",
-      "realtime_end": "2026-01-12"
+      "realtime_start": "2026-01-09",
+      "realtime_end": "2026-01-09"
     },
     {
       "date": "2025-04-01",
       "series_id": "PAYEMS",
       "value": 159433.0,
-      "realtime_start": "2026-01-12",
-      "realtime_end": "2026-01-12"
+      "realtime_start": "2026-01-09",
+      "realtime_end": "2026-01-09"
     },
     {
       "date": "2025-05-01",
       "series_id": "PAYEMS",
       "value": 159452.0,
-      "realtime_start": "2026-01-12",
-      "realtime_end": "2026-01-12"
+      "realtime_start": "2026-01-09",
+      "realtime_end": "2026-01-09"
     },
     {
       "date": "2025-06-01",
       "series_id": "PAYEMS",
       "value": 159439.0,
-      "realtime_start": "2026-01-12",
-      "realtime_end": "2026-01-12"
+      "realtime_start": "2026-01-09",
+      "realtime_end": "2026-01-09"
     },
     {
       "date": "2025-07-01",
       "series_id": "PAYEMS",
       "value": 159511.0,
-      "realtime_start": "2026-01-12",
-      "realtime_end": "2026-01-12"
+      "realtime_start": "2026-01-09",
+      "realtime_end": "2026-01-09"
     },
     {
       "date": "2025-08-01",
       "series_id": "PAYEMS",
       "value": 159485.0,
-      "realtime_start": "2026-01-12",
-      "realtime_end": "2026-01-12"
+      "realtime_start": "2026-01-09",
+      "realtime_end": "2026-01-09"
     },
     {
       "date": "2025-09-01",
       "series_id": "PAYEMS",
       "value": 159593.0,
-      "realtime_start": "2026-01-12",
-      "realtime_end": "2026-01-12"
+      "realtime_start": "2026-01-09",
+      "realtime_end": "2026-01-09"
     },
     {
       "date": "2025-10-01",
       "series_id": "PAYEMS",
       "value": 159420.0,
-      "realtime_start": "2026-01-12",
-      "realtime_end": "2026-01-12"
+      "realtime_start": "2026-01-09",
+      "realtime_end": "2026-01-09"
     },
     {
       "date": "2025-11-01",
       "series_id": "PAYEMS",
       "value": 159476.0,
-      "realtime_start": "2026-01-12",
-      "realtime_end": "2026-01-12"
+      "realtime_start": "2026-01-09",
+      "realtime_end": "2026-01-09"
     },
     {
       "date": "2025-12-01",
       "series_id": "PAYEMS",
       "value": 159526.0,
-      "realtime_start": "2026-01-12",
-      "realtime_end": "2026-01-12"
+      "realtime_start": "2026-01-09",
+      "realtime_end": "2026-01-09"
     }
   ],
   "wages": [
