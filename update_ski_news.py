@@ -1555,12 +1555,25 @@ def update_ski_news():
     for article in approved:
         existing_articles[article['id']] = article
 
-    # Sort by date and keep last MAX_ARTICLES_OUTPUT
-    sorted_articles = sorted(
+    # Sort by date
+    all_sorted = sorted(
         existing_articles.values(),
         key=lambda x: x.get('pub_date', x.get('approved_date', '')),
         reverse=True
-    )[:MAX_ARTICLES_OUTPUT]
+    )
+
+    # Apply source diversity to final output
+    # Limit each source to max 3 articles in the output to ensure variety
+    MAX_PER_SOURCE_OUTPUT = 3
+    output_source_counts = defaultdict(int)
+    sorted_articles = []
+    for article in all_sorted:
+        source = article.get('source', 'Unknown')
+        if output_source_counts[source] < MAX_PER_SOURCE_OUTPUT:
+            output_source_counts[source] += 1
+            sorted_articles.append(article)
+        if len(sorted_articles) >= MAX_ARTICLES_OUTPUT:
+            break
 
     # Keep only last MAX_REJECTED_KEEP rejected
     rejected = rejected[-MAX_REJECTED_KEEP:]
