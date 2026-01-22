@@ -849,8 +849,19 @@
         return (b.score || 0) - (a.score || 0);
       });
 
-      // Show 8 articles in compact view
-      const displayArticles = articles.slice(0, 8);
+      // Deduplicate by source - max 1 article per source on front page
+      const seenSources = new Set();
+      const deduped = [];
+      for (const article of articles) {
+        const source = article.source || 'Unknown';
+        if (!seenSources.has(source)) {
+          seenSources.add(source);
+          deduped.push(article);
+        }
+      }
+
+      // Show 8 articles in compact view (one per source)
+      const displayArticles = deduped.slice(0, 8);
       let html = '';
 
       displayArticles.forEach(article => {
