@@ -139,6 +139,7 @@ jobs:
             fi
 
             git commit -m "$MSG"
+            git pull --rebase
             git push
             echo "Canadian snow data updated and pushed"
             echo "changes=true" >> $GITHUB_OUTPUT

@@ -66,6 +66,7 @@ jobs:
             echo "changes=false" >> $GITHUB_OUTPUT
           else
             git commit -m "Update ski news - $(date +'%Y-%m-%d %H:%M')"
+            git pull --rebase
             git push
             echo "Ski news data updated and pushed"
             echo "changes=true" >> $GITHUB_OUTPUT
