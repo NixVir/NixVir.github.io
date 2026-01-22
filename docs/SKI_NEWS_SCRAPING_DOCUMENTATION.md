@@ -763,7 +763,11 @@ AUTO_REJECT_THRESHOLD = 3   # Higher = fewer rejections
 ## Recent Improvements (January 2026)
 
 ### Source Diversity Controls
-- Added `MAX_ARTICLES_PER_SOURCE` cap (default: 5) to prevent any single source from dominating
+- Added `MAX_ARTICLES_PER_SOURCE` cap (default: 5) during processing to prevent any single source from dominating
+- Added `MAX_PER_SOURCE_OUTPUT` cap (default: 3) on final output for additional diversity
+- **Round-robin interleaving**: Articles from different sources are interleaved rather than clustered by date
+  - Prevents the feed from appearing to copy from just a few aggregator sites
+  - Each round takes one article from each source, prioritizing sources with fresher content
 - Configurable via `config/ski-news-config.yaml`
 
 ### Macro Relevance Pathway
