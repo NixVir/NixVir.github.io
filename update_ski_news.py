@@ -1562,18 +1562,39 @@ def update_ski_news():
         reverse=True
     )
 
-    # Apply source diversity to final output
-    # Limit each source to max 3 articles in the output to ensure variety
+    # Apply source diversity with interleaving
+    # Group articles by source, keeping each source sorted by date
     MAX_PER_SOURCE_OUTPUT = 3
-    output_source_counts = defaultdict(int)
-    sorted_articles = []
+    source_buckets = defaultdict(list)
     for article in all_sorted:
         source = article.get('source', 'Unknown')
-        if output_source_counts[source] < MAX_PER_SOURCE_OUTPUT:
-            output_source_counts[source] += 1
-            sorted_articles.append(article)
-        if len(sorted_articles) >= MAX_ARTICLES_OUTPUT:
+        if len(source_buckets[source]) < MAX_PER_SOURCE_OUTPUT:
+            source_buckets[source].append(article)
+
+    # Round-robin interleave: take one article from each source in turn
+    # This prevents clustering of articles from the same source
+    sorted_articles = []
+    round_num = 0
+    while len(sorted_articles) < MAX_ARTICLES_OUTPUT:
+        added_this_round = False
+        # Sort sources by the date of their next article to prioritize fresher content
+        active_sources = [s for s in source_buckets if round_num < len(source_buckets[s])]
+        if not active_sources:
             break
+        # Sort by the pub_date of the article at position round_num
+        active_sources.sort(
+            key=lambda s: source_buckets[s][round_num].get('pub_date', ''),
+            reverse=True
+        )
+        for source in active_sources:
+            if round_num < len(source_buckets[source]):
+                sorted_articles.append(source_buckets[source][round_num])
+                added_this_round = True
+                if len(sorted_articles) >= MAX_ARTICLES_OUTPUT:
+                    break
+        if not added_this_round:
+            break
+        round_num += 1
 
     # Keep only last MAX_REJECTED_KEEP rejected
     rejected = rejected[-MAX_REJECTED_KEEP:]
