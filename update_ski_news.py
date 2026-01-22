@@ -644,6 +644,25 @@ RSS_SOURCES = [
         'category': 'financial',
         'boost': 3
     },
+    # Ski conditions and season coverage (mainstream news)
+    {
+        'name': 'Google News - Ski Season Conditions',
+        'url': 'https://news.google.com/rss/search?q=ski+season+conditions+OR+ski+conditions+snow&hl=en-US&gl=US&ceid=US:en',
+        'category': 'aggregator',
+        'boost': 2
+    },
+    {
+        'name': 'Google News - Ski Resort Snow Drought',
+        'url': 'https://news.google.com/rss/search?q=ski+resort+snow+drought+OR+ski+resort+lack+snow+OR+ski+season+warm&hl=en-US&gl=US&ceid=US:en',
+        'category': 'aggregator',
+        'boost': 2
+    },
+    {
+        'name': 'Google News - Ski Industry Climate',
+        'url': 'https://news.google.com/rss/search?q=ski+industry+climate+OR+ski+resort+climate+change+OR+skiing+warming&hl=en-US&gl=US&ceid=US:en',
+        'category': 'aggregator',
+        'boost': 2
+    },
 ]
 
 # Source health tracking (populated during run)
