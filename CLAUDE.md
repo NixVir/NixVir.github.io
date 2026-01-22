@@ -264,6 +264,45 @@ null   → Gray (#475569)
 
 See `docs/SNOTEL_PAGE_SUMMARY.md` for full implementation details.
 
+## Ski Business News (`static/ski-news.html`)
+
+RSS aggregator for ski industry business news.
+
+### Key Files
+- **Script**: `update_ski_news.py` - Main aggregation and scoring pipeline
+- **Config**: `config/ski-news-config.yaml` - Configurable settings
+- **Output**: `static/data/ski-news.json` - Final article feed
+- **Documentation**: `docs/SKI_NEWS_SCRAPING_DOCUMENTATION.md` - Full system docs
+
+### Pipeline Overview
+1. **Fetch**: Pull articles from 40+ RSS feeds
+2. **Pre-filter**: Two-tier filtering with PRIMARY_SKI_TERMS + SECONDARY_BUSINESS_TERMS
+3. **Source diversity cap**: Limit articles per source during processing (default: 5)
+4. **Score**: Keyword-based scoring (LLM scoring available but disabled by default)
+5. **Deduplicate**: Title similarity + lead paragraph comparison
+6. **Interleave**: Round-robin source distribution for output diversity
+7. **Output**: JSON feed for frontend display
+
+### Source Diversity & Interleaving
+The output uses round-robin interleaving to prevent source clustering:
+
+```python
+# Instead of: sort by date → cap per source (clusters same-source articles)
+# We do: group by source → round-robin interleave (distributes sources evenly)
+```
+
+This prevents the feed from appearing to copy from just a few aggregator sites. Each round takes one article from each source, prioritizing sources with fresher content.
+
+**Key constants**:
+- `MAX_ARTICLES_PER_SOURCE = 5` - Cap during processing
+- `MAX_PER_SOURCE_OUTPUT = 3` - Cap in final output
+- `MAX_ARTICLES_OUTPUT = 50` - Total articles in feed
+
+### Common Mistakes to Avoid
+1. **Sorting by date before source cap** - Creates source clustering; always interleave
+2. **Modifying files outside ski news scope** - The script is self-contained; don't touch config.toml, .gitignore, or other site files when working on news scraping
+3. **Ignoring source health** - Check `static/data/ski-news-source-health.json` for failing feeds
+
 ## Related Projects
 
 Region boundary work and additional data sources exist in:
