@@ -1,13 +1,13 @@
 {
   "metadata": {
     "source": "rivers.alberta.ca",
-    "fetched_at": "2026-01-25T06:39:31Z",
+    "fetched_at": "2026-01-25T18:37:02Z",
     "description": "Real-time Snow Water Equivalent from Alberta mountain snow pillows"
   },
   "statistics": {
     "count": 14,
-    "mean_swe_mm": 243.4,
-    "min_swe_mm": 7.2,
+    "mean_swe_mm": 245.4,
+    "min_swe_mm": 8.8,
     "max_swe_mm": 490.0
   },
   "stations": [
@@ -16,36 +16,36 @@
       "name": "Gardiner Creek - EPA",
       "lat": 49.3599410634488,
       "lon": -114.518235,
-      "swe_mm": 478.5,
+      "swe_mm": 480.7,
       "snow_depth_cm": 130.8,
-      "timestamp": "2026-01-24 22:00:00"
+      "timestamp": "2026-01-25 10:00:00"
     },
     {
       "station_id": "05AA817",
       "name": "South Racehorse Creek - EPA",
       "lat": 49.7901390586048,
       "lon": -114.611994,
-      "swe_mm": 255.4,
+      "swe_mm": 254.5,
       "snow_depth_cm": 96.0,
-      "timestamp": "2026-01-24 22:00:00"
+      "timestamp": "2026-01-25 10:00:00"
     },
     {
       "station_id": "05AB814",
       "name": "Sentinel Peak - EPA",
       "lat": 50.2526,
       "lon": -114.465178,
-      "swe_mm": 7.2,
+      "swe_mm": 8.8,
       "snow_depth_cm": 11.0,
-      "timestamp": "2026-01-24 22:00:00"
+      "timestamp": "2026-01-25 10:00:00"
     },
     {
       "station_id": "05AD803",
       "name": "Akamina Pass 2 - EPA",
       "lat": 49.02727778,
       "lon": -114.052944,
-      "swe_mm": 187.8,
-      "snow_depth_cm": 64.9,
-      "timestamp": "2026-01-24 22:00:00"
+      "swe_mm": 184.9,
+      "snow_depth_cm": 64.0,
+      "timestamp": "2026-01-25 10:00:00"
     },
     {
       "station_id": "05BB803",
@@ -53,26 +53,26 @@
       "lat": 51.077453,
       "lon": -115.781592,
       "swe_mm": 490.0,
-      "snow_depth_cm": 144.0,
-      "timestamp": "2026-01-24 21:45:00"
+      "snow_depth_cm": 193.0,
+      "timestamp": "2026-01-25 09:45:00"
     },
     {
       "station_id": "05BF824",
       "name": "Three Isle Lake - EPA",
       "lat": 50.632590232417,
       "lon": -115.28129,
-      "swe_mm": 397.8,
-      "snow_depth_cm": 127.3,
-      "timestamp": "2026-01-24 22:30:00"
+      "swe_mm": 398.1,
+      "snow_depth_cm": 127.0,
+      "timestamp": "2026-01-25 10:30:00"
     },
     {
       "station_id": "05BJ805",
       "name": "Little Elbow Summit - EPA",
       "lat": 50.70548667,
       "lon": -114.990015,
-      "swe_mm": 283.8,
+      "swe_mm": 293.2,
       "snow_depth_cm": null,
-      "timestamp": "2026-01-24 22:30:00"
+      "timestamp": "2026-01-25 10:30:00"
     },
     {
       "station_id": "05BL811",
@@ -81,7 +81,7 @@
       "lon": -114.714372,
       "swe_mm": 457.3,
       "snow_depth_cm": 143.0,
-      "timestamp": "2026-01-24 22:00:00"
+      "timestamp": "2026-01-25 10:00:00"
     },
     {
       "station_id": "05CA805",
@@ -90,7 +90,7 @@
       "lon": -116.06097,
       "swe_mm": 333.2,
       "snow_depth_cm": null,
-      "timestamp": "2026-01-24 22:30:00"
+      "timestamp": "2026-01-25 10:30:00"
     },
     {
       "station_id": "05DA807",
@@ -98,26 +98,26 @@
       "lat": 51.9816683,
       "lon": -116.168977,
       "swe_mm": 136.9,
-      "snow_depth_cm": 89.3,
-      "timestamp": "2026-01-24 22:00:00"
+      "snow_depth_cm": 88.3,
+      "timestamp": "2026-01-25 10:00:00"
     },
     {
       "station_id": "05DB802",
       "name": "Limestone Ridge - EPA",
       "lat": 51.8942282628268,
       "lon": -115.384567,
-      "swe_mm": 81.7,
-      "snow_depth_cm": 53.0,
-      "timestamp": "2026-01-24 22:30:00"
+      "swe_mm": 82.3,
+      "snow_depth_cm": 48.0,
+      "timestamp": "2026-01-25 10:30:00"
     },
     {
       "station_id": "05DD804",
       "name": "Southesk - EPA",
       "lat": 52.670833333,
       "lon": -117.225556,
-      "swe_mm": 176.2,
-      "snow_depth_cm": 80.0,
-      "timestamp": "2026-01-24 22:00:00"
+      "swe_mm": 177.1,
+      "snow_depth_cm": 79.6,
+      "timestamp": "2026-01-25 10:00:00"
     },
     {
       "station_id": "07BB811",
@@ -126,16 +126,16 @@
       "lon": -115.543056,
       "swe_mm": 63.0,
       "snow_depth_cm": 18.1,
-      "timestamp": "2026-01-24 21:00:00"
+      "timestamp": "2026-01-25 09:00:00"
     },
     {
       "station_id": "07BB814",
       "name": "Twin Lakes - EPA",
       "lat": 54.058888889,
       "lon": -114.794722,
-      "swe_mm": 58.8,
-      "snow_depth_cm": 30.9,
-      "timestamp": "2026-01-24 21:00:00"
+      "swe_mm": 75.7,
+      "snow_depth_cm": 30.7,
+      "timestamp": "2026-01-25 09:00:00"
     }
   ]
 }
