@@ -154,6 +154,28 @@
         "business-investment",
         "safety-incidents"
       ]
+    },
+    {
+      "source": "Snow Industry News",
+      "title": "Tourism Sun Peaks\u2019 Savour Culinary Festival Returns March 16 - 21 With Celebrity Chef Vikram Vij",
+      "url": "https://www.snowindustrynews.com/articles/2026/jan/tourism-sun-peaks-savour-culinary-festival-returns-march-16-21-with-celebrity-chef-vikram-vij/",
+      "content": "Food lovers, adventure seekers, and culinary enthusiasts are invited to indulge in a mountain-meets-gastronomy experience as the Savour Culinary Festival returns to Sun Peaks from March 16 - 21, 2026. Set against the stunning mountains of Sun Peaks, this multi-day celebration of food and mountain culture brings together some of BC\u2019s most talented chefs, sommeliers and food producers for an unforgettable lineup of exclusive ticketed dinners, wine tastings, and signature apr\u00e8s-ski experiences. New for 2026, the festival proudly welcomes celebrated chef, bestselling author, and media personality Vikram Vij as a featured guest and co-host. Renowned for his elevated, modern approach to Indian cuisine, Vij is the chef and owner of Vancouver\u2019s iconic restaurant Vij\u2019s, hailed by The New York Times as \u201ceasily among the finest Indian restaurants in the world.\u201d For more than 30 years, diners have flocked to Vij\u2019s to experience his signature dishes, and now, Sun Peaks guests can enjoy his culinary",
+      "pub_date": "2026-01-26",
+      "id": "e7512b3f6c0e",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 4,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "canada",
+      "secondary_categories": [
+        "resort-operations",
+        "hospitality"
+      ]
     }
   ],
   "rejected": [
@@ -827,6 +849,48 @@
       "score": 3,
       "score_details": {
         "reason": "Keyword scoring (boost: 2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": []
+    },
+    {
+      "source": "The Ski Guru",
+      "title": "Swiss Consumer Group Denounces Hidden Ski Ticket Price Increases",
+      "url": "https://www.the-ski-guru.com/2026/01/26/swiss-ski-ticket-pricing-hidden-increases-2026/",
+      "description": "Skiers planning a winter holiday in Switzerland may face less-transparent pricing models for lift tickets this season, according to recent reporting by Swissinfo. Consumer protection advocates are criticising the way many Swiss ski resorts sell tickets, saying that \u201cdynamic pricing\u201d systems can lead to hidden price increases without clear information for customers. Under these dynamic pricing schemes, ticket prices can \u2026 Continue reading \"Swiss Consumer Group Denounces Hidden Ski Ticket Price In",
+      "content": "Skiers planning a winter holiday in Switzerland may face less-transparent pricing models for lift tickets this season, according to recent reporting by Swissinfo . Consumer protection advocates are criticising the way many Swiss ski resorts sell tickets, saying that \u201cdynamic pricing\u201d systems can lead to hidden price increases without clear information for customers. Under these dynamic pricing schemes, ticket prices can vary depending on demand \u2014 meaning that on busier days or when lots of people are expected on the slopes, prices can rise sharply without clear caps or limits disclosed in advance. Critics argue that this system lacks transparency and can make it difficult for holidaymakers to know the true cost of a ski day before they book. Consumer Protection Foundation Scrutinises Pricing Each year, the Swiss Consumer Protection Foundation reviews the pricing models used by top ski resorts across the country \u2014 including destinations from Arosa Lenzerheide to Engelberg Titlis , Gstaa",
+      "pub_date": "2026-01-26",
+      "id": "38b36582b5d1",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 1,
+      "score": 2,
+      "score_details": {
+        "reason": "Keyword scoring (source: +1)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [
+        "safety-incidents"
+      ]
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Trip Report: \u201cHanging Snowfield\u201d \u2014 Wasatch Mountains, UT",
+      "url": "https://snowbrains.com/trip-report-hanging-snowfield-wasatch-mountains-ut/",
+      "description": "Report from January 24, 2025 5 am wake up. Hiking by 6:37 am. 11\u00baF when I started climbing. My goal was a rocky chute at the headwall of the drainage. As I approached the headwall, I noticed the line that I\u2019d skied 3 days before. The snow was terrific in that zone. NE-facing, just subalpine, and wind-protected. \u201cHanging Snowfield\u201d Wasatch [\u2026] The post Trip Report: \u201cHanging Snowfield\u201d \u2014 Wasatch Mountains, UT appeared first on SnowBrains .",
+      "content": "Report from January 24, 2025 5 am wake up. Hiking by 6:37 am. 11\u00baF when I started climbing. My goal was a rocky chute at the headwall of the drainage. As I approached the headwall, I noticed the line that I\u2019d skied 3 days before. The snow was terrific in that zone. NE-facing, just subalpine, and wind-protected. \u201cHanging Snowfield\u201d Wasatch Mountains, UT Summit: 10,073 feet Car: 6,195 feet Vertical From Car: 3,991 feet (a little up and down on the ascent) Vertical skied: 2,573 feet Max Pitch: 42?\u00ba Average Pitch: 36?\u00ba Aspect: Northeast Distance: 9.28 miles round trip Car to Car Time: 6 hours & 1 minute Recommended Equipment: Mini snow shoes, crampons, ice axe, skins \u201cHanging Snowfield.\u201d Image: SnowBrains My eye traced the ridgeline, looking for other fun lines with fresh snow. I found a line I liked and decided to save it for later. As I climbed higher, I saw the light tickling the tip of a gorgeous, hanging snowfield. There was one and only one way through. Zero Dark Thrity start. Image:",
+      "pub_date": "2026-01-26",
+      "id": "f6766bb5d967",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 1,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
         "method": "keyword"
       },
       "score_method": "keyword",
