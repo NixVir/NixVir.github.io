@@ -1,16 +1,16 @@
 {
-  "updated": "2026-01-28 11:17:23",
+  "updated": "2026-01-29 11:24:50",
   "total_articles": 24,
   "scoring_method": "keyword",
   "articles": [
     {
       "source": "The Ski Guru",
-      "title": "Andorra Snow Update: 100% of Slopes Open with Up to 200 cm Base",
-      "url": "https://www.the-ski-guru.com/2026/01/28/andorra-snow-update-slopes-open-january-2026/",
-      "description": "Andorra Snow Update: 100% of Slopes Open, Up to 200 cm Base All ski resorts in Andorra are now operating at 100% capacity, making this one of the strongest winterperiods the Pyrenees have seen in recent years. Following a week of sustained snowfall, the country currently offers a total of 308 kilometres of open pistes, with \u2026 Continue reading \"Andorra Snow Update: 100% of Slopes Open with Up to 200 cm Base\" The post Andorra Snow Update: 100% of Slopes Open with Up to 200 cm Base appeared first o",
-      "content": "Andorra Snow Update: 100% of Slopes Open, Up to 200 cm Base All ski resorts in Andorra are now operating at 100% capacity , making this one of the strongest winterperiods the Pyrenees have seen in recent years. Following a week of sustained snowfall, the country currently offers a total of 308 kilometres of open pistes , with snow depths exceeding one metre at resort level and reaching up to 200 cm at higher elevations . The view of Ordino Arcalis. 27th January 2026. Photo: Grandvalira Resorts. Andorra Snow Update: 100% of Slopes Open with Up to 200 cm Base. Across the main ski areas: Grandvalira Resorts has all 215 km of slopes fully open Pal Arinsal is operating with complete piste and lift access Ordino Arcal\u00eds reports the deepest snowpack, with bases up to 200 cm Conditions across the resorts are described as fully wintery , with excellent coverage, consistent snow quality, and strong conditions both on and off the main pistes. Forecasts also point to additional snowfall in the com",
-      "pub_date": "2026-01-28",
-      "id": "f0ef59ab9d06",
+      "title": "Why Ski Resorts Close Terrain After Heavy Snowfall \u2014 And Why That\u2019s a Safety Decision",
+      "url": "https://www.the-ski-guru.com/2026/01/29/why-ski-resorts-close-terrain-heavy-snowfall/",
+      "description": "Why Ski Resorts Close Terrain After Heavy Snowfall Introduction After major snowstorms, skiers and snowboarders often arrive expecting perfect powder conditions \u2014 only to find lifts closed, terrain restricted, or entire sectors shut down. Frustration is common, especially during short holidays or peak winter weeks. But more snow does not automatically mean safer skiing. In fact, \u2026 Continue reading \"Why Ski Resorts Close Terrain After Heavy Snowfall \u2014 And Why That\u2019s a Safety Decision\" The post Wh",
+      "content": "Why Ski Resorts Close Terrain After Heavy Snowfall Introduction After major snowstorms, skiers and snowboarders often arrive expecting perfect powder conditions \u2014 only to find lifts closed, terrain restricted, or entire sectors shut down. Frustration is common, especially during short holidays or peak winter weeks. But more snow does not automatically mean safer skiing . In fact, the period immediately after heavy snowfall is often when avalanche risk is highest. Terrain closures following big storms are not a failure to open \u2014 they are a deliberate risk-management decision designed to protect lives . Heavy snowfall doesn\u2019t automatically mean safe skiing Large snowfalls can dramatically increase instability in the snowpack. Factors that contribute to heightened risk include: rapid accumulation of fresh snow wind loading on leeward slopes weak layers buried beneath new snow limited visibility preventing safe assessment In many cases, the first 24 to 72 hours after a storm are critical. ",
+      "pub_date": "2026-01-29",
+      "id": "174668746aac",
       "prefilter_business_score": 0,
       "is_macro_relevance": false,
       "source_boost": 1,
@@ -20,11 +20,32 @@
         "method": "keyword"
       },
       "score_method": "keyword",
-      "category": "weather-snow",
+      "category": "safety-incidents",
       "secondary_categories": [
+        "weather-snow",
         "resort-operations"
       ],
-      "approved_date": "2026-01-28"
+      "approved_date": "2026-01-29"
+    },
+    {
+      "source": "Snow Industry News",
+      "title": "Armada Launches New Antimatter Freeride Ski Line Alongside Max Palm",
+      "url": "https://www.snowindustrynews.com/articles/2026/jan/armada-launches-new-antimatter-freeride-ski-line-alongside-max-palm/",
+      "content": "Armada is launching a new line of freeride skis, the Antimatter Series, designed alongside athlete Max Palm. Development of Antimatter involved collaboration with the athletes who inspire Armada\u2019s vision of freeride, one that combines refined technical skills with an aesthetic, creative approach. The full line of Antimatter skis, men\u2019s and women\u2019s models, range from a 75mm waist to a 114mm waist. The line will be available to buy online and in-store Fall 2026. Find out more here: https://www.armadaskis.com/en-us/antimatter-early-release THE SERIES: The Antimatter Series is a collection of skis that blend playful, freestyle-inspired camber profiles with subtly directional shaping, utilizing constructions with tailored, hybrid metal. Essentially, Antimatter skis can pin it at top speeds in demanding terrain, while maintaining an intuitive character that can slash, pop and make a variety of turn shapes. THE 114: The flagship of the line, the Antimatter 114, is Max Palm\u2019s signature ski. Pa",
+      "pub_date": "2026-01-29",
+      "id": "cd379b6a1f9d",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 9,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "winter-sports",
+      "secondary_categories": [],
+      "approved_date": "2026-01-29"
     },
     {
       "source": "SnowBrains",
@@ -52,37 +73,13 @@
       "approved_date": "2026-01-28"
     },
     {
-      "source": "Snow Industry News",
-      "title": "National Ski Patrol Highlights Training Behind On-Mountain Response",
-      "url": "https://www.snowindustrynews.com/articles/2026/jan/national-ski-patrol-highlights-training-behind-on-mountain-response/",
-      "content": "January is National Safety Month for the ski industry, and National Ski Patrol (NSP) is highlighting the rigorous medical and rescue training that prepares patrollers and that forms the backbone of every safety response on the mountain. With more than 30,000 members, NSP delivers one of the industry\u2019s most advanced education pipelines \u2014 one that prepares patrollers not only to respond to emergencies, but to help ski areas operate confidently in a high-consequence environment. Patrollers are trained as mountain-safety professionals, combining advanced medical skills with technical rescue capabilities, operational awareness, and risk-management expertise, which collectively enhancen the safety of every guest on the slopes. \u201cA safe day on the slopes starts long before anyone puts on skis and a helmet,\u201d said Stephanie Cox, CEO of the National Ski Patrol. \u201cOur patrollers put in hundreds of hours of training, so they\u2019re ready for whatever the mountain throws at them. When a ski area knows it",
-      "pub_date": "2026-01-27",
-      "id": "948f6da2617d",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "safety-incidents",
-      "secondary_categories": [
-        "resort-operations",
-        "transportation",
-        "business-investment"
-      ],
-      "approved_date": "2026-01-27"
-    },
-    {
       "source": "Unofficial Networks",
-      "title": "Former Canadian Olympic Snowboarder Pleads Not Guilty To 17 Charges, Held Without Bond",
-      "url": "https://unofficialnetworks.com/2026/01/26/former-canadian-olympic-snowboarder-pleads-not-guilty-to-17-charges-held-without-bond/",
-      "description": "Judge John D. Early has ordered 44-year-old Wedding to be jailed without bond and remain in U.S. custody.",
-      "content": "Former Canadian Olympic parallel giant slalom snowboarder, Ryan Wedding, has made Ryan Wedding his first court appearance following his arrest last week in Mexico City and extradition to America. TMZ Sports caught up with his attorney, Anthony Colombo , outside of a Santa Ana courtroom where he confirmed the alleged international drug kingpin is pleading not guilty to all 17 felony charges brought against him. Judge John D. Early has ordered 44-year-old Wedding to be jailed without bond and remain in U.S. custody. Wedding\u2019s next court date is scheduled for February and a jury trial slated to get underway in March. Categories: Olympics Snowboarding",
-      "pub_date": "2026-01-27",
-      "id": "105ef90a85e1",
+      "title": "$127.5 Million Telluride Sale Offer Leads To Resignations, Investigations",
+      "url": "https://unofficialnetworks.com/2026/01/28/telluride-sale-scandal/",
+      "description": "A meeting between two local officials and Telluride Ski Resort's owner has created more drama for the community.",
+      "content": "Colorado \u2014 While the ski patrol strike has ended in Telluride, the drama is far from over. Earlier this month, it was revealed by the Colorado Sun and Telluride Times that an offer was made to the owner of Telluride Ski Resort during the ski patrol strike to purchase it. However, that meeting led to political turmoil in the community. The Meeting Late last month, two town officials from Telluride and the Mountain Village traveled to meet with TelSki owner Chuck Horning in Southern California. The meeting was intended to discuss the ski patrol strike and leadership deficiencies at the ski resort. The two representatives were Mountain Village Mayor Marti Prohaska and Telluride Mayor Pro Tem Meehan Fee. During the December 29th meeting, the two told Horning that a group of investors was interested in taking a 51% stake in the ski resort for $127.5 million. As part of this deal, Horning would have remained the Chairman of the board. The two signed a contract with Horning to resolve conflic",
+      "pub_date": "2026-01-28",
+      "id": "73088b2edf5b",
       "prefilter_business_score": 0,
       "is_macro_relevance": false,
       "source_boost": 2,
@@ -92,12 +89,12 @@
         "method": "keyword"
       },
       "score_method": "keyword",
-      "category": "winter-sports",
+      "category": "business-investment",
       "secondary_categories": [
         "safety-incidents",
-        "canada"
+        "resort-operations"
       ],
-      "approved_date": "2026-01-27"
+      "approved_date": "2026-01-29"
     },
     {
       "source": "PlanetSKI",
@@ -193,12 +190,12 @@
     },
     {
       "source": "The Ski Guru",
-      "title": "Avalanche Fatalities in the French Alps: What Happened in Tignes and Across Savoie",
-      "url": "https://www.the-ski-guru.com/2026/01/27/avalanche-death-tignes-savoie-risk-high/",
-      "description": "Avalanche Death in Tignes and Multiple Incidents in the Alps as Risk Remains High Fatal Off-Piste Avalanche in Tignes A skier in his fifties, reported to be Spanish, died after being caught in an avalanche while skiing off-piste in the Tignes area (Savoie). According to regional authorities, the avalanche occurred in a non-secured, off-piste sector of the resort. The skier \u2026 Continue reading \"Avalanche Fatalities in the French Alps: What Happened in Tignes and Across Savoie\" The post Avalanche F",
-      "content": "Avalanche Death in Tignes and Multiple Incidents in the Alps as Risk Remains High Fatal Off-Piste Avalanche in Tignes A skier in his fifties , reported to be Spanish , died after being caught in an avalanche while skiing off-piste in the Tignes area (Savoie) . According to regional authorities, the avalanche occurred in a non-secured, off-piste sector of the resort. The skier was fully buried by the slide and despite the rapid intervention of mountain rescue services, he could not be revived. The accident highlights once again the high risk currently affecting off-piste terrain , even in well-known and highly frequented ski resorts such as Tignes . Important: Off-piste areas, even when accessed directly from ski lifts, are not secured or controlled by ski patrols and remain subject to natural avalanche risk. Read more: France3 Map of the area. Avalanche Fatalities in the French Alps: What Happened in Tignes and Across Savoie. Avalanches Across the Alps: One Dead, Several Injured on the",
-      "pub_date": "2026-01-27",
-      "id": "d70be2aac8c8",
+      "title": "Andorra Snow Update: 100% of Slopes Open with Up to 200 cm Base",
+      "url": "https://www.the-ski-guru.com/2026/01/28/andorra-snow-update-slopes-open-january-2026/",
+      "description": "Andorra Snow Update: 100% of Slopes Open, Up to 200 cm Base All ski resorts in Andorra are now operating at 100% capacity, making this one of the strongest winterperiods the Pyrenees have seen in recent years. Following a week of sustained snowfall, the country currently offers a total of 308 kilometres of open pistes, with \u2026 Continue reading \"Andorra Snow Update: 100% of Slopes Open with Up to 200 cm Base\" The post Andorra Snow Update: 100% of Slopes Open with Up to 200 cm Base appeared first o",
+      "content": "Andorra Snow Update: 100% of Slopes Open, Up to 200 cm Base All ski resorts in Andorra are now operating at 100% capacity , making this one of the strongest winterperiods the Pyrenees have seen in recent years. Following a week of sustained snowfall, the country currently offers a total of 308 kilometres of open pistes , with snow depths exceeding one metre at resort level and reaching up to 200 cm at higher elevations . The view of Ordino Arcalis. 27th January 2026. Photo: Grandvalira Resorts. Andorra Snow Update: 100% of Slopes Open with Up to 200 cm Base. Across the main ski areas: Grandvalira Resorts has all 215 km of slopes fully open Pal Arinsal is operating with complete piste and lift access Ordino Arcal\u00eds reports the deepest snowpack, with bases up to 200 cm Conditions across the resorts are described as fully wintery , with excellent coverage, consistent snow quality, and strong conditions both on and off the main pistes. Forecasts also point to additional snowfall in the com",
+      "pub_date": "2026-01-28",
+      "id": "f0ef59ab9d06",
       "prefilter_business_score": 0,
       "is_macro_relevance": false,
       "source_boost": 1,
@@ -208,22 +205,21 @@
         "method": "keyword"
       },
       "score_method": "keyword",
-      "category": "safety-incidents",
+      "category": "weather-snow",
       "secondary_categories": [
-        "international",
         "resort-operations"
       ],
       "approved_date": "2026-01-28"
     },
     {
       "source": "SnowBrains",
-      "title": "Central Park, New York City, Report: Great Snow\u2014and Shaun White!",
-      "url": "https://snowbrains.com/central-park-new-york-city-report-great-snow-and-shaun-white/",
-      "description": "This report is from Sunday, January 25, 2025. A surprise 12-inch snowfall transformed New York City\u2019s Central Park into an improbable winter playground last Sunday, drawing out homesick skiers and snowboarders eager to make turns wherever gravity allowed. SnowBrains caught up with current New York resident Kristina Malzbender, who found herself at the center of one of the Big Apple\u2019s [\u2026] The post Central Park, New York City, Report: Great Snow\u2014and Shaun White! appeared first on SnowBrains .",
-      "content": "Central Park Skiing the steps at Bethesda Fountain. | Photo: Kristina Malzbender This report is from Sunday, January 25, 2025. A surprise 12-inch snowfall transformed New York City\u2019s Central Park into an improbable winter playground last Sunday, drawing out homesick skiers and snowboarders eager to make turns wherever gravity allowed. SnowBrains caught up with current New York resident Kristina Malzbender, who found herself at the center of one of the Big Apple\u2019s most surreal ski days in recent memory-Central Park Skiing. Early in the week, as forecasts began hinting at a major storm, Malzbender tossed out a casual post on TikTok about organizing a Central Park ski meetup. The response snowballed quickly. What began as a simple idea turned into a group chat of nearly 180 skiers, all intrigued by the idea of sliding through one of the world\u2019s most iconic urban parks. While it was a far cry from the deep, consistent snowpacks of her hometown, Boulder, Colorado, Malzbender saw opportunity",
-      "pub_date": "2026-01-27",
-      "id": "dbdb5185267d",
-      "prefilter_business_score": 0,
+      "title": "onX Backcountry Expands Beacon Guidebooks Content With Hundreds of New Ski Routes for 2025-26 Season",
+      "url": "https://snowbrains.com/onx-backcountry-expands-beacon-guidebooks-content-with-hundreds-of-new-ski-routes-for-2025-26-season/",
+      "description": "onX Backcountry has released a major expansion of Beacon Guidebooks content for the 2025-26 ski season, adding hundreds of newly curated backcountry ski routes across Colorado and Washington, the company announced on January 21. The update, now available in the onX Backcountry app, significantly expands access to vetted route information in complex mountain terrain, pairing Beacon Guidebooks\u2019 expert-authored ski descents [\u2026] The post onX Backcountry Expands Beacon Guidebooks Content With Hundred",
+      "content": "onX Backcountry\u2019s expanded Beacon Guidebooks content adds hundreds of curated ski routes across Colorado and Washington for the 2025-26 season, integrating expert route beta with in-app navigation and avalanche tools. | Photo: onX onX Backcountry has released a major expansion of Beacon Guidebooks content for the 2025-26 ski season, adding hundreds of newly curated backcountry ski routes across Colorado and Washington, the company announced on January 21. The update, now available in the onX Backcountry app , significantly expands access to vetted route information in complex mountain terrain, pairing Beacon Guidebooks\u2019 expert-authored ski descents with onX\u2019s navigation and avalanche safety tools. According to the company, the additions are designed to help backcountry skiers and splitboarders plan trips more effectively and adapt to changing snowpack and weather conditions throughout the season. Related: How Backcountry Ski Guidebooks Get Written Major Updates in Colorado The most sub",
+      "pub_date": "2026-01-28",
+      "id": "0b3af6b84df0",
+      "prefilter_business_score": 1,
       "is_macro_relevance": false,
       "source_boost": 2,
       "score": 10,
@@ -232,41 +228,20 @@
         "method": "keyword"
       },
       "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [],
-      "approved_date": "2026-01-27"
-    },
-    {
-      "source": "Snow Industry News",
-      "title": "Hagl\u00f6fs Designs Olympic Race Suit For Swedish Alpine & Ski Cross Teams",
-      "url": "https://www.snowindustrynews.com/articles/2026/jan/hagloefs-designs-olympic-race-suit-for-swedish-alpine-ski-cross-teams/",
-      "content": "Hagl\u00f6fs, official partner of the Swedish Olympic Committee (SOK), proudly deepens its role with the Swedish Olympic Team ahead of the 2026 Winter Olympics in Milano Cortina. Already responsible for the lightweight mittens worn by Swedish athletes throughout the Games, Hagl\u00f6fs can now announce it has been entrusted with the prestigious assignment of designing the official race suit for Sweden\u2019s alpine skiing disciplines and ski cross. Designed in close collaboration with Olympic Alpine and Ski cross athletes, with an unmistakable Swedish identity. Drawing inspiration from Sweden\u2019s deep winter darkness, raw winter elements, and the explosive movement of alpine skiing as skis carve through snow, the design reflects both speed and precision \u2014 anchored in Hagl\u00f6fs\u2019 111-year heritage of Scandinavian craftsmanship and innovation. The result is a race suit visually expressing the strength, confidence, and modern character of Swedish winter sports on the world\u2019s biggest stage. \u201cBeing part of Swe",
-      "pub_date": "2026-01-27",
-      "id": "ea897e8113e4",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "winter-sports",
+      "category": "safety-incidents",
       "secondary_categories": [
-        "ski-history",
-        "hospitality"
+        "weather-snow"
       ],
-      "approved_date": "2026-01-27"
+      "approved_date": "2026-01-29"
     },
     {
       "source": "Unofficial Networks",
-      "title": "Japanese Ski Resort Photographer Unknowingly Asks Travis Rice For A Picture",
-      "url": "https://unofficialnetworks.com/2026/01/27/japense-photographer-travis-rice/",
-      "description": "A Japanese ski resort received quite the surprise when the random snowboarder he approached for a picture turned out to be Travis Rice",
-      "content": "Gen , the official photographer for Myoko Suginohara ski resort in Japan, received quite the surprise when the random snowboarder he approached for a photograph turned out to be snowboarding legend Travis Rice . He initially approached the man simply because he thought he looked cool, at least according to his introduction, only realizing that it was the influential athlete after asking for his name. View this post on Instagram A post shared by \u300a\u516c\u5f0f\u300b\u5999\u9ad8\u6749\u30ce\u539f\u30b9\u30ad\u30fc\u5834 myokosuginohara (@suginohara_official) Travis Rice, if you somehow don\u2019t know, is an X-Games gold medalist, snowboard film star, big mountain freestyle pioneer, and founder of the Natural Selection Tour . Based on how he acts in this video he\u2019s also an incredibly nice guy, happily allowing Gen to grab some pictures of him and staying very kind throughout the encounter. Wyoming\u2019s First Ski Resort Announces Loaded Summer Concert Lineup Categories: Japan Snowboarding",
-      "pub_date": "2026-01-27",
-      "id": "5e21e14927c3",
+      "title": "Do You Recognize These 2 Ski Thieves?",
+      "url": "https://unofficialnetworks.com/2026/01/28/ski-thieves-caught-on-camera/",
+      "description": "Two thieves were caught on security camera nabbing a pair of Armada skis at Ski Lakeridge near Toronto, Canada.",
+      "content": "Two thieves were caught on security camera nabbing a pair of Armada skis at Ski Lakeridge near Toronto, Canada. The duo appears to walk past a rack of skis and deliberate for a moment before walking back and picking up a pair of skis each. The poster only alleges one pair of skis missing, so one pair might have actually belonged to them (though that\u2019s not a guarantee) . View this post on Instagram A post shared by Darlene Shaw (@dar_lana) It is possible that they accidentally took a pair of skis that didn\u2019t belong to them, but the speed at which they leave the area after picking up the pair seems to indicate otherwise. If you\u2019re the thieves in this video, or you\u2019re realizing that you accidentally took the wrong pair of skis, reach out to the poster ( @dar_lana ) to return them. If you know the people in this video, report them. Ski resorts tend to feel like one of few places you can safely leave your gear behind without the threat of theft. If people start stealing skis and snowboards ",
+      "pub_date": "2026-01-28",
+      "id": "e3b308dd1dcc",
       "prefilter_business_score": 0,
       "is_macro_relevance": false,
       "source_boost": 2,
@@ -276,13 +251,35 @@
         "method": "keyword"
       },
       "score_method": "keyword",
-      "category": "international",
+      "category": "safety-incidents",
       "secondary_categories": [
-        "winter-sports",
-        "ski-history",
-        "hospitality"
+        "canada"
       ],
-      "approved_date": "2026-01-28"
+      "approved_date": "2026-01-29"
+    },
+    {
+      "source": "Snow Industry News",
+      "title": "National Ski Patrol Highlights Training Behind On-Mountain Response",
+      "url": "https://www.snowindustrynews.com/articles/2026/jan/national-ski-patrol-highlights-training-behind-on-mountain-response/",
+      "content": "January is National Safety Month for the ski industry, and National Ski Patrol (NSP) is highlighting the rigorous medical and rescue training that prepares patrollers and that forms the backbone of every safety response on the mountain. With more than 30,000 members, NSP delivers one of the industry\u2019s most advanced education pipelines \u2014 one that prepares patrollers not only to respond to emergencies, but to help ski areas operate confidently in a high-consequence environment. Patrollers are trained as mountain-safety professionals, combining advanced medical skills with technical rescue capabilities, operational awareness, and risk-management expertise, which collectively enhancen the safety of every guest on the slopes. \u201cA safe day on the slopes starts long before anyone puts on skis and a helmet,\u201d said Stephanie Cox, CEO of the National Ski Patrol. \u201cOur patrollers put in hundreds of hours of training, so they\u2019re ready for whatever the mountain throws at them. When a ski area knows it",
+      "pub_date": "2026-01-27",
+      "id": "948f6da2617d",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "safety-incidents",
+      "secondary_categories": [
+        "resort-operations",
+        "transportation",
+        "business-investment"
+      ],
+      "approved_date": "2026-01-27"
     },
     {
       "source": "PlanetSKI",
@@ -374,13 +371,34 @@
       "approved_date": "2026-01-21"
     },
     {
+      "source": "The Ski Guru",
+      "title": "Panda Optics RS2 Goggles Review: Tested in Flat Light and Snowfall",
+      "url": "https://www.the-ski-guru.com/2026/01/28/panda-optics-rs2-goggles-review-flat-light/",
+      "description": "I tested the RS2 ski goggles from Panda Optics during my Christmas holidays skiing in Pila (Aosta Valley) \u2014 and they genuinely ended up saving my ski day. I\u2019ll be honest from the start: at first, I didn\u2019t immediately understand how the lens-change system worked. You need to open a small side tab to release the lens. Once I realised \u2026 Continue reading \"Panda Optics RS2 Goggles Review: Tested in Flat Light and Snowfall\" The post Panda Optics RS2 Goggles Review: Tested in Flat Light and Snowfall ap",
+      "content": "I tested the RS2 ski goggles from Panda Optics during my Christmas holidays skiing in Pila (Aosta Valley) \u2014 and they genuinely ended up saving my ski day. I\u2019ll be honest from the start: at first, I didn\u2019t immediately understand how the lens-change system worked. You need to open a small side tab to release the lens. Once I realised that, the whole system made sense. The lenses are held in place by very strong magnets , and once fitted, they feel solid and secure. Flat Light, Snowfall\u2026 and Why These Goggles Mattered The first day I used the RS2 goggles, visibility was really poor . Heavy snowfall combined with flat light meant the slope almost disappeared \u2014 that classic white-on-white situation where depth perception vanishes. I normally ski with sunglasses , switching to goggles only when it\u2019s actively snowing. On sunny days, this is simply a personal preference. I also use an older pair of Panda sunglasses with interchangeable lenses, which I\u2019m very comfortable with in good visibility",
+      "pub_date": "2026-01-28",
+      "id": "125349d76138",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 1,
+      "score": 8,
+      "score_details": {
+        "reason": "Keyword scoring (source: +1)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [],
+      "approved_date": "2026-01-29"
+    },
+    {
       "source": "SnowBrains",
-      "title": "Jay Peak Resort, VT, is the Snowiest Resort in North America as it Surpasses 300\u2033 for the Season",
-      "url": "https://snowbrains.com/jay-peak-resort-vt-is-the-snowiest-resort-in-north-america-as-it-surpasses-300-for-the-season/",
-      "description": "Vermont\u2019s Jay Peak Resort continues its remarkable streak this winter, reaching the 300-inch snowfall mark faster than at any point in the past 25 years. On Sunday, the mountain received another 10 to 14 inches of fresh powder, with an additional 4 to 8 inches still forecast for tonight. Over the past week alone, Jay Peak has received 32 inches [\u2026] The post Jay Peak Resort, VT, is the Snowiest Resort in North America as it Surpasses 300\u2033 for the Season appeared first on SnowBrains .",
-      "content": "Jay Peak Resort goes over the 300-inch mark for the season. | Image: Jay Peak Resort Vermont\u2019s Jay Peak Resort continues its remarkable streak this winter, reaching the 300-inch snowfall mark faster than at any point in the past 25 years. On Sunday, the mountain received another 10 to 14 inches of fresh powder, with an additional 4 to 8 inches still forecast for tonight. Over the past week alone, Jay Peak has received 32 inches of snow, and an impressive 60 inches over the last 16 days\u2014putting it one day ahead of the resort\u2019s record-setting 2000\u20132001 season. Nearly a month earlier, the resort celebrated another milestone by surpassing the 200-inch mark just two days before Christmas. An overnight dusting of 1 to 2 inches pushed the season total to 201 inches, marking the fastest Jay Peak has ever reached that benchmark. The season\u2019s strong start began back on Thanksgiving, when Jay crossed the 100-inch threshold with totals already sitting at 103 inches. Related: Ski Resort Storm Total",
-      "pub_date": "2026-01-27",
-      "id": "0f33e13a063f",
+      "title": "The Next Big Place For Freestyle Skiing Is\u2026Ohio? A Look At Where The Olympics\u2019 Team USA Is From",
+      "url": "https://snowbrains.com/the-next-big-place-for-freestyle-skiing-is-ohio-a-look-at-where-the-olympics-team-usa-is-from/",
+      "description": "With the opening ceremony of the Milano-Cortina Olympic Winter Games less than two weeks away, Team USA has finalized its list of 232 competitors, the largest contingent ever sent. Though more than 80 athletes live or train in Utah, only 17 of them identified Utah as their home state. Colorado is the state with the most athletes, at 30, and [\u2026] The post The Next Big Place For Freestyle Skiing Is\u2026Ohio? A Look At Where The Olympics\u2019 Team USA Is From appeared first on SnowBrains .",
+      "content": "Team USA will send a record 232 athletes to Milano-Cortina. | Image: U.S. Ski & Snowboard With the opening ceremony of the Milano-Cortina Olympic Winter Games less than two weeks away, Team USA has finalized its list of 232 competitors, the largest contingent ever sent. Though more than 80 athletes live or train in Utah , only 17 of them identified Utah as their home state. Colorado is the state with the most athletes, at 30, and 32 states are sending at least one athlete. The origins of the athletes of Team USA give a unique look into where winter sports happen within the United States. Colorado is the state sending the most athletes to Milano-Cortina, but the Midwest will be well represented. | Image: Yahoo Sports Perhaps most surprising of all is that the four skiers competing in freestyle skiing are from Ohio, of all places. Though there may be more booters and sidehits on a single run in Utah than in all of Ohio, the Buckeye State is well represented in the women\u2019s and men\u2019s frees",
+      "pub_date": "2026-01-28",
+      "id": "e6643bf28247",
       "prefilter_business_score": 0,
       "is_macro_relevance": false,
       "source_boost": 2,
@@ -390,20 +408,20 @@
         "method": "keyword"
       },
       "score_method": "keyword",
-      "category": "weather-snow",
+      "category": "winter-sports",
       "secondary_categories": [
-        "resort-operations",
-        "hospitality"
+        "transportation"
       ],
-      "approved_date": "2026-01-27"
+      "approved_date": "2026-01-29"
     },
     {
-      "source": "Snow Industry News",
-      "title": "German Ski Areas Report Positive Interim Results",
-      "url": "https://www.snowindustrynews.com/articles/2026/jan/german-ski-areas-report-positive-interim-results/",
-      "content": "The German Cable Car Association (VDS) has drawn a positive interim conclusion for the current winter season: The early start in November and the bitter cold from the end of December onwards, accompanied by mostly sunny weather, provided excellent conditions. The cold spell offered ideal conditions for artificial snowmaking, and ski resorts with good snowmaking infrastructure are recording increases or are at the very good level of the previous year. Purely natural snow resorts are currently benefiting from the snow conditions and are following suit. Particularly pleasing is the high demand for ski courses, primarily among young people, and the large number of sunbathers who, in addition to winter sports enthusiasts, are drawn to the mountains by the fantastic winter weather. The winter season was opened by the S\u00f6llereck, a family-friendly mountain in Oberstdorf, with the six neighboring ski resorts in the Allg\u00e4u region following suit. The area is delighted with the excellent slope con",
-      "pub_date": "2026-01-27",
-      "id": "421131710011",
+      "source": "Unofficial Networks",
+      "title": "Aspen Snowmass Employee Dies After On-Mountain Incident",
+      "url": "https://unofficialnetworks.com/2026/01/28/snowmass-employee-dies-on-mountain/",
+      "description": "An employee with Aspen Skiing Company died after an on-mountain incident at Snowmass on Thursday, January 22nd.",
+      "content": "An employee with Aspen Skiing Company died after an on-mountain incident at Snowmass on Thursday, January 22nd, Aspen Public Radio reports. Rohan Verplank, a local ski instructor and coach, was skiing on the intermediate Lower Creekside run in the Two Creeks area when the incident occurred. Snowmass Ski Patrol and the Snowmass Village Police Department responded to the incident with the Aspen Skiing Company and Aspen Valley Health Emergency Room staff also providing assistance. \u201cOur hearts are broken to share this news. Our deepest condolences are with the individual\u2019s family and friends, as well as with all of our employees who knew and worked with him.\u201d \u2013 Statement from Aspen One Verplank was 48-years-old. The cause and manner of death are currently under investigation by the coroner\u2019s office. Our thoughts and deepest condolences are with the friends and family of the deceased at this time. Chalet Burns To The Ground In Verbier, Switzerland Categories: Aspen Snowmass Colorado Ski New",
+      "pub_date": "2026-01-28",
+      "id": "934181c201c4",
       "prefilter_business_score": 0,
       "is_macro_relevance": false,
       "source_boost": 2,
@@ -413,10 +431,34 @@
         "method": "keyword"
       },
       "score_method": "keyword",
-      "category": "weather-snow",
+      "category": "safety-incidents",
       "secondary_categories": [
-        "business-investment",
-        "resort-operations"
+        "hospitality",
+        "resort-operations",
+        "international"
+      ],
+      "approved_date": "2026-01-29"
+    },
+    {
+      "source": "Snow Industry News",
+      "title": "Hagl\u00f6fs Designs Olympic Race Suit For Swedish Alpine & Ski Cross Teams",
+      "url": "https://www.snowindustrynews.com/articles/2026/jan/hagloefs-designs-olympic-race-suit-for-swedish-alpine-ski-cross-teams/",
+      "content": "Hagl\u00f6fs, official partner of the Swedish Olympic Committee (SOK), proudly deepens its role with the Swedish Olympic Team ahead of the 2026 Winter Olympics in Milano Cortina. Already responsible for the lightweight mittens worn by Swedish athletes throughout the Games, Hagl\u00f6fs can now announce it has been entrusted with the prestigious assignment of designing the official race suit for Sweden\u2019s alpine skiing disciplines and ski cross. Designed in close collaboration with Olympic Alpine and Ski cross athletes, with an unmistakable Swedish identity. Drawing inspiration from Sweden\u2019s deep winter darkness, raw winter elements, and the explosive movement of alpine skiing as skis carve through snow, the design reflects both speed and precision \u2014 anchored in Hagl\u00f6fs\u2019 111-year heritage of Scandinavian craftsmanship and innovation. The result is a race suit visually expressing the strength, confidence, and modern character of Swedish winter sports on the world\u2019s biggest stage. \u201cBeing part of Swe",
+      "pub_date": "2026-01-27",
+      "id": "ea897e8113e4",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "winter-sports",
+      "secondary_categories": [
+        "ski-history",
+        "hospitality"
       ],
       "approved_date": "2026-01-27"
     },
@@ -441,54 +483,6 @@
       "secondary_categories": [
         "resort-operations",
         "international"
-      ],
-      "approved_date": "2026-01-27"
-    },
-    {
-      "source": "The Ski Guru",
-      "title": "Snowmass Ski Instructor Dies on the Slopes \u2014 Local Reports",
-      "url": "https://www.the-ski-guru.com/2026/01/26/snowmass-ski-instructor-death-aspen/",
-      "description": "A long-time ski instructor at Snowmass Ski Area has died after an incident on the mountain on Thursday morning, according to multiple local news sources. Aspen Daily News and the Aspen Times have both confirmed the death of an Aspen Skiing Company instructor at Snowmass Ski Area. Details remain limited as authorities continue to investigate and the family\u2019s \u2026 Continue reading \"Snowmass Ski Instructor Dies on the Slopes \u2014 Local Reports\" The post Snowmass Ski Instructor Dies on the Slopes \u2014 Local ",
-      "content": "A long-time ski instructor at Snowmass Ski Area has died after an incident on the mountain on Thursday morning, according to multiple local news sources. Aspen Daily News and the Aspen Times have both confirmed the death of an Aspen Skiing Company instructor at Snowmass Ski Area . Details remain limited as authorities continue to investigate and the family\u2019s privacy is respected. Friends, colleagues and community members shared remembrances and tributes on social media, naming the instructor and acknowledging his longtime contribution to the local ski community. Local News Confirmation & Community Reaction Aspen Daily News posted on Facebook that a ski instructor died on a Snowmass slope Thursday morning , confirming the news via the resort\u2019s communications. The Aspen Times also confirmed the death of an Aspen Skiing Company employee at Snowmass on its official Facebook page, expressing condolences and acknowledging the loss within the mountain community. Friends and colleagues have be",
-      "pub_date": "2026-01-26",
-      "id": "b13de370a0d9",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 1,
-      "score": 6,
-      "score_details": {
-        "reason": "Keyword scoring (source: +1)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "business-investment",
-      "secondary_categories": [
-        "safety-incidents",
-        "hospitality"
-      ],
-      "approved_date": "2026-01-26"
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "Growing Utah Ski Resort Opens Two More New Chairlifts",
-      "url": "https://unofficialnetworks.com/2026/01/26/deer-valley-two-more-chairlifts/",
-      "description": "While its been a slower start than desired for Deer Valley Resort, they debuted two new lifts this past weekend.",
-      "content": "Park City, Utah \u2014 While it\u2019s been a low-snow year in Utah, Deer Valley is slowly progressing towards opening all of its new lifts. Before this past weekend, Deer Valley had opened the East Village Gondola and Pinyon Express. Two more chairlifts made their debut on Saturday. On Saturday, Deer Valley opened the Vulcan Express and Revelator Express chairlifts. This is despite the very below-average snowpack Utah has faced so far. For more information, check out the video below and a written explainer of the expansion. Revelator & Vulcan Originally, Deer Valley intended to have these be one continuous lift. However, due to the differences in terrain, in order to improve lapability, they went with two separate chairlifts. I\u2019ll have to ski it to form a true opinion, but I feel like splitting these into two is the right decision. Just one run in this area looks like a true thigh burner. The Vulcan Express is a high-speed quad that services beginner, intermediate, and advanced terrain. However",
-      "pub_date": "2026-01-26",
-      "id": "12bc463b9135",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "resort-operations",
-      "secondary_categories": [
-        "weather-snow",
-        "hospitality"
       ],
       "approved_date": "2026-01-27"
     },
