@@ -1,16 +1,16 @@
 {
-  "generated": "2026-02-02 11:43 UTC",
-  "current_date": "2026-02-01",
+  "generated": "2026-02-02 23:38 UTC",
+  "current_date": "2026-02-02",
   "prior_date": "2025-02-02",
   "stats": {
-    "usa_cover": 43.3,
-    "canada_cover": 90.1,
-    "combined_cover": 66.9,
+    "usa_cover": 40.8,
+    "canada_cover": 88.9,
+    "combined_cover": 65.0,
     "usa_prior": 28.6,
     "canada_prior": 91.3,
     "combined_prior": 60.2,
-    "usa_change": 14.7,
-    "canada_change": -1.2,
-    "combined_change": 6.7
+    "usa_change": 12.2,
+    "canada_change": -2.4,
+    "combined_change": 4.8
   }
 }
