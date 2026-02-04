@@ -114,6 +114,36 @@ MAX_PER_RUN = CONFIG.get('output', {}).get('max_per_run', 30)
 FOCUS_TOPICS = CONFIG.get('focus_topics', {})
 
 # =============================================================================
+# ARTICLE EXPIRATION (prevents stale content from persisting)
+# =============================================================================
+
+# Maximum age for articles in the feed (in days)
+MAX_ARTICLE_AGE_DAYS = 14
+
+# =============================================================================
+# MAJOR SOURCE WHITELIST (trusted sources bypass strict pre-filter)
+# =============================================================================
+
+# These sources produce high-quality content and don't publish fluff.
+# Their articles bypass the strict ski-term pre-filter but still need
+# either a ski term OR macro relevance terms to pass.
+WHITELIST_SOURCES = {
+    'New York Times - Travel',
+    'New York Times - Business',
+    'New York Times - Climate',
+    'New York Times - U.S.',
+    'Washington Post',
+    'Reuters',
+    'AP News',
+    'Bloomberg',
+    'Financial Times',
+    'The Atlantic',
+    'Wall Street Journal',
+    'Globe and Mail',
+    'CBC News',
+}
+
+# =============================================================================
 # STRICT PRE-FILTER TERMS (Two-tier system from improvement spec)
 # =============================================================================
 
@@ -380,6 +410,24 @@ RSS_SOURCES = [
     {
         'name': 'New York Times - Travel',
         'url': 'https://rss.nytimes.com/services/xml/rss/nyt/Travel.xml',
+        'category': 'major_publication',
+        'boost': 3
+    },
+    {
+        'name': 'New York Times - Business',
+        'url': 'https://rss.nytimes.com/services/xml/rss/nyt/Business.xml',
+        'category': 'major_publication',
+        'boost': 3
+    },
+    {
+        'name': 'New York Times - Climate',
+        'url': 'https://rss.nytimes.com/services/xml/rss/nyt/Climate.xml',
+        'category': 'major_publication',
+        'boost': 3
+    },
+    {
+        'name': 'New York Times - U.S.',
+        'url': 'https://rss.nytimes.com/services/xml/rss/nyt/US.xml',
         'category': 'major_publication',
         'boost': 3
     },
@@ -907,13 +955,16 @@ def parse_rss_feed(xml_content, source_name):
 
 def strict_prefilter(article):
     """
-    Two-tier pre-filter with macro relevance pathway.
+    Two-tier pre-filter with macro relevance pathway and major source whitelist.
     Returns (passed, business_score, is_macro) tuple.
 
     Primary pathway: Must have explicit ski industry reference
     Secondary pathway: Macro relevance term + mountain region geography
+    Whitelist pathway: Trusted sources get relaxed filtering (macro terms only)
     """
     text = f"{article.get('title', '')} {article.get('description', '')}".lower()
+    source = article.get('source', '')
+    is_whitelisted = source in WHITELIST_SOURCES
 
     # Gate 1: Check for explicit ski industry reference (primary pathway)
     has_ski_term = any(term in text for term in PRIMARY_SKI_TERMS)
@@ -932,6 +983,12 @@ def strict_prefilter(article):
         # Macro pathway passed - these get lower priority during sorting
         business_count = sum(1 for term in SECONDARY_BUSINESS_TERMS if term in text)
         return True, business_count, True  # True = is_macro (lower priority)
+
+    # Gate 3: Whitelisted sources get relaxed filtering
+    # They only need a macro term OR a region term (not both)
+    if is_whitelisted and (has_macro_term or has_region_term):
+        business_count = sum(1 for term in SECONDARY_BUSINESS_TERMS if term in text)
+        return True, business_count, True  # Treated as macro (lower priority but included)
 
     return False, 0, False
 
@@ -1029,6 +1086,96 @@ def deduplicate_articles(articles, similarity_threshold=0.85):
         processed_keys.add(key)
 
     return unique_articles
+
+
+def deduplicate_against_existing(new_articles, existing_articles, similarity_threshold=0.85):
+    """
+    Filter out new articles that are duplicates of recently published articles.
+    This prevents old topics from reappearing when a new source covers the same story.
+
+    Args:
+        new_articles: List of newly fetched articles
+        existing_articles: Dict of existing articles (id -> article)
+        similarity_threshold: Minimum similarity to consider duplicate
+
+    Returns:
+        List of articles that are NOT duplicates of existing content
+    """
+    if not new_articles or not existing_articles:
+        return new_articles
+
+    # Only compare against recent articles (within expiration window)
+    cutoff_date = (datetime.now() - timedelta(days=MAX_ARTICLE_AGE_DAYS)).strftime('%Y-%m-%d')
+    recent_existing = [
+        a for a in existing_articles.values()
+        if a.get('pub_date', a.get('approved_date', '')) >= cutoff_date
+    ]
+
+    if not recent_existing:
+        return new_articles
+
+    filtered = []
+    duplicates_found = 0
+
+    for article in new_articles:
+        article_title = article.get('title', '').lower()
+        article_lead = get_lead_paragraph(article)
+        is_duplicate = False
+
+        for existing in recent_existing:
+            existing_title = existing.get('title', '').lower()
+            existing_lead = get_lead_paragraph(existing)
+
+            # Check title similarity
+            title_similarity = difflib.SequenceMatcher(None, article_title, existing_title).ratio()
+
+            # Check lead paragraph similarity
+            lead_similarity = 0
+            if article_lead and existing_lead and len(article_lead) > 50:
+                lead_similarity = difflib.SequenceMatcher(None, article_lead, existing_lead).ratio()
+
+            # Consider duplicate if title or lead is very similar
+            if title_similarity >= similarity_threshold or lead_similarity >= 0.80:
+                is_duplicate = True
+                duplicates_found += 1
+                break
+
+        if not is_duplicate:
+            filtered.append(article)
+
+    if duplicates_found > 0:
+        print_safe(f"  Historical dedup: filtered {duplicates_found} articles matching recent feed")
+
+    return filtered
+
+
+def filter_expired_articles(articles, max_age_days=MAX_ARTICLE_AGE_DAYS):
+    """
+    Remove articles older than the maximum age.
+
+    Args:
+        articles: List of articles
+        max_age_days: Maximum age in days
+
+    Returns:
+        List of articles within the age limit
+    """
+    cutoff_date = (datetime.now() - timedelta(days=max_age_days)).strftime('%Y-%m-%d')
+
+    filtered = []
+    expired_count = 0
+
+    for article in articles:
+        pub_date = article.get('pub_date', article.get('approved_date', ''))
+        if pub_date >= cutoff_date:
+            filtered.append(article)
+        else:
+            expired_count += 1
+
+    if expired_count > 0:
+        print_safe(f"  Expired {expired_count} articles older than {max_age_days} days")
+
+    return filtered
 
 
 # =============================================================================
@@ -1483,6 +1630,12 @@ def update_ski_news():
     if macro_count > 0:
         print_safe(f"  (includes {macro_count} via macro relevance pathway)")
 
+    # Stage 1.5: Historical deduplication against existing feed
+    # This prevents old topics from reappearing when new sources cover the same story
+    print_safe(f"\n--- Stage 1.5: Historical Deduplication ---")
+    prefiltered = deduplicate_against_existing(prefiltered, existing_articles)
+    print_safe(f"After historical dedup: {len(prefiltered)} articles")
+
     # Prioritize by business score and source
     # Tier 0: Highest priority - official company IR and industry publications
     top_priority_sources = ['Vail Resorts Investor Relations', 'Ski Area Management',
@@ -1580,6 +1733,11 @@ def update_ski_news():
         key=lambda x: x.get('pub_date', x.get('approved_date', '')),
         reverse=True
     )
+
+    # Filter out expired articles (older than MAX_ARTICLE_AGE_DAYS)
+    print_safe(f"\n--- Filtering Expired Articles (>{MAX_ARTICLE_AGE_DAYS} days) ---")
+    all_sorted = filter_expired_articles(all_sorted)
+    print_safe(f"Articles within age limit: {len(all_sorted)}")
 
     # Apply source diversity with interleaving
     # Group articles by source, keeping each source sorted by date

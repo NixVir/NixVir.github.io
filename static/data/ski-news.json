@@ -1,16 +1,16 @@
 {
-  "updated": "2026-02-04 11:27:56",
-  "total_articles": 24,
+  "updated": "2026-02-04 14:50:52",
+  "total_articles": 18,
   "scoring_method": "keyword",
   "articles": [
     {
-      "source": "SnowBrains",
-      "title": "Weather and Snowpack Update for the United States",
-      "url": "https://snowbrains.com/weather-and-snowpack-update-for-the-united-states/",
-      "description": "Many ski areas across the Western USA continue to experience one of the most challenging winters in recent memory. Mount Hood Ski Bowl recently announced that its operations will be suspended until further notice, and many large ski areas, including Vail, Park City, Deer Valley, and others only have roughly 65% of their terrain open, according to ski area websites. [\u2026] The post Weather and Snowpack Update for the United States appeared first on SnowBrains .",
-      "content": "Fun turns bring solace during a record low snow winter. | Photo: Zach Armstrong Many ski areas across the Western USA continue to experience one of the most challenging winters in recent memory. Mount Hood Ski Bowl recently announced that its operations will be suspended until further notice, and many large ski areas, including Vail , Park City , Deer Valley , and others only have roughly 65% of their terrain open, according to ski area websites. Many ski areas in the West have gone several weeks without seeing more than an inch or two of snow. After a warm and wet fall, dry January has offered no relief to the immense challenges this snow-starved winter has brought. Related: SnowBrains Forecast: Snow Returns to the PNW This Weekend The vast majority of SNOTEL sites across the West are recording below-average snowpacks, with more than a few recording the worst snow years since SNOTEL records started, more than 30 years ago. Parts of Oregon have less than a third of their average snowpa",
+      "source": "Unofficial Networks",
+      "title": "POV Footage Shows Just How Wild Freeride Skiing Really Is",
+      "url": "https://unofficialnetworks.com/2026/02/04/pov-freeride-footage-ben-richards/",
+      "description": "It's pretty hard to understand just how intense freeride skiing runs really are without seeing it from the athlete's perspective.",
+      "content": "The first ever FIS Freeride World Championships went down on Tuesday, February 3rd, at Ordino Arcal\u00eds in Andorra, bringing 65 of the world\u2019s best freeride skiers and snowboarders from 17 nations together for an epic competition. The winning runs were seriously impressive, but it\u2019s pretty hard to understand just how insane these runs really are without seeing it from the athlete\u2019s perspective. Ben Richards won the men\u2019s ski category with a wild run, but his newly released GoPro footage really gives you a new appreciation for the steepness and intensity of the face at Ordino Arcal\u00eds. Ben\u2019s first place finish beat French skier Ugo Troubat, who wound up in second, and American skier Kai Jones, who wound up in third. Make sure you catch every winning run here . Watch Every Winning Run From The First Ever Freeride World Championships Categories: Europe Freeride World Tour Skiing",
       "pub_date": "2026-02-04",
-      "id": "f13386b275d0",
+      "id": "e990a376566c",
       "prefilter_business_score": 0,
       "is_macro_relevance": false,
       "source_boost": 2,
@@ -20,8 +20,35 @@
         "method": "keyword"
       },
       "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [],
+      "category": "winter-sports",
+      "secondary_categories": [
+        "hospitality",
+        "international"
+      ],
+      "approved_date": "2026-02-04"
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Christina Lustenberger and Team Complete First-Ever Ski Descent of Mount Deltaform\u2019s North Glacier, BC",
+      "url": "https://snowbrains.com/christina-lustenberger-and-team-complete-first-ever-ski-descent-of-mount-deltaforms-north-glacier-bc/",
+      "description": "View this post on Instagram A new line has been written into Canadian ski mountaineering history. On January 18, 2026, pro skier Christina Lustenberger\u2014widely known as \u201cLusti\u201d\u2014 along with partners Brette Harrington and Gee Pierrel completed the first-ever descent of the North Glacier on Mount Deltaform in British Columbia. The expedition unfolded deep in the Canadian Rockies and demanded a [\u2026] The post Christina Lustenberger and Team Complete First-Ever Ski Descent of Mount Deltaform\u2019s North Gla",
+      "content": "View this post on Instagram A new line has been written into Canadian ski mountaineering history . On January 18, 2026, pro skier Christina Lustenberger \u2014widely known as \u201cLusti\u201d\u2014 along with partners Brette Harrington and Gee Pierrel completed the first-ever descent of the North Glacier on Mount Deltaform in British Columbia. The expedition unfolded deep in the Canadian Rockies and demanded a full-spectrum commitment that blended endurance, technical climbing, and exposed skiing. According to details shared by Black Crows, Lusti\u2019s sponsor, the team departed the Moraine Lake trailhead early on January 17, hauling gear in toboggans for 17 kilometers in temperatures as low as \u201318\u00b0C (0\u00b0F). High winds sent spindrift cascading off the surrounding walls as they moved toward their objective, eventually establishing camp deep in the Valley of the Ten Peaks . Conditions shifted overnight. By morning, calm air allowed the team to begin their ascent of Mount Deltaform via a series of exposed ramps ",
+      "pub_date": "2026-02-04",
+      "id": "e7720a60f579",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "canada",
+      "secondary_categories": [
+        "transportation",
+        "hospitality"
+      ],
       "approved_date": "2026-02-04"
     },
     {
@@ -67,7 +94,7 @@
         "safety-incidents",
         "transportation"
       ],
-      "approved_date": "2026-02-03"
+      "approved_date": "2026-02-04"
     },
     {
       "source": "The Ski Guru",
@@ -90,31 +117,6 @@
       "secondary_categories": [
         "weather-snow",
         "international"
-      ],
-      "approved_date": "2026-02-03"
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "The 5 Largest Ski Areas In Minnesota",
-      "url": "https://unofficialnetworks.com/2026/02/03/minnesota-largest-ski-areas/",
-      "description": "Minnesota is home to 21 total ski areas. These 5 represent the largest in the Land of 10,000 Lakes.",
-      "content": "Minnesota is much more of a water and ice state than it is a mountain state, but quite a few ski areas spread throughout. In fact, according to statistics from the National Ski Areas Association, Minnesota is home to 21 total ski areas (as of the 2024/25 season) , more than Montana and Nevada combined. These 5 ski areas represent the largest in the Land of 10,000 Lakes. 5 Largest Ski Areas in Minnesota 5. Welch Village \u2013 140 acres 50 trails. 360 feet of vertical rise. 10 lifts. 4. Spirit Mountain \u2013 175 acres 22 trails. 700 feet of vertical. 5 lifts. 3. Giants Ridge \u2013 202 acres 35 trails. 500 feet of vertical. 5 lifts. View this post on Instagram A post shared by Giants Ridge (@giantsridge) 2. Afton Alps \u2013 300 acres 50 trails. 350 feet of vertical. 17 lifts. 1. Lutsen Mountains \u2013 1,000 acres 95 trails. 825 feet of vertical. 9 lifts. New Master Plan Shows Vision For Reviving Canadian Ski Resort Categories: Minnesota Skiing Snowboarding",
-      "pub_date": "2026-02-03",
-      "id": "e8d83bd69f56",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "canada",
-      "secondary_categories": [
-        "hospitality",
-        "resort-operations",
-        "transportation"
       ],
       "approved_date": "2026-02-04"
     },
@@ -142,36 +144,14 @@
       "approved_date": "2026-02-04"
     },
     {
-      "source": "Vail Resorts Investor Relations",
-      "title": "Vail Resorts Reports Certain Ski Season Metrics for the Season-to-Date Period Ended January 4, 2026",
-      "url": "https://investors.vailresorts.com/news-releases/news-release-details/vail-resorts-reports-certain-ski-season-metrics-season-date-30",
-      "description": "BROOMFIELD, Colo. , Jan. 15, 2026 /PRNewswire/ -- Vail Resorts, Inc. (NYSE: MTN) today reported certain ski season metrics from the beginning of the ski season through January 4, 2026 compared to the same prior year period through January 5, 2025 . The reported ski season metrics are for the",
-      "content": "BROOMFIELD, Colo. , Jan. 15, 2026 /PRNewswire/ -- Vail Resorts, Inc. (NYSE: MTN) today reported certain ski season metrics from the beginning of the ski season through January 4, 2026 compared to the same prior year period through January 5, 2025 . The reported ski season metrics are for the",
-      "pub_date": "2026-01-15",
-      "id": "005f00a2903d",
+      "source": "Unofficial Networks",
+      "title": "Ski Guides Sued For $14.5 Million Over Fatal Avalanche",
+      "url": "https://unofficialnetworks.com/2026/02/04/oregon-ski-guides-sued/",
+      "description": "The family of a skier who died from a backcountry avalanche is suing the guides and the cat-skiing company.",
+      "content": "Douglas County, Oregon \u2014 Another week, another Oregon ski industry lawsuit. Central Oregon Daily reports that the family of a deceased skier has sued a mountain guide company for $14.525 million over the actions that led to his death. The lawsuit is against the Diamond Lake Improvement Company (which owns the cat-skiing operations), the three guides, and Sierra Wilderness Seminars Inc. (the company from which the guides were hired). During the 2023-24 season, Brian Thomas Roberts was on a cat-skiing trip. Around that fateful day, the weather at Mt. Bailey featured freezing rain, heavy snow, and wind. Despite the avalanche report saying the risk was high, the trip leaders continued skiing that day because the report didn\u2019t apply to Mt. Bailey. These guides were reportedly inexperienced with Mt. Bailey, which at least one more experienced guide brought up as a concern. Brian was the fifth to ski down on the final run of the day, with each individual being sent down in one-minute interval",
+      "pub_date": "2026-02-04",
+      "id": "34aedb2d0f01",
       "prefilter_business_score": 0,
-      "source_boost": 5,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (boost: 5)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "business-investment",
-      "secondary_categories": [
-        "hospitality"
-      ],
-      "approved_date": "2026-01-15"
-    },
-    {
-      "source": "SIA - Snowsports Industries America",
-      "title": "Dry Conditions And Economic Headwinds Combining To Blow Back Bookings And Occupancy At Western Mountain Resorts",
-      "url": "https://www.snowsports.org/dry-conditions-and-economic-headwinds-combining-to-blow-back-bookings-and-occupancy-at-western-mountain-resorts/",
-      "description": "Winter Park, Colo. Dec. 16, 2025 \u2013 With the critically important holiday season coming up fast, Mother Nature has been unusually stingy with snowfall across most of the West. And despite the stock markets going gangbusters and savings accounts rising, other economic news, such as higher prices and lower job numbers have had a chilling [\u2026] The post Dry Conditions And Economic Headwinds Combining To Blow Back Bookings And Occupancy At Western Mountain Resorts appeared first on Snowsports Industrie",
-      "content": "Winter Park, Colo. Dec. 16, 2025 \u2013 With the critically important holiday season coming up fast, Mother Nature has been unusually stingy with snowfall across most of the West. And despite the stock markets going gangbusters and savings accounts rising, other economic news, such as higher prices and lower job numbers have had a chilling effect on consumer confidence and pushed it to its lowest level since the pandemic. The combination has had a significantly negative impact across 17 western mountain communities in seven western states. The sobering news was released yesterday by DestiMetrics* in their monthly Market Briefing from Inntopia and includes data from approximately 28,000 lodging units in Colorado, Utah, California, Nevada, Wyoming, Idaho, and Montana. As of Nov. 30, the booking pace during November plunged 19.8 percent for arrivals in the next six months with declines in arrivals for all six months. \u201cThis \u2018one-two\u2019 punch from low snowfall and a troubled economy was a signific",
-      "pub_date": "2025-12-16",
-      "id": "1d9a748dbb2c",
-      "prefilter_business_score": 1,
       "is_macro_relevance": false,
       "source_boost": 2,
       "score": 10,
@@ -180,20 +160,20 @@
         "method": "keyword"
       },
       "score_method": "keyword",
-      "category": "hospitality",
+      "category": "safety-incidents",
       "secondary_categories": [
-        "weather-snow"
+        "business-investment"
       ],
-      "approved_date": "2026-01-21"
+      "approved_date": "2026-02-04"
     },
     {
       "source": "SnowBrains",
-      "title": "Castle Mountain, AB, Report: Old School Vibes with Great Terrain",
-      "url": "https://snowbrains.com/castle-mountain-ab-report-old-school-vibes-with-great-terrain/",
-      "description": "Report from Sunday, February 1 The province of Alberta is home to several iconic international ski destinations, including Lake Louise, Banff Sunshine Village, and Marmot Basin. But one resort seems to fly under the radar: Castle Mountain, which sits at the southern end of the Canadian Rockies. It often gets overlooked when booking a ski vacation, as this old-school mountain is [\u2026] The post Castle Mountain, AB, Report: Old School Vibes with Great Terrain appeared first on SnowBrains .",
-      "content": "A view of the rolling foothills and prairies in the distance. | Credit Brett Currie/SnowBrains Report from Sunday, February 1 The province of Alberta is home to several iconic international ski destinations, including Lake Louise , Banff Sunshine Village , and Marmot Basin. But one resort seems to fly under the radar: Castle Mountain , which sits at the southern end of the Canadian Rockies. It often gets overlooked when booking a ski vacation, as this old-school mountain is not the easiest resort to get to\u2014but it is definitely worth the trip. Related: Major Terrain Expansions Unveiled at Castle Mountain Resort, AB The two and a half hour drive from Calgary was one of my favourite drives I have ever done. The drive takes you through the rolling foothills of Alberta with views of the never-ending prairies on your left-hand side and towering snowcapped rocky mountains to your right. A view of the main face of the resort. | Credit Brett Currie/SnowBrains With southern Alberta having a very",
+      "title": "Cloudmont Ski Resort in Alabama Opens for its 54th Season",
+      "url": "https://snowbrains.com/cloudmont-ski-resort-in-alabama-opens-for-its-54th-season/",
+      "description": "While a cold spell and major winter storms are disrupting the normal day-to-day for millions of Americans, the folks down in Alabama are celebrating. That\u2019s because Cloudmont Ski Resort, affectionately known as \u201cSki Bama,\u201d on Lookout Mountain in Mentone, Alabama, has finally opened its doors this winter season. Though this marks Cloudmont\u2019s 54th season, it has not always been smooth [\u2026] The post Cloudmont Ski Resort in Alabama Opens for its 54th Season appeared first on SnowBrains .",
+      "content": "Bluebird Day at Alabama\u2019s lone ski resort. Photo: Cloudmont Ski Resort Facebook While a cold spell and major winter storms are disrupting the normal day-to-day for millions of Americans, the folks down in Alabama are celebrating. That\u2019s because Cloudmont Ski Resort, affectionately known as \u201cSki Bama,\u201d on Lookout Mountain in Mentone, Alabama, has finally opened its doors this winter season. Though this marks Cloudmont\u2019s 54th season, it has not always been smooth sailing for Alabama\u2019s only ski resort. This year is a major comeback for the resort. It is the first time in the last five years that Cloudmont has opened for a full season . The resort owes this to the tremendous winter storm that plunged more than half the country into freezing temperatures, allowing it to make snow. Cloudmont relies on man-made snow as it only averages two to six inches of snowfall per year. Photo: Cloudmont Ski Resort Facebook Located at an elevation of 1,800 feet, Cloudmont is almost entirely reliant on sno",
       "pub_date": "2026-02-04",
-      "id": "15088e3c4bf9",
+      "id": "f10798ea5ff0",
       "prefilter_business_score": 0,
       "is_macro_relevance": false,
       "source_boost": 2,
@@ -203,10 +183,10 @@
         "method": "keyword"
       },
       "score_method": "keyword",
-      "category": "resort-operations",
+      "category": "weather-snow",
       "secondary_categories": [
-        "canada",
-        "hospitality"
+        "resort-operations",
+        "business-investment"
       ],
       "approved_date": "2026-02-04"
     },
@@ -235,30 +215,6 @@
       "approved_date": "2026-02-04"
     },
     {
-      "source": "Unofficial Networks",
-      "title": "New Master Plan Shows Vision For Reviving Canadian Ski Resort",
-      "url": "https://unofficialnetworks.com/2026/02/03/fortress-mountain-master-plan/",
-      "description": "In the latest attempt to revive a closed Alberta ski resort, focus would first be on creating various summer attractions.",
-      "content": "Alberta \u2014 Preliminary work on reviving a famous Alberta ski resort is underway. Late last year, Alberta announced the first ski resorts that are a part of their All-Season Resorts plan . This new law fast-tracks developments at ski resorts. The first ski resorts that were greenlit for this program include Castle Mountain, Nakiska, and the currently defunct Fortress Mountain Resort. While there is an active cat-skiing operation at Fortress, much of the property is abandoned. However, work is well underway on changing that. Public comments are now open on a proposal to revive Fortress and make it a four-season destination. The master plan, prepared by Ecosign, envisions the resort\u2019s first phase focused on summer visitation, with various activities and a resort village. Perhaps one of the most interesting aspects is a gondola to Whiskey Ridge. However, it\u2019s not for skiing; it\u2019s for sightseeing. Some potential activities in phase one include mountain biking, ziplining, a mountain coaster, ",
-      "pub_date": "2026-02-03",
-      "id": "57db45157faa",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "canada",
-      "secondary_categories": [
-        "safety-incidents",
-        "resort-operations"
-      ],
-      "approved_date": "2026-02-04"
-    },
-    {
       "source": "Snow Industry News",
       "title": "Alta Badia Gets Ready For Skiing In Spring In The Heart Of The Dolomites",
       "url": "https://www.snowindustrynews.com/articles/2026/feb/alta-badia-gets-ready-for-skiing-in-spring-in-the-heart-of-the-dolomites/",
@@ -279,7 +235,7 @@
         "international",
         "business-investment"
       ],
-      "approved_date": "2026-02-02"
+      "approved_date": "2026-02-04"
     },
     {
       "source": "The Ski Guru",
@@ -303,7 +259,7 @@
         "weather-snow",
         "international"
       ],
-      "approved_date": "2026-02-03"
+      "approved_date": "2026-02-04"
     },
     {
       "source": "Ski Area Management",
@@ -327,78 +283,55 @@
         "resort-operations",
         "transportation"
       ],
-      "approved_date": "2026-01-27"
+      "approved_date": "2026-02-04"
     },
     {
-      "source": "Vail Resorts Investor Relations",
-      "title": "Hot Dog Tower, Martini Lunch for Two and The Alpine Table: Vail Resorts Unveils New Era of Colorado Mountain Dining",
-      "url": "https://investors.vailresorts.com/news-releases/news-release-details/hot-dog-tower-martini-lunch-two-and-alpine-table-vail-resorts",
-      "description": "New food and beverage options blend bold flavors with local character across Breckenridge , Vail Mountain , Beaver Creek and Keystone New Outer Range Brewing Co. partnership taps Colorado's craft beer culture BRECKENRIDGE, Colo. , Dec. 18, 2025 /PRNewswire/ -- Coming this winter, Vail Resorts is",
-      "content": "New food and beverage options blend bold flavors with local character across Breckenridge , Vail Mountain , Beaver Creek and Keystone New Outer Range Brewing Co. partnership taps Colorado's craft beer culture BRECKENRIDGE, Colo. , Dec. 18, 2025 /PRNewswire/ -- Coming this winter, Vail Resorts is",
-      "pub_date": "2025-12-18",
-      "id": "e3960925d508",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 5,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +5)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "business-investment",
-      "secondary_categories": [],
-      "approved_date": "2026-01-21"
-    },
-    {
-      "source": "SIA - Snowsports Industries America",
-      "title": "K\u00e4stle USA Hires Industry Veteran Justin Heanue to Lead Sales Team",
-      "url": "https://www.snowsports.org/kastle-usa-hires-industry-veteran-justin-heanue-to-lead-sales-team/",
-      "description": "In its ongoing drive to introduce more of K\u00e4stle\u2019s ultra-premium and premium skis to the North American market, K\u00e4stle USA locks in a proven Alpine Sales Director in Justin Heanue. Portsmouth, NH, August 21, 2025 \u2013 Since it was relaunched to the North American market in 2007, K\u00e4stle has won renown as a top manufacturer [\u2026] The post K\u00e4stle USA Hires Industry Veteran Justin Heanue to Lead Sales Team appeared first on Snowsports Industries America .",
-      "content": "In its ongoing drive to introduce more of K\u00e4stle\u2019s ultra-premium and premium skis to the North American market, K\u00e4stle USA locks in a proven Alpine Sales Director in Justin Heanue. Portsmouth, NH, August 21, 2025 \u2013 Since it was relaunched to the North American market in 2007, K\u00e4stle has won renown as a top manufacturer of high-quality and high-performance skis for committed skiers. More recently, the brand has rededicated itself to the ultra premium and premium ski categories. To that order, effective immediately, Justin Heanue is K\u00e4stle USA\u2019s Alpine Sales Director, working alongside President and CEO Steven Poulin in the new Portsmouth headquarters. Heanue joins K\u00e4stle after a lifetime in the industry\u2014as a kid he cleaned rental boots at Pedigree Ski Shop under the supervision of his father. In college, he worked ski shop sales floors and fitted boots. A stint as a tech rep for Nordica followed. But his history with premium and ultra premium brands is most critical to K\u00e4stle\u2019s path for",
-      "pub_date": "2025-08-21",
-      "id": "49d7a2d2d62b",
+      "source": "Unofficial Networks",
+      "title": "Professional Skier Puts Exoskeleton To The Test In Ski Mountaineering Race",
+      "url": "https://unofficialnetworks.com/2026/02/04/ski-mountaineering-race-with-exoskeleton/",
+      "description": "Alex Hackel raced world record holding ski mountaineer Noah Dines with an exoskeleton to see if it would be enough to give him the win.",
+      "content": "Noah Dines is pretty much as close to superhuman as one can get in ski mountaineering. He holds the world record for the most human-powered vertical feet skied in a year, totaling 3,590,097 feet. For 348 days, Noah skied an average of more than 10,000 feet a day. Alex Hackel is a top-notch skier in his own right, earning both a bronze and silver medal at the X Games in Real Ski. He is not a ski mountaineer, but he decided to race Noah Dines in a skimo race anyways. He gave himself a little boost for the contest, though, wearing the Hypershell X Series exoskeleton to see if it could give him enough of a boost to beat a world record holder. Despite throwing several challenges in Noah\u2019s way, Alex having a mechanical boost, and Alex fully skipping a lap to make it a closer race, Noah was able to secure the win. That said, it is very interesting to see how the exoskeleton gave Alex an overall boost on the uphill, even if it wasn\u2019t enough to beat the world record holder. The Future Of Boot F",
+      "pub_date": "2026-02-04",
+      "id": "a715aac7b987",
       "prefilter_business_score": 0,
       "is_macro_relevance": false,
       "source_boost": 2,
-      "score": 8,
+      "score": 7,
       "score_details": {
         "reason": "Keyword scoring (source: +2)",
         "method": "keyword"
       },
       "score_method": "keyword",
-      "category": "business-investment",
+      "category": "resort-operations",
       "secondary_categories": [],
-      "approved_date": "2026-01-21"
+      "approved_date": "2026-02-04"
     },
     {
       "source": "SnowBrains",
-      "title": "Wrongful Death Lawsuit Filed After Skier Dies in Avalanche During Mount Bailey, OR, Cat-Skiing Trip",
-      "url": "https://snowbrains.com/family-of-skier-killed-in-oregon-avalanche-files-wrongful-death-lawisuit/",
-      "description": "A lawsuit was filed last Friday in Deschutes County Circuit Court and seeks over $14.5 million in damages for the death of Brian Thomas Roberts. He was killed in an avalanche on Mount Bailey near Diamond Lake, Oregon, on March 13, 2025. The lawsuit against Diamond Lake Improvement Company claims the conditions were too dangerous that day, and the guides told [\u2026] The post Wrongful Death Lawsuit Filed After Skier Dies in Avalanche During Mount Bailey, OR, Cat-Skiing Trip appeared first on SnowBrai",
-      "content": "The family of a skier killed by avalanche in central Oregon has filed a wrongful death lawsuit. | Courtesy: Roberts Family A lawsuit was filed last Friday in Deschutes County Circuit Court and seeks over $14.5 million in damages for the death of Brian Thomas Roberts. He was killed in an avalanche on Mount Bailey near Diamond Lake, Oregon, on March 13, 2025. The lawsuit against Diamond Lake Improvement Company claims the conditions were too dangerous that day, and the guides told the group to disregard the report indicating a high level of avalanche danger that day. The lawsuit also says that Roberts showed signs of life, but the guides did not have an AED to resuscitate him. It goes on to say that one former guide expressed concerns about using guides with little or no experience at Mt. Bailey, but those were dismissed. Named in the suit are the Diamond Lake Improvement Company, California-based Sierra Wilderness Seminars Inc., and guides David Cressman, Rebecca Bastian, and Jackson Kr",
-      "pub_date": "2026-02-03",
-      "id": "2420acd1b481",
+      "title": "Mali Noyes Becomes First Woman to Ski Comstock Couloir, Completing One of The Fifty Classic Ski Descents as it was Originally Intended",
+      "url": "https://snowbrains.com/mali-noyes-becomes-first-woman-to-ski-comstock-couloir-completing-one-of-the-fifty-classic-ski-descents-as-it-was-originally-intended/",
+      "description": "Pro skier Mali Noyes has completed the Comstock Couloir in British Columbia\u2019s Selkirk Mountains, becoming the first woman to descend the line and only the third skier overall to complete one of the most demanding objectives from The Fifty Classic Ski Descents of North America. What sets the descent apart is not only its rarity, but its fidelity to the [\u2026] The post Mali Noyes Becomes First Woman to Ski Comstock Couloir, Completing One of The Fifty Classic Ski Descents as it was Originally Intende",
+      "content": "Mali Noyes approaches the Comstock Couloir in British Columbia\u2019s Selkirk Mountains, where she became the first woman to ski the line and only the third person to complete the route as originally described in The Fifty Classic Ski Descents of North America. | Photo: Spencer Harkins Pro skier Mali Noyes has completed the Comstock Couloir in British Columbia\u2019s Selkirk Mountains, becoming the first woman to descend the line and only the third skier overall to complete one of the most demanding objectives from The Fifty Classic Ski Descents of North America . What sets the descent apart is not only its rarity, but its fidelity to the original vision of the route. The Comstock Couloir was first skied by Greg Hill and partners and published in The Fifty Classic Ski Descents of North America as a full-value ski mountaineering objective. Rather than a single couloir lap, the route calls for a long and committing traverse of Dawson Ridge, a summit of Mount Dawson ( the second-highest peak in the",
+      "pub_date": "2026-02-04",
+      "id": "412281253ee6",
       "prefilter_business_score": 0,
       "is_macro_relevance": false,
       "source_boost": 2,
-      "score": 10,
+      "score": 9,
       "score_details": {
         "reason": "Keyword scoring (source: +2)",
         "method": "keyword"
       },
       "score_method": "keyword",
-      "category": "safety-incidents",
-      "secondary_categories": [
-        "business-investment"
-      ],
-      "approved_date": "2026-02-03"
+      "category": "canada",
+      "secondary_categories": [],
+      "approved_date": "2026-02-04"
     },
     {
       "source": "PlanetSKI",
       "title": "World Cup Alpine Ski Racing at Crans-Montana",
       "url": "https://planetski.eu/2026/02/03/world-cup-alpine-ski-racing-at-crans-montana/",
-      "description": "PlanetSKI was slopeside at the Swiss resort last weekend for the final World Cup races before the Winter Olympics get underway this week. NEW The post World Cup Alpine Ski Racing at Crans-Montana appeared first on PlanetSKI .",
+      "description": "PlanetSKI was slopeside at the Swiss resort last weekend for the final World Cup races before the Winter Olympics get underway this week. The post World Cup Alpine Ski Racing at Crans-Montana appeared first on PlanetSKI .",
       "content": "Friday saw some snowfall, but sadly it led to the cancellation of the Women\u2019s Downhill race. It followed several crashes including one to the current leader and favourite for Olympic gold \u2013 Lindsey Vonn . It remains to be seen if she can take part in the Olympic Downhill next weekend. Vonn\u2019s Olympic return in doubt after crash The skies cleared overnight with glorious bluebird conditions on the Saturday and Sunday. World Cup racing at Crans-Montana. Image \u00a9 PlanetSKI Crans-Montana went ahead with the World Cup races after much thought following the fire in a bar in the resort on New Year\u2019s Eve. Over the race weekend it was confirmed that another person had died from their injuries, taking the toll to 41. Death toll from Crans-Montana fire rises to 41 Tributes were paid to those affected and changes were made to the schedule. Crans-Montana remembers The finish area was stripped of its usual vibrant color and advertising. Instead, white and black signs of mourning that read \u201cOur thoughts",
       "pub_date": "2026-02-03",
       "id": "68a3cee612b7",
@@ -417,27 +350,6 @@
         "safety-incidents",
         "weather-snow"
       ],
-      "approved_date": "2026-02-03"
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "Bipedal Skiing Robot Shreds Northeast China",
-      "url": "https://unofficialnetworks.com/2026/02/03/bipedal-skiing-robot-shreds-northeast-china/",
-      "description": "TRON 1 looks a lot like a Star Wars AT-ST Walker trudging across the snow-covered plains of Hoth.",
-      "content": "If you needed any reminder that you are living in the 2026, look no further than the slopes of Northeast China where bidep biomimetic motion controlled robots are craving down the mountain. The featured robot is called the TRON 1 and looks a lot like a S tar Wars AT-ST Walker trudging across the snow-covered plains of Hoth. The TRON 1 is advertised as the first multi-modal biped robot and \u201cthe gateway to humanoid RL research.\u201d It is designed for efficient switching of different foot-ends for flexible combinations (including in this case ski boot) and automatic hardware recognition and software adaptation. The TRON 1 seemed to do well in -4\u00b0F temps of Northern China with its dynamic balance and terrain adaptation on full display. While there is a healthy segment of the skiing public who seek to disconnect with technology when they are in the mountains, it seems that is getting harder and harder each coming winter. Tough to tell how skiing robots might be utilized in the future of ski re",
-      "pub_date": "2026-02-03",
-      "id": "ffc808f8ba77",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 7,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "resort-operations",
-      "secondary_categories": [],
       "approved_date": "2026-02-04"
     },
     {
@@ -460,7 +372,7 @@
       "secondary_categories": [
         "international"
       ],
-      "approved_date": "2026-02-02"
+      "approved_date": "2026-02-04"
     },
     {
       "source": "The Ski Guru",
@@ -485,7 +397,7 @@
         "transportation",
         "winter-sports"
       ],
-      "approved_date": "2026-01-31"
+      "approved_date": "2026-02-04"
     },
     {
       "source": "Ski Area Management",
@@ -508,49 +420,7 @@
       "secondary_categories": [
         "resort-operations"
       ],
-      "approved_date": "2026-01-24"
-    },
-    {
-      "source": "Vail Resorts Investor Relations",
-      "title": "Heavenly Mountain Resort Celebrates 70th Anniversary with Jam-Packed Lineup of High-Energy Events and Music All Season Long",
-      "url": "https://investors.vailresorts.com/news-releases/news-release-details/heavenly-mountain-resort-celebrates-70th-anniversary-jam-packed",
-      "description": "Celebrations kick off Dec. 20 with a headlining DJ set with Foster the People Media Assets: Heavenly Signature Photos SOUTH LAKE TAHOE, Calif. , Dec. 16, 2025 /PRNewswire/ -- Heavenly Mountain Resort turns 70 this winter, and with skiing and riding now underway, the party is just getting started.",
-      "content": "Celebrations kick off Dec. 20 with a headlining DJ set with Foster the People Media Assets: Heavenly Signature Photos SOUTH LAKE TAHOE, Calif. , Dec. 16, 2025 /PRNewswire/ -- Heavenly Mountain Resort turns 70 this winter, and with skiing and riding now underway, the party is just getting started.",
-      "pub_date": "2025-12-16",
-      "id": "96801cd03f7a",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 5,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +5)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "ski-history",
-      "secondary_categories": [],
-      "approved_date": "2026-01-21"
-    },
-    {
-      "source": "SIA - Snowsports Industries America",
-      "title": "The Winter Sports Sustainability Network\u2019s Annual Meeting: A Report from Munich",
-      "url": "https://www.snowsports.org/the-winter-sports-sustainability-networks-annual-meeting-a-report-from-munich/",
-      "description": "Last week, the SIA team attended the Ski Industry Climate Summit, hosted by Atomic, and the Winter Sports Sustainability Network\u2019s (WSN) winter meeting during ISPO in Munich. Over 200 ski industry leaders came together, showcasing remarkable collaboration among the sector\u2019s biggest hardgoods brands \u2013 united to share ideas, data, and best practices. The focus was [\u2026] The post The Winter Sports Sustainability Network\u2019s Annual Meeting: A Report from Munich appeared first on Snowsports Industries Am",
-      "content": "Last week, the SIA team attended the Ski Industry Climate Summit, hosted by Atomic, and the Winter Sports Sustainability Network\u2019s (WSN) winter meeting during ISPO in Munich. Over 200 ski industry leaders came together, showcasing remarkable collaboration among the sector\u2019s biggest hardgoods brands \u2013 united to share ideas, data, and best practices. The focus was clear: the most effective way that the global winter outdoor industry can implement large-scale sustainability and climate action measures is by coming together to collaborate and share the expertise we have. A large part of this urgency is driven by the upcoming EU sustainability regulations, which will enforce stricter requirements on disclosure, traceability, waste, circularity, deforestation, and more. Notably, these regulations affect not only EU-based businesses but also U.S. companies operating in the European market. SIA\u2019s role at the summit was to deepen understanding of these changes, highlight the responsibilities of",
-      "pub_date": "2024-12-12",
-      "id": "c0daeacca788",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 8,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "international",
-      "secondary_categories": [],
-      "approved_date": "2026-01-21"
+      "approved_date": "2026-02-04"
     }
   ]
 }
