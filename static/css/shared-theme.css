@@ -21,7 +21,7 @@
     /* Text colors */
     --text-primary: #e8ecf2;
     --text-secondary: #9ca3b0;  /* Improved contrast: 4.5:1 on --bg-card */
-    --text-muted: #7d8594;      /* Improved contrast: 4.5:1 on --bg-deep */
+    --text-muted: #8a919e;      /* Improved contrast: 4.5:1 on --bg-elevated */
 
     /* Accent colors - cold/blue spectrum */
     --accent-cold: #3b82f6;
