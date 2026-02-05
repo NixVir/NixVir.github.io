@@ -188,20 +188,20 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
-        .metric-card h4 {
+        .metric-card h3 {
             margin: 0 0 0.5rem 0;
             font-size: 0.85rem;
             font-weight: 500;
             color: var(--text-secondary);
         }
 
-        .metric-card h4 a {
+        .metric-card h3 a {
             color: var(--text-secondary);
             text-decoration: none;
             transition: color 0.2s;
         }
 
-        .metric-card h4 a:hover {
+        .metric-card h3 a:hover {
             color: var(--accent-blue-bright);
         }
 
@@ -553,14 +553,14 @@
             <div class="accordion-content">
                 <div class="accordion-inner">
                     <div class="dashboard-grid">
-                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/GDP" target="_blank" rel="noopener">GDP (Quarterly)</a></h4><div id="gdp">Loading...</div><div class="chart-container"><canvas id="chart-gdp"></canvas></div></div>
-                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/UMCSENT" target="_blank" rel="noopener">Consumer Confidence</a></h4><div id="consumer-confidence">Loading...</div><div class="chart-container"><canvas id="chart-cc"></canvas></div></div>
-                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/CPIAUCSL" target="_blank" rel="noopener">CPI (Consumer Price Index)</a></h4><div id="cpi">Loading...</div><div class="chart-container"><canvas id="chart-cpi"></canvas></div></div>
-                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/UNRATE" target="_blank" rel="noopener">Unemployment Rate</a></h4><div id="unemployment">Loading...</div><div class="chart-container"><canvas id="chart-unemp"></canvas></div></div>
-                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/PAYEMS" target="_blank" rel="noopener">Employment (Thousands)</a></h4><div id="employment">Loading...</div><div class="chart-container"><canvas id="chart-emp"></canvas></div></div>
-                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/CES0500000003" target="_blank" rel="noopener">Average Hourly Wages</a></h4><div id="wages">Loading...</div><div class="chart-container"><canvas id="chart-wages"></canvas></div></div>
-                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/HOUST" target="_blank" rel="noopener">Housing Starts (Thousands)</a></h4><div id="housing">Loading...</div><div class="chart-container"><canvas id="chart-housing"></canvas></div></div>
-                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/BKPPIWCI" target="_blank" rel="noopener">Bankruptcy Activity (PPI)</a></h4><div id="bankruptcy">Loading...</div><div class="chart-container"><canvas id="chart-bankruptcy"></canvas></div></div>
+                        <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/GDP" target="_blank" rel="noopener">GDP (Quarterly)</a></h3><div id="gdp">Loading...</div><div class="chart-container"><canvas id="chart-gdp"></canvas></div></div>
+                        <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/UMCSENT" target="_blank" rel="noopener">Consumer Confidence</a></h3><div id="consumer-confidence">Loading...</div><div class="chart-container"><canvas id="chart-cc"></canvas></div></div>
+                        <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/CPIAUCSL" target="_blank" rel="noopener">CPI (Consumer Price Index)</a></h3><div id="cpi">Loading...</div><div class="chart-container"><canvas id="chart-cpi"></canvas></div></div>
+                        <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/UNRATE" target="_blank" rel="noopener">Unemployment Rate</a></h3><div id="unemployment">Loading...</div><div class="chart-container"><canvas id="chart-unemp"></canvas></div></div>
+                        <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/PAYEMS" target="_blank" rel="noopener">Employment (Thousands)</a></h3><div id="employment">Loading...</div><div class="chart-container"><canvas id="chart-emp"></canvas></div></div>
+                        <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/CES0500000003" target="_blank" rel="noopener">Average Hourly Wages</a></h3><div id="wages">Loading...</div><div class="chart-container"><canvas id="chart-wages"></canvas></div></div>
+                        <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/HOUST" target="_blank" rel="noopener">Housing Starts (Thousands)</a></h3><div id="housing">Loading...</div><div class="chart-container"><canvas id="chart-housing"></canvas></div></div>
+                        <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/BKPPIWCI" target="_blank" rel="noopener">Bankruptcy Activity (PPI)</a></h3><div id="bankruptcy">Loading...</div><div class="chart-container"><canvas id="chart-bankruptcy"></canvas></div></div>
                     </div>
                 </div>
             </div>
@@ -576,12 +576,12 @@
                 <div class="accordion-inner">
                     <div class="subsection-header">Major Indices</div>
                     <div class="dashboard-grid">
-                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/SP500" target="_blank" rel="noopener">S&P 500 Index</a></h4><div id="sp500">Loading...</div><div class="chart-container"><canvas id="chart-spy"></canvas></div></div>
-                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/DJIA" target="_blank" rel="noopener">Dow Jones Industrial</a></h4><div id="djia">Loading...</div><div class="chart-container"><canvas id="chart-djia"></canvas></div></div>
-                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/NASDAQCOM" target="_blank" rel="noopener">NASDAQ Composite</a></h4><div id="nasdaq">Loading...</div><div class="chart-container"><canvas id="chart-nasdaq"></canvas></div></div>
-                        <div class="metric-card"><h4>Hotel & Lodging REITs</h4><div id="hotel-reits">Loading...</div><div class="chart-container"><canvas id="chart-hotel"></canvas></div></div>
-                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/DFF" target="_blank" rel="noopener">Fed Funds Rate</a></h4><div id="fed-rate">Loading...</div><div class="chart-container"><canvas id="chart-fed"></canvas></div></div>
-                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/DGS10" target="_blank" rel="noopener">10-Year Treasury Yield</a></h4><div id="treasury">Loading...</div><div class="chart-container"><canvas id="chart-treasury"></canvas></div></div>
+                        <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/SP500" target="_blank" rel="noopener">S&P 500 Index</a></h3><div id="sp500">Loading...</div><div class="chart-container"><canvas id="chart-spy"></canvas></div></div>
+                        <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/DJIA" target="_blank" rel="noopener">Dow Jones Industrial</a></h3><div id="djia">Loading...</div><div class="chart-container"><canvas id="chart-djia"></canvas></div></div>
+                        <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/NASDAQCOM" target="_blank" rel="noopener">NASDAQ Composite</a></h3><div id="nasdaq">Loading...</div><div class="chart-container"><canvas id="chart-nasdaq"></canvas></div></div>
+                        <div class="metric-card"><h3>Hotel & Lodging REITs</h3><div id="hotel-reits">Loading...</div><div class="chart-container"><canvas id="chart-hotel"></canvas></div></div>
+                        <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/DFF" target="_blank" rel="noopener">Fed Funds Rate</a></h3><div id="fed-rate">Loading...</div><div class="chart-container"><canvas id="chart-fed"></canvas></div></div>
+                        <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/DGS10" target="_blank" rel="noopener">10-Year Treasury Yield</a></h3><div id="treasury">Loading...</div><div class="chart-container"><canvas id="chart-treasury"></canvas></div></div>
                     </div>
 
                     <div class="subsection-header purple">Magnificent 7 Stocks</div>
@@ -609,48 +609,48 @@
                     <div class="subsection-header">🇺🇸 US Resort Perspective</div>
                     <div class="subsection-desc">How attractive is skiing in the US for international visitors? Higher = better.</div>
                     <div class="dashboard-grid">
-                        <div class="metric-card"><h4>100 CAD buys...</h4><div id="pp-cad">Loading...</div><div class="chart-container"><canvas id="chart-pp-cad"></canvas></div></div>
-                        <div class="metric-card"><h4>100 MXN buys...</h4><div id="pp-mxn">Loading...</div><div class="chart-container"><canvas id="chart-pp-mxn"></canvas></div></div>
-                        <div class="metric-card"><h4>100 EUR buys...</h4><div id="pp-eur">Loading...</div><div class="chart-container"><canvas id="chart-pp-eur"></canvas></div></div>
-                        <div class="metric-card"><h4>100 GBP buys...</h4><div id="pp-gbp">Loading...</div><div class="chart-container"><canvas id="chart-pp-gbp"></canvas></div></div>
-                        <div class="metric-card"><h4>100 BRL buys...</h4><div id="pp-brl">Loading...</div><div class="chart-container"><canvas id="chart-pp-brl"></canvas></div></div>
-                        <div class="metric-card"><h4>100 AUD buys...</h4><div id="pp-aud">Loading...</div><div class="chart-container"><canvas id="chart-pp-aud"></canvas></div></div>
+                        <div class="metric-card"><h3>100 CAD buys...</h3><div id="pp-cad">Loading...</div><div class="chart-container"><canvas id="chart-pp-cad"></canvas></div></div>
+                        <div class="metric-card"><h3>100 MXN buys...</h3><div id="pp-mxn">Loading...</div><div class="chart-container"><canvas id="chart-pp-mxn"></canvas></div></div>
+                        <div class="metric-card"><h3>100 EUR buys...</h3><div id="pp-eur">Loading...</div><div class="chart-container"><canvas id="chart-pp-eur"></canvas></div></div>
+                        <div class="metric-card"><h3>100 GBP buys...</h3><div id="pp-gbp">Loading...</div><div class="chart-container"><canvas id="chart-pp-gbp"></canvas></div></div>
+                        <div class="metric-card"><h3>100 BRL buys...</h3><div id="pp-brl">Loading...</div><div class="chart-container"><canvas id="chart-pp-brl"></canvas></div></div>
+                        <div class="metric-card"><h3>100 AUD buys...</h3><div id="pp-aud">Loading...</div><div class="chart-container"><canvas id="chart-pp-aud"></canvas></div></div>
                     </div>
 
                     <div class="subsection-header red">🇨🇦 Canadian Resort Perspective</div>
                     <div class="subsection-desc">How attractive is Canada for US/international visitors? + Domestic retention signal.</div>
                     <div class="dashboard-grid">
-                        <div class="metric-card"><h4>$100 USD buys (CAD)</h4><div id="pp-usd-cad">Loading...</div><div class="chart-container"><canvas id="chart-pp-usd-cad"></canvas></div></div>
-                        <div class="metric-card"><h4>Domestic Retention</h4><div id="ca-retention">Loading...</div><div class="chart-container"><canvas id="chart-ca-retention"></canvas></div></div>
-                        <div class="metric-card"><h4>100 EUR buys (CAD)</h4><div id="pp-eur-cad">Loading...</div><div class="chart-container"><canvas id="chart-pp-eur-cad"></canvas></div></div>
-                        <div class="metric-card"><h4>100 GBP buys (CAD)</h4><div id="pp-gbp-cad">Loading...</div><div class="chart-container"><canvas id="chart-pp-gbp-cad"></canvas></div></div>
+                        <div class="metric-card"><h3>$100 USD buys (CAD)</h3><div id="pp-usd-cad">Loading...</div><div class="chart-container"><canvas id="chart-pp-usd-cad"></canvas></div></div>
+                        <div class="metric-card"><h3>Domestic Retention</h3><div id="ca-retention">Loading...</div><div class="chart-container"><canvas id="chart-ca-retention"></canvas></div></div>
+                        <div class="metric-card"><h3>100 EUR buys (CAD)</h3><div id="pp-eur-cad">Loading...</div><div class="chart-container"><canvas id="chart-pp-eur-cad"></canvas></div></div>
+                        <div class="metric-card"><h3>100 GBP buys (CAD)</h3><div id="pp-gbp-cad">Loading...</div><div class="chart-container"><canvas id="chart-pp-gbp-cad"></canvas></div></div>
                     </div>
 
                     <div class="subsection-header purple">💎 Luxury Ski Markets</div>
                     <div class="subsection-desc">Ultra-high-net-worth markets. Less price-elastic but affects ancillary spend, length of stay, and party size.</div>
                     <div class="dashboard-grid">
-                        <div class="metric-card"><h4>100 HKD buys...</h4><div id="pp-hkd">Loading...</div><div class="chart-container"><canvas id="chart-pp-hkd"></canvas></div></div>
-                        <div class="metric-card"><h4>100 SGD buys...</h4><div id="pp-sgd">Loading...</div><div class="chart-container"><canvas id="chart-pp-sgd"></canvas></div></div>
-                        <div class="metric-card"><h4>100 AED buys...</h4><div id="pp-aed">Loading...</div><div class="chart-container"><canvas id="chart-pp-aed"></canvas></div></div>
-                        <div class="metric-card"><h4>100 CNY buys...</h4><div id="pp-cny">Loading...</div><div class="chart-container"><canvas id="chart-pp-cny"></canvas></div></div>
-                        <div class="metric-card"><h4>100 JPY buys...</h4><div id="pp-jpy">Loading...</div><div class="chart-container"><canvas id="chart-pp-jpy"></canvas></div></div>
-                        <div class="metric-card"><h4>100 INR buys...</h4><div id="pp-inr">Loading...</div><div class="chart-container"><canvas id="chart-pp-inr"></canvas></div></div>
-                        <div class="metric-card"><h4>100 RUB buys...</h4><div id="pp-rub">Loading...</div><div class="chart-container"><canvas id="chart-pp-rub"></canvas></div></div>
+                        <div class="metric-card"><h3>100 HKD buys...</h3><div id="pp-hkd">Loading...</div><div class="chart-container"><canvas id="chart-pp-hkd"></canvas></div></div>
+                        <div class="metric-card"><h3>100 SGD buys...</h3><div id="pp-sgd">Loading...</div><div class="chart-container"><canvas id="chart-pp-sgd"></canvas></div></div>
+                        <div class="metric-card"><h3>100 AED buys...</h3><div id="pp-aed">Loading...</div><div class="chart-container"><canvas id="chart-pp-aed"></canvas></div></div>
+                        <div class="metric-card"><h3>100 CNY buys...</h3><div id="pp-cny">Loading...</div><div class="chart-container"><canvas id="chart-pp-cny"></canvas></div></div>
+                        <div class="metric-card"><h3>100 JPY buys...</h3><div id="pp-jpy">Loading...</div><div class="chart-container"><canvas id="chart-pp-jpy"></canvas></div></div>
+                        <div class="metric-card"><h3>100 INR buys...</h3><div id="pp-inr">Loading...</div><div class="chart-container"><canvas id="chart-pp-inr"></canvas></div></div>
+                        <div class="metric-card"><h3>100 RUB buys...</h3><div id="pp-rub">Loading...</div><div class="chart-container"><canvas id="chart-pp-rub"></canvas></div></div>
                     </div>
 
                     <div class="subsection-header orange">🏔️ Competitive Destination Comparison</div>
                     <div class="subsection-desc">How does CAD compare vs Alps (EUR/CHF) and Niseko (JPY)?</div>
                     <div class="dashboard-grid">
-                        <div class="metric-card"><h4>$100 USD → Whistler (CAD)</h4><div id="comp-whistler">Loading...</div><div class="chart-container"><canvas id="chart-comp-whistler"></canvas></div></div>
-                        <div class="metric-card"><h4>$100 USD → Alps/France (EUR)</h4><div id="comp-alps-eur">Loading...</div><div class="chart-container"><canvas id="chart-comp-alps-eur"></canvas></div></div>
-                        <div class="metric-card"><h4>$100 USD → Swiss Alps (CHF)</h4><div id="comp-swiss">Loading...</div><div class="chart-container"><canvas id="chart-comp-swiss"></canvas></div></div>
-                        <div class="metric-card"><h4>$100 USD → Niseko (JPY)</h4><div id="comp-niseko">Loading...</div><div class="chart-container"><canvas id="chart-comp-niseko"></canvas></div></div>
+                        <div class="metric-card"><h3>$100 USD → Whistler (CAD)</h3><div id="comp-whistler">Loading...</div><div class="chart-container"><canvas id="chart-comp-whistler"></canvas></div></div>
+                        <div class="metric-card"><h3>$100 USD → Alps/France (EUR)</h3><div id="comp-alps-eur">Loading...</div><div class="chart-container"><canvas id="chart-comp-alps-eur"></canvas></div></div>
+                        <div class="metric-card"><h3>$100 USD → Swiss Alps (CHF)</h3><div id="comp-swiss">Loading...</div><div class="chart-container"><canvas id="chart-comp-swiss"></canvas></div></div>
+                        <div class="metric-card"><h3>$100 USD → Niseko (JPY)</h3><div id="comp-niseko">Loading...</div><div class="chart-container"><canvas id="chart-comp-niseko"></canvas></div></div>
                     </div>
 
                     <div class="subsection-header" style="border-color: var(--text-muted);">Dollar Strength Indices (Reference)</div>
                     <div class="dashboard-grid">
-                        <div class="metric-card"><h4>Trade-Weighted USD (Nominal)</h4><div id="trade-weighted">Loading...</div><div class="chart-container"><canvas id="chart-tw"></canvas></div></div>
-                        <div class="metric-card"><h4>Trade-Weighted USD (Real)</h4><div id="real-trade-weighted">Loading...</div><div class="chart-container"><canvas id="chart-rtw"></canvas></div></div>
+                        <div class="metric-card"><h3>Trade-Weighted USD (Nominal)</h3><div id="trade-weighted">Loading...</div><div class="chart-container"><canvas id="chart-tw"></canvas></div></div>
+                        <div class="metric-card"><h3>Trade-Weighted USD (Real)</h3><div id="real-trade-weighted">Loading...</div><div class="chart-container"><canvas id="chart-rtw"></canvas></div></div>
                     </div>
                 </div>
             </div>
@@ -665,10 +665,10 @@
             <div class="accordion-content">
                 <div class="accordion-inner">
                     <div class="dashboard-grid">
-                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/GOLDAMGBD228NLBM" target="_blank" rel="noopener">Gold ($/oz)</a></h4><div id="gold">Loading...</div><div class="chart-container"><canvas id="chart-gold"></canvas></div></div>
-                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/DCOILWTICO" target="_blank" rel="noopener">Crude Oil WTI ($/barrel)</a></h4><div id="crude-oil">Loading...</div><div class="chart-container"><canvas id="chart-oil"></canvas></div></div>
-                        <div class="metric-card"><h4><a href="https://fred.stlouisfed.org/series/DHHNGSP" target="_blank" rel="noopener">Natural Gas ($/MMBtu)</a></h4><div id="natural-gas">Loading...</div><div class="chart-container"><canvas id="chart-gas"></canvas></div></div>
-                        <div class="metric-card"><h4>Copper ($/lb)</h4><div id="copper">Loading...</div><div class="chart-container"><canvas id="chart-copper"></canvas></div></div>
+                        <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/GOLDAMGBD228NLBM" target="_blank" rel="noopener">Gold ($/oz)</a></h3><div id="gold">Loading...</div><div class="chart-container"><canvas id="chart-gold"></canvas></div></div>
+                        <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/DCOILWTICO" target="_blank" rel="noopener">Crude Oil WTI ($/barrel)</a></h3><div id="crude-oil">Loading...</div><div class="chart-container"><canvas id="chart-oil"></canvas></div></div>
+                        <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/DHHNGSP" target="_blank" rel="noopener">Natural Gas ($/MMBtu)</a></h3><div id="natural-gas">Loading...</div><div class="chart-container"><canvas id="chart-gas"></canvas></div></div>
+                        <div class="metric-card"><h3>Copper ($/lb)</h3><div id="copper">Loading...</div><div class="chart-container"><canvas id="chart-copper"></canvas></div></div>
                     </div>
                 </div>
             </div>
@@ -688,14 +688,14 @@
                         <strong>Why these states?</strong> Selected for major ski markets: <em>Colorado/Utah/Wyoming</em> (Rocky Mountain), <em>California</em> (Tahoe/Mammoth), <em>Vermont/New Hampshire</em> (Northeast), and <em>Washington</em> (Pacific Northwest).
                     </div>
                     <div class="dashboard-grid">
-                        <div class="metric-card"><h4>U.S. Average</h4><div id="elec-us">Loading...</div><div class="chart-container"><canvas id="chart-elec-us"></canvas></div></div>
-                        <div class="metric-card"><h4>Colorado (Rockies)</h4><div id="elec-co">Loading...</div><div class="chart-container"><canvas id="chart-elec-co"></canvas></div></div>
-                        <div class="metric-card"><h4>Utah (Wasatch)</h4><div id="elec-ut">Loading...</div><div class="chart-container"><canvas id="chart-elec-ut"></canvas></div></div>
-                        <div class="metric-card"><h4>California (Tahoe/Mammoth)</h4><div id="elec-ca">Loading...</div><div class="chart-container"><canvas id="chart-elec-ca"></canvas></div></div>
-                        <div class="metric-card"><h4>Vermont</h4><div id="elec-vt">Loading...</div><div class="chart-container"><canvas id="chart-elec-vt"></canvas></div></div>
-                        <div class="metric-card"><h4>New Hampshire</h4><div id="elec-nh">Loading...</div><div class="chart-container"><canvas id="chart-elec-nh"></canvas></div></div>
-                        <div class="metric-card"><h4>Washington (PNW)</h4><div id="elec-wa">Loading...</div><div class="chart-container"><canvas id="chart-elec-wa"></canvas></div></div>
-                        <div class="metric-card"><h4>Wyoming (Jackson)</h4><div id="elec-wy">Loading...</div><div class="chart-container"><canvas id="chart-elec-wy"></canvas></div></div>
+                        <div class="metric-card"><h3>U.S. Average</h3><div id="elec-us">Loading...</div><div class="chart-container"><canvas id="chart-elec-us"></canvas></div></div>
+                        <div class="metric-card"><h3>Colorado (Rockies)</h3><div id="elec-co">Loading...</div><div class="chart-container"><canvas id="chart-elec-co"></canvas></div></div>
+                        <div class="metric-card"><h3>Utah (Wasatch)</h3><div id="elec-ut">Loading...</div><div class="chart-container"><canvas id="chart-elec-ut"></canvas></div></div>
+                        <div class="metric-card"><h3>California (Tahoe/Mammoth)</h3><div id="elec-ca">Loading...</div><div class="chart-container"><canvas id="chart-elec-ca"></canvas></div></div>
+                        <div class="metric-card"><h3>Vermont</h3><div id="elec-vt">Loading...</div><div class="chart-container"><canvas id="chart-elec-vt"></canvas></div></div>
+                        <div class="metric-card"><h3>New Hampshire</h3><div id="elec-nh">Loading...</div><div class="chart-container"><canvas id="chart-elec-nh"></canvas></div></div>
+                        <div class="metric-card"><h3>Washington (PNW)</h3><div id="elec-wa">Loading...</div><div class="chart-container"><canvas id="chart-elec-wa"></canvas></div></div>
+                        <div class="metric-card"><h3>Wyoming (Jackson)</h3><div id="elec-wy">Loading...</div><div class="chart-container"><canvas id="chart-elec-wy"></canvas></div></div>
                     </div>
                 </div>
             </div>
@@ -719,7 +719,7 @@
                     <div class="subsection-desc">Canadian visitors entering US — all land border crossings combined. <span id="border-vs-2019-badge" class="change-pill" style="margin-left: 0.5rem;"></span></div>
                     <div class="dashboard-grid">
                         <div class="metric-card" style="grid-column: span 2;">
-                            <h4>US/Canada Total (Monthly) <span class="tooltip-icon" title="Total personal vehicle passengers entering US from Canada">ⓘ</span></h4>
+                            <h3>US/Canada Total (Monthly) <span class="tooltip-icon" title="Total personal vehicle passengers entering US from Canada">ⓘ</span></h3>
                             <div id="border-national">Loading...</div>
                             <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">CAD/USD trend shown in orange overlay</div>
                             <div class="chart-container" style="height: 140px;"><canvas id="chart-border-national"></canvas></div>
@@ -733,12 +733,12 @@
                     <div class="subsection-header green">US Entry by State</div>
                     <div class="subsection-desc">State-level crossings for major ski market corridors. Shaded regions indicate ski season (Nov-Apr).</div>
                     <div class="dashboard-grid">
-                        <div class="metric-card"><h4>Montana <span class="tooltip-icon" title="Sweetgrass, Roosville. Resorts: Big Sky, Whitefish, Bridger Bowl">ⓘ</span></h4><div id="border-montana">Loading...</div><div class="chart-container"><canvas id="chart-border-montana"></canvas></div></div>
-                        <div class="metric-card"><h4>Vermont <span class="tooltip-icon" title="Derby Line, Highgate Springs. Resorts: Stowe, Jay Peak, Killington">ⓘ</span></h4><div id="border-vermont">Loading...</div><div class="chart-container"><canvas id="chart-border-vermont"></canvas></div></div>
-                        <div class="metric-card"><h4>Washington <span class="tooltip-icon" title="Blaine, Sumas. Resorts: Mt. Baker, Stevens Pass, Crystal Mountain">ⓘ</span></h4><div id="border-washington">Loading...</div><div class="chart-container"><canvas id="chart-border-washington"></canvas></div></div>
-                        <div class="metric-card"><h4>New York <span class="tooltip-icon" title="Champlain. Resorts: Whiteface, Gore Mountain, Lake Placid">ⓘ</span></h4><div id="border-ny">Loading...</div><div class="chart-container"><canvas id="chart-border-ny"></canvas></div></div>
-                        <div class="metric-card"><h4>Maine <span class="tooltip-icon" title="Houlton, Calais. Resorts: Sugarloaf, Sunday River">ⓘ</span></h4><div id="border-maine">Loading...</div><div class="chart-container"><canvas id="chart-border-maine"></canvas></div></div>
-                        <div class="metric-card"><h4>Idaho <span class="tooltip-icon" title="Eastport. Resorts: Sun Valley, Schweitzer">ⓘ</span></h4><div id="border-idaho">Loading...</div><div class="chart-container"><canvas id="chart-border-idaho"></canvas></div></div>
+                        <div class="metric-card"><h3>Montana <span class="tooltip-icon" title="Sweetgrass, Roosville. Resorts: Big Sky, Whitefish, Bridger Bowl">ⓘ</span></h3><div id="border-montana">Loading...</div><div class="chart-container"><canvas id="chart-border-montana"></canvas></div></div>
+                        <div class="metric-card"><h3>Vermont <span class="tooltip-icon" title="Derby Line, Highgate Springs. Resorts: Stowe, Jay Peak, Killington">ⓘ</span></h3><div id="border-vermont">Loading...</div><div class="chart-container"><canvas id="chart-border-vermont"></canvas></div></div>
+                        <div class="metric-card"><h3>Washington <span class="tooltip-icon" title="Blaine, Sumas. Resorts: Mt. Baker, Stevens Pass, Crystal Mountain">ⓘ</span></h3><div id="border-washington">Loading...</div><div class="chart-container"><canvas id="chart-border-washington"></canvas></div></div>
+                        <div class="metric-card"><h3>New York <span class="tooltip-icon" title="Champlain. Resorts: Whiteface, Gore Mountain, Lake Placid">ⓘ</span></h3><div id="border-ny">Loading...</div><div class="chart-container"><canvas id="chart-border-ny"></canvas></div></div>
+                        <div class="metric-card"><h3>Maine <span class="tooltip-icon" title="Houlton, Calais. Resorts: Sugarloaf, Sunday River">ⓘ</span></h3><div id="border-maine">Loading...</div><div class="chart-container"><canvas id="chart-border-maine"></canvas></div></div>
+                        <div class="metric-card"><h3>Idaho <span class="tooltip-icon" title="Eastport. Resorts: Sun Valley, Schweitzer">ⓘ</span></h3><div id="border-idaho">Loading...</div><div class="chart-container"><canvas id="chart-border-idaho"></canvas></div></div>
                     </div>
 
                     <div class="subsection-header purple">Key Border Ports</div>
@@ -764,7 +764,7 @@
                     <div class="subsection-desc">Leading indicators for airfare changes. Fuel costs typically pass through to fares within 4-8 weeks.</div>
                     <div class="dashboard-grid">
                         <div class="metric-card">
-                            <h4>Jet Fuel Price ($/gal) <span class="tooltip-icon" title="Gulf Coast kerosene-type jet fuel spot price">ⓘ</span></h4>
+                            <h3>Jet Fuel Price ($/gal) <span class="tooltip-icon" title="Gulf Coast kerosene-type jet fuel spot price">ⓘ</span></h3>
                             <div id="jet-fuel">Loading...</div>
                             <div class="chart-container"><canvas id="chart-jet-fuel"></canvas></div>
                         </div>
@@ -774,17 +774,17 @@
                     <div class="subsection-desc">Overall air travel demand and capacity utilization signals.</div>
                     <div class="dashboard-grid">
                         <div class="metric-card">
-                            <h4>National Enplanements <span class="tooltip-icon" title="Total passengers boarding flights at US airports">ⓘ</span></h4>
+                            <h3>National Enplanements <span class="tooltip-icon" title="Total passengers boarding flights at US airports">ⓘ</span></h3>
                             <div id="enplanements">Loading...</div>
                             <div class="chart-container"><canvas id="chart-enplanements"></canvas></div>
                         </div>
                         <div class="metric-card">
-                            <h4>Domestic Load Factor <span class="tooltip-icon" title="Percentage of available seats filled. Above 85% indicates capacity pressure">ⓘ</span></h4>
+                            <h3>Domestic Load Factor <span class="tooltip-icon" title="Percentage of available seats filled. Above 85% indicates capacity pressure">ⓘ</span></h3>
                             <div id="load-factor">Loading...</div>
                             <div class="chart-container"><canvas id="chart-load-factor"></canvas></div>
                         </div>
                         <div class="metric-card">
-                            <h4>T-100 Passengers <span class="tooltip-icon" title="Total passengers on domestic flight segments">ⓘ</span></h4>
+                            <h3>T-100 Passengers <span class="tooltip-icon" title="Total passengers on domestic flight segments">ⓘ</span></h3>
                             <div id="t100-passengers">Loading...</div>
                             <div class="chart-container"><canvas id="chart-t100"></canvas></div>
                         </div>
@@ -794,7 +794,7 @@
                     <div class="subsection-desc">Daily TSA checkpoint data provides near-real-time travel demand signals.</div>
                     <div class="dashboard-grid">
                         <div class="metric-card">
-                            <h4>TSA Checkpoint Volume <span class="tooltip-icon" title="Daily passenger screenings (7-day rolling average)">ⓘ</span></h4>
+                            <h3>TSA Checkpoint Volume <span class="tooltip-icon" title="Daily passenger screenings (7-day rolling average)">ⓘ</span></h3>
                             <div id="tsa-checkpoint">Loading...</div>
                             <div class="chart-container"><canvas id="chart-tsa"></canvas></div>
                         </div>
@@ -831,25 +831,25 @@
 
                     <!-- Guest Demand Signals -->
                     <div class="subsection-header" style="margin-top: 1rem; margin-bottom: 0.75rem;">
-                        <h4 style="color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Guest Demand Signals</h4>
+                        <h3 style="color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Guest Demand Signals</h3>
                         <p style="color: #64748b; font-size: 0.75rem; margin-top: 0.25rem;">Economic factors that influence consumer spending on ski trips</p>
                     </div>
                     <div class="dashboard-grid">
                         <div class="metric-card prediction-card">
-                            <h4>Recession Risk <span class="resolves-date" id="recession-resolves"></span></h4>
+                            <h3>Recession Risk <span class="resolves-date" id="recession-resolves"></span></h3>
                             <div class="card-description">Traders are betting on whether the US economy will officially enter a recession. Higher = more risk to discretionary travel spending.</div>
                             <div id="recession-consensus">Loading...</div>
                             <div class="prediction-sources" id="recession-sources"></div>
                         </div>
                         <div class="metric-card prediction-card">
-                            <h4>Fed Rate Decision <span class="resolves-date" id="fed-resolves"></span></h4>
+                            <h3>Fed Rate Decision <span class="resolves-date" id="fed-resolves"></span></h3>
                             <div class="card-description">What traders expect the Federal Reserve to do at the next meeting. Rate cuts can stimulate consumer spending; hikes can slow it.</div>
                             <div id="fed-decision">Loading...</div>
                             <div class="chart-container" style="height: 100px;"><canvas id="chart-fed-probs"></canvas></div>
                             <div class="prediction-meta" id="fed-meta"></div>
                         </div>
                         <div class="metric-card prediction-card">
-                            <h4>Rate Cuts This Year <span class="resolves-date" id="rate-cuts-resolves"></span></h4>
+                            <h3>Rate Cuts This Year <span class="resolves-date" id="rate-cuts-resolves"></span></h3>
                             <div class="card-description">How many times traders expect the Fed to lower interest rates this calendar year. More cuts = easier borrowing and more consumer spending.</div>
                             <div id="rate-cuts-consensus">Loading...</div>
                             <div class="chart-container" style="height: 140px;"><canvas id="chart-rate-cuts"></canvas></div>
@@ -858,18 +858,18 @@
 
                     <!-- Operating Cost Drivers -->
                     <div class="subsection-header" style="margin-top: 1.5rem; margin-bottom: 0.75rem;">
-                        <h4 style="color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Operating Cost Drivers</h4>
+                        <h3 style="color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Operating Cost Drivers</h3>
                         <p style="color: #64748b; font-size: 0.75rem; margin-top: 0.25rem;">Commodity prices that affect resort operating expenses and guest travel costs</p>
                     </div>
                     <div class="dashboard-grid">
                         <div class="metric-card prediction-card">
-                            <h4>WTI Oil Price <span class="resolves-date" id="oil-resolves"></span></h4>
+                            <h3>WTI Oil Price <span class="resolves-date" id="oil-resolves"></span></h3>
                             <div class="card-description">West Texas Intermediate crude oil price range traders expect this week. Affects fuel, energy, and transportation costs for resorts and guests.</div>
                             <div id="oil-consensus">Loading...</div>
                             <div class="chart-container" style="height: 140px;"><canvas id="chart-oil-dist"></canvas></div>
                         </div>
                         <div class="metric-card prediction-card">
-                            <h4>Gas Price Outlook <span class="resolves-date" id="gas-resolves"></span></h4>
+                            <h3>Gas Price Outlook <span class="resolves-date" id="gas-resolves"></span></h3>
                             <div class="card-description">National average retail gasoline price traders expect. "Settles" = when the bet pays out and we know the actual price.</div>
                             <div id="gas-direction">Loading...</div>
                             <div class="prediction-meta" id="gas-meta"></div>
@@ -906,22 +906,22 @@
 
                     <!-- Key Metrics -->
                     <div class="subsection-header" style="margin-top: 1rem; margin-bottom: 0.75rem;">
-                        <h4 style="color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">North America Overview</h4>
+                        <h3 style="color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">North America Overview</h3>
                         <p style="color: #64748b; font-size: 0.75rem; margin-top: 0.25rem;">Growth in sports betting may reduce discretionary income available for ski trips, particularly among males 18-35</p>
                     </div>
                     <div class="dashboard-grid">
                         <div class="metric-card">
-                            <h4>U.S. Trailing 12-Month Handle</h4>
+                            <h3>U.S. Trailing 12-Month Handle</h3>
                             <div class="card-description">Total dollars wagered on sports in the U.S. over the past year. Rapid growth indicates shifting discretionary spending patterns.</div>
                             <div id="betting-us-ttm-handle">Loading...</div>
                         </div>
                         <div class="metric-card">
-                            <h4>U.S. Latest Month</h4>
+                            <h3>U.S. Latest Month</h3>
                             <div class="card-description">Most recent monthly sports betting handle. Seasonality follows major sports calendars (NFL, NBA, MLB).</div>
                             <div id="betting-us-latest">Loading...</div>
                         </div>
                         <div class="metric-card">
-                            <h4>Ontario Annual Handle</h4>
+                            <h3>Ontario Annual Handle</h3>
                             <div class="card-description">Ontario (Canada's largest sports betting market) fiscal year handle. Ontario launched regulated iGaming in April 2022.</div>
                             <div id="betting-ontario">Loading...</div>
                         </div>
@@ -929,7 +929,7 @@
 
                     <!-- Handle Trend Chart -->
                     <div class="subsection-header" style="margin-top: 1.5rem; margin-bottom: 0.75rem;">
-                        <h4 style="color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">U.S. Monthly Handle Trend</h4>
+                        <h3 style="color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">U.S. Monthly Handle Trend</h3>
                         <p style="color: #64748b; font-size: 0.75rem; margin-top: 0.25rem;">Monthly sports betting handle since 2019 - note the rapid growth trajectory</p>
                     </div>
                     <div class="chart-container" style="height: 200px;">
@@ -938,7 +938,7 @@
 
                     <!-- Payout Percentage Chart -->
                     <div class="subsection-header" style="margin-top: 1.5rem; margin-bottom: 0.75rem;">
-                        <h4 style="color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Bettor Payout Percentage</h4>
+                        <h3 style="color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Bettor Payout Percentage</h3>
                         <p style="color: #64748b; font-size: 0.75rem; margin-top: 0.25rem;">Percentage of wagered money returned to bettors as winnings. The remainder (typically 5-10%) is sportsbook revenue ("hold"). Lower payout = higher cost to bettors.</p>
                     </div>
                     <div class="chart-container" style="height: 200px;">
@@ -947,7 +947,7 @@
 
                     <!-- Historical Context -->
                     <div class="subsection-header" style="margin-top: 1.5rem; margin-bottom: 0.75rem;">
-                        <h4 style="color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Annual U.S. Handle Totals</h4>
+                        <h3 style="color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Annual U.S. Handle Totals</h3>
                         <p style="color: #64748b; font-size: 0.75rem; margin-top: 0.25rem;">Total dollars wagered per year across all U.S. states with legal sports betting. Green percentages show year-over-year growth vs. prior year.</p>
                     </div>
                     <div class="dashboard-grid" id="betting-annual-grid">
@@ -1372,7 +1372,7 @@
             const vs2019Badge = vs2019 !== null ? `<div class="change-indicator"><span class="change-pill ${colorClass}"><span class="arrow">${arrow}</span> ${sign}${vs2019.toFixed(0)}% vs 2019</span></div>` : '';
             return `
                 <div class="metric-card">
-                    <h4>${prov.name} <span class="tooltip-icon" title="Primary US ski destinations: ${prov.feeder_for}">ⓘ</span></h4>
+                    <h3>${prov.name} <span class="tooltip-icon" title="Primary US ski destinations: ${prov.feeder_for}">ⓘ</span></h3>
                     <div class="value">${prov.latest.toLocaleString()}K</div>
                     <div class="period">${prov.latest_date} (quarterly)</div>
                     ${vs2019Badge}
@@ -1410,7 +1410,7 @@
             const vs2019Badge = vs2019 !== null ? `<div class="change-indicator"><span class="change-pill ${colorClass}"><span class="arrow">${arrow}</span> ${sign}${vs2019.toFixed(0)}% vs 2019</span></div>` : '';
             return `
                 <div class="metric-card">
-                    <h4>${portNames[key] || key}</h4>
+                    <h3>${portNames[key] || key}</h3>
                     <div class="value">${latest.value.toLocaleString()}</div>
                     <div class="period">${formatDate(latest.date)} (passengers)</div>
                     ${vs2019Badge}
@@ -1487,7 +1487,7 @@
                     const changeClass = change >= 0 ? 'positive' : 'negative';
                     const changeArrow = change >= 0 ? '↑' : '↓';
                     return '<div class="metric-card">' +
-                        '<h4>' + stock.name.replace(' Inc.', '').replace(' Platforms', '').replace(', Inc.', '').replace(' Corp', '') + ' (' + stock.symbol + ')</h4>' +
+                        '<h3>' + stock.name.replace(' Inc.', '').replace(' Platforms', '').replace(', Inc.', '').replace(' Corp', '') + ' (' + stock.symbol + ')</h3>' +
                         '<div class="value">$' + stock.price.toFixed(2) + '</div>' +
                         '<div class="period"><span class="change-pill ' + changeClass + '"><span class="arrow">' + changeArrow + '</span> ' + Math.abs(change).toFixed(2) + '%</span> today</div>' +
                         '<div class="chart-container"><canvas id="chart-' + stock.symbol.toLowerCase() + '"></canvas></div>' +
@@ -1801,7 +1801,7 @@
             }
 
             return '<div class="metric-card ski-airport-card' + (stale || anomalous ? ' stale-data' : '') + '" data-region="' + apt.region + '">' +
-                '<h4>' + apt.city + ' <span class="airport-code">(' + apt.code + ')</span></h4>' +
+                '<h3>' + apt.city + ' <span class="airport-code">(' + apt.code + ')</span></h3>' +
                 '<div class="value">' + paxFormatted + '</div>' +
                 '<div class="period">' + monthLabel + ' passengers</div>' +
                 staleWarning +
@@ -2325,7 +2325,7 @@
                     }
 
                     html += '<div class="metric-card">' +
-                        '<h4>' + yr.year + '</h4>' +
+                        '<h3>' + yr.year + '</h3>' +
                         '<div class="value">' + formatBillions(yr.handle_usd) + '</div>' +
                         '<div class="change-indicator">' + yoyHtml + '</div>' +
                         '</div>';
