@@ -424,7 +424,8 @@
         }
 
         .region-preset select:focus {
-            outline: none;
+            outline: 2px solid var(--accent-cold-bright);
+            outline-offset: 2px;
             border-color: var(--accent-cold);
         }
 
@@ -925,7 +926,7 @@
         }
 
         .units-btn.active {
-            background: var(--accent-cold);
+            background: #2563eb;  /* Darker blue for 4.5:1 contrast with white */
             color: white;
         }
 
@@ -1030,11 +1031,11 @@
         .stat-negative { color: var(--accent-warm-bright); }
         .stat-neutral { color: var(--text-primary); }
 
-        /* 4-tier favorability scale for ski operators */
-        .stat-very-unfavorable { color: #ef4444; }  /* Red - very bad */
-        .stat-unfavorable { color: #f97316; }       /* Orange - moderately bad */
-        .stat-favorable { color: #60a5fa; }         /* Blue - moderately good */
-        .stat-very-favorable { color: #22c55e; }    /* Green - very good */
+        /* 4-tier favorability scale for ski operators - contrast-safe colors */
+        .stat-very-unfavorable { color: #f87171; }  /* Light red - 4.5:1 on dark bg */
+        .stat-unfavorable { color: #fb923c; }       /* Light orange - 4.5:1 on dark bg */
+        .stat-favorable { color: #60a5fa; }         /* Blue - already good contrast */
+        .stat-very-favorable { color: #4ade80; }    /* Light green - 4.5:1 on dark bg */
 
         .chart-header-row {
             display: flex;
@@ -1273,13 +1274,13 @@
         }
 
         .sidebar-btn.primary {
-            background: var(--accent-cold);
-            border-color: var(--accent-cold);
+            background: #2563eb;  /* Darker blue for 4.5:1 contrast with white */
+            border-color: #2563eb;
             color: white;
         }
 
         .sidebar-btn.primary:hover {
-            background: var(--accent-cold-bright);
+            background: var(--accent-cold);
         }
 
         .sidebar-content {

@@ -20,8 +20,8 @@
 
     /* Text colors */
     --text-primary: #e8ecf2;
-    --text-secondary: #8892a2;
-    --text-muted: #5c6678;
+    --text-secondary: #9ca3b0;  /* Improved contrast: 4.5:1 on --bg-card */
+    --text-muted: #7d8594;      /* Improved contrast: 4.5:1 on --bg-deep */
 
     /* Accent colors - cold/blue spectrum */
     --accent-cold: #3b82f6;
@@ -34,13 +34,13 @@
     --accent-warm-bright: #fb923c;
     --accent-orange: #f97316;
 
-    /* Status colors */
-    --success: #10b981;
-    --accent-green: #10b981;
-    --warning: #f59e0b;
-    --accent-yellow: #eab308;
-    --danger: #ef4444;
-    --accent-red: #ef4444;
+    /* Status colors - improved contrast for dark backgrounds */
+    --success: #34d399;         /* Lighter green: 4.5:1 on --bg-card */
+    --accent-green: #34d399;
+    --warning: #fbbf24;         /* Lighter yellow: 4.5:1 on --bg-card */
+    --accent-yellow: #fbbf24;
+    --danger: #f87171;          /* Lighter red: 4.5:1 on --bg-card */
+    --accent-red: #f87171;
     --accent-purple: #a855f7;
 
     /* Geographic/map colors */
@@ -274,4 +274,24 @@ body {
     background: rgba(10, 14, 20, 0.7);
     border-radius: 4px;
     padding: 3px 6px;
+}
+
+/* ============================================
+   Accessibility: Focus Indicators
+   ============================================ */
+/* Visible focus styles for keyboard navigation (WCAG 2.4.7) */
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+a:focus-visible,
+[tabindex]:focus-visible {
+    outline: 2px solid var(--accent-cold-bright);
+    outline-offset: 2px;
+}
+
+/* Remove default outline only when focus-visible provides the indicator */
+button:focus:not(:focus-visible),
+select:focus:not(:focus-visible),
+input:focus:not(:focus-visible) {
+    outline: none;
 }
