@@ -1,5 +1,11 @@
 version: 2
 updates:
+  # Python dependencies for GitHub Actions workflows
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
   # Disable Dependabot for theme directory
   # The theme is managed as a Hugo module and doesn't use npm dependencies
   - package-ecosystem: "npm"
