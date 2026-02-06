@@ -194,6 +194,66 @@ Temperature anomaly values in the VS NORMAL column use color classes:
 
 The `temp-hot` class specifically highlights markets where winter feels distant due to extreme warmth.
 
+## Accessibility Standards (WCAG 2.1 AA)
+
+The site follows WCAG 2.1 Level AA standards. Key requirements:
+
+### Color Contrast (WCAG 1.4.3)
+All text must meet 4.5:1 minimum contrast ratio against backgrounds:
+
+```css
+/* Shared theme colors - verified for contrast */
+--text-secondary: #9ca3b0;  /* 4.5:1 on --bg-card (#111820) */
+--text-muted: #8a919e;      /* 4.5:1 on --bg-elevated (#1a2230) */
+--success: #34d399;         /* 4.5:1 on dark backgrounds */
+--warning: #fbbf24;         /* 4.5:1 on dark backgrounds */
+--danger: #f87171;          /* 4.5:1 on dark backgrounds */
+```
+
+**When adding new colors**: Always verify contrast ratio using a tool like WebAIM Contrast Checker before committing.
+
+### Focus Indicators (WCAG 2.4.7)
+All interactive elements must have visible focus states:
+
+```css
+/* Standard focus indicator - defined in shared-theme.css */
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--accent-cold-bright);
+    outline-offset: 2px;
+}
+```
+
+**Never use `outline: none`** without providing an alternative visible focus indicator.
+
+### Heading Hierarchy (WCAG 1.3.1)
+Headings must follow sequential order: H1 → H2 → H3. Never skip levels.
+
+| Page | Structure |
+|------|-----------|
+| Dashboard | H1 (visually hidden) → H2 (accordion sections) → H3 (metric cards) |
+| Snow Cover | H1 (banner title) → H2 (chart titles) |
+| Ski News | H1 (banner title) → H3 (article titles in cards) |
+
+### Screen Reader Support
+Use the `.sr-only` class (defined in `shared-theme.css`) for visually hidden content that should be accessible to screen readers:
+
+```html
+<h1 class="sr-only">Ski Markets Economic Dashboard</h1>
+```
+
+### Skip Links (WCAG 2.4.1)
+- Hugo templates include skip links via `layouts/_default/baseof.html`
+- Static HTML pages should include: `<a href="#main-content" class="skip-link">Skip to main content</a>`
+
+### Charts Accessibility (WCAG 1.1.1)
+Canvas charts should have:
+```html
+<canvas id="chart-name" role="img" aria-label="Description of chart data">
+```
+
 ## Common Mistakes to Avoid
 
 1. **Prioritizing coverage over accuracy** - Don't invent data to fill display fields
@@ -205,6 +265,9 @@ The `temp-hot` class specifically highlights markets where winter feels distant 
 7. **Using definitive language about consumer behavior** - Say "may" not "will" or "likely"
 8. **Forgetting temperature override** - ≥20°F above normal always means low salience
 9. **Blaming browser cache for stale data** - When the user reports stale/old data on the website, the problem is almost never browser caching. Check: (1) Is the file committed to git? (2) Has it been pushed? (3) Is the Netlify deploy complete? (4) Is the correct file path being served? Don't suggest "try hard refresh" or "clear cache" - investigate the actual deployment pipeline first.
+10. **Removing focus outlines** - Never use `outline: none` without providing visible `:focus-visible` alternative
+11. **Skipping heading levels** - Always use sequential H1 → H2 → H3 hierarchy
+12. **Low contrast text** - All text needs 4.5:1 contrast ratio minimum
 
 ## SNOTEL Snowpack Page (`static/snotel.html`)
 

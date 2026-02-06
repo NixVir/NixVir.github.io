@@ -238,12 +238,36 @@ Pages display user-friendly error messages when data fails to load.
 ### Responsive Design
 All pages use CSS Grid and Flexbox with media queries for mobile support.
 
-### Accessibility
-- Skip links for keyboard navigation
-- ARIA labels on interactive elements
-- Focus-visible outlines
-- Semantic HTML structure
+### Accessibility (WCAG 2.1 AA)
+
+All static pages follow WCAG 2.1 Level AA standards:
+
+**Color Contrast**
+- All text meets 4.5:1 minimum contrast ratio
+- Status colors (`--success`, `--warning`, `--danger`) verified for dark backgrounds
+- Button backgrounds use darker variants for white text (#2563eb instead of #3b82f6)
+
+**Focus Indicators**
+- All interactive elements have visible `:focus-visible` outlines
+- 2px solid blue outline with 2px offset
+- Never use `outline: none` without alternative
+
+**Heading Hierarchy**
+| Page | Structure |
+|------|-----------|
+| Snow Cover | H1 (banner) → H2 (chart titles) |
+| Dashboard | H1 (sr-only) → H2 (accordion sections) → H3 (metric cards) |
+| SNOTEL | H1 (banner) → H2 (sections) |
+
+**Screen Reader Support**
+- `.sr-only` class for visually hidden but accessible content
+- `role="img"` and `aria-label` on canvas charts (recommended)
+
+**Keyboard Navigation**
+- Skip links available (add to static pages if missing)
+- All interactive elements reachable via Tab
+- Focus order follows visual order
 
 ---
 
-*Documentation generated: 2026-01-18*
+*Documentation updated: 2026-02-05*

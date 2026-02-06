@@ -254,6 +254,7 @@ These are standalone HTML files that fetch JSON data client-side:
 - Reset styles
 - Site banner & navigation
 - Popup styles for map tooltips
+- Accessibility: focus indicators, `.sr-only` utility class
 
 ### JavaScript (`/js/analytics.js`)
 - Google Analytics with Do Not Track support
@@ -267,3 +268,13 @@ These are standalone HTML files that fetch JSON data client-side:
 - **Form**: Formspree with honeypot spam protection
 
 See `SECURITY_AUDIT_REPORT.md` for full details.
+
+## Accessibility (WCAG 2.1 AA)
+
+- **Color Contrast**: All text meets 4.5:1 minimum ratio (verified Feb 2026)
+- **Focus Indicators**: Visible `:focus-visible` outlines on all interactive elements
+- **Heading Hierarchy**: Sequential H1 → H2 → H3 structure
+- **Skip Links**: Hugo templates include skip navigation
+- **Screen Reader**: `.sr-only` class for visually hidden content
+
+See `docs/CSS_VARIABLES.md` for accessibility-compliant color values.
