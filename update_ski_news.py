@@ -149,41 +149,79 @@ WHITELIST_SOURCES = {
 
 # Must match AT LEAST ONE from primary group to pass pre-filter
 PRIMARY_SKI_TERMS = {
-    # Core ski/snowboard terms
-    'ski', 'skiing', 'skier', 'skiers', 'snowboard', 'snowboarding', 'snowboarder',
-    'lift ticket', 'season pass', 'ski resort', 'ski area', 'ski mountain',
-    'chairlift', 'gondola', 'ski patrol', 'snowmaking', 'terrain park',
-    'powder', 'grooming', 'base area', 'summit', 'skier visit', 'skier visits',
-    # Major resort operators
-    'vail resorts', 'alterra', 'epic pass', 'ikon pass', 'boyne resorts',
-    'aspen skiing', 'powdr',
-    # Major US resorts
-    'whistler', 'blackcomb', 'aspen', 'park city', 'deer valley', 'jackson hole',
-    'mammoth', 'mammoth mountain', 'palisades tahoe', 'squaw valley',
-    'big sky', 'telluride', 'steamboat', 'steamboat springs',
-    'breckenridge', 'keystone', 'copper mountain', 'winter park', 'vail',
-    'beaver creek', 'arapahoe basin', 'loveland',
-    'snowbird', 'alta', 'brighton', 'solitude', 'snowbasin', 'sundance',
-    'killington', 'stowe', 'sugarbush', 'jay peak', 'stratton', 'okemo',
-    'sun valley', 'taos', 'big bear',
-    # Major Canadian resorts
-    'revelstoke', 'banff', 'lake louise', 'sunshine village', 'sun peaks',
-    'big white', 'silver star', 'fernie', 'kicking horse',
-    'mont tremblant', 'blue mountain', 'mont sainte-anne',
-    # European/international
-    'chamonix', 'zermatt', 'st. moritz', 'courchevel', 'verbier', 'kitzbuhel',
-    'niseko', 'perisher', 'thredbo',
-    # Industry terms
-    'ski industry', 'resort operator', 'lift ticket', 'season pass',
-    'nsaa', 'canada west ski areas', 'ski area management'
+    # Core ski industry terms (these gate entry to the feed)
+    'ski resort', 'ski area', 'ski mountain', 'ski industry',
+    'lift ticket', 'season pass', 'skier visit', 'skier visits',
+    'chairlift', 'gondola', 'snowmaking', 'ski patrol',
+    'terrain park', 'ski slope', 'ski run', 'ski trail',
+
+    # Major resort operators (business entities - high signal)
+    'vail resorts', 'alterra mountain', 'epic pass', 'ikon pass',
+    'boyne resorts', 'aspen skiing company', 'powdr corporation',
+    'peak resorts', 'intrawest', 'cnt resorts',
+
+    # Compound resort terms (require "resort" or "ski" for specificity)
+    'whistler blackcomb', 'park city mountain', 'deer valley resort',
+    'mammoth mountain', 'palisades tahoe', 'big sky resort',
+    'jackson hole mountain', 'steamboat resort', 'telluride ski',
+    'breckenridge ski', 'keystone resort', 'copper mountain resort',
+    'winter park resort', 'vail mountain', 'beaver creek resort',
+    'snowbird resort', 'killington resort', 'stowe mountain',
+    'sugarbush resort', 'jay peak resort', 'sun valley resort',
+
+    # Canadian resorts (compound forms)
+    'whistler resort', 'banff sunshine', 'lake louise ski',
+    'revelstoke mountain', 'sun peaks resort', 'big white ski',
+    'mont tremblant', 'blue mountain resort',
+
+    # Industry organizations and publications
+    'nsaa', 'national ski areas association', 'canada west ski areas',
+    'ski area management', 'snowsports industries', 'ski industry',
+    'resort operator', 'mountain operator',
+
+    # Business-specific ski terms
+    'ski season', 'opening day', 'ski operations', 'mountain operations',
+    'base lodge', 'summit lodge', 'lift upgrade', 'terrain expansion',
+}
+
+# REMOVED: Individual resort names that match too broadly (whistler, aspen, vail, etc.)
+# These now require compound forms or are handled via RESORT_NAME_CONTEXT below
+
+# Resort names that ONLY pass pre-filter when combined with business context
+RESORT_NAME_CONTEXT_REQUIRED = {
+    'whistler', 'blackcomb', 'aspen', 'vail', 'park city', 'deer valley',
+    'jackson hole', 'mammoth', 'big sky', 'telluride', 'steamboat',
+    'breckenridge', 'keystone', 'snowbird', 'alta', 'killington', 'stowe',
+    'banff', 'lake louise', 'revelstoke', 'sun peaks', 'mont tremblant',
+    'chamonix', 'zermatt', 'st. moritz', 'courchevel', 'verbier', 'niseko',
 }
 
 # Secondary terms boost score but don't gate entry
 SECONDARY_BUSINESS_TERMS = {
+    # Corporate actions
     'acquisition', 'merger', 'investment', 'earnings', 'revenue',
-    'expansion', 'development', 'ceo', 'layoff', 'bankruptcy',
-    'real estate', 'housing', 'occupancy', 'visitation', 'tourism',
-    'quarterly', 'annual report', 'financial', 'profit', 'growth'
+    'expansion', 'development', 'bankruptcy', 'restructuring',
+    'ipo', 'private equity', 'venture capital', 'funding',
+    # Leadership
+    'ceo', 'cfo', 'coo', 'executive', 'board of directors', 'appointed',
+    'general manager', 'president', 'vice president', 'management',
+    # Financial
+    'quarterly', 'annual report', 'financial', 'profit', 'loss',
+    'ebitda', 'margin', 'stock', 'shares', 'dividend', 'forecast',
+    # Operations
+    'layoff', 'workforce', 'employee', 'staffing', 'hiring',
+    'labor shortage', 'wage', 'h-2b', 'j-1 visa', 'seasonal worker',
+    # Real estate and development
+    'real estate', 'housing', 'property', 'land sale', 'zoning',
+    'permit', 'construction', 'development project',
+    # Tourism metrics
+    'occupancy', 'visitation', 'visitor', 'tourism', 'destination',
+    'air service', 'flight', 'airline', 'airport',
+    # Legal
+    'lawsuit', 'litigation', 'settlement', 'liability', 'regulatory',
+    'compliance', 'insurance', 'claim',
+    # Industry trends
+    'market share', 'competition', 'consolidation', 'growth', 'decline',
 }
 
 # =============================================================================
@@ -402,6 +440,66 @@ PROMOTIONAL_EXCEPTIONS = [
 ]
 
 # =============================================================================
+# CONSUMER CONTENT TYPE PENALTIES (Blocks enthusiast/consumer content)
+# =============================================================================
+
+# These patterns identify consumer-oriented content that should be excluded
+# even if it mentions ski resorts. Score impact is severe (-6 to -10).
+CONSUMER_CONTENT_PATTERNS = [
+    # Athlete/competition content (unless major business news)
+    (r'\b(pov|gopro|helmet\s*cam)\s+(video|footage|view)', -8),  # POV footage articles
+    (r'\bfirst[- ]ever\s+(ski\s+)?descent', -6),      # First descent achievements
+    (r'\b(pro|professional)\s+skier\b(?!.*\b(dies|killed|lawsuit|charged))', -5),  # Pro skier profiles (unless incident)
+    (r'\bski\s+(athlete|racer)\s+(profile|interview|story)', -6),
+    (r'\b(podium|medal|bronze|silver|gold)\s+(finish|winner)', -4),  # Competition results
+    (r'\bwinning\s+run\b', -5),                       # Competition footage
+    (r'\bworld\s+record\s+(holder|attempt)', -4),    # Records (unless business context)
+    (r'\bfreeride\s+(tour|world|competition|championship)', -4),  # Freeride events
+    (r'\bx[\s-]?games\b(?!.*\b(economic|revenue|sponsor|business))', -5),  # X Games (unless business angle)
+
+    # Consumer guides and reviews
+    (r'\bresort\s+review\b', -7),                     # Resort reviews
+    (r'\bwhere\s+to\s+ski\b', -6),                   # Destination guides
+    (r'\bhow\s+to\s+(ski|snowboard|use)', -6),       # How-to guides
+    (r'\b(beginner|intermediate|expert)\s+guide', -5),
+    (r'\bski\s+(tips|technique|lesson)', -5),        # Instruction content
+    (r'\blearning\s+to\s+ski\b', -6),
+    (r'\bfamily[- ]friendly\s+(resort|ski)', -4),    # Family destination content
+
+    # Weather/conditions consumer content
+    (r'\bpowder\s+(day|report|alert|stash)', -4),    # Powder reports
+    (r'\bsnow\s+report\b', -4),                      # Snow reports (consumer focus)
+    (r'\bski\s+conditions\s+(report|update)', -4),   # Conditions updates
+
+    # Promotional/event content
+    (r'\b(taste\s+of|culinary\s+experience|wine\s+(dinner|tasting))\b', -6),  # Food/wine events
+    (r'\bsommelier\s+on\s+(the\s+)?slopes', -7),     # Promotional events
+    (r'\bgets\s+ready\s+for\b', -5),                 # Promotional language
+    (r'\b(spring|summer|fall)\s+skiing\b(?!.*\b(revenue|business|extend))', -4),  # Seasonal content
+
+    # Safety/avalanche consumer content
+    (r'\bavalanche\s+(bulletin|forecast|report)\b', -5),  # Avalanche bulletins
+    (r'\bhow\s+to\s+(read|use|interpret)\s+avalanche', -6),  # How-to avalanche
+    (r'\bwinter\s+(mountain\s+)?safety\s+guide\b', -6),  # Safety guides
+    (r'\bbackcountry\s+(safety|tips|guide)', -5),    # Backcountry guides
+
+    # Action/lifestyle content
+    (r'\b(epic|insane|wild|crazy|gnarly)\s+(run|descent|footage|video)', -6),
+    (r'\bwatch\s+(this|the)\s+(video|footage)', -5),
+    (r'\bcheck\s+out\s+(this|the)', -4),
+    (r'\bmust[- ]see\s+(video|footage)', -5),
+]
+
+# Exceptions for consumer patterns (allow through if business context present)
+CONSUMER_CONTENT_EXCEPTIONS = [
+    r'\b(acquisition|merger|investment|earnings|revenue|lawsuit|death|fatal|killed|dies)\b',
+    r'\b(ceo|executive|board|shareholders|quarterly|annual\s+report)\b',
+    r'\b(layoff|bankruptcy|closure|shut\s*down|sold|buys|purchase)\b',
+    r'\b(labor|workforce|employee|hiring|staffing)\b',
+    r'\b(economic\s+impact|tourism\s+revenue|visitor\s+spending)\b',
+]
+
+# =============================================================================
 # RSS SOURCES (Including new sources from improvement spec)
 # =============================================================================
 
@@ -554,31 +652,31 @@ RSS_SOURCES = [
         'category': 'industry',
         'boost': 2
     },
-    # Ski news sites
+    # Ski news sites (consumer-oriented - reduced boost, content penalties apply)
     {
         'name': 'Unofficial Networks',
         'url': 'https://unofficialnetworks.com/feed/',
-        'category': 'news',
-        'boost': 2
+        'category': 'consumer_news',
+        'boost': 0  # Reduced: high volume of consumer/athlete content
     },
     {
         'name': 'SnowBrains',
         'url': 'https://snowbrains.com/feed/',
-        'category': 'news',
-        'boost': 2
+        'category': 'consumer_news',
+        'boost': 0  # Reduced: mixes business with consumer content
     },
-    # European/International
+    # European/International (consumer-focused)
     {
         'name': 'PlanetSKI',
         'url': 'https://planetski.eu/feed/',
-        'category': 'international',
-        'boost': 1
+        'category': 'consumer_international',
+        'boost': 0  # Reduced: mostly resort reviews and consumer content
     },
     {
         'name': 'The Ski Guru',
         'url': 'https://www.the-ski-guru.com/feed/',
-        'category': 'international',
-        'boost': 1
+        'category': 'consumer_international',
+        'boost': 0  # Reduced: safety guides, resort reviews, consumer content
     },
     # Mountain community newspapers
     {
@@ -710,6 +808,81 @@ RSS_SOURCES = [
         'url': 'https://news.google.com/rss/search?q=ski+industry+climate+OR+ski+resort+climate+change+OR+skiing+warming&hl=en-US&gl=US&ceid=US:en',
         'category': 'aggregator',
         'boost': 2
+    },
+    # ==========================================================================
+    # BUSINESS-FOCUSED TRAVEL/HOSPITALITY SOURCES (high priority)
+    # ==========================================================================
+    {
+        'name': 'Skift',
+        'url': 'https://skift.com/feed/',
+        'category': 'travel_business',
+        'boost': 4  # High boost - premier travel industry analysis
+    },
+    {
+        'name': 'PhocusWire',
+        'url': 'https://www.phocuswire.com/rss.xml',
+        'category': 'travel_business',
+        'boost': 3  # Travel technology and business news
+    },
+    {
+        'name': 'Hospitality Net',
+        'url': 'https://www.hospitalitynet.org/rss/news.html',
+        'category': 'hospitality_business',
+        'boost': 3
+    },
+    {
+        'name': 'Hotel News Now',
+        'url': 'https://www.hotelnewsnow.com/rss',
+        'category': 'hospitality_business',
+        'boost': 3
+    },
+    # Labor/workforce news (important for resort operators)
+    {
+        'name': 'Google News - Ski Resort Labor',
+        'url': 'https://news.google.com/rss/search?q=ski+resort+worker+OR+ski+resort+employee+OR+ski+resort+staffing+OR+seasonal+worker+visa&hl=en-US&gl=US&ceid=US:en',
+        'category': 'labor',
+        'boost': 3
+    },
+    {
+        'name': 'Google News - H-2B Visa Seasonal',
+        'url': 'https://news.google.com/rss/search?q=H-2B+visa+seasonal+worker+OR+J-1+visa+ski&hl=en-US&gl=US&ceid=US:en',
+        'category': 'labor',
+        'boost': 3
+    },
+    # Real estate in resort markets
+    {
+        'name': 'Google News - Ski Town Real Estate',
+        'url': 'https://news.google.com/rss/search?q="ski+town"+OR+"mountain+town"+real+estate+OR+housing+market&hl=en-US&gl=US&ceid=US:en',
+        'category': 'real_estate',
+        'boost': 2
+    },
+    # Airport/air service (critical for destination resorts)
+    {
+        'name': 'Google News - Mountain Airport Service',
+        'url': 'https://news.google.com/rss/search?q=Vail+Eagle+airport+OR+Jackson+Hole+airport+OR+Aspen+airport+OR+Bozeman+airport+air+service&hl=en-US&gl=US&ceid=US:en',
+        'category': 'transportation',
+        'boost': 3
+    },
+    # Ski industry lawsuits and legal
+    {
+        'name': 'Google News - Ski Resort Lawsuit',
+        'url': 'https://news.google.com/rss/search?q=ski+resort+lawsuit+OR+ski+area+lawsuit+OR+ski+resort+liability&hl=en-US&gl=US&ceid=US:en',
+        'category': 'legal',
+        'boost': 3
+    },
+    # Climate/sustainability business angle
+    {
+        'name': 'Google News - Ski Industry Sustainability',
+        'url': 'https://news.google.com/rss/search?q=ski+resort+sustainability+OR+ski+industry+carbon+OR+ski+resort+renewable+energy&hl=en-US&gl=US&ceid=US:en',
+        'category': 'sustainability',
+        'boost': 2
+    },
+    # Major business news with ski focus
+    {
+        'name': 'Google News - Ski Business Deals',
+        'url': 'https://news.google.com/rss/search?q="ski+resort"+acquisition+OR+"ski+area"+merger+OR+"ski+resort"+sold+OR+"ski+resort"+bankruptcy&hl=en-US&gl=US&ceid=US:en',
+        'category': 'business',
+        'boost': 4  # High priority - M&A news
     },
 ]
 
@@ -955,12 +1128,13 @@ def parse_rss_feed(xml_content, source_name):
 
 def strict_prefilter(article):
     """
-    Two-tier pre-filter with macro relevance pathway and major source whitelist.
+    Three-tier pre-filter with macro relevance pathway and major source whitelist.
     Returns (passed, business_score, is_macro) tuple.
 
-    Primary pathway: Must have explicit ski industry reference
-    Secondary pathway: Macro relevance term + mountain region geography
-    Whitelist pathway: Trusted sources get relaxed filtering (macro terms only)
+    Primary pathway: Must have explicit ski industry reference (PRIMARY_SKI_TERMS)
+    Resort pathway: Resort name + business context (not just consumer content)
+    Macro pathway: Macro relevance term + mountain region geography
+    Whitelist pathway: Trusted sources get relaxed filtering
     """
     text = f"{article.get('title', '')} {article.get('description', '')}".lower()
     source = article.get('source', '')
@@ -971,6 +1145,15 @@ def strict_prefilter(article):
 
     if has_ski_term:
         # Primary pathway passed - count business context terms
+        business_count = sum(1 for term in SECONDARY_BUSINESS_TERMS if term in text)
+        return True, business_count, False
+
+    # Gate 1.5: Resort name + business context pathway
+    # Allows resort-specific articles only if they have business relevance
+    has_resort_name = any(resort in text for resort in RESORT_NAME_CONTEXT_REQUIRED)
+    has_business_context = any(term in text for term in SECONDARY_BUSINESS_TERMS)
+
+    if has_resort_name and has_business_context:
         business_count = sum(1 for term in SECONDARY_BUSINESS_TERMS if term in text)
         return True, business_count, False
 
@@ -1183,11 +1366,13 @@ def filter_expired_articles(articles, max_age_days=MAX_ARTICLE_AGE_DAYS):
 # =============================================================================
 
 def apply_contextual_penalties(text, title):
-    """Apply penalties only when context confirms promotional content."""
+    """Apply penalties for promotional and consumer content."""
     penalty = 0
     text_lower = text.lower()
     title_lower = title.lower()
+    combined_text = f"{title_lower} {text_lower}"
 
+    # Apply promotional content penalties
     for pattern, points in PROMOTIONAL_PATTERNS:
         # Check in title first (stronger penalty could be applied)
         if re.search(pattern, title_lower, re.IGNORECASE):
@@ -1208,6 +1393,21 @@ def apply_contextual_penalties(text, title):
             )
             if not is_exception:
                 penalty += points // 2  # Lower penalty for body matches
+
+    # Apply consumer content penalties (more severe)
+    for pattern, points in CONSUMER_CONTENT_PATTERNS:
+        if re.search(pattern, combined_text, re.IGNORECASE):
+            # Check if business context exception applies
+            has_business_context = any(
+                re.search(exc, combined_text, re.IGNORECASE)
+                for exc in CONSUMER_CONTENT_EXCEPTIONS
+            )
+            if not has_business_context:
+                # Title matches get full penalty, body gets reduced
+                if re.search(pattern, title_lower, re.IGNORECASE):
+                    penalty += points
+                else:
+                    penalty += points // 2
 
     return penalty
 
@@ -1321,15 +1521,37 @@ def basic_keyword_score(article):
     score += penalty  # penalties are negative
 
     # Additional simple penalties for obvious fluff
-    fluff_indicators = ['trip report', 'gear review', 'gift guide', 'bucket list',
-                       'must-visit', 'hidden gem', 'ultimate guide']
+    fluff_indicators = [
+        'trip report', 'gear review', 'gift guide', 'bucket list',
+        'must-visit', 'hidden gem', 'ultimate guide', 'complete guide',
+        'best places to', 'where to ski', 'resort guide', 'destination guide',
+        'ski vacation', 'family vacation', 'weekend getaway',
+        'things to do', 'what to pack', 'packing list', 'travel tips',
+    ]
     for indicator in fluff_indicators:
         if indicator in text:
             score -= 3
             break
 
+    # Consumer-focused content penalties
+    consumer_patterns = [
+        'first descent', 'pov footage', 'gopro video', 'helmet cam',
+        'pro skier', 'professional skier', 'ski athlete',
+        'watch this', 'check out', 'epic run', 'insane footage',
+        'spring skiing', 'powder day', 'bluebird day',
+        'apres ski', 'après-ski', 'ski fashion', 'ski style',
+    ]
+    for pattern in consumer_patterns:
+        if pattern in text:
+            score -= 4
+            break
+
     # Off-topic penalties
-    offtopic = ['tick', 'mosquito', 'lyme disease', 'hiking trail', 'mountain bike']
+    offtopic = [
+        'tick', 'mosquito', 'lyme disease', 'hiking trail', 'mountain bike',
+        'summer hike', 'camping', 'kayak', 'rafting', 'rock climbing',
+        'golf course', 'tennis', 'fishing', 'hunting',
+    ]
     for kw in offtopic:
         if kw in text:
             score -= 4
@@ -1454,19 +1676,56 @@ def score_article(article):
 # DATA PERSISTENCE
 # =============================================================================
 
+def rescore_article(article):
+    """Re-score an existing article with current penalty patterns.
+    Returns new score.
+    """
+    text = f"{article.get('title', '')} {article.get('description', '')} {article.get('content', '')}".lower()
+    title = article.get('title', '').lower()
+
+    # Apply new consumer content penalties
+    penalty = apply_contextual_penalties(text, title)
+
+    # If penalty is severe enough, demote the article
+    old_score = article.get('score', 5)
+    new_score = max(1, old_score + penalty)
+
+    return new_score
+
+
 def load_existing_articles():
-    """Load existing articles to avoid duplicates"""
+    """Load existing articles, re-score them with current patterns, and purge low-quality ones."""
     path = 'static/data/ski-news.json'
     if os.path.exists(path):
         try:
             with open(path, 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 articles = {}
+                rescored_count = 0
+                purged_count = 0
+
                 for a in data.get('articles', []):
                     # Normalize dates for consistent sorting
                     if 'pub_date' in a:
                         a['pub_date'] = parse_date(a['pub_date'])
+
+                    # Re-score with current penalty patterns
+                    new_score = rescore_article(a)
+                    if new_score <= AUTO_REJECT_THRESHOLD:
+                        # Article no longer meets quality threshold - purge it
+                        purged_count += 1
+                        continue
+
+                    if new_score != a.get('score'):
+                        a['score'] = new_score
+                        a['rescored'] = True
+                        rescored_count += 1
+
                     articles[a['id']] = a
+
+                if rescored_count > 0 or purged_count > 0:
+                    print_safe(f"Re-scored {rescored_count} existing articles, purged {purged_count}")
+
                 return articles
         except:
             pass
