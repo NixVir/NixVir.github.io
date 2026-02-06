@@ -11,5 +11,3 @@ menu:
 ---
 
 # Ski Industry News
-
-Ski related business news gathered daily by our young and fallible ski AI agent in training.
