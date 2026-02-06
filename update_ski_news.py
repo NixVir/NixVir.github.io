@@ -500,76 +500,146 @@ CONSUMER_CONTENT_EXCEPTIONS = [
 ]
 
 # =============================================================================
+# ANALYTICAL CONTENT BOOST PATTERNS
+# =============================================================================
+# Patterns that indicate quality, in-depth analysis (boost display score)
+ANALYTICAL_CONTENT_PATTERNS = [
+    # Industry-wide analysis
+    (r'\bindustry(-|\s)wide\b', 4),
+    (r'\btrend(s)?\s+(in|across|for)\b', 3),
+    (r'\banalysis\s+of\b', 3),
+    (r'\bstate\s+of\s+(the\s+)?industry\b', 5),
+    (r'\bmarket\s+(analysis|outlook|forecast)\b', 4),
+    (r'\beconomic\s+(impact|analysis|outlook)\b', 4),
+    # Data-driven indicators
+    (r'\bskier\s+visits?\b.*\b(up|down|grew|declined|percent)\b', 4),
+    (r'\bvisitation\s+(data|numbers|statistics)\b', 4),
+    (r'\bquarterly\s+(results|earnings|report)\b', 5),
+    (r'\bannual\s+report\b', 4),
+    (r'\bfinancial\s+(results|performance)\b', 4),
+    # Long-form indicators
+    (r'\bin-depth\s+(look|analysis|report)\b', 3),
+    (r'\bcomprehensive\s+(look|analysis|report)\b', 3),
+    (r'\bexamines?\s+(the|how|why)\b', 2),
+    (r'\binvestigates?\s+(the|how|why)\b', 3),
+    # Future-looking analysis
+    (r'\bwhat\s+(this|it)\s+means\s+for\b', 3),
+    (r'\bimplications\s+for\b', 3),
+    (r'\boutlook\s+for\b', 3),
+    (r'\bfuture\s+of\s+(skiing|the\s+ski\s+industry)\b', 4),
+    # Major business events
+    (r'\b(acquisition|merger)\s+(announced|completed|closes)\b', 5),
+    (r'\b(earnings|revenue)\s+(beat|miss|exceed)\b', 4),
+]
+
+# Premium source names (for display score boost)
+PREMIUM_ANALYTICAL_SOURCES = {
+    'New York Times - Travel', 'New York Times - Business',
+    'New York Times - Climate', 'New York Times - U.S.',
+    'Wall Street Journal', 'Financial Times', 'Bloomberg Markets',
+    'The Economist', 'Reuters Business', 'Washington Post',
+    'Skift', 'Globe and Mail',
+}
+
+# =============================================================================
+# DISPLAY SCORE ADJUSTMENTS
+# =============================================================================
+# These affect the order articles appear in the feed, not whether they're included.
+# Safety/incident stories are important but shouldn't lead the feed.
+
+# Categories that should appear lower in the feed (display penalty)
+DISPLAY_DEMOTED_CATEGORIES = {
+    'safety-incidents': -5,   # Important news but not lead material
+    'winter-sports': -2,      # Competition results less relevant to business audience
+}
+
+# Consumer-oriented sources get display penalty (still in feed, just not leading)
+# These sources produce good content but tend toward consumer rather than business focus
+CONSUMER_ORIENTED_SOURCES = {
+    'Unofficial Networks', 'SnowBrains', 'PlanetSKI', 'The Ski Guru',
+    'Powder Magazine', 'Freeskier', 'SKI Magazine', 'Skiing Magazine',
+}
+CONSUMER_SOURCE_DISPLAY_PENALTY = -4
+
+# =============================================================================
 # RSS SOURCES (Including new sources from improvement spec)
 # =============================================================================
 
 RSS_SOURCES = [
-    # Major national/international publications (high credibility boost)
+    # PREMIUM ANALYTICAL SOURCES (highest priority - quality long-form analysis)
+    # These are major publications known for in-depth industry analysis
     {
         'name': 'New York Times - Travel',
         'url': 'https://rss.nytimes.com/services/xml/rss/nyt/Travel.xml',
-        'category': 'major_publication',
-        'boost': 3
+        'category': 'premium_analytical',
+        'boost': 6
     },
     {
         'name': 'New York Times - Business',
         'url': 'https://rss.nytimes.com/services/xml/rss/nyt/Business.xml',
-        'category': 'major_publication',
-        'boost': 3
+        'category': 'premium_analytical',
+        'boost': 6
     },
     {
         'name': 'New York Times - Climate',
         'url': 'https://rss.nytimes.com/services/xml/rss/nyt/Climate.xml',
-        'category': 'major_publication',
-        'boost': 3
+        'category': 'premium_analytical',
+        'boost': 6
     },
     {
         'name': 'New York Times - U.S.',
         'url': 'https://rss.nytimes.com/services/xml/rss/nyt/US.xml',
-        'category': 'major_publication',
-        'boost': 3
+        'category': 'premium_analytical',
+        'boost': 6
+    },
+    # WSJ doesn't have a free RSS feed - use Google News to find WSJ ski coverage
+    {
+        'name': 'Google News - WSJ Ski',
+        'url': 'https://news.google.com/rss/search?q=site:wsj.com+ski+OR+skiing+OR+ski+resort&hl=en-US&gl=US&ceid=US:en',
+        'category': 'premium_analytical',
+        'boost': 6
     },
     {
         'name': 'Reuters Business',
         'url': 'https://www.reutersagency.com/feed/?taxonomy=best-sectors&post_type=best',
         'category': 'major_publication',
-        'boost': 3
+        'boost': 5
     },
     {
         'name': 'Washington Post',
         'url': 'https://feeds.washingtonpost.com/rss/business',
         'category': 'major_publication',
-        'boost': 3
+        'boost': 5
     },
     {
         'name': 'The Atlantic',
         'url': 'https://www.theatlantic.com/feed/all/',
         'category': 'major_publication',
-        'boost': 3
+        'boost': 5
     },
     {
         'name': 'Financial Times',
         'url': 'https://www.ft.com/rss/home',
-        'category': 'major_publication',
-        'boost': 3
+        'category': 'premium_analytical',
+        'boost': 6
     },
     {
         'name': 'Associated Press - Top News',
         'url': 'https://feedx.net/rss/ap.xml',
         'category': 'major_publication',
-        'boost': 3
+        'boost': 4
     },
     {
         'name': 'Bloomberg Markets',
         'url': 'https://feeds.bloomberg.com/markets/news.rss',
-        'category': 'major_publication',
-        'boost': 3
+        'category': 'premium_analytical',
+        'boost': 6
     },
     {
         'name': 'Christian Science Monitor',
         'url': 'https://rss.csmonitor.com/feeds/all',
         'category': 'major_publication',
-        'boost': 3
+        'boost': 4
     },
     # Google News Aggregators
     {
@@ -1693,6 +1763,58 @@ def rescore_article(article):
     return new_score
 
 
+def compute_display_score(article):
+    """Compute a display score for sorting articles in the feed.
+
+    This determines the order articles appear, separate from their approval score.
+    Higher display scores appear first. Factors:
+    - Base score (quality)
+    - Premium source boost (NYT, WSJ, etc.)
+    - Analytical content boost (in-depth analysis)
+    - Category adjustments (safety incidents demoted from top)
+    """
+    base_score = article.get('score', 5)
+    source = article.get('source', '')
+    text = f"{article.get('title', '')} {article.get('description', '')} {article.get('content', '')}".lower()
+    title = article.get('title', '').lower()
+    category = article.get('category', '')
+
+    display_score = base_score * 2  # Scale up base score for more differentiation
+
+    # Premium source boost (quality journalism)
+    if source in PREMIUM_ANALYTICAL_SOURCES:
+        display_score += 8
+
+    # Analytical content boost
+    for pattern, boost in ANALYTICAL_CONTENT_PATTERNS:
+        if re.search(pattern, title, re.IGNORECASE):
+            display_score += boost * 1.5  # Title matches weighted more
+        elif re.search(pattern, text, re.IGNORECASE):
+            display_score += boost
+
+    # Category-based display adjustments
+    if category in DISPLAY_DEMOTED_CATEGORIES:
+        display_score += DISPLAY_DEMOTED_CATEGORIES[category]
+
+    # Boost business-investment category for top placement
+    if category == 'business-investment':
+        display_score += 5
+
+    # Consumer-oriented source penalty (good content, just not business-focused)
+    if source in CONSUMER_ORIENTED_SOURCES:
+        display_score += CONSUMER_SOURCE_DISPLAY_PENALTY
+
+    # Content length bonus (longer = more analytical, usually)
+    content_length = len(article.get('content', ''))
+    if content_length > 800:
+        display_score += 2
+    if content_length > 1500:
+        display_score += 2
+
+    article['display_score'] = display_score
+    return display_score
+
+
 def load_existing_articles():
     """Load existing articles, re-score them with current patterns, and purge low-quality ones."""
     path = 'static/data/ski-news.json'
@@ -1986,10 +2108,16 @@ def update_ski_news():
     for article in approved:
         existing_articles[article['id']] = article
 
-    # Sort by date
+    # Compute display scores for all articles
+    print_safe(f"\n--- Computing Display Scores ---")
+    for article in existing_articles.values():
+        compute_display_score(article)
+
+    # Sort by display_score (primary), then by pub_date (secondary)
+    # This ensures high-quality analytical content appears at the top
     all_sorted = sorted(
         existing_articles.values(),
-        key=lambda x: x.get('pub_date', x.get('approved_date', '')),
+        key=lambda x: (x.get('display_score', 0), x.get('pub_date', x.get('approved_date', ''))),
         reverse=True
     )
 
@@ -1998,39 +2126,21 @@ def update_ski_news():
     all_sorted = filter_expired_articles(all_sorted)
     print_safe(f"Articles within age limit: {len(all_sorted)}")
 
-    # Apply source diversity with interleaving
-    # Group articles by source, keeping each source sorted by date
+    # Apply source diversity: sort by display_score first, then cap per source
+    # This ensures the best articles appear first while still limiting any one source
     MAX_PER_SOURCE_OUTPUT = 3
-    source_buckets = defaultdict(list)
+    source_counts = defaultdict(int)
+    sorted_articles = []
+
+    # all_sorted is already sorted by display_score (primary) and pub_date (secondary)
+    # Now apply source cap while maintaining the quality order
     for article in all_sorted:
         source = article.get('source', 'Unknown')
-        if len(source_buckets[source]) < MAX_PER_SOURCE_OUTPUT:
-            source_buckets[source].append(article)
-
-    # Round-robin interleave: take one article from each source in turn
-    # This prevents clustering of articles from the same source
-    sorted_articles = []
-    round_num = 0
-    while len(sorted_articles) < MAX_ARTICLES_OUTPUT:
-        added_this_round = False
-        # Sort sources by the date of their next article to prioritize fresher content
-        active_sources = [s for s in source_buckets if round_num < len(source_buckets[s])]
-        if not active_sources:
-            break
-        # Sort by the pub_date of the article at position round_num
-        active_sources.sort(
-            key=lambda s: source_buckets[s][round_num].get('pub_date', ''),
-            reverse=True
-        )
-        for source in active_sources:
-            if round_num < len(source_buckets[source]):
-                sorted_articles.append(source_buckets[source][round_num])
-                added_this_round = True
-                if len(sorted_articles) >= MAX_ARTICLES_OUTPUT:
-                    break
-        if not added_this_round:
-            break
-        round_num += 1
+        if source_counts[source] < MAX_PER_SOURCE_OUTPUT:
+            sorted_articles.append(article)
+            source_counts[source] += 1
+            if len(sorted_articles) >= MAX_ARTICLES_OUTPUT:
+                break
 
     # Keep only last MAX_REJECTED_KEEP rejected
     rejected = rejected[-MAX_REJECTED_KEEP:]
