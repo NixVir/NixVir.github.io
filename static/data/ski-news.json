@@ -1,8 +1,32 @@
 {
-  "updated": "2026-02-06 15:04:27",
-  "total_articles": 14,
+  "updated": "2026-02-07 11:15:34",
+  "total_articles": 15,
   "scoring_method": "keyword",
   "articles": [
+    {
+      "source": "Google News - Ski Industry",
+      "title": "Ski resort CEO issues warning amid unprecedented trend in US region: 'We can never let [this] happen again' - The Cool Down",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPTkZ1aU5CSGw0U1JmNlZrRTNtS2F4NjBJdUo1YXhNYlRmVmhjSjl4TXJIc2xjNVJCQ3UtVklJSzdMWktRYkRvMkZEZGMyVU16MHNzNHVvVGh1QkRZRXgxM2t0TXYwTEhpT1R4R3IxU2xpQnhmdFJtel9TZF9EbldvZWhoQS1CUENJajJjOWJlRQ?oc=5",
+      "description": "Ski resort CEO issues warning amid unprecedented trend in US region: 'We can never let [this] happen again' The Cool Down",
+      "content": "Ski resort CEO issues warning amid unprecedented trend in US region: 'We can never let [this] happen again' The Cool Down",
+      "pub_date": "2026-02-05",
+      "id": "0a2b1a7886cf",
+      "prefilter_business_score": 2,
+      "is_macro_relevance": false,
+      "source_boost": 1,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +1)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "safety-incidents"
+      ],
+      "approved_date": "2026-02-07",
+      "display_score": 29.5
+    },
     {
       "source": "Ski Area Management",
       "title": "Andrew Nicolas Appointed CEO of Prinoth U.S. Snow Grooming Division",
@@ -77,30 +101,6 @@
       ],
       "approved_date": "2026-02-06",
       "display_score": 20
-    },
-    {
-      "source": "Ski Area Management",
-      "title": "Jack Frost Big Boulder Appoints Tony Torsell as General Manager",
-      "url": "https://www.saminfo.com/news/sam-headline-news/jack-frost-big-boulder-appoints-tony-torsell-as-general-manager",
-      "description": "SAM Magazine\u2014Blakeslee, Pa., Jan. 23, 2026\u2014Vail Resorts has hired Tony Torsell as general manager of Jack Frost Big Boulder, effective Feb. 15. Torsell, who grew up not far from the neighboring ski areas, succeeds previous GM Tony Santora, who is now the vice president of mountain operations at VR-owned Beaver Creek, Colo. \u201cComing back home to lead JFBB is truly special,\u201d said Torsell. \u201cI believe great resorts start with great people, and I know there are great people here. I\u2019m excited to roll u",
-      "content": "SAM Magazine\u2014Blakeslee, Pa., Jan. 23, 2026\u2014Vail Resorts has hired Tony Torsell as general manager of Jack Frost Big Boulder, effective Feb. 15. Torsell, who grew up not far from the neighboring ski areas, succeeds previous GM Tony Santora, who is now the vice president of mountain operations at VR-owned Beaver Creek, Colo. \u201cComing back home to lead JFBB is truly special,\u201d said Torsell. \u201cI believe great resorts start with great people, and I know there are great people here. I\u2019m excited to roll u",
-      "pub_date": "2026-01-23",
-      "id": "d3f8cacc49d7",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 7,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "business-investment",
-      "secondary_categories": [
-        "resort-operations"
-      ],
-      "approved_date": "2026-02-04",
-      "display_score": 19
     },
     {
       "source": "SnowBrains",
@@ -223,6 +223,30 @@
         "international"
       ],
       "approved_date": "2026-02-06",
+      "display_score": 16
+    },
+    {
+      "source": "Ski Area Management",
+      "title": "The 2026 I Am a Snowmaker Contest Winner",
+      "url": "https://www.saminfo.com/news/sam-headline-news/the-2026-i-am-a-snowmaker-contest-winner",
+      "description": "SAM Magazine\u2014Killington, Vt., Feb. 3, 2026\u2014 Nearly 7,500 total votes were cast for the six competing snowmaking teams during the 13-day voting period of the 2026 I AM a Snowmaker contest, with Seven Springs, Pa., receiving the most votes to take home the title. Contest sponsor HKD Snowmakers president Charles Santry honored Seven Springs at the HTI dinner in the Killington Peak Lodge during the National Ski Areas Association Eastern Winter Conference on Tuesday, Feb. 3. Each ski area in the cont",
+      "content": "SAM Magazine\u2014Killington, Vt., Feb. 3, 2026\u2014 Nearly 7,500 total votes were cast for the six competing snowmaking teams during the 13-day voting period of the 2026 I AM a Snowmaker contest, with Seven Springs, Pa., receiving the most votes to take home the title. Contest sponsor HKD Snowmakers president Charles Santry honored Seven Springs at the HTI dinner in the Killington Peak Lodge during the National Ski Areas Association Eastern Winter Conference on Tuesday, Feb. 3. Each ski area in the cont",
+      "pub_date": "2026-02-03",
+      "id": "6a5af2600c40",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 8,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "hospitality",
+      "secondary_categories": [
+        "resort-operations"
+      ],
+      "approved_date": "2026-02-07",
       "display_score": 16
     },
     {
