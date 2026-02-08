@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-07 11:15:34",
+  "updated": "2026-02-08 11:16:29",
   "total_articles": 15,
   "scoring_method": "keyword",
   "articles": [
@@ -101,6 +101,30 @@
       ],
       "approved_date": "2026-02-06",
       "display_score": 20
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Washington State Ski Resort Suspends Operations Until It Receives New Snowfall",
+      "url": "https://unofficialnetworks.com/2026/02/07/washington-state-ski-resort-suspends-operations-until-it-receives-new-snowfall/",
+      "description": "The resort is suffering the same fate as many in the Pacific Northwest where warmer than usual temperatures have made it tough to keep trails opens.",
+      "content": "Dayton, Washington \u2014 Unfortunate news for skiers and snowboarder who call Ski Bluewood in southern Washington their home resort as they just announced they have been forced to suspend operations due to a thin snowpack. The resort is suffering the same fate as many in the Pacific Northwest where warmer than usual temperatures have made it tough to keep trails opens. Ski Bluewood has made the difficult decision to close down until they receive additional snow. \u201cAfter closely evaluating today\u2019s conditions, we\u2019ve made the difficult decision to suspend operations until we receive additional snowfall. The good news is that a storm is expected on Sunday night, so be on the lookout for an update on Monday evening regarding a potential Thursday or Friday reopening.\u201d -Ski Bluewood Fingers crossed the expected storm delivers much needed relief with 3 to 7 inches of snow forecasted Sunday night into Monday. For the latest operation updates from Ski Bluewood go HERE . Categories: Washington Ski New",
+      "pub_date": "2026-02-07",
+      "id": "896d7fa24941",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [
+        "transportation"
+      ],
+      "approved_date": "2026-02-08",
+      "display_score": 18
     },
     {
       "source": "SnowBrains",
@@ -268,30 +292,6 @@
       "score_method": "keyword",
       "category": "winter-sports",
       "secondary_categories": [],
-      "approved_date": "2026-02-06",
-      "display_score": 14
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "Flying A $10,000 FPV Drone Over Europe\u2019s Deadliest Mountain",
-      "url": "https://unofficialnetworks.com/2026/02/05/flying-10k-drone-matterhorn-summit/",
-      "description": "Swiss cinematographer Noah Malin took his $10k FPV drone to the Matterhorn to shoot a commercial, flying all the way to the summit.",
-      "content": "The Matterhorn is among the deadliest mountains in the world, with more than 500 deaths on the mountain since 1865. Every year the mountain sees 8-10 deaths, with up to 3000 mountaineers attempting to summit the iconic peak. With a summit altitude of 14,692 feet, it theoretically shouldn\u2019t be incredibly difficult to fly a drone to the summit. However, the concept of flying a $10,000 piece of equipment far beyond your reach seems pretty stressful. Swiss cinematographer Noah Malin took his $10k FPV drone to the Matterhorn to shoot a commercial. Because of the drone\u2019s size, he had to walk up to the H\u00f6rnlih\u00fctte at 10,695 feet. This wasn\u2019t the first time someone\u2019s flown a drone to the summit of the iconic European peak, but the fact that this is a high-end piece of equipment with a very nice camera truly shines in the footage. It\u2019s absolutely stunning to look at. Noah has a ton of very cool drone footage on his YouTube channel, with shots of water, mountains, and stunning scenery. Make sure",
-      "pub_date": "2026-02-05",
-      "id": "907a096c4ca3",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 8,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "international",
-      "secondary_categories": [
-        "safety-incidents"
-      ],
       "approved_date": "2026-02-06",
       "display_score": 14
     },
