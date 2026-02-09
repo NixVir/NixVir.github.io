@@ -437,7 +437,7 @@
 
         /* State List */
         .state-list {
-            max-height: 350px;
+            max-height: 500px;
             overflow-y: auto;
         }
 
@@ -880,9 +880,14 @@
                     </div>
                 </div>
 
-                <!-- State Summary -->
+                <!-- State / Province Summary -->
                 <div class="sidebar-card">
-                    <h2>Snowpack by State</h2>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                        <h2 style="margin: 0;">Snowpack</h2>
+                        <button id="sort-toggle-btn" onclick="toggleStateSort()" title="Toggle sort order" style="background: var(--bg-elevated); border: 1px solid var(--border); color: var(--text-secondary); border-radius: 4px; padding: 2px 8px; cursor: pointer; font-size: 0.75rem; font-family: 'JetBrains Mono', monospace;">
+                            ↑ Low first
+                        </button>
+                    </div>
                     <div class="state-list" id="state-list">
                         <div class="loading">
                             <div class="loading-spinner"></div>
@@ -1089,50 +1094,123 @@
         }
 
         // Render state list
+        let stateSortAsc = true; // true = low first (ascending), false = high first
+
+        function toggleStateSort() {
+            stateSortAsc = !stateSortAsc;
+            const btn = document.getElementById('sort-toggle-btn');
+            btn.textContent = stateSortAsc ? '↑ Low first' : '↓ High first';
+            renderStateList();
+        }
+
         function renderStateList() {
             const byState = snotelData.statistics.by_state;
             const container = document.getElementById('state-list');
 
-            // Sort by mean percentage (ascending = worst first)
-            const sortedStates = Object.entries(byState)
-                .sort((a, b) => a[1].mean_pct - b[1].mean_pct);
+            // Build unified list of all states/provinces with % of normal
+            const entries = [];
 
-            let html = sortedStates.map(([state, data]) => `
-                <div class="state-row" onclick="filterByState('${state}')">
-                    <span class="state-code">${state}</span>
-                    <div class="state-bar">
-                        <div class="state-bar-fill" style="width: ${Math.min(data.mean_pct, 150)}%; background: ${getSnowpackColor(data.mean_pct)}"></div>
-                    </div>
-                    <span class="state-value ${getSnowpackClass(data.mean_pct)}">${data.mean_pct}%</span>
-                </div>
-            `).join('');
+            // US states (all have mean_pct)
+            Object.entries(byState).forEach(([code, data]) => {
+                entries.push({
+                    code,
+                    pct: data.mean_pct,
+                    count: data.count,
+                    type: 'us',
+                    onclick: `filterByState('${code}')`
+                });
+            });
 
-            // Add BC basins if data is available (with % of normal)
+            // BC basins (has mean_sbi = % of normal)
             if (bcBasinData && bcBasinData.statistics) {
-                const bcStats = bcBasinData.statistics;
-                const meanPct = bcStats.mean_sbi;
-                html += `
-                    <div class="state-row" style="margin-top: 0.5rem; border-top: 1px solid var(--border); padding-top: 0.5rem;" onclick="zoomToBC()">
-                        <span class="state-code">BC</span>
-                        <div class="state-bar">
-                            <div class="state-bar-fill" style="width: ${Math.min(meanPct, 150)}%; background: ${getSnowpackColor(meanPct)}"></div>
-                        </div>
-                        <span class="state-value ${getSnowpackClass(meanPct)}" title="${bcStats.with_data} basins reporting">${meanPct}%</span>
-                    </div>
-                `;
+                entries.push({
+                    code: 'BC',
+                    pct: bcBasinData.statistics.mean_sbi,
+                    count: bcBasinData.statistics.with_data,
+                    type: 'ca',
+                    onclick: `filterByState('BC')`
+                });
             } else if (bcSnowData && bcSnowData.statistics) {
-                // Fallback to station data if basin data not available
-                const bcStats = bcSnowData.statistics;
-                const meanSWE = Math.round(bcStats.mean_swe_mm / 25.4 * 10) / 10;
-                html += `
-                    <div class="state-row" style="margin-top: 0.5rem; border-top: 1px solid var(--border); padding-top: 0.5rem;" onclick="filterByState('BC')">
-                        <span class="state-code" style="color: #06b6d4;">BC</span>
-                        <div class="state-bar">
-                            <div class="state-bar-fill" style="width: 100%; background: #06b6d4; opacity: 0.6;"></div>
-                        </div>
-                        <span class="state-value" style="color: #06b6d4;" title="${bcStats.count} stations reporting">${meanSWE}" avg</span>
+                // Fallback: no %, show SWE
+                const meanSWE = Math.round(bcSnowData.statistics.mean_swe_mm / 25.4 * 10) / 10;
+                entries.push({
+                    code: 'BC',
+                    pct: null,
+                    sweDisplay: `${meanSWE}"`,
+                    count: bcSnowData.statistics.count,
+                    type: 'ca-swe',
+                    onclick: `filterByState('BC')`
+                });
+            }
+
+            // Alberta (SWE only, no % of normal)
+            if (abSnowData && abSnowData.statistics) {
+                const meanSWE = Math.round(abSnowData.statistics.mean_swe_mm / 25.4 * 10) / 10;
+                entries.push({
+                    code: 'AB',
+                    pct: null,
+                    sweDisplay: `${meanSWE}"`,
+                    count: abSnowData.statistics.count,
+                    type: 'ca-swe',
+                    onclick: `filterByState('AB')`
+                });
+            }
+
+            // Quebec (SWE only, no % of normal)
+            if (qcSnowData && qcSnowData.statistics) {
+                const meanSWE = Math.round(qcSnowData.statistics.mean_swe_mm / 25.4 * 10) / 10;
+                entries.push({
+                    code: 'QC',
+                    pct: null,
+                    sweDisplay: `${meanSWE}"`,
+                    count: qcSnowData.statistics.count,
+                    type: 'ca-swe',
+                    onclick: `filterByState('QC')`
+                });
+            }
+
+            // Separate entries with % (sortable) from SWE-only
+            const withPct = entries.filter(e => e.pct !== null);
+            const sweOnly = entries.filter(e => e.pct === null);
+
+            // Sort by % of normal
+            withPct.sort((a, b) => stateSortAsc
+                ? a.pct - b.pct
+                : b.pct - a.pct);
+
+            // Sort SWE-only by SWE descending (most snow first)
+            sweOnly.sort((a, b) => {
+                const aVal = parseFloat(a.sweDisplay) || 0;
+                const bVal = parseFloat(b.sweDisplay) || 0;
+                return bVal - aVal;
+            });
+
+            // Render % of normal entries
+            let html = withPct.map(e => {
+                const flagClass = e.type === 'ca' ? ' style="color: #06b6d4;"' : '';
+                return `
+                <div class="state-row" onclick="${e.onclick}" title="${STATE_NAMES[e.code] || e.code} — ${e.count} stations">
+                    <span class="state-code"${flagClass}>${e.code}</span>
+                    <div class="state-bar">
+                        <div class="state-bar-fill" style="width: ${Math.min(e.pct, 150)}%; background: ${getSnowpackColor(e.pct)}"></div>
                     </div>
-                `;
+                    <span class="state-value ${getSnowpackClass(e.pct)}">${e.pct}%</span>
+                </div>`;
+            }).join('');
+
+            // Render SWE-only provinces (AB, QC, or BC fallback)
+            if (sweOnly.length > 0) {
+                html += `<div style="margin-top: 0.5rem; border-top: 1px solid var(--border); padding-top: 0.25rem;">
+                    <div style="font-size: 0.65rem; color: var(--text-muted); margin-bottom: 0.25rem;">Avg SWE (no % available)</div>`;
+                html += sweOnly.map(e => `
+                    <div class="state-row" onclick="${e.onclick}" title="${STATE_NAMES[e.code] || e.code} — ${e.count} stations, avg SWE">
+                        <span class="state-code" style="color: #06b6d4;">${e.code}</span>
+                        <div class="state-bar">
+                            <div class="state-bar-fill" style="width: 100%; background: #06b6d4; opacity: 0.4;"></div>
+                        </div>
+                        <span class="state-value" style="color: #06b6d4;">${e.sweDisplay}</span>
+                    </div>`).join('');
+                html += '</div>';
             }
 
             container.innerHTML = html;
@@ -1974,16 +2052,19 @@
             const panel = document.getElementById('station-details');
 
             document.getElementById('station-name').textContent = station.name;
-            document.getElementById('station-location').textContent = `${station.province}, Canada | ${station.elevation_ft ? station.elevation_ft.toLocaleString() + ' ft' : '--'} elevation`;
-            document.getElementById('station-swe').textContent = station.swe_inches !== null ? station.swe_inches + '"' : 'N/A';
+            const province = station.province || station.region || 'Canada';
+            const elevFt = station.elevation_ft || (station.elevation_m ? Math.round(station.elevation_m * 3.281) : null);
+            document.getElementById('station-location').textContent = `${province} | ${elevFt ? elevFt.toLocaleString() + ' ft' : '--'} elevation`;
+            const sweInches = station.swe_inches ?? (station.swe_mm != null ? Math.round(station.swe_mm / 25.4 * 10) / 10 : null);
+            document.getElementById('station-swe').textContent = sweInches !== null ? sweInches + '"' : 'N/A';
             document.getElementById('station-swe').className = 'metric-value';
 
             const pctEl = document.getElementById('station-pct');
-            pctEl.textContent = 'N/A'; // BC doesn't have % of normal
+            pctEl.textContent = 'N/A';
             pctEl.className = 'metric-value';
 
-            document.getElementById('station-elev').textContent = station.elevation_ft ? station.elevation_ft.toLocaleString() + ' ft' : 'N/A';
-            document.getElementById('station-id').textContent = station.id;
+            document.getElementById('station-elev').textContent = elevFt ? elevFt.toLocaleString() + ' ft' : 'N/A';
+            document.getElementById('station-id').textContent = station.id || station.station_id || '--';
 
             panel.classList.add('visible');
         }
@@ -2025,26 +2106,29 @@
         const STATE_NAMES = {
             'AZ': 'Arizona', 'CA': 'California', 'CO': 'Colorado', 'ID': 'Idaho',
             'MT': 'Montana', 'NV': 'Nevada', 'NM': 'New Mexico', 'OR': 'Oregon',
-            'UT': 'Utah', 'WA': 'Washington', 'WY': 'Wyoming', 'AK': 'Alaska',
-            'BC': 'British Columbia'
+            'SD': 'South Dakota', 'UT': 'Utah', 'WA': 'Washington', 'WY': 'Wyoming', 'AK': 'Alaska',
+            'BC': 'British Columbia', 'AB': 'Alberta', 'QC': 'Quebec'
         };
 
         function showStateDetail(stateCode) {
             const panel = document.getElementById('state-detail-panel');
             const listContainer = document.getElementById('state-station-list');
+            const isProvince = ['BC', 'AB', 'QC'].includes(stateCode);
 
-            // Get stations for this state
+            // Get stations for this state/province
             let stations;
-            let isBC = stateCode === 'BC';
-
-            if (isBC && bcSnowData) {
+            if (stateCode === 'BC' && bcSnowData) {
                 stations = bcSnowData.stations.filter(s => s.swe_mm !== null);
+            } else if (stateCode === 'AB' && abSnowData) {
+                stations = abSnowData.stations.filter(s => s.swe_mm !== null);
+            } else if (stateCode === 'QC' && qcSnowData) {
+                stations = qcSnowData.stations.filter(s => s.swe_mm !== null);
             } else {
                 stations = snotelData.stations.filter(s => s.state === stateCode);
             }
 
-            // Sort by % of median (ascending = worst first) for SNOTEL, by SWE for BC
-            if (isBC) {
+            // Sort: SNOTEL by % of median ascending, provinces by SWE descending
+            if (isProvince) {
                 stations.sort((a, b) => (b.swe_mm || 0) - (a.swe_mm || 0));
             } else {
                 stations.sort((a, b) => (a.pct_median || 0) - (b.pct_median || 0));
@@ -2055,8 +2139,10 @@
             document.getElementById('state-detail-name').textContent = stateName;
 
             // Calculate summary stats
-            if (isBC) {
-                const avgSWE = Math.round(stations.reduce((sum, s) => sum + (s.swe_mm || 0), 0) / stations.length / 25.4 * 10) / 10;
+            if (isProvince) {
+                const avgSWE = stations.length > 0
+                    ? Math.round(stations.reduce((sum, s) => sum + (s.swe_mm || 0), 0) / stations.length / 25.4 * 10) / 10
+                    : 0;
                 document.getElementById('state-detail-summary').textContent = `${stations.length} stations | ${avgSWE}" avg SWE`;
             } else {
                 const avgPct = Math.round(stations.reduce((sum, s) => sum + (s.pct_median || 0), 0) / stations.length);
@@ -2067,13 +2153,16 @@
             // Build station list HTML
             let html = '';
             stations.forEach(station => {
-                const pct = isBC ? null : station.pct_median;
-                const color = isBC ? '#06b6d4' : getSnowpackColor(pct);
-                const sweDisplay = station.swe_inches !== null ? `${station.swe_inches}"` : '--';
-                const pctDisplay = isBC ? '--' : (pct !== null ? `${pct}%` : '--');
+                const pct = isProvince ? null : station.pct_median;
+                const color = isProvince ? '#06b6d4' : getSnowpackColor(pct);
+                const sweInches = station.swe_inches != null ? station.swe_inches
+                    : (station.swe_mm != null ? Math.round(station.swe_mm / 25.4 * 10) / 10 : null);
+                const sweDisplay = sweInches !== null ? `${sweInches}"` : '--';
+                const pctDisplay = isProvince ? '--' : (pct !== null ? `${pct}%` : '--');
+                const stationId = station.id || station.station_id || station.name;
 
                 html += `
-                    <div class="station-row" onclick="zoomToStation('${station.id}', ${isBC})">
+                    <div class="station-row" onclick="zoomToStation('${stationId}', ${isProvince})">
                         <div class="station-row-name" title="${station.name}">${station.name}</div>
                         <div class="station-row-swe">${sweDisplay}</div>
                         <div class="station-row-pct" style="color: ${color};">${pctDisplay}</div>
@@ -2085,18 +2174,23 @@
             panel.style.display = 'flex';
         }
 
-        function zoomToStation(stationId, isBC) {
+        function zoomToStation(stationId, isProvince) {
             let station;
-            if (isBC && bcSnowData) {
-                station = bcSnowData.stations.find(s => s.id === stationId);
+            if (isProvince) {
+                // Search across all Canadian data sources
+                if (bcSnowData) station = bcSnowData.stations.find(s => s.id === stationId);
+                if (!station && abSnowData) station = abSnowData.stations.find(s => (s.station_id || s.name) === stationId);
+                if (!station && qcSnowData) station = qcSnowData.stations.find(s => (s.id || s.name) === stationId);
             } else {
                 station = snotelData.stations.find(s => s.id === stationId);
             }
 
             if (station) {
-                map.setView([station.lat, station.lon], 10);
+                const lat = station.lat;
+                const lon = station.lon || station.lng;
+                if (lat && lon) map.setView([lat, lon], 10);
                 // Show station details
-                if (isBC) {
+                if (isProvince) {
                     showBCStationDetails(station);
                 } else {
                     showStationDetails(station);
@@ -2105,6 +2199,8 @@
         }
 
         function filterByState(stateCode) {
+            const isProvince = ['BC', 'AB', 'QC'].includes(stateCode);
+
             // Toggle state filter
             if (selectedState === stateCode) {
                 selectedState = null;
@@ -2114,30 +2210,26 @@
             } else {
                 selectedState = stateCode;
 
-                // Handle BC separately
+                // Get stations for zoom bounds
+                let zoomStations = [];
                 if (stateCode === 'BC' && bcSnowData) {
-                    const bcStations = bcSnowData.stations.filter(s => s.swe_mm !== null);
-                    if (bcStations.length > 0) {
-                        const lats = bcStations.map(s => s.lat);
-                        const lons = bcStations.map(s => s.lon);
-                        const bounds = [
-                            [Math.min(...lats) - 0.5, Math.min(...lons) - 0.5],
-                            [Math.max(...lats) + 0.5, Math.max(...lons) + 0.5]
-                        ];
-                        map.fitBounds(bounds, { padding: [20, 20] });
-                    }
+                    zoomStations = bcSnowData.stations.filter(s => s.swe_mm !== null);
+                } else if (stateCode === 'AB' && abSnowData) {
+                    zoomStations = abSnowData.stations.filter(s => s.swe_mm !== null);
+                } else if (stateCode === 'QC' && qcSnowData) {
+                    zoomStations = qcSnowData.stations.filter(s => s.swe_mm !== null);
                 } else {
-                    // Find bounds of SNOTEL stations in this state
-                    const stateStations = snotelData.stations.filter(s => s.state === stateCode);
-                    if (stateStations.length > 0) {
-                        const lats = stateStations.map(s => s.lat);
-                        const lons = stateStations.map(s => s.lon);
-                        const bounds = [
-                            [Math.min(...lats) - 0.5, Math.min(...lons) - 0.5],
-                            [Math.max(...lats) + 0.5, Math.max(...lons) + 0.5]
-                        ];
-                        map.fitBounds(bounds, { padding: [20, 20] });
-                    }
+                    zoomStations = snotelData.stations.filter(s => s.state === stateCode);
+                }
+
+                if (zoomStations.length > 0) {
+                    const lats = zoomStations.map(s => s.lat);
+                    const lons = zoomStations.map(s => s.lon || s.lng);
+                    const bounds = [
+                        [Math.min(...lats) - 0.5, Math.min(...lons) - 0.5],
+                        [Math.max(...lats) + 0.5, Math.max(...lons) + 0.5]
+                    ];
+                    map.fitBounds(bounds, { padding: [20, 20] });
                 }
 
                 // Show state detail panel with station listing
