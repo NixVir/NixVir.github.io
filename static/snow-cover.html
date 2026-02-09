@@ -2400,20 +2400,11 @@
                 }
             }
 
-            // Temperature: check latest date across metros
+            // Temperature: check latest date from first metro's history array
             if (temperatureHistoryData?.metros) {
-                for (const metro of temperatureHistoryData.metros) {
-                    const hist = metro.history;
-                    if (hist) {
-                        const dates = Object.keys(hist);
-                        if (dates.length > 0) {
-                            const maxDate = dates.sort().pop();
-                            if (!latestTempDate || maxDate > latestTempDate) {
-                                latestTempDate = maxDate;
-                            }
-                        }
-                        break; // All metros should have same date range
-                    }
+                const firstMetro = Object.values(temperatureHistoryData.metros)[0];
+                if (firstMetro?.history?.length > 0) {
+                    latestTempDate = firstMetro.history[firstMetro.history.length - 1].date;
                 }
             }
 
