@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-02-09T18:58:53.980680Z",
+  "fetched_at": "2026-02-09T19:17:03.952410Z",
   "kalshi": {
     "recession": [
       {
@@ -9,14 +9,14 @@
           {
             "ticker": "KXRECSSNBER-26",
             "title": "Will there be a recession in 2026?",
-            "yes_price": 22,
-            "no_price": 78,
-            "yes_probability": 0.22,
+            "yes_price": 21,
+            "no_price": 79,
+            "yes_probability": 0.21,
             "yes_bid": 21,
             "yes_ask": 22,
-            "volume": 329680,
+            "volume": 329753,
             "volume_24h": 4765,
-            "open_interest": 155879,
+            "open_interest": 155922,
             "close_time": "2027-01-31T13:25:00Z"
           }
         ]
@@ -87,7 +87,7 @@
             "yes_probability": 0.29,
             "yes_bid": 28,
             "yes_ask": 29,
-            "volume": 49313,
+            "volume": 49323,
             "volume_24h": 1170,
             "open_interest": 25643,
             "close_time": "2026-02-20T13:29:00Z"
@@ -160,14 +160,14 @@
           {
             "ticker": "KXGDP-26JAN30-T1.5",
             "title": "Will **real GDP** increase by more than 1.5% in Q4 2025?",
-            "yes_price": 97,
-            "no_price": 3,
-            "yes_probability": 0.97,
+            "yes_price": 96,
+            "no_price": 4,
+            "yes_probability": 0.96,
             "yes_bid": 95,
             "yes_ask": 96,
-            "volume": 167830,
+            "volume": 167881,
             "volume_24h": 62,
-            "open_interest": 113975,
+            "open_interest": 113940,
             "close_time": "2026-02-20T13:29:00Z"
           },
           {
@@ -290,25 +290,25 @@
           {
             "ticker": "KXGDP-26JAN30-T3.0",
             "title": "Will **real GDP** increase by more than 3.0% in Q4 2025?",
-            "yes_price": 60,
-            "no_price": 40,
-            "yes_probability": 0.6,
+            "yes_price": 59,
+            "no_price": 41,
+            "yes_probability": 0.59,
             "yes_bid": 56,
-            "yes_ask": 60,
-            "volume": 281210,
+            "yes_ask": 59,
+            "volume": 281212,
             "volume_24h": 2096,
-            "open_interest": 114884,
+            "open_interest": 114886,
             "close_time": "2026-02-20T13:29:00Z"
           },
           {
             "ticker": "KXGDP-26JAN30-T2.5",
             "title": "Will **real GDP** increase by more than 2.5% in Q4 2025?",
-            "yes_price": 80,
-            "no_price": 20,
-            "yes_probability": 0.8,
-            "yes_bid": 79,
-            "yes_ask": 80,
-            "volume": 245089,
+            "yes_price": 79,
+            "no_price": 21,
+            "yes_probability": 0.79,
+            "yes_bid": 78,
+            "yes_ask": 79,
+            "volume": 245092,
             "volume_24h": 3480,
             "open_interest": 114230,
             "close_time": "2026-02-20T13:29:00Z"
@@ -626,9 +626,9 @@
             "yes_probability": 0.01,
             "yes_bid": 0,
             "yes_ask": 1,
-            "volume": 168280,
+            "volume": 169280,
             "volume_24h": 1841,
-            "open_interest": 71629,
+            "open_interest": 72629,
             "close_time": "2026-02-20T13:29:00Z"
           },
           {
@@ -1687,9 +1687,9 @@
             "yes_probability": 0.82,
             "yes_bid": 81,
             "yes_ask": 82,
-            "volume": 1796017,
+            "volume": 1796057,
             "volume_24h": 197445,
-            "open_interest": 1220827,
+            "open_interest": 1220817,
             "close_time": "2026-03-18T17:59:00Z"
           },
           {
@@ -1708,14 +1708,14 @@
           {
             "ticker": "KXFEDDECISION-26MAR-C25",
             "title": "Will the Federal Reserve Cut rates by 25bps at their March 2026 meeting?",
-            "yes_price": 16,
-            "no_price": 84,
-            "yes_probability": 0.16,
+            "yes_price": 17,
+            "no_price": 83,
+            "yes_probability": 0.17,
             "yes_bid": 16,
             "yes_ask": 17,
-            "volume": 2067443,
+            "volume": 2067958,
             "volume_24h": 175037,
-            "open_interest": 1565437,
+            "open_interest": 1565410,
             "close_time": "2026-03-18T17:59:00Z"
           }
         ]
@@ -1740,12 +1740,12 @@
           {
             "ticker": "KXFED-27APR-T4.00",
             "title": "Will the upper bound of the federal funds rate be above 4.00% following the Fed's Apr 28, 2027 meeting?",
-            "yes_price": 3,
-            "no_price": 97,
-            "yes_probability": 0.03,
+            "yes_price": 4,
+            "no_price": 96,
+            "yes_probability": 0.04,
             "yes_bid": 3,
-            "yes_ask": 12,
-            "volume": 86,
+            "yes_ask": 11,
+            "volume": 91,
             "volume_24h": 2,
             "open_interest": 25,
             "close_time": "2027-04-28T17:55:00Z"
@@ -1792,12 +1792,12 @@
           {
             "ticker": "KXFED-27APR-T3.00",
             "title": "Will the upper bound of the federal funds rate be above 3.00% following the Fed's Apr 28, 2027 meeting?",
-            "yes_price": 42,
-            "no_price": 58,
-            "yes_probability": 0.42,
+            "yes_price": 43,
+            "no_price": 57,
+            "yes_probability": 0.43,
             "yes_bid": 43,
             "yes_ask": 51,
-            "volume": 246,
+            "volume": 261,
             "volume_24h": 0,
             "open_interest": 65,
             "close_time": "2027-04-28T17:55:00Z"
@@ -3405,14 +3405,14 @@
           {
             "ticker": "KXCPI-26JAN-T0.3",
             "title": "Will CPI rise more than 0.3% in January 2026?",
-            "yes_price": 15,
-            "no_price": 85,
-            "yes_probability": 0.15,
+            "yes_price": 16,
+            "no_price": 84,
+            "yes_probability": 0.16,
             "yes_bid": 14,
-            "yes_ask": 15,
-            "volume": 73382,
+            "yes_ask": 16,
+            "volume": 73449,
             "volume_24h": 3351,
-            "open_interest": 28996,
+            "open_interest": 29057,
             "close_time": "2026-02-11T13:29:00Z"
           },
           {
@@ -3421,11 +3421,11 @@
             "yes_price": 41,
             "no_price": 59,
             "yes_probability": 0.41,
-            "yes_bid": 40,
+            "yes_bid": 39,
             "yes_ask": 41,
-            "volume": 79241,
+            "volume": 79369,
             "volume_24h": 1567,
-            "open_interest": 38388,
+            "open_interest": 38391,
             "close_time": "2026-02-11T13:29:00Z"
           },
           {
@@ -4290,14 +4290,14 @@
           {
             "ticker": "KXWTIW-26FEB13-B62.5",
             "title": "Will the WTI front-month settle oil price  be Between 62 and 62.99 on Feb 13, 2026??",
-            "yes_price": 14,
-            "no_price": 86,
-            "yes_probability": 0.14,
+            "yes_price": 17,
+            "no_price": 83,
+            "yes_probability": 0.17,
             "yes_bid": 14,
             "yes_ask": 17,
-            "volume": 4216,
+            "volume": 4227,
             "volume_24h": 3979,
-            "open_interest": 4075,
+            "open_interest": 4086,
             "close_time": "2026-02-13T19:30:00Z"
           },
           {
@@ -4497,22 +4497,22 @@
     "guest_demand_signals": [
       {
         "metric": "Recession Probability",
-        "value": 0.22,
-        "range_low": 0.22,
-        "range_high": 0.22,
+        "value": 0.21,
+        "range_low": 0.21,
+        "range_high": 0.21,
         "format": "percent",
         "sources": [
           {
             "source": "kalshi",
-            "value": 0.22,
-            "volume": 329680,
-            "open_interest": 155879,
+            "value": 0.21,
+            "volume": 329753,
+            "open_interest": 155922,
             "title": "Will there be a recession in 2026?",
             "resolves": "2027-01-31T13:25:00Z"
           }
         ],
-        "volume": 329680,
-        "open_interest": 155879,
+        "volume": 329753,
+        "open_interest": 155922,
         "interpretation": "lower_better"
       },
       {
@@ -4522,13 +4522,13 @@
         "format": "percent",
         "outcome": "Hold",
         "all_outcomes": {
-          "cut": 0.19,
+          "cut": 0.2,
           "hold": 0.82,
           "hike": 0.02
         },
         "interpretation": "neutral",
-        "volume": 5725378,
-        "open_interest": 4472673,
+        "volume": 5725933,
+        "open_interest": 4472636,
         "resolves": "2026-03-18T17:59:00Z"
       },
       {
@@ -4890,7 +4890,7 @@
           },
           {
             "title": "Will the WTI front-month settle oil price  be Between 62 and 62.99 on Feb 13, 2026??",
-            "probability": 0.14
+            "probability": 0.17
           },
           {
             "title": "Will the WTI front-month settle oil price  be Between 61 and 61.99 on Feb 13, 2026??",
@@ -4939,8 +4939,8 @@
         ],
         "format": "distribution",
         "interpretation": "lower_better",
-        "volume": 24629,
-        "open_interest": 22390,
+        "volume": 24640,
+        "open_interest": 22401,
         "resolves": "2026-02-13T19:30:00Z"
       },
       {
