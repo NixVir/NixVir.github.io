@@ -7,10 +7,15 @@ Output: static/data/prediction-markets.json
 """
 
 import json
+import re
 import time
 import requests
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
+
+# Output paths
+OUTPUT_PATH = Path("static/data/prediction-markets.json")
+HISTORY_PATH = Path("static/data/prediction-markets-history.json")
 
 # Kalshi API configuration
 KALSHI_BASE_URL = "https://api.elections.kalshi.com/trade-api/v2"
@@ -35,10 +40,16 @@ KALSHI_SERIES = [
 ]
 
 # Polymarket slugs to fetch
+# NOTE: The Polymarket Gamma API (gamma-api.polymarket.com) does not reliably
+# filter by tag or search query as of Feb 2026. Economic markets may require
+# the CLOB API or US-specific access (QCEX acquisition). These slugs are
+# kept as candidates — if the API returns "not found", the dashboard gracefully
+# falls back to Kalshi-only data. Check https://polymarket.com for current
+# slug format and update accordingly.
 POLYMARKET_SLUGS = [
-    {"slug": "us-recession-in-2025", "category": "recession", "display_name": "US Recession 2025"},
+    {"slug": "us-recession-in-2026", "category": "recession", "display_name": "US Recession 2026"},
     {"slug": "how-many-fed-rate-cuts-in-2026", "category": "fed_policy", "display_name": "Fed Rate Cuts 2026"},
-    {"slug": "will-trump-fire-powell-in-2025", "category": "policy_risk", "display_name": "Trump Fires Powell"},
+    {"slug": "will-the-fed-cut-rates-in-2026", "category": "fed_policy", "display_name": "Fed Rate Cuts 2026"},
 ]
 
 
@@ -220,6 +231,8 @@ def build_summary(data):
                     recession_probs.append({
                         "source": "kalshi",
                         "value": market["yes_probability"],
+                        "volume": market.get("volume", 0) or 0,
+                        "open_interest": market.get("open_interest", 0) or 0,
                         "title": market["title"],
                         "resolves": market.get("close_time")
                     })
@@ -231,17 +244,38 @@ def build_summary(data):
                 recession_probs.append({
                     "source": "polymarket",
                     "value": market["yes_probability"],
+                    "volume": int(float(market.get("volume", 0) or 0)),
+                    "open_interest": 0,
                     "title": market["title"],
                     "resolves": market.get("end_date")
                 })
 
     if recession_probs:
-        avg_prob = sum(p["value"] for p in recession_probs) / len(recession_probs)
+        # Use highest-volume source as headline (not an average of differently-
+        # calibrated platforms). Show the range when multiple sources exist.
+        relevant = [p for p in recession_probs if p["value"] > 0]
+        if not relevant:
+            relevant = recession_probs
+
+        # Sort by volume descending to pick best-capitalized source
+        sorted_by_vol = sorted(relevant, key=lambda x: x.get("volume", 0), reverse=True)
+        headline_value = sorted_by_vol[0]["value"]
+
+        range_low = min(p["value"] for p in relevant)
+        range_high = max(p["value"] for p in relevant)
+
+        total_volume = sum(p.get("volume", 0) for p in recession_probs)
+        total_oi = sum(p.get("open_interest", 0) for p in recession_probs)
+
         summary["guest_demand_signals"].append({
             "metric": "Recession Probability",
-            "value": avg_prob,
+            "value": headline_value,
+            "range_low": range_low,
+            "range_high": range_high,
             "format": "percent",
             "sources": recession_probs,
+            "volume": total_volume,
+            "open_interest": total_oi,
             "interpretation": "lower_better"
         })
 
@@ -293,8 +327,9 @@ def build_summary(data):
                         # Determine most likely outcome
                         if sum(fed_summary.values()) > 0:
                             most_likely = max(fed_summary, key=fed_summary.get)
-                            # Extract meeting month from meeting_id (e.g., "26JAN" -> "January 2026")
                             meeting_month = earliest_meeting
+                            total_volume = sum(m.get("volume", 0) or 0 for m in next_meeting_markets)
+                            total_oi = sum(m.get("open_interest", 0) or 0 for m in next_meeting_markets)
                             summary["guest_demand_signals"].append({
                                 "metric": "Fed Rate Decision",
                                 "meeting": meeting_month,
@@ -303,6 +338,8 @@ def build_summary(data):
                                 "outcome": most_likely.title(),
                                 "all_outcomes": fed_summary,
                                 "interpretation": "cut_good" if most_likely == "cut" else "neutral",
+                                "volume": total_volume,
+                                "open_interest": total_oi,
                                 "resolves": earliest_close
                             })
                 break
@@ -313,50 +350,72 @@ def build_summary(data):
             if series_data["series"] == "KXRATECUTCOUNT":
                 markets = series_data.get("markets", [])
                 if markets:
-                    # Find expected number of cuts
                     cuts_dist = []
                     latest_close = None
+                    total_volume = 0
+                    total_oi = 0
                     for m in markets:
                         cuts_dist.append({
                             "title": m.get("title"),
                             "probability": m.get("yes_probability", 0)
                         })
-                        # Track the latest close time (when this series resolves)
                         close_time = m.get("close_time")
                         if close_time and (latest_close is None or close_time > latest_close):
                             latest_close = close_time
+                        total_volume += m.get("volume", 0) or 0
+                        total_oi += m.get("open_interest", 0) or 0
                     if cuts_dist:
                         summary["guest_demand_signals"].append({
                             "metric": "Rate Cuts This Year",
                             "distribution": cuts_dist,
                             "format": "distribution",
+                            "volume": total_volume,
+                            "open_interest": total_oi,
                             "resolves": latest_close
                         })
                 break
 
     # Operating Cost Drivers: Inflation, Energy
 
-    # Annual inflation
+    # Inflation outlook - prefer KXPCECORE (Core PCE, Fed's preferred gauge),
+    # fallback to KXCPI, then KXINFLY
+    inflation_added = False
     if "inflation" in data["kalshi"]:
-        for series_data in data["kalshi"]["inflation"]:
-            if series_data["series"] == "KXINFLY":
-                markets = series_data.get("markets", [])
-                if markets:
-                    # Get inflation range expectations
-                    inflation_dist = []
-                    for m in markets:
-                        inflation_dist.append({
-                            "title": m.get("title"),
-                            "probability": m.get("yes_probability", 0)
-                        })
-                    if inflation_dist:
-                        summary["operating_cost_drivers"].append({
-                            "metric": "Annual Inflation",
-                            "distribution": inflation_dist,
-                            "format": "distribution",
-                            "interpretation": "lower_better"
-                        })
+        for preferred_series in ["KXPCECORE", "KXCPI", "KXINFLY"]:
+            if inflation_added:
                 break
+            for series_data in data["kalshi"]["inflation"]:
+                if series_data["series"] == preferred_series:
+                    markets = series_data.get("markets", [])
+                    if markets:
+                        inflation_dist = []
+                        total_volume = 0
+                        total_oi = 0
+                        latest_close = None
+                        for m in markets:
+                            inflation_dist.append({
+                                "title": m.get("title"),
+                                "probability": m.get("yes_probability", 0)
+                            })
+                            total_volume += m.get("volume", 0) or 0
+                            total_oi += m.get("open_interest", 0) or 0
+                            close_time = m.get("close_time")
+                            if close_time and (latest_close is None or close_time > latest_close):
+                                latest_close = close_time
+                        # Skip if total volume is 0 (meaningless 50/50 probabilities)
+                        if inflation_dist and total_volume > 0:
+                            summary["operating_cost_drivers"].append({
+                                "metric": "Inflation Outlook",
+                                "series": preferred_series,
+                                "distribution": inflation_dist,
+                                "format": "distribution",
+                                "interpretation": "lower_better",
+                                "volume": total_volume,
+                                "open_interest": total_oi,
+                                "resolves": latest_close
+                            })
+                            inflation_added = True
+                    break
 
     # WTI Oil
     if "energy" in data["kalshi"]:
@@ -366,21 +425,26 @@ def build_summary(data):
                 if markets:
                     oil_dist = []
                     earliest_close = None
+                    total_volume = 0
+                    total_oi = 0
                     for m in markets:
                         oil_dist.append({
                             "title": m.get("title"),
                             "probability": m.get("yes_probability", 0)
                         })
-                        # WTI weekly resolves at end of week - get earliest close
                         close_time = m.get("close_time")
                         if close_time and (earliest_close is None or close_time < earliest_close):
                             earliest_close = close_time
+                        total_volume += m.get("volume", 0) or 0
+                        total_oi += m.get("open_interest", 0) or 0
                     if oil_dist:
                         summary["operating_cost_drivers"].append({
                             "metric": "WTI Oil Price",
                             "distribution": oil_dist,
                             "format": "distribution",
                             "interpretation": "lower_better",
+                            "volume": total_volume,
+                            "open_interest": total_oi,
                             "resolves": earliest_close
                         })
                 break
@@ -395,10 +459,10 @@ def build_summary(data):
                     # Find the price level with ~50% probability (market consensus)
                     gas_levels = []
                     earliest_close = None
+                    total_volume = 0
+                    total_oi = 0
                     for m in markets:
                         title = m.get("title", "")
-                        # Extract price like "$2.830" from title
-                        import re
                         price_match = re.search(r'\$(\d+\.\d+)', title)
                         if price_match:
                             gas_levels.append({
@@ -406,15 +470,14 @@ def build_summary(data):
                                 "probability": m.get("yes_probability", 0),
                                 "title": title
                             })
-                        # Track earliest close time
                         close_time = m.get("close_time")
                         if close_time and (earliest_close is None or close_time < earliest_close):
                             earliest_close = close_time
+                        total_volume += m.get("volume", 0) or 0
+                        total_oi += m.get("open_interest", 0) or 0
 
                     if gas_levels:
-                        # Sort by price
                         gas_levels.sort(key=lambda x: x["price"])
-                        # Find price with probability closest to 50% (consensus point)
                         closest = min(gas_levels, key=lambda x: abs(x["probability"] - 0.5))
                         summary["operating_cost_drivers"].append({
                             "metric": "Gas Price Outlook",
@@ -423,11 +486,181 @@ def build_summary(data):
                             "format": "price",
                             "levels": gas_levels,
                             "interpretation": "lower_better",
+                            "volume": total_volume,
+                            "open_interest": total_oi,
                             "resolves": earliest_close
                         })
                 break
 
     return summary
+
+
+def build_narrative(summary):
+    """
+    Generate a plain-text interpretive narrative from current prediction market data.
+    Follows CLAUDE.md language guidelines: factual, measured. Uses 'may' not 'will'.
+    """
+    parts = []
+
+    # Recession component
+    recession = next((s for s in summary.get("guest_demand_signals", [])
+                      if s["metric"] == "Recession Probability"), None)
+    if recession:
+        prob = recession["value"]
+        if prob < 0.15:
+            parts.append(
+                "Recession risk remains low, which may support consumer confidence "
+                "and discretionary travel spending."
+            )
+        elif prob < 0.30:
+            parts.append(
+                "Recession risk is elevated, which may weigh on consumer willingness "
+                "to spend on travel."
+            )
+        else:
+            parts.append(
+                "Recession risk is significant, which may reduce discretionary "
+                "spending on ski travel."
+            )
+
+    # Fed policy component
+    fed = next((s for s in summary.get("guest_demand_signals", [])
+                if s["metric"] == "Fed Rate Decision"), None)
+    if fed:
+        outcome = fed.get("outcome", "").lower()
+        prob_pct = int(fed.get("value", 0) * 100)
+        if outcome == "hold":
+            parts.append(
+                f"The Fed is expected to hold rates steady at the next meeting "
+                f"({prob_pct}% probability)."
+            )
+        elif outcome == "cut":
+            parts.append(
+                f"The Fed is expected to cut rates ({prob_pct}% probability), "
+                f"which may ease borrowing costs and support consumer spending."
+            )
+        elif outcome == "hike":
+            parts.append(
+                f"The Fed is expected to raise rates ({prob_pct}% probability), "
+                f"which may tighten consumer budgets."
+            )
+
+    # Energy component
+    oil = next((s for s in summary.get("operating_cost_drivers", [])
+                if s["metric"] == "WTI Oil Price"), None)
+    if oil and oil.get("distribution"):
+        dist = oil["distribution"]
+        max_item = max(dist, key=lambda d: d.get("probability", 0))
+        price_match = re.search(r'(\d+)', max_item.get("title", ""))
+        if price_match:
+            price = int(price_match.group(1))
+            if price < 65:
+                parts.append(
+                    "Energy costs appear stable with oil below $65, keeping "
+                    "transportation and operating expenses contained."
+                )
+            elif price <= 80:
+                parts.append(
+                    "Energy costs are moderate with oil in the $65\u201380 range."
+                )
+            else:
+                parts.append(
+                    "Energy costs are elevated with oil above $80, which may "
+                    "increase operating and travel expenses."
+                )
+
+    # Inflation component
+    inflation = next((s for s in summary.get("operating_cost_drivers", [])
+                      if s["metric"] == "Inflation Outlook"), None)
+    if inflation and inflation.get("distribution"):
+        dist = inflation["distribution"]
+        max_item = max(dist, key=lambda d: d.get("probability", 0))
+        rate_match = re.search(r'(\d+\.\d+)%', max_item.get("title", ""))
+        if rate_match:
+            rate = float(rate_match.group(1))
+            if rate <= 0.2:
+                parts.append("Inflation expectations remain contained.")
+            else:
+                parts.append(
+                    "Inflation expectations are somewhat elevated, which may "
+                    "affect consumer purchasing power."
+                )
+
+    return " ".join(parts) if parts else None
+
+
+def update_history(current_summary):
+    """
+    Append today's key values to the history file.
+    Keeps last 30 days. Returns the snapshot from ~7 days ago for delta computation.
+    """
+    today = date.today().isoformat()
+
+    # Load existing history
+    if HISTORY_PATH.exists():
+        with open(HISTORY_PATH, "r", encoding="utf-8") as f:
+            history = json.load(f)
+    else:
+        history = {"snapshots": []}
+
+    # Extract key values from current summary
+    snapshot = {"date": today}
+
+    recession = next((s for s in current_summary.get("guest_demand_signals", [])
+                      if s["metric"] == "Recession Probability"), None)
+    if recession:
+        snapshot["recession_prob"] = recession["value"]
+
+    fed = next((s for s in current_summary.get("guest_demand_signals", [])
+                if s["metric"] == "Fed Rate Decision"), None)
+    if fed:
+        snapshot["fed_outcome"] = fed.get("outcome")
+        snapshot["fed_prob"] = fed.get("value")
+
+    rate_cuts = next((s for s in current_summary.get("guest_demand_signals", [])
+                      if s["metric"] == "Rate Cuts This Year"), None)
+    if rate_cuts and rate_cuts.get("distribution"):
+        dist = rate_cuts["distribution"]
+        max_item = max(dist, key=lambda d: d.get("probability", 0))
+        match = re.search(r'(\d+)', max_item.get("title", ""))
+        if match:
+            snapshot["rate_cuts_mode"] = int(match.group(1))
+
+    oil = next((s for s in current_summary.get("operating_cost_drivers", [])
+                if s["metric"] == "WTI Oil Price"), None)
+    if oil and oil.get("distribution"):
+        dist = oil["distribution"]
+        max_item = max(dist, key=lambda d: d.get("probability", 0))
+        price_match = re.search(r'(\d+)', max_item.get("title", ""))
+        if price_match:
+            snapshot["oil_price"] = int(price_match.group(1))
+
+    gas = next((s for s in current_summary.get("operating_cost_drivers", [])
+                if s["metric"] == "Gas Price Outlook"), None)
+    if gas:
+        snapshot["gas_price"] = gas.get("value")
+
+    # Remove existing entry for today (idempotent reruns)
+    history["snapshots"] = [s for s in history["snapshots"] if s["date"] != today]
+    history["snapshots"].append(snapshot)
+
+    # Keep only last 30 days
+    history["snapshots"].sort(key=lambda s: s["date"])
+    history["snapshots"] = history["snapshots"][-30:]
+
+    # Find snapshot from ~7 days ago (most recent at or before target date)
+    target_date = (date.today() - timedelta(days=7)).isoformat()
+    previous = None
+    for s in history["snapshots"]:
+        if s["date"] <= target_date:
+            previous = s
+
+    # Save history
+    HISTORY_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(HISTORY_PATH, "w", encoding="utf-8") as f:
+        json.dump(history, f, indent=2)
+
+    return previous
 
 
 def main():
@@ -440,15 +673,27 @@ def main():
     # Collect all market data
     data = collect_all_markets()
 
-    # Save to JSON file
-    output_path = Path("static/data/prediction-markets.json")
-    output_path.parent.mkdir(parents=True, exist_ok=True)
+    # Generate narrative summary
+    data["summary"]["narrative"] = build_narrative(data["summary"])
 
-    with open(output_path, "w", encoding="utf-8") as f:
+    # Save to JSON file
+    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
 
+    # Update history and add 7-day-ago snapshot for delta computation
+    previous = update_history(data["summary"])
+    if previous:
+        data["summary"]["previous"] = previous
+        # Re-save with previous data included
+        with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2)
+        print(f"  7-day comparison: {previous['date']}")
+    else:
+        print("  No 7-day history available yet (deltas will appear after ~7 days)")
+
     print()
-    print(f"Saved to {output_path}")
+    print(f"Saved to {OUTPUT_PATH}")
     print(f"Fetched at: {data['fetched_at']}")
 
     # Print summary
@@ -458,17 +703,27 @@ def main():
 
     print("  Guest Demand Signals:")
     for item in summary.get("guest_demand_signals", []):
+        vol = item.get("volume", 0)
+        vol_str = f" ({vol:,} vol)" if vol else ""
         if item.get("format") == "percent":
-            print(f"    - {item['metric']}: {item['value']*100:.1f}%")
+            print(f"    - {item['metric']}: {item['value']*100:.1f}%{vol_str}")
         elif item.get("format") == "distribution":
-            print(f"    - {item['metric']}: {len(item.get('distribution', []))} outcomes")
+            print(f"    - {item['metric']}: {len(item.get('distribution', []))} outcomes{vol_str}")
 
     print("  Operating Cost Drivers:")
     for item in summary.get("operating_cost_drivers", []):
+        vol = item.get("volume", 0)
+        vol_str = f" ({vol:,} vol)" if vol else ""
         if item.get("format") == "percent":
-            print(f"    - {item['metric']}: {item['value']*100:.1f}%")
+            print(f"    - {item['metric']}: {item['value']*100:.1f}%{vol_str}")
         elif item.get("format") == "distribution":
-            print(f"    - {item['metric']}: {len(item.get('distribution', []))} outcomes")
+            print(f"    - {item['metric']}: {len(item.get('distribution', []))} outcomes{vol_str}")
+        elif item.get("format") == "price":
+            print(f"    - {item['metric']}: ${item['value']:.2f}{vol_str}")
+
+    if summary.get("narrative"):
+        print()
+        print(f"  Narrative: {summary['narrative']}")
 
     print()
     print("Done!")

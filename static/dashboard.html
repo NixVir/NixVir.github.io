@@ -458,6 +458,42 @@
             text-transform: capitalize;
         }
 
+        .volume-tag {
+            font-size: 0.6rem;
+            color: var(--text-muted);
+            background: rgba(71, 85, 105, 0.2);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .prediction-delta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.2rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+
+        .prediction-delta.positive {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent-green);
+        }
+
+        .prediction-delta.negative {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--accent-red);
+        }
+
+        .prediction-delta.neutral {
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--accent-blue-bright);
+        }
+
         /* Mobile Responsive */
         @media (max-width: 1200px) {
             .site-nav-links a {
@@ -522,12 +558,12 @@
                 </div>
                 <div class="site-nav-right">
                     <ul class="site-nav-links">
-                        <li><a href="/snow-cover/">Snow</a></li>
-                        <li><a href="/dashboard.html" class="current">Nixvir Dashboard</a></li>
-                        <li><a href="/ski-news/">News</a></li>
-                        <li><a href="/post/">Data Insights</a></li>
+                        <li><a href="/snow-cover.html">Snow Cover</a></li>
+                        <li><a href="/snotel.html">Snowpack</a></li>
+                        <li><a href="/i70-traffic.html">I-70 Traffic</a></li>
+                        <li><a href="/dashboard.html" class="current">Economy</a></li>
+                        <li><a href="/page/ski-news/">Ski News</a></li>
                         <li><a href="/about/">About</a></li>
-                        <li><a href="/contact/">Contact</a></li>
                     </ul>
                     <span class="last-updated">Updated: <span id="last-update">Loading...</span></span>
                 </div>
@@ -829,6 +865,8 @@
                         Market-implied probabilities from <a href="https://kalshi.com" target="_blank" rel="noopener">Kalshi</a> and <a href="https://polymarket.com" target="_blank" rel="noopener">Polymarket</a>. These reflect trader expectations for economic outcomes affecting ski resort demand and operating costs.
                     </div>
 
+                    <div class="section-intro" id="prediction-narrative" style="display: none; margin-top: 0.5rem; border-left: 3px solid var(--accent-blue); background: rgba(59, 130, 246, 0.06);"></div>
+
                     <!-- Guest Demand Signals -->
                     <div class="subsection-header" style="margin-top: 1rem; margin-bottom: 0.75rem;">
                         <h3 style="color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Guest Demand Signals</h3>
@@ -873,6 +911,13 @@
                             <div class="card-description">National average retail gasoline price traders expect. "Settles" = when the bet pays out and we know the actual price.</div>
                             <div id="gas-direction">Loading...</div>
                             <div class="prediction-meta" id="gas-meta"></div>
+                        </div>
+                        <div class="metric-card prediction-card">
+                            <h3>Inflation Outlook <span class="resolves-date" id="inflation-resolves"></span></h3>
+                            <div class="card-description">Core PCE inflation rate traders expect. The Fed's preferred inflation gauge, which influences interest rate decisions and consumer purchasing power.</div>
+                            <div id="inflation-consensus">Loading...</div>
+                            <div class="chart-container" style="height: 140px;"><canvas id="chart-inflation-dist" role="img" aria-label="Distribution chart of expected inflation outcomes"></canvas></div>
+                            <div class="prediction-meta" id="inflation-meta"></div>
                         </div>
                     </div>
 
@@ -1827,11 +1872,53 @@
             const summary = data.summary || {};
 
             // Helper to format settlement dates
-            // "Settles" = when the market closes and the outcome is determined (bet pays out)
             function formatResolvesDate(isoDate) {
                 if (!isoDate) return '';
                 const d = new Date(isoDate);
                 return 'Settles ' + d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            }
+
+            // Helper to format volume numbers
+            function formatVolume(v) {
+                if (!v || v === 0) return '';
+                v = parseInt(v);
+                if (v >= 1000000) return (v / 1000000).toFixed(1) + 'M';
+                if (v >= 1000) return (v / 1000).toFixed(0) + 'K';
+                return v.toString();
+            }
+
+            // Helper to create 7-day delta pill
+            function formatDelta(currentValue, previousValue, invertColors, unit) {
+                if (previousValue === undefined || previousValue === null || currentValue === null) return '';
+                var diff = currentValue - previousValue;
+                if (Math.abs(diff) < 0.001) return '';
+
+                var label = '';
+                if (unit === 'percent') {
+                    label = (diff > 0 ? '+' : '') + (diff * 100).toFixed(0) + 'pp';
+                } else if (unit === 'price') {
+                    label = (diff > 0 ? '+' : '-') + '$' + Math.abs(diff).toFixed(2);
+                } else if (unit === 'count') {
+                    label = (diff > 0 ? '+' : '') + diff;
+                }
+
+                var cls = 'neutral';
+                if (diff > 0) cls = invertColors ? 'negative' : 'positive';
+                if (diff < 0) cls = invertColors ? 'positive' : 'negative';
+
+                var arrow = diff > 0 ? '\u2191' : '\u2193';
+                return '<span class="prediction-delta ' + cls + '">' + arrow + ' ' + label + ' 7d</span>';
+            }
+
+            var previous = summary.previous || {};
+
+            // Render narrative summary
+            var narrativeEl = document.getElementById('prediction-narrative');
+            if (narrativeEl && summary.narrative) {
+                narrativeEl.innerHTML = '<strong>Market Outlook:</strong> ' + summary.narrative;
+                narrativeEl.style.display = 'block';
+            } else if (narrativeEl) {
+                narrativeEl.style.display = 'none';
             }
 
             // Guest Demand Signals
@@ -1841,22 +1928,38 @@
             const recessionEl = document.getElementById('recession-consensus');
             if (recessionEl && recessionItem) {
                 const prob = (recessionItem.value * 100).toFixed(0);
-                let riskClass = 'positive';  // Low risk is good
+                let riskClass = 'positive';
                 if (recessionItem.value >= 0.30) riskClass = 'negative';
                 else if (recessionItem.value >= 0.15) riskClass = 'neutral';
-                recessionEl.innerHTML = '<div class="consensus-value ' + riskClass + '">' + prob + '%</div>' +
-                    '<div class="consensus-label">Market-implied probability of US recession</div>';
 
-                // Show sources
+                // 7-day delta (higher recession = bad, so invertColors=true)
+                var recessionDelta = formatDelta(recessionItem.value, previous.recession_prob, true, 'percent');
+
+                // Range display when multiple sources
+                var rangeHtml = '';
+                if (recessionItem.range_low !== undefined && recessionItem.range_high !== undefined
+                    && Math.abs(recessionItem.range_low - recessionItem.range_high) > 0.01) {
+                    rangeHtml = '<div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">' +
+                        'Range: ' + (recessionItem.range_low * 100).toFixed(0) + '\u2013' +
+                        (recessionItem.range_high * 100).toFixed(0) + '% across sources</div>';
+                }
+
+                recessionEl.innerHTML = '<div class="consensus-value ' + riskClass + '">' + prob + '%' + recessionDelta + '</div>' +
+                    '<div class="consensus-label">Market-implied probability of US recession</div>' + rangeHtml;
+
+                // Show sources with volume badges
                 const sourcesEl = document.getElementById('recession-sources');
                 if (sourcesEl && recessionItem.sources) {
-                    const sourceHtml = recessionItem.sources.map(s =>
-                        '<span class="source-tag">' + s.source + ': ' + (s.value * 100).toFixed(0) + '%</span>'
-                    ).join(' ');
+                    const sourceHtml = recessionItem.sources.map(function(s) {
+                        var volStr = '';
+                        if (s.volume) {
+                            volStr = ' <span class="volume-tag">' + formatVolume(s.volume) + ' vol</span>';
+                        }
+                        return '<span class="source-tag">' + s.source + ': ' + (s.value * 100).toFixed(0) + '%</span>' + volStr;
+                    }).join(' ');
                     sourcesEl.innerHTML = sourceHtml;
                 }
 
-                // Show resolves date (use earliest from sources)
                 const recessionResolvesEl = document.getElementById('recession-resolves');
                 if (recessionResolvesEl && recessionItem.sources) {
                     const earliestResolves = recessionItem.sources
@@ -1878,10 +1981,13 @@
                 const outcomeColors = { 'Cut': '#22c55e', 'Hold': '#f59e0b', 'Hike': '#ef4444' };
                 const color = outcomeColors[fedItem.outcome] || '#94a3b8';
                 const meeting = fedItem.meeting || 'Next';
-                fedEl.innerHTML = '<div class="consensus-value" style="color: ' + color + '">' + fedItem.outcome + '</div>' +
-                    '<div class="consensus-label">' + (fedItem.value * 100).toFixed(0) + '% probability at ' + meeting + ' meeting</div>';
 
-                // Draw probability bar chart
+                var fedDelta = formatDelta(fedItem.value, previous.fed_prob, false, 'percent');
+                var fedVolStr = fedItem.volume ? ' <span class="volume-tag">' + formatVolume(fedItem.volume) + ' vol</span>' : '';
+
+                fedEl.innerHTML = '<div class="consensus-value" style="color: ' + color + '">' + fedItem.outcome + fedDelta + '</div>' +
+                    '<div class="consensus-label">' + (fedItem.value * 100).toFixed(0) + '% probability at ' + meeting + ' meeting' + fedVolStr + '</div>';
+
                 const ctx = document.getElementById('chart-fed-probs');
                 if (ctx && fedItem.all_outcomes) {
                     if (charts['chart-fed-probs']) charts['chart-fed-probs'].destroy();
@@ -1909,7 +2015,6 @@
                     });
                 }
 
-                // Show resolves date for Fed decision
                 const fedResolvesEl = document.getElementById('fed-resolves');
                 if (fedResolvesEl && fedItem.resolves) {
                     fedResolvesEl.textContent = formatResolvesDate(fedItem.resolves);
@@ -1922,22 +2027,21 @@
             const rateCutsItem = summary.guest_demand_signals?.find(s => s.metric === 'Rate Cuts This Year');
             const rateCutsEl = document.getElementById('rate-cuts-consensus');
             if (rateCutsEl && rateCutsItem && rateCutsItem.distribution) {
-                // Find the most likely number of cuts
                 const dist = rateCutsItem.distribution;
                 const maxProb = Math.max(...dist.map(d => d.probability));
                 const mostLikely = dist.find(d => d.probability === maxProb);
-                // Extract number from title like "Will the Fed cut rates 2 times?"
                 const match = mostLikely?.title?.match(/(\d+)\s*times?/i);
                 const numCuts = match ? match[1] : '?';
 
-                rateCutsEl.innerHTML = '<div class="consensus-value">' + numCuts + '</div>' +
-                    '<div class="consensus-label">Most likely number of Fed rate cuts</div>';
+                var rateCutsDelta = formatDelta(parseInt(numCuts), previous.rate_cuts_mode, false, 'count');
+                var rcVolStr = rateCutsItem.volume ? ' <span class="volume-tag">' + formatVolume(rateCutsItem.volume) + ' vol</span>' : '';
 
-                // Draw distribution chart
+                rateCutsEl.innerHTML = '<div class="consensus-value">' + numCuts + rateCutsDelta + '</div>' +
+                    '<div class="consensus-label">Most likely number of Fed rate cuts' + rcVolStr + '</div>';
+
                 const ctx = document.getElementById('chart-rate-cuts');
                 if (ctx) {
                     if (charts['chart-rate-cuts']) charts['chart-rate-cuts'].destroy();
-                    // Sort by number of cuts (extract from title)
                     const sortedDist = [...dist].sort((a, b) => {
                         const numA = parseInt(a.title?.match(/(\d+)/)?.[1] || '0');
                         const numB = parseInt(b.title?.match(/(\d+)/)?.[1] || '0');
@@ -1968,7 +2072,6 @@
                     });
                 }
 
-                // Show resolves date for Rate Cuts
                 const rateCutsResolvesEl = document.getElementById('rate-cuts-resolves');
                 if (rateCutsResolvesEl && rateCutsItem.resolves) {
                     rateCutsResolvesEl.textContent = formatResolvesDate(rateCutsItem.resolves);
@@ -1986,18 +2089,19 @@
                 const dist = oilItem.distribution;
                 const maxProb = Math.max(...dist.map(d => d.probability));
                 const mostLikely = dist.find(d => d.probability === maxProb);
-                // Extract price from title like "Between 63 and 63.99" or ">63.99"
                 const priceMatch = mostLikely?.title?.match(/(?:Between\s+)?(\d+(?:\.\d+)?)/);
                 const price = priceMatch ? '$' + priceMatch[1] : '--';
+                const oilPriceNum = priceMatch ? parseInt(priceMatch[1]) : null;
 
-                oilEl.innerHTML = '<div class="consensus-value">' + price + '</div>' +
-                    '<div class="consensus-label">Most likely WTI price range this week</div>';
+                var oilDelta = formatDelta(oilPriceNum, previous.oil_price, true, 'price');
+                var oilVolStr = oilItem.volume ? ' <span class="volume-tag">' + formatVolume(oilItem.volume) + ' vol</span>' : '';
 
-                // Draw distribution chart
+                oilEl.innerHTML = '<div class="consensus-value">' + price + oilDelta + '</div>' +
+                    '<div class="consensus-label">Most likely WTI price range this week' + oilVolStr + '</div>';
+
                 const ctx = document.getElementById('chart-oil-dist');
                 if (ctx) {
                     if (charts['chart-oil-dist']) charts['chart-oil-dist'].destroy();
-                    // Sort by price threshold - titles like "Between 63 and 63.99" or ">63.99"
                     const sortedDist = [...dist].sort((a, b) => {
                         const priceA = parseFloat(a.title?.match(/(?:Between\s+)?(\d+(?:\.\d+)?)/)?.[1] || '0');
                         const priceB = parseFloat(b.title?.match(/(?:Between\s+)?(\d+(?:\.\d+)?)/)?.[1] || '0');
@@ -2028,7 +2132,6 @@
                     });
                 }
 
-                // Show resolves date for WTI Oil
                 const oilResolvesEl = document.getElementById('oil-resolves');
                 if (oilResolvesEl && oilItem.resolves) {
                     oilResolvesEl.textContent = formatResolvesDate(oilItem.resolves);
@@ -2041,31 +2144,92 @@
             const gasItem = summary.operating_cost_drivers?.find(s => s.metric === 'Gas Price Outlook');
             const gasEl = document.getElementById('gas-direction');
             if (gasEl && gasItem) {
-                const price = gasItem.value.toFixed(2);
+                const gasPrice = gasItem.value.toFixed(2);
                 const prob = (gasItem.probability * 100).toFixed(0);
-                // The probability is "chance price is ABOVE this level"
-                // So if 45% chance above $2.85, that means 55% chance it's AT or BELOW $2.85
                 const belowProb = 100 - parseInt(prob);
-                gasEl.innerHTML = '<div class="consensus-value">$' + price + '/gal</div>' +
-                    '<div class="consensus-label">Traders see a ' + belowProb + '% chance gas stays at or below this price</div>';
 
-                // Show the levels with clearer labels
+                var gasDelta = formatDelta(gasItem.value, previous.gas_price, true, 'price');
+                var gasVolStr = gasItem.volume ? ' <span class="volume-tag">' + formatVolume(gasItem.volume) + ' vol</span>' : '';
+
+                gasEl.innerHTML = '<div class="consensus-value">$' + gasPrice + '/gal' + gasDelta + '</div>' +
+                    '<div class="consensus-label">Traders see a ' + belowProb + '% chance gas stays at or below this price' + gasVolStr + '</div>';
+
                 const metaEl = document.getElementById('gas-meta');
                 if (metaEl && gasItem.levels) {
                     const levelsHtml = gasItem.levels.slice(0, 4).map(l => {
                         const aboveProb = (l.probability * 100).toFixed(0);
                         return '$' + l.price.toFixed(2) + ' (' + aboveProb + '% above)';
-                    }).join(' · ');
+                    }).join(' \u00b7 ');
                     metaEl.innerHTML = '<span style="color: #64748b;">Price thresholds: </span>' + levelsHtml;
                 }
 
-                // Show resolves date for Gas Price
                 const gasResolvesEl = document.getElementById('gas-resolves');
                 if (gasResolvesEl && gasItem.resolves) {
                     gasResolvesEl.textContent = formatResolvesDate(gasItem.resolves);
                 }
             } else if (gasEl) {
                 gasEl.innerHTML = '<div class="consensus-value">--</div><div class="consensus-label">Data unavailable</div>';
+            }
+
+            // 6. Inflation Outlook
+            const inflationItem = summary.operating_cost_drivers?.find(s => s.metric === 'Inflation Outlook');
+            const inflationEl = document.getElementById('inflation-consensus');
+            if (inflationEl && inflationItem && inflationItem.distribution) {
+                const dist = inflationItem.distribution;
+                const maxProb = Math.max(...dist.map(d => d.probability));
+                const mostLikely = dist.find(d => d.probability === maxProb);
+                const rateMatch = mostLikely?.title?.match(/(\d+\.\d+)%/);
+                const rate = rateMatch ? rateMatch[1] + '%' : '--';
+
+                var inflVolStr = inflationItem.volume ? ' <span class="volume-tag">' + formatVolume(inflationItem.volume) + ' vol</span>' : '';
+
+                inflationEl.innerHTML = '<div class="consensus-value">' + rate + '</div>' +
+                    '<div class="consensus-label">Most likely monthly core PCE inflation rate' + inflVolStr + '</div>';
+
+                const ctx = document.getElementById('chart-inflation-dist');
+                if (ctx) {
+                    if (charts['chart-inflation-dist']) charts['chart-inflation-dist'].destroy();
+                    const sortedDist = [...dist].sort((a, b) => {
+                        const rateA = parseFloat(a.title?.match(/(\d+\.\d+)/)?.[1] || '0');
+                        const rateB = parseFloat(b.title?.match(/(\d+\.\d+)/)?.[1] || '0');
+                        return rateA - rateB;
+                    });
+                    charts['chart-inflation-dist'] = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: sortedDist.map(d => {
+                                const m = d.title?.match(/(\d+\.\d+)/);
+                                return m ? m[1] + '%' : '?';
+                            }),
+                            datasets: [{
+                                data: sortedDist.map(d => d.probability * 100),
+                                backgroundColor: sortedDist.map(d => d.probability === maxProb ? '#a855f7' : '#475569'),
+                                borderRadius: 4
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: { legend: { display: false } },
+                            scales: {
+                                x: { grid: { display: false }, title: { display: true, text: 'Monthly rate', font: { size: 9 }, color: '#64748b' }, ticks: { font: { size: 9 } } },
+                                y: { max: Math.ceil(maxProb * 100 / 10) * 10 + 10, grid: { color: '#1a2230' }, ticks: { callback: v => v + '%', font: { size: 9 } } }
+                            }
+                        }
+                    });
+                }
+
+                const inflationMetaEl = document.getElementById('inflation-meta');
+                if (inflationMetaEl) {
+                    inflationMetaEl.innerHTML = '<span class="source-tag">Kalshi ' + (inflationItem.series || 'KXPCECORE') + '</span>';
+                }
+
+                const inflationResolvesEl = document.getElementById('inflation-resolves');
+                if (inflationResolvesEl && inflationItem.resolves) {
+                    inflationResolvesEl.textContent = formatResolvesDate(inflationItem.resolves);
+                }
+            } else if (inflationEl) {
+                inflationEl.innerHTML = '<div class="consensus-value">--</div><div class="consensus-label">Data unavailable</div>';
             }
 
             // Update timestamp
@@ -2077,8 +2241,7 @@
 
         } catch (error) {
             console.error("Failed to load prediction markets:", error);
-            // Set fallback content
-            ['recession-consensus', 'fed-decision', 'rate-cuts-consensus', 'oil-consensus', 'gas-direction'].forEach(id => {
+            ['recession-consensus', 'fed-decision', 'rate-cuts-consensus', 'oil-consensus', 'gas-direction', 'inflation-consensus'].forEach(id => {
                 const el = document.getElementById(id);
                 if (el) el.innerHTML = '<div class="consensus-value">--</div><div class="consensus-label">Unable to load data</div>';
             });
