@@ -1870,6 +1870,134 @@ def save_snow_data(data):
     return output_path
 
 # ============================================
+# Temperature History Update
+# ============================================
+
+def update_temperature_history():
+    """
+    Incrementally update temperature-history.json with recent data.
+
+    Fetches from Open-Meteo Archive API for any missing dates since the last
+    update. This keeps the temperature anomaly chart current without needing
+    manual backfill runs.
+
+    Called from main() after snow data collection.
+    """
+    temp_file = 'static/data/temperature-history.json'
+
+    if not os.path.exists(temp_file):
+        print_safe("  ! temperature-history.json not found — run backfill_current_season_temp.py first")
+        return
+
+    try:
+        with open(temp_file, 'r', encoding='utf-8') as f:
+            temp_data = json.load(f)
+    except Exception as e:
+        print_safe(f"  ! Could not load temperature history: {e}")
+        return
+
+    metro_data = temp_data.get('metros', {})
+    if not metro_data:
+        print_safe("  ! No metro data in temperature history file")
+        return
+
+    # Open-Meteo archive has a ~2-day lag
+    end_date = (datetime.now() - timedelta(days=2)).strftime('%Y-%m-%d')
+
+    # Find the latest date across all metros to determine what needs fetching
+    latest_dates = []
+    for city, data in metro_data.items():
+        history = data.get('history', [])
+        if history:
+            latest_dates.append(history[-1]['date'])
+
+    if not latest_dates:
+        print_safe("  ! No existing history entries found")
+        return
+
+    # Use the earliest "latest date" to ensure all metros get updated
+    earliest_latest = min(latest_dates)
+    # Start from the day after the earliest latest date
+    start_date_dt = datetime.strptime(earliest_latest, '%Y-%m-%d') + timedelta(days=1)
+    start_date = start_date_dt.strftime('%Y-%m-%d')
+
+    if start_date > end_date:
+        print_safe(f"  Temperature history is current through {earliest_latest}")
+        return
+
+    days_to_fetch = (datetime.strptime(end_date, '%Y-%m-%d') - start_date_dt).days + 1
+    print_safe(f"  Fetching {days_to_fetch} days ({start_date} to {end_date}) for {len(metro_data)} metros")
+
+    updated_count = 0
+    for city, data in metro_data.items():
+        lat = data.get('lat')
+        lng = data.get('lng')
+        if lat is None or lng is None:
+            continue
+
+        # Skip if this metro is already current
+        history = data.get('history', [])
+        existing_dates = {e['date'] for e in history}
+        if end_date in existing_dates:
+            continue
+
+        # Determine this metro's start date (day after its latest entry)
+        if history:
+            metro_start = (datetime.strptime(history[-1]['date'], '%Y-%m-%d') + timedelta(days=1)).strftime('%Y-%m-%d')
+        else:
+            metro_start = start_date
+
+        if metro_start > end_date:
+            continue
+
+        # Fetch from Open-Meteo Archive
+        url = (f"https://archive-api.open-meteo.com/v1/archive?"
+               f"latitude={lat}&longitude={lng}"
+               f"&start_date={metro_start}&end_date={end_date}"
+               f"&daily=temperature_2m_mean&timezone=auto")
+
+        api_data = fetch_json(url, timeout=15)
+        if api_data and 'daily' in api_data:
+            times = api_data['daily'].get('time', [])
+            temps = api_data['daily'].get('temperature_2m_mean', [])
+            new_count = 0
+            for i, date_str in enumerate(times):
+                if i < len(temps) and temps[i] is not None and date_str not in existing_dates:
+                    entry = {
+                        'date': date_str,
+                        'temp_c': round(temps[i], 1)
+                    }
+                    # Calculate anomaly if normals are available
+                    normals = data.get('normals', {})
+                    md = date_str[5:]  # "MM-DD"
+                    if md in normals:
+                        entry['normal_c'] = normals[md]
+                        entry['anomaly_c'] = round(temps[i] - normals[md], 1)
+                    history.append(entry)
+                    new_count += 1
+            if new_count > 0:
+                updated_count += 1
+
+        time.sleep(0.3)  # Rate limiting
+
+    if updated_count > 0:
+        # Sort all histories by date
+        for city, data in metro_data.items():
+            data['history'].sort(key=lambda x: x['date'])
+
+        # Update metadata
+        temp_data['generated'] = datetime.now().strftime('%Y-%m-%d %H:%M') + ' UTC'
+
+        # Save
+        with open(temp_file, 'w', encoding='utf-8') as f:
+            json.dump(temp_data, f)  # No indent — file is 9MB, indentation would make it huge
+
+        print_safe(f"  OK Updated {updated_count} metros through {end_date}")
+    else:
+        print_safe(f"  No new temperature data to add")
+
+
+# ============================================
 # Main
 # ============================================
 
@@ -1878,6 +2006,10 @@ def main():
     try:
         data = collect_snow_data()
         output_path = save_snow_data(data)
+
+        # Update temperature history incrementally
+        print_safe("\nUpdating temperature history...")
+        update_temperature_history()
 
         print_safe("\n" + "=" * 60)
         print_safe("SUMMARY")

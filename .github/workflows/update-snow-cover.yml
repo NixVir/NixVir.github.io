@@ -50,6 +50,10 @@ jobs:
       - name: Validate JSON output
         run: |
           python -c "import json; json.load(open('static/data/snow-cover.json'))"
+          python -c "import json; json.load(open('static/data/snow-cover-season.json'))"
+          if [ -f static/data/temperature-history.json ]; then
+            python -c "import json; json.load(open('static/data/temperature-history.json'))"
+          fi
 
       - name: Verify data quality
         run: |
@@ -72,7 +76,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add static/data/snow-cover.json static/images/snow-globe.png static/images/snow-globe.json
+          git add static/data/snow-cover.json static/data/snow-cover-season.json static/data/temperature-history.json static/images/snow-globe.png static/images/snow-globe.json
 
           # Check if there are changes
           if git diff --staged --quiet; then

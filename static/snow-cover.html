@@ -1434,12 +1434,12 @@
                 </div>
                 <div class="site-nav-right">
                     <ul class="site-nav-links">
-                        <li><a href="/snow-cover/" class="current">Snow</a></li>
-                        <li><a href="/dashboard.html">Nixvir Dashboard</a></li>
-                        <li><a href="/ski-news/">News</a></li>
-                        <li><a href="/post/">Data Insights</a></li>
+                        <li><a href="/snow-cover.html" class="current">Snow Cover</a></li>
+                        <li><a href="/snotel.html">Snowpack</a></li>
+                        <li><a href="/i70-traffic.html">I-70 Traffic</a></li>
+                        <li><a href="/dashboard.html">Economy</a></li>
+                        <li><a href="/page/ski-news/">Ski News</a></li>
                         <li><a href="/about/">About</a></li>
-                        <li><a href="/contact/">Contact</a></li>
                     </ul>
                     <div class="last-updated" id="last-updated">Loading...</div>
                 </div>
@@ -1845,10 +1845,6 @@
     <div class="tooltip" id="tooltip"></div>
 
     <script>
-        console.log('Snow Cover Dashboard: JavaScript loaded');
-        console.log('Page URL:', window.location.href);
-        console.log('Protocol:', window.location.protocol);
-
         // Check if loaded via file:// protocol (fetch won't work)
         if (window.location.protocol === 'file:') {
             console.error('Page loaded via file:// protocol - data fetching will fail!');
@@ -1984,27 +1980,19 @@
         // ============================================
         async function loadSnowData() {
             try {
-                console.log('Loading snow data...');
                 document.getElementById('last-updated').textContent = 'Loading data...';
 
                 // Load core data files (required)
-                console.log('Fetching /data/snow-cover.json and /data/snow-cover-historical.json...');
                 const [snowResponse, historicalResponse] = await Promise.all([
                     fetch('/data/snow-cover.json'),
                     fetch('/data/snow-cover-historical.json')
                 ]);
-
-                console.log('Snow response status:', snowResponse.status);
-                console.log('Historical response status:', historicalResponse.status);
 
                 if (!snowResponse.ok) {
                     throw new Error(`Failed to load snow-cover.json: ${snowResponse.status}`);
                 }
 
                 snowData = await snowResponse.json();
-                console.log('Snow data loaded:', snowData?.updated);
-                console.log('Snow data has usa.history:', snowData?.usa?.history?.length, 'entries');
-                console.log('Snow data has canada.history:', snowData?.canada?.history?.length, 'entries');
 
                 if (!historicalResponse.ok) {
                     console.warn('Historical response not ok:', historicalResponse.status);
@@ -2012,8 +2000,6 @@
                 } else {
                     try {
                         historicalData = await historicalResponse.json();
-                        console.log('Historical data loaded, usa:', historicalData?.usa?.length, 'entries');
-                        console.log('Historical data loaded, canada:', historicalData?.canada?.length, 'entries');
                     } catch (e) {
                         console.warn('Historical data parse error:', e);
                         historicalData = null;
@@ -2025,7 +2011,6 @@
                     const tempHistoryResponse = await fetch('/data/temperature-history.json');
                     if (tempHistoryResponse.ok) {
                         temperatureHistoryData = await tempHistoryResponse.json();
-                        console.log('Temperature history loaded:', Object.keys(temperatureHistoryData?.metros || {}).length, 'metros');
                     } else {
                         console.warn('Temperature history not available:', tempHistoryResponse.status);
                         temperatureHistoryData = null;
@@ -2042,14 +2027,10 @@
                 updateDataThroughDates();
 
                 // Update national overview
-                console.log('Calling updateNationalOverview...');
                 updateNationalOverview();
-                console.log('updateNationalOverview complete');
 
                 // Update regional dashboard
-                console.log('Calling updateDashboard...');
                 updateDashboard();
-                console.log('updateDashboard complete');
 
             } catch (error) {
                 console.error('Error loading snow data:', error);
@@ -2328,12 +2309,7 @@
         // National Overview
         // ============================================
         function updateNationalOverview() {
-            console.log('updateNationalOverview called, snowData:', !!snowData);
-            if (!snowData) {
-                console.warn('updateNationalOverview: No snowData, returning early');
-                return;
-            }
-            console.log('updateNationalOverview: snowData.usa:', !!snowData.usa, 'snowData.canada:', !!snowData.canada);
+            if (!snowData) return;
 
             // Get region config for map updates (charts always show national data)
             const regionConfig = getRegionConfig();
@@ -2343,18 +2319,14 @@
 
             // Draw national chart
             try {
-                console.log('About to call drawNationalChart');
                 drawNationalChart();
-                console.log('drawNationalChart completed');
             } catch (e) {
                 console.error('Error in drawNationalChart:', e);
             }
 
             // Draw temperature anomaly chart
             try {
-                console.log('About to call drawTemperatureChart');
                 drawTemperatureChart();
-                console.log('drawTemperatureChart completed');
             } catch (e) {
                 console.error('Error in drawTemperatureChart:', e);
             }
@@ -2406,32 +2378,64 @@
             return entry ? entry.value : null;
         }
 
-        // Update all "Data through" date badges
+        // Update all "Data through" date badges using actual data dates
         function updateDataThroughDates() {
-            // Format today's date as "Jan 13, 2026"
-            const today = new Date();
-            const formattedDate = today.toLocaleDateString('en-US', {
-                month: 'short',
-                day: 'numeric',
-                year: 'numeric'
-            });
-            const dateText = `Data through ${formattedDate}`;
+            // Determine actual latest data date from history arrays
+            let latestSnowDate = null;
+            let latestTempDate = null;
 
-            // Update all date badges
-            const dateElementIds = [
-                'snow-chart-date',
-                'temp-chart-date',
-                'national-table-date',
-                'nsaa-table-date',
-                'csc-table-date'
-            ];
-
-            dateElementIds.forEach(id => {
-                const el = document.getElementById(id);
-                if (el) {
-                    el.textContent = dateText;
+            // Snow: check usa.history and canada.history
+            const usaHist = snowData?.usa?.history;
+            const canHist = snowData?.canada?.history;
+            if (usaHist && usaHist.length > 0) {
+                latestSnowDate = usaHist[usaHist.length - 1].date;
+            }
+            if (canHist && canHist.length > 0) {
+                const canDate = canHist[canHist.length - 1].date;
+                if (!latestSnowDate || canDate < latestSnowDate) {
+                    latestSnowDate = canDate; // Use earlier of the two
                 }
+            }
+
+            // Temperature: check latest date across metros
+            if (temperatureHistoryData?.metros) {
+                for (const metro of temperatureHistoryData.metros) {
+                    const hist = metro.history;
+                    if (hist) {
+                        const dates = Object.keys(hist);
+                        if (dates.length > 0) {
+                            const maxDate = dates.sort().pop();
+                            if (!latestTempDate || maxDate > latestTempDate) {
+                                latestTempDate = maxDate;
+                            }
+                        }
+                        break; // All metros should have same date range
+                    }
+                }
+            }
+
+            function formatDateStr(dateStr) {
+                if (!dateStr) return null;
+                const parts = dateStr.split('-');
+                const d = new Date(parts[0], parts[1] - 1, parts[2]);
+                return d.toLocaleDateString('en-US', {
+                    month: 'short', day: 'numeric', year: 'numeric'
+                });
+            }
+
+            const snowDateText = formatDateStr(latestSnowDate);
+            const tempDateText = formatDateStr(latestTempDate);
+            const fallbackText = snowDateText || 'Loading...';
+
+            // Snow-related badges
+            ['snow-chart-date', 'national-table-date', 'nsaa-table-date', 'csc-table-date'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.textContent = `Data through ${snowDateText || 'N/A'}`;
             });
+
+            // Temperature badge
+            const tempEl = document.getElementById('temp-chart-date');
+            if (tempEl) tempEl.textContent = `Data through ${tempDateText || snowDateText || 'N/A'}`;
         }
 
         // Update all national stat cards
@@ -2467,14 +2471,11 @@
 
         // Units toggle event handlers
         function initUnitsToggle() {
-            console.log('initUnitsToggle called');
             const englishBtn = document.getElementById('units-english');
             const metricBtn = document.getElementById('units-metric');
-            console.log('englishBtn found:', !!englishBtn, 'metricBtn found:', !!metricBtn);
 
             if (englishBtn && metricBtn) {
                 englishBtn.addEventListener('click', () => {
-                    console.log('English button clicked');
                     currentUnits = 'english';
                     englishBtn.classList.add('active');
                     metricBtn.classList.remove('active');
@@ -2482,21 +2483,16 @@
                 });
 
                 metricBtn.addEventListener('click', () => {
-                    console.log('Metric button clicked');
                     currentUnits = 'metric';
                     metricBtn.classList.add('active');
                     englishBtn.classList.remove('active');
                     updateAllUnits();
                 });
-                console.log('Unit toggle event listeners attached');
-            } else {
-                console.error('Could not find unit toggle buttons!');
             }
         }
 
         // Update all components when units change
         function updateAllUnits() {
-            console.log('updateAllUnits called, currentUnits:', currentUnits);
             updateNationalStatCards();
             renderSummaryStats();
             renderMarketTable();
@@ -2506,7 +2502,6 @@
 
         // Update temperature chart axis and tooltips based on current units
         function updateTemperatureChartUnits() {
-            console.log('updateTemperatureChartUnits called, temperatureChart exists:', !!temperatureChart);
             if (!temperatureChart) return;
 
             const unitSymbol = currentUnits === 'english' ? '°F' : '°C';
@@ -2541,14 +2536,9 @@
         }
 
         function drawNationalChart() {
-            console.log('drawNationalChart called, historicalData?.usa:', historicalData?.usa?.length, 'entries');
-            if (!historicalData?.usa) {
-                console.warn('drawNationalChart: No historical data for USA, returning early');
-                return;
-            }
+            if (!historicalData?.usa) return;
 
             const ctx = document.getElementById('national-chart').getContext('2d');
-            console.log('drawNationalChart: Got canvas context, creating chart...');
 
             if (nationalChart) {
                 nationalChart.destroy();
@@ -2906,17 +2896,12 @@
 
         // Draw Temperature Anomaly Chart
         function drawTemperatureChart() {
-            console.log('drawTemperatureChart called');
             const ctx = document.getElementById('temperature-chart');
-            if (!ctx) {
-                console.warn('drawTemperatureChart: No canvas element found');
-                return;
-            }
+            if (!ctx) return;
 
             if (temperatureChart) {
                 temperatureChart.destroy();
             }
-            console.log('drawTemperatureChart: temperatureHistoryData available:', !!temperatureHistoryData);
 
             // Build full season date range (Oct 1 2025 - Apr 30 2026)
             const seasonDates = [];
@@ -4721,23 +4706,19 @@
         // Initialize
         // ============================================
         async function init() {
-            console.log('init() called - DOMContentLoaded fired');
             try {
                 await loadSnowData();
-                console.log('loadSnowData complete, snowData:', !!snowData, 'historicalData:', !!historicalData);
             } catch (e) {
                 console.error('init: loadSnowData failed:', e);
             }
             try {
                 await loadGeoData();
-                console.log('loadGeoData complete');
             } catch (e) {
                 console.error('init: loadGeoData failed:', e);
             }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            console.log('DOMContentLoaded event fired');
             initUnitsToggle();
             initTableSorting();
             initViewTabs();
