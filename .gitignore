@@ -36,3 +36,6 @@ statcan_temp/
 # Large raw data files (keep processed versions only)
 static/data/*-raw.json
 static/data/raw/
+
+# Traffic data cache (TMAS downloads)
+data_cache/

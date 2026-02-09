@@ -62,3 +62,29 @@ enableRobotsTXT = true
     version = 3
   [minify.tdewolff.js]
     keepVarNames = false
+
+# Main navigation menu
+[[menu.main]]
+  name = "Snow Cover"
+  url = "/snow-cover.html"
+  weight = 1
+
+[[menu.main]]
+  name = "Snowpack"
+  url = "/snotel.html"
+  weight = 2
+
+[[menu.main]]
+  name = "Economy"
+  url = "/dashboard.html"
+  weight = 3
+
+[[menu.main]]
+  name = "Ski News"
+  url = "/page/ski-news/"
+  weight = 5
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 6
