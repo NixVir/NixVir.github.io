@@ -583,20 +583,29 @@
         <!-- Economic Indicators -->
         <div class="accordion-section open" data-section="economic" id="section-economic">
             <div class="accordion-header" onclick="toggleSection(this)">
-                <h2><span class="section-icon">📊</span> Economic Indicators <span class="metric-count">(8 metrics)</span></h2>
+                <h2><span class="section-icon">📊</span> Economic Indicators <span class="metric-count">(11 metrics)</span></h2>
                 <span class="accordion-arrow">▼</span>
             </div>
             <div class="accordion-content">
                 <div class="accordion-inner">
+                    <div class="section-intro" style="margin-bottom: 1.25rem; line-height: 1.6;">
+                        <p style="margin-bottom: 0;"><strong>Why track these indicators?</strong> Ski resort revenue depends on consumer willingness and ability to spend on discretionary travel. These metrics track the macro conditions — employment, inflation, savings, confidence — that shape that spending environment.</p>
+                    </div>
+                    <div class="section-intro" style="font-size: 0.75rem; color: #64748b; margin-bottom: 1rem;">
+                        Data from <a href="https://fred.stlouisfed.org" target="_blank" rel="noopener">Federal Reserve Economic Data (FRED)</a>.
+                    </div>
+                    <div class="section-intro" id="economic-narrative" style="display: none; margin-top: 0; margin-bottom: 1.25rem; border-left: 3px solid #3b82f6; background: rgba(59, 130, 246, 0.06); padding: 0.75rem 1rem; line-height: 1.6;"></div>
                     <div class="dashboard-grid">
                         <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/GDP" target="_blank" rel="noopener">GDP (Quarterly)</a></h3><div id="gdp">Loading...</div><div class="chart-container"><canvas id="chart-gdp"></canvas></div></div>
                         <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/UMCSENT" target="_blank" rel="noopener">Consumer Confidence</a></h3><div id="consumer-confidence">Loading...</div><div class="chart-container"><canvas id="chart-cc"></canvas></div></div>
-                        <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/CPIAUCSL" target="_blank" rel="noopener">CPI (Consumer Price Index)</a></h3><div id="cpi">Loading...</div><div class="chart-container"><canvas id="chart-cpi"></canvas></div></div>
+                        <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/CPIAUCSL" target="_blank" rel="noopener">Inflation Rate (YoY)</a></h3><div id="cpi-yoy">Loading...</div><div class="chart-container"><canvas id="chart-cpi-yoy"></canvas></div></div>
                         <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/UNRATE" target="_blank" rel="noopener">Unemployment Rate</a></h3><div id="unemployment">Loading...</div><div class="chart-container"><canvas id="chart-unemp"></canvas></div></div>
                         <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/PAYEMS" target="_blank" rel="noopener">Employment (Thousands)</a></h3><div id="employment">Loading...</div><div class="chart-container"><canvas id="chart-emp"></canvas></div></div>
                         <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/CES0500000003" target="_blank" rel="noopener">Average Hourly Wages</a></h3><div id="wages">Loading...</div><div class="chart-container"><canvas id="chart-wages"></canvas></div></div>
+                        <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/PSAVERT" target="_blank" rel="noopener">Personal Savings Rate</a></h3><div id="savings-rate">Loading...</div><div class="chart-container"><canvas id="chart-savings-rate"></canvas></div></div>
+                        <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/DPCERA3M086SBEA" target="_blank" rel="noopener">PCE Recreation Spending</a></h3><div id="pce-recreation">Loading...</div><div class="chart-container"><canvas id="chart-pce-recreation"></canvas></div></div>
                         <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/HOUST" target="_blank" rel="noopener">Housing Starts (Thousands)</a></h3><div id="housing">Loading...</div><div class="chart-container"><canvas id="chart-housing"></canvas></div></div>
-                        <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/BKPPIWCI" target="_blank" rel="noopener">Bankruptcy Activity (PPI)</a></h3><div id="bankruptcy">Loading...</div><div class="chart-container"><canvas id="chart-bankruptcy"></canvas></div></div>
+                        <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/PCU541110541110903" target="_blank" rel="noopener" title="Producer Price Index for bankruptcy-related legal services. Rising prices indicate increased demand for bankruptcy attorneys, a proxy for business distress.">Bankruptcy Legal Demand</a></h3><div id="bankruptcy">Loading...</div><div class="chart-container"><canvas id="chart-bankruptcy"></canvas></div></div>
                     </div>
                 </div>
             </div>
@@ -605,7 +614,7 @@
         <!-- Markets & Interest Rates -->
         <div class="accordion-section" data-section="markets" id="section-markets">
             <div class="accordion-header" onclick="toggleSection(this)">
-                <h2><span class="section-icon">📈</span> Markets & Interest Rates <span class="metric-count">(6 indices + Mag 7)</span></h2>
+                <h2><span class="section-icon">📈</span> Markets & Interest Rates <span class="metric-count">(7 indices + Mag 7)</span></h2>
                 <span class="accordion-arrow">▼</span>
             </div>
             <div class="accordion-content">
@@ -618,6 +627,7 @@
                         <div class="metric-card"><h3>Hotel & Lodging REITs</h3><div id="hotel-reits">Loading...</div><div class="chart-container"><canvas id="chart-hotel"></canvas></div></div>
                         <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/DFF" target="_blank" rel="noopener">Fed Funds Rate</a></h3><div id="fed-rate">Loading...</div><div class="chart-container"><canvas id="chart-fed"></canvas></div></div>
                         <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/DGS10" target="_blank" rel="noopener">10-Year Treasury Yield</a></h3><div id="treasury">Loading...</div><div class="chart-container"><canvas id="chart-treasury"></canvas></div></div>
+                        <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/T10Y2Y" target="_blank" rel="noopener" title="10-Year minus 2-Year Treasury yield. Negative values (inversion) are a historically reliable recession leading indicator.">Yield Curve (10Y-2Y)</a></h3><div id="yield-curve">Loading...</div><div class="chart-container"><canvas id="chart-yield-curve"></canvas></div></div>
                     </div>
 
                     <div class="subsection-header purple">Magnificent 7 Stocks</div>
@@ -631,7 +641,7 @@
         <!-- Currency & Visitor Purchasing Power -->
         <div class="accordion-section" data-section="currency" id="section-currency">
             <div class="accordion-header" onclick="toggleSection(this)">
-                <h2><span class="section-icon">💱</span> Currency & Visitor Purchasing Power <span class="metric-count">(19 metrics)</span></h2>
+                <h2><span class="section-icon">💱</span> Currency & Visitor Purchasing Power <span class="metric-count">(23 metrics)</span></h2>
                 <span class="accordion-arrow">▼</span>
             </div>
             <div class="accordion-content">
@@ -671,7 +681,7 @@
                         <div class="metric-card"><h3>100 CNY buys...</h3><div id="pp-cny">Loading...</div><div class="chart-container"><canvas id="chart-pp-cny"></canvas></div></div>
                         <div class="metric-card"><h3>100 JPY buys...</h3><div id="pp-jpy">Loading...</div><div class="chart-container"><canvas id="chart-pp-jpy"></canvas></div></div>
                         <div class="metric-card"><h3>100 INR buys...</h3><div id="pp-inr">Loading...</div><div class="chart-container"><canvas id="chart-pp-inr"></canvas></div></div>
-                        <div class="metric-card"><h3>100 RUB buys...</h3><div id="pp-rub">Loading...</div><div class="chart-container"><canvas id="chart-pp-rub"></canvas></div></div>
+                        <div class="metric-card"><h3>100 KRW buys...</h3><div id="pp-krw">Loading...</div><div class="chart-container"><canvas id="chart-pp-krw"></canvas></div></div>
                     </div>
 
                     <div class="subsection-header orange">🏔️ Competitive Destination Comparison</div>
@@ -700,6 +710,9 @@
             </div>
             <div class="accordion-content">
                 <div class="accordion-inner">
+                    <div class="section-intro" style="margin-bottom: 1rem; line-height: 1.6;">
+                        <p style="margin-bottom: 0;">Oil and natural gas prices affect both guest travel costs (gasoline, airfare) and resort operating costs (heating, snowmaking). Gold and copper serve as broader economic sentiment and construction cost indicators for resort capital projects.</p>
+                    </div>
                     <div class="dashboard-grid">
                         <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/GOLDAMGBD228NLBM" target="_blank" rel="noopener">Gold ($/oz)</a></h3><div id="gold">Loading...</div><div class="chart-container"><canvas id="chart-gold"></canvas></div></div>
                         <div class="metric-card"><h3><a href="https://fred.stlouisfed.org/series/DCOILWTICO" target="_blank" rel="noopener">Crude Oil WTI ($/barrel)</a></h3><div id="crude-oil">Loading...</div><div class="chart-container"><canvas id="chart-oil"></canvas></div></div>
@@ -1489,8 +1502,15 @@
             renderMetric('consumer-confidence', data.consumer_confidence, 'CC', { format: v => Number(v).toFixed(1) });
             if (data.consumer_confidence && data.consumer_confidence.length > 0) createChart('chart-cc', data.consumer_confidence.map(d => formatDate(d.date)), data.consumer_confidence.map(d => d.value), '#3b82f6', { decimals: 1 });
 
-            renderMetric('cpi', data.cpi, 'CPI', { format: v => Number(v).toFixed(1) });
-            if (data.cpi && data.cpi.length > 0) createChart('chart-cpi', data.cpi.map(d => formatDate(d.date)), data.cpi.map(d => d.value), '#a855f7', { decimals: 1 });
+            // CPI → Inflation Rate (YoY) — show percentage instead of raw index
+            if (data.cpi_yoy && data.cpi_yoy.length > 0) {
+                renderMetric('cpi-yoy', data.cpi_yoy, 'Inflation', { format: v => Number(v).toFixed(1) + '%', isPercent: true, invertColors: true });
+                createChart('chart-cpi-yoy', data.cpi_yoy.map(d => formatDate(d.date)), data.cpi_yoy.map(d => d.value), '#a855f7', { suffix: '%', decimals: 1 });
+            } else if (data.cpi && data.cpi.length > 0) {
+                // Fallback to raw CPI index if YoY not computed
+                renderMetric('cpi-yoy', data.cpi, 'CPI', { format: v => Number(v).toFixed(1) });
+                createChart('chart-cpi-yoy', data.cpi.map(d => formatDate(d.date)), data.cpi.map(d => d.value), '#a855f7', { decimals: 1 });
+            }
 
             renderMetric('unemployment', data.unemployment, 'Unemployment', { format: v => Number(v).toFixed(1) + '%', isPercent: true, invertColors: true });
             if (data.unemployment && data.unemployment.length > 0) createChart('chart-unemp', data.unemployment.map(d => formatDate(d.date)), data.unemployment.map(d => d.value), '#f97316', { suffix: '%', decimals: 1 });
@@ -1501,11 +1521,26 @@
             renderMetric('wages', data.wages, 'Wages', { format: v => '$' + Number(v).toFixed(2) });
             if (data.wages && data.wages.length > 0) createChart('chart-wages', data.wages.map(d => formatDate(d.date)), data.wages.map(d => d.value), '#06b6d4', { prefix: '$', decimals: 2 });
 
+            // Personal Savings Rate
+            renderMetric('savings-rate', data.personal_savings_rate, 'Savings', { format: v => Number(v).toFixed(1) + '%', isPercent: true });
+            if (data.personal_savings_rate && data.personal_savings_rate.length > 0) createChart('chart-savings-rate', data.personal_savings_rate.map(d => formatDate(d.date)), data.personal_savings_rate.map(d => d.value), '#f59e0b', { suffix: '%', decimals: 1 });
+
+            // PCE Recreation Spending
+            renderMetric('pce-recreation', data.pce_recreation, 'PCE Rec', { format: v => '$' + Number(v).toLocaleString(undefined, {maximumFractionDigits: 1}) + 'B' });
+            if (data.pce_recreation && data.pce_recreation.length > 0) createChart('chart-pce-recreation', data.pce_recreation.map(d => formatDate(d.date)), data.pce_recreation.map(d => d.value), '#ec4899', { prefix: '$', suffix: 'B', decimals: 1 });
+
             renderMetric('housing', data.housing_starts, 'Housing', { format: v => Number(v).toLocaleString() });
             if (data.housing_starts && data.housing_starts.length > 0) createChart('chart-housing', data.housing_starts.map(d => formatDate(d.date)), data.housing_starts.map(d => d.value), '#8b5cf6', { suffix: 'K', decimals: 0 });
 
             renderMetric('bankruptcy', data.bankruptcy_ppi, 'Bankruptcy', { format: v => Number(v).toFixed(1) });
             if (data.bankruptcy_ppi && data.bankruptcy_ppi.length > 0) createChart('chart-bankruptcy', data.bankruptcy_ppi.map(d => formatDate(d.date)), data.bankruptcy_ppi.map(d => d.value), '#ef4444', { decimals: 1 });
+
+            // Economic narrative
+            const econNarrativeEl = document.getElementById('economic-narrative');
+            if (econNarrativeEl && data.economic_narrative) {
+                econNarrativeEl.textContent = data.economic_narrative;
+                econNarrativeEl.style.display = '';
+            }
 
             // Markets
             if (data.markets) {
@@ -1531,6 +1566,13 @@
 
             renderMetric('treasury', data.treasury_10y, 'Treasury', { format: v => Number(v).toFixed(2) + '%', isPercent: true, hasMomentum: true, shortDate: true });
             if (data.treasury_10y && data.treasury_10y.length > 0) createChart('chart-treasury', data.treasury_10y.map(d => formatShortDate(d.date)), data.treasury_10y.map(d => d.value), '#dc2626', { suffix: '%', decimals: 2 });
+
+            // Yield Curve Spread (10Y - 2Y)
+            renderMetric('yield-curve', data.yield_curve_spread, 'Yield Curve', {
+                format: v => (Number(v) >= 0 ? '+' : '') + Number(v).toFixed(2) + '%',
+                isPercent: true, invertColors: true, hasMomentum: true, shortDate: true
+            });
+            if (data.yield_curve_spread && data.yield_curve_spread.length > 0) createChart('chart-yield-curve', data.yield_curve_spread.map(d => formatShortDate(d.date)), data.yield_curve_spread.map(d => d.value), '#7c3aed', { suffix: '%', decimals: 2 });
 
             // Mag 7
             console.log('Mag 7 data:', data.mag7 ? data.mag7.length + ' stocks' : 'not found');
@@ -1652,8 +1694,8 @@
             }
 
             // Luxury markets
-            const luxuryCurrencies = ['hkd', 'sgd', 'aed', 'cny', 'jpy', 'inr', 'rub'];
-            const luxuryColors = ['#a855f7', '#8b5cf6', '#10b981', '#ef4444', '#f97316', '#eab308', '#64748b'];
+            const luxuryCurrencies = ['hkd', 'sgd', 'aed', 'cny', 'jpy', 'inr', 'krw'];
+            const luxuryColors = ['#a855f7', '#8b5cf6', '#10b981', '#ef4444', '#f97316', '#eab308', '#2563eb'];
             luxuryCurrencies.forEach((curr, i) => {
                 const pp = toPurchasingPower(data['usd_' + curr]);
                 if (pp) {

@@ -819,6 +819,59 @@ def fetch_ski_gateway_airports():
         return None
 
 
+def build_economic_narrative(dashboard_data):
+    """Build plain-text economic context narrative for ski industry.
+
+    Uses factual, measured language per CLAUDE.md guidelines.
+    Returns None if insufficient data for a meaningful narrative.
+    """
+    parts = []
+
+    # Consumer confidence trend
+    cc = dashboard_data.get('consumer_confidence', [])
+    if len(cc) >= 2:
+        latest = cc[-1]['value']
+        prior = cc[-2]['value']
+        direction = "rose" if latest > prior else "fell" if latest < prior else "held steady"
+        if latest < 60:
+            parts.append(f"Consumer confidence {direction} to {latest:.1f}, in pessimistic territory that may reduce discretionary travel spending.")
+        elif latest > 85:
+            parts.append(f"Consumer confidence {direction} to {latest:.1f}, elevated territory that tends to support discretionary travel spending.")
+        else:
+            parts.append(f"Consumer confidence {direction} to {latest:.1f}.")
+
+    # Inflation
+    cpi_yoy = dashboard_data.get('cpi_yoy', [])
+    if cpi_yoy:
+        inflation = cpi_yoy[-1]['value']
+        if inflation > 4:
+            parts.append(f"Inflation at {inflation:.1f}% is well above the Fed's 2% target, squeezing consumer purchasing power and increasing resort operating costs.")
+        elif inflation > 2.5:
+            parts.append(f"Inflation at {inflation:.1f}% remains above the Fed's 2% target.")
+        else:
+            parts.append(f"Inflation at {inflation:.1f}% is near the Fed's 2% target.")
+
+    # Savings rate
+    savings = dashboard_data.get('personal_savings_rate', [])
+    if savings:
+        rate = savings[-1]['value']
+        if rate < 4:
+            parts.append(f"The personal savings rate ({rate:.1f}%) is low, suggesting consumers may have less buffer for discretionary spending like ski trips.")
+        elif rate > 8:
+            parts.append(f"The personal savings rate ({rate:.1f}%) is elevated, suggesting consumers may have a savings cushion for discretionary spending.")
+
+    # Yield curve
+    spread = dashboard_data.get('yield_curve_spread', [])
+    if spread:
+        latest_spread = spread[-1]['value']
+        if latest_spread < 0:
+            parts.append(f"The yield curve is inverted ({latest_spread:+.2f}%), a historically reliable recession indicator.")
+        elif latest_spread < 0.3:
+            parts.append(f"The yield curve is nearly flat ({latest_spread:+.2f}%), suggesting economic uncertainty.")
+
+    return " ".join(parts) if parts else None
+
+
 def update_dashboard():
     """Main function to update dashboard data"""
     print_safe("Starting dashboard update...")
@@ -924,12 +977,34 @@ def update_dashboard():
         dashboard_data['unemployment'] = unemployment
         print_safe(f"  OK Latest: {unemployment[-1]['value']}% ({len(unemployment)} data points)")
 
-    # 5. CPI (Consumer Price Index)
+    # 5. CPI (Consumer Price Index) - fetch 24 months for YoY calculation
     print_safe("\nFetching CPI...")
-    cpi_data = fetch_fred_data('CPIAUCSL', limit=12)
+    cpi_data = fetch_fred_data('CPIAUCSL', limit=24)
     if cpi_data:
         dashboard_data['cpi'] = cpi_data
         print_safe(f"  OK Latest: {cpi_data[-1]['value']} ({len(cpi_data)} data points)")
+
+        # Compute YoY inflation rate from CPI index
+        cpi_yoy = []
+        for i in range(len(cpi_data)):
+            # Find a record ~12 months prior
+            current = cpi_data[i]
+            current_date = current['date'][:7]  # YYYY-MM
+            for j in range(i):
+                prior_date = cpi_data[j]['date'][:7]
+                # Check if approximately 12 months apart
+                cy, cm = int(current_date[:4]), int(current_date[5:7])
+                py, pm = int(prior_date[:4]), int(prior_date[5:7])
+                months_diff = (cy - py) * 12 + (cm - pm)
+                if 11 <= months_diff <= 13:
+                    prior = cpi_data[j]
+                    if prior['value'] > 0:
+                        rate = round(((current['value'] - prior['value']) / prior['value']) * 100, 1)
+                        cpi_yoy.append({'date': current['date'], 'value': rate})
+                    break
+        if cpi_yoy:
+            dashboard_data['cpi_yoy'] = cpi_yoy
+            print_safe(f"  OK CPI YoY Inflation: {cpi_yoy[-1]['value']}% ({len(cpi_yoy)} data points)")
 
     # 6. Employment (Total Nonfarm Payroll)
     print_safe("\nFetching Employment...")
@@ -966,6 +1041,20 @@ def update_dashboard():
     if bankruptcy_data:
         dashboard_data['bankruptcy_ppi'] = bankruptcy_data
         print_safe(f"  OK Latest: {bankruptcy_data[-1]['value']} ({len(bankruptcy_data)} data points)")
+
+    # 9c. Personal Savings Rate (Monthly)
+    print_safe("\nFetching Personal Savings Rate...")
+    personal_savings = fetch_fred_data('PSAVERT', limit=12)
+    if personal_savings:
+        dashboard_data['personal_savings_rate'] = personal_savings
+        print_safe(f"  OK Latest: {personal_savings[-1]['value']}% ({len(personal_savings)} data points)")
+
+    # 9d. PCE Recreation Spending (Monthly, Billions $)
+    print_safe("\nFetching PCE Recreation Spending...")
+    pce_recreation = fetch_fred_data('DPCERA3M086SBEA', limit=12)
+    if pce_recreation:
+        dashboard_data['pce_recreation'] = pce_recreation
+        print_safe(f"  OK Latest: ${pce_recreation[-1]['value']}B ({len(pce_recreation)} data points)")
 
     # =========================================================================
     # ELECTRICITY PRICING INDICATORS (Ski Region Focus)
@@ -1012,6 +1101,27 @@ def update_dashboard():
     if treasury_data:
         dashboard_data['treasury_10y'] = treasury_data
         print_safe(f"  OK Latest: {treasury_data[-1]['value']}% ({len(treasury_data)} data points)")
+
+    # 10b. 2-Year Treasury Yield (Daily - for yield curve spread)
+    print_safe("\nFetching 2-Year Treasury Yield...")
+    treasury_2y = fetch_fred_data('DGS2', limit=260)
+    if treasury_2y:
+        dashboard_data['treasury_2y'] = treasury_2y
+        print_safe(f"  OK Latest: {treasury_2y[-1]['value']}% ({len(treasury_2y)} data points)")
+
+    # 10c. Yield Curve Spread (10Y - 2Y) - computed from real data
+    if treasury_data and treasury_2y:
+        t10_dict = {d['date']: d['value'] for d in treasury_data}
+        spread_data = []
+        for d in treasury_2y:
+            if d['date'] in t10_dict:
+                spread_data.append({
+                    'date': d['date'],
+                    'value': round(t10_dict[d['date']] - d['value'], 2)
+                })
+        if spread_data:
+            dashboard_data['yield_curve_spread'] = spread_data
+            print_safe(f"  OK Yield Curve Spread: {spread_data[-1]['value']:+.2f}% ({len(spread_data)} data points)")
 
     # 11. Currency Exchange Rates (Daily - fetch ~1 year of trading days)
     # All rates stored as "units of foreign currency per 1 USD" so UP = stronger USD
@@ -1080,11 +1190,12 @@ def update_dashboard():
         dashboard_data['usd_inr'] = usd_inr
         print_safe(f"  OK USD/INR: {usd_inr[-1]['value']} ({len(usd_inr)} data points)")
 
-    # USD/RUB (Russian Rubles per USD) - Monthly OECD data (no daily FRED series available)
-    usd_rub = fetch_fred_data('CCUSMA02RUM618N', limit=24)  # Monthly, last 2 years
-    if usd_rub:
-        dashboard_data['usd_rub'] = usd_rub
-        print_safe(f"  OK USD/RUB: {usd_rub[-1]['value']} ({len(usd_rub)} data points) [monthly]")
+    # USD/KRW (Korean Won per USD) - Daily FRED series
+    # South Korea is a growing luxury ski market with direct flights to Western US
+    usd_krw = fetch_fred_data('DEXKOUS', limit=260)
+    if usd_krw:
+        dashboard_data['usd_krw'] = usd_krw
+        print_safe(f"  OK USD/KRW: {usd_krw[-1]['value']} ({len(usd_krw)} data points)")
 
     # --- LUXURY FEEDER MARKET CURRENCIES ---
     print_safe("\nFetching Luxury Feeder Market Currencies...")
@@ -1276,6 +1387,15 @@ def update_dashboard():
         for apt in ski_airports[:5]:
             period = apt.get('month', apt.get('year', 'N/A'))
             print_safe(f"    {apt['code']} ({apt['city']}): {apt['passengers']:,} pax ({period})")
+
+    # Build economic narrative from available data
+    print_safe("\nBuilding economic narrative...")
+    narrative = build_economic_narrative(dashboard_data)
+    if narrative:
+        dashboard_data['economic_narrative'] = narrative
+        print_safe(f"  OK Narrative: {narrative[:80]}...")
+    else:
+        print_safe("  ! Insufficient data for narrative")
 
     # Write to file
     output_path = 'static/data/dashboard.json'
