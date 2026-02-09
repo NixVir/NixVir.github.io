@@ -1,8 +1,32 @@
 {
-  "updated": "2026-02-06 15:04:27",
-  "total_articles": 14,
+  "updated": "2026-02-09 11:40:08",
+  "total_articles": 15,
   "scoring_method": "keyword",
   "articles": [
+    {
+      "source": "Google News - Ski Industry",
+      "title": "Ski resort CEO issues warning amid unprecedented trend in US region: 'We can never let [this] happen again' - The Cool Down",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPTkZ1aU5CSGw0U1JmNlZrRTNtS2F4NjBJdUo1YXhNYlRmVmhjSjl4TXJIc2xjNVJCQ3UtVklJSzdMWktRYkRvMkZEZGMyVU16MHNzNHVvVGh1QkRZRXgxM2t0TXYwTEhpT1R4R3IxU2xpQnhmdFJtel9TZF9EbldvZWhoQS1CUENJajJjOWJlRQ?oc=5",
+      "description": "Ski resort CEO issues warning amid unprecedented trend in US region: 'We can never let [this] happen again' The Cool Down",
+      "content": "Ski resort CEO issues warning amid unprecedented trend in US region: 'We can never let [this] happen again' The Cool Down",
+      "pub_date": "2026-02-05",
+      "id": "0a2b1a7886cf",
+      "prefilter_business_score": 2,
+      "is_macro_relevance": false,
+      "source_boost": 1,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +1)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "safety-incidents"
+      ],
+      "approved_date": "2026-02-07",
+      "display_score": 29.5
+    },
     {
       "source": "Ski Area Management",
       "title": "Andrew Nicolas Appointed CEO of Prinoth U.S. Snow Grooming Division",
@@ -79,28 +103,28 @@
       "display_score": 20
     },
     {
-      "source": "Ski Area Management",
-      "title": "Jack Frost Big Boulder Appoints Tony Torsell as General Manager",
-      "url": "https://www.saminfo.com/news/sam-headline-news/jack-frost-big-boulder-appoints-tony-torsell-as-general-manager",
-      "description": "SAM Magazine\u2014Blakeslee, Pa., Jan. 23, 2026\u2014Vail Resorts has hired Tony Torsell as general manager of Jack Frost Big Boulder, effective Feb. 15. Torsell, who grew up not far from the neighboring ski areas, succeeds previous GM Tony Santora, who is now the vice president of mountain operations at VR-owned Beaver Creek, Colo. \u201cComing back home to lead JFBB is truly special,\u201d said Torsell. \u201cI believe great resorts start with great people, and I know there are great people here. I\u2019m excited to roll u",
-      "content": "SAM Magazine\u2014Blakeslee, Pa., Jan. 23, 2026\u2014Vail Resorts has hired Tony Torsell as general manager of Jack Frost Big Boulder, effective Feb. 15. Torsell, who grew up not far from the neighboring ski areas, succeeds previous GM Tony Santora, who is now the vice president of mountain operations at VR-owned Beaver Creek, Colo. \u201cComing back home to lead JFBB is truly special,\u201d said Torsell. \u201cI believe great resorts start with great people, and I know there are great people here. I\u2019m excited to roll u",
-      "pub_date": "2026-01-23",
-      "id": "d3f8cacc49d7",
+      "source": "Unofficial Networks",
+      "title": "Washington State Ski Resort Suspends Operations Until It Receives New Snowfall",
+      "url": "https://unofficialnetworks.com/2026/02/07/washington-state-ski-resort-suspends-operations-until-it-receives-new-snowfall/",
+      "description": "The resort is suffering the same fate as many in the Pacific Northwest where warmer than usual temperatures have made it tough to keep trails opens.",
+      "content": "Dayton, Washington \u2014 Unfortunate news for skiers and snowboarder who call Ski Bluewood in southern Washington their home resort as they just announced they have been forced to suspend operations due to a thin snowpack. The resort is suffering the same fate as many in the Pacific Northwest where warmer than usual temperatures have made it tough to keep trails opens. Ski Bluewood has made the difficult decision to close down until they receive additional snow. \u201cAfter closely evaluating today\u2019s conditions, we\u2019ve made the difficult decision to suspend operations until we receive additional snowfall. The good news is that a storm is expected on Sunday night, so be on the lookout for an update on Monday evening regarding a potential Thursday or Friday reopening.\u201d -Ski Bluewood Fingers crossed the expected storm delivers much needed relief with 3 to 7 inches of snow forecasted Sunday night into Monday. For the latest operation updates from Ski Bluewood go HERE . Categories: Washington Ski New",
+      "pub_date": "2026-02-07",
+      "id": "896d7fa24941",
       "prefilter_business_score": 0,
       "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 7,
+      "source_boost": 0,
+      "score": 10,
       "score_details": {
-        "reason": "Keyword scoring (source: +2)",
+        "reason": "Keyword scoring (source: +0)",
         "method": "keyword"
       },
       "score_method": "keyword",
-      "category": "business-investment",
+      "category": "weather-snow",
       "secondary_categories": [
-        "resort-operations"
+        "transportation"
       ],
-      "approved_date": "2026-02-04",
-      "display_score": 19
+      "approved_date": "2026-02-08",
+      "display_score": 18
     },
     {
       "source": "SnowBrains",
@@ -174,6 +198,31 @@
       "display_score": 18
     },
     {
+      "source": "PlanetSKI",
+      "title": "PlanetSKI\u2019s Canada Road Trip Heads North to Jasper & Marmot Basin",
+      "url": "https://planetski.eu/2026/02/09/planetskis-canada-road-trip-heads-north-to-jasper-marmot-basin/",
+      "description": "We've hit Revelstoke & Kicking Horse now its time for Jasper and its ski resort of Marmot Basin. NEW The post PlanetSKI\u2019s Canada Road Trip Heads North to Jasper & Marmot Basin appeared first on PlanetSKI .",
+      "content": "The road to Jasper from Lake Louise is without doubt one of the best ski road journeys in the world \u2013 The Icefields Parkway . 232kms and a 4+ hour drive in the winter. It passes through some of the finest glaciated mountain terrain that you will find next to a paved road. No towns No petrol stations No mobile phone signal Icefields Parkway, Lake Louise to Jasper. Image Image \u00a9 PlanetSKI Icefields Parkway, Lake Louise to Jasper. Image Image \u00a9 PlanetSKI We have posted about the journey itself in PlanetSKI\u2019s rolling blog on our continuing two-month Canadian ski adventures: PlanetSKI\u2019s Canadian Adventures: Part Two The main reason we made the journey to Jasper is the fabulous ski resort of Marmot Basin . It is a 20-minute drive from Jasper with 914m of vertical decent and 1,720 acres of varied terrain. Marmot Basin, Jasper, Canada. Image \u00a9 PlanetSKI As it says, it has the highest base elevation of any ski resort in Canada with the skiing going up to 2,612m. Marmot Basin, Jasper, Canada. Im",
+      "pub_date": "2026-02-09",
+      "id": "e923cd130100",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 9,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "canada",
+      "secondary_categories": [
+        "transportation",
+        "resort-operations"
+      ],
+      "approved_date": "2026-02-09",
+      "display_score": 16
+    },
+    {
       "source": "Unofficial Networks",
       "title": "How Snowmakers Are Making Skiing Possible During An Extremely Dry Season",
       "url": "https://unofficialnetworks.com/2026/02/06/snowmakers-battle-dry-conditions/",
@@ -226,6 +275,30 @@
       "display_score": 16
     },
     {
+      "source": "Ski Area Management",
+      "title": "The 2026 I Am a Snowmaker Contest Winner",
+      "url": "https://www.saminfo.com/news/sam-headline-news/the-2026-i-am-a-snowmaker-contest-winner",
+      "description": "SAM Magazine\u2014Killington, Vt., Feb. 3, 2026\u2014 Nearly 7,500 total votes were cast for the six competing snowmaking teams during the 13-day voting period of the 2026 I AM a Snowmaker contest, with Seven Springs, Pa., receiving the most votes to take home the title. Contest sponsor HKD Snowmakers president Charles Santry honored Seven Springs at the HTI dinner in the Killington Peak Lodge during the National Ski Areas Association Eastern Winter Conference on Tuesday, Feb. 3. Each ski area in the cont",
+      "content": "SAM Magazine\u2014Killington, Vt., Feb. 3, 2026\u2014 Nearly 7,500 total votes were cast for the six competing snowmaking teams during the 13-day voting period of the 2026 I AM a Snowmaker contest, with Seven Springs, Pa., receiving the most votes to take home the title. Contest sponsor HKD Snowmakers president Charles Santry honored Seven Springs at the HTI dinner in the Killington Peak Lodge during the National Ski Areas Association Eastern Winter Conference on Tuesday, Feb. 3. Each ski area in the cont",
+      "pub_date": "2026-02-03",
+      "id": "6a5af2600c40",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 8,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "hospitality",
+      "secondary_categories": [
+        "resort-operations"
+      ],
+      "approved_date": "2026-02-07",
+      "display_score": 16
+    },
+    {
       "source": "PlanetSKI",
       "title": "2026 Winter Olympics Starts Today",
       "url": "https://planetski.eu/2026/02/05/2026-winter-olympics-starts-on-friday/",
@@ -244,30 +317,6 @@
       "score_method": "keyword",
       "category": "winter-sports",
       "secondary_categories": [],
-      "approved_date": "2026-02-06",
-      "display_score": 14
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "Flying A $10,000 FPV Drone Over Europe\u2019s Deadliest Mountain",
-      "url": "https://unofficialnetworks.com/2026/02/05/flying-10k-drone-matterhorn-summit/",
-      "description": "Swiss cinematographer Noah Malin took his $10k FPV drone to the Matterhorn to shoot a commercial, flying all the way to the summit.",
-      "content": "The Matterhorn is among the deadliest mountains in the world, with more than 500 deaths on the mountain since 1865. Every year the mountain sees 8-10 deaths, with up to 3000 mountaineers attempting to summit the iconic peak. With a summit altitude of 14,692 feet, it theoretically shouldn\u2019t be incredibly difficult to fly a drone to the summit. However, the concept of flying a $10,000 piece of equipment far beyond your reach seems pretty stressful. Swiss cinematographer Noah Malin took his $10k FPV drone to the Matterhorn to shoot a commercial. Because of the drone\u2019s size, he had to walk up to the H\u00f6rnlih\u00fctte at 10,695 feet. This wasn\u2019t the first time someone\u2019s flown a drone to the summit of the iconic European peak, but the fact that this is a high-end piece of equipment with a very nice camera truly shines in the footage. It\u2019s absolutely stunning to look at. Noah has a ton of very cool drone footage on his YouTube channel, with shots of water, mountains, and stunning scenery. Make sure",
-      "pub_date": "2026-02-05",
-      "id": "907a096c4ca3",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 8,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "international",
-      "secondary_categories": [
-        "safety-incidents"
-      ],
       "approved_date": "2026-02-06",
       "display_score": 14
     },
@@ -318,30 +367,6 @@
         "resort-operations",
         "international",
         "business-investment"
-      ],
-      "approved_date": "2026-02-06",
-      "display_score": 11
-    },
-    {
-      "source": "PlanetSKI",
-      "title": "Death Toll from Crans-Montana Fire Rises to 41",
-      "url": "https://planetski.eu/2026/02/02/death-toll-from-crans-montana-fire-rises-to-41/",
-      "description": "A teenager who was injured in the Swiss ski resort on New Year's Eve has died in hospital. It takes the death toll to 41. The post Death Toll from Crans-Montana Fire Rises to 41 appeared first on PlanetSKI .",
-      "content": "\u201cAn 18-year-old Swiss national died at a hospital in Zurich on January 31 st ,\u201d said the Valais canton\u2019s public prosecutor, Beatrice Pilloud, No further information would be released at this stage, she added. Most of the victims of the fire were young \u2013 eight were under the age of 16 \u2013 and many are still being treated in hospital for severe burns. 44 patients are being treated abroad. They include: 18 in France 12 in Italy, 8 in Germany 6 in Belgium. The Valais health ministry said that 37 patients were still in Swiss hospitals. Initial findings from an investigation suggest the fire began as sparklers attached to champagne bottles ignited soundproof foam that lined the ceiling of the bar\u2019s basement. Authorities have acknowledged that the bar had not undergone safety checks for five years. The owners of the bar, Jacques and Jessica Moretti, have been accused by authorities of manslaughter by negligence, bodily harm by negligence and arson by negligence. Criminal proceedings have also b",
-      "pub_date": "2026-02-02",
-      "id": "4a8c7002bfc4",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 9,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "safety-incidents",
-      "secondary_categories": [
-        "transportation"
       ],
       "approved_date": "2026-02-06",
       "display_score": 11
