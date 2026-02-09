@@ -949,6 +949,11 @@
                         Data from <a href="https://sportshandle.com/sports-betting-revenue/" target="_blank" rel="noopener">Sports Handle</a> (U.S.) and <a href="https://igamingontario.ca" target="_blank" rel="noopener">iGaming Ontario</a>.
                     </div>
 
+                    <!-- Narrative -->
+                    <div class="section-intro" id="betting-narrative"
+                         style="display: none; margin-top: 0; margin-bottom: 1.25rem; border-left: 3px solid #a855f7;
+                         background: rgba(168, 85, 247, 0.06); padding: 0.75rem 1rem; line-height: 1.6;"></div>
+
                     <!-- Key Metrics -->
                     <div class="subsection-header" style="margin-top: 1rem; margin-bottom: 0.75rem;">
                         <h3 style="color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">North America Overview</h3>
@@ -966,9 +971,14 @@
                             <div id="betting-us-latest">Loading...</div>
                         </div>
                         <div class="metric-card">
-                            <h3>Ontario Annual Handle</h3>
-                            <div class="card-description">Ontario (Canada's largest sports betting market) fiscal year handle. Ontario launched regulated iGaming in April 2022.</div>
+                            <h3>Ontario TTM Handle</h3>
+                            <div class="card-description">Ontario (Canada's largest regulated iGaming market) trailing 12-month sports betting handle in USD.</div>
                             <div id="betting-ontario">Loading...</div>
+                        </div>
+                        <div class="metric-card">
+                            <h3>Handle Per Capita</h3>
+                            <div class="card-description">Annual U.S. sports betting handle divided by adult population (~260M). Context: average ski lift ticket ≈ $250.</div>
+                            <div id="betting-per-capita">Loading...</div>
                         </div>
                     </div>
 
@@ -978,7 +988,7 @@
                         <p style="color: #64748b; font-size: 0.75rem; margin-top: 0.25rem;">Monthly sports betting handle since 2019 - note the rapid growth trajectory</p>
                     </div>
                     <div class="chart-container" style="height: 200px;">
-                        <canvas id="chart-betting-handle"></canvas>
+                        <canvas id="chart-betting-handle" role="img" aria-label="U.S. monthly sports betting handle trend since 2019, showing growth from under $2 billion to over $16 billion per month"></canvas>
                     </div>
 
                     <!-- Payout Percentage Chart -->
@@ -987,7 +997,7 @@
                         <p style="color: #64748b; font-size: 0.75rem; margin-top: 0.25rem;">Percentage of wagered money returned to bettors as winnings. The remainder (typically 5-10%) is sportsbook revenue ("hold"). Lower payout = higher cost to bettors.</p>
                     </div>
                     <div class="chart-container" style="height: 200px;">
-                        <canvas id="chart-betting-payout"></canvas>
+                        <canvas id="chart-betting-payout" role="img" aria-label="Bettor payout percentage over time, typically ranging between 88% and 97% of wagered money returned to bettors"></canvas>
                     </div>
 
                     <!-- Historical Context -->
@@ -2254,6 +2264,7 @@
             const response = await fetch("/data/sports-betting.json?t=" + Date.now());
             const data = await response.json();
             const summary = data.summary || {};
+            const events = data.events || [];
 
             // Helper to format large numbers
             function formatBillions(n) {
@@ -2267,7 +2278,29 @@
                 return sign + (n * 100).toFixed(1) + '%';
             }
 
-            // U.S. TTM Handle
+            // Helper to create month-over-month delta pill for betting
+            // invertColors=true because higher betting = more competing spend = bad for ski
+            function formatBettingDelta(currentValue, previousValue) {
+                if (!previousValue || !currentValue) return '';
+                var diff = currentValue - previousValue;
+                if (Math.abs(diff) < 100000) return '';
+                var pctDiff = diff / previousValue;
+                var label = (pctDiff >= 0 ? '+' : '') + (pctDiff * 100).toFixed(1) + '%';
+                var cls = 'neutral';
+                if (pctDiff > 0.005) cls = 'negative';   // more betting = bad for ski
+                if (pctDiff < -0.005) cls = 'positive';  // less betting = good for ski
+                var arrow = pctDiff > 0 ? '\u2191' : '\u2193';
+                return '<span class="prediction-delta ' + cls + '">' + arrow + ' ' + label + ' MoM</span>';
+            }
+
+            // --- Narrative ---
+            const narrativeEl = document.getElementById('betting-narrative');
+            if (narrativeEl && summary.narrative) {
+                narrativeEl.textContent = summary.narrative;
+                narrativeEl.style.display = '';
+            }
+
+            // --- U.S. TTM Handle card ---
             const usTtmEl = document.getElementById('betting-us-ttm-handle');
             if (usTtmEl && summary.us) {
                 const ttm = summary.us.ttm_handle_usd;
@@ -2277,19 +2310,23 @@
                     const yoyClass = ttmYoy >= 0 ? 'positive' : 'negative';
                     yoyHtml = '<span class="change-pill ' + yoyClass + '">' + formatPercent(ttmYoy) + ' YoY</span>';
                 }
+                // Delta from previous snapshot
+                let deltaHtml = '';
+                if (summary.previous && summary.previous.ttm_handle_usd && ttm) {
+                    deltaHtml = formatBettingDelta(ttm, summary.previous.ttm_handle_usd);
+                }
                 usTtmEl.innerHTML = '<div class="value">' + formatBillions(ttm) + '</div>' +
-                    '<div class="change-indicator">' + yoyHtml + '</div>' +
+                    '<div class="change-indicator">' + yoyHtml + ' ' + deltaHtml + '</div>' +
                     '<div class="period">Trailing 12 months</div>';
             }
 
-            // U.S. Latest Month - with same-month YoY comparison
-            // Skip Aug 2025 data as it appears incomplete; use most recent reliable month
+            // --- U.S. Latest Month card ---
             const usLatestEl = document.getElementById('betting-us-latest');
             const monthlyDataForYoy = data.us_monthly || [];
             if (usLatestEl && monthlyDataForYoy.length > 0) {
-                // Sort descending and find most recent reliable month (skip 2025-08 due to incomplete data)
                 const sortedMonthly = [...monthlyDataForYoy].sort((a, b) => b.date.localeCompare(a.date));
-                const reliableMonth = sortedMonthly.find(m => m.date !== '2025-08-01');
+                // Use incomplete flag instead of hardcoded date exclusion
+                const reliableMonth = sortedMonthly.find(m => !m.incomplete);
 
                 if (reliableMonth) {
                     const handle = reliableMonth.handle_usd;
@@ -2314,162 +2351,311 @@
                 }
             }
 
-            // Ontario - with context since we only have one year
+            // --- Ontario card --- real monthly TTM data
             const ontarioEl = document.getElementById('betting-ontario');
-            if (ontarioEl && summary.ontario) {
-                const handle = summary.ontario.betting_wagers_usd;
-                const fy = summary.ontario.fiscal_year || '';
-                ontarioEl.innerHTML = '<div class="value">' + formatBillions(handle) + '</div>' +
-                    '<div class="period">FY ' + fy + ' (first full year)</div>' +
-                    '<div style="font-size: 0.7rem; color: #64748b; margin-top: 0.5rem;">Ontario launched Apr 2022; limited historical data available</div>';
-            }
-
-            // Monthly Handle Trend Chart
-            // Filter out Aug 2025 due to incomplete data
-            const monthlyData = (data.us_monthly || []).filter(m => m.date !== '2025-08-01');
-            if (monthlyData.length > 0) {
-                // Sort by date
-                monthlyData.sort((a, b) => a.date.localeCompare(b.date));
-
-                const labels = monthlyData.map(d => {
-                    const date = new Date(d.date + 'T00:00:00');
-                    return date.toLocaleDateString('en-US', { month: 'short', year: '2-digit' });
-                });
-                const values = monthlyData.map(d => d.handle_usd / 1e9);  // Convert to billions
-
-                const ctx = document.getElementById('chart-betting-handle');
-                if (ctx) {
-                    if (charts['betting-handle']) {
-                        charts['betting-handle'].destroy();
-                    }
-                    charts['betting-handle'] = new Chart(ctx, {
-                        type: 'line',
-                        data: {
-                            labels: labels,
-                            datasets: [{
-                                label: 'Handle ($B)',
-                                data: values,
-                                borderColor: '#a855f7',
-                                backgroundColor: 'rgba(168, 85, 247, 0.1)',
-                                fill: true,
-                                tension: 0.3,
-                                pointRadius: 2,
-                                pointHoverRadius: 5
-                            }]
-                        },
-                        options: {
-                            responsive: true,
-                            maintainAspectRatio: false,
-                            plugins: {
-                                legend: { display: false },
-                                tooltip: {
-                                    callbacks: {
-                                        label: function(ctx) {
-                                            return '$' + ctx.parsed.y.toFixed(1) + 'B';
-                                        }
-                                    }
-                                }
-                            },
-                            scales: {
-                                x: {
-                                    ticks: {
-                                        maxTicksLimit: 12,
-                                        color: '#94a3b8',
-                                        font: { size: 12, weight: '500' }
-                                    },
-                                    grid: { display: false }
-                                },
-                                y: {
-                                    ticks: {
-                                        callback: function(value) { return '$' + value + 'B'; },
-                                        color: '#94a3b8',
-                                        font: { size: 12, weight: '500' }
-                                    },
-                                    grid: { color: 'rgba(255,255,255,0.1)' }
-                                }
-                            }
-                        }
-                    });
+            if (ontarioEl) {
+                if (summary.ontario && summary.ontario.ttm_wagers_usd) {
+                    const ttmWagers = summary.ontario.ttm_wagers_usd;
+                    const latestMonth = summary.ontario.latest_month;
+                    const monthLabel = latestMonth ? new Date(latestMonth + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : '';
+                    ontarioEl.innerHTML = '<div class="value">' + formatBillions(ttmWagers) + '</div>' +
+                        '<div class="period">TTM through ' + monthLabel + '</div>' +
+                        '<div style="font-size: 0.7rem; color: #64748b; margin-top: 0.5rem;">' + (summary.ontario.months_available || 0) + ' months of data (Apr 2022\u2013present)</div>';
+                } else {
+                    ontarioEl.innerHTML = '<div class="value">--</div>' +
+                        '<div class="period">Data unavailable</div>' +
+                        '<div style="font-size: 0.7rem; color: #64748b; margin-top: 0.5rem;">Ontario Excel parsing may need attention</div>';
                 }
             }
 
-            // Payout Percentage Chart
-            // Filter to months with both handle and revenue data, exclude Aug 2025
-            const payoutData = (data.us_monthly || [])
-                .filter(m => m.handle_usd && m.revenue_usd && m.date !== '2025-08-01')
-                .sort((a, b) => a.date.localeCompare(b.date));
-
-            if (payoutData.length > 0) {
-                const payoutLabels = payoutData.map(d => {
-                    const date = new Date(d.date + 'T00:00:00');
-                    return date.toLocaleDateString('en-US', { month: 'short', year: '2-digit' });
-                });
-                // Payout % = (Handle - Revenue) / Handle * 100
-                const payoutValues = payoutData.map(d => ((d.handle_usd - d.revenue_usd) / d.handle_usd) * 100);
-
-                const payoutCtx = document.getElementById('chart-betting-payout');
-                if (payoutCtx) {
-                    if (charts['betting-payout']) {
-                        charts['betting-payout'].destroy();
-                    }
-                    charts['betting-payout'] = new Chart(payoutCtx, {
-                        type: 'line',
-                        data: {
-                            labels: payoutLabels,
-                            datasets: [{
-                                label: 'Payout %',
-                                data: payoutValues,
-                                borderColor: '#22c55e',
-                                backgroundColor: 'rgba(34, 197, 94, 0.1)',
-                                fill: true,
-                                tension: 0.3,
-                                pointRadius: 2,
-                                pointHoverRadius: 5
-                            }]
-                        },
-                        options: {
-                            responsive: true,
-                            maintainAspectRatio: false,
-                            plugins: {
-                                legend: { display: false },
-                                tooltip: {
-                                    callbacks: {
-                                        label: function(ctx) {
-                                            return ctx.parsed.y.toFixed(1) + '% returned to bettors';
-                                        }
-                                    }
-                                }
-                            },
-                            scales: {
-                                x: {
-                                    ticks: {
-                                        maxTicksLimit: 12,
-                                        color: '#94a3b8',
-                                        font: { size: 12, weight: '500' }
-                                    },
-                                    grid: { display: false }
-                                },
-                                y: {
-                                    min: 85,
-                                    max: 100,
-                                    ticks: {
-                                        callback: function(value) { return value + '%'; },
-                                        color: '#94a3b8',
-                                        font: { size: 12, weight: '500' }
-                                    },
-                                    grid: { color: 'rgba(255,255,255,0.1)' }
-                                }
-                            }
-                        }
-                    });
+            // --- Per Capita card ---
+            const perCapitaEl = document.getElementById('betting-per-capita');
+            if (perCapitaEl && summary.us) {
+                const perCap = summary.us.handle_per_capita_usd;
+                const context = summary.us.handle_per_capita_context;
+                if (perCap) {
+                    perCapitaEl.innerHTML = '<div class="value">$' + Math.round(perCap) + '</div>' +
+                        '<div class="period">per adult per year</div>' +
+                        '<div style="font-size: 0.7rem; color: #64748b; margin-top: 0.5rem;">\u2248 ' + (context || '') + ' at avg. ticket price</div>';
+                } else {
+                    perCapitaEl.innerHTML = '<div class="value">--</div><div class="period">per adult per year</div>';
                 }
             }
 
-            // Annual Totals - exclude 2025 YTD since it contains incomplete August data
-            const annualData = (data.us_annual || []).filter(y => y.year !== 2025);
+            // ============================================================
+            // SHARED LABEL ARRAY for aligned x-axes between both charts
+            // Both charts use the same labels so dates align vertically.
+            // ============================================================
+
+            // Filter out incomplete months for charting
+            const allMonthly = (data.us_monthly || []).filter(m => !m.incomplete);
+            allMonthly.sort((a, b) => a.date.localeCompare(b.date));
+
+            // Build label array extending through Feb 2027 for future events
+            const dateLabelMap = new Map(); // date string -> formatted label
+            const endDate = new Date('2027-02-01T00:00:00');
+
+            // Start from the earliest data point
+            if (allMonthly.length > 0) {
+                let cursor = new Date(allMonthly[0].date + 'T00:00:00');
+                while (cursor <= endDate) {
+                    const dateStr = cursor.toISOString().slice(0, 10);
+                    const label = cursor.toLocaleDateString('en-US', { month: 'short', year: '2-digit' });
+                    dateLabelMap.set(dateStr, label);
+                    cursor.setMonth(cursor.getMonth() + 1);
+                }
+            }
+
+            const sharedDateKeys = [...dateLabelMap.keys()]; // sorted chronologically
+            const sharedLabels = sharedDateKeys.map(k => dateLabelMap.get(k));
+
+            // Index lookup for date -> label index (for annotations)
+            const dateToIndex = new Map();
+            sharedDateKeys.forEach((k, i) => dateToIndex.set(k, i));
+
+            // Find the last data point index for the forecast zone
+            const lastDataDate = allMonthly.length > 0 ? allMonthly[allMonthly.length - 1].date : null;
+            const lastDataIndex = lastDataDate ? dateToIndex.get(lastDataDate) : null;
+
+            // ============================================================
+            // BUILD EVENT ANNOTATIONS for handle chart
+            // ============================================================
+            const eventAnnotations = {};
+
+            // Forecast zone: subtle background after last data
+            if (lastDataIndex !== null && lastDataIndex < sharedDateKeys.length - 1) {
+                eventAnnotations['forecastZone'] = {
+                    type: 'box',
+                    xMin: lastDataIndex + 0.5,
+                    xMax: sharedDateKeys.length - 1,
+                    backgroundColor: 'rgba(148, 163, 184, 0.04)',
+                    borderWidth: 0,
+                    drawTime: 'beforeDatasetsDraw'
+                };
+            }
+
+            events.forEach((evt, i) => {
+                const idx = dateToIndex.get(evt.date);
+                if (idx === undefined) return;
+
+                const isRange = evt.end_date && dateToIndex.has(evt.end_date);
+
+                // Color by type
+                let borderColor, bgColor;
+                if (evt.type === 'milestone') {
+                    borderColor = 'rgba(148, 163, 184, 0.6)';
+                    bgColor = 'rgba(148, 163, 184, 0.08)';
+                } else if (evt.type === 'future') {
+                    borderColor = 'rgba(251, 191, 36, 0.6)';
+                    bgColor = 'rgba(251, 191, 36, 0.08)';
+                } else {
+                    // recurring
+                    borderColor = 'rgba(168, 85, 247, 0.4)';
+                    bgColor = 'rgba(168, 85, 247, 0.06)';
+                }
+
+                if (isRange) {
+                    const endIdx = dateToIndex.get(evt.end_date);
+                    eventAnnotations['evt_box_' + i] = {
+                        type: 'box',
+                        xMin: idx - 0.3,
+                        xMax: endIdx + 0.3,
+                        backgroundColor: bgColor,
+                        borderWidth: 0,
+                        drawTime: 'beforeDatasetsDraw',
+                        label: evt.tier === 1 ? {
+                            display: true,
+                            content: evt.label,
+                            position: { x: 'center', y: 'start' },
+                            font: { size: 8, weight: '500' },
+                            color: evt.type === 'future' ? 'rgba(251, 191, 36, 0.8)' : '#94a3b8',
+                            padding: { top: 2, bottom: 2 }
+                        } : undefined
+                    };
+                } else {
+                    eventAnnotations['evt_line_' + i] = {
+                        type: 'line',
+                        xMin: idx,
+                        xMax: idx,
+                        borderColor: borderColor,
+                        borderWidth: 1,
+                        borderDash: evt.type === 'milestone' ? [6, 3] : [4, 4],
+                        drawTime: 'beforeDatasetsDraw',
+                        label: evt.tier === 1 ? {
+                            display: true,
+                            content: evt.label,
+                            position: 'start',
+                            font: { size: 8, weight: '500' },
+                            color: evt.type === 'future' ? 'rgba(251, 191, 36, 0.8)' : '#94a3b8',
+                            rotation: -90,
+                            padding: { top: 2, bottom: 2 }
+                        } : undefined
+                    };
+                }
+            });
+
+            // ============================================================
+            // HANDLE CHART with shared labels + event annotations
+            // ============================================================
+            // Map monthly handle data onto shared label array (null for future months)
+            const handleDataMap = new Map();
+            allMonthly.forEach(m => { if (m.handle_usd) handleDataMap.set(m.date, m.handle_usd / 1e9); });
+            const handleValues = sharedDateKeys.map(k => handleDataMap.get(k) ?? null);
+
+            const handleCtx = document.getElementById('chart-betting-handle');
+            if (handleCtx) {
+                if (charts['betting-handle']) charts['betting-handle'].destroy();
+                charts['betting-handle'] = new Chart(handleCtx, {
+                    type: 'line',
+                    data: {
+                        labels: sharedLabels,
+                        datasets: [{
+                            label: 'Handle ($B)',
+                            data: handleValues,
+                            borderColor: '#a855f7',
+                            backgroundColor: 'rgba(168, 85, 247, 0.1)',
+                            fill: true,
+                            tension: 0.3,
+                            pointRadius: 1.5,
+                            pointHoverRadius: 5,
+                            spanGaps: false
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(ctx) {
+                                        if (ctx.parsed.y === null) return '';
+                                        return '$' + ctx.parsed.y.toFixed(1) + 'B';
+                                    }
+                                }
+                            },
+                            annotation: {
+                                annotations: eventAnnotations
+                            }
+                        },
+                        scales: {
+                            x: {
+                                ticks: {
+                                    maxTicksLimit: 12,
+                                    color: '#94a3b8',
+                                    font: { size: 10, weight: '500' }
+                                },
+                                grid: { display: false }
+                            },
+                            y: {
+                                ticks: {
+                                    callback: function(value) { return '$' + value + 'B'; },
+                                    color: '#94a3b8',
+                                    font: { size: 10, weight: '500' }
+                                },
+                                grid: { color: 'rgba(255,255,255,0.1)' }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // ============================================================
+            // PAYOUT CHART with shared labels + 93% reference line
+            // Uses same sharedLabels for x-axis alignment with handle chart
+            // ============================================================
+            const payoutDataMap = new Map();
+            allMonthly.forEach(m => {
+                if (m.handle_usd && m.revenue_usd) {
+                    const payout = ((m.handle_usd - m.revenue_usd) / m.handle_usd) * 100;
+                    payoutDataMap.set(m.date, payout);
+                }
+            });
+            const payoutValues = sharedDateKeys.map(k => payoutDataMap.get(k) ?? null);
+
+            const refPct = summary.payout_reference?.industry_avg_pct || 93;
+
+            const payoutCtx = document.getElementById('chart-betting-payout');
+            if (payoutCtx) {
+                if (charts['betting-payout']) charts['betting-payout'].destroy();
+                charts['betting-payout'] = new Chart(payoutCtx, {
+                    type: 'line',
+                    data: {
+                        labels: sharedLabels,
+                        datasets: [{
+                            label: 'Payout %',
+                            data: payoutValues,
+                            borderColor: '#22c55e',
+                            backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                            fill: true,
+                            tension: 0.3,
+                            pointRadius: 1.5,
+                            pointHoverRadius: 5,
+                            spanGaps: false
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(ctx) {
+                                        if (ctx.parsed.y === null) return '';
+                                        return ctx.parsed.y.toFixed(1) + '% returned to bettors';
+                                    }
+                                }
+                            },
+                            annotation: {
+                                annotations: {
+                                    industryAvg: {
+                                        type: 'line',
+                                        yMin: refPct,
+                                        yMax: refPct,
+                                        borderColor: 'rgba(148, 163, 184, 0.5)',
+                                        borderDash: [6, 3],
+                                        borderWidth: 1,
+                                        label: {
+                                            display: true,
+                                            content: 'Typical payout (~' + refPct + '%)',
+                                            position: 'start',
+                                            font: { size: 9 },
+                                            color: '#94a3b8'
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                ticks: {
+                                    maxTicksLimit: 12,
+                                    color: '#94a3b8',
+                                    font: { size: 10, weight: '500' }
+                                },
+                                grid: { display: false }
+                            },
+                            y: {
+                                min: 85,
+                                max: 100,
+                                ticks: {
+                                    callback: function(value) { return value + '%'; },
+                                    color: '#94a3b8',
+                                    font: { size: 10, weight: '500' }
+                                },
+                                grid: { color: 'rgba(255,255,255,0.1)' }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Annual Totals - exclude current year YTD
+            const currentYear = new Date().getFullYear();
+            const annualData = (data.us_annual || []).filter(y => y.year < currentYear);
             const annualGrid = document.getElementById('betting-annual-grid');
             if (annualGrid && annualData.length > 0) {
-                // Sort by year descending, take last 5 complete years
                 annualData.sort((a, b) => b.year - a.year);
                 const recentYears = annualData.slice(0, 5);
 
@@ -2480,7 +2666,6 @@
                     const yr = recentYears[i];
                     let yoyHtml = '';
 
-                    // Show YoY for all complete years
                     if (prevHandle && yr.handle_usd) {
                         const yoy = (yr.handle_usd - prevHandle) / prevHandle;
                         const yoyClass = yoy >= 0 ? 'positive' : 'negative';
@@ -2509,7 +2694,7 @@
 
         } catch (error) {
             console.error("Failed to load sports betting data:", error);
-            ['betting-us-ttm-handle', 'betting-us-latest', 'betting-ontario'].forEach(id => {
+            ['betting-us-ttm-handle', 'betting-us-latest', 'betting-ontario', 'betting-per-capita'].forEach(id => {
                 const el = document.getElementById(id);
                 if (el) el.innerHTML = '<div class="value">--</div><div class="period">Unable to load data</div>';
             });

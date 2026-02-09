@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-01-14T00:01:07.224451Z",
+  "fetched_at": "2026-02-09T20:05:16.139341Z",
   "sources": {
     "us": "Sports Handle (sportshandle.com)",
     "ontario": "iGaming Ontario (igamingontario.ca)"
@@ -513,7 +513,7 @@
       "type": "monthly",
       "date": "2025-03-01",
       "handle_usd": 15548804198.0,
-      "revenue_usd": 964341120.0,
+      "revenue_usd": 952442926.0,
       "taxes_usd": 218752719.0,
       "source": "Sports Handle"
     },
@@ -536,25 +536,57 @@
     {
       "type": "monthly",
       "date": "2025-06-01",
-      "handle_usd": 9683032983.0,
-      "revenue_usd": 282828747.0,
+      "handle_usd": 9709832015.0,
+      "revenue_usd": 283229192.0,
       "taxes_usd": null,
       "source": "Sports Handle"
     },
     {
       "type": "monthly",
       "date": "2025-07-01",
-      "handle_usd": 8005410579.0,
-      "revenue_usd": 842084395.0,
-      "taxes_usd": 185858051.0,
+      "handle_usd": 8028180708.0,
+      "revenue_usd": 847734950.0,
+      "taxes_usd": 186198304.0,
       "source": "Sports Handle"
     },
     {
       "type": "monthly",
       "date": "2025-08-01",
-      "handle_usd": 6160128846.0,
-      "revenue_usd": 611975648.0,
-      "taxes_usd": 176967346.0,
+      "handle_usd": 10635058766.0,
+      "revenue_usd": 253401112.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2025-09-01",
+      "handle_usd": 14702137086.0,
+      "revenue_usd": 271553299.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2025-10-01",
+      "handle_usd": 16665888860.0,
+      "revenue_usd": 348679835.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2025-11-01",
+      "handle_usd": 16152425378.0,
+      "revenue_usd": 434000569.0,
+      "taxes_usd": null,
+      "source": "Sports Handle"
+    },
+    {
+      "type": "monthly",
+      "date": "2025-12-01",
+      "handle_usd": 10173689847.0,
+      "revenue_usd": 308798621.0,
+      "taxes_usd": null,
       "source": "Sports Handle"
     }
   ],
@@ -618,7 +650,7 @@
     {
       "type": "annual",
       "year": 2025,
-      "handle_usd": 93704096457.0,
+      "handle_usd": 145749046863.0,
       "revenue_usd": null,
       "taxes_usd": null,
       "source": "Sports Handle"
@@ -626,37 +658,577 @@
   ],
   "ontario": [
     {
-      "type": "summary",
+      "type": "monthly",
+      "date": "2022-04-01",
       "region": "Ontario",
-      "fiscal_year": "2024-25",
-      "betting_wagers_cad": 11400000000,
-      "betting_wagers_usd": 7979999999.999999,
-      "betting_revenue_cad": 724000000,
-      "betting_revenue_usd": 506799999.99999994,
-      "note": "Annual fiscal year data - detailed monthly requires Excel parsing",
+      "betting_wagers_cad": 348000000.0,
+      "betting_wagers_usd": 243599999.99999997,
+      "betting_revenue_cad": 20700000.0,
+      "betting_revenue_usd": 14490000.0,
       "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2022-05-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 420000000.0,
+      "betting_wagers_usd": 294000000.0,
+      "betting_revenue_cad": 20500000.0,
+      "betting_revenue_usd": 14350000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2022-06-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 348000000.0,
+      "betting_wagers_usd": 243599999.99999997,
+      "betting_revenue_cad": 21100000.0,
+      "betting_revenue_usd": 14769999.999999998,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2022-07-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 313000000.0,
+      "betting_wagers_usd": 219100000.0,
+      "betting_revenue_cad": 17700000.0,
+      "betting_revenue_usd": 12390000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2022-08-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 374000000.0,
+      "betting_wagers_usd": 261799999.99999997,
+      "betting_revenue_cad": 28400000.0,
+      "betting_revenue_usd": 19880000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2022-09-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 485000000.0,
+      "betting_wagers_usd": 339500000.0,
+      "betting_revenue_cad": 37500000.0,
+      "betting_revenue_usd": 26250000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2022-10-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 684000000.0,
+      "betting_wagers_usd": 478799999.99999994,
+      "betting_revenue_cad": 44000000.0,
+      "betting_revenue_usd": 30799999.999999996,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2022-11-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 783000000.0,
+      "betting_wagers_usd": 548100000.0,
+      "betting_revenue_cad": 59600000.0,
+      "betting_revenue_usd": 41720000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2022-12-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 828000000.0,
+      "betting_wagers_usd": 579600000.0,
+      "betting_revenue_cad": 40200000.0,
+      "betting_revenue_usd": 28140000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2023-01-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 836000000.0,
+      "betting_wagers_usd": 585200000.0,
+      "betting_revenue_cad": 52700000.0,
+      "betting_revenue_usd": 36890000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2023-02-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 718000000.0,
+      "betting_wagers_usd": 502599999.99999994,
+      "betting_revenue_cad": 32200000.000000004,
+      "betting_revenue_usd": 22540000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2023-03-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 833000000.0,
+      "betting_wagers_usd": 583100000.0,
+      "betting_revenue_cad": 58000000.0,
+      "betting_revenue_usd": 40600000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2023-04-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 790000000.0,
+      "betting_wagers_usd": 553000000.0,
+      "betting_revenue_cad": 51000000.0,
+      "betting_revenue_usd": 35700000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2023-05-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 679000000.0,
+      "betting_wagers_usd": 475299999.99999994,
+      "betting_revenue_cad": 60100000.0,
+      "betting_revenue_usd": 42070000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2023-06-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 548000000.0,
+      "betting_wagers_usd": 383600000.0,
+      "betting_revenue_cad": 27200000.0,
+      "betting_revenue_usd": 19040000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2023-07-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 527000000.0,
+      "betting_wagers_usd": 368900000.0,
+      "betting_revenue_cad": 33800000.0,
+      "betting_revenue_usd": 23660000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2023-08-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 582000000.0,
+      "betting_wagers_usd": 407400000.0,
+      "betting_revenue_cad": 34600000.0,
+      "betting_revenue_usd": 24220000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2023-09-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 809000000.0,
+      "betting_wagers_usd": 566300000.0,
+      "betting_revenue_cad": 49500000.0,
+      "betting_revenue_usd": 34650000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2023-10-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 966000000.0,
+      "betting_wagers_usd": 676200000.0,
+      "betting_revenue_cad": 59100000.0,
+      "betting_revenue_usd": 41370000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2023-11-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 1044000000.0,
+      "betting_wagers_usd": 730800000.0,
+      "betting_revenue_cad": 57400000.0,
+      "betting_revenue_usd": 40180000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2023-12-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 1043000000.0,
+      "betting_wagers_usd": 730100000.0,
+      "betting_revenue_cad": 54400000.0,
+      "betting_revenue_usd": 38080000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2024-01-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 979000000.0,
+      "betting_wagers_usd": 685300000.0,
+      "betting_revenue_cad": 69500000.0,
+      "betting_revenue_usd": 48650000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2024-02-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 826000000.0,
+      "betting_wagers_usd": 578200000.0,
+      "betting_revenue_cad": 42300000.0,
+      "betting_revenue_usd": 29609999.999999996,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2024-03-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 940000000.0,
+      "betting_wagers_usd": 658000000.0,
+      "betting_revenue_cad": 51100000.0,
+      "betting_revenue_usd": 35770000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2024-04-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 935000000.0,
+      "betting_wagers_usd": 654500000.0,
+      "betting_revenue_cad": 65099999.99999999,
+      "betting_revenue_usd": 45569999.99999999,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2024-05-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 820000000.0,
+      "betting_wagers_usd": 574000000.0,
+      "betting_revenue_cad": 56700000.0,
+      "betting_revenue_usd": 39690000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2024-06-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 766000000.0,
+      "betting_wagers_usd": 536199999.99999994,
+      "betting_revenue_cad": 63300000.0,
+      "betting_revenue_usd": 44310000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2024-07-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 671000000.0,
+      "betting_wagers_usd": 469700000.0,
+      "betting_revenue_cad": 53400000.0,
+      "betting_revenue_usd": 37380000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2024-08-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 664000000.0,
+      "betting_wagers_usd": 464800000.0,
+      "betting_revenue_cad": 46900000.0,
+      "betting_revenue_usd": 32829999.999999996,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2024-09-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 881000000.0,
+      "betting_wagers_usd": 616700000.0,
+      "betting_revenue_cad": 71900000.0,
+      "betting_revenue_usd": 50330000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2024-10-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 1057000000.0,
+      "betting_wagers_usd": 739900000.0,
+      "betting_revenue_cad": 48400000.0,
+      "betting_revenue_usd": 33880000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2024-11-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 1187000000.0,
+      "betting_wagers_usd": 830900000.0,
+      "betting_revenue_cad": 78900000.0,
+      "betting_revenue_usd": 55230000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2024-12-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 1134000000.0,
+      "betting_wagers_usd": 793800000.0,
+      "betting_revenue_cad": 39600000.0,
+      "betting_revenue_usd": 27720000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2025-01-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 1183000000.0,
+      "betting_wagers_usd": 828100000.0,
+      "betting_revenue_cad": 92000000.0,
+      "betting_revenue_usd": 64399999.99999999,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2025-02-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 931000000.0,
+      "betting_wagers_usd": 651700000.0,
+      "betting_revenue_cad": 61600000.0,
+      "betting_revenue_usd": 43120000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2025-03-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 1186000000.0,
+      "betting_wagers_usd": 830200000.0,
+      "betting_revenue_cad": 47700000.0,
+      "betting_revenue_usd": 33389999.999999996,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2025-04-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 1067000000.0,
+      "betting_wagers_usd": 746900000.0,
+      "betting_revenue_cad": 64599999.99999999,
+      "betting_revenue_usd": 45219999.99999999,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2025-05-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 972000000.0,
+      "betting_wagers_usd": 680400000.0,
+      "betting_revenue_cad": 71800000.0,
+      "betting_revenue_usd": 50260000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2025-06-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 768000000.0,
+      "betting_wagers_usd": 537600000.0,
+      "betting_revenue_cad": 58400000.0,
+      "betting_revenue_usd": 40880000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2025-07-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 688000000.0,
+      "betting_wagers_usd": 481599999.99999994,
+      "betting_revenue_cad": 52700000.0,
+      "betting_revenue_usd": 36890000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2025-08-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 765000000.0,
+      "betting_wagers_usd": 535499999.99999994,
+      "betting_revenue_cad": 60200000.0,
+      "betting_revenue_usd": 42140000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2025-09-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 1061000000.0,
+      "betting_wagers_usd": 742700000.0,
+      "betting_revenue_cad": 46500000.0,
+      "betting_revenue_usd": 32549999.999999996,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2025-10-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 1234000000.0,
+      "betting_wagers_usd": 863800000.0,
+      "betting_revenue_cad": 58300000.0,
+      "betting_revenue_usd": 40810000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2025-11-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 1253000000.0,
+      "betting_wagers_usd": 877100000.0,
+      "betting_revenue_cad": 102000000.0,
+      "betting_revenue_usd": 71400000.0,
+      "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2025-12-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 1089000000.0,
+      "betting_wagers_usd": 762300000.0,
+      "betting_revenue_cad": 99100000.0,
+      "betting_revenue_usd": 69370000.0,
+      "source": "iGaming Ontario"
+    }
+  ],
+  "events": [
+    {
+      "date": "2018-05-01",
+      "label": "PASPA Struck Down",
+      "type": "milestone",
+      "tier": 1,
+      "category": "regulatory"
+    },
+    {
+      "date": "2022-01-01",
+      "label": "NY Mobile Launch",
+      "type": "milestone",
+      "tier": 1,
+      "category": "regulatory"
+    },
+    {
+      "date": "2025-02-01",
+      "label": "Super Bowl LIX",
+      "type": "recurring",
+      "tier": 2,
+      "category": "football"
+    },
+    {
+      "date": "2025-03-01",
+      "label": "March Madness '25",
+      "type": "recurring",
+      "tier": 2,
+      "category": "basketball"
+    },
+    {
+      "date": "2025-09-01",
+      "label": "NFL Kickoff '25",
+      "type": "recurring",
+      "tier": 2,
+      "category": "football"
+    },
+    {
+      "date": "2026-02-01",
+      "label": "Super Bowl LX",
+      "type": "future",
+      "tier": 1,
+      "category": "football"
+    },
+    {
+      "date": "2026-03-01",
+      "end_date": "2026-04-01",
+      "label": "March Madness '26",
+      "type": "future",
+      "tier": 1,
+      "category": "basketball"
+    },
+    {
+      "date": "2026-05-01",
+      "label": "Kentucky Derby",
+      "type": "future",
+      "tier": 2,
+      "category": "horse-racing"
+    },
+    {
+      "date": "2026-06-01",
+      "end_date": "2026-07-01",
+      "label": "FIFA World Cup 2026",
+      "type": "future",
+      "tier": 1,
+      "category": "soccer"
+    },
+    {
+      "date": "2026-09-01",
+      "label": "NFL Kickoff '26",
+      "type": "future",
+      "tier": 1,
+      "category": "football"
+    },
+    {
+      "date": "2026-10-01",
+      "label": "World Series '26",
+      "type": "future",
+      "tier": 2,
+      "category": "baseball"
+    },
+    {
+      "date": "2027-01-01",
+      "label": "NFL Playoffs '27",
+      "type": "future",
+      "tier": 2,
+      "category": "football"
+    },
+    {
+      "date": "2027-02-01",
+      "label": "Super Bowl LXI",
+      "type": "future",
+      "tier": 1,
+      "category": "football"
     }
   ],
   "summary": {
     "us": {
-      "latest_month": "2025-08-01",
-      "latest_handle_usd": 6160128846.0,
-      "latest_revenue_usd": 611975648.0,
-      "ttm_handle_usd": 154960790201.0,
-      "ttm_revenue_usd": 5724127029.0,
-      "ttm_yoy_handle_change": 0.10051025886393782,
+      "latest_month": "2025-12-01",
+      "latest_handle_usd": 10173689847.0,
+      "latest_revenue_usd": 308798621.0,
+      "ttm_handle_usd": 155922736710.0,
+      "ttm_revenue_usd": 4934552860.0,
+      "ttm_yoy_handle_change": 0.04503251912075578,
+      "handle_per_capita_usd": 599.7,
+      "handle_per_capita_context": "~2 lift tickets",
       "latest_annual_year": 2025,
-      "latest_annual_handle_usd": 93704096457.0,
+      "latest_annual_handle_usd": 145749046863.0,
       "latest_annual_revenue_usd": null
     },
     "ontario": {
-      "fiscal_year": "2024-25",
-      "betting_wagers_usd": 7979999999.999999,
-      "betting_revenue_usd": 506799999.99999994,
-      "note": "Annual fiscal year data - detailed monthly requires Excel parsing"
+      "ttm_wagers_usd": 8537900000.0,
+      "ttm_revenue_usd": 570430000.0,
+      "latest_month": "2025-12-01",
+      "months_available": 45
     },
-    "north_america": {
-      "estimated_annual_handle_usd": 101684096457.0
-    }
+    "north_america": {},
+    "payout_reference": {
+      "industry_avg_pct": 93.0,
+      "label": "Typical bettor payout"
+    },
+    "narrative": "Since PASPA was struck down in May 2018, U.S. sports betting handle has grown from $13.1B (2019) to $156B trailing twelve months \u2014 a 5% year-over-year increase. Growth is continuing but at a more moderate pace than the early post-PASPA expansion years. That works out to roughly $600 per U.S. adult per year \u2014 equivalent to about ~2 lift tickets. Ontario, Canada's largest regulated market, has contributed $8.5B USD in trailing twelve-month betting wagers. March Madness typically drives sustained handle volume over three weeks of tournament play.",
+    "previous": null
   }
 }
