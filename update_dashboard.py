@@ -877,6 +877,17 @@ def update_dashboard():
     print_safe("Starting dashboard update...")
     print_safe(f"Timestamp: {datetime.now().isoformat()}")
 
+    # Load previous data as fallback for transient API failures
+    previous_data = {}
+    output_path = 'static/data/dashboard.json'
+    try:
+        if os.path.exists(output_path):
+            with open(output_path) as f:
+                previous_data = json.load(f)
+            print_safe(f"Loaded previous data with {len(previous_data)} keys as fallback")
+    except Exception as e:
+        print_safe(f"  ! Could not load previous data: {e}")
+
     dashboard_data = {
         'updated': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     }
@@ -1397,8 +1408,17 @@ def update_dashboard():
     else:
         print_safe("  ! Insufficient data for narrative")
 
+    # Preserve previous data for any keys that failed to fetch this run
+    if previous_data:
+        preserved = []
+        for key, value in previous_data.items():
+            if key != 'updated' and key not in dashboard_data:
+                dashboard_data[key] = value
+                preserved.append(key)
+        if preserved:
+            print_safe(f"\nPreserved {len(preserved)} keys from previous data: {', '.join(preserved)}")
+
     # Write to file
-    output_path = 'static/data/dashboard.json'
     print_safe(f"\nWriting data to {output_path}...")
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)

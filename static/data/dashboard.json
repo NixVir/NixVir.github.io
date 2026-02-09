@@ -55151,5 +55151,443 @@
       "months_available": 128
     }
   ],
-  "economic_narrative": "Consumer confidence rose to 52.9, in pessimistic territory that may reduce discretionary travel spending. Inflation at 3.0% remains above the Fed's 2% target. The personal savings rate (3.5%) is low, suggesting consumers may have less buffer for discretionary spending like ski trips."
+  "economic_narrative": "Consumer confidence rose to 52.9, in pessimistic territory that may reduce discretionary travel spending. Inflation at 3.0% remains above the Fed's 2% target. The personal savings rate (3.5%) is low, suggesting consumers may have less buffer for discretionary spending like ski trips.",
+  "electricity_us": [
+    {
+      "date": "2023-12-01",
+      "value": 12.24,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-01-01",
+      "value": 12.5,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-02-01",
+      "value": 12.53,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-03-01",
+      "value": 12.47,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-04-01",
+      "value": 12.35,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-05-01",
+      "value": 12.32,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-06-01",
+      "value": 12.89,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-07-01",
+      "value": 13.37,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-08-01",
+      "value": 13.16,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-09-01",
+      "value": 13.23,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-10-01",
+      "value": 12.89,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-11-01",
+      "value": 12.35,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-12-01",
+      "value": 12.64,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-01-01",
+      "value": 12.9,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-02-01",
+      "value": 13.07,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-03-01",
+      "value": 13.25,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-04-01",
+      "value": 12.96,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-05-01",
+      "value": 13.01,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-06-01",
+      "value": 13.62,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-07-01",
+      "value": 14.15,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-08-01",
+      "value": 14.04,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-09-01",
+      "value": 14.06,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-10-01",
+      "value": 13.41,
+      "state": "US",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-11-01",
+      "value": 13.19,
+      "state": "US",
+      "sector": "COM"
+    }
+  ],
+  "electricity_co": [
+    {
+      "date": "2023-12-01",
+      "value": 10.95,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-01-01",
+      "value": 10.85,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-02-01",
+      "value": 10.96,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-03-01",
+      "value": 10.77,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-04-01",
+      "value": 11.43,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-05-01",
+      "value": 11.38,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-06-01",
+      "value": 12.87,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-07-01",
+      "value": 12.69,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-08-01",
+      "value": 12.47,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-09-01",
+      "value": 12.49,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-10-01",
+      "value": 11.51,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-11-01",
+      "value": 11.67,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-12-01",
+      "value": 11.04,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-01-01",
+      "value": 11.01,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-02-01",
+      "value": 11.39,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-03-01",
+      "value": 11.35,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-04-01",
+      "value": 12.27,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-05-01",
+      "value": 12.32,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-06-01",
+      "value": 13.51,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-07-01",
+      "value": 13.27,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-08-01",
+      "value": 13.26,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-09-01",
+      "value": 13.58,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-10-01",
+      "value": 12.58,
+      "state": "CO",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-11-01",
+      "value": 12.62,
+      "state": "CO",
+      "sector": "COM"
+    }
+  ],
+  "electricity_ut": [
+    {
+      "date": "2023-12-01",
+      "value": 7.91,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-01-01",
+      "value": 8.53,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-02-01",
+      "value": 8.61,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-03-01",
+      "value": 8.71,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-04-01",
+      "value": 8.76,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-05-01",
+      "value": 8.85,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-06-01",
+      "value": 8.91,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-07-01",
+      "value": 10.26,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-08-01",
+      "value": 10.37,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-09-01",
+      "value": 11.35,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-10-01",
+      "value": 9.26,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-11-01",
+      "value": 9.56,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2024-12-01",
+      "value": 9.05,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-01-01",
+      "value": 9.15,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-02-01",
+      "value": 9.57,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-03-01",
+      "value": 9.67,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-04-01",
+      "value": 9.53,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-05-01",
+      "value": 9.83,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-06-01",
+      "value": 10.58,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-07-01",
+      "value": 10.46,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-08-01",
+      "value": 10.82,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-09-01",
+      "value": 11.1,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-10-01",
+      "value": 10.39,
+      "state": "UT",
+      "sector": "COM"
+    },
+    {
+      "date": "2025-11-01",
+      "value": 9.62,
+      "state": "UT",
+      "sector": "COM"
+    }
+  ]
 }

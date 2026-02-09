@@ -21,13 +21,18 @@
         afterDraw: function(chart) {
             if (!nixvirStampImg.complete) return;
             const ctx = chart.ctx;
-            const { width, height } = chart;
-            const imgWidth = 60;
-            const imgHeight = 18;
-
+            const area = chart.chartArea;
+            if (!area) return;
+            // Scale logo for small charts; skip if chart area is too tiny
+            const areaHeight = area.bottom - area.top;
+            if (areaHeight < 40) return;
+            const scale = areaHeight < 80 ? 0.6 : 0.8;
+            const imgWidth = Math.round(60 * scale);
+            const imgHeight = Math.round(18 * scale);
             ctx.save();
-            ctx.globalAlpha = 0.7;
-            ctx.drawImage(nixvirStampImg, width - imgWidth - 6, height - imgHeight - 4, imgWidth, imgHeight);
+            ctx.globalAlpha = 0.35;
+            // Position inside chart area, above x-axis labels
+            ctx.drawImage(nixvirStampImg, area.right - imgWidth - 4, area.bottom - imgHeight - 2, imgWidth, imgHeight);
             ctx.restore();
         }
     };
