@@ -402,10 +402,23 @@
       border-color: #2a3444 !important;
     }
 
+    /* List widget TopBar — ensure it renders visibly */
+    #nc-root [class*="TopBar"],
+    #nc-root [class*="topBar"],
+    #nc-root [class*="ObjectWidgetTopBar"] {
+      display: flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      min-height: 40px !important;
+      align-items: center !important;
+    }
+
     /* List widget "Add <item> +" button — ensure visibility */
     #nc-root [class*="ListControl"] > button,
     #nc-root [class*="ListControl"] [class*="TopBarButton"],
-    #nc-root button[class*="TopBarButton"] {
+    #nc-root button[class*="TopBarButton"],
+    #nc-root [class*="TopBar"] button,
+    #nc-root [class*="ObjectWidgetTopBar"] button {
       background: #1a2230 !important;
       color: #60a5fa !important;
       border: 1px dashed #3b82f6 !important;
@@ -414,10 +427,15 @@
       font-size: 14px !important;
       cursor: pointer !important;
       margin-top: 8px !important;
+      display: inline-flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
     }
     #nc-root [class*="ListControl"] > button:hover,
     #nc-root [class*="ListControl"] [class*="TopBarButton"]:hover,
-    #nc-root button[class*="TopBarButton"]:hover {
+    #nc-root button[class*="TopBarButton"]:hover,
+    #nc-root [class*="TopBar"] button:hover,
+    #nc-root [class*="ObjectWidgetTopBar"] button:hover {
       background: #2a3444 !important;
       color: #93c5fd !important;
     }
@@ -1162,13 +1180,13 @@
             var title, instructions, stepsHtml;
 
             if (isManualNewsEntry) {
-              title = 'Add a Story to the News Feed';
-              instructions = 'Click <strong>"Add stories +"</strong> below to add a new entry. ' +
+              title = 'Manage News Stories';
+              instructions = 'Use <strong>"Add stories +"</strong> to add a new entry, or click the <strong>▶</strong> arrow on an existing entry to expand and edit it. ' +
                 'Fill in the Title, URL, Source, and Category at minimum. ' +
                 'When finished, click <strong>Save</strong> in the top bar — ' +
                 'the story will go live on the Ski News page within a few minutes.';
               stepsHtml =
-                '<div class="banner-step"><span class="step-num">1</span> Click "Add stories +"</div>' +
+                '<div class="banner-step"><span class="step-num">1</span> Add or expand a story</div>' +
                 '<div class="banner-step"><span class="step-num">2</span> Fill in the fields</div>' +
                 '<div class="banner-step"><span class="step-num">3</span> Click Save (top bar)</div>';
             } else if (isNew) {
