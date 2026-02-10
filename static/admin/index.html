@@ -950,6 +950,78 @@
         } else if (banner) {
           banner.style.display = 'none';
         }
+
+        // --- Workflow page: inject info banner ---
+        var isWorkflowPage = window.location.hash.includes('/workflow') || window.location.hash === '#/workflow';
+        var wfBanner = document.getElementById('nixvir-workflow-banner');
+        if (isWorkflowPage && !wfBanner) {
+          // Find where to insert — look for the workflow heading or first major container
+          var workflowContainer = document.querySelector('[class*="Workflow"], [class*="workflow"]');
+          if (workflowContainer) {
+            wfBanner = document.createElement('div');
+            wfBanner.id = 'nixvir-workflow-banner';
+            wfBanner.style.cssText = 'background:#111820; border:1px solid #2a3444; border-radius:6px; ' +
+              'padding:16px 20px; margin:16px 20px; max-width:900px;';
+            wfBanner.innerHTML =
+              '<h2 style="color:#e8ecf2; font-size:18px; margin:0 0 8px 0;">Editorial Workflow</h2>' +
+              '<p style="color:#9ca3b0; font-size:13px; line-height:1.6; margin:0 0 10px 0;">' +
+                'This board tracks <strong style="color:#e8ecf2;">Data Insight blog posts</strong> as they move through the publishing process. ' +
+                'Manual news stories do not appear here — they publish immediately when you click Save.' +
+              '</p>' +
+              '<p style="color:#9ca3b0; font-size:13px; line-height:1.6; margin:0 0 10px 0;">' +
+                'When you create or edit a Data Insight post and click Save, it appears in the <strong style="color:#c4b5fd;">Drafts</strong> column. ' +
+                'Change its status to move it across columns:' +
+              '</p>' +
+              '<div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:8px;">' +
+                '<div style="font-size:13px; color:#c4b5fd; background:#2d1f4e; padding:6px 12px; border-radius:4px;">Drafts — Work in progress</div>' +
+                '<div style="font-size:13px; color:#9ca3b0;">→</div>' +
+                '<div style="font-size:13px; color:#fbbf24; background:#3d2f0a; padding:6px 12px; border-radius:4px;">In Review — Ready for a second look</div>' +
+                '<div style="font-size:13px; color:#9ca3b0;">→</div>' +
+                '<div style="font-size:13px; color:#86efac; background:#1a3a1a; padding:6px 12px; border-radius:4px;">Ready — Approved to go live</div>' +
+              '</div>' +
+              '<p style="color:#9ca3b0; font-size:13px; line-height:1.6; margin:10px 0 0 0;">' +
+                'Once a post is in <strong style="color:#86efac;">Ready</strong>, click on it and hit <strong style="color:#e8ecf2;">Publish</strong> to make it live on the site.' +
+              '</p>';
+            workflowContainer.parentNode.insertBefore(wfBanner, workflowContainer);
+          }
+        } else if (!isWorkflowPage && wfBanner) {
+          wfBanner.remove();
+        }
+
+        // --- Media page: inject info banner ---
+        var isMediaPage = window.location.hash.includes('/media') || window.location.hash === '#/media';
+        var mediaBanner = document.getElementById('nixvir-media-banner');
+        if (isMediaPage && !mediaBanner) {
+          var mediaContainer = document.querySelector('[class*="MediaLibrary"], [class*="mediaLibrary"], [class*="Media"]');
+          if (mediaContainer) {
+            mediaBanner = document.createElement('div');
+            mediaBanner.id = 'nixvir-media-banner';
+            mediaBanner.style.cssText = 'background:#111820; border:1px solid #2a3444; border-radius:6px; ' +
+              'padding:16px 20px; margin:16px 20px; max-width:900px;';
+            mediaBanner.innerHTML =
+              '<h2 style="color:#e8ecf2; font-size:18px; margin:0 0 8px 0;">Media Library</h2>' +
+              '<p style="color:#9ca3b0; font-size:13px; line-height:1.6; margin:0 0 10px 0;">' +
+                'This page shows all images stored on the site. It is used when writing ' +
+                '<strong style="color:#e8ecf2;">Data Insight blog posts</strong> that include images.' +
+              '</p>' +
+              '<p style="color:#9ca3b0; font-size:13px; line-height:1.6; margin:0 0 10px 0;">' +
+                '<strong style="color:#e8ecf2;">To add an image to a blog post:</strong> You don\'t need to come here first. ' +
+                'When editing a post, click the <strong style="color:#e8ecf2;">+</strong> button in the Body editor toolbar ' +
+                'to upload and insert an image directly.' +
+              '</p>' +
+              '<p style="color:#9ca3b0; font-size:13px; line-height:1.6; margin:0 0 10px 0;">' +
+                '<strong style="color:#e8ecf2;">To upload a new image:</strong> Drag and drop a file onto this page, or click the Upload button.' +
+              '</p>' +
+              '<p style="color:#f87171; font-size:13px; line-height:1.6; margin:0;">' +
+                '<strong>Do not delete images from here</strong> unless you are certain nothing on the site references them. ' +
+                'Site logos, icons, banner images, and post images all live in this library. ' +
+                'This page is not needed for manual news stories.' +
+              '</p>';
+            mediaContainer.parentNode.insertBefore(mediaBanner, mediaContainer);
+          }
+        } else if (!isMediaPage && mediaBanner) {
+          mediaBanner.remove();
+        }
       }
 
       // Poll for CMS render and route changes
@@ -958,9 +1030,13 @@
           var currentUrl = window.location.hash;
           if (currentUrl !== lastUrl) {
             lastUrl = currentUrl;
-            // Remove old editor banner on navigation
+            // Remove old banners on navigation
             var oldBanner = document.getElementById('nixvir-editor-banner');
             if (oldBanner) oldBanner.remove();
+            var oldWfBanner = document.getElementById('nixvir-workflow-banner');
+            if (oldWfBanner) oldWfBanner.remove();
+            var oldMediaBanner = document.getElementById('nixvir-media-banner');
+            if (oldMediaBanner) oldMediaBanner.remove();
           }
           injectNixvirUI();
         }, 500);
