@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: NixVir/NixVir.github.io
+  name: git-gateway
   branch: master
 
 # Media files stored in static/images
