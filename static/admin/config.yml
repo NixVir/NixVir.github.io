@@ -98,8 +98,8 @@ collections:
           - label: "Stories"
             name: "stories"
             widget: "list"
-            hint: "Each entry below becomes a story on the Ski News page. Newest entries appear first. Click the ▶ arrow to expand a story, or 'Add stories +' to create a new one."
-            summary: "{{fields.title}} ({{fields.category}})"
+            hint: "Each entry becomes a story on the Ski News page. Click ▶ to expand and edit a story, ✕ to delete it, or 'Add stories +' to create a new one. To hide a story without deleting it, expand it and uncheck 'Active'."
+            summary: "{{fields.title}}  ·  {{fields.category}}  ·  {{fields.pub_date}}"
             minimize_collapsed: true
             collapsed: true
             fields:
