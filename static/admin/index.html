@@ -200,11 +200,39 @@
       border-right-color: #2a3444 !important;
     }
 
-    /* Preview pane */
+    /* Preview pane - hidden on file-based collections (manual news) */
     [class*="PreviewPane"],
     [class*="preview"] {
       background: #0a0e14 !important;
       color: #e8ecf2 !important;
+    }
+    /* When .hide-preview is on the body, hide the preview pane
+       and let the editor take full width */
+    body.hide-preview [class*="PreviewPane"],
+    body.hide-preview [class*="preview-pane"],
+    body.hide-preview [class*="PreviewPaneFrame"] {
+      display: none !important;
+    }
+    body.hide-preview [class*="ControlPane"],
+    body.hide-preview [class*="controlPane"],
+    body.hide-preview [class*="EditorControlPane"],
+    body.hide-preview [class*="editorControlPane"] {
+      width: 100% !important;
+      max-width: 900px !important;
+      margin: 0 auto !important;
+    }
+    /* Also hide the split-pane resizer/divider */
+    body.hide-preview [class*="SplitPane"] > [class*="Resizer"],
+    body.hide-preview [class*="splitpane"] > [class*="resizer"] {
+      display: none !important;
+    }
+    /* Force the split pane container to single-column */
+    body.hide-preview [class*="SplitPane"],
+    body.hide-preview [class*="splitPane"] {
+      display: block !important;
+    }
+    body.hide-preview [class*="SplitPane"] > div:last-child {
+      display: none !important;
     }
 
     /* Dropdown menus */
@@ -678,11 +706,9 @@
             var el = allEls[i];
             var bg = window.getComputedStyle(el).backgroundColor;
             if (bg && bg !== 'transparent' && bg !== 'rgba(0, 0, 0, 0)') {
-              // Parse rgb values
               var match = bg.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
               if (match) {
                 var r = parseInt(match[1]), g = parseInt(match[2]), b = parseInt(match[3]);
-                // If brightness > 180 (light/white), force dark
                 if ((r + g + b) / 3 > 180) {
                   el.style.setProperty('background-color', '#111820', 'important');
                 }
@@ -691,13 +717,20 @@
           }
         }
 
+        // --- Toggle preview pane visibility based on route ---
+        var isNews = window.location.hash.includes('manual-news');
+        if (isNews) {
+          document.body.classList.add('hide-preview');
+        } else {
+          document.body.classList.remove('hide-preview');
+        }
+
         // --- Editor page: inject instruction banner ---
         var isEditorPage = window.location.hash.includes('/collections/') &&
                            (window.location.hash.includes('/new') || window.location.hash.includes('/entries/'));
         var banner = document.getElementById('nixvir-editor-banner');
 
         if (isEditorPage) {
-          // Find the editor control pane to insert banner before it
           var controlPane = document.querySelector('[class*="ControlPane"], [class*="controlPane"]');
           if (controlPane && !banner) {
             banner = document.createElement('div');
@@ -705,32 +738,42 @@
             banner.style.display = 'block';
 
             var isNew = window.location.hash.includes('/new');
-            var isNews = window.location.hash.includes('manual-news');
-            var title, instructions;
+            var title, instructions, stepsHtml;
 
             if (isNews) {
               title = 'Add a Story to the News Feed';
-              instructions = 'Fill in the story details below. The Title, URL, Source, and Category are required. ' +
-                'The story will appear on the Ski Industry News page after you save and publish.';
+              instructions = 'Click <strong>"Add stories +"</strong> below to add a new entry. ' +
+                'Fill in the Title, URL, Source, and Category at minimum. ' +
+                'When finished, click <strong>Save</strong> in the top bar — ' +
+                'the story will go live on the Ski News page within a few minutes.';
+              stepsHtml =
+                '<div class="banner-step"><span class="step-num">1</span> Click "Add stories +"</div>' +
+                '<div class="banner-step"><span class="step-num">2</span> Fill in the fields</div>' +
+                '<div class="banner-step"><span class="step-num">3</span> Click Save (top bar)</div>';
             } else if (isNew) {
               title = 'Create a New Data Insight';
               instructions = 'Fill in the fields below to create a new blog post. Only Title, Date, and Body are required — ' +
                 'the other fields are optional. Scroll down to the Body field to write your content.';
+              stepsHtml =
+                '<div class="banner-step"><span class="step-num">1</span> Fill in the fields</div>' +
+                '<div class="banner-step"><span class="step-num">2</span> Click Save (top bar)</div>' +
+                '<div class="banner-step"><span class="step-num">3</span> Set status to Ready</div>' +
+                '<div class="banner-step"><span class="step-num">4</span> Click Publish</div>';
             } else {
               title = 'Edit Data Insight';
               instructions = 'Make your changes below. When finished, click Save in the top bar. ' +
                 'Your changes will be saved as a draft until you publish them.';
+              stepsHtml =
+                '<div class="banner-step"><span class="step-num">1</span> Edit the fields</div>' +
+                '<div class="banner-step"><span class="step-num">2</span> Click Save (top bar)</div>' +
+                '<div class="banner-step"><span class="step-num">3</span> Set status to Ready</div>' +
+                '<div class="banner-step"><span class="step-num">4</span> Click Publish</div>';
             }
 
             banner.innerHTML =
               '<h2>' + title + '</h2>' +
               '<p>' + instructions + '</p>' +
-              '<div class="banner-steps">' +
-                '<div class="banner-step"><span class="step-num">1</span> Fill in the fields</div>' +
-                '<div class="banner-step"><span class="step-num">2</span> Click Save (top bar)</div>' +
-                '<div class="banner-step"><span class="step-num">3</span> Set status to Ready</div>' +
-                '<div class="banner-step"><span class="step-num">4</span> Click Publish</div>' +
-              '</div>';
+              '<div class="banner-steps">' + stepsHtml + '</div>';
 
             controlPane.parentNode.insertBefore(banner, controlPane);
           }
