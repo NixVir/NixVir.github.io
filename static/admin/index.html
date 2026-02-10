@@ -24,6 +24,12 @@
       background: #111820 !important;
       border-bottom: 1px solid #2a3444 !important;
     }
+    /* Make header nav links readable */
+    [class*="AppHeader"] a,
+    [class*="AppHeader"] span,
+    header a, header span {
+      color: #e8ecf2 !important;
+    }
 
     /* Sidebar / navigation */
     [class*="Sidebar"],
@@ -32,12 +38,40 @@
       background: #111820 !important;
       border-right: 1px solid #2a3444 !important;
     }
+    [class*="Sidebar"] a,
+    [class*="Sidebar"] span {
+      color: #9ca3b0 !important;
+    }
+    [class*="Sidebar"] a:hover,
+    [class*="Sidebar"] a[class*="active"] {
+      color: #60a5fa !important;
+    }
 
     /* Main content area */
     [class*="MainView"],
     main,
     [class*="Content"] {
       background: #0a0e14 !important;
+    }
+
+    /* Collection top panel (the "Data Insights" header card) */
+    [class*="CollectionTop"],
+    [class*="ViewHeader"] {
+      background: #111820 !important;
+      border-color: #2a3444 !important;
+    }
+    /* Collection title text */
+    [class*="CollectionTop"] h2,
+    [class*="CollectionTop"] [class*="heading"],
+    [class*="ViewHeader"] h2 {
+      color: #e8ecf2 !important;
+      font-size: 1.5em !important;
+    }
+    /* Collection description text */
+    [class*="CollectionTop"] p,
+    [class*="CollectionTop"] [class*="description"],
+    [class*="ViewHeader"] p {
+      color: #9ca3b0 !important;
     }
 
     /* Cards and panels */
@@ -73,6 +107,11 @@
       color: #e8ecf2 !important;
     }
 
+    /* All paragraph and span text */
+    p, span, div {
+      color: inherit;
+    }
+
     /* Hint/help text below fields */
     [class*="hint"], [class*="Hint"], small {
       color: #8a919e !important;
@@ -95,6 +134,14 @@
     [class*="ListItem"]:hover,
     [class*="EntryCard"]:hover {
       background: #1a2230 !important;
+    }
+    /* List item text */
+    [class*="ListItem"] span,
+    [class*="ListItem"] a,
+    [class*="ListItem"] div,
+    [class*="EntryCard"] span,
+    [class*="EntryCard"] a {
+      color: #e8ecf2 !important;
     }
 
     /* Buttons - primary */
@@ -228,9 +275,264 @@
     div[class^="css-"] {
       border-color: #2a3444;
     }
+
+    /* Sort controls */
+    [class*="SortControl"],
+    [class*="ViewStyle"],
+    [class*="sort"] button,
+    [class*="Sort"] {
+      color: #9ca3b0 !important;
+    }
+
+    /* Search input in sidebar */
+    [class*="Sidebar"] input {
+      background: #1a2230 !important;
+      color: #e8ecf2 !important;
+      border-color: #2a3444 !important;
+    }
+
+    /* =============================================
+       NixVir Logo + Help Panel (injected via JS)
+       ============================================= */
+
+    /* Logo in the top header bar */
+    #nixvir-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: fixed;
+      top: 6px;
+      left: 12px;
+      z-index: 10000;
+      text-decoration: none !important;
+    }
+    #nixvir-logo img {
+      height: 36px;
+      width: auto;
+    }
+    #nixvir-logo span {
+      font-size: 14px;
+      font-weight: 600;
+      color: #9ca3b0 !important;
+      letter-spacing: 0.5px;
+    }
+
+    /* Help panel */
+    #nixvir-help-panel {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
+    #nixvir-help-toggle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #3b82f6 !important;
+      color: #ffffff !important;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    #nixvir-help-toggle:hover {
+      background: #2563eb !important;
+    }
+    #nixvir-help-content {
+      display: none;
+      position: absolute;
+      bottom: 56px;
+      right: 0;
+      width: 400px;
+      max-height: 70vh;
+      overflow-y: auto;
+      background: #111820;
+      border: 1px solid #2a3444;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+    #nixvir-help-content.open {
+      display: block;
+    }
+    #nixvir-help-content h3 {
+      color: #e8ecf2 !important;
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 16px;
+      border-bottom: 1px solid #2a3444;
+      padding-bottom: 8px;
+    }
+    #nixvir-help-content h4 {
+      color: #60a5fa !important;
+      margin: 14px 0 6px 0;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    #nixvir-help-content p,
+    #nixvir-help-content li {
+      color: #9ca3b0 !important;
+      font-size: 13px;
+      line-height: 1.5;
+      margin: 4px 0;
+    }
+    #nixvir-help-content ul {
+      padding-left: 18px;
+      margin: 4px 0 10px 0;
+    }
+    #nixvir-help-content code {
+      background: #1a2230;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-size: 12px;
+      color: #60a5fa !important;
+    }
+    #nixvir-help-content .help-section {
+      margin-bottom: 16px;
+    }
+    #nixvir-help-content .help-section:last-child {
+      margin-bottom: 0;
+    }
   </style>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    // Wait for DecapCMS to render, then inject NixVir branding and help
+    (function() {
+      var attempts = 0;
+      var maxAttempts = 50;
+
+      function injectNixvirUI() {
+        attempts++;
+
+        // Look for the CMS header bar
+        var header = document.querySelector('[class*="AppHeader"], header');
+        var rootEl = document.getElementById('nc-root') || document.getElementById('root') || document.body;
+
+        if (!header && attempts < maxAttempts) {
+          setTimeout(injectNixvirUI, 200);
+          return;
+        }
+
+        // --- Inject Logo ---
+        if (!document.getElementById('nixvir-logo')) {
+          var logo = document.createElement('a');
+          logo.id = 'nixvir-logo';
+          logo.href = '/';
+          logo.title = 'Back to NixVir.com';
+          logo.innerHTML = '<img src="/images/nixvirlogo.png" alt="NixVir">' +
+                           '<span>Content Manager</span>';
+          document.body.appendChild(logo);
+        }
+
+        // --- Inject Help Panel ---
+        if (!document.getElementById('nixvir-help-panel')) {
+          var helpPanel = document.createElement('div');
+          helpPanel.id = 'nixvir-help-panel';
+          helpPanel.innerHTML =
+            '<button id="nixvir-help-toggle" title="Help &amp; Instructions">?</button>' +
+            '<div id="nixvir-help-content">' +
+              '<h3>NixVir Content Manager Help</h3>' +
+
+              '<div class="help-section">' +
+                '<h4>Creating a Post</h4>' +
+                '<ul>' +
+                  '<li>Click <strong>New Data Insights</strong> to create a post</li>' +
+                  '<li>Fill in the <strong>Title</strong> — this is the headline readers see</li>' +
+                  '<li>Set the <strong>Publish Date</strong> (click "Now" for today)</li>' +
+                  '<li>Write your content in the <strong>Body</strong> field using the rich text editor</li>' +
+                  '<li>Click <strong>Save</strong> when done — this creates a draft</li>' +
+                '</ul>' +
+              '</div>' +
+
+              '<div class="help-section">' +
+                '<h4>Publishing Workflow</h4>' +
+                '<ul>' +
+                  '<li><strong>Draft</strong> → <strong>In Review</strong> → <strong>Ready</strong> → <strong>Published</strong></li>' +
+                  '<li>New posts start as drafts. Change status using the status dropdown at the top of the editor.</li>' +
+                  '<li>Set to <strong>Ready</strong> and then <strong>Publish</strong> to make it live on the site</li>' +
+                  '<li>The <strong>Workflow</strong> tab in the top nav shows posts by status</li>' +
+                '</ul>' +
+              '</div>' +
+
+              '<div class="help-section">' +
+                '<h4>Field Guide</h4>' +
+                '<ul>' +
+                  '<li><strong>URL Slug</strong> — Controls the URL. Leave blank to auto-generate from title. Example: <code>winter-outlook-2026</code></li>' +
+                  '<li><strong>Categories</strong> — Topic grouping. Usually just one per post. Common: <code>ski-industry</code>, <code>economics</code>, <code>climate</code>, <code>technology</code></li>' +
+                  '<li><strong>Tags</strong> — Optional finer keywords like <code>snow-cover</code> or <code>consumer-confidence</code>. Can leave empty.</li>' +
+                  '<li><strong>Description</strong> — Short summary for SEO/social sharing. Optional — Hugo auto-generates one if blank.</li>' +
+                  '<li><strong>Featured Image</strong> — Banner image for the post. Click to upload or choose existing. Optional.</li>' +
+                '</ul>' +
+              '</div>' +
+
+              '<div class="help-section">' +
+                '<h4>Editing Existing Posts</h4>' +
+                '<ul>' +
+                  '<li>Click any post title in the list to edit it</li>' +
+                  '<li>Changes are saved as a new Git branch (pull request)</li>' +
+                  '<li>Publish merges the changes into the live site</li>' +
+                '</ul>' +
+              '</div>' +
+
+              '<div class="help-section">' +
+                '<h4>Images &amp; Media</h4>' +
+                '<ul>' +
+                  '<li>Use the <strong>Media</strong> tab in the top nav to manage uploaded images</li>' +
+                  '<li>In the Body editor, click the <strong>+</strong> button to insert images inline</li>' +
+                  '<li>Images are stored in <code>/images/</code> on the site</li>' +
+                '</ul>' +
+              '</div>' +
+
+              '<div class="help-section">' +
+                '<h4>Tips</h4>' +
+                '<ul>' +
+                  '<li>Posts appear at <code>nixvir.com/post/your-slug/</code></li>' +
+                  '<li>The Data Insights page at <code>nixvir.com/post/</code> shows all published posts</li>' +
+                  '<li>You can toggle between rich text and raw Markdown in the Body editor</li>' +
+                  '<li>To return here anytime, bookmark <code>nixvir.com/admin/</code></li>' +
+                '</ul>' +
+              '</div>' +
+
+            '</div>';
+
+          document.body.appendChild(helpPanel);
+
+          // Toggle help panel
+          document.getElementById('nixvir-help-toggle').addEventListener('click', function() {
+            var content = document.getElementById('nixvir-help-content');
+            content.classList.toggle('open');
+            this.textContent = content.classList.contains('open') ? '✕' : '?';
+          });
+
+          // Close on Escape
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+              var content = document.getElementById('nixvir-help-content');
+              if (content.classList.contains('open')) {
+                content.classList.remove('open');
+                document.getElementById('nixvir-help-toggle').textContent = '?';
+              }
+            }
+          });
+        }
+      }
+
+      // Start checking once DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          setTimeout(injectNixvirUI, 500);
+        });
+      } else {
+        setTimeout(injectNixvirUI, 500);
+      }
+    })();
+  </script>
 </body>
 </html>
