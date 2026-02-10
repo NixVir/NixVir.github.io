@@ -47,7 +47,7 @@ def load_config():
         'diversity': {'max_per_source': 5},
         'deduplication': {'title_similarity': 0.85, 'lead_paragraph_similarity': 0.80, 'min_lead_length': 50},
         'focus_topics': {},
-        'output': {'max_articles': 50, 'max_rejected': 100, 'max_per_run': 30},
+        'output': {'max_articles': 75, 'max_rejected': 100, 'max_per_run': 50},
         'logging': {'enable_run_log': True, 'max_log_entries': 30}
     }
 
@@ -118,7 +118,7 @@ FOCUS_TOPICS = CONFIG.get('focus_topics', {})
 # =============================================================================
 
 # Maximum age for articles in the feed (in days)
-MAX_ARTICLE_AGE_DAYS = 14
+MAX_ARTICLE_AGE_DAYS = 21
 
 # =============================================================================
 # MAJOR SOURCE WHITELIST (trusted sources bypass strict pre-filter)
@@ -128,19 +128,20 @@ MAX_ARTICLE_AGE_DAYS = 14
 # Their articles bypass the strict ski-term pre-filter but still need
 # either a ski term OR macro relevance terms to pass.
 WHITELIST_SOURCES = {
+    # Must match RSS_SOURCES 'name' field exactly
     'New York Times - Travel',
     'New York Times - Business',
     'New York Times - Climate',
     'New York Times - U.S.',
     'Washington Post',
-    'Reuters',
-    'AP News',
-    'Bloomberg',
+    'Reuters Business',
+    'Associated Press - Top News',
+    'Bloomberg Markets',
     'Financial Times',
     'The Atlantic',
-    'Wall Street Journal',
-    'Globe and Mail',
-    'CBC News',
+    'Globe and Mail - Business',
+    'CBC News - Business',
+    'Skift',
 }
 
 # =============================================================================
@@ -284,11 +285,11 @@ MOUNTAIN_REGION_TERMS = {
 # Categories in priority order (higher = takes precedence when tied)
 CATEGORY_PRIORITY = {
     'business-investment': 10,  # Always prioritize business news
-    'safety-incidents': 9,       # Safety is high-signal
     'weather-snow': 7,
     'resort-operations': 6,
     'transportation': 5,
     'hospitality': 4,
+    'safety-incidents': 4,       # Demoted - too many minor incident articles were crowding feed
     'winter-sports': 3,
     'canada': 2,                 # Geography is secondary
     'international': 2,
@@ -506,6 +507,11 @@ CONSUMER_CONTENT_PATTERNS = [
     (r'\bwinter\s+(mountain\s+)?safety\s+guide\b', -6),  # Safety guides
     (r'\bbackcountry\s+(safety|tips|guide)', -5),    # Backcountry guides
 
+    # Minor incidents (individual accidents, not industry-relevant unless systemic)
+    (r'\b(skier|snowboarder)\s+(dies|killed|dead|found\s+dead)\b(?!.*\b(lawsuit|negligence|investigation|class\s+action))', -4),
+    (r'\b(skier|snowboarder)\s+(injured|hurt|airlifted|hospitalized)\b(?!.*\b(lawsuit|negligence|investigation))', -5),
+    (r'\b(trail|run|lift|chair)\s+closed\s+(due|after|following)\b(?!.*\b(permanently|season|investment))', -4),
+
     # Action/lifestyle content
     (r'\b(epic|insane|wild|crazy|gnarly)\s+(run|descent|footage|video)', -6),
     (r'\bwatch\s+(this|the)\s+(video|footage)', -5),
@@ -520,6 +526,7 @@ CONSUMER_CONTENT_EXCEPTIONS = [
     r'\b(layoff|bankruptcy|closure|shut\s*down|sold|buys|purchase)\b',
     r'\b(labor|workforce|employee|hiring|staffing)\b',
     r'\b(economic\s+impact|tourism\s+revenue|visitor\s+spending)\b',
+    r'\b(negligence|class\s+action|investigation|regulatory|osha|safety\s+record)\b',
 ]
 
 # =============================================================================
@@ -572,7 +579,7 @@ PREMIUM_ANALYTICAL_SOURCES = {
 
 # Categories that should appear lower in the feed (display penalty)
 DISPLAY_DEMOTED_CATEGORIES = {
-    'safety-incidents': -5,   # Important news but not lead material
+    'safety-incidents': -8,   # Routine incidents shouldn't dominate feed
     'winter-sports': -2,      # Competition results less relevant to business audience
 }
 
@@ -1650,6 +1657,57 @@ def basic_keyword_score(article):
             score -= 4
             break
 
+    # Minor incident penalty - routine accidents and closures aren't business news
+    # unless they involve a lawsuit, major investigation, or systemic safety issue
+    minor_incident_terms = [
+        'injured skier', 'injured snowboarder', 'ski accident', 'snowboard accident',
+        'tree well', 'out of bounds', 'off-piste', 'lost skier',
+        'trail closed', 'run closed', 'lift closed', 'chairlift evacuation',
+        'chair evacuation', 'stuck on lift', 'stranded on lift',
+        'caught in avalanche', 'buried in avalanche', 'avalanche victim',
+        'skier dies', 'snowboarder dies', 'skier killed', 'snowboarder killed',
+        'skier death', 'snowboarder death', 'fatal ski', 'fatal snowboard',
+        'collision on', 'crash on slope', 'helmet cam crash',
+    ]
+    # Only penalize if no systemic/business angle
+    systemic_safety_terms = [
+        'lawsuit', 'litigation', 'negligence', 'investigation', 'osha',
+        'safety record', 'safety review', 'pattern of', 'systemic',
+        'policy change', 'insurance', 'liability', 'class action',
+        'regulatory', 'fine', 'penalty', 'settlement',
+    ]
+    has_minor_incident = any(term in text for term in minor_incident_terms)
+    has_systemic_angle = any(term in text for term in systemic_safety_terms)
+    if has_minor_incident and not has_systemic_angle:
+        score -= 3
+
+    # Dashboard indicator boost - articles about metrics we track get a relevance bump
+    dashboard_indicators = {
+        # Economic indicators tracked on dashboard
+        'consumer confidence': 2, 'consumer sentiment': 2, 'consumer spending': 2,
+        'personal savings rate': 2, 'discretionary spending': 2,
+        'inflation rate': 2, 'cpi': 2, 'consumer price index': 2,
+        'unemployment rate': 2, 'jobs report': 2, 'nonfarm payrolls': 2,
+        'wage growth': 2, 'interest rate': 2, 'federal reserve': 2,
+        'rate cut': 2, 'rate hike': 2, 'gdp growth': 2, 'recession': 2,
+        # Energy/commodity indicators
+        'oil price': 2, 'crude oil': 2, 'gasoline price': 2, 'gas prices': 2,
+        'natural gas price': 2, 'energy prices': 2,
+        # Market indicators
+        'stock market': 1, 's&p 500': 1, 'sp 500': 1,
+        # Currency indicators
+        'exchange rate': 2, 'strong dollar': 2, 'weak dollar': 2, 'canadian dollar': 2,
+    }
+    dashboard_boost = 0
+    for indicator, boost_val in dashboard_indicators.items():
+        if indicator in title:
+            dashboard_boost = max(dashboard_boost, boost_val + 1)  # Title match gets extra
+        elif indicator in text:
+            dashboard_boost = max(dashboard_boost, boost_val)
+    if dashboard_boost > 0:
+        score += dashboard_boost
+        article['dashboard_indicator_boost'] = dashboard_boost
+
     # Source boost
     source_boost = 0
     for src in RSS_SOURCES:
@@ -2151,7 +2209,7 @@ def update_ski_news():
 
     # Apply source diversity: sort by display_score first, then cap per source
     # This ensures the best articles appear first while still limiting any one source
-    MAX_PER_SOURCE_OUTPUT = 3
+    MAX_PER_SOURCE_OUTPUT = 4
     source_counts = defaultdict(int)
     sorted_articles = []
 
