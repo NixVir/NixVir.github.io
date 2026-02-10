@@ -10,12 +10,17 @@ public_folder: "/images"
 publish_mode: editorial_workflow
 
 collections:
+  # -----------------------------------------------
+  # Data Insights Blog Posts
+  # -----------------------------------------------
   - name: "post"
     label: "Data Insights"
     folder: "content/post"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    description: "Blog posts that appear on the Data Insights page. Fill in a title, set the date, write your content in the Body field, and hit Save. The other fields are optional."
+    filter: { field: "title", pattern: "^(?!Data Insights$)" }
+    description: "Blog posts that appear on the Data Insights page at nixvir.com/post/. Click a title below to edit an existing post, or click 'New Data Insights' to create one."
+    sortable_fields: ["date", "title"]
     fields:
       - label: "Title"
         name: "title"
@@ -78,3 +83,90 @@ collections:
         name: "body"
         widget: "markdown"
         hint: "The main content of your post. Use the toolbar above for formatting, links, and images."
+
+  # -----------------------------------------------
+  # Manual News Stories (injected into Ski News feed)
+  # -----------------------------------------------
+  - name: "manual-news"
+    label: "Ski News — Manual Stories"
+    description: "Manually add articles, podcasts, or videos to the Ski Industry News feed. These entries are merged with the automated RSS feed and appear on the Ski News page. Fill in the URL, title, and category at minimum."
+    files:
+      - name: "manual-news-file"
+        label: "Manual News Entries"
+        file: "static/data/ski-news-manual.json"
+        fields:
+          - label: "Stories"
+            name: "stories"
+            widget: "list"
+            hint: "Each entry below becomes a story on the Ski News page. Newest entries appear first."
+            summary: "{{fields.title}} ({{fields.category}})"
+            fields:
+              - label: "Story Title"
+                name: "title"
+                widget: "string"
+                hint: "The headline as it will appear in the news feed."
+
+              - label: "Story URL"
+                name: "url"
+                widget: "string"
+                hint: "Full URL to the article, podcast episode, or video (e.g. https://example.com/article)."
+
+              - label: "Source Name"
+                name: "source"
+                widget: "string"
+                hint: "Publication or channel name (e.g. 'Storm Skiing Podcast', 'New York Times', 'Powder Magazine')."
+
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options:
+                  - { label: "Business & Investment", value: "business-investment" }
+                  - { label: "Resort Operations", value: "resort-operations" }
+                  - { label: "Weather & Snow", value: "weather-snow" }
+                  - { label: "Transportation", value: "transportation" }
+                  - { label: "Winter Sports", value: "winter-sports" }
+                  - { label: "Hospitality", value: "hospitality" }
+                  - { label: "Canada", value: "canada" }
+                  - { label: "International", value: "international" }
+                  - { label: "Ski History", value: "ski-history" }
+                  - { label: "Safety & Incidents", value: "safety-incidents" }
+                  - { label: "Podcast / Video", value: "media" }
+                hint: "Choose the most relevant category. Use 'Podcast / Video' for audio/video content."
+
+              - label: "Content Type"
+                name: "content_type"
+                widget: "select"
+                default: "article"
+                options:
+                  - { label: "Article", value: "article" }
+                  - { label: "Podcast", value: "podcast" }
+                  - { label: "Video", value: "video" }
+                hint: "Select the type of content. Podcasts and videos display with a special icon."
+
+              - label: "Description"
+                name: "description"
+                widget: "text"
+                required: false
+                hint: "A short summary or excerpt (1-2 sentences). Shown below the headline in the news feed."
+
+              - label: "Publication Date"
+                name: "pub_date"
+                widget: "datetime"
+                format: "YYYY-MM-DD"
+                date_format: "YYYY-MM-DD"
+                time_format: false
+                hint: "When the story was originally published. Click 'Now' for today."
+
+              - label: "Pin to Top"
+                name: "pinned"
+                widget: "boolean"
+                default: false
+                required: false
+                hint: "Pinned stories always appear at the top of the news feed, above automated articles."
+
+              - label: "Active"
+                name: "active"
+                widget: "boolean"
+                default: true
+                required: false
+                hint: "Uncheck to hide this story from the feed without deleting it."

@@ -124,6 +124,7 @@
           <option value="international">International</option>
           <option value="ski-history">Ski History</option>
           <option value="hospitality">Hospitality</option>
+          <option value="media">Podcast / Video</option>
         </select>
       </div>
     </div>
@@ -265,6 +266,34 @@
     color: #525252;  /* Darker gray for 4.5:1 contrast on white */
   }
 
+  /* Content type badges (podcast, video) */
+  .ski-news-type-badge {
+    font-size: 0.65rem;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-left: 6px;
+    font-weight: 600;
+  }
+  .type-podcast {
+    background: #7c3aed;
+    color: #fff;
+  }
+  .type-video {
+    background: #dc2626;
+    color: #fff;
+  }
+
+  /* Pinned story indicator */
+  .ski-news-pinned {
+    border-left: 3px solid #f59e0b !important;
+  }
+  .ski-news-pin-badge {
+    font-size: 0.65rem;
+    margin-left: 6px;
+    color: #f59e0b;
+    font-weight: 600;
+  }
+
   /* Mobile responsive for sort/filter controls */
   @media screen and (max-width: 60em) {
     .controls-row {
@@ -298,7 +327,8 @@ const CATEGORY_META = {
   'canada': { name: 'Canada', icon: '/images/ski-news-icons/canada.svg' },
   'international': { name: 'International', icon: '/images/ski-news-icons/international.svg' },
   'ski-history': { name: 'Ski History', icon: '/images/ski-news-icons/ski-history.svg' },
-  'hospitality': { name: 'Hospitality', icon: '/images/ski-news-icons/hospitality.svg' }
+  'hospitality': { name: 'Hospitality', icon: '/images/ski-news-icons/hospitality.svg' },
+  'media': { name: 'Podcast / Video', icon: '/images/ski-news-icons/media.svg' }
 };
 
 // Global state for ski news
@@ -310,8 +340,41 @@ async function loadSkiNews() {
   const updateSpan = document.getElementById('ski-news-update');
 
   try {
-    const response = await fetch('/data/ski-news.json');
-    const data = await response.json();
+    // Fetch automated feed and manual entries in parallel
+    const [autoResponse, manualResponse] = await Promise.all([
+      fetch('/data/ski-news.json'),
+      fetch('/data/ski-news-manual.json').catch(() => null)
+    ]);
+    const data = await autoResponse.json();
+
+    // Merge manual stories if any exist
+    if (manualResponse && manualResponse.ok) {
+      try {
+        const manualData = await manualResponse.json();
+        if (manualData.stories && manualData.stories.length > 0) {
+          const manualArticles = manualData.stories
+            .filter(s => s.active !== false)
+            .map(s => ({
+              source: s.source || 'Manual',
+              title: s.title,
+              url: s.url,
+              description: s.description || '',
+              content: s.description || '',
+              pub_date: s.pub_date,
+              id: 'manual-' + (s.url || '').replace(/\W/g, '').slice(-12),
+              score: 100,
+              category: s.category || 'resort-operations',
+              content_type: s.content_type || 'article',
+              is_manual: true,
+              is_pinned: s.pinned || false
+            }));
+          data.articles = [...manualArticles, ...(data.articles || [])];
+        }
+      } catch (e) {
+        console.warn('Could not parse manual news entries:', e);
+      }
+    }
+
     skiNewsData = data;
 
     if (updateSpan) {
@@ -347,9 +410,11 @@ function renderSkiNews() {
     articles = articles.filter(a => a.category === filterBy);
   }
 
-  // Sort articles
+  // Sort articles (pinned items always first)
   if (sortBy === 'category') {
     articles = [...articles].sort((a, b) => {
+      if (a.is_pinned && !b.is_pinned) return -1;
+      if (!a.is_pinned && b.is_pinned) return 1;
       const catA = a.category || 'resort-operations';
       const catB = b.category || 'resort-operations';
       if (catA !== catB) return catA.localeCompare(catB);
@@ -357,6 +422,8 @@ function renderSkiNews() {
     });
   } else {
     articles = [...articles].sort((a, b) => {
+      if (a.is_pinned && !b.is_pinned) return -1;
+      if (!a.is_pinned && b.is_pinned) return 1;
       const dateA = a.pub_date ? new Date(a.pub_date).toDateString() : '';
       const dateB = b.pub_date ? new Date(b.pub_date).toDateString() : '';
       if (dateA !== dateB) {
@@ -387,15 +454,25 @@ function renderSkiNews() {
       secondaryHtml = `<span class="ski-news-secondary">+${secondaryNames.join(', ')}</span>`;
     }
 
+    // Content type badge for podcasts/videos
+    const contentType = article.content_type || 'article';
+    let typeBadge = '';
+    if (contentType === 'podcast') typeBadge = '<span class="ski-news-type-badge type-podcast">🎙 Podcast</span>';
+    if (contentType === 'video') typeBadge = '<span class="ski-news-type-badge type-video">▶ Video</span>';
+
+    // Pinned indicator
+    const pinnedClass = article.is_pinned ? ' ski-news-pinned' : '';
+    const pinnedBadge = article.is_pinned ? '<span class="ski-news-pin-badge">📌 Pinned</span>' : '';
+
     html += `
-      <div class="ski-news-card">
+      <div class="ski-news-card${pinnedClass}">
         <div class="ski-news-header">
           <img src="${catMeta.icon}" alt="${catMeta.name}" class="ski-news-icon" />
           <div class="ski-news-content">
             <h3><a href="${article.url}" target="_blank" rel="noopener">${article.title || 'Untitled'}</a></h3>
             <div class="ski-news-meta">
               ${article.source || ''} ${pubDate ? '&bull; ' + pubDate : ''}
-              <span class="ski-news-category cat-${category}">${catMeta.name}</span>${secondaryHtml}
+              <span class="ski-news-category cat-${category}">${catMeta.name}</span>${secondaryHtml}${typeBadge}${pinnedBadge}
             </div>
             ${desc ? `<div class="ski-news-desc">${desc}</div>` : ''}
           </div>
