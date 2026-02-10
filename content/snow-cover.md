@@ -2,9 +2,6 @@
 title: "Snow"
 description: "Real-time North American snow coverage tracking for the United States and Canada, including major ski markets. Updated daily with year-over-year comparisons and temperature anomaly data."
 featured_image: "images/mtnsky.jpg"
-menu:
-  main:
-    weight: 1
 ---
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>

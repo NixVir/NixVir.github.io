@@ -2,9 +2,6 @@
 description: "NixVir provides ski industry data and resort analytics with 25+ years of market research experience. We help snowsports businesses make data-driven decisions."
 featured_image: "images/mtnsky.jpg"
 title: About
-menu:
-  main:
-    weight: 6
 ---
 
 # About NixVir

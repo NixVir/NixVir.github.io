@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I-70 Mountain Corridor Traffic | NixVir</title>
+
+    <!-- Chart.js for time series -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
+
+    <!-- Leaflet for station map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Shared Theme CSS -->
+    <link rel="stylesheet" href="/css/shared-theme.css">
+
+    <!-- Google Analytics -->
+    <script src="/js/analytics.js"></script>
+
+    <style>
+        /* Skip link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-cold);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            z-index: 9999;
+            text-decoration: none;
+        }
+
+        .skip-link:focus {
+            top: 1rem;
+        }
+
+        /* Dashboard Layout */
+        .dashboard {
+            max-width: 1700px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .header-left h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.35rem;
+        }
+
+        .header-left h1 span {
+            color: var(--accent-cold-bright);
+        }
+
+        .header-left .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--text-primary);
+        }
+
+        .update-time {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Controls Section */
+        .controls-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .controls-grid {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            align-items: flex-end;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .control-group label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .control-group select,
+        .control-group input[type="date"] {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            padding: 0.5rem 0.75rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.875rem;
+            min-width: 150px;
+        }
+
+        .control-group select:focus,
+        .control-group input:focus {
+            outline: none;
+            border-color: var(--accent-cold);
+        }
+
+        .direction-toggle {
+            display: flex;
+            gap: 0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .direction-toggle button {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .direction-toggle button:first-child {
+            border-radius: 6px 0 0 6px;
+        }
+
+        .direction-toggle button:last-child {
+            border-radius: 0 6px 6px 0;
+        }
+
+        .direction-toggle button:not(:last-child) {
+            border-right: none;
+        }
+
+        .direction-toggle button.active-eb {
+            background: var(--accent-cold);
+            border-color: var(--accent-cold);
+            color: white;
+        }
+
+        .direction-toggle button.active-wb {
+            background: var(--accent-warm);
+            border-color: var(--accent-warm);
+            color: white;
+        }
+
+        .direction-toggle button.active-both {
+            background: var(--accent-purple);
+            border-color: var(--accent-purple);
+            color: white;
+        }
+
+        /* Main Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .sidebar-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        .sidebar-section h2 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .station-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .station-group {
+            margin-bottom: 0.75rem;
+        }
+
+        .station-group-header {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 0.35rem;
+            padding-left: 0.25rem;
+        }
+
+        .station-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.25rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.15s;
+        }
+
+        .station-checkbox:hover {
+            background: var(--bg-elevated);
+        }
+
+        .station-checkbox input {
+            accent-color: var(--accent-cold);
+        }
+
+        .station-checkbox span {
+            font-size: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .station-checkbox .ejmt-badge {
+            background: var(--accent-warm);
+            color: white;
+            font-size: 0.6rem;
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        /* Map section */
+        #station-map {
+            height: 250px;
+            border-radius: 8px;
+            z-index: 1;
+        }
+
+        /* Content Area */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        /* Summary Cards */
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+        }
+
+        .summary-card h3 {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .summary-card .value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-primary);
+            line-height: 1.1;
+        }
+
+        .summary-card .subtext {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* Chart Container */
+        .chart-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .chart-header h2 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .chart-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chart-actions button {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            padding: 0.4rem 0.75rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .chart-actions button:hover {
+            border-color: var(--accent-cold);
+            color: var(--text-primary);
+        }
+
+        .chart-container {
+            position: relative;
+            height: 350px;
+        }
+
+        /* Heatmap */
+        .heatmap-container {
+            overflow-x: auto;
+        }
+
+        .heatmap-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.75rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .heatmap-table th,
+        .heatmap-table td {
+            padding: 0.4rem 0.5rem;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .heatmap-table th {
+            background: var(--bg-elevated);
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.65rem;
+        }
+
+        .heatmap-table td {
+            min-width: 32px;
+        }
+
+        .heatmap-table .row-header {
+            background: var(--bg-elevated);
+            color: var(--text-secondary);
+            font-weight: 500;
+            text-align: left;
+            padding-left: 0.75rem;
+        }
+
+        /* Loading State */
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+        }
+
+        .loading::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent-cold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 0.75rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Error State */
+        .error-message {
+            background: rgba(248, 113, 113, 0.1);
+            border: 1px solid var(--danger);
+            border-radius: 8px;
+            padding: 1rem;
+            color: var(--danger);
+            text-align: center;
+        }
+
+        /* Legend */
+        .legend {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 0.75rem;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 3px;
+            border-radius: 1px;
+        }
+
+        .legend-color.eb { background: var(--accent-cold); }
+        .legend-color.wb { background: var(--accent-warm); }
+        .legend-color.ski { background: rgba(59, 130, 246, 0.2); }
+        .legend-color.summer { background: rgba(34, 197, 94, 0.2); }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="bg-gradient"></div>
+
+    <!-- Site Banner -->
+    <header class="site-banner">
+        <div class="site-banner-overlay">
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="/" class="site-nav-logo">
+                    <img src="/images/nixvir-logo-white.svg" alt="NixVir.com" class="logo">
+                </a>
+                <div class="site-nav-right">
+                    <ul class="site-nav-links">
+                        <li><a href="/snow-cover.html">Snow</a></li>
+                        <li><a href="/dashboard.html">Dashboard</a></li>
+                        <li><a href="/ski-news.html">Ski Industry News</a></li>
+                        <li><a href="/post/">Data Insights</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="dashboard">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-left">
+                <h1>I-70 <span>Mountain Corridor</span> Traffic</h1>
+                <div class="subtitle">Traffic counts from FHWA continuous count stations on Colorado ski corridors</div>
+            </div>
+            <div class="header-right">
+                <a href="/" class="back-link">
+                    <span>&larr;</span> Back to NixVir.com
+                </a>
+                <div class="update-time" id="update-time">Loading...</div>
+                <div class="update-time" id="data-notice" style="color: var(--text-muted);"></div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls-section">
+            <div class="controls-grid">
+                <div class="control-group">
+                    <label for="date-range">Date Range</label>
+                    <select id="date-range">
+                        <option value="ski-current" selected>2024-25 Ski Season (EJMT only)</option>
+                        <option value="ski-2024">2023-24 Ski Season</option>
+                        <option value="ski-2023">2022-23 Ski Season</option>
+                        <option value="year-2025">2025 (EJMT only)</option>
+                        <option value="year-2024">2024</option>
+                        <option value="year-2023">2023</option>
+                        <option value="year-2022">2022</option>
+                        <option value="all">All Data (2000-2025)</option>
+                        <option value="custom">Custom Range</option>
+                    </select>
+                </div>
+                <div class="control-group" id="custom-dates" style="display: none;">
+                    <label>Custom Range</label>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <input type="date" id="date-start">
+                        <span style="color: var(--text-muted);">to</span>
+                        <input type="date" id="date-end">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label>Direction</label>
+                    <div class="direction-toggle">
+                        <button id="dir-eb" class="active-eb">EB</button>
+                        <button id="dir-wb">WB</button>
+                        <button id="dir-both">Both</button>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="aggregation">Aggregation</label>
+                    <select id="aggregation">
+                        <option value="daily" selected>Daily</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="monthly">Monthly</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="main-grid">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h2>Stations</h2>
+                    <div class="station-list" id="station-list">
+                        <div class="loading">Loading stations...</div>
+                    </div>
+                </div>
+                <div class="sidebar-section">
+                    <h2>Station Map</h2>
+                    <div id="station-map"></div>
+                </div>
+            </aside>
+
+            <!-- Content -->
+            <div class="content-area">
+                <!-- Summary Cards -->
+                <div class="summary-cards">
+                    <div class="summary-card">
+                        <h3>Peak Day</h3>
+                        <div class="value" id="stat-peak-day">--</div>
+                        <div class="subtext" id="stat-peak-day-date">--</div>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Average Daily Traffic</h3>
+                        <div class="value" id="stat-adt">--</div>
+                        <div class="subtext">vehicles per day</div>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Total Volume</h3>
+                        <div class="value" id="stat-total">--</div>
+                        <div class="subtext" id="stat-total-days">--</div>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Peak Hour</h3>
+                        <div class="value" id="stat-peak-hour">--</div>
+                        <div class="subtext" id="stat-peak-hour-date">--</div>
+                    </div>
+                </div>
+
+                <!-- Time Series Chart -->
+                <div class="chart-section">
+                    <div class="chart-header">
+                        <h2>Traffic Volume Over Time</h2>
+                        <div class="chart-actions">
+                            <button id="btn-reset-zoom">Reset Zoom</button>
+                            <button id="btn-download-csv">Download CSV</button>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="traffic-chart"></canvas>
+                    </div>
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div class="legend-color eb"></div>
+                            <span>Eastbound</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color wb"></div>
+                            <span>Westbound</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color ski"></div>
+                            <span>Ski Season</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color summer"></div>
+                            <span>Summer Ops</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Heatmap -->
+                <div class="chart-section">
+                    <div class="chart-header">
+                        <h2>Day-of-Week / Hour Heatmap</h2>
+                    </div>
+                    <div class="heatmap-container" id="heatmap-container">
+                        <div class="loading">Building heatmap...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // =============================================
+        // Global State
+        // =============================================
+        let stationsData = null;
+        let trafficData = null;
+        let cdotData = null;  // CDOT EJMT monthly data (more current)
+        let trafficChart = null;
+        let stationMap = null;
+        let stationMarkers = {};
+
+        const selectedStations = new Set();
+        let selectedDirection = 'EB';
+
+        // =============================================
+        // Data Loading
+        // =============================================
+        async function loadData() {
+            try {
+                const [stationsRes, trafficRes, cdotRes] = await Promise.all([
+                    fetch('/data/i70-stations.json'),
+                    fetch('/data/i70-traffic.json'),
+                    fetch('/data/ejmt-monthly.json')
+                ]);
+
+                if (!stationsRes.ok || !trafficRes.ok) {
+                    throw new Error('Failed to load data');
+                }
+
+                stationsData = await stationsRes.json();
+                trafficData = await trafficRes.json();
+
+                // CDOT data is optional (provides more current EJMT data)
+                if (cdotRes.ok) {
+                    cdotData = await cdotRes.json();
+                    console.log('CDOT EJMT data loaded:', cdotData.data_range);
+                }
+
+                // Update timestamp - show both data ranges
+                const tmasRange = `All stations: ${trafficData.data_range?.start || '--'} to ${trafficData.data_range?.end || '--'}`;
+                const cdotRange = cdotData ? ` | EJMT: to ${cdotData.data_range?.end || '--'}` : '';
+                document.getElementById('update-time').textContent = tmasRange + cdotRange;
+
+                // Update notice
+                const notice = document.getElementById('data-notice');
+                if (cdotData) {
+                    notice.innerHTML = 'Current season data available for EJMT (monthly totals from CDOT)';
+                    notice.style.color = 'var(--success)';
+                } else {
+                    notice.innerHTML = 'Note: FHWA TMAS data lags ~2 months';
+                    notice.style.color = 'var(--warning)';
+                }
+
+                initializeUI();
+
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.querySelector('.content-area').innerHTML =
+                    '<div class="error-message">Failed to load traffic data. Please try again later.</div>';
+            }
+        }
+
+        // =============================================
+        // UI Initialization
+        // =============================================
+        function initializeUI() {
+            renderStationList();
+            initMap();
+            setupEventListeners();
+
+            // Select EJMT stations by default
+            stationsData.stations.forEach(s => {
+                if (s.is_ejmt) {
+                    selectedStations.add(s.station_id);
+                }
+            });
+
+            updateVisualization();
+        }
+
+        function renderStationList() {
+            const container = document.getElementById('station-list');
+
+            // Group by route
+            const byRoute = {};
+            stationsData.stations.forEach(s => {
+                const route = s.route;
+                if (!byRoute[route]) byRoute[route] = [];
+                // Only add unique station IDs (not by direction)
+                if (!byRoute[route].some(x => x.station_id === s.station_id)) {
+                    byRoute[route].push(s);
+                }
+            });
+
+            let html = '';
+            for (const [route, stations] of Object.entries(byRoute)) {
+                html += `<div class="station-group">
+                    <div class="station-group-header">${route}</div>`;
+
+                stations.forEach(s => {
+                    const ejmtBadge = s.is_ejmt ? '<span class="ejmt-badge">EJMT</span>' : '';
+                    const checked = s.is_ejmt ? 'checked' : '';
+                    const name = s.name.substring(0, 35) + (s.name.length > 35 ? '...' : '');
+
+                    html += `<label class="station-checkbox">
+                        <input type="checkbox" value="${s.station_id}" ${checked}>
+                        <span>${name}</span>
+                        ${ejmtBadge}
+                    </label>`;
+                });
+
+                html += '</div>';
+            }
+
+            container.innerHTML = html;
+
+            // Add event listeners
+            container.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+                cb.addEventListener('change', () => {
+                    if (cb.checked) {
+                        selectedStations.add(cb.value);
+                    } else {
+                        selectedStations.delete(cb.value);
+                    }
+                    updateVisualization();
+                });
+            });
+        }
+
+        function initMap() {
+            stationMap = L.map('station-map').setView([39.6, -106.0], 8);
+
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; OpenStreetMap, CARTO',
+                maxZoom: 15
+            }).addTo(stationMap);
+
+            // Add station markers
+            const uniqueStations = {};
+            stationsData.stations.forEach(s => {
+                if (!uniqueStations[s.station_id] && s.lat && s.lon) {
+                    uniqueStations[s.station_id] = s;
+                }
+            });
+
+            Object.values(uniqueStations).forEach(s => {
+                const color = s.is_ejmt ? '#f97316' : '#3b82f6';
+                const radius = s.is_ejmt ? 8 : 6;
+
+                const marker = L.circleMarker([s.lat, s.lon], {
+                    radius: radius,
+                    fillColor: color,
+                    color: '#fff',
+                    weight: 1,
+                    fillOpacity: 0.8
+                }).addTo(stationMap);
+
+                marker.bindPopup(`<strong>${s.name}</strong><br>${s.route}`);
+
+                marker.on('click', () => {
+                    const cb = document.querySelector(`input[value="${s.station_id}"]`);
+                    if (cb) {
+                        cb.checked = !cb.checked;
+                        if (cb.checked) {
+                            selectedStations.add(s.station_id);
+                        } else {
+                            selectedStations.delete(s.station_id);
+                        }
+                        updateVisualization();
+                    }
+                });
+
+                stationMarkers[s.station_id] = marker;
+            });
+
+            // Fit bounds
+            const bounds = Object.values(uniqueStations)
+                .filter(s => s.lat && s.lon)
+                .map(s => [s.lat, s.lon]);
+            if (bounds.length > 0) {
+                stationMap.fitBounds(bounds, { padding: [20, 20] });
+            }
+        }
+
+        function setupEventListeners() {
+            // Date range selector
+            document.getElementById('date-range').addEventListener('change', (e) => {
+                const customDates = document.getElementById('custom-dates');
+                customDates.style.display = e.target.value === 'custom' ? 'flex' : 'none';
+                updateVisualization();
+            });
+
+            document.getElementById('date-start').addEventListener('change', updateVisualization);
+            document.getElementById('date-end').addEventListener('change', updateVisualization);
+
+            // Direction toggle
+            ['dir-eb', 'dir-wb', 'dir-both'].forEach(id => {
+                document.getElementById(id).addEventListener('click', (e) => {
+                    document.querySelectorAll('.direction-toggle button').forEach(btn => {
+                        btn.className = '';
+                    });
+
+                    if (id === 'dir-eb') {
+                        e.target.className = 'active-eb';
+                        selectedDirection = 'EB';
+                    } else if (id === 'dir-wb') {
+                        e.target.className = 'active-wb';
+                        selectedDirection = 'WB';
+                    } else {
+                        e.target.className = 'active-both';
+                        selectedDirection = 'BOTH';
+                    }
+                    updateVisualization();
+                });
+            });
+
+            // Aggregation
+            document.getElementById('aggregation').addEventListener('change', updateVisualization);
+
+            // Reset zoom
+            document.getElementById('btn-reset-zoom').addEventListener('click', () => {
+                if (trafficChart) {
+                    trafficChart.resetZoom();
+                }
+            });
+
+            // Download CSV
+            document.getElementById('btn-download-csv').addEventListener('click', downloadCSV);
+        }
+
+        // =============================================
+        // Date Range Calculation
+        // =============================================
+        function getDateRange() {
+            const range = document.getElementById('date-range').value;
+            const today = new Date();
+
+            let start, end;
+
+            switch (range) {
+                case 'ski-current':
+                    // 2024-25 ski season: Nov 15, 2024 to Apr 15, 2025
+                    start = new Date(2024, 10, 15);
+                    end = new Date(2025, 3, 15);
+                    break;
+
+                case 'ski-2024':
+                    // 2023-24 ski season: Nov 15, 2023 to Apr 15, 2024
+                    start = new Date(2023, 10, 15);
+                    end = new Date(2024, 3, 15);
+                    break;
+
+                case 'ski-2023':
+                    // 2022-23 ski season: Nov 15, 2022 to Apr 15, 2023
+                    start = new Date(2022, 10, 15);
+                    end = new Date(2023, 3, 15);
+                    break;
+
+                case 'year-2025':
+                    start = new Date(2025, 0, 1);
+                    end = today;
+                    break;
+
+                case 'year-2024':
+                    start = new Date(2024, 0, 1);
+                    end = new Date(2024, 11, 31);
+                    break;
+
+                case 'year-2023':
+                    start = new Date(2023, 0, 1);
+                    end = new Date(2023, 11, 31);
+                    break;
+
+                case 'year-2022':
+                    start = new Date(2022, 0, 1);
+                    end = new Date(2022, 11, 31);
+                    break;
+
+                case 'all':
+                    // Use earliest available data (CDOT goes back to 2000)
+                    start = new Date(cdotData?.data_range?.start || trafficData.data_range?.start || '2000-01-01');
+                    end = new Date(cdotData?.data_range?.end || trafficData.data_range?.end || today);
+                    break;
+
+                case 'custom':
+                    const startVal = document.getElementById('date-start').value;
+                    const endVal = document.getElementById('date-end').value;
+                    start = startVal ? new Date(startVal) : new Date(2024, 0, 1);
+                    end = endVal ? new Date(endVal) : today;
+                    break;
+
+                default:
+                    // Default to current ski season
+                    start = new Date(2024, 10, 15);
+                    end = new Date(2025, 3, 15);
+            }
+
+            return { start, end };
+        }
+
+        // =============================================
+        // Data Filtering
+        // =============================================
+        function filterData() {
+            const { start, end } = getDateRange();
+            let aggregation = document.getElementById('aggregation').value;
+
+            const filteredRecords = [];
+
+            // Check if we need CDOT data (for dates beyond TMAS coverage)
+            const tmasEndDate = new Date(trafficData.data_range?.end || '2024-12-31');
+            const needsCdot = end > tmasEndDate && cdotData;
+
+            // If date range is entirely in CDOT territory, force monthly aggregation
+            if (needsCdot && start > tmasEndDate) {
+                aggregation = 'monthly';
+                document.getElementById('aggregation').value = 'monthly';
+            }
+
+            // Get records for selected stations from TMAS data
+            selectedStations.forEach(stationId => {
+                const stationData = trafficData.stations[stationId];
+                if (!stationData || !stationData.daily) return;
+
+                stationData.daily.forEach(record => {
+                    const recordDate = new Date(record.date);
+
+                    // Filter by date range
+                    if (recordDate < start || recordDate > end) return;
+
+                    // Filter by direction
+                    if (selectedDirection !== 'BOTH' && record.direction !== selectedDirection) return;
+
+                    filteredRecords.push({
+                        ...record,
+                        station_id: stationId,
+                        dateObj: recordDate,
+                        source: 'tmas'
+                    });
+                });
+            });
+
+            // Add CDOT EJMT monthly data if needed and EJMT is selected
+            // Note: CDOT data is monthly totals, so we convert to daily averages
+            if (needsCdot && hasEjmtSelected()) {
+                cdotData.monthly.forEach(record => {
+                    const recordDate = new Date(record.year, record.month - 1, 15); // Mid-month
+
+                    // Filter by date range
+                    if (recordDate < start || recordDate > end) return;
+
+                    // Get days in this month for averaging
+                    const daysInMonth = new Date(record.year, record.month, 0).getDate();
+
+                    // Convert monthly totals to daily averages
+                    const ebDaily = Math.round(record.eastbound / daysInMonth);
+                    const wbDaily = Math.round(record.westbound / daysInMonth);
+
+                    // Add records based on direction filter
+                    if (selectedDirection === 'BOTH' || selectedDirection === 'EB') {
+                        filteredRecords.push({
+                            date: `${record.year}-${String(record.month).padStart(2, '0')}-15`,
+                            direction: 'EB',
+                            total: ebDaily,  // Daily average, not monthly total
+                            monthly_total: record.eastbound,
+                            station_id: 'CDOT_EJMT',
+                            dateObj: recordDate,
+                            source: 'cdot'
+                        });
+                    }
+
+                    if (selectedDirection === 'BOTH' || selectedDirection === 'WB') {
+                        filteredRecords.push({
+                            date: `${record.year}-${String(record.month).padStart(2, '0')}-15`,
+                            direction: 'WB',
+                            total: wbDaily,  // Daily average, not monthly total
+                            monthly_total: record.westbound,
+                            station_id: 'CDOT_EJMT',
+                            dateObj: recordDate,
+                            source: 'cdot'
+                        });
+                    }
+                });
+            }
+
+            // Sort by date
+            filteredRecords.sort((a, b) => a.dateObj - b.dateObj);
+
+            // Aggregate if needed
+            if (aggregation === 'daily') {
+                return filteredRecords;
+            }
+
+            return aggregateRecords(filteredRecords, aggregation);
+        }
+
+        function hasEjmtSelected() {
+            // Check if any selected station is an EJMT station
+            for (const stationId of selectedStations) {
+                const station = stationsData.stations.find(s => s.station_id === stationId);
+                if (station && station.is_ejmt) return true;
+            }
+            return false;
+        }
+
+        function aggregateRecords(records, aggregation) {
+            const buckets = {};
+
+            records.forEach(r => {
+                let key;
+                if (aggregation === 'weekly') {
+                    const week = getWeekNumber(r.dateObj);
+                    key = `${r.dateObj.getFullYear()}-W${week}`;
+                } else if (aggregation === 'monthly') {
+                    key = `${r.dateObj.getFullYear()}-${String(r.dateObj.getMonth() + 1).padStart(2, '0')}`;
+                }
+
+                const bucketKey = `${key}_${r.direction}`;
+
+                if (!buckets[bucketKey]) {
+                    buckets[bucketKey] = {
+                        date: key,
+                        direction: r.direction,
+                        total: 0,
+                        count: 0,
+                        dateObj: r.dateObj
+                    };
+                }
+
+                buckets[bucketKey].total += r.total;
+                buckets[bucketKey].count++;
+            });
+
+            return Object.values(buckets).sort((a, b) => a.date.localeCompare(b.date));
+        }
+
+        function getWeekNumber(d) {
+            const date = new Date(d);
+            date.setHours(0, 0, 0, 0);
+            date.setDate(date.getDate() + 4 - (date.getDay() || 7));
+            const yearStart = new Date(date.getFullYear(), 0, 1);
+            return Math.ceil((((date - yearStart) / 86400000) + 1) / 7);
+        }
+
+        // =============================================
+        // Visualization Updates
+        // =============================================
+        function updateVisualization() {
+            const filteredData = filterData();
+
+            updateStats(filteredData);
+            updateChart(filteredData);
+            updateHeatmap(filteredData);
+        }
+
+        function updateStats(data) {
+            if (!data || data.length === 0) {
+                document.getElementById('stat-peak-day').textContent = '--';
+                document.getElementById('stat-peak-day-date').textContent = '--';
+                document.getElementById('stat-adt').textContent = '--';
+                document.getElementById('stat-total').textContent = '--';
+                document.getElementById('stat-total-days').textContent = '--';
+                document.getElementById('stat-peak-hour').textContent = '--';
+                document.getElementById('stat-peak-hour-date').textContent = '--';
+                return;
+            }
+
+            // Peak day
+            const peakDay = data.reduce((max, r) => r.total > max.total ? r : max, data[0]);
+            document.getElementById('stat-peak-day').textContent = formatNumber(peakDay.total);
+            document.getElementById('stat-peak-day-date').textContent = peakDay.date;
+
+            // Total and ADT
+            const totalVolume = data.reduce((sum, r) => sum + r.total, 0);
+            const uniqueDays = new Set(data.map(r => r.date)).size;
+            const adt = uniqueDays > 0 ? Math.round(totalVolume / uniqueDays) : 0;
+
+            document.getElementById('stat-adt').textContent = formatNumber(adt);
+            document.getElementById('stat-total').textContent = formatNumber(totalVolume);
+            document.getElementById('stat-total-days').textContent = `${uniqueDays} days`;
+
+            // Peak hour (if hourly data available)
+            let peakHour = { volume: 0, date: '--', hour: '--' };
+            data.forEach(r => {
+                if (r.hours) {
+                    r.hours.forEach((vol, hour) => {
+                        if (vol > peakHour.volume) {
+                            peakHour = { volume: vol, date: r.date, hour: hour };
+                        }
+                    });
+                }
+            });
+
+            if (peakHour.volume > 0) {
+                document.getElementById('stat-peak-hour').textContent = formatNumber(peakHour.volume);
+                document.getElementById('stat-peak-hour-date').textContent =
+                    `${peakHour.date} at ${peakHour.hour}:00`;
+            } else {
+                document.getElementById('stat-peak-hour').textContent = '--';
+                document.getElementById('stat-peak-hour-date').textContent = 'Hourly data not available';
+            }
+        }
+
+        function updateChart(data) {
+            const ctx = document.getElementById('traffic-chart').getContext('2d');
+
+            // Group by direction
+            const ebData = data.filter(r => r.direction === 'EB');
+            const wbData = data.filter(r => r.direction === 'WB');
+
+            const datasets = [];
+
+            if (selectedDirection === 'EB' || selectedDirection === 'BOTH') {
+                datasets.push({
+                    label: 'Eastbound',
+                    data: ebData.map(r => ({ x: r.date, y: r.total })),
+                    borderColor: 'rgba(59, 130, 246, 1)',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    fill: true,
+                    tension: 0.1,
+                    pointRadius: 0,
+                    borderWidth: 2
+                });
+            }
+
+            if (selectedDirection === 'WB' || selectedDirection === 'BOTH') {
+                datasets.push({
+                    label: 'Westbound',
+                    data: wbData.map(r => ({ x: r.date, y: r.total })),
+                    borderColor: 'rgba(249, 115, 22, 1)',
+                    backgroundColor: 'rgba(249, 115, 22, 0.1)',
+                    fill: true,
+                    tension: 0.1,
+                    pointRadius: 0,
+                    borderWidth: 2
+                });
+            }
+
+            // Build season annotations
+            const { start, end } = getDateRange();
+            const annotations = buildSeasonAnnotations(start, end);
+
+            // Destroy existing chart
+            if (trafficChart) {
+                trafficChart.destroy();
+            }
+
+            trafficChart = new Chart(ctx, {
+                type: 'line',
+                data: { datasets },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    scales: {
+                        x: {
+                            type: 'category',
+                            grid: {
+                                color: 'rgba(255,255,255,0.05)'
+                            },
+                            ticks: {
+                                color: '#9ca3b0',
+                                maxRotation: 45
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(255,255,255,0.05)'
+                            },
+                            ticks: {
+                                color: '#9ca3b0',
+                                callback: val => formatNumber(val)
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: '#1a2230',
+                            titleColor: '#e8ecf2',
+                            bodyColor: '#9ca3b0',
+                            borderColor: '#2a3444',
+                            borderWidth: 1,
+                            callbacks: {
+                                label: ctx => `${ctx.dataset.label}: ${formatNumber(ctx.raw.y)}`
+                            }
+                        },
+                        annotation: {
+                            annotations: annotations
+                        },
+                        zoom: {
+                            pan: {
+                                enabled: true,
+                                mode: 'x'
+                            },
+                            zoom: {
+                                wheel: { enabled: true },
+                                pinch: { enabled: true },
+                                mode: 'x'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function buildSeasonAnnotations(start, end) {
+            const annotations = {};
+
+            // Add ski season shading
+            const seasons = trafficData.seasons;
+            if (seasons && seasons.ski_winter) {
+                // For each year in range, add ski season box
+                const startYear = start.getFullYear();
+                const endYear = end.getFullYear();
+
+                for (let year = startYear - 1; year <= endYear; year++) {
+                    const skiStart = `${year}-${seasons.ski_winter.start_mmdd}`;
+                    const skiEnd = `${year + 1}-${seasons.ski_winter.end_mmdd}`;
+
+                    annotations[`ski_${year}`] = {
+                        type: 'box',
+                        xMin: skiStart,
+                        xMax: skiEnd,
+                        backgroundColor: 'rgba(59, 130, 246, 0.05)',
+                        borderWidth: 0
+                    };
+                }
+            }
+
+            // Add holiday annotations
+            if (trafficData.holidays) {
+                trafficData.holidays.forEach((holiday, idx) => {
+                    holiday.dates.forEach((dateStr, dIdx) => {
+                        const holidayDate = new Date(dateStr);
+                        if (holidayDate >= start && holidayDate <= end) {
+                            annotations[`holiday_${idx}_${dIdx}`] = {
+                                type: 'line',
+                                xMin: dateStr,
+                                xMax: dateStr,
+                                borderColor: 'rgba(168, 85, 247, 0.4)',
+                                borderWidth: 1,
+                                borderDash: [4, 4]
+                            };
+                        }
+                    });
+                });
+            }
+
+            return annotations;
+        }
+
+        function updateHeatmap(data) {
+            const container = document.getElementById('heatmap-container');
+
+            // Need hourly data
+            const hourlyData = data.filter(r => r.hours && r.hours.length === 24);
+
+            if (hourlyData.length === 0) {
+                container.innerHTML = '<p style="color: var(--text-muted); padding: 1rem;">Hourly data not available for selected range.</p>';
+                return;
+            }
+
+            // Build hour x day-of-week matrix
+            const matrix = Array(7).fill(null).map(() => Array(24).fill(null).map(() => ({ sum: 0, count: 0 })));
+            const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+            hourlyData.forEach(r => {
+                const dow = r.dateObj.getDay();
+                r.hours.forEach((vol, hour) => {
+                    matrix[dow][hour].sum += vol;
+                    matrix[dow][hour].count++;
+                });
+            });
+
+            // Calculate averages
+            const avgMatrix = matrix.map(row => row.map(cell =>
+                cell.count > 0 ? Math.round(cell.sum / cell.count) : null
+            ));
+
+            // Find min/max for color scaling
+            let minVal = Infinity, maxVal = 0;
+            avgMatrix.forEach(row => {
+                row.forEach(val => {
+                    if (val !== null) {
+                        minVal = Math.min(minVal, val);
+                        maxVal = Math.max(maxVal, val);
+                    }
+                });
+            });
+
+            // Build table HTML
+            let html = '<table class="heatmap-table"><thead><tr><th></th>';
+            for (let h = 0; h < 24; h++) {
+                html += `<th>${h}</th>`;
+            }
+            html += '</tr></thead><tbody>';
+
+            avgMatrix.forEach((row, dow) => {
+                html += `<tr><td class="row-header">${dayNames[dow]}</td>`;
+                row.forEach(val => {
+                    const bg = val !== null ? getHeatmapColor(val, minVal, maxVal) : 'transparent';
+                    const text = val !== null ? formatNumber(val) : '--';
+                    html += `<td style="background: ${bg}; color: ${val > (maxVal - minVal) / 2 + minVal ? '#1a2230' : '#e8ecf2'}">${text}</td>`;
+                });
+                html += '</tr>';
+            });
+
+            html += '</tbody></table>';
+            container.innerHTML = html;
+        }
+
+        function getHeatmapColor(val, min, max) {
+            const ratio = max > min ? (val - min) / (max - min) : 0;
+
+            // Blue (low) -> White (mid) -> Red (high)
+            if (ratio < 0.5) {
+                const r = Math.round(59 + (255 - 59) * (ratio * 2));
+                const g = Math.round(130 + (255 - 130) * (ratio * 2));
+                const b = Math.round(246 + (255 - 246) * (ratio * 2));
+                return `rgb(${r}, ${g}, ${b})`;
+            } else {
+                const r = Math.round(255);
+                const g = Math.round(255 - (255 - 113) * ((ratio - 0.5) * 2));
+                const b = Math.round(255 - (255 - 113) * ((ratio - 0.5) * 2));
+                return `rgb(${r}, ${g}, ${b})`;
+            }
+        }
+
+        // =============================================
+        // Utilities
+        // =============================================
+        function formatNumber(num) {
+            if (num === null || num === undefined) return '--';
+            if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+            if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
+            return num.toLocaleString();
+        }
+
+        function downloadCSV() {
+            const data = filterData();
+            if (data.length === 0) return;
+
+            let csv = 'date,station_id,direction,total\n';
+            data.forEach(r => {
+                csv += `${r.date},${r.station_id || 'combined'},${r.direction},${r.total}\n`;
+            });
+
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'i70-traffic-data.csv';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // =============================================
+        // Initialize
+        // =============================================
+        document.addEventListener('DOMContentLoaded', loadData);
+    </script>
+</body>
+</html>

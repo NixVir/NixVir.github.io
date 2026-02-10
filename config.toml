@@ -63,28 +63,33 @@ enableRobotsTXT = true
   [minify.tdewolff.js]
     keepVarNames = false
 
-# Main navigation menu
+# Main navigation menu - exactly 6 items
 [[menu.main]]
-  name = "Snow Cover"
+  name = "Snow"
   url = "/snow-cover.html"
-  weight = 1
+  weight = 10
 
 [[menu.main]]
-  name = "Snowpack"
-  url = "/snotel.html"
-  weight = 2
-
-[[menu.main]]
-  name = "Economy"
+  name = "Dashboard"
   url = "/dashboard.html"
-  weight = 3
+  weight = 20
 
 [[menu.main]]
-  name = "Ski News"
-  url = "/page/ski-news/"
-  weight = 5
+  name = "Ski Industry News"
+  url = "/ski-news.html"
+  weight = 30
+
+[[menu.main]]
+  name = "Data Insights"
+  url = "/post/"
+  weight = 40
 
 [[menu.main]]
   name = "About"
   url = "/about/"
-  weight = 6
+  weight = 50
+
+[[menu.main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 60

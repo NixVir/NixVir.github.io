@@ -1,9 +1,6 @@
 ---
 description: We'd love to hear from you
 featured_image: images/mtnsky.jpg
-menu:
-  main:
-    weight: 7
 omit_header_text: true
 title: Contact
 type: page
