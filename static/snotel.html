@@ -1076,17 +1076,20 @@
                     <div class="summary-stats">
                         <div class="summary-stat-item">
                             <div class="summary-stat-dot" style="background: var(--swe-below);"></div>
-                            <span class="summary-stat-text"><span class="summary-stat-value">${belowPct}%</span> below normal</span>
+                            <span class="summary-stat-text"><span class="summary-stat-value">${belowPct}%</span> of stations below normal</span>
                         </div>
                         <div class="summary-stat-item">
                             <div class="summary-stat-dot" style="background: var(--success);"></div>
                             <span class="summary-stat-text"><span class="summary-stat-value">${atAbovePct}%</span> at or above normal</span>
                         </div>
                     </div>
-                    <div class="summary-instructions">
-                        <strong>How to use this map:</strong> Colored regions show snowpack as a percentage of historical normal.
-                        <strong>Click a region</strong> for details. <strong>Hover</strong> over states/provinces in the sidebar.
-                        Use the layer control (top right) to show individual monitoring stations or change the base map.
+                    <div class="summary-explainer" style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; margin-top: 0.5rem;">
+                        <strong>${combinedMeanPct}% of normal</strong> is the average snowpack across ${totalCount.toLocaleString()} monitoring points (${usStats.count} US SNOTEL stations${bcBasinData ? ' + ' + bcBasinData.statistics.with_data + ' BC snow basins' : ''}), where each point compares its current snow water equivalent to its historical median for this date. The donut chart shows that <strong>${belowPct}%</strong> of these ${totalCount.toLocaleString()} stations are reporting snowpack below 90% of their historical median.
+                    </div>
+                    <div class="summary-instructions" style="margin-top: 0.75rem;">
+                        <strong>How to use this map:</strong> Colored regions (snowbasins) show aggregated snowpack as % of normal.
+                        <strong>Click a region</strong> for details. <strong>Click a state or province</strong> in the sidebar to see individual station readings.
+                        Use the layer control (top right) to toggle stations or change the base map.
                     </div>
                 </div>
             `;
