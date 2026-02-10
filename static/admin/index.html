@@ -268,6 +268,113 @@
       border-color: #2a3444 !important;
     }
 
+    /* =============================================
+       Workflow page (Drafts / In Review / Ready)
+       ============================================= */
+    /* Workflow board background */
+    [class*="Workflow"],
+    [class*="workflow"] {
+      background: #0a0e14 !important;
+    }
+    /* Column containers */
+    [class*="WorkflowColumn"],
+    [class*="BoardColumn"],
+    [class*="Column"] {
+      background: #111820 !important;
+      border-color: #2a3444 !important;
+    }
+    /* Column headers — muted dark-theme versions of the status colors */
+    [class*="ColumnHeader"],
+    [class*="columnHeader"],
+    [class*="BoardColumnHeader"] {
+      border-color: #2a3444 !important;
+    }
+    /* Draft column header */
+    [class*="ColumnHeader"]:first-child,
+    [class*="Workflow"] div[class*="Column"]:nth-child(1) > div:first-child {
+      background: #2d1f4e !important;
+      color: #c4b5fd !important;
+    }
+    /* In Review column header */
+    [class*="Workflow"] div[class*="Column"]:nth-child(2) > div:first-child {
+      background: #3d2f0a !important;
+      color: #fbbf24 !important;
+    }
+    /* Ready column header */
+    [class*="Workflow"] div[class*="Column"]:nth-child(3) > div:first-child {
+      background: #1a3a1a !important;
+      color: #86efac !important;
+    }
+    /* Drop zones inside columns */
+    [class*="WorkflowList"],
+    [class*="BoardColumnContent"],
+    [class*="ColumnContent"] {
+      background: #0a0e14 !important;
+      border-color: #2a3444 !important;
+    }
+    /* Workflow cards (entries inside columns) */
+    [class*="WorkflowCard"],
+    [class*="BoardCard"] {
+      background: #1a2230 !important;
+      border-color: #2a3444 !important;
+    }
+    [class*="WorkflowCard"]:hover,
+    [class*="BoardCard"]:hover {
+      background: #2a3444 !important;
+    }
+
+    /* =============================================
+       Media library page
+       ============================================= */
+    [class*="MediaLibrary"],
+    [class*="mediaLibrary"],
+    [class*="MediaModal"],
+    [class*="mediaModal"] {
+      background: #0a0e14 !important;
+    }
+    /* Media grid header/toolbar */
+    [class*="MediaLibraryTop"],
+    [class*="MediaLibraryHeader"],
+    [class*="mediaLibraryTop"] {
+      background: #111820 !important;
+      border-color: #2a3444 !important;
+    }
+    /* Media cards */
+    [class*="MediaCard"],
+    [class*="mediaCard"],
+    [class*="CardGrid"] {
+      background: #111820 !important;
+    }
+    [class*="MediaCard"],
+    [class*="mediaCard"] {
+      border-color: #2a3444 !important;
+    }
+    [class*="MediaCard"]:hover,
+    [class*="mediaCard"]:hover {
+      border-color: #60a5fa !important;
+    }
+    /* Media card text */
+    [class*="MediaCard"] p,
+    [class*="MediaCard"] span,
+    [class*="mediaCard"] p,
+    [class*="mediaCard"] span {
+      color: #9ca3b0 !important;
+    }
+    /* Upload area / dropzone */
+    [class*="Dropzone"],
+    [class*="dropzone"],
+    [class*="UploadArea"],
+    [class*="uploadArea"] {
+      background: #1a2230 !important;
+      border-color: #2a3444 !important;
+      color: #9ca3b0 !important;
+    }
+    /* Media folder breadcrumbs and nav */
+    [class*="MediaBreadcrumb"],
+    [class*="mediaBreadcrumb"] {
+      color: #9ca3b0 !important;
+    }
+
     /* Scrollbar styling */
     ::-webkit-scrollbar { width: 8px; height: 8px; }
     ::-webkit-scrollbar-track { background: #0a0e14; }
