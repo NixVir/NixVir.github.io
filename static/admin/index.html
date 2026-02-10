@@ -26,7 +26,7 @@
     header[class*="Header"] {
       background: #111820 !important;
       border-bottom: 1px solid #2a3444 !important;
-      padding-left: 200px !important;
+      padding-left: 210px !important;
     }
     [class*="AppHeader"] a,
     [class*="AppHeader"] span,
@@ -38,9 +38,22 @@
     /* Editor toolbar bar (back arrow + "Writing in..." + Save) */
     [class*="EditorToolbar"],
     [class*="editorToolbar"] {
-      padding-left: 200px !important;
+      padding-left: 210px !important;
       background: #111820 !important;
       border-bottom: 1px solid #2a3444 !important;
+    }
+
+    /* The CMS top-level header (first child in nc-root) */
+    #nc-root > div > div:first-child > div,
+    #nc-root > div > div:first-child > header,
+    #nc-root > div > div:first-child {
+      overflow: visible !important;
+    }
+
+    /* Ensure the collection name and nav links in the header don't clip */
+    [class*="AppHeader"] nav,
+    [class*="AppHeader"] > div {
+      overflow: visible !important;
     }
 
     /* Sidebar / navigation */
@@ -213,7 +226,7 @@
       border-right-color: #2a3444 !important;
     }
 
-    /* Preview pane - hidden on file-based collections (manual news) */
+    /* Preview pane styling */
     [class*="PreviewPane"],
     [class*="preview"] {
       background: #0a0e14 !important;
@@ -580,6 +593,37 @@
     }
 
     /* =============================================
+       Back navigation button (admin root)
+       ============================================= */
+    #nixvir-back-nav {
+      position: fixed;
+      top: 54px;
+      left: 0;
+      width: 195px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      z-index: 10000;
+      background: #111820;
+      border-bottom: 1px solid #2a3444;
+      border-right: 1px solid #2a3444;
+      box-sizing: border-box;
+      text-decoration: none !important;
+      font-size: 12px;
+      color: #9ca3b0 !important;
+      gap: 6px;
+      transition: background 0.15s, color 0.15s;
+    }
+    #nixvir-back-nav:hover {
+      background: #1a2230 !important;
+      color: #60a5fa !important;
+    }
+    #nixvir-back-nav svg {
+      flex-shrink: 0;
+    }
+
+    /* =============================================
        Logged-in user display (top-right, near identity icon)
        ============================================= */
     #nixvir-user-display {
@@ -905,15 +949,43 @@
       }
 
       function injectNixvirUI() {
-        // --- Logo (once) ---
+        // --- Logo (once) — links to admin root ---
         if (!document.getElementById('nixvir-logo')) {
           var logo = document.createElement('a');
           logo.id = 'nixvir-logo';
-          logo.href = '/';
-          logo.title = 'Back to NixVir.com';
+          logo.href = '/admin/';
+          logo.title = 'Content Manager Home';
           logo.innerHTML = '<img src="/images/nixvirlogo.png" alt="NixVir">' +
                            '<span>Content Manager</span>';
           document.body.appendChild(logo);
+        }
+
+        // --- Back navigation arrow (context-aware) ---
+        var backNav = document.getElementById('nixvir-back-nav');
+        var currentHash = window.location.hash || '';
+        var isSubPage = currentHash.includes('/entries/') || currentHash.includes('/new') ||
+                        currentHash.includes('/workflow') || currentHash.includes('/media');
+        var isRootListing = !isSubPage || currentHash === '' || currentHash === '#' ||
+                            (currentHash.includes('/collections/') && !currentHash.includes('/entries/') && !currentHash.includes('/new'));
+
+        if (!isRootListing) {
+          if (!backNav) {
+            backNav = document.createElement('a');
+            backNav.id = 'nixvir-back-nav';
+            backNav.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>' +
+                                '<span>Back to Dashboard</span>';
+            document.body.appendChild(backNav);
+          }
+          // Set appropriate back link based on context
+          if (currentHash.includes('manual-news') && currentHash.includes('/entries/')) {
+            backNav.href = '#/collections/manual-news';
+          } else if (currentHash.includes('/collections/post') && (currentHash.includes('/entries/') || currentHash.includes('/new'))) {
+            backNav.href = '#/collections/post';
+          } else {
+            backNav.href = '#/collections/post';
+          }
+        } else if (backNav) {
+          backNav.remove();
         }
 
         // --- Help Panel (once) ---
@@ -973,7 +1045,6 @@
         // DecapCMS may apply active styles to the wrong sidebar item.
         // We enforce correct highlighting based on the current URL hash.
         var sidebarLinks = document.querySelectorAll('[class*="Sidebar"] a, aside a, nav a');
-        var currentHash = window.location.hash || '';
         sidebarLinks.forEach(function(link) {
           var href = link.getAttribute('href') || '';
           // Check if this link matches the current route
@@ -997,8 +1068,8 @@
         });
 
         // --- Inject "Add New Story" button on Manual Stories collection listing ---
-        var isManualNewsListing = window.location.hash.includes('/collections/manual-news') &&
-                                  !window.location.hash.includes('/entries/');
+        var isManualNewsListing = currentHash.includes('/collections/manual-news') &&
+                                  !currentHash.includes('/entries/');
         var addStoryBtn = document.getElementById('nixvir-add-story-btn');
         if (isManualNewsListing && !addStoryBtn) {
           // Find the collection header area (where "Add New Data Insight" would appear)
@@ -1041,7 +1112,7 @@
         }
 
         // --- Ensure list widget "Add" buttons are visible on manual news page ---
-        if (window.location.hash.includes('manual-news') && window.location.hash.includes('/entries/')) {
+        if (currentHash.includes('manual-news') && currentHash.includes('/entries/')) {
           var ncRoot2 = document.getElementById('nc-root');
           if (ncRoot2) {
             // Find all buttons and look for the "Add stories" text
@@ -1065,16 +1136,19 @@
         }
 
         // --- Toggle preview pane visibility based on route ---
-        var isNews = window.location.hash.includes('manual-news');
-        if (isNews) {
+        // Hide the preview pane on all editor pages (manual news AND blog posts)
+        // The preview is not useful for our use case and causes layout issues
+        var isEditorRoute = currentHash.includes('/entries/') || currentHash.includes('/new');
+        if (isEditorRoute) {
           document.body.classList.add('hide-preview');
         } else {
           document.body.classList.remove('hide-preview');
         }
 
         // --- Editor page: inject instruction banner ---
-        var isEditorPage = window.location.hash.includes('/collections/') &&
-                           (window.location.hash.includes('/new') || window.location.hash.includes('/entries/'));
+        var isEditorPage = currentHash.includes('/collections/') &&
+                           (currentHash.includes('/new') || currentHash.includes('/entries/'));
+        var isManualNewsEntry = currentHash.includes('manual-news');
         var banner = document.getElementById('nixvir-editor-banner');
 
         if (isEditorPage) {
@@ -1084,10 +1158,10 @@
             banner.id = 'nixvir-editor-banner';
             banner.style.display = 'block';
 
-            var isNew = window.location.hash.includes('/new');
+            var isNew = currentHash.includes('/new');
             var title, instructions, stepsHtml;
 
-            if (isNews) {
+            if (isManualNewsEntry) {
               title = 'Add a Story to the News Feed';
               instructions = 'Click <strong>"Add stories +"</strong> below to add a new entry. ' +
                 'Fill in the Title, URL, Source, and Category at minimum. ' +
@@ -1129,7 +1203,7 @@
         }
 
         // --- Workflow page: inject info banner ---
-        var isWorkflowPage = window.location.hash.includes('/workflow') || window.location.hash === '#/workflow';
+        var isWorkflowPage = currentHash.includes('/workflow') || currentHash === '#/workflow';
         var wfBanner = document.getElementById('nixvir-workflow-banner');
         if (isWorkflowPage && !wfBanner) {
           // Find where to insert — look for the workflow heading or first major container
@@ -1166,7 +1240,7 @@
         }
 
         // --- Media page: inject info banner ---
-        var isMediaPage = window.location.hash.includes('/media') || window.location.hash === '#/media';
+        var isMediaPage = currentHash.includes('/media') || currentHash === '#/media';
         var mediaBanner = document.getElementById('nixvir-media-banner');
         if (isMediaPage && !mediaBanner) {
           var mediaContainer = document.querySelector('[class*="MediaLibrary"], [class*="mediaLibrary"], [class*="Media"]');
