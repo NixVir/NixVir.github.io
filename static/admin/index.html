@@ -275,118 +275,93 @@
     }
 
     /* =============================================
-       Deep dark theme overrides for editor content
-       Catches list widgets, nested object fields,
-       and any remaining white panels
+       Nuclear dark theme: force ALL elements dark
+       DecapCMS uses Emotion (random css-XXXX classes)
+       so named selectors don't work. We use universal
+       selectors and JS runtime fixes instead.
        ============================================= */
 
-    /* All generated Emotion/CSS-in-JS class containers */
-    div[class^="css-"],
-    section[class^="css-"],
-    span[class^="css-"] {
-      background-color: inherit;
+    /* Force every element to not have white/light backgrounds */
+    #nc-root *, #nc-root *::before, #nc-root *::after {
+      border-color: #2a3444 !important;
     }
 
-    /* Editor wrapper and scrollable content area */
-    [class*="EditorInterface"],
-    [class*="editorInterface"],
-    [class*="EditorContainer"],
-    [class*="editorContainer"],
-    [class*="EditorContent"],
-    [class*="editorContent"],
-    [class*="ControlPaneContainer"],
-    [class*="controlPaneContainer"],
-    [class*="ScrollArea"],
-    [class*="scrollArea"] {
+    /* Target the CMS app root — all descendants get dark bg */
+    #nc-root div,
+    #nc-root section,
+    #nc-root aside,
+    #nc-root main,
+    #nc-root article,
+    #nc-root footer,
+    #nc-root header:not(:first-child) {
+      background-color: #0a0e14;
+    }
+
+    /* Cards, panels, and elevated surfaces */
+    #nc-root [class*="Card"],
+    #nc-root [class*="card"],
+    #nc-root [class*="Panel"],
+    #nc-root [class*="panel"],
+    #nc-root [class*="Control"],
+    #nc-root [class*="Pane"],
+    #nc-root [class*="Item"],
+    #nc-root [class*="Entry"],
+    #nc-root [class*="Object"],
+    #nc-root [class*="List"],
+    #nc-root [class*="TopBar"],
+    #nc-root [class*="Nested"] {
+      background-color: #111820 !important;
+    }
+
+    /* Input fields — slightly lighter elevated surface */
+    #nc-root input,
+    #nc-root textarea,
+    #nc-root select,
+    #nc-root [class*="editor"],
+    #nc-root [class*="Editor"]:not([class*="EditorToolbar"]) {
+      background-color: #1a2230 !important;
+      color: #e8ecf2 !important;
+    }
+
+    /* All text inside the CMS */
+    #nc-root span,
+    #nc-root p,
+    #nc-root label,
+    #nc-root div,
+    #nc-root li,
+    #nc-root td,
+    #nc-root th {
+      color: #e8ecf2;
+    }
+
+    /* Buttons inside the CMS */
+    #nc-root button {
+      color: #e8ecf2 !important;
+    }
+
+    /* Hint text */
+    #nc-root [class*="hint"],
+    #nc-root [class*="Hint"],
+    #nc-root small {
+      color: #8a919e !important;
+    }
+
+    /* Preview pane (right side on editor) */
+    #nc-root [class*="Preview"],
+    #nc-root [class*="preview"] {
       background: #0a0e14 !important;
+      color: #e8ecf2 !important;
+    }
+    #nc-root [class*="Preview"] *,
+    #nc-root [class*="preview"] * {
+      color: #e8ecf2 !important;
+      background-color: transparent !important;
     }
 
-    /* List widget: outer wrapper, top bar, items */
-    [class*="ListControl"],
-    [class*="listControl"],
-    [class*="ObjectWidgetTopBar"],
-    [class*="objectWidgetTopBar"],
-    [class*="TopBar"],
-    [class*="ListItem"],
-    [class*="listItem"],
-    [class*="NestedObjectLabel"],
-    [class*="nestedObjectLabel"],
-    [class*="ObjectControl"],
-    [class*="objectControl"] {
+    /* The header bar specifically */
+    #nc-root > div > div:first-child,
+    #nc-root header {
       background: #111820 !important;
-      border-color: #2a3444 !important;
-      color: #e8ecf2 !important;
-    }
-
-    /* List widget expand/collapse header row */
-    [class*="TopBar"] button,
-    [class*="TopBar"] span,
-    [class*="ListItem"] button,
-    [class*="ListItem"] span,
-    [class*="ObjectWidgetTopBar"] button,
-    [class*="ObjectWidgetTopBar"] span {
-      color: #e8ecf2 !important;
-    }
-
-    /* "Add <item>" button inside list widgets */
-    [class*="ListControl"] button,
-    [class*="listControl"] button {
-      background: #1a2230 !important;
-      color: #60a5fa !important;
-      border-color: #2a3444 !important;
-    }
-    [class*="ListControl"] button:hover,
-    [class*="listControl"] button:hover {
-      background: #2a3444 !important;
-      color: #93bbfd !important;
-    }
-
-    /* Field groups inside expanded list items */
-    [class*="FieldGroup"],
-    [class*="fieldGroup"],
-    [class*="Widget"],
-    [class*="widget-"] {
-      background: transparent !important;
-    }
-
-    /* Catch-all: any remaining direct white backgrounds in the editor */
-    [class*="EditorControlPane"] > div,
-    [class*="ControlPane"] > div,
-    [class*="Content"] > div > div {
-      background: transparent !important;
-    }
-
-    /* Select widget dropdown styling */
-    [class*="SelectWidget"],
-    [class*="selectWidget"] {
-      background: #1a2230 !important;
-      color: #e8ecf2 !important;
-    }
-
-    /* Timestamp / datetime widget */
-    [class*="DateTimeWidget"],
-    [class*="dateTimeWidget"],
-    [class*="DateTimeControl"],
-    [class*="dateTimeControl"] {
-      background: #1a2230 !important;
-    }
-    [class*="DateTimeControl"] button {
-      background: #2a3444 !important;
-      color: #e8ecf2 !important;
-      border-color: #2a3444 !important;
-    }
-    [class*="DateTimeControl"] button:hover {
-      background: #3a4454 !important;
-    }
-
-    /* Boolean/toggle widget background */
-    [class*="ToggleBackground"],
-    [class*="toggleBackground"] {
-      background: #2a3444 !important;
-    }
-    [class*="ToggleBackground"][class*="active"],
-    input:checked + [class*="ToggleBackground"] {
-      background: #3b82f6 !important;
     }
 
     /* Sort controls */
@@ -692,6 +667,29 @@
             el.textContent = 'Add New Data Insight';
           }
         });
+
+        // --- Runtime dark theme enforcement ---
+        // Emotion injects styles AFTER page load, overriding our CSS.
+        // This finds any element with a light background and forces it dark.
+        var ncRoot = document.getElementById('nc-root');
+        if (ncRoot) {
+          var allEls = ncRoot.querySelectorAll('div, section, aside, main, footer, ul, li, span');
+          for (var i = 0; i < allEls.length; i++) {
+            var el = allEls[i];
+            var bg = window.getComputedStyle(el).backgroundColor;
+            if (bg && bg !== 'transparent' && bg !== 'rgba(0, 0, 0, 0)') {
+              // Parse rgb values
+              var match = bg.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+              if (match) {
+                var r = parseInt(match[1]), g = parseInt(match[2]), b = parseInt(match[3]);
+                // If brightness > 180 (light/white), force dark
+                if ((r + g + b) / 3 > 180) {
+                  el.style.setProperty('background-color', '#111820', 'important');
+                }
+              }
+            }
+          }
+        }
 
         // --- Editor page: inject instruction banner ---
         var isEditorPage = window.location.hash.includes('/collections/') &&
