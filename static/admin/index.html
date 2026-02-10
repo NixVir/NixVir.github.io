@@ -227,17 +227,22 @@
     }
 
     /* Preview pane styling */
-    [class*="PreviewPane"],
-    [class*="preview"] {
+    [class*="PreviewPane"] {
       background: #0a0e14 !important;
       color: #e8ecf2 !important;
     }
     /* When .hide-preview is on the body, hide the preview pane
-       and let the editor take full width */
+       and let the editor take full width.
+       IMPORTANT: Only target elements with "PreviewPane" in class name.
+       Do NOT use positional selectors (last-child) on SplitPane children —
+       in files collections, the control pane may be the only/last child.
+       Do NOT use wildcard [class*="preview"] — Emotion class names may
+       contain "preview" in unrelated components. */
     body.hide-preview [class*="PreviewPane"],
-    body.hide-preview [class*="preview-pane"],
     body.hide-preview [class*="PreviewPaneFrame"] {
       display: none !important;
+      width: 0 !important;
+      min-width: 0 !important;
     }
     body.hide-preview [class*="ControlPane"],
     body.hide-preview [class*="controlPane"],
@@ -247,18 +252,19 @@
       max-width: 900px !important;
       margin: 0 auto !important;
     }
-    /* Also hide the split-pane resizer/divider */
+    /* Hide the split-pane resizer/divider */
     body.hide-preview [class*="SplitPane"] > [class*="Resizer"],
     body.hide-preview [class*="splitpane"] > [class*="resizer"] {
       display: none !important;
     }
-    /* Force the split pane container to single-column */
+    /* Let the control pane fill the SplitPane */
     body.hide-preview [class*="SplitPane"],
     body.hide-preview [class*="splitPane"] {
-      display: block !important;
+      display: flex !important;
     }
-    body.hide-preview [class*="SplitPane"] > div:last-child:not(:first-child) {
-      display: none !important;
+    body.hide-preview [class*="SplitPane"] > div:first-child {
+      width: 100% !important;
+      flex: 1 !important;
     }
 
     /* Dropdown menus */
@@ -545,16 +551,10 @@
       color: #8a919e !important;
     }
 
-    /* Preview pane (right side on editor) */
-    #nc-root [class*="Preview"],
-    #nc-root [class*="preview"] {
+    /* Preview pane (right side on editor) — only target actual PreviewPane */
+    #nc-root [class*="PreviewPane"] {
       background: #0a0e14 !important;
       color: #e8ecf2 !important;
-    }
-    #nc-root [class*="Preview"] *,
-    #nc-root [class*="preview"] * {
-      color: #e8ecf2 !important;
-      background-color: transparent !important;
     }
 
     /* The header bar specifically */
