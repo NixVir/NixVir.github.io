@@ -3,11 +3,12 @@
 <style>
   /* Dark theme base */
   body {
-    background-color: #1a1a2e !important;
-    color: #e0e0e0;
+    background-color: #0d1117 !important;
+    color: #c9d1d9;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
   }
   main {
-    background-color: #1a1a2e !important;
+    background-color: #0d1117 !important;
   }
   .site-banner {
     background-image: url('/images/mtnsky.jpg');
@@ -52,7 +53,7 @@
   }
   .site-page-title {
     text-align: center;
-    padding: 1rem 1rem 0.5rem;
+    padding: 1.5rem 1rem 1rem;
   }
   .site-page-title h1 {
     color: white;
@@ -63,10 +64,8 @@
   .site-page-title p {
     color: rgba(255,255,255,0.8);
     font-size: 0.95rem;
-    margin: 0.5rem 0 0;
+    margin: 0.5rem auto 0;
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
   }
   @media screen and (max-width: 600px) {
     .site-nav {
@@ -88,10 +87,10 @@
       </div>
       <div class="site-nav-right">
         <ul class="site-nav-links">
-          <li><a href="/snow-cover/">Snow</a></li>
-          <li><a href="/dashboard.html">Nixvir Dashboard</a></li>
-          <li><a href="/ski-news/">News</a></li>
-          <li><a href="/post/">Data Insights</a></li>
+          <li><a href="/snow-cover.html">Snow Cover</a></li>
+          <li><a href="/snotel.html">Snowpack</a></li>
+          <li><a href="/dashboard.html">Economy</a></li>
+          <li><a href="/page/ski-news/">Ski News</a></li>
           <li><a href="/about/" class="current">About</a></li>
           <li><a href="/contact/">Contact</a></li>
         </ul>
@@ -109,36 +108,97 @@
 
 {{ define "main" }}
 <style>
-  /* Dark theme for About page */
   .about-page {
-    background-color: #1a1a2e;
+    background-color: #0d1117;
     min-height: 100vh;
   }
+
   .about-content {
-    color: #c0c0d0;
-    line-height: 1.7;
+    color: #c9d1d9;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    text-align: left;
   }
+
+  .about-content h1 {
+    color: #f0f6fc;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #21262d;
+  }
+
+  .about-content h2 {
+    color: #e6edf3;
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin: 2rem 0 0.75rem;
+  }
+
+  .about-content p {
+    margin: 0 0 1.25rem;
+  }
+
   .about-content a {
     color: #7dd3fc;
+    text-decoration: underline;
+    text-decoration-color: rgba(125, 211, 252, 0.3);
+    text-underline-offset: 3px;
   }
-  .about-content img {
+  .about-content a:hover {
+    text-decoration-color: #7dd3fc;
+  }
+
+  .about-content figure {
+    margin: 2rem 0;
+  }
+
+  .about-content figure img {
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    max-width: 320px;
+    width: 100%;
+  }
+
+  .about-content figure figcaption {
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    font-style: italic;
+  }
+
+  /* Override Ananke's forced center alignment */
+  .about-content .nested-links,
+  .about-content .tc {
+    text-align: left !important;
   }
 
   /* Override footer for dark theme */
   footer {
-    background-color: #151525 !important;
-    color: #a0a0b0 !important;
+    background-color: #010409 !important;
+    color: #8b949e !important;
   }
   footer a {
     color: #7dd3fc !important;
   }
+
+  @media screen and (max-width: 600px) {
+    .about-content {
+      font-size: 1rem;
+    }
+    .about-content h1 {
+      font-size: 1.5rem;
+    }
+    .about-content figure img {
+      max-width: 100%;
+    }
+  }
 </style>
 
 <article class="about-page pa3 pa4-ns">
-  <div class="mw7 center">
-    <div class="about-content f4 tc nested-links">
+  <div class="center" style="max-width: 42rem;">
+    <div class="about-content">
       {{ .Content }}
     </div>
   </div>
