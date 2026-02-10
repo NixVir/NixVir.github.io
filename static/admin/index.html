@@ -6,6 +6,229 @@
   <meta name="robots" content="noindex" />
   <title>NixVir Content Manager</title>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <style>
+    /* =============================================
+       NixVir Dark Theme for DecapCMS
+       Matches the site's shared-theme.css palette
+       ============================================= */
+
+    /* Core background and text */
+    body {
+      background: #0a0e14 !important;
+      color: #e8ecf2 !important;
+    }
+
+    /* Top app bar / header */
+    [class*="AppHeader"],
+    header[class*="Header"] {
+      background: #111820 !important;
+      border-bottom: 1px solid #2a3444 !important;
+    }
+
+    /* Sidebar / navigation */
+    [class*="Sidebar"],
+    nav[class*="Nav"],
+    aside {
+      background: #111820 !important;
+      border-right: 1px solid #2a3444 !important;
+    }
+
+    /* Main content area */
+    [class*="MainView"],
+    main,
+    [class*="Content"] {
+      background: #0a0e14 !important;
+    }
+
+    /* Cards and panels */
+    [class*="Card"],
+    [class*="ListCard"],
+    [class*="EntryListing"],
+    [class*="ObjectControl"],
+    [class*="ControlPane"],
+    [class*="EditorControlPane"] {
+      background: #111820 !important;
+      border-color: #2a3444 !important;
+    }
+
+    /* Form fields and inputs */
+    input, textarea, select {
+      background: #1a2230 !important;
+      color: #e8ecf2 !important;
+      border-color: #2a3444 !important;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: #60a5fa !important;
+      outline-color: #60a5fa !important;
+    }
+    input::placeholder, textarea::placeholder {
+      color: #6b7280 !important;
+    }
+
+    /* Labels and headings */
+    label, [class*="Label"], [class*="FieldLabel"] {
+      color: #9ca3b0 !important;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      color: #e8ecf2 !important;
+    }
+
+    /* Hint/help text below fields */
+    [class*="hint"], [class*="Hint"], small {
+      color: #8a919e !important;
+    }
+
+    /* Links */
+    a {
+      color: #60a5fa !important;
+    }
+    a:hover {
+      color: #93bbfd !important;
+    }
+
+    /* Collection list items */
+    [class*="ListItem"],
+    [class*="EntryCard"] {
+      background: #111820 !important;
+      border-color: #2a3444 !important;
+    }
+    [class*="ListItem"]:hover,
+    [class*="EntryCard"]:hover {
+      background: #1a2230 !important;
+    }
+
+    /* Buttons - primary */
+    [class*="ToolbarButton"],
+    button[class*="Button"] {
+      color: #e8ecf2 !important;
+    }
+
+    /* Save/publish button - keep it prominent */
+    [class*="PublishButton"] button,
+    a[href*="new"] {
+      background: #3b82f6 !important;
+      color: #ffffff !important;
+    }
+
+    /* Markdown editor toolbar */
+    [class*="Toolbar"],
+    [class*="toolbar"] {
+      background: #1a2230 !important;
+      border-color: #2a3444 !important;
+    }
+    [class*="ToolbarButton"] {
+      color: #9ca3b0 !important;
+    }
+    [class*="ToolbarButton"]:hover {
+      color: #e8ecf2 !important;
+      background: #2a3444 !important;
+    }
+
+    /* Markdown editor content area */
+    [class*="RawEditor"],
+    [class*="VisualEditor"],
+    [class*="editor-preview"],
+    [class*="CodeMirror"],
+    .CodeMirror {
+      background: #1a2230 !important;
+      color: #e8ecf2 !important;
+    }
+    .CodeMirror-cursor {
+      border-left-color: #e8ecf2 !important;
+    }
+    .CodeMirror-selected {
+      background: #2a3444 !important;
+    }
+    .CodeMirror-gutters {
+      background: #111820 !important;
+      border-right-color: #2a3444 !important;
+    }
+
+    /* Preview pane */
+    [class*="PreviewPane"],
+    [class*="preview"] {
+      background: #0a0e14 !important;
+      color: #e8ecf2 !important;
+    }
+
+    /* Dropdown menus */
+    [class*="Dropdown"],
+    [class*="dropdown"],
+    [class*="Menu"],
+    ul[role="listbox"] {
+      background: #1a2230 !important;
+      border-color: #2a3444 !important;
+    }
+    [class*="DropdownItem"]:hover,
+    li[role="option"]:hover {
+      background: #2a3444 !important;
+    }
+
+    /* Status indicators */
+    [class*="StatusBadge"],
+    [class*="Draft"],
+    [class*="workflow"] {
+      border-color: #2a3444 !important;
+    }
+
+    /* Scrollbar styling for dark theme */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0a0e14;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2a3444;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #3a4454;
+    }
+
+    /* List widget (categories, tags) */
+    [class*="ListControl"],
+    [class*="SortableList"],
+    [class*="NestedObjectLabel"] {
+      background: #111820 !important;
+      border-color: #2a3444 !important;
+    }
+
+    /* Toggle/boolean widget */
+    [class*="Toggle"] label {
+      color: #9ca3b0 !important;
+    }
+
+    /* Dialog/modal overlays */
+    [class*="Dialog"],
+    [class*="Modal"],
+    [class*="modal"] {
+      background: #111820 !important;
+      border-color: #2a3444 !important;
+    }
+
+    /* Netlify Identity widget dark override */
+    .netlifyIdentityButton {
+      background: #1a2230 !important;
+      color: #e8ecf2 !important;
+    }
+
+    /* Override any remaining white backgrounds */
+    [style*="background: rgb(255"],
+    [style*="background-color: rgb(255"],
+    [style*="background: white"],
+    [style*="background-color: white"],
+    [style*="background:#fff"],
+    [style*="background-color:#fff"] {
+      background: #111820 !important;
+    }
+
+    /* Generic dark catches for DecapCMS generated class names */
+    div[class^="css-"] {
+      border-color: #2a3444;
+    }
+  </style>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>

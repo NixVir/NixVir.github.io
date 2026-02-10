@@ -15,22 +15,66 @@ collections:
     folder: "content/post"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    description: "Blog posts that appear on the Data Insights page. Fill in a title, set the date, write your content in the Body field, and hit Save. The other fields are optional."
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Author", name: "author", widget: "string", default: "Nate Fristoe" }
-      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
-      - { label: "Slug", name: "slug", widget: "string", required: false, hint: "URL-friendly name (auto-generated from title if blank)" }
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        hint: "The headline of your post. Keep it concise and descriptive."
+
+      - label: "Author"
+        name: "author"
+        widget: "string"
+        default: "Nate Fristoe"
+
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        hint: "The date shown on the post. Click 'Now' to use today's date."
+
+      - label: "URL Slug"
+        name: "slug"
+        widget: "string"
+        required: false
+        hint: "Controls the URL path for this post (e.g. 'winter-outlook-2026' becomes nixvir.com/post/2026-01-15-winter-outlook-2026). Leave blank to auto-generate from the title."
+
       - label: "Categories"
         name: "categories"
         widget: "list"
         default: ["ski-industry"]
+        hint: "Topic areas for organizing posts. Most posts need just one. Delete empty rows with the X button. Common categories: ski-industry, economics, climate, technology."
         field: { label: "Category", name: "category", widget: "string" }
+        minimize_collapsed: true
+
       - label: "Tags"
         name: "tags"
         widget: "list"
         required: false
+        hint: "Optional keywords for finer-grained filtering (e.g. 'snow-cover', 'consumer-confidence'). Leave empty if not needed."
         field: { label: "Tag", name: "tag", widget: "string" }
-      - { label: "Description", name: "description", widget: "text", required: false, hint: "Brief summary for SEO and social sharing" }
-      - { label: "Featured Image", name: "featured_image", widget: "image", required: false, hint: "Banner image for the post" }
-      - { label: "Hide Header Text", name: "omit_header_text", widget: "boolean", default: true, required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
+        minimize_collapsed: true
+
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        required: false
+        hint: "A 1-2 sentence summary used for SEO and social media previews. If left blank, Hugo uses the first few sentences of the post."
+
+      - label: "Featured Image"
+        name: "featured_image"
+        widget: "image"
+        required: false
+        hint: "Banner image displayed at the top of the post. Upload here or choose from existing images."
+
+      - label: "Hide Header Text"
+        name: "omit_header_text"
+        widget: "hidden"
+        default: true
+
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        hint: "The main content of your post. Use the toolbar above for formatting, links, and images."
