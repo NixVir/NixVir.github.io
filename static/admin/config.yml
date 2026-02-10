@@ -1,0 +1,37 @@
+backend:
+  name: github
+  repo: NixVir/NixVir.github.io
+  branch: master
+
+# Media files stored in static/images
+media_folder: "static/images"
+public_folder: "/images"
+
+# Editorial workflow: draft -> review -> publish
+publish_mode: editorial_workflow
+
+collections:
+  - name: "post"
+    label: "Data Insights"
+    folder: "content/post"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Author", name: "author", widget: "string", default: "Nate Fristoe" }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Slug", name: "slug", widget: "string", required: false, hint: "URL-friendly name (auto-generated from title if blank)" }
+      - label: "Categories"
+        name: "categories"
+        widget: "list"
+        default: ["ski-industry"]
+        field: { label: "Category", name: "category", widget: "string" }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        field: { label: "Tag", name: "tag", widget: "string" }
+      - { label: "Description", name: "description", widget: "text", required: false, hint: "Brief summary for SEO and social sharing" }
+      - { label: "Featured Image", name: "featured_image", widget: "image", required: false, hint: "Banner image for the post" }
+      - { label: "Hide Header Text", name: "omit_header_text", widget: "boolean", default: true, required: false }
+      - { label: "Body", name: "body", widget: "markdown" }

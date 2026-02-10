@@ -252,9 +252,23 @@
             {
                 name: 'Ski Industry News',
                 file: '/data/ski-news.json',
-                timestampPath: 'generated',
+                timestampPath: 'updated',
                 expectedHours: 24,
                 description: 'Aggregated ski business news from RSS feeds'
+            },
+            {
+                name: 'Prediction Markets',
+                file: '/data/prediction-markets.json',
+                timestampPath: 'fetched_at',
+                expectedHours: 48,
+                description: 'Kalshi & Polymarket contract prices'
+            },
+            {
+                name: 'Sports Betting Activity',
+                file: '/data/sports-betting.json',
+                timestampPath: 'fetched_at',
+                expectedHours: 840,  // ~35 days (monthly)
+                description: 'US & Ontario gaming handle data'
             },
             {
                 name: 'Airport Passenger Data',

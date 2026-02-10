@@ -1,0 +1,57 @@
+name: Notify on Workflow Failure
+
+on:
+  workflow_run:
+    workflows:
+      - "Update Snow Cover Data"
+      - "Update Canadian Snow Data"
+      - "Update SNOTEL Snowpack Data"
+      - "Update Ski Business News"
+      - "Update Economic Dashboard"
+      - "Update Airport Passenger Data"
+      - "Update Prediction Markets"
+      - "Update Sports Betting Data"
+      - "Verify Netlify Deploy Health"
+    types:
+      - completed
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+
+    steps:
+      - name: Send failure notification email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "[NixVir] Pipeline failed: ${{ github.event.workflow_run.name }}"
+          to: ${{ secrets.ALERT_EMAIL }}
+          from: NixVir Alerts <alerts@nixvir.com>
+          body: |
+            Workflow "${{ github.event.workflow_run.name }}" failed.
+
+            Branch: ${{ github.event.workflow_run.head_branch }}
+            Run: ${{ github.event.workflow_run.html_url }}
+            Time: ${{ github.event.workflow_run.updated_at }}
+
+            Check the run logs for details.
+            https://github.com/NixVir/NixVir.github.io/actions
+
+      - name: Fallback - Create issue if email fails
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `[ALERT] ${context.payload.workflow_run.name} failed (${new Date().toISOString().split('T')[0]})`;
+            const body = `**Email notification failed.** Check SMTP secrets.\n\n**Failed workflow**: ${context.payload.workflow_run.name}\n**Run**: ${context.payload.workflow_run.html_url}`;
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: title,
+              body: body,
+              labels: ['workflow-failure']
+            });
