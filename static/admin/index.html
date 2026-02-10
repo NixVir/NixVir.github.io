@@ -54,9 +54,22 @@
     [class*="Sidebar"] span {
       color: #9ca3b0 !important;
     }
-    [class*="Sidebar"] a:hover,
-    [class*="Sidebar"] a[class*="active"] {
+    /* Sidebar: only highlight on hover or when truly active */
+    [class*="Sidebar"] a:hover {
       color: #60a5fa !important;
+      background: rgba(96, 165, 250, 0.1) !important;
+    }
+    /* Active sidebar item gets blue text + subtle bg */
+    [class*="Sidebar"] a[class*="active"],
+    [class*="Sidebar"] a[class*="Active"],
+    [class*="Sidebar"] a[class*="selected"],
+    [class*="Sidebar"] a[class*="Selected"] {
+      color: #60a5fa !important;
+      background: rgba(96, 165, 250, 0.15) !important;
+    }
+    /* Reset: non-active sidebar items should NOT have blue bg */
+    [class*="Sidebar"] a:not([class*="active"]):not([class*="Active"]):not([class*="selected"]):not([class*="Selected"]):not(:hover) {
+      background: transparent !important;
     }
 
     /* Main content area */
@@ -695,6 +708,56 @@
             el.textContent = 'Add New Data Insight';
           }
         });
+
+        // --- Fix sidebar highlighting ---
+        // DecapCMS may apply active styles to the wrong sidebar item.
+        // We enforce correct highlighting based on the current URL hash.
+        var sidebarLinks = document.querySelectorAll('[class*="Sidebar"] a, aside a, nav a');
+        var currentHash = window.location.hash || '';
+        sidebarLinks.forEach(function(link) {
+          var href = link.getAttribute('href') || '';
+          // Check if this link matches the current route
+          var isActive = false;
+          if (currentHash.includes('manual-news') && href.includes('manual-news')) {
+            isActive = true;
+          } else if (currentHash.includes('/collections/post') && href.includes('/collections/post') && !href.includes('manual-news')) {
+            isActive = true;
+          } else if (!currentHash.includes('manual-news') && !currentHash.includes('/collections/post') && href.includes('/collections/post')) {
+            // Default to Data Insights on the home/collections view
+            isActive = currentHash === '' || currentHash === '#' || currentHash.includes('/collections/post');
+          }
+
+          if (isActive) {
+            link.style.setProperty('color', '#60a5fa', 'important');
+            link.style.setProperty('background', 'rgba(96, 165, 250, 0.15)', 'important');
+          } else {
+            link.style.setProperty('color', '#9ca3b0', 'important');
+            link.style.setProperty('background', 'transparent', 'important');
+          }
+        });
+
+        // --- Inject "Add New Story" button on Manual Stories collection listing ---
+        var isManualNewsListing = window.location.hash.includes('/collections/manual-news') &&
+                                  !window.location.hash.includes('/entries/');
+        var addStoryBtn = document.getElementById('nixvir-add-story-btn');
+        if (isManualNewsListing && !addStoryBtn) {
+          // Find the collection header area (where "Add New Data Insight" would appear)
+          var collectionTop = document.querySelector('[class*="CollectionTop"], [class*="ViewHeader"]');
+          if (collectionTop) {
+            var btn = document.createElement('a');
+            btn.id = 'nixvir-add-story-btn';
+            btn.href = '#/collections/manual-news/entries/manual-news-file';
+            btn.textContent = 'Add / Edit Stories';
+            btn.style.cssText = 'display:inline-block; background:#3b82f6; color:#fff !important; ' +
+              'padding:10px 20px; border-radius:5px; text-decoration:none; font-weight:600; ' +
+              'font-size:14px; cursor:pointer; float:right; margin-top:-40px;';
+            btn.addEventListener('mouseenter', function() { this.style.background = '#2563eb'; });
+            btn.addEventListener('mouseleave', function() { this.style.background = '#3b82f6'; });
+            collectionTop.appendChild(btn);
+          }
+        } else if (!isManualNewsListing && addStoryBtn) {
+          addStoryBtn.remove();
+        }
 
         // --- Runtime dark theme enforcement ---
         // Emotion injects styles AFTER page load, overriding our CSS.
