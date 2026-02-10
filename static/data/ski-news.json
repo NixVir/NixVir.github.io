@@ -1,8 +1,32 @@
 {
-  "updated": "2026-02-10 06:23:19",
-  "total_articles": 24,
+  "updated": "2026-02-10 11:44:04",
+  "total_articles": 25,
   "scoring_method": "keyword",
   "articles": [
+    {
+      "source": "Google News - Ski Resort Snow Drought",
+      "title": "Ski resort CEO issues warning amid unprecedented trend in US region: 'We can never let [this] happen again' - The Cool Down",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPTkZ1aU5CSGw0U1JmNlZrRTNtS2F4NjBJdUo1YXhNYlRmVmhjSjl4TXJIc2xjNVJCQ3UtVklJSzdMWktRYkRvMkZEZGMyVU16MHNzNHVvVGh1QkRZRXgxM2t0TXYwTEhpT1R4R3IxU2xpQnhmdFJtel9TZF9EbldvZWhoQS1CUENJajJjOWJlRQ?oc=5",
+      "description": "Ski resort CEO issues warning amid unprecedented trend in US region: 'We can never let [this] happen again' The Cool Down",
+      "content": "Ski resort CEO issues warning amid unprecedented trend in US region: 'We can never let [this] happen again' The Cool Down",
+      "pub_date": "2026-02-05",
+      "id": "0a2b1a7886cf",
+      "prefilter_business_score": 2,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "safety-incidents"
+      ],
+      "approved_date": "2026-02-10",
+      "display_score": 29.5
+    },
     {
       "source": "Google News - Vail Alterra Ski",
       "title": "Ski resort CEO issues warning amid unprecedented trend in US region: 'One of the worst' - The Cool Down",
@@ -249,6 +273,31 @@
       "display_score": 18
     },
     {
+      "source": "Unofficial Networks",
+      "title": "Snowboarder Falls Into Hidden Ravine @ Canadian Ski Resort",
+      "url": "https://unofficialnetworks.com/2026/02/09/snowboarder-falls-into-ravine/",
+      "description": "These snowboarders were riding at a resort in British Columbia when the lead boarder fell into a hidden ravine complete with a small stream.",
+      "content": "Skiing or snowboarding off-trail, whether it\u2019s inbounds or backcountry, can come with unexpected hazards. These snowboarders were riding at Revelstoke Mountain Resort in British Columbia when the lead boarder fell into a hidden ravine complete with a small stream. View this post on Instagram A post shared by J\u00e9r\u00e9mie Allaire (@t.ijay_) It seems like the ravine was covered in snow right up until the lead boarder ran over it causing the snow to collapse. Fortunately it wasn\u2019t that deep and the guy seemed just fine despite the fall. Nonetheless, this video serves as a reminder to ski or ride with a buddy if you\u2019re going to head off trail. No doubt the climb out of the ravine was a battle, and if he was alone and had fallen into something deeper or something without much of an exit path, it could have been a long time before anyone found him. Multi-Agency Mountain Rescue Extracts Stranded Climbers After Night On Longs Peak Categories: Canada Snowboarding",
+      "pub_date": "2026-02-09",
+      "id": "b9b1106cd21d",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "canada",
+      "secondary_categories": [
+        "safety-incidents",
+        "transportation"
+      ],
+      "approved_date": "2026-02-10",
+      "display_score": 18
+    },
+    {
       "source": "PlanetSKI",
       "title": "What A Time For PlanetSKI To Be In Canada",
       "url": "https://planetski.eu/2026/01/22/what-a-time-for-planetski-to-be-in-canada/",
@@ -292,32 +341,6 @@
       "category": "canada",
       "secondary_categories": [
         "business-investment"
-      ],
-      "approved_date": "2026-01-21",
-      "display_score": 18
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "Revived Colorado Ski Area Opens Chairlift For The First Time Since 2000",
-      "url": "https://unofficialnetworks.com/2026/01/21/cuchara-lift-4-reopens/",
-      "description": "Since 2017, locals have been working on reviving one of the old chairlifts at an once-abandoned ski area in southern Colorado.",
-      "content": "La Veta, Colorado \u2014 A ski area comeback years in the making celebrated a historic milestone last Saturday. On Saturday, Cuchara Mountain Park opened up for the 2025-26 season. For the past few years, operations revolved around bringing guests up on a carriage attached to the snowcat. For this ski season, they were able to reopen the chairlift that volunteers have been working on for years to get operational. Those dreams became a reality on Saturday, as Lift 4 reopened to the public. Crowds gathered at the base of Lift 4 to watch a ribbon-cutting ceremony. Cuchara Mountain operated with various owners from 1981 to 2000. It sat abandoned for years, but the county purchased it in 2017 and converted it into a non-profit operation. The old Lift 4 serves a small footprint of the old ski resort. Lift 4 serves 9 trails across 47 skiable acres with a vertical drop of 300 feet. The old Lift 4 is a Riblet double chairlift that was installed in 1981. The chairlift can carry 1,200 people per hour ",
-      "pub_date": "2026-01-21",
-      "id": "510dcbd021fd",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "ski-history",
-      "secondary_categories": [
-        "resort-operations",
-        "business-investment",
-        "transportation"
       ],
       "approved_date": "2026-01-21",
       "display_score": 18
@@ -538,33 +561,6 @@
     },
     {
       "source": "PlanetSKI",
-      "title": "The PlanetSKI Snow Report",
-      "url": "https://planetski.eu/2026/01/20/the-planetski-snow-report-30/",
-      "description": "Check out our latest reports from Europe and North America: The Alps, The Pyrenees, The Canadian Rockies & the Scottish Highlands. UPDATED The post The PlanetSKI Snow Report appeared first on PlanetSKI .",
-      "content": "Wednesday 21st January The weather remains clear across large parts of the Alps with blue sky and cold temperatures the order of the day. Further snow is set to fall in parts of the south-western Alps on Thursday and Friday, but otherwise it is remaining dry. Overall snow depths in the Alps are generally below the annual average, though conditions on piste remain good in many of the French resorts including Tignes & Val Thorens . It is looking fairly healthy in Verbier in Switzerland and at some of the resorts in the Aosta Valley in Italy. The further east one goes the overall conditions deteriorate. Areas like the Dolomites in Italy are once again relying on their excellent snow making capabilities. With the 2025 Milan-Cortina Winter Olympics just a few weeks away it would be good to see some fresh snow. Snow depths are considerably below par in the south-east of Switzerland and one of its ski areas, St Moritz, could do with some more snow. \u201cAfter a couple of low viz and light snow da",
-      "pub_date": "2026-01-20",
-      "id": "a8787ef1163e",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 1,
-      "score": 6,
-      "score_details": {
-        "reason": "Keyword scoring (source: +1)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "winter-sports",
-        "international",
-        "canada"
-      ],
-      "approved_date": "2026-01-21",
-      "rescored": true,
-      "display_score": 10
-    },
-    {
-      "source": "PlanetSKI",
       "title": "PlanetSKI Heads Out with the Glenshee Ski Patrol",
       "url": "https://planetski.eu/2026/01/22/planetski-heads-out-with-the-glenshee-ski-patrol/",
       "description": "What is it like to be rescued by ski patrol? We went downhill in a stretcher to find out. PlanetSKI joins two days of professional ski patrol training in the Scottish Highlands. NEW The post PlanetSKI Heads Out with the Glenshee Ski Patrol appeared first on PlanetSKI .",
@@ -587,6 +583,31 @@
       ],
       "approved_date": "2026-01-22",
       "display_score": 8
+    },
+    {
+      "source": "PlanetSKI",
+      "title": "International Ski Patrollers Day",
+      "url": "https://planetski.eu/2026/02/09/international-ski-patrollers-day/",
+      "description": "Ensuring the slopes are open, safe and fun for everyone, ski patrollers are the unsung heroes of the mountains. Their contribution is marked on Tuesday 10th February. NEW The post International Ski Patrollers Day appeared first on PlanetSKI .",
+      "content": "They work tirelessly to maintain and enhance the ski resort experience from dawn until dusk, throughout the season. \u201cBeing a ski patroller allows me to enjoy the mountains every day throughout the winter whilst contributing to the safety of others,\u201d said Verbier Ski Patroller, Th\u00e9o Besse. \u201cIt combines my passions for the sport, for keeping the mountains safe and working together as a team. \u201cWe go to work every day, no matter the conditions, and though our job is very demanding, it\u2019s also incredibly rewarding.\u201d PlanetSKI spent a day with the Verbier ski patrol in 2024 to see what happens behind the scenes. It is a fascinating read: PlanetSKI spends a full day with the Verbier ski patrol Verbier Piste Patrol. Image \u00a9 PlanetSKI This year we shadowed a course at Glenshee in Scotland: PlanetSKI heads out with the Glenshee ski patrol PlanetSKI with the Glenshee Ski Patrol. Image \u00a9 Julia Clarke/PlanetSKI International Ski Patrollers Day began in 2022 and is organised by Helly Hansen. It has p",
+      "pub_date": "2026-02-09",
+      "id": "6bcda47fd328",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 8,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "safety-incidents",
+      "secondary_categories": [
+        "resort-operations",
+        "international"
+      ],
+      "approved_date": "2026-02-10",
+      "display_score": 6
     }
   ]
 }
