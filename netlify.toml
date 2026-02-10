@@ -24,13 +24,13 @@
   status = 200
 
 [context.production.environment]
-  HUGO_VERSION = "0.139.0"
+  HUGO_VERSION = "0.154.5"
   HUGO_ENV = "production"
   HUGO_ENABLEGITINFO = "true"
 [context.branch-deploy.environment]
-  HUGO_VERSION = "0.139.0"
+  HUGO_VERSION = "0.154.5"
 [context.deploy-preview.environment]
-  HUGO_VERSION = "0.139.0"
+  HUGO_VERSION = "0.154.5"
 
 # Security and performance headers
 [[headers]]

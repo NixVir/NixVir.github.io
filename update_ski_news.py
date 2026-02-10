@@ -243,7 +243,30 @@ MACRO_RELEVANCE_TERMS = {
     # Real estate and development
     'mountain development', 'resort community', 'second home', 'vacation home',
     # Regional economics
-    'mountain town', 'mountain economy', 'resort town', 'tourism revenue'
+    'mountain town', 'mountain economy', 'resort town', 'tourism revenue',
+    # Dashboard economic indicators (macro conditions affecting ski demand)
+    'consumer confidence', 'consumer sentiment', 'consumer spending',
+    'personal savings rate', 'savings rate', 'discretionary spending',
+    'recreation spending', 'leisure spending', 'travel spending',
+    'inflation rate', 'cpi', 'consumer price index', 'cost of living',
+    'unemployment rate', 'job growth', 'jobs report', 'nonfarm payrolls',
+    'wage growth', 'average hourly earnings', 'real wages',
+    'interest rate', 'fed funds rate', 'federal reserve', 'rate cut', 'rate hike',
+    'yield curve', 'treasury yield', 'inverted yield curve', 'recession signal',
+    'gdp growth', 'economic growth', 'economic slowdown', 'recession',
+    'housing starts', 'housing market', 'home prices', 'mortgage rate',
+    # Dashboard commodity/energy indicators
+    'oil price', 'crude oil', 'gasoline price', 'gas prices', 'fuel cost',
+    'natural gas price', 'heating cost', 'energy cost', 'energy prices',
+    'electricity price', 'electricity rates', 'utility costs',
+    # Dashboard market indicators
+    'stock market', 'market downturn', 'market rally', 'bear market', 'bull market',
+    'vix', 'market volatility', 'sp 500', 's&p 500',
+    # Currency/international visitor spending
+    'strong dollar', 'weak dollar', 'exchange rate', 'currency',
+    'canadian dollar', 'euro exchange', 'yen exchange',
+    # Sports betting / prediction markets (dashboard section)
+    'sports betting', 'prediction market', 'sports wagering',
 }
 
 # Geographic terms that activate macro relevance pathway
