@@ -244,7 +244,7 @@
     body.hide-preview [class*="splitPane"] {
       display: block !important;
     }
-    body.hide-preview [class*="SplitPane"] > div:last-child {
+    body.hide-preview [class*="SplitPane"] > div:last-child:not(:first-child) {
       display: none !important;
     }
 
@@ -387,6 +387,26 @@
     [class*="NestedObjectLabel"] {
       background: #111820 !important;
       border-color: #2a3444 !important;
+    }
+
+    /* List widget "Add <item> +" button — ensure visibility */
+    #nc-root [class*="ListControl"] > button,
+    #nc-root [class*="ListControl"] [class*="TopBarButton"],
+    #nc-root button[class*="TopBarButton"] {
+      background: #1a2230 !important;
+      color: #60a5fa !important;
+      border: 1px dashed #3b82f6 !important;
+      padding: 10px 16px !important;
+      border-radius: 5px !important;
+      font-size: 14px !important;
+      cursor: pointer !important;
+      margin-top: 8px !important;
+    }
+    #nc-root [class*="ListControl"] > button:hover,
+    #nc-root [class*="ListControl"] [class*="TopBarButton"]:hover,
+    #nc-root button[class*="TopBarButton"]:hover {
+      background: #2a3444 !important;
+      color: #93c5fd !important;
     }
 
     /* Toggle/boolean widget */
@@ -560,6 +580,24 @@
     }
 
     /* =============================================
+       Logged-in user display (top-right, near identity icon)
+       ============================================= */
+    #nixvir-user-display {
+      position: fixed;
+      top: 0;
+      right: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      font-size: 13px;
+      color: #9ca3b0;
+      z-index: 10000;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    /* =============================================
        Editor page instruction banner
        ============================================= */
     #nixvir-editor-banner {
@@ -693,6 +731,179 @@
     (function() {
       var lastUrl = '';
 
+      // --- Context-sensitive help content ---
+      function getHelpForContext() {
+        var hash = window.location.hash || '';
+        var isManualNews = hash.includes('manual-news');
+        var isWorkflow = hash.includes('/workflow');
+        var isMedia = hash.includes('/media');
+        var isNewPost = hash.includes('/collections/post') && hash.includes('/new');
+        var isEditPost = hash.includes('/collections/post') && hash.includes('/entries/') && !hash.includes('/new');
+        var isPostListing = hash.includes('/collections/post') && !hash.includes('/new') && !hash.includes('/entries/');
+
+        if (isManualNews) {
+          return {
+            title: 'Manual News Stories Help',
+            sections: [
+              { heading: 'Adding a Story', items: [
+                'Click <strong>Add stories +</strong> at the bottom to create a new entry',
+                'Fill in <strong>Title</strong>, <strong>URL</strong>, <strong>Source</strong>, and <strong>Category</strong> at minimum',
+                'Click <strong>Save</strong> in the top bar when done',
+                'The story appears on the Ski News page within a few minutes'
+              ]},
+              { heading: 'Field Guide', items: [
+                '<strong>Story Title</strong> — The headline as it appears in the news feed',
+                '<strong>Story URL</strong> — Full link to the article, podcast, or video',
+                '<strong>Source Name</strong> — Publication or channel (e.g. "Powder Magazine")',
+                '<strong>Category</strong> — Topic area. Use "Podcast / Video" for media content',
+                '<strong>Content Type</strong> — Article, Podcast, or Video. Podcasts/videos show a special icon',
+                '<strong>Description</strong> — Optional 1-2 sentence summary shown below the headline',
+                '<strong>Publication Date</strong> — When the story was originally published. Click "Now" for today',
+                '<strong>Pin to Top</strong> — Forces the story to the top of the feed above automated articles',
+                '<strong>Pin Until</strong> — Optional expiration for pinning. Leave blank to pin indefinitely',
+                '<strong>Active</strong> — Uncheck to hide a story without deleting it'
+              ]},
+              { heading: 'Tips', items: [
+                'Manual entries merge with the automated RSS feed on the Ski News page',
+                'Click the <strong>▶</strong> arrow to expand and edit an existing story',
+                'Click <strong>✕</strong> on a collapsed story to delete it',
+                'Stories publish immediately on Save — no workflow steps needed'
+              ]}
+            ]
+          };
+        }
+
+        if (isWorkflow) {
+          return {
+            title: 'Editorial Workflow Help',
+            sections: [
+              { heading: 'How It Works', items: [
+                'This board tracks <strong>Data Insight blog posts</strong> through the publishing process',
+                'Manual news stories do not appear here — they publish immediately',
+                'Drag posts between columns or change status in the editor dropdown'
+              ]},
+              { heading: 'Columns', items: [
+                '<strong>Drafts</strong> — Work in progress. Created when you first Save a post',
+                '<strong>In Review</strong> — Ready for a second look before publishing',
+                '<strong>Ready</strong> — Approved to go live. Click the post and hit Publish'
+              ]},
+              { heading: 'Tips', items: [
+                'Click a post card to open it in the editor',
+                'Use the status dropdown at the top of the editor to change status',
+                'Publishing merges changes into the live site automatically'
+              ]}
+            ]
+          };
+        }
+
+        if (isMedia) {
+          return {
+            title: 'Media Library Help',
+            sections: [
+              { heading: 'About', items: [
+                'This page shows all images stored on the site',
+                'Images are used in <strong>Data Insight blog posts</strong>',
+                'This page is not needed for manual news stories'
+              ]},
+              { heading: 'Uploading Images', items: [
+                'Drag and drop a file onto this page, or click the Upload button',
+                'You can also upload images directly from the blog post editor using the <strong>+</strong> button'
+              ]},
+              { heading: 'Warning', items: [
+                '<strong style="color:#f87171;">Do not delete images</strong> unless you are certain nothing on the site references them',
+                'Site logos, icons, banner images, and post images all live here'
+              ]}
+            ]
+          };
+        }
+
+        if (isNewPost) {
+          return {
+            title: 'Create a New Data Insight',
+            sections: [
+              { heading: 'Steps', items: [
+                'Fill in <strong>Title</strong>, <strong>Publish Date</strong>, and <strong>Body</strong> (required)',
+                'Other fields (slug, categories, tags, description, image) are optional',
+                'Scroll down to the <strong>Body</strong> field to write your content',
+                'Click <strong>Save</strong> in the top bar — this creates a draft',
+                'Change status to <strong>Ready</strong> and click <strong>Publish</strong> to go live'
+              ]},
+              { heading: 'Field Guide', items: [
+                '<strong>Title</strong> — The headline readers see. Required',
+                '<strong>Publish Date</strong> — When the post appears dated. Click "Now" for today',
+                '<strong>URL Slug</strong> — The URL path. Leave blank to auto-generate. Example: <code>winter-outlook-2026</code>',
+                '<strong>Categories</strong> — Topic grouping. Usually just one. Common: <code>ski-industry</code>, <code>economics</code>, <code>climate</code>',
+                '<strong>Tags</strong> — Optional finer keywords. Can leave empty',
+                '<strong>Description</strong> — SEO summary. Auto-generated if blank',
+                '<strong>Featured Image</strong> — Banner image. Optional',
+                '<strong>Body</strong> — The main content. Use the toolbar for formatting'
+              ]},
+              { heading: 'Tips', items: [
+                'Toggle between rich text and raw Markdown in the Body editor',
+                'Posts appear at <code>nixvir.com/post/your-slug/</code>'
+              ]}
+            ]
+          };
+        }
+
+        if (isEditPost) {
+          return {
+            title: 'Edit Data Insight',
+            sections: [
+              { heading: 'Editing', items: [
+                'Make your changes in the fields below',
+                'Click <strong>Save</strong> in the top bar when done',
+                'Changes are saved as a draft (Git branch) until you publish'
+              ]},
+              { heading: 'Publishing', items: [
+                'Change status to <strong>Ready</strong> using the dropdown at top',
+                'Click <strong>Publish</strong> to merge changes into the live site',
+                'The <strong>Workflow</strong> tab shows all posts by status'
+              ]},
+              { heading: 'Tips', items: [
+                'Toggle between rich text and raw Markdown in the Body editor',
+                'Use the <strong>+</strong> button in the Body toolbar to insert images'
+              ]}
+            ]
+          };
+        }
+
+        // Default: Data Insights listing or home
+        return {
+          title: 'Data Insights Help',
+          sections: [
+            { heading: 'Getting Started', items: [
+              'Click <strong>Add New Data Insight</strong> to create a blog post',
+              'Click any post title in the list below to edit it',
+              'Posts go through a workflow: <strong>Draft → In Review → Ready → Published</strong>'
+            ]},
+            { heading: 'Other Sections', items: [
+              '<strong>Ski News — Manual Stories</strong> (sidebar) — Add articles, podcasts, or videos to the Ski News feed',
+              '<strong>Workflow</strong> (top nav) — Track blog posts through the publishing pipeline',
+              '<strong>Media</strong> (top nav) — Manage images used in blog posts'
+            ]},
+            { heading: 'Tips', items: [
+              'Posts appear at <code>nixvir.com/post/your-slug/</code>',
+              'The Data Insights page at <code>nixvir.com/post/</code> lists all published posts',
+              'Bookmark <code>nixvir.com/admin/</code> to return here anytime'
+            ]}
+          ]
+        };
+      }
+
+      function updateHelpContent() {
+        var el = document.getElementById('nixvir-help-content');
+        if (!el) return;
+        var ctx = getHelpForContext();
+        var html = '<h3>' + ctx.title + '</h3>';
+        ctx.sections.forEach(function(sec) {
+          html += '<div class="help-section"><h4>' + sec.heading + '</h4><ul>';
+          sec.items.forEach(function(item) { html += '<li>' + item + '</li>'; });
+          html += '</ul></div>';
+        });
+        el.innerHTML = html;
+      }
+
       function injectNixvirUI() {
         // --- Logo (once) ---
         if (!document.getElementById('nixvir-logo')) {
@@ -711,84 +922,7 @@
           helpPanel.id = 'nixvir-help-panel';
           helpPanel.innerHTML =
             '<button id="nixvir-help-toggle" title="Help &amp; Instructions">?</button>' +
-            '<div id="nixvir-help-content">' +
-              '<h3>NixVir Content Manager Help</h3>' +
-
-              '<div class="help-section">' +
-                '<h4>Creating a Post</h4>' +
-                '<ul>' +
-                  '<li>Click <strong>Add New Data Insight</strong> to create a post</li>' +
-                  '<li>Fill in the <strong>Title</strong> — this is the headline readers see</li>' +
-                  '<li>Set the <strong>Publish Date</strong> (click "Now" for today)</li>' +
-                  '<li>Write your content in the <strong>Body</strong> field at the bottom</li>' +
-                  '<li>Click <strong>Save</strong> in the top bar when done — this creates a draft</li>' +
-                '</ul>' +
-              '</div>' +
-
-              '<div class="help-section">' +
-                '<h4>Publishing Workflow</h4>' +
-                '<ul>' +
-                  '<li><strong>Draft</strong> → <strong>In Review</strong> → <strong>Ready</strong> → <strong>Published</strong></li>' +
-                  '<li>New posts start as drafts. Change status using the dropdown at the top of the editor.</li>' +
-                  '<li>Set to <strong>Ready</strong> then <strong>Publish</strong> to make it live</li>' +
-                  '<li>The <strong>Workflow</strong> tab in the top nav shows posts by status</li>' +
-                '</ul>' +
-              '</div>' +
-
-              '<div class="help-section">' +
-                '<h4>Field Guide</h4>' +
-                '<ul>' +
-                  '<li><strong>Title</strong> — The headline. Required.</li>' +
-                  '<li><strong>Publish Date</strong> — When the post appears dated. Click "Now" for today.</li>' +
-                  '<li><strong>URL Slug</strong> — The URL path. Leave blank to auto-generate. Example: <code>winter-outlook-2026</code></li>' +
-                  '<li><strong>Categories</strong> — Topic grouping. Usually just one. Common: <code>ski-industry</code>, <code>economics</code>, <code>climate</code></li>' +
-                  '<li><strong>Tags</strong> — Optional finer keywords. Can leave empty.</li>' +
-                  '<li><strong>Description</strong> — SEO summary. Optional — auto-generated if blank.</li>' +
-                  '<li><strong>Featured Image</strong> — Banner image. Optional.</li>' +
-                  '<li><strong>Body</strong> — The main content. Use the toolbar for formatting.</li>' +
-                '</ul>' +
-              '</div>' +
-
-              '<div class="help-section">' +
-                '<h4>Editing Existing Posts</h4>' +
-                '<ul>' +
-                  '<li>Click any post title in the list to edit it</li>' +
-                  '<li>Changes are saved as a Git branch (pull request)</li>' +
-                  '<li>Publish merges the changes into the live site</li>' +
-                '</ul>' +
-              '</div>' +
-
-              '<div class="help-section">' +
-                '<h4>Images &amp; Media</h4>' +
-                '<ul>' +
-                  '<li>Use the <strong>Media</strong> tab in the top nav to manage images</li>' +
-                  '<li>In the Body editor, click the <strong>+</strong> button to insert images</li>' +
-                  '<li>Images are stored in <code>/images/</code> on the site</li>' +
-                '</ul>' +
-              '</div>' +
-
-              '<div class="help-section">' +
-                '<h4>Manual News Stories</h4>' +
-                '<ul>' +
-                  '<li>Click <strong>Ski News — Manual Stories</strong> in the sidebar to add articles, podcasts, or videos to the news feed</li>' +
-                  '<li>Manual entries merge with the automated RSS feed on the Ski News page</li>' +
-                  '<li><strong>Pin to Top</strong> keeps a story at the top regardless of date</li>' +
-                  '<li>Set <strong>Active</strong> to false to hide without deleting</li>' +
-                  '<li>Use <strong>Podcast / Video</strong> category for audio/video content</li>' +
-                '</ul>' +
-              '</div>' +
-
-              '<div class="help-section">' +
-                '<h4>Tips</h4>' +
-                '<ul>' +
-                  '<li>Posts appear at <code>nixvir.com/post/your-slug/</code></li>' +
-                  '<li>The Data Insights page at <code>nixvir.com/post/</code> lists all posts</li>' +
-                  '<li>Toggle between rich text and raw Markdown in the Body editor</li>' +
-                  '<li>Bookmark <code>nixvir.com/admin/</code> to return here anytime</li>' +
-                '</ul>' +
-              '</div>' +
-
-            '</div>';
+            '<div id="nixvir-help-content"></div>';
 
           document.body.appendChild(helpPanel);
 
@@ -796,6 +930,7 @@
             var content = document.getElementById('nixvir-help-content');
             content.classList.toggle('open');
             this.textContent = content.classList.contains('open') ? '\u2715' : '?';
+            if (content.classList.contains('open')) updateHelpContent();
           });
 
           document.addEventListener('keydown', function(e) {
@@ -807,6 +942,24 @@
               }
             }
           });
+        }
+
+        // Update help content if panel is open (route may have changed)
+        var helpContent = document.getElementById('nixvir-help-content');
+        if (helpContent && helpContent.classList.contains('open')) updateHelpContent();
+
+        // --- Show logged-in user name near identity widget ---
+        if (!document.getElementById('nixvir-user-display') && window.netlifyIdentity) {
+          var user = window.netlifyIdentity.currentUser();
+          if (user) {
+            var name = (user.user_metadata && user.user_metadata.full_name) || user.email || '';
+            if (name) {
+              var userDisplay = document.createElement('div');
+              userDisplay.id = 'nixvir-user-display';
+              userDisplay.textContent = name;
+              document.body.appendChild(userDisplay);
+            }
+          }
         }
 
         // --- Rename "New Data Insights" button to "Add New Data Insight" ---
@@ -882,6 +1035,30 @@
                 if ((r + g + b) / 3 > 180) {
                   el.style.setProperty('background-color', '#111820', 'important');
                 }
+              }
+            }
+          }
+        }
+
+        // --- Ensure list widget "Add" buttons are visible on manual news page ---
+        if (window.location.hash.includes('manual-news') && window.location.hash.includes('/entries/')) {
+          var ncRoot2 = document.getElementById('nc-root');
+          if (ncRoot2) {
+            // Find all buttons and look for the "Add stories" text
+            var allButtons = ncRoot2.querySelectorAll('button');
+            for (var b = 0; b < allButtons.length; b++) {
+              var btnText = allButtons[b].textContent.trim().toLowerCase();
+              if (btnText.includes('add') && (btnText.includes('stories') || btnText.includes('story'))) {
+                allButtons[b].style.setProperty('background', '#1a2230', 'important');
+                allButtons[b].style.setProperty('color', '#60a5fa', 'important');
+                allButtons[b].style.setProperty('border', '1px dashed #3b82f6', 'important');
+                allButtons[b].style.setProperty('padding', '12px 20px', 'important');
+                allButtons[b].style.setProperty('border-radius', '5px', 'important');
+                allButtons[b].style.setProperty('font-size', '14px', 'important');
+                allButtons[b].style.setProperty('font-weight', '600', 'important');
+                allButtons[b].style.setProperty('display', 'block', 'important');
+                allButtons[b].style.setProperty('visibility', 'visible', 'important');
+                allButtons[b].style.setProperty('opacity', '1', 'important');
               }
             }
           }
