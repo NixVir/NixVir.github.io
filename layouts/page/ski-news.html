@@ -352,22 +352,31 @@ async function loadSkiNews() {
       try {
         const manualData = await manualResponse.json();
         if (manualData.stories && manualData.stories.length > 0) {
+          const now = new Date();
           const manualArticles = manualData.stories
             .filter(s => s.active !== false)
-            .map(s => ({
-              source: s.source || 'Manual',
-              title: s.title,
-              url: s.url,
-              description: s.description || '',
-              content: s.description || '',
-              pub_date: s.pub_date,
-              id: 'manual-' + (s.url || '').replace(/\W/g, '').slice(-12),
-              score: 100,
-              category: s.category || 'resort-operations',
-              content_type: s.content_type || 'article',
-              is_manual: true,
-              is_pinned: s.pinned || false
-            }));
+            .map(s => {
+              // Check pin expiration: pinned=true but pin_until has passed → no longer pinned
+              let pinned = s.pinned || false;
+              if (pinned && s.pin_until) {
+                const expiry = new Date(s.pin_until + 'T23:59:59');
+                if (now > expiry) pinned = false;
+              }
+              return {
+                source: s.source || 'Manual',
+                title: s.title,
+                url: s.url,
+                description: s.description || '',
+                content: s.description || '',
+                pub_date: s.pub_date,
+                id: 'manual-' + (s.url || '').replace(/\W/g, '').slice(-12),
+                score: 100,
+                category: s.category || 'resort-operations',
+                content_type: s.content_type || 'article',
+                is_manual: true,
+                is_pinned: pinned
+              };
+            });
           data.articles = [...manualArticles, ...(data.articles || [])];
         }
       } catch (e) {
