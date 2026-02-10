@@ -274,6 +274,121 @@
       border-color: #2a3444;
     }
 
+    /* =============================================
+       Deep dark theme overrides for editor content
+       Catches list widgets, nested object fields,
+       and any remaining white panels
+       ============================================= */
+
+    /* All generated Emotion/CSS-in-JS class containers */
+    div[class^="css-"],
+    section[class^="css-"],
+    span[class^="css-"] {
+      background-color: inherit;
+    }
+
+    /* Editor wrapper and scrollable content area */
+    [class*="EditorInterface"],
+    [class*="editorInterface"],
+    [class*="EditorContainer"],
+    [class*="editorContainer"],
+    [class*="EditorContent"],
+    [class*="editorContent"],
+    [class*="ControlPaneContainer"],
+    [class*="controlPaneContainer"],
+    [class*="ScrollArea"],
+    [class*="scrollArea"] {
+      background: #0a0e14 !important;
+    }
+
+    /* List widget: outer wrapper, top bar, items */
+    [class*="ListControl"],
+    [class*="listControl"],
+    [class*="ObjectWidgetTopBar"],
+    [class*="objectWidgetTopBar"],
+    [class*="TopBar"],
+    [class*="ListItem"],
+    [class*="listItem"],
+    [class*="NestedObjectLabel"],
+    [class*="nestedObjectLabel"],
+    [class*="ObjectControl"],
+    [class*="objectControl"] {
+      background: #111820 !important;
+      border-color: #2a3444 !important;
+      color: #e8ecf2 !important;
+    }
+
+    /* List widget expand/collapse header row */
+    [class*="TopBar"] button,
+    [class*="TopBar"] span,
+    [class*="ListItem"] button,
+    [class*="ListItem"] span,
+    [class*="ObjectWidgetTopBar"] button,
+    [class*="ObjectWidgetTopBar"] span {
+      color: #e8ecf2 !important;
+    }
+
+    /* "Add <item>" button inside list widgets */
+    [class*="ListControl"] button,
+    [class*="listControl"] button {
+      background: #1a2230 !important;
+      color: #60a5fa !important;
+      border-color: #2a3444 !important;
+    }
+    [class*="ListControl"] button:hover,
+    [class*="listControl"] button:hover {
+      background: #2a3444 !important;
+      color: #93bbfd !important;
+    }
+
+    /* Field groups inside expanded list items */
+    [class*="FieldGroup"],
+    [class*="fieldGroup"],
+    [class*="Widget"],
+    [class*="widget-"] {
+      background: transparent !important;
+    }
+
+    /* Catch-all: any remaining direct white backgrounds in the editor */
+    [class*="EditorControlPane"] > div,
+    [class*="ControlPane"] > div,
+    [class*="Content"] > div > div {
+      background: transparent !important;
+    }
+
+    /* Select widget dropdown styling */
+    [class*="SelectWidget"],
+    [class*="selectWidget"] {
+      background: #1a2230 !important;
+      color: #e8ecf2 !important;
+    }
+
+    /* Timestamp / datetime widget */
+    [class*="DateTimeWidget"],
+    [class*="dateTimeWidget"],
+    [class*="DateTimeControl"],
+    [class*="dateTimeControl"] {
+      background: #1a2230 !important;
+    }
+    [class*="DateTimeControl"] button {
+      background: #2a3444 !important;
+      color: #e8ecf2 !important;
+      border-color: #2a3444 !important;
+    }
+    [class*="DateTimeControl"] button:hover {
+      background: #3a4454 !important;
+    }
+
+    /* Boolean/toggle widget background */
+    [class*="ToggleBackground"],
+    [class*="toggleBackground"] {
+      background: #2a3444 !important;
+    }
+    [class*="ToggleBackground"][class*="active"],
+    input:checked + [class*="ToggleBackground"] {
+      background: #3b82f6 !important;
+    }
+
     /* Sort controls */
     [class*="SortControl"],
     [class*="ViewStyle"],
