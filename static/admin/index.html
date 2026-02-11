@@ -247,17 +247,63 @@
       color: #e8ecf2 !important;
     }
 
-    /* Dropdown menus */
+    /* Dropdown menus (including React-Select used by select widget) */
     [class*="Dropdown"],
     [class*="dropdown"],
     [class*="Menu"],
+    [class*="menu"],
     ul[role="listbox"] {
       background: #1a2230 !important;
       border-color: #2a3444 !important;
     }
+    [class*="DropdownItem"],
+    [class*="option"],
+    [class*="Option"],
+    li[role="option"],
+    div[role="option"] {
+      background: #1a2230 !important;
+      color: #e8ecf2 !important;
+    }
     [class*="DropdownItem"]:hover,
-    li[role="option"]:hover {
+    [class*="option"]:hover,
+    [class*="Option"]:hover,
+    li[role="option"]:hover,
+    div[role="option"]:hover {
       background: #2a3444 !important;
+      color: #ffffff !important;
+    }
+    /* React-Select: focused/selected option */
+    [class*="option"][class*="focused"],
+    [class*="option"][class*="Focused"],
+    [class*="Option"][class*="focused"],
+    [class*="Option"][class*="Focused"] {
+      background: #2a3444 !important;
+      color: #ffffff !important;
+    }
+    [class*="option"][class*="selected"],
+    [class*="option"][class*="Selected"],
+    [class*="Option"][class*="selected"],
+    [class*="Option"][class*="Selected"] {
+      background: #3b82f6 !important;
+      color: #ffffff !important;
+    }
+    /* React-Select: single value display and placeholder */
+    [class*="singleValue"],
+    [class*="SingleValue"] {
+      color: #e8ecf2 !important;
+    }
+    [class*="placeholder"],
+    [class*="Placeholder"] {
+      color: #6b7280 !important;
+    }
+    /* React-Select: control (the select box itself) */
+    [class*="control"],
+    [class*="Control"] {
+      background: #1a2230 !important;
+      border-color: #2a3444 !important;
+    }
+    [class*="indicatorSeparator"] {
+      background-color: #2a3444 !important;
     }
 
     /* Status indicators */
