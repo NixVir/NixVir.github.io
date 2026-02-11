@@ -93,3 +93,9 @@ enableRobotsTXT = true
   name = "Contact"
   url = "/contact/"
   weight = 60
+
+# JSON output format for manual news API endpoint
+[outputFormats.JSON]
+  mediaType = "application/json"
+  baseName = "index"
+  isPlainText = true

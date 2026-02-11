@@ -86,102 +86,101 @@ collections:
 
   # -----------------------------------------------
   # Manual News Stories (injected into Ski News feed)
+  # Each story is an individual file in content/manual-news/
+  # Hugo generates /manual-news/index.json at build time
   # -----------------------------------------------
   - name: "manual-news"
     label: "Ski News — Manual Stories"
-    publish: false
-    description: "Manually add articles, podcasts, or videos to the Ski Industry News feed. These entries are merged with the automated RSS feed and appear on the Ski News page. Fill in the URL, title, and category at minimum."
-    files:
-      - name: "manual-news-file"
-        label: "Manual News Entries"
-        file: "static/data/ski-news-manual.json"
-        fields:
-          - label: "Last Updated"
-            name: "last_updated"
-            widget: "hidden"
-            default: ""
-          - label: "Stories"
-            name: "stories"
-            widget: "list"
-            hint: "Each entry becomes a story on the Ski News page. Click ▶ to expand and edit a story, ✕ to delete it, or 'Add stories +' to create a new one. To hide a story without deleting it, expand it and uncheck 'Active'."
-            summary: "{{fields.title}}  ·  {{fields.category}}  ·  {{fields.pub_date}}"
-            collapsed: true
-            fields:
-              - label: "Story Title"
-                name: "title"
-                widget: "string"
-                hint: "The headline as it will appear in the news feed."
+    folder: "content/manual-news"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
+    filter: { field: "title", pattern: "^(?!Manual News Stories$)" }
+    description: "Manually add articles, podcasts, or videos to the Ski Industry News feed. Each story is its own entry. Click a title to edit, or click 'New' to add one."
+    summary: "{{title}}  ·  {{category}}  ·  {{pub_date}}"
+    sortable_fields: ["pub_date", "title", "category"]
+    fields:
+      - label: "Story Title"
+        name: "title"
+        widget: "string"
+        hint: "The headline as it will appear in the news feed."
 
-              - label: "Story URL"
-                name: "url"
-                widget: "string"
-                hint: "Full URL to the article, podcast episode, or video (e.g. https://example.com/article)."
+      - label: "Story URL"
+        name: "story_url"
+        widget: "string"
+        hint: "Full URL to the article, podcast episode, or video (e.g. https://example.com/article)."
 
-              - label: "Source Name"
-                name: "source"
-                widget: "string"
-                hint: "Publication or channel name (e.g. 'Storm Skiing Podcast', 'New York Times', 'Powder Magazine')."
+      - label: "Source Name"
+        name: "source"
+        widget: "string"
+        hint: "Publication or channel name (e.g. 'Storm Skiing Podcast', 'New York Times', 'Powder Magazine')."
 
-              - label: "Category"
-                name: "category"
-                widget: "select"
-                options:
-                  - { label: "Business & Investment", value: "business-investment" }
-                  - { label: "Resort Operations", value: "resort-operations" }
-                  - { label: "Weather & Snow", value: "weather-snow" }
-                  - { label: "Transportation", value: "transportation" }
-                  - { label: "Winter Sports", value: "winter-sports" }
-                  - { label: "Hospitality", value: "hospitality" }
-                  - { label: "Canada", value: "canada" }
-                  - { label: "International", value: "international" }
-                  - { label: "Ski History", value: "ski-history" }
-                  - { label: "Safety & Incidents", value: "safety-incidents" }
-                  - { label: "Podcast / Video", value: "media" }
-                hint: "Choose the most relevant category. Use 'Podcast / Video' for audio/video content."
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Business & Investment", value: "business-investment" }
+          - { label: "Resort Operations", value: "resort-operations" }
+          - { label: "Weather & Snow", value: "weather-snow" }
+          - { label: "Transportation", value: "transportation" }
+          - { label: "Winter Sports", value: "winter-sports" }
+          - { label: "Hospitality", value: "hospitality" }
+          - { label: "Canada", value: "canada" }
+          - { label: "International", value: "international" }
+          - { label: "Ski History", value: "ski-history" }
+          - { label: "Safety & Incidents", value: "safety-incidents" }
+          - { label: "Podcast / Video", value: "media" }
+        hint: "Choose the most relevant category. Use 'Podcast / Video' for audio/video content."
 
-              - label: "Content Type"
-                name: "content_type"
-                widget: "select"
-                default: "article"
-                options:
-                  - { label: "Article", value: "article" }
-                  - { label: "Podcast", value: "podcast" }
-                  - { label: "Video", value: "video" }
-                hint: "Select the type of content. Podcasts and videos display with a special icon."
+      - label: "Content Type"
+        name: "content_type"
+        widget: "select"
+        default: "article"
+        options:
+          - { label: "Article", value: "article" }
+          - { label: "Podcast", value: "podcast" }
+          - { label: "Video", value: "video" }
+        hint: "Select the type of content. Podcasts and videos display with a special icon."
 
-              - label: "Description"
-                name: "description"
-                widget: "text"
-                required: false
-                hint: "A short summary or excerpt (1-2 sentences). Shown below the headline in the news feed."
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        required: false
+        hint: "A short summary or excerpt (1-2 sentences). Shown below the headline in the news feed."
 
-              - label: "Publication Date"
-                name: "pub_date"
-                widget: "datetime"
-                format: "YYYY-MM-DD"
-                date_format: "YYYY-MM-DD"
-                time_format: false
-                hint: "When the story was originally published. Click 'Now' for today."
+      - label: "Publication Date"
+        name: "pub_date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        hint: "When the story was originally published. Click 'Now' for today."
 
-              - label: "Pin to Top"
-                name: "pinned"
-                widget: "boolean"
-                default: false
-                required: false
-                hint: "Pinned stories always appear at the top of the news feed, above automated articles."
+      - label: "Pin to Top"
+        name: "pinned"
+        widget: "boolean"
+        default: false
+        required: false
+        hint: "Pinned stories always appear at the top of the news feed, above automated articles."
 
-              - label: "Pin Until"
-                name: "pin_until"
-                widget: "datetime"
-                format: "YYYY-MM-DD"
-                date_format: "YYYY-MM-DD"
-                time_format: false
-                required: false
-                hint: "Optional expiration date for pinning. After this date the story stays in the feed but is no longer forced to the top. Leave blank to pin indefinitely."
+      - label: "Pin Until"
+        name: "pin_until"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        required: false
+        hint: "Optional expiration date for pinning. After this date the story stays in the feed but is no longer forced to the top. Leave blank to pin indefinitely."
 
-              - label: "Active"
-                name: "active"
-                widget: "boolean"
-                default: true
-                required: false
-                hint: "Uncheck to hide this story from the feed without deleting it."
+      - label: "Active"
+        name: "active"
+        widget: "boolean"
+        default: true
+        required: false
+        hint: "Uncheck to hide this story from the feed without deleting it."
+
+      - label: "Body"
+        name: "body"
+        widget: "hidden"
+        default: ""

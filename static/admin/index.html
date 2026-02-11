@@ -773,10 +773,10 @@
             title: 'Manual News Stories Help',
             sections: [
               { heading: 'Adding a Story', items: [
-                'Click <strong>Add stories +</strong> at the bottom to create a new entry',
-                'Fill in <strong>Title</strong>, <strong>URL</strong>, <strong>Source</strong>, and <strong>Category</strong> at minimum',
-                'Click <strong>Save</strong> in the top bar when done',
-                'The story appears on the Ski News page within a few minutes'
+                'Click <strong>New Ski News — Manual Stories</strong> at the top to create a new entry',
+                'Fill in <strong>Title</strong>, <strong>Story URL</strong>, <strong>Source</strong>, and <strong>Category</strong> at minimum',
+                'Click <strong>Save</strong> in the top bar, then set status to Ready and Publish',
+                'The story appears on the Ski News page after the site rebuilds (a few minutes)'
               ]},
               { heading: 'Field Guide', items: [
                 '<strong>Story Title</strong> — The headline as it appears in the news feed',
@@ -792,9 +792,9 @@
               ]},
               { heading: 'Tips', items: [
                 'Manual entries merge with the automated RSS feed on the Ski News page',
-                'Click the <strong>▶</strong> arrow to expand and edit an existing story',
-                'Click <strong>✕</strong> on a collapsed story to delete it',
-                'Stories publish immediately on Save — no workflow steps needed'
+                'Click any story title in the list to edit it',
+                'Each story goes through the same workflow as blog posts: Draft → Ready → Publish',
+                'Published stories appear on the site after the next build (a few minutes)'
               ]}
             ]
           };
@@ -1047,29 +1047,6 @@
           }
         });
 
-        // --- Inject "Add New Story" button on Manual Stories collection listing ---
-        var isManualNewsListing = window.location.hash.includes('/collections/manual-news') &&
-                                  !window.location.hash.includes('/entries/');
-        var addStoryBtn = document.getElementById('nixvir-add-story-btn');
-        if (isManualNewsListing && !addStoryBtn) {
-          // Find the collection header area (where "Add New Data Insight" would appear)
-          var collectionTop = document.querySelector('[class*="CollectionTop"], [class*="ViewHeader"]');
-          if (collectionTop) {
-            var btn = document.createElement('a');
-            btn.id = 'nixvir-add-story-btn';
-            btn.href = '#/collections/manual-news/entries/manual-news-file';
-            btn.textContent = 'Add / Edit Stories';
-            btn.style.cssText = 'display:inline-block; background:#3b82f6; color:#fff !important; ' +
-              'padding:10px 20px; border-radius:5px; text-decoration:none; font-weight:600; ' +
-              'font-size:14px; cursor:pointer; float:right; margin-top:-40px;';
-            btn.addEventListener('mouseenter', function() { this.style.background = '#2563eb'; });
-            btn.addEventListener('mouseleave', function() { this.style.background = '#3b82f6'; });
-            collectionTop.appendChild(btn);
-          }
-        } else if (!isManualNewsListing && addStoryBtn) {
-          addStoryBtn.remove();
-        }
-
         // --- Runtime dark theme enforcement ---
         // Emotion injects styles AFTER page load, overriding our CSS.
         // This finds any element with a light background and forces it dark.
@@ -1086,30 +1063,6 @@
                 if ((r + g + b) / 3 > 180) {
                   el.style.setProperty('background-color', '#111820', 'important');
                 }
-              }
-            }
-          }
-        }
-
-        // --- Ensure list widget "Add" buttons are visible on manual news page ---
-        if (window.location.hash.includes('manual-news') && window.location.hash.includes('/entries/')) {
-          var ncRoot2 = document.getElementById('nc-root');
-          if (ncRoot2) {
-            // Find all buttons and look for the "Add stories" text
-            var allButtons = ncRoot2.querySelectorAll('button');
-            for (var b = 0; b < allButtons.length; b++) {
-              var btnText = allButtons[b].textContent.trim().toLowerCase();
-              if (btnText.includes('add') && (btnText.includes('stories') || btnText.includes('story'))) {
-                allButtons[b].style.setProperty('background', '#1a2230', 'important');
-                allButtons[b].style.setProperty('color', '#60a5fa', 'important');
-                allButtons[b].style.setProperty('border', '1px dashed #3b82f6', 'important');
-                allButtons[b].style.setProperty('padding', '12px 20px', 'important');
-                allButtons[b].style.setProperty('border-radius', '5px', 'important');
-                allButtons[b].style.setProperty('font-size', '14px', 'important');
-                allButtons[b].style.setProperty('font-weight', '600', 'important');
-                allButtons[b].style.setProperty('display', 'block', 'important');
-                allButtons[b].style.setProperty('visibility', 'visible', 'important');
-                allButtons[b].style.setProperty('opacity', '1', 'important');
               }
             }
           }
@@ -1138,16 +1091,25 @@
             var isNew = window.location.hash.includes('/new');
             var title, instructions, stepsHtml;
 
-            if (isNews) {
+            if (isNews && isNew) {
               title = 'Add a Story to the News Feed';
-              instructions = 'Click <strong>"Add stories +"</strong> below to add a new entry. ' +
-                'Fill in the Title, URL, Source, and Category at minimum. ' +
-                'When finished, click <strong>Save</strong> in the top bar — ' +
-                'the story will go live on the Ski News page within a few minutes.';
+              instructions = 'Fill in the Title, Story URL, Source, and Category at minimum. ' +
+                'When finished, click <strong>Save</strong> in the top bar, set status to <strong>Ready</strong>, ' +
+                'and click <strong>Publish</strong>. The story will go live on the Ski News page within a few minutes.';
               stepsHtml =
-                '<div class="banner-step"><span class="step-num">1</span> Click "Add stories +"</div>' +
-                '<div class="banner-step"><span class="step-num">2</span> Fill in the fields</div>' +
-                '<div class="banner-step"><span class="step-num">3</span> Click Save (top bar)</div>';
+                '<div class="banner-step"><span class="step-num">1</span> Fill in the fields</div>' +
+                '<div class="banner-step"><span class="step-num">2</span> Click Save (top bar)</div>' +
+                '<div class="banner-step"><span class="step-num">3</span> Set status to Ready</div>' +
+                '<div class="banner-step"><span class="step-num">4</span> Click Publish</div>';
+            } else if (isNews) {
+              title = 'Edit News Story';
+              instructions = 'Make your changes below. When finished, click Save in the top bar. ' +
+                'Your changes will be saved as a draft until you publish them.';
+              stepsHtml =
+                '<div class="banner-step"><span class="step-num">1</span> Edit the fields</div>' +
+                '<div class="banner-step"><span class="step-num">2</span> Click Save (top bar)</div>' +
+                '<div class="banner-step"><span class="step-num">3</span> Set status to Ready</div>' +
+                '<div class="banner-step"><span class="step-num">4</span> Click Publish</div>';
             } else if (isNew) {
               title = 'Create a New Data Insight';
               instructions = 'Fill in the fields below to create a new blog post. Only Title, Date, and Body are required — ' +

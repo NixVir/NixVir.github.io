@@ -1,0 +1,17 @@
+{{- $stories := slice -}}
+{{- range .Pages -}}
+  {{- $story := dict
+    "title" .Title
+    "url" .Params.story_url
+    "source" (.Params.source | default "Manual")
+    "category" (.Params.category | default "resort-operations")
+    "content_type" (.Params.content_type | default "article")
+    "description" (.Params.description | default "")
+    "pub_date" (.Params.pub_date | default "")
+    "pinned" (.Params.pinned | default false)
+    "pin_until" (.Params.pin_until | default "")
+    "active" (.Params.active | default true)
+  -}}
+  {{- $stories = $stories | append $story -}}
+{{- end -}}
+{{- dict "stories" $stories | jsonify (dict "indent" "  ") -}}

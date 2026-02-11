@@ -343,7 +343,7 @@ async function loadSkiNews() {
     // Fetch automated feed and manual entries in parallel
     const [autoResponse, manualResponse] = await Promise.all([
       fetch('/data/ski-news.json'),
-      fetch('/data/ski-news-manual.json').catch(() => null)
+      fetch('/manual-news/index.json').catch(() => null)
     ]);
     const data = await autoResponse.json();
 
