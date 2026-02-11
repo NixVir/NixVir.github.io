@@ -89,6 +89,7 @@ collections:
   # -----------------------------------------------
   - name: "manual-news"
     label: "Ski News — Manual Stories"
+    publish: false
     description: "Manually add articles, podcasts, or videos to the Ski Industry News feed. These entries are merged with the automated RSS feed and appear on the Ski News page. Fill in the URL, title, and category at minimum."
     files:
       - name: "manual-news-file"
