@@ -240,39 +240,11 @@
       border-right-color: #2a3444 !important;
     }
 
-    /* Preview pane - hidden on file-based collections (manual news) */
+    /* Preview pane */
     [class*="PreviewPane"],
     [class*="preview"] {
       background: #0a0e14 !important;
       color: #e8ecf2 !important;
-    }
-    /* When .hide-preview is on the body, hide the preview pane
-       and let the editor take full width */
-    body.hide-preview [class*="PreviewPane"],
-    body.hide-preview [class*="preview-pane"],
-    body.hide-preview [class*="PreviewPaneFrame"] {
-      display: none !important;
-    }
-    body.hide-preview [class*="ControlPane"],
-    body.hide-preview [class*="controlPane"],
-    body.hide-preview [class*="EditorControlPane"],
-    body.hide-preview [class*="editorControlPane"] {
-      width: 100% !important;
-      max-width: 900px !important;
-      margin: 0 auto !important;
-    }
-    /* Also hide the split-pane resizer/divider */
-    body.hide-preview [class*="SplitPane"] > [class*="Resizer"],
-    body.hide-preview [class*="splitpane"] > [class*="resizer"] {
-      display: none !important;
-    }
-    /* Force the split pane container to single-column */
-    body.hide-preview [class*="SplitPane"],
-    body.hide-preview [class*="splitPane"] {
-      display: block !important;
-    }
-    body.hide-preview [class*="SplitPane"] > div:last-child:not(:first-child) {
-      display: none !important;
     }
 
     /* Dropdown menus */
