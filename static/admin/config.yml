@@ -95,6 +95,10 @@ collections:
         label: "Manual News Entries"
         file: "static/data/ski-news-manual.json"
         fields:
+          - label: "Last Updated"
+            name: "last_updated"
+            widget: "hidden"
+            default: ""
           - label: "Stories"
             name: "stories"
             widget: "list"

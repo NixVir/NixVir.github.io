@@ -1,15 +1,15 @@
 {
+  "last_updated": "",
   "stories": [
     {
-      "title": "Example Story — Delete this and add your own",
+      "title": "Example - Delete this and add your own",
       "url": "https://example.com",
       "source": "Example Source",
       "category": "business-investment",
       "content_type": "article",
-      "description": "This is a placeholder entry. Click the ▶ arrow to expand it, then click ✕ to delete it. Then use 'Add stories +' to create real entries.",
+      "description": "This is a placeholder. Expand it and click X to delete, then use Add stories + to create real entries.",
       "pub_date": "2025-01-01",
       "pinned": false,
-      "pin_until": "",
       "active": false
     }
   ]
