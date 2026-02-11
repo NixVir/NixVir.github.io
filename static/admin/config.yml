@@ -6,11 +6,8 @@ backend:
 media_folder: "static/images"
 public_folder: "/images"
 
-# Editorial workflow disabled — files collections (manual news) do not
-# work correctly with editorial_workflow. Blog posts commit directly
-# to master on Save. If workflow is needed later, it can be re-enabled
-# but manual news will need to be converted to a folder collection first.
-# publish_mode: editorial_workflow
+# Editorial workflow: draft -> review -> publish
+publish_mode: editorial_workflow
 
 collections:
   # -----------------------------------------------
