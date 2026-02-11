@@ -1068,13 +1068,8 @@
           }
         }
 
-        // --- Toggle preview pane visibility based on route ---
+        // --- Check if on manual news route (used by banner below) ---
         var isNews = window.location.hash.includes('manual-news');
-        if (isNews) {
-          document.body.classList.add('hide-preview');
-        } else {
-          document.body.classList.remove('hide-preview');
-        }
 
         // --- Editor page: inject instruction banner ---
         var isEditorPage = window.location.hash.includes('/collections/') &&

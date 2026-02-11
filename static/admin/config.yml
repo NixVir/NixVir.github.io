@@ -94,8 +94,6 @@ collections:
     folder: "content/manual-news"
     create: true
     slug: "{{slug}}"
-    extension: "md"
-    format: "yaml-frontmatter"
     filter: { field: "title", pattern: "^(?!Manual News Stories$)" }
     description: "Manually add articles, podcasts, or videos to the Ski Industry News feed. Each story is its own entry. Click a title to edit, or click 'New' to add one."
     summary: "{{title}}  ·  {{category}}  ·  {{pub_date}}"
@@ -182,5 +180,6 @@ collections:
 
       - label: "Body"
         name: "body"
-        widget: "hidden"
-        default: ""
+        widget: "markdown"
+        required: false
+        hint: "Optional. Leave empty for most news stories."
