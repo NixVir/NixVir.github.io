@@ -788,7 +788,9 @@
   </style>
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <!-- Pin to 3.8.4: version 3.10.0 has regression where editorial_workflow
+       causes editor fields to flash and disappear on both folder and files collections -->
+  <script src="https://unpkg.com/decap-cms@3.8.4/dist/decap-cms.js"></script>
   <script>
     (function() {
       var lastUrl = '';
