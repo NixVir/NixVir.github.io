@@ -43,18 +43,32 @@
       border-bottom: 1px solid #2a3444 !important;
     }
 
-    /* The CMS top-level header (first child in nc-root) */
-    #nc-root > div > div:first-child > div,
-    #nc-root > div > div:first-child > header,
-    #nc-root > div > div:first-child {
-      overflow: visible !important;
+    /* Back navigation arrow */
+    #nixvir-back-nav {
+      position: fixed;
+      top: 54px;
+      left: 0;
+      width: 195px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      z-index: 10000;
+      background: #111820;
+      border-bottom: 1px solid #2a3444;
+      border-right: 1px solid #2a3444;
+      box-sizing: border-box;
+      text-decoration: none !important;
+      font-size: 12px;
+      color: #9ca3b0 !important;
+      gap: 6px;
+      transition: background 0.15s, color 0.15s;
     }
-
-    /* Ensure the collection name and nav links in the header don't clip */
-    [class*="AppHeader"] nav,
-    [class*="AppHeader"] > div {
-      overflow: visible !important;
+    #nixvir-back-nav:hover {
+      background: #1a2230 !important;
+      color: #60a5fa !important;
     }
+    #nixvir-back-nav svg { flex-shrink: 0; }
 
     /* Sidebar / navigation */
     [class*="Sidebar"],
@@ -226,23 +240,18 @@
       border-right-color: #2a3444 !important;
     }
 
-    /* Preview pane styling */
-    [class*="PreviewPane"] {
+    /* Preview pane - hidden on file-based collections (manual news) */
+    [class*="PreviewPane"],
+    [class*="preview"] {
       background: #0a0e14 !important;
       color: #e8ecf2 !important;
     }
     /* When .hide-preview is on the body, hide the preview pane
-       and let the editor take full width.
-       IMPORTANT: Only target elements with "PreviewPane" in class name.
-       Do NOT use positional selectors (last-child) on SplitPane children —
-       in files collections, the control pane may be the only/last child.
-       Do NOT use wildcard [class*="preview"] — Emotion class names may
-       contain "preview" in unrelated components. */
+       and let the editor take full width */
     body.hide-preview [class*="PreviewPane"],
+    body.hide-preview [class*="preview-pane"],
     body.hide-preview [class*="PreviewPaneFrame"] {
       display: none !important;
-      width: 0 !important;
-      min-width: 0 !important;
     }
     body.hide-preview [class*="ControlPane"],
     body.hide-preview [class*="controlPane"],
@@ -252,19 +261,18 @@
       max-width: 900px !important;
       margin: 0 auto !important;
     }
-    /* Hide the split-pane resizer/divider */
+    /* Also hide the split-pane resizer/divider */
     body.hide-preview [class*="SplitPane"] > [class*="Resizer"],
     body.hide-preview [class*="splitpane"] > [class*="resizer"] {
       display: none !important;
     }
-    /* Let the control pane fill the SplitPane */
+    /* Force the split pane container to single-column */
     body.hide-preview [class*="SplitPane"],
     body.hide-preview [class*="splitPane"] {
-      display: flex !important;
+      display: block !important;
     }
-    body.hide-preview [class*="SplitPane"] > div:first-child {
-      width: 100% !important;
-      flex: 1 !important;
+    body.hide-preview [class*="SplitPane"] > div:last-child:not(:first-child) {
+      display: none !important;
     }
 
     /* Dropdown menus */
@@ -408,23 +416,10 @@
       border-color: #2a3444 !important;
     }
 
-    /* List widget TopBar — ensure it renders visibly */
-    #nc-root [class*="TopBar"],
-    #nc-root [class*="topBar"],
-    #nc-root [class*="ObjectWidgetTopBar"] {
-      display: flex !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-      min-height: 40px !important;
-      align-items: center !important;
-    }
-
     /* List widget "Add <item> +" button — ensure visibility */
     #nc-root [class*="ListControl"] > button,
     #nc-root [class*="ListControl"] [class*="TopBarButton"],
-    #nc-root button[class*="TopBarButton"],
-    #nc-root [class*="TopBar"] button,
-    #nc-root [class*="ObjectWidgetTopBar"] button {
+    #nc-root button[class*="TopBarButton"] {
       background: #1a2230 !important;
       color: #60a5fa !important;
       border: 1px dashed #3b82f6 !important;
@@ -433,15 +428,10 @@
       font-size: 14px !important;
       cursor: pointer !important;
       margin-top: 8px !important;
-      display: inline-flex !important;
-      visibility: visible !important;
-      opacity: 1 !important;
     }
     #nc-root [class*="ListControl"] > button:hover,
     #nc-root [class*="ListControl"] [class*="TopBarButton"]:hover,
-    #nc-root button[class*="TopBarButton"]:hover,
-    #nc-root [class*="TopBar"] button:hover,
-    #nc-root [class*="ObjectWidgetTopBar"] button:hover {
+    #nc-root button[class*="TopBarButton"]:hover {
       background: #2a3444 !important;
       color: #93c5fd !important;
     }
@@ -551,10 +541,16 @@
       color: #8a919e !important;
     }
 
-    /* Preview pane (right side on editor) — only target actual PreviewPane */
-    #nc-root [class*="PreviewPane"] {
+    /* Preview pane (right side on editor) */
+    #nc-root [class*="Preview"],
+    #nc-root [class*="preview"] {
       background: #0a0e14 !important;
       color: #e8ecf2 !important;
+    }
+    #nc-root [class*="Preview"] *,
+    #nc-root [class*="preview"] * {
+      color: #e8ecf2 !important;
+      background-color: transparent !important;
     }
 
     /* The header bar specifically */
@@ -608,37 +604,6 @@
       color: #9ca3b0 !important;
       letter-spacing: 0.3px;
       white-space: nowrap;
-    }
-
-    /* =============================================
-       Back navigation button (admin root)
-       ============================================= */
-    #nixvir-back-nav {
-      position: fixed;
-      top: 54px;
-      left: 0;
-      width: 195px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      padding: 0 14px;
-      z-index: 10000;
-      background: #111820;
-      border-bottom: 1px solid #2a3444;
-      border-right: 1px solid #2a3444;
-      box-sizing: border-box;
-      text-decoration: none !important;
-      font-size: 12px;
-      color: #9ca3b0 !important;
-      gap: 6px;
-      transition: background 0.15s, color 0.15s;
-    }
-    #nixvir-back-nav:hover {
-      background: #1a2230 !important;
-      color: #60a5fa !important;
-    }
-    #nixvir-back-nav svg {
-      flex-shrink: 0;
     }
 
     /* =============================================
@@ -788,10 +753,7 @@
   </style>
 </head>
 <body>
-  <!-- Pin to 3.9.0: version 3.10.0 has regression where editorial_workflow
-       causes editor fields to flash and disappear on both folder and files collections.
-       3.9.0 (Nov 2025) is the last stable release before the regression. -->
-  <script src="https://unpkg.com/decap-cms@3.9.0/dist/decap-cms.js"></script>
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
     (function() {
       var lastUrl = '';
@@ -986,10 +948,8 @@
         var currentHash = window.location.hash || '';
         var isSubPage = currentHash.includes('/entries/') || currentHash.includes('/new') ||
                         currentHash.includes('/workflow') || currentHash.includes('/media');
-        var isRootListing = !isSubPage || currentHash === '' || currentHash === '#' ||
-                            (currentHash.includes('/collections/') && !currentHash.includes('/entries/') && !currentHash.includes('/new'));
 
-        if (!isRootListing) {
+        if (isSubPage) {
           if (!backNav) {
             backNav = document.createElement('a');
             backNav.id = 'nixvir-back-nav';
@@ -997,10 +957,9 @@
                                 '<span>Back to Dashboard</span>';
             document.body.appendChild(backNav);
           }
-          // Set appropriate back link based on context
-          if (currentHash.includes('manual-news') && currentHash.includes('/entries/')) {
+          if (currentHash.includes('manual-news')) {
             backNav.href = '#/collections/manual-news';
-          } else if (currentHash.includes('/collections/post') && (currentHash.includes('/entries/') || currentHash.includes('/new'))) {
+          } else if (currentHash.includes('/collections/post')) {
             backNav.href = '#/collections/post';
           } else {
             backNav.href = '#/collections/post';
@@ -1089,8 +1048,8 @@
         });
 
         // --- Inject "Add New Story" button on Manual Stories collection listing ---
-        var isManualNewsListing = currentHash.includes('/collections/manual-news') &&
-                                  !currentHash.includes('/entries/');
+        var isManualNewsListing = window.location.hash.includes('/collections/manual-news') &&
+                                  !window.location.hash.includes('/entries/');
         var addStoryBtn = document.getElementById('nixvir-add-story-btn');
         if (isManualNewsListing && !addStoryBtn) {
           // Find the collection header area (where "Add New Data Insight" would appear)
@@ -1133,7 +1092,7 @@
         }
 
         // --- Ensure list widget "Add" buttons are visible on manual news page ---
-        if (currentHash.includes('manual-news') && currentHash.includes('/entries/')) {
+        if (window.location.hash.includes('manual-news') && window.location.hash.includes('/entries/')) {
           var ncRoot2 = document.getElementById('nc-root');
           if (ncRoot2) {
             // Find all buttons and look for the "Add stories" text
@@ -1157,19 +1116,16 @@
         }
 
         // --- Toggle preview pane visibility based on route ---
-        // Hide the preview pane on all editor pages (manual news AND blog posts)
-        // The preview is not useful for our use case and causes layout issues
-        var isEditorRoute = currentHash.includes('/entries/') || currentHash.includes('/new');
-        if (isEditorRoute) {
+        var isNews = window.location.hash.includes('manual-news');
+        if (isNews) {
           document.body.classList.add('hide-preview');
         } else {
           document.body.classList.remove('hide-preview');
         }
 
         // --- Editor page: inject instruction banner ---
-        var isEditorPage = currentHash.includes('/collections/') &&
-                           (currentHash.includes('/new') || currentHash.includes('/entries/'));
-        var isManualNewsEntry = currentHash.includes('manual-news');
+        var isEditorPage = window.location.hash.includes('/collections/') &&
+                           (window.location.hash.includes('/new') || window.location.hash.includes('/entries/'));
         var banner = document.getElementById('nixvir-editor-banner');
 
         if (isEditorPage) {
@@ -1179,17 +1135,17 @@
             banner.id = 'nixvir-editor-banner';
             banner.style.display = 'block';
 
-            var isNew = currentHash.includes('/new');
+            var isNew = window.location.hash.includes('/new');
             var title, instructions, stepsHtml;
 
-            if (isManualNewsEntry) {
-              title = 'Manage News Stories';
-              instructions = 'Use <strong>"Add stories +"</strong> to add a new entry, or click the <strong>▶</strong> arrow on an existing entry to expand and edit it. ' +
+            if (isNews) {
+              title = 'Add a Story to the News Feed';
+              instructions = 'Click <strong>"Add stories +"</strong> below to add a new entry. ' +
                 'Fill in the Title, URL, Source, and Category at minimum. ' +
                 'When finished, click <strong>Save</strong> in the top bar — ' +
                 'the story will go live on the Ski News page within a few minutes.';
               stepsHtml =
-                '<div class="banner-step"><span class="step-num">1</span> Add or expand a story</div>' +
+                '<div class="banner-step"><span class="step-num">1</span> Click "Add stories +"</div>' +
                 '<div class="banner-step"><span class="step-num">2</span> Fill in the fields</div>' +
                 '<div class="banner-step"><span class="step-num">3</span> Click Save (top bar)</div>';
             } else if (isNew) {
@@ -1224,7 +1180,7 @@
         }
 
         // --- Workflow page: inject info banner ---
-        var isWorkflowPage = currentHash.includes('/workflow') || currentHash === '#/workflow';
+        var isWorkflowPage = window.location.hash.includes('/workflow') || window.location.hash === '#/workflow';
         var wfBanner = document.getElementById('nixvir-workflow-banner');
         if (isWorkflowPage && !wfBanner) {
           // Find where to insert — look for the workflow heading or first major container
@@ -1261,7 +1217,7 @@
         }
 
         // --- Media page: inject info banner ---
-        var isMediaPage = currentHash.includes('/media') || currentHash === '#/media';
+        var isMediaPage = window.location.hash.includes('/media') || window.location.hash === '#/media';
         var mediaBanner = document.getElementById('nixvir-media-banner');
         if (isMediaPage && !mediaBanner) {
           var mediaContainer = document.querySelector('[class*="MediaLibrary"], [class*="mediaLibrary"], [class*="Media"]');
