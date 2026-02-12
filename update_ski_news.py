@@ -1296,12 +1296,16 @@ def get_lead_paragraph(article):
     return lead
 
 
+def _strip_source_suffix(title):
+    """Strip ' - Source Name' suffix commonly added by aggregators like Google News."""
+    # Match ' - Source' at end of title (where Source is 1-5 words)
+    return re.sub(r'\s*-\s+[\w\s&\']{2,40}$', '', title)
+
+
 def deduplicate_articles(articles, similarity_threshold=0.85):
     """
     Group articles by title similarity, keep highest-scored from each group.
     Uses normalized title matching, fuzzy matching, and lead paragraph comparison.
-
-    Threshold increased to 0.85 (from 0.70) to catch more subtle duplicates.
     """
     if not articles:
         return []
@@ -1339,20 +1343,24 @@ def deduplicate_articles(articles, similarity_threshold=0.85):
         # Check for fuzzy matches against already-selected articles
         is_duplicate = False
         best_title = best.get('title', '').lower()
+        best_title_stripped = _strip_source_suffix(best_title)
         best_lead = get_lead_paragraph(best)
 
         for existing in unique_articles:
             existing_title = existing.get('title', '').lower()
+            existing_title_stripped = _strip_source_suffix(existing_title)
             existing_lead = get_lead_paragraph(existing)
 
-            # Check title similarity
+            # Check title similarity (both raw and with source suffix stripped)
             title_similarity = difflib.SequenceMatcher(None, best_title, existing_title).ratio()
+            stripped_similarity = difflib.SequenceMatcher(None, best_title_stripped, existing_title_stripped).ratio()
+            effective_title_sim = max(title_similarity, stripped_similarity)
 
             # Check lead paragraph similarity (catches same story with different headlines)
             lead_similarity = difflib.SequenceMatcher(None, best_lead, existing_lead).ratio() if best_lead and existing_lead else 0
 
             # Consider duplicate if either title or lead paragraph is very similar
-            if title_similarity >= similarity_threshold or (lead_similarity >= 0.80 and len(best_lead) > 50):
+            if effective_title_sim >= similarity_threshold or (lead_similarity >= 0.80 and len(best_lead) > 50):
                 is_duplicate = True
                 # Add to existing article's other sources
                 if 'other_sources' not in existing:
@@ -1405,12 +1413,17 @@ def deduplicate_against_existing(new_articles, existing_articles, similarity_thr
         article_lead = get_lead_paragraph(article)
         is_duplicate = False
 
+        article_title_stripped = _strip_source_suffix(article_title)
+
         for existing in recent_existing:
             existing_title = existing.get('title', '').lower()
+            existing_title_stripped = _strip_source_suffix(existing_title)
             existing_lead = get_lead_paragraph(existing)
 
-            # Check title similarity
+            # Check title similarity (both raw and with source suffix stripped)
             title_similarity = difflib.SequenceMatcher(None, article_title, existing_title).ratio()
+            stripped_similarity = difflib.SequenceMatcher(None, article_title_stripped, existing_title_stripped).ratio()
+            effective_title_sim = max(title_similarity, stripped_similarity)
 
             # Check lead paragraph similarity
             lead_similarity = 0
@@ -1418,7 +1431,7 @@ def deduplicate_against_existing(new_articles, existing_articles, similarity_thr
                 lead_similarity = difflib.SequenceMatcher(None, article_lead, existing_lead).ratio()
 
             # Consider duplicate if title or lead is very similar
-            if title_similarity >= similarity_threshold or lead_similarity >= 0.80:
+            if effective_title_sim >= similarity_threshold or lead_similarity >= 0.80:
                 is_duplicate = True
                 duplicates_found += 1
                 break

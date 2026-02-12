@@ -806,8 +806,47 @@
       const updateSpan = document.getElementById('ski-news-update');
 
       try {
-        const response = await fetch('/data/ski-news.json');
-        const data = await response.json();
+        const [autoResponse, manualResponse] = await Promise.all([
+          fetch('/data/ski-news.json'),
+          fetch('/manual-news/index.json').catch(() => null)
+        ]);
+        const data = await autoResponse.json();
+
+        // Merge manual stories if any exist
+        if (manualResponse && manualResponse.ok) {
+          try {
+            const manualData = await manualResponse.json();
+            if (manualData.stories && manualData.stories.length > 0) {
+              const now = new Date();
+              const manualArticles = manualData.stories
+                .filter(s => s.active !== false)
+                .map(s => {
+                  let pinned = s.pinned || false;
+                  if (pinned && s.pin_until) {
+                    const expiry = new Date(s.pin_until + 'T23:59:59');
+                    if (now > expiry) pinned = false;
+                  }
+                  return {
+                    source: s.source || 'Manual',
+                    title: s.title,
+                    url: s.url,
+                    description: s.description || '',
+                    pub_date: s.pub_date,
+                    id: 'manual-' + (s.url || '').replace(/\W/g, '').slice(-12),
+                    score: 100,
+                    category: s.category || 'resort-operations',
+                    content_type: s.content_type || 'article',
+                    is_manual: true,
+                    is_pinned: pinned
+                  };
+                });
+              data.articles = [...manualArticles, ...(data.articles || [])];
+            }
+          } catch (e) {
+            console.warn('Could not parse manual news entries:', e);
+          }
+        }
+
         skiNewsData = data;
 
         if (updateSpan) {
@@ -839,8 +878,10 @@
         articles = articles.filter(a => a.category === filterBy);
       }
 
-      // Sort by date, then score
+      // Sort: pinned first, then by date, then score
       articles = [...articles].sort((a, b) => {
+        if (a.is_pinned && !b.is_pinned) return -1;
+        if (!a.is_pinned && b.is_pinned) return 1;
         const dateA = a.pub_date ? new Date(a.pub_date).toDateString() : '';
         const dateB = b.pub_date ? new Date(b.pub_date).toDateString() : '';
         if (dateA !== dateB) {
@@ -849,13 +890,25 @@
         return (b.score || 0) - (a.score || 0);
       });
 
-      // Deduplicate by source - max 1 article per source on front page
+      // Deduplicate: max 1 article per source, plus title similarity check
+      // to catch near-identical stories from different aggregator feeds
       const seenSources = new Set();
       const deduped = [];
       for (const article of articles) {
-        const source = article.source || 'Unknown';
-        if (!seenSources.has(source)) {
-          seenSources.add(source);
+        // Normalize aggregator sources (e.g. "Google News - X" → "Google News")
+        const rawSource = article.source || 'Unknown';
+        const normSource = rawSource.startsWith('Google News') ? 'Google News' : rawSource;
+        // Check title similarity against already-selected articles
+        const titleLower = (article.title || '').toLowerCase();
+        const isDupTitle = deduped.some(d => {
+          const existingTitle = (d.title || '').toLowerCase();
+          // Quick check: shared prefix of 40+ chars is almost certainly the same story
+          let shared = 0;
+          while (shared < titleLower.length && shared < existingTitle.length && titleLower[shared] === existingTitle[shared]) shared++;
+          return shared >= 40;
+        });
+        if (!seenSources.has(normSource) && !isDupTitle) {
+          seenSources.add(normSource);
           deduped.push(article);
         }
       }
