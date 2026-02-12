@@ -1213,16 +1213,30 @@
         // --- Editor page: inject Save button at bottom of form ---
         var footer = document.getElementById('nixvir-editor-footer');
         if (isEditorPage) {
+          // Try multiple selectors — DecapCMS uses Emotion classes that vary
           var controlPane = document.querySelector('[class*="ControlPane"], [class*="controlPane"]');
+          // If no ControlPane found, look for the last field widget container
+          if (!controlPane) {
+            var allFields = document.querySelectorAll('#nc-root [class*="ObjectWidgetTopBar"], #nc-root [class*="Field"], #nc-root [class*="field"]');
+            if (allFields.length > 0) {
+              controlPane = allFields[allFields.length - 1].closest('[class*="Control"], [class*="Pane"], [class*="editor"]') || allFields[allFields.length - 1].parentNode;
+            }
+          }
           if (controlPane && !footer) {
             footer = document.createElement('div');
             footer.id = 'nixvir-editor-footer';
             footer.innerHTML = '<button id="nixvir-save-btn" type="button">Save</button>';
-            controlPane.parentNode.insertBefore(footer, controlPane.nextSibling);
+            // Try appending after controlPane, fall back to appending inside it
+            if (controlPane.nextSibling) {
+              controlPane.parentNode.insertBefore(footer, controlPane.nextSibling);
+            } else if (controlPane.parentNode) {
+              controlPane.parentNode.appendChild(footer);
+            } else {
+              controlPane.appendChild(footer);
+            }
             document.getElementById('nixvir-save-btn').addEventListener('click', function() {
               // Find and click the CMS's real Save button in the top toolbar
-              var cmsSaveBtn = document.querySelector('[class*="ToolbarButton"] span');
-              var allBtns = document.querySelectorAll('[class*="EditorToolbar"] button, [class*="editorToolbar"] button, header button');
+              var allBtns = document.querySelectorAll('[class*="EditorToolbar"] button, [class*="editorToolbar"] button, header button, [class*="ToolbarSection"] button');
               for (var i = 0; i < allBtns.length; i++) {
                 var txt = allBtns[i].textContent.trim().toLowerCase();
                 if (txt === 'save' || txt === 'publish') {
@@ -1230,7 +1244,7 @@
                   return;
                 }
               }
-              // Fallback: look for any element with "Save" text in the top bar area
+              // Fallback: look for any element with "Save" text
               var allSpans = document.querySelectorAll('span, button, a');
               for (var j = 0; j < allSpans.length; j++) {
                 if (allSpans[j].textContent.trim() === 'Save') {
