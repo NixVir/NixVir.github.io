@@ -42,6 +42,21 @@
       background: #111820 !important;
       border-bottom: 1px solid #2a3444 !important;
     }
+    /* Hide white separator bars in editor toolbar */
+    [class*="EditorToolbar"] [class*="separator"],
+    [class*="EditorToolbar"] [class*="Separator"],
+    [class*="EditorToolbar"] [class*="divider"],
+    [class*="EditorToolbar"] [class*="Divider"],
+    [class*="editorToolbar"] [class*="separator"],
+    [class*="editorToolbar"] [class*="Separator"] {
+      background-color: #2a3444 !important;
+      border-color: #2a3444 !important;
+    }
+    /* Catch any remaining white borders/separators in toolbars via broad selector */
+    [class*="EditorToolbar"] div,
+    [class*="editorToolbar"] div {
+      border-color: #2a3444 !important;
+    }
 
     /* Back navigation arrow */
     #nixvir-back-nav {
@@ -152,6 +167,25 @@
     /* Labels and headings */
     label, [class*="Label"], [class*="FieldLabel"] {
       color: #9ca3b0 !important;
+    }
+    /* Required field indicator (white vertical bar next to labels) */
+    label::before, label::after,
+    [class*="Label"]::before, [class*="Label"]::after,
+    [class*="FieldLabel"]::before, [class*="FieldLabel"]::after {
+      color: #3b82f6 !important;
+      background-color: #3b82f6 !important;
+    }
+    #nc-root label::before, #nc-root label::after,
+    #nc-root [class*="Label"]::before, #nc-root [class*="Label"]::after {
+      color: #3b82f6 !important;
+      background-color: #3b82f6 !important;
+    }
+    /* Required indicator as inline span within label */
+    #nc-root label span[class*="required"],
+    #nc-root label span[class*="Required"],
+    #nc-root [class*="Label"] span {
+      color: #3b82f6 !important;
+      background-color: transparent !important;
     }
     h1, h2, h3, h4, h5, h6 {
       color: #e8ecf2 !important;
@@ -1136,45 +1170,37 @@
             if (isNews && isNew) {
               title = 'Add a Story to the News Feed';
               instructions = 'Fill in the Title, Story URL, Source, and Category at minimum. ' +
-                'Click <strong>Save</strong> in the top bar to create a draft. After saving, a <strong>status dropdown</strong> ' +
-                'and <strong>Publish</strong> button will appear at the top of the page. Set the status to <strong>Ready</strong> ' +
-                'and click <strong>Publish</strong> to make it live.';
+                'When finished, click <strong>Save</strong> in the top bar above.';
               stepsHtml =
-                '<div class="banner-step"><span class="step-num">1</span> Fill in the fields</div>' +
-                '<div class="banner-step"><span class="step-num">2</span> Click Save (top bar) — creates a draft</div>' +
-                '<div class="banner-step"><span class="step-num">3</span> After save: set status to Ready (dropdown at top)</div>' +
-                '<div class="banner-step"><span class="step-num">4</span> Click Publish (button at top)</div>';
+                '<div class="banner-step"><span class="step-num">1</span> Fill in the fields below</div>' +
+                '<div class="banner-step"><span class="step-num">2</span> Click <strong>Save</strong> in the top bar</div>' +
+                '<div class="banner-step"><span class="step-num">3</span> Set status to <strong>Ready</strong></div>' +
+                '<div class="banner-step"><span class="step-num">4</span> Click <strong>Publish</strong></div>';
             } else if (isNews) {
               title = 'Edit News Story';
-              instructions = 'Make your changes below. Click <strong>Save</strong> in the top bar to update the draft. ' +
-                'Use the <strong>status dropdown</strong> at the top of the page to set the status to <strong>Ready</strong>, ' +
-                'then click <strong>Publish</strong> to make your changes live.';
+              instructions = 'Make your changes below. When finished, click <strong>Save</strong> in the top bar above.';
               stepsHtml =
-                '<div class="banner-step"><span class="step-num">1</span> Edit the fields</div>' +
-                '<div class="banner-step"><span class="step-num">2</span> Click Save (top bar)</div>' +
-                '<div class="banner-step"><span class="step-num">3</span> Set status to Ready (dropdown at top)</div>' +
-                '<div class="banner-step"><span class="step-num">4</span> Click Publish (button at top)</div>';
+                '<div class="banner-step"><span class="step-num">1</span> Edit the fields below</div>' +
+                '<div class="banner-step"><span class="step-num">2</span> Click <strong>Save</strong> in the top bar</div>' +
+                '<div class="banner-step"><span class="step-num">3</span> Set status to <strong>Ready</strong></div>' +
+                '<div class="banner-step"><span class="step-num">4</span> Click <strong>Publish</strong></div>';
             } else if (isNew) {
               title = 'Create a New Data Insight';
-              instructions = 'Fill in the fields below to create a new blog post. Only Title, Date, and Body are required — ' +
-                'the other fields are optional. Scroll down to the Body field to write your content. ' +
-                'Click <strong>Save</strong> to create a draft. After saving, a <strong>status dropdown</strong> ' +
-                'and <strong>Publish</strong> button will appear at the top of the page.';
+              instructions = 'Only Title, Date, and Body are required. ' +
+                'When finished, click <strong>Save</strong> in the top bar above.';
               stepsHtml =
-                '<div class="banner-step"><span class="step-num">1</span> Fill in the fields</div>' +
-                '<div class="banner-step"><span class="step-num">2</span> Click Save (top bar) — creates a draft</div>' +
-                '<div class="banner-step"><span class="step-num">3</span> After save: set status to Ready (dropdown at top)</div>' +
-                '<div class="banner-step"><span class="step-num">4</span> Click Publish (button at top)</div>';
+                '<div class="banner-step"><span class="step-num">1</span> Fill in the fields below</div>' +
+                '<div class="banner-step"><span class="step-num">2</span> Click <strong>Save</strong> in the top bar</div>' +
+                '<div class="banner-step"><span class="step-num">3</span> Set status to <strong>Ready</strong></div>' +
+                '<div class="banner-step"><span class="step-num">4</span> Click <strong>Publish</strong></div>';
             } else {
               title = 'Edit Data Insight';
-              instructions = 'Make your changes below. Click <strong>Save</strong> in the top bar to update the draft. ' +
-                'Use the <strong>status dropdown</strong> at the top of the page to set the status to <strong>Ready</strong>, ' +
-                'then click <strong>Publish</strong> to make your changes live.';
+              instructions = 'Make your changes below. When finished, click <strong>Save</strong> in the top bar above.';
               stepsHtml =
-                '<div class="banner-step"><span class="step-num">1</span> Edit the fields</div>' +
-                '<div class="banner-step"><span class="step-num">2</span> Click Save (top bar)</div>' +
-                '<div class="banner-step"><span class="step-num">3</span> Set status to Ready (dropdown at top)</div>' +
-                '<div class="banner-step"><span class="step-num">4</span> Click Publish (button at top)</div>';
+                '<div class="banner-step"><span class="step-num">1</span> Edit the fields below</div>' +
+                '<div class="banner-step"><span class="step-num">2</span> Click <strong>Save</strong> in the top bar</div>' +
+                '<div class="banner-step"><span class="step-num">3</span> Set status to <strong>Ready</strong></div>' +
+                '<div class="banner-step"><span class="step-num">4</span> Click <strong>Publish</strong></div>';
             }
 
             banner.innerHTML =
