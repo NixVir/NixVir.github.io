@@ -768,6 +768,35 @@
     }
     #nixvir-help-content .help-section { margin-bottom: 16px; }
     #nixvir-help-content .help-section:last-child { margin-bottom: 0; }
+
+    /* =============================================
+       Editor form footer (bottom call-to-action)
+       ============================================= */
+    #nixvir-editor-footer {
+      background: #111820;
+      border: 1px solid #2a3444;
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin: 24px 20px 40px 20px;
+      text-align: center;
+    }
+    #nixvir-editor-footer p {
+      color: #9ca3b0 !important;
+      font-size: 14px;
+      margin: 0;
+      line-height: 1.6;
+    }
+    #nixvir-editor-footer .footer-arrow {
+      display: inline-block;
+      margin-top: 8px;
+      color: #60a5fa;
+      font-size: 20px;
+      animation: nixvir-bounce 1.5s ease infinite;
+    }
+    @keyframes nixvir-bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
   </style>
 </head>
 <body>
@@ -1159,6 +1188,26 @@
           banner.style.display = 'none';
         }
 
+        // --- Editor page: inject footer call-to-action below form ---
+        var footer = document.getElementById('nixvir-editor-footer');
+        if (isEditorPage) {
+          var controlPane = document.querySelector('[class*="ControlPane"], [class*="controlPane"]');
+          if (controlPane && !footer) {
+            footer = document.createElement('div');
+            footer.id = 'nixvir-editor-footer';
+            var isNew = window.location.hash.includes('/new');
+            footer.innerHTML =
+              '<p>' + (isNew
+                ? 'When you\'re done, scroll up and click <strong style="color:#e8ecf2;">Save</strong> in the top bar to create your draft.'
+                : 'When you\'re done, scroll up and click <strong style="color:#e8ecf2;">Save</strong> in the top bar to save your changes.'
+              ) + '</p>' +
+              '<div class="footer-arrow">↑</div>';
+            controlPane.parentNode.insertBefore(footer, controlPane.nextSibling);
+          }
+        } else if (footer) {
+          footer.remove();
+        }
+
         // --- Workflow page: inject info banner ---
         var isWorkflowPage = window.location.hash.includes('/workflow') || window.location.hash === '#/workflow';
         var wfBanner = document.getElementById('nixvir-workflow-banner');
@@ -1245,6 +1294,8 @@
             if (oldWfBanner) oldWfBanner.remove();
             var oldMediaBanner = document.getElementById('nixvir-media-banner');
             if (oldMediaBanner) oldMediaBanner.remove();
+            var oldFooter = document.getElementById('nixvir-editor-footer');
+            if (oldFooter) oldFooter.remove();
           }
           injectNixvirUI();
         }, 500);
