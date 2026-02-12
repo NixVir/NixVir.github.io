@@ -771,7 +771,7 @@
   </style>
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script src="https://unpkg.com/decap-cms@3.9.0/dist/decap-cms.js"></script>
   <script>
     (function() {
       var lastUrl = '';
@@ -793,7 +793,7 @@
               { heading: 'Adding a Story', items: [
                 'Click <strong>New Ski News — Manual Stories</strong> at the top to create a new entry',
                 'Fill in <strong>Title</strong>, <strong>Story URL</strong>, <strong>Source</strong>, and <strong>Category</strong> at minimum',
-                'Click <strong>Save</strong> in the top bar, then set status to Ready and Publish',
+                'Click <strong>Save</strong> in the top bar to create a draft. Then use the status dropdown at the top to set <strong>Ready</strong> and click <strong>Publish</strong>',
                 'The story appears on the Ski News page after the site rebuilds (a few minutes)'
               ]},
               { heading: 'Field Guide', items: [
@@ -823,8 +823,8 @@
             title: 'Editorial Workflow Help',
             sections: [
               { heading: 'How It Works', items: [
-                'This board tracks <strong>Data Insight blog posts</strong> through the publishing process',
-                'Manual news stories do not appear here — they publish immediately',
+                'This board tracks <strong>all content</strong> (Data Insights and Manual News) through the publishing process',
+                'Saved drafts from both collections appear here',
                 'Drag posts between columns or change status in the editor dropdown'
               ]},
               { heading: 'Columns', items: [
@@ -1107,40 +1107,45 @@
             if (isNews && isNew) {
               title = 'Add a Story to the News Feed';
               instructions = 'Fill in the Title, Story URL, Source, and Category at minimum. ' +
-                'When finished, click <strong>Save</strong> in the top bar, set status to <strong>Ready</strong>, ' +
-                'and click <strong>Publish</strong>. The story will go live on the Ski News page within a few minutes.';
+                'Click <strong>Save</strong> in the top bar to create a draft. After saving, a <strong>status dropdown</strong> ' +
+                'and <strong>Publish</strong> button will appear at the top of the page. Set the status to <strong>Ready</strong> ' +
+                'and click <strong>Publish</strong> to make it live.';
               stepsHtml =
                 '<div class="banner-step"><span class="step-num">1</span> Fill in the fields</div>' +
-                '<div class="banner-step"><span class="step-num">2</span> Click Save (top bar)</div>' +
-                '<div class="banner-step"><span class="step-num">3</span> Set status to Ready</div>' +
-                '<div class="banner-step"><span class="step-num">4</span> Click Publish</div>';
+                '<div class="banner-step"><span class="step-num">2</span> Click Save (top bar) — creates a draft</div>' +
+                '<div class="banner-step"><span class="step-num">3</span> After save: set status to Ready (dropdown at top)</div>' +
+                '<div class="banner-step"><span class="step-num">4</span> Click Publish (button at top)</div>';
             } else if (isNews) {
               title = 'Edit News Story';
-              instructions = 'Make your changes below. When finished, click Save in the top bar. ' +
-                'Your changes will be saved as a draft until you publish them.';
+              instructions = 'Make your changes below. Click <strong>Save</strong> in the top bar to update the draft. ' +
+                'Use the <strong>status dropdown</strong> at the top of the page to set the status to <strong>Ready</strong>, ' +
+                'then click <strong>Publish</strong> to make your changes live.';
               stepsHtml =
                 '<div class="banner-step"><span class="step-num">1</span> Edit the fields</div>' +
                 '<div class="banner-step"><span class="step-num">2</span> Click Save (top bar)</div>' +
-                '<div class="banner-step"><span class="step-num">3</span> Set status to Ready</div>' +
-                '<div class="banner-step"><span class="step-num">4</span> Click Publish</div>';
+                '<div class="banner-step"><span class="step-num">3</span> Set status to Ready (dropdown at top)</div>' +
+                '<div class="banner-step"><span class="step-num">4</span> Click Publish (button at top)</div>';
             } else if (isNew) {
               title = 'Create a New Data Insight';
               instructions = 'Fill in the fields below to create a new blog post. Only Title, Date, and Body are required — ' +
-                'the other fields are optional. Scroll down to the Body field to write your content.';
+                'the other fields are optional. Scroll down to the Body field to write your content. ' +
+                'Click <strong>Save</strong> to create a draft. After saving, a <strong>status dropdown</strong> ' +
+                'and <strong>Publish</strong> button will appear at the top of the page.';
               stepsHtml =
                 '<div class="banner-step"><span class="step-num">1</span> Fill in the fields</div>' +
-                '<div class="banner-step"><span class="step-num">2</span> Click Save (top bar)</div>' +
-                '<div class="banner-step"><span class="step-num">3</span> Set status to Ready</div>' +
-                '<div class="banner-step"><span class="step-num">4</span> Click Publish</div>';
+                '<div class="banner-step"><span class="step-num">2</span> Click Save (top bar) — creates a draft</div>' +
+                '<div class="banner-step"><span class="step-num">3</span> After save: set status to Ready (dropdown at top)</div>' +
+                '<div class="banner-step"><span class="step-num">4</span> Click Publish (button at top)</div>';
             } else {
               title = 'Edit Data Insight';
-              instructions = 'Make your changes below. When finished, click Save in the top bar. ' +
-                'Your changes will be saved as a draft until you publish them.';
+              instructions = 'Make your changes below. Click <strong>Save</strong> in the top bar to update the draft. ' +
+                'Use the <strong>status dropdown</strong> at the top of the page to set the status to <strong>Ready</strong>, ' +
+                'then click <strong>Publish</strong> to make your changes live.';
               stepsHtml =
                 '<div class="banner-step"><span class="step-num">1</span> Edit the fields</div>' +
                 '<div class="banner-step"><span class="step-num">2</span> Click Save (top bar)</div>' +
-                '<div class="banner-step"><span class="step-num">3</span> Set status to Ready</div>' +
-                '<div class="banner-step"><span class="step-num">4</span> Click Publish</div>';
+                '<div class="banner-step"><span class="step-num">3</span> Set status to Ready (dropdown at top)</div>' +
+                '<div class="banner-step"><span class="step-num">4</span> Click Publish (button at top)</div>';
             }
 
             banner.innerHTML =
@@ -1168,8 +1173,8 @@
             wfBanner.innerHTML =
               '<h2 style="color:#e8ecf2; font-size:18px; margin:0 0 8px 0;">Editorial Workflow</h2>' +
               '<p style="color:#9ca3b0; font-size:13px; line-height:1.6; margin:0 0 10px 0;">' +
-                'This board tracks <strong style="color:#e8ecf2;">Data Insight blog posts</strong> as they move through the publishing process. ' +
-                'Manual news stories do not appear here — they publish immediately when you click Save.' +
+                'This board tracks <strong style="color:#e8ecf2;">all content</strong> (Data Insights and Manual News stories) as it moves through the publishing process. ' +
+                'Saved drafts appear in the <strong style="color:#c4b5fd;">Drafts</strong> column below.' +
               '</p>' +
               '<p style="color:#9ca3b0; font-size:13px; line-height:1.6; margin:0 0 10px 0;">' +
                 'When you create or edit a Data Insight post and click Save, it appears in the <strong style="color:#c4b5fd;">Drafts</strong> column. ' +
