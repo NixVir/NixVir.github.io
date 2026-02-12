@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Check site is reachable
         run: |
-          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://nixvir.com/)
+          HTTP_STATUS=$(curl -sL -o /dev/null -w "%{http_code}" https://www.nixvir.com/)
           if [ "$HTTP_STATUS" != "200" ]; then
             echo "::error::Site returned HTTP $HTTP_STATUS"
             exit 1
@@ -25,7 +25,7 @@ jobs:
           ERRORS=""
 
           # Check snow-cover.json exists and is recent
-          SNOW_DATE=$(curl -sf https://nixvir.com/data/snow-cover.json | python3 -c "
+          SNOW_DATE=$(curl -sfL https://www.nixvir.com/data/snow-cover.json | python3 -c "
           import json, sys
           try:
               d = json.load(sys.stdin)
@@ -39,28 +39,28 @@ jobs:
           fi
 
           # Check dashboard data exists
-          DASH_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://nixvir.com/data/dashboard.json)
+          DASH_STATUS=$(curl -sL -o /dev/null -w "%{http_code}" https://www.nixvir.com/data/dashboard.json)
           echo "Dashboard data: HTTP $DASH_STATUS"
           if [ "$DASH_STATUS" != "200" ]; then
             ERRORS="$ERRORS\n- dashboard.json returned HTTP $DASH_STATUS"
           fi
 
           # Check ski news data exists
-          NEWS_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://nixvir.com/data/ski-news.json)
+          NEWS_STATUS=$(curl -sL -o /dev/null -w "%{http_code}" https://www.nixvir.com/data/ski-news.json)
           echo "Ski news data: HTTP $NEWS_STATUS"
           if [ "$NEWS_STATUS" != "200" ]; then
             ERRORS="$ERRORS\n- ski-news.json returned HTTP $NEWS_STATUS"
           fi
 
           # Check SNOTEL data exists
-          SNOTEL_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://nixvir.com/data/snotel-snowpack.json)
+          SNOTEL_STATUS=$(curl -sL -o /dev/null -w "%{http_code}" https://www.nixvir.com/data/snotel-snowpack.json)
           echo "SNOTEL data: HTTP $SNOTEL_STATUS"
           if [ "$SNOTEL_STATUS" != "200" ]; then
             ERRORS="$ERRORS\n- snotel-snowpack.json returned HTTP $SNOTEL_STATUS"
           fi
 
           # Check site-nav.js loads (nav single source of truth)
-          NAV_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://nixvir.com/js/site-nav.js)
+          NAV_STATUS=$(curl -sL -o /dev/null -w "%{http_code}" https://www.nixvir.com/js/site-nav.js)
           echo "Nav JS: HTTP $NAV_STATUS"
           if [ "$NAV_STATUS" != "200" ]; then
             ERRORS="$ERRORS\n- site-nav.js returned HTTP $NAV_STATUS (navigation will be broken)"
@@ -83,7 +83,7 @@ jobs:
 
           # Check if the site's HTML contains evidence of recent build
           # Netlify adds deploy info we can check
-          DEPLOY_CHECK=$(curl -sI https://nixvir.com/ | grep -i "x-nf-request-id" | head -1)
+          DEPLOY_CHECK=$(curl -sIL https://www.nixvir.com/ | grep -i "x-nf-request-id" | head -1)
           if [ -z "$DEPLOY_CHECK" ]; then
             echo "::warning::Could not verify Netlify deploy headers - site may not be on Netlify"
           else
