@@ -51,7 +51,6 @@
       {{ template "_internal/google_analytics.html" . }}
     {{ end }}
 	{{ block "head" . }}{{ partials.Include "head-additions.html" . }}{{ end }}
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
 
   {{- $environment := hugo.Environment | compare.Default "production" -}}
@@ -64,16 +63,5 @@
       {{ block "main" . }}{{ end }}
     </main>
     {{ block "footer" . }}{{ partials.IncludeCached "site-footer.html" . }}{{ end }}
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", function(user) {
-          if (!user) {
-            window.netlifyIdentity.on("login", function() {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
   </body>
 </html>

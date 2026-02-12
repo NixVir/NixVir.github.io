@@ -48,13 +48,13 @@
     # NOTE: 'unsafe-inline' required for Google Analytics; 'unsafe-eval' required for chartjs-plugin-zoom
     # img-src restricted to known domains instead of blanket https:
     # frame-ancestors 'self' allows same-origin iframes (snotel.html embedded in snow-cover.html)
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' cdn.jsdelivr.net cdnjs.cloudflare.com unpkg.com www.googletagmanager.com www.google-analytics.com identity.netlify.com netlify-identity-widget.netlify.app; style-src 'self' 'unsafe-inline' fonts.googleapis.com unpkg.com; img-src 'self' data: blob: *.tile.openstreetmap.org server.arcgisonline.com unpkg.com cdn.jsdelivr.net; connect-src 'self' www.google-analytics.com formspree.io cdn.jsdelivr.net raw.githubusercontent.com api.open-meteo.com archive-api.open-meteo.com api.github.com *.netlify.com *.netlify.app; font-src 'self' fonts.gstatic.com; frame-ancestors 'self'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' cdn.jsdelivr.net cdnjs.cloudflare.com unpkg.com www.googletagmanager.com www.google-analytics.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com unpkg.com; img-src 'self' data: blob: *.tile.openstreetmap.org server.arcgisonline.com unpkg.com cdn.jsdelivr.net; connect-src 'self' www.google-analytics.com formspree.io cdn.jsdelivr.net raw.githubusercontent.com api.open-meteo.com archive-api.open-meteo.com api.github.com *.netlify.com *.netlify.app; font-src 'self' fonts.gstatic.com; frame-ancestors 'self'"
 
-# CMS admin - relaxed CSP for DecapCMS (still requires GitHub OAuth to access)
+# CMS admin - CSP for Sveltia CMS (GitHub OAuth authentication)
 [[headers]]
   for = "/admin/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' unpkg.com identity.netlify.com netlify-identity-widget.netlify.app; style-src 'self' 'unsafe-inline' unpkg.com; img-src 'self' data: blob: *.githubusercontent.com; connect-src 'self' unpkg.com api.github.com raw.githubusercontent.com *.netlify.com *.netlify.app *.netlifystatus.com; font-src 'self' data:; frame-src 'self' *.netlify.com"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' unpkg.com; style-src 'self' 'unsafe-inline' unpkg.com; img-src 'self' data: blob: *.githubusercontent.com; connect-src 'self' unpkg.com api.github.com raw.githubusercontent.com github.com *.netlify.com *.netlify.app; font-src 'self' data:; frame-src 'self' *.netlify.com github.com"
     X-Robots-Tag = "noindex, nofollow"
 
 # Prevent HTML caching

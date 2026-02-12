@@ -1,13 +1,11 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: NixVir/NixVir.github.io
   branch: master
 
 # Media files stored in static/images
 media_folder: "static/images"
 public_folder: "/images"
-
-# Editorial workflow: draft -> review -> publish
-publish_mode: editorial_workflow
 
 collections:
   # -----------------------------------------------
