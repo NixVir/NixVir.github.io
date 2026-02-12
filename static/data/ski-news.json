@@ -1,8 +1,33 @@
 {
-  "updated": "2026-02-11 11:38:32",
-  "total_articles": 25,
+  "updated": "2026-02-12 11:34:31",
+  "total_articles": 24,
   "scoring_method": "keyword",
   "articles": [
+    {
+      "source": "Skift",
+      "title": "Hilton CEO: 2026 \u2018Will Be a Lot Better Than 25\u2019 After Results Show Sluggish Growth",
+      "url": "https://skift.com/2026/02/11/hilton-ceo-2026-will-be-a-lot-better-than-25-after-results-show-sluggish-growth/",
+      "description": "Hilton\u2019s muted growth in revenue per available room last year primarily reflected an economic strain on mid-market travelers. Yet CEO Chris Nassetta is optimistic about what he's seeing in the overall bookings data for 2026.",
+      "content": "Skift Take: Hilton\u2019s muted growth in revenue per available room last year primarily reflected an economic strain on mid-market travelers. Yet CEO Chris Nassetta is optimistic about what he's seeing in the overall bookings data for 2026. Read the Complete Story On Skift",
+      "pub_date": "2026-02-11",
+      "id": "838c69040525",
+      "prefilter_business_score": 3,
+      "is_macro_relevance": false,
+      "source_boost": 4,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +4)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "transportation",
+        "hospitality"
+      ],
+      "approved_date": "2026-02-12",
+      "display_score": 33
+    },
     {
       "source": "Google News - Ski Resort Snow Drought",
       "title": "Ski resort CEO issues warning amid unprecedented trend in US region: 'We can never let [this] happen again' - The Cool Down",
@@ -83,13 +108,13 @@
     },
     {
       "source": "Ski Area Management",
-      "title": "$100M Investment, Major Changes Coming to Mont-Sainte-Anne",
-      "url": "https://www.saminfo.com/news/sam-headline-news/100m-investment-major-changes-coming-to-mont-sainte-anne",
-      "description": "SAM Magazine\u2014Beaupr\u00e9, Quebec, Jan. 21, 2026\u2014 Mont-Sainte-Anne and operator Resorts of the Canadian Rockies (RCR) have reached an agreement with the Quebec government to fund substantial capital improvements at the resort, including the replacement of four lifts with three new ones, new snowmaking infrastructure, and installation of warm-season attractions for a total investment of C$100 million over the next five years. Investissement Qu\u00e9bec has been authorized to grant two loans totaling C$50 m",
-      "content": "SAM Magazine\u2014Beaupr\u00e9, Quebec, Jan. 21, 2026\u2014 Mont-Sainte-Anne and operator Resorts of the Canadian Rockies (RCR) have reached an agreement with the Quebec government to fund substantial capital improvements at the resort, including the replacement of four lifts with three new ones, new snowmaking infrastructure, and installation of warm-season attractions for a total investment of C$100 million over the next five years. Investissement Qu\u00e9bec has been authorized to grant two loans totaling C$50 m",
-      "pub_date": "2026-01-21",
-      "id": "a1b0aac5f103",
-      "prefilter_business_score": 1,
+      "title": "Powderhorn Launches Limited Three-Year Pass Tied to 60th Anniversary, Lift Investment",
+      "url": "https://www.saminfo.com/news/sam-headline-news/powderhorn-launches-limited-three-year-pass-tied-to-60th-anniversary-lift-investment",
+      "description": "SAM Magazine\u2014Mesa, Colo., Feb. 11, 2026\u2014 Rendering of the new Wild West Express lift. As it approaches its 60th anniversary season, Powderhorn Mountain Resort is introducing a limited three-year season pass, positioning it as both a loyalty offering and commitment to affordability amid a major capital upgrade and plans for future improvements. \u201cFor 60 years, Powderhorn has been a place people return to again and again\u2014sometimes for generations,\u201d general manager Ryan Schramm said. \u201cThis 3-Year Pa",
+      "content": "SAM Magazine\u2014Mesa, Colo., Feb. 11, 2026\u2014 Rendering of the new Wild West Express lift. As it approaches its 60th anniversary season, Powderhorn Mountain Resort is introducing a limited three-year season pass, positioning it as both a loyalty offering and commitment to affordability amid a major capital upgrade and plans for future improvements. \u201cFor 60 years, Powderhorn has been a place people return to again and again\u2014sometimes for generations,\u201d general manager Ryan Schramm said. \u201cThis 3-Year Pa",
+      "pub_date": "2026-02-11",
+      "id": "025cd394ef7e",
+      "prefilter_business_score": 2,
       "is_macro_relevance": false,
       "source_boost": 2,
       "score": 10,
@@ -98,35 +123,13 @@
         "method": "keyword"
       },
       "score_method": "keyword",
-      "category": "business-investment",
+      "category": "ski-history",
       "secondary_categories": [
         "resort-operations",
-        "canada"
+        "business-investment"
       ],
-      "approved_date": "2026-01-21",
-      "display_score": 25
-    },
-    {
-      "source": "Ski Area Management",
-      "title": "Boyne Resorts Launches Independent Charitable Foundation",
-      "url": "https://www.saminfo.com/news/sam-headline-news/boyne-resorts-launches-independent-charitable-foundation",
-      "description": "SAM Magazine\u2014Boyne Falls, Mich., Jan. 21, 2026\u2014 Boyne Resorts has launched the Boyne Forever Foundation, an independent 501(c)(3) public charity that will coordinate philanthropic giving and grantmaking across the company\u2019s 13 North American properties. The foundation will focus on three areas: environmental stewardship, community investment, and support for employees. Structured as a standalone public charity, the Boyne Forever Foundation consolidates philanthropic efforts that were previously ",
-      "content": "SAM Magazine\u2014Boyne Falls, Mich., Jan. 21, 2026\u2014 Boyne Resorts has launched the Boyne Forever Foundation, an independent 501(c)(3) public charity that will coordinate philanthropic giving and grantmaking across the company\u2019s 13 North American properties. The foundation will focus on three areas: environmental stewardship, community investment, and support for employees. Structured as a standalone public charity, the Boyne Forever Foundation consolidates philanthropic efforts that were previously ",
-      "pub_date": "2026-01-21",
-      "id": "65f06376605b",
-      "prefilter_business_score": 1,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 9,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "business-investment",
-      "secondary_categories": [],
-      "approved_date": "2026-01-21",
-      "display_score": 23
+      "approved_date": "2026-02-12",
+      "display_score": 20
     },
     {
       "source": "Ski Area Management",
@@ -322,6 +325,30 @@
       "display_score": 18
     },
     {
+      "source": "Ski Area Management",
+      "title": "Attendance Up at NSAA Eastern Conference",
+      "url": "https://www.saminfo.com/news/sam-headline-news/attendance-up-at-nsaa-eastern-conference",
+      "description": "SAM Magazine\u2014Killington, Vt., Feb. 9, 2026\u2014 Colleagues took time to connect sharing stories and highlights from the season. A banner winter across much of the East, marked by consistent cold temperatures for snowmaking, steady natural snowfall, and record holiday attendance at many ski areas, set an upbeat tone for the National Ski Areas Association Eastern Winter Conference. Roughly 621 industry professionals attended the event at Killington, Feb. 3\u20134, up from about 575 last year. The trade sho",
+      "content": "SAM Magazine\u2014Killington, Vt., Feb. 9, 2026\u2014 Colleagues took time to connect sharing stories and highlights from the season. A banner winter across much of the East, marked by consistent cold temperatures for snowmaking, steady natural snowfall, and record holiday attendance at many ski areas, set an upbeat tone for the National Ski Areas Association Eastern Winter Conference. Roughly 621 industry professionals attended the event at Killington, Feb. 3\u20134, up from about 575 last year. The trade sho",
+      "pub_date": "2026-02-09",
+      "id": "bf4e03baaee0",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 9,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [
+        "resort-operations"
+      ],
+      "approved_date": "2026-02-12",
+      "display_score": 18
+    },
+    {
       "source": "PlanetSKI",
       "title": "What A Time For PlanetSKI To Be In Canada",
       "url": "https://planetski.eu/2026/01/22/what-a-time-for-planetski-to-be-in-canada/",
@@ -343,30 +370,6 @@
         "canada"
       ],
       "approved_date": "2026-01-22",
-      "display_score": 18
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "Notorious Quebec Ski Resort Announces Start Of Capital Improvement Projects",
-      "url": "https://unofficialnetworks.com/2026/01/21/mont-sainte-anne-2026-upgrades/",
-      "description": "After a bumpy start to the 2025-26 season, a Quebec ski resort has announced major on-mountain improvements.",
-      "content": "Quebec \u2014 Well, here are some words I never thought I would type out: Resorts of the Canadian Rockies (RCR) is spending lots of money on one of its properties. Yesterday, Mont-Sainte-Anne and the Quebec government announced a relaunch of their partnership, with an investment of $100 million CAD (nearly $72.4 million) to revitalize one of Quebec\u2019s largest ski resorts. These projects are funded partly by RCR, with the other funds coming from two loans provided by the province. The plan is now in the implementation stage. \u201cWe were able to cross the finish line by establishing a true partnership with Investissement Qu\u00e9bec and S\u00c9PAQ, enabling the rapid injection of $100 million into the ski mountain\u2019s infrastructure and tourism offering to ensure its modernization. Significant efforts were made by all parties to ensure the long-term coherence and sustainability of the destination through a renewed approach,\u201d said Maxime Cretin, the Vice President and General Manager of RCR\u2019s Eastern Region. ",
-      "pub_date": "2026-01-21",
-      "id": "e817bf8ec56c",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "canada",
-      "secondary_categories": [
-        "business-investment"
-      ],
-      "approved_date": "2026-01-21",
       "display_score": 18
     },
     {
@@ -467,28 +470,29 @@
       "display_score": 16
     },
     {
-      "source": "The Ski Guru",
-      "title": "21-Year-Old Skier Dies After Leaving the Piste in Courmayeur",
-      "url": "https://www.the-ski-guru.com/2026/01/21/skier-dies-courmayeur-leaves-piste-tree/",
-      "description": "21-Year-Old Skier Dies After Leaving the Piste in Courmayeur A tragic ski accident has claimed the life of a 21-year-old skier in Courmayeur, in Italy\u2019s Aosta Valley, after he left a marked piste and collided with a tree. According to reporting by Corriere Torino, the young skier was descending a return run in the Dolonne area of the Courmayeur ski \u2026 Continue reading \"21-Year-Old Skier Dies After Leaving the Piste in Courmayeur\" The post 21-Year-Old Skier Dies After Leaving the Piste in Courmaye",
-      "content": "21-Year-Old Skier Dies After Leaving the Piste in Courmayeur A tragic ski accident has claimed the life of a 21-year-old skier in Courmayeur , in Italy\u2019s Aosta Valley , after he left a marked piste and collided with a tree. According to reporting by Corriere Torino , the young skier was descending a return run in the Dolonne area of the Courmayeur ski domain when he lost control, exited the piste and struck a tree at high speed. The impact was fatal, and the skier died at the scene. Emergency services, including piste patrol, local police and the Aosta Valley Mountain Rescue Service, were immediately dispatched. Despite rapid intervention, there was nothing rescuers could do to save him. Authorities carried out the necessary procedures to recover the body and investigate the circumstances of the accident. Mountain Skiing Safety: Key Rules to Reduce Risk Skiing in the mountains always involves risk \u2014 even on marked pistes. Many serious ski accidents occur after a momentary loss of contr",
-      "pub_date": "2026-01-21",
-      "id": "25d8391d48fa",
+      "source": "Unofficial Networks",
+      "title": "Colorado Ski Resort Offering $999 3-Year Season Pass",
+      "url": "https://unofficialnetworks.com/2026/02/11/powderhorn-three-year-pass/",
+      "description": "The Western Colorado ski resort is offering a $999 three-year pass, but you'll need to act fast to secure one.",
+      "content": "Colorado \u2014 In honor of Powderhorn\u2019s 60th anniversary, the Colorado ski resort is offering a great season pass deal. Yesterday, Powderhorn Mountain Resort announced that it is offering a three-year season pass for only $999. Other perks to this pass include early lift access on select dates, a gathering with management, and a commemorative pass. \u201cFor 60 years, Powderhorn has been a place people return to again and again\u2014sometimes for generations,\u201d said Ryan Schramm, the General Manager of Powderhorn Mountain Resort. \u201cThis 3-Year Pass is our way of saying thank you to the guests who call this mountain home, while also inviting them to be a part of what comes next. In addition to all the improvements we have made so far, the Wild West Express is a transformational investment, and our anniversary season felt like the right moment to connect the future of the mountain with the people who have supported it all along.\u201d This price point is available only on a limited basis and for a limited ti",
+      "pub_date": "2026-02-11",
+      "id": "5e5008bb75cb",
       "prefilter_business_score": 0,
       "is_macro_relevance": false,
-      "source_boost": 1,
-      "score": 10,
+      "source_boost": 0,
+      "score": 8,
       "score_details": {
-        "reason": "Keyword scoring (source: +1)",
+        "reason": "Keyword scoring (source: +0)",
         "method": "keyword"
       },
       "score_method": "keyword",
-      "category": "safety-incidents",
+      "category": "ski-history",
       "secondary_categories": [
+        "resort-operations",
         "business-investment"
       ],
-      "approved_date": "2026-01-22",
-      "display_score": 13
+      "approved_date": "2026-02-12",
+      "display_score": 14
     },
     {
       "source": "The Ski Guru",
@@ -538,28 +542,6 @@
         "transportation"
       ],
       "approved_date": "2026-02-10",
-      "display_score": 10
-    },
-    {
-      "source": "The Ski Guru",
-      "title": "Why Skiing Alone Is Dangerous in the Mountains",
-      "url": "https://www.the-ski-guru.com/2026/01/21/skiing-alone-danger-mountain-safety/",
-      "description": "Why Skiing Alone Is Dangerous in the Mountains Skiing alone is often seen as peaceful, efficient or even safer \u2014 fewer people, fewer variables, fewer mistakes. For experienced skiers in particular, solo skiing can feel controlled and familiar. In reality, skiing alone is one of the strongest risk factors in fatal mountain accidents, whether caused by \u2026 Continue reading \"Why Skiing Alone Is Dangerous in the Mountains\" The post Why Skiing Alone Is Dangerous in the Mountains appeared first on The-S",
-      "content": "Why Skiing Alone Is Dangerous in the Mountains Skiing alone is often seen as peaceful, efficient or even safer \u2014 fewer people, fewer variables, fewer mistakes. For experienced skiers in particular, solo skiing can feel controlled and familiar. In reality, skiing alone is one of the strongest risk factors in fatal mountain accidents , whether caused by avalanches, collisions, falls or medical emergencies. This article explains why skiing alone dramatically increases danger , even for skilled and cautious skiers. The Most Critical Factor: No Immediate Help When skiing alone, there is no margin for error . In many mountain accidents: The victim is unable to call for help Injuries prevent movement or communication Time becomes the decisive factor In avalanches, survival often depends on rescue within minutes . Without a partner to initiate a search, deploy equipment or raise the alarm immediately, the chances of survival drop sharply. The same applies to: High-speed collisions with trees o",
-      "pub_date": "2026-01-21",
-      "id": "b5c390f0f9d3",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 1,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +1)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "safety-incidents",
-      "secondary_categories": [],
-      "approved_date": "2026-01-21",
       "display_score": 10
     },
     {
