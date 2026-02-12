@@ -168,17 +168,21 @@
     label, [class*="Label"], [class*="FieldLabel"] {
       color: #9ca3b0 !important;
     }
-    /* Required field indicator (white vertical bar next to labels) */
-    label::before, label::after,
-    [class*="Label"]::before, [class*="Label"]::after,
-    [class*="FieldLabel"]::before, [class*="FieldLabel"]::after {
-      color: #3b82f6 !important;
-      background-color: #3b82f6 !important;
+    /* Required field indicator — DecapCMS shows a colored bar on required fields.
+       Could be border-left, a pseudo-element, or an inline element. Cover all cases. */
+    /* Bar as border-left on field wrapper */
+    #nc-root [class*="Field"][class*="required"],
+    #nc-root [class*="field"][class*="required"],
+    #nc-root [class*="ControlHint"],
+    #nc-root [class*="FieldLabel"] {
+      border-left-color: #3b82f6 !important;
     }
+    /* Bar as pseudo-element on label */
     #nc-root label::before, #nc-root label::after,
-    #nc-root [class*="Label"]::before, #nc-root [class*="Label"]::after {
-      color: #3b82f6 !important;
+    #nc-root [class*="Label"]::before, #nc-root [class*="Label"]::after,
+    #nc-root [class*="FieldLabel"]::before, #nc-root [class*="FieldLabel"]::after {
       background-color: #3b82f6 !important;
+      color: #3b82f6 !important;
     }
     /* Required indicator as inline span within label */
     #nc-root label span[class*="required"],
@@ -186,6 +190,12 @@
     #nc-root [class*="Label"] span {
       color: #3b82f6 !important;
       background-color: transparent !important;
+    }
+    /* Catch any white/light border-left that DecapCMS applies as required indicator */
+    #nc-root div[style*="border-left"],
+    #nc-root div[style*="border-color: rgb(255"],
+    #nc-root div[style*="border-color: white"] {
+      border-left-color: #3b82f6 !important;
     }
     h1, h2, h3, h4, h5, h6 {
       color: #e8ecf2 !important;
@@ -488,9 +498,60 @@
       color: #93c5fd !important;
     }
 
-    /* Toggle/boolean widget */
+    /* Toggle/boolean widget — ensure switch is visible */
     [class*="Toggle"] label {
       color: #9ca3b0 !important;
+    }
+    /* The toggle switch track (background) */
+    #nc-root [class*="Toggle"] span,
+    #nc-root [class*="toggle"] span,
+    #nc-root label[class*="Switch"] span,
+    #nc-root [class*="ToggleBackground"],
+    #nc-root [class*="toggleBackground"] {
+      background-color: #374151 !important;
+      border-radius: 12px !important;
+    }
+    /* When toggle is checked/active — blue track */
+    #nc-root input:checked + span,
+    #nc-root input:checked ~ span,
+    #nc-root [class*="Toggle"][class*="active"] span,
+    #nc-root [class*="Toggle"][class*="Active"] span,
+    #nc-root [class*="isActive"] span {
+      background-color: #3b82f6 !important;
+    }
+    /* The toggle handle/knob */
+    #nc-root [class*="Toggle"] span span,
+    #nc-root [class*="toggle"] span span,
+    #nc-root [class*="ToggleHandle"],
+    #nc-root [class*="toggleHandle"] {
+      background-color: #ffffff !important;
+      border-radius: 50% !important;
+    }
+    /* Ensure boolean widget containers are visible and not collapsed */
+    #nc-root [class*="Toggle"],
+    #nc-root [class*="toggle"],
+    #nc-root [id*="toggle"],
+    #nc-root [class*="BooleanControl"],
+    #nc-root [class*="booleanControl"],
+    #nc-root [data-field-name="pinned"],
+    #nc-root [data-field-name="active"] {
+      min-height: 36px !important;
+      display: flex !important;
+      align-items: center !important;
+    }
+    /* Force checkbox inputs inside boolean widgets to be visible */
+    #nc-root input[type="checkbox"] {
+      appearance: auto !important;
+      -webkit-appearance: checkbox !important;
+      width: 18px !important;
+      height: 18px !important;
+      min-width: 18px !important;
+      min-height: 18px !important;
+      opacity: 1 !important;
+      position: relative !important;
+      cursor: pointer !important;
+      accent-color: #3b82f6 !important;
+      background: #1a2230 !important;
     }
 
     /* Dialog/modal overlays */
@@ -528,13 +589,17 @@
        selectors and JS runtime fixes instead.
        ============================================= */
 
-    /* Force every element to not have white/light backgrounds */
-    #nc-root *, #nc-root *::before, #nc-root *::after {
+    /* Force every element to not have white/light backgrounds.
+       Exempt toggle/boolean widgets so their styling is preserved. */
+    #nc-root *:not([class*="Toggle"]):not([class*="toggle"]):not(input[type="checkbox"]),
+    #nc-root *:not([class*="Toggle"]):not([class*="toggle"])::before,
+    #nc-root *:not([class*="Toggle"]):not([class*="toggle"])::after {
       border-color: #2a3444 !important;
     }
 
-    /* Target the CMS app root — all descendants get dark bg */
-    #nc-root div,
+    /* Target the CMS app root — all descendants get dark bg.
+       Exempt toggle/boolean widget elements from background override. */
+    #nc-root div:not([class*="Toggle"]):not([class*="toggle"]):not([class*="Boolean"]):not([class*="boolean"]),
     #nc-root section,
     #nc-root aside,
     #nc-root main,
@@ -1213,49 +1278,75 @@
         // --- Editor page: inject Save button at bottom of form ---
         var footer = document.getElementById('nixvir-editor-footer');
         if (isEditorPage) {
-          // Try multiple selectors — DecapCMS uses Emotion classes that vary
-          var controlPane = document.querySelector('[class*="ControlPane"], [class*="controlPane"]');
-          // If no ControlPane found, look for the last field widget container
-          if (!controlPane) {
-            var allFields = document.querySelectorAll('#nc-root [class*="ObjectWidgetTopBar"], #nc-root [class*="Field"], #nc-root [class*="field"]');
-            if (allFields.length > 0) {
-              controlPane = allFields[allFields.length - 1].closest('[class*="Control"], [class*="Pane"], [class*="editor"]') || allFields[allFields.length - 1].parentNode;
-            }
-          }
-          if (controlPane && !footer) {
-            footer = document.createElement('div');
-            footer.id = 'nixvir-editor-footer';
-            footer.innerHTML = '<button id="nixvir-save-btn" type="button">Save</button>';
-            // Try appending after controlPane, fall back to appending inside it
-            if (controlPane.nextSibling) {
-              controlPane.parentNode.insertBefore(footer, controlPane.nextSibling);
-            } else if (controlPane.parentNode) {
-              controlPane.parentNode.appendChild(footer);
-            } else {
-              controlPane.appendChild(footer);
-            }
-            document.getElementById('nixvir-save-btn').addEventListener('click', function() {
-              // Find and click the CMS's real Save button in the top toolbar
-              var allBtns = document.querySelectorAll('[class*="EditorToolbar"] button, [class*="editorToolbar"] button, header button, [class*="ToolbarSection"] button');
-              for (var i = 0; i < allBtns.length; i++) {
-                var txt = allBtns[i].textContent.trim().toLowerCase();
-                if (txt === 'save' || txt === 'publish') {
-                  allBtns[i].click();
-                  return;
+          if (!footer) {
+            // Strategy: find all label elements (which DecapCMS always renders for fields),
+            // then find the scrollable container that holds them all, and append the footer.
+            var labels = document.querySelectorAll('#nc-root label');
+            if (labels.length >= 3) {
+              // Walk up from the last label to find the scrollable form container.
+              // The form container is typically the element with overflow-y: auto or scroll.
+              var lastLabel = labels[labels.length - 1];
+              var formContainer = null;
+              var el = lastLabel.parentElement;
+              for (var attempts = 0; el && attempts < 15; attempts++) {
+                var overflow = window.getComputedStyle(el).overflowY;
+                if (overflow === 'auto' || overflow === 'scroll') {
+                  formContainer = el;
+                  break;
                 }
+                el = el.parentElement;
               }
-              // Fallback: look for any element with "Save" text
-              var allSpans = document.querySelectorAll('span, button, a');
-              for (var j = 0; j < allSpans.length; j++) {
-                if (allSpans[j].textContent.trim() === 'Save') {
-                  allSpans[j].click();
-                  return;
-                }
+              // If no scrollable container found, use the last label's grandparent
+              if (!formContainer) {
+                formContainer = lastLabel.parentElement && lastLabel.parentElement.parentElement
+                  ? lastLabel.parentElement.parentElement : null;
               }
-            });
+              if (formContainer) {
+                footer = document.createElement('div');
+                footer.id = 'nixvir-editor-footer';
+                footer.innerHTML = '<button id="nixvir-save-btn" type="button">Save</button>';
+                formContainer.appendChild(footer);
+                document.getElementById('nixvir-save-btn').addEventListener('click', function() {
+                  // Find and click the CMS's real Save button in the top toolbar
+                  var allBtns = document.querySelectorAll('#nc-root button');
+                  for (var i = 0; i < allBtns.length; i++) {
+                    var txt = allBtns[i].textContent.trim().toLowerCase();
+                    if (txt === 'save' || txt === 'publish') {
+                      allBtns[i].click();
+                      return;
+                    }
+                  }
+                });
+              }
+            }
           }
         } else if (footer) {
           footer.remove();
+        }
+
+        // --- Runtime fix: recolor required-field indicator bars ---
+        // DecapCMS uses Emotion CSS-in-JS for required indicators (bright
+        // border-left on field containers). CSS can't reliably override
+        // Emotion-injected styles, so we fix them at runtime.
+        if (isEditorPage) {
+          var fieldDivs = document.querySelectorAll('#nc-root div');
+          for (var d = 0; d < fieldDivs.length; d++) {
+            var divEl = fieldDivs[d];
+            var cs = window.getComputedStyle(divEl);
+            var blWidth = parseInt(cs.borderLeftWidth) || 0;
+            // Only check divs that have a visible left border (2-5px is typical indicator width)
+            if (blWidth >= 2 && blWidth <= 6) {
+              var blColor = cs.borderLeftColor;
+              var blMatch = blColor.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+              if (blMatch) {
+                var blR = parseInt(blMatch[1]), blG = parseInt(blMatch[2]), blB = parseInt(blMatch[3]);
+                // If the border-left is white/near-white or bright, recolor to blue
+                if ((blR + blG + blB) / 3 > 180) {
+                  divEl.style.setProperty('border-left-color', '#3b82f6', 'important');
+                }
+              }
+            }
+          }
         }
 
         // --- Workflow page: inject info banner ---
