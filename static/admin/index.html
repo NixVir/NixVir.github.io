@@ -804,32 +804,30 @@
     #nixvir-help-content .help-section:last-child { margin-bottom: 0; }
 
     /* =============================================
-       Editor form footer (bottom call-to-action)
+       Editor form footer (Save button at bottom)
        ============================================= */
     #nixvir-editor-footer {
-      background: #111820;
-      border: 1px solid #2a3444;
-      border-radius: 6px;
-      padding: 16px 20px;
-      margin: 24px 20px 40px 20px;
+      padding: 24px 20px 40px 20px;
       text-align: center;
     }
-    #nixvir-editor-footer p {
-      color: #9ca3b0 !important;
-      font-size: 14px;
-      margin: 0;
-      line-height: 1.6;
-    }
-    #nixvir-editor-footer .footer-arrow {
+    #nixvir-save-btn {
       display: inline-block;
-      margin-top: 8px;
-      color: #60a5fa;
-      font-size: 20px;
-      animation: nixvir-bounce 1.5s ease infinite;
+      padding: 12px 48px;
+      background: #3b82f6 !important;
+      color: #ffffff !important;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+      transition: background 0.15s;
     }
-    @keyframes nixvir-bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-4px); }
+    #nixvir-save-btn:hover {
+      background: #2563eb !important;
+    }
+    #nixvir-save-btn:active {
+      background: #1d4ed8 !important;
     }
   </style>
 </head>
@@ -1169,36 +1167,34 @@
 
             if (isNews && isNew) {
               title = 'Add a Story to the News Feed';
-              instructions = 'Fill in the Title, Story URL, Source, and Category at minimum. ' +
-                'When finished, click <strong>Save</strong> in the top bar above.';
+              instructions = 'Fill in the Title, Story URL, Source, and Category at minimum.';
               stepsHtml =
                 '<div class="banner-step"><span class="step-num">1</span> Fill in the fields below</div>' +
-                '<div class="banner-step"><span class="step-num">2</span> Click <strong>Save</strong> in the top bar</div>' +
+                '<div class="banner-step"><span class="step-num">2</span> Click <strong>Save</strong></div>' +
                 '<div class="banner-step"><span class="step-num">3</span> Set status to <strong>Ready</strong></div>' +
                 '<div class="banner-step"><span class="step-num">4</span> Click <strong>Publish</strong></div>';
             } else if (isNews) {
               title = 'Edit News Story';
-              instructions = 'Make your changes below. When finished, click <strong>Save</strong> in the top bar above.';
+              instructions = 'Make your changes below.';
               stepsHtml =
                 '<div class="banner-step"><span class="step-num">1</span> Edit the fields below</div>' +
-                '<div class="banner-step"><span class="step-num">2</span> Click <strong>Save</strong> in the top bar</div>' +
+                '<div class="banner-step"><span class="step-num">2</span> Click <strong>Save</strong></div>' +
                 '<div class="banner-step"><span class="step-num">3</span> Set status to <strong>Ready</strong></div>' +
                 '<div class="banner-step"><span class="step-num">4</span> Click <strong>Publish</strong></div>';
             } else if (isNew) {
               title = 'Create a New Data Insight';
-              instructions = 'Only Title, Date, and Body are required. ' +
-                'When finished, click <strong>Save</strong> in the top bar above.';
+              instructions = 'Only Title, Date, and Body are required.';
               stepsHtml =
                 '<div class="banner-step"><span class="step-num">1</span> Fill in the fields below</div>' +
-                '<div class="banner-step"><span class="step-num">2</span> Click <strong>Save</strong> in the top bar</div>' +
+                '<div class="banner-step"><span class="step-num">2</span> Click <strong>Save</strong></div>' +
                 '<div class="banner-step"><span class="step-num">3</span> Set status to <strong>Ready</strong></div>' +
                 '<div class="banner-step"><span class="step-num">4</span> Click <strong>Publish</strong></div>';
             } else {
               title = 'Edit Data Insight';
-              instructions = 'Make your changes below. When finished, click <strong>Save</strong> in the top bar above.';
+              instructions = 'Make your changes below.';
               stepsHtml =
                 '<div class="banner-step"><span class="step-num">1</span> Edit the fields below</div>' +
-                '<div class="banner-step"><span class="step-num">2</span> Click <strong>Save</strong> in the top bar</div>' +
+                '<div class="banner-step"><span class="step-num">2</span> Click <strong>Save</strong></div>' +
                 '<div class="banner-step"><span class="step-num">3</span> Set status to <strong>Ready</strong></div>' +
                 '<div class="banner-step"><span class="step-num">4</span> Click <strong>Publish</strong></div>';
             }
@@ -1214,21 +1210,35 @@
           banner.style.display = 'none';
         }
 
-        // --- Editor page: inject footer call-to-action below form ---
+        // --- Editor page: inject Save button at bottom of form ---
         var footer = document.getElementById('nixvir-editor-footer');
         if (isEditorPage) {
           var controlPane = document.querySelector('[class*="ControlPane"], [class*="controlPane"]');
           if (controlPane && !footer) {
             footer = document.createElement('div');
             footer.id = 'nixvir-editor-footer';
-            var isNew = window.location.hash.includes('/new');
-            footer.innerHTML =
-              '<p>' + (isNew
-                ? 'When you\'re done, scroll up and click <strong style="color:#e8ecf2;">Save</strong> in the top bar to create your draft.'
-                : 'When you\'re done, scroll up and click <strong style="color:#e8ecf2;">Save</strong> in the top bar to save your changes.'
-              ) + '</p>' +
-              '<div class="footer-arrow">↑</div>';
+            footer.innerHTML = '<button id="nixvir-save-btn" type="button">Save</button>';
             controlPane.parentNode.insertBefore(footer, controlPane.nextSibling);
+            document.getElementById('nixvir-save-btn').addEventListener('click', function() {
+              // Find and click the CMS's real Save button in the top toolbar
+              var cmsSaveBtn = document.querySelector('[class*="ToolbarButton"] span');
+              var allBtns = document.querySelectorAll('[class*="EditorToolbar"] button, [class*="editorToolbar"] button, header button');
+              for (var i = 0; i < allBtns.length; i++) {
+                var txt = allBtns[i].textContent.trim().toLowerCase();
+                if (txt === 'save' || txt === 'publish') {
+                  allBtns[i].click();
+                  return;
+                }
+              }
+              // Fallback: look for any element with "Save" text in the top bar area
+              var allSpans = document.querySelectorAll('span, button, a');
+              for (var j = 0; j < allSpans.length; j++) {
+                if (allSpans[j].textContent.trim() === 'Save') {
+                  allSpans[j].click();
+                  return;
+                }
+              }
+            });
           }
         } else if (footer) {
           footer.remove();
