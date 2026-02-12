@@ -155,21 +155,22 @@ collections:
         time_format: false
         hint: "When the story was originally published. Click 'Now' for today."
 
-      - label: "Pin to Top"
-        name: "pinned"
-        widget: "boolean"
-        default: false
-        required: false
-        hint: "Pinned stories always appear at the top of the news feed, above automated articles."
-
-      - label: "Pin Until"
-        name: "pin_until"
-        widget: "datetime"
-        format: "YYYY-MM-DD"
-        date_format: "YYYY-MM-DD"
-        time_format: false
-        required: false
-        hint: "Optional expiration date for pinning. After this date the story stays in the feed but is no longer forced to the top. Leave blank to pin indefinitely."
+      - label: "Pin Duration"
+        name: "pin_days"
+        widget: "select"
+        default: 3
+        options:
+          - { label: "1 day", value: 1 }
+          - { label: "2 days", value: 2 }
+          - { label: "3 days (default)", value: 3 }
+          - { label: "4 days", value: 4 }
+          - { label: "5 days", value: 5 }
+          - { label: "6 days", value: 6 }
+          - { label: "1 week", value: 7 }
+          - { label: "2 weeks", value: 14 }
+          - { label: "3 weeks", value: 21 }
+          - { label: "1 month", value: 30 }
+        hint: "How long this story stays pinned at the top of the news feed, starting from the publication date. After this period the story remains in the feed sorted by date."
 
       - label: "Active"
         name: "active"

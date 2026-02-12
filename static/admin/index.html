@@ -598,8 +598,8 @@
     }
 
     /* Target the CMS app root — all descendants get dark bg.
-       Exempt toggle/boolean widget elements from background override. */
-    #nc-root div:not([class*="Toggle"]):not([class*="toggle"]):not([class*="Boolean"]):not([class*="boolean"]),
+       Exempt toggle/boolean widgets AND dropdown menus from background override. */
+    #nc-root div:not([class*="Toggle"]):not([class*="toggle"]):not([class*="Boolean"]):not([class*="boolean"]):not([class*="menu"]):not([class*="Menu"]):not([class*="option"]):not([class*="Option"]):not([role="listbox"]),
     #nc-root section,
     #nc-root aside,
     #nc-root main,
@@ -607,6 +607,18 @@
     #nc-root footer,
     #nc-root header:not(:first-child) {
       background-color: #0a0e14;
+    }
+
+    /* Force dropdown menus to elevated surface — override nuclear rule */
+    #nc-root div[class*="menu"],
+    #nc-root div[class*="Menu"],
+    #nc-root div[class*="MenuList"],
+    #nc-root div[class*="menuList"],
+    #nc-root div[role="listbox"],
+    #nc-root div[class*="option"],
+    #nc-root div[class*="Option"] {
+      background-color: #1a2230 !important;
+      z-index: 9999 !important;
     }
 
     /* Cards, panels, and elevated surfaces */
@@ -894,6 +906,35 @@
     #nixvir-save-btn:active {
       background: #1d4ed8 !important;
     }
+    #nixvir-editor-footer p {
+      color: #8a919e !important;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    /* =============================================
+       Manual news: constrain Body editor height
+       (data-collection attribute set by JS)
+       ============================================= */
+    #nc-root[data-collection="manual-news"] .CodeMirror {
+      min-height: 60px !important;
+      max-height: 100px !important;
+      height: 60px !important;
+    }
+    #nc-root[data-collection="manual-news"] [class*="RawEditor"],
+    #nc-root[data-collection="manual-news"] [class*="VisualEditor"],
+    #nc-root[data-collection="manual-news"] [class*="editor-preview"] {
+      min-height: 60px !important;
+      max-height: 100px !important;
+    }
+    /* Ensure hint text below body is not clipped */
+    #nc-root[data-collection="manual-news"] [class*="hint"],
+    #nc-root[data-collection="manual-news"] [class*="Hint"],
+    #nc-root[data-collection="manual-news"] small {
+      display: block !important;
+      visibility: visible !important;
+      overflow: visible !important;
+    }
   </style>
 </head>
 <body>
@@ -919,7 +960,7 @@
               { heading: 'Adding a Story', items: [
                 'Click <strong>New Ski News — Manual Stories</strong> at the top to create a new entry',
                 'Fill in <strong>Title</strong>, <strong>Story URL</strong>, <strong>Source</strong>, and <strong>Category</strong> at minimum',
-                'Click <strong>Save</strong> in the top bar to create a draft. Then use the status dropdown at the top to set <strong>Ready</strong> and click <strong>Publish</strong>',
+                'Click <strong>Submit for Publishing</strong> at the bottom of the form',
                 'The story appears on the Ski News page after the site rebuilds (a few minutes)'
               ]},
               { heading: 'Field Guide', items: [
@@ -930,8 +971,7 @@
                 '<strong>Content Type</strong> — Article, Podcast, or Video. Podcasts/videos show a special icon',
                 '<strong>Description</strong> — Optional 1-2 sentence summary shown below the headline',
                 '<strong>Publication Date</strong> — When the story was originally published. Click "Now" for today',
-                '<strong>Pin to Top</strong> — Forces the story to the top of the feed above automated articles',
-                '<strong>Pin Until</strong> — Optional expiration for pinning. Leave blank to pin indefinitely',
+                '<strong>Pin Duration</strong> — How long the story stays pinned at the top of the feed (default: 3 days from publication date)',
                 '<strong>Active</strong> — Uncheck to hide a story without deleting it'
               ]},
               { heading: 'Tips', items: [
@@ -996,8 +1036,7 @@
                 'Fill in <strong>Title</strong>, <strong>Publish Date</strong>, and <strong>Body</strong> (required)',
                 'Other fields (slug, categories, tags, description, image) are optional',
                 'Scroll down to the <strong>Body</strong> field to write your content',
-                'Click <strong>Save</strong> in the top bar — this creates a draft',
-                'Change status to <strong>Ready</strong> and click <strong>Publish</strong> to go live'
+                'Click <strong>Submit for Publishing</strong> at the bottom of the form'
               ]},
               { heading: 'Field Guide', items: [
                 '<strong>Title</strong> — The headline readers see. Required',
@@ -1023,12 +1062,11 @@
             sections: [
               { heading: 'Editing', items: [
                 'Make your changes in the fields below',
-                'Click <strong>Save</strong> in the top bar when done',
-                'Changes are saved as a draft (Git branch) until you publish'
+                'Click <strong>Submit for Publishing</strong> at the bottom when done',
+                'Your changes are saved and marked ready for publishing automatically'
               ]},
               { heading: 'Publishing', items: [
-                'Change status to <strong>Ready</strong> using the dropdown at top',
-                'Click <strong>Publish</strong> to merge changes into the live site',
+                'The <strong>Submit for Publishing</strong> button saves and sets the status to Ready in one step',
                 'The <strong>Workflow</strong> tab shows all posts by status'
               ]},
               { heading: 'Tips', items: [
@@ -1215,6 +1253,18 @@
         // --- Check if on manual news route (used by banner below) ---
         var isNews = window.location.hash.includes('manual-news');
 
+        // --- Set data-collection attribute for collection-specific CSS ---
+        var ncRootForAttr = document.getElementById('nc-root');
+        if (ncRootForAttr) {
+          if (isNews) {
+            ncRootForAttr.setAttribute('data-collection', 'manual-news');
+          } else if (window.location.hash.includes('/collections/post')) {
+            ncRootForAttr.setAttribute('data-collection', 'post');
+          } else {
+            ncRootForAttr.removeAttribute('data-collection');
+          }
+        }
+
         // --- Editor page: inject instruction banner ---
         var isEditorPage = window.location.hash.includes('/collections/') &&
                            (window.location.hash.includes('/new') || window.location.hash.includes('/entries/'));
@@ -1232,36 +1282,28 @@
 
             if (isNews && isNew) {
               title = 'Add a Story to the News Feed';
-              instructions = 'Fill in the Title, Story URL, Source, and Category at minimum.';
+              instructions = 'Fill in the Title, Story URL, Source, and Category at minimum. Pin Duration defaults to 3 days.';
               stepsHtml =
                 '<div class="banner-step"><span class="step-num">1</span> Fill in the fields below</div>' +
-                '<div class="banner-step"><span class="step-num">2</span> Click <strong>Save</strong></div>' +
-                '<div class="banner-step"><span class="step-num">3</span> Set status to <strong>Ready</strong></div>' +
-                '<div class="banner-step"><span class="step-num">4</span> Click <strong>Publish</strong></div>';
+                '<div class="banner-step"><span class="step-num">2</span> Click <strong>Submit for Publishing</strong> at the bottom</div>';
             } else if (isNews) {
               title = 'Edit News Story';
               instructions = 'Make your changes below.';
               stepsHtml =
                 '<div class="banner-step"><span class="step-num">1</span> Edit the fields below</div>' +
-                '<div class="banner-step"><span class="step-num">2</span> Click <strong>Save</strong></div>' +
-                '<div class="banner-step"><span class="step-num">3</span> Set status to <strong>Ready</strong></div>' +
-                '<div class="banner-step"><span class="step-num">4</span> Click <strong>Publish</strong></div>';
+                '<div class="banner-step"><span class="step-num">2</span> Click <strong>Submit for Publishing</strong> at the bottom</div>';
             } else if (isNew) {
               title = 'Create a New Data Insight';
               instructions = 'Only Title, Date, and Body are required.';
               stepsHtml =
                 '<div class="banner-step"><span class="step-num">1</span> Fill in the fields below</div>' +
-                '<div class="banner-step"><span class="step-num">2</span> Click <strong>Save</strong></div>' +
-                '<div class="banner-step"><span class="step-num">3</span> Set status to <strong>Ready</strong></div>' +
-                '<div class="banner-step"><span class="step-num">4</span> Click <strong>Publish</strong></div>';
+                '<div class="banner-step"><span class="step-num">2</span> Click <strong>Submit for Publishing</strong> at the bottom</div>';
             } else {
               title = 'Edit Data Insight';
               instructions = 'Make your changes below.';
               stepsHtml =
                 '<div class="banner-step"><span class="step-num">1</span> Edit the fields below</div>' +
-                '<div class="banner-step"><span class="step-num">2</span> Click <strong>Save</strong></div>' +
-                '<div class="banner-step"><span class="step-num">3</span> Set status to <strong>Ready</strong></div>' +
-                '<div class="banner-step"><span class="step-num">4</span> Click <strong>Publish</strong></div>';
+                '<div class="banner-step"><span class="step-num">2</span> Click <strong>Submit for Publishing</strong> at the bottom</div>';
             }
 
             banner.innerHTML =
@@ -1275,16 +1317,13 @@
           banner.style.display = 'none';
         }
 
-        // --- Editor page: inject Save button at bottom of form ---
+        // --- Editor page: inject "Submit for Publishing" button at bottom ---
         var footer = document.getElementById('nixvir-editor-footer');
         if (isEditorPage) {
           if (!footer) {
-            // Strategy: find all label elements (which DecapCMS always renders for fields),
-            // then find the scrollable container that holds them all, and append the footer.
+            // Find all label elements, then walk up to the scrollable form container.
             var labels = document.querySelectorAll('#nc-root label');
             if (labels.length >= 3) {
-              // Walk up from the last label to find the scrollable form container.
-              // The form container is typically the element with overflow-y: auto or scroll.
               var lastLabel = labels[labels.length - 1];
               var formContainer = null;
               var el = lastLabel.parentElement;
@@ -1296,7 +1335,6 @@
                 }
                 el = el.parentElement;
               }
-              // If no scrollable container found, use the last label's grandparent
               if (!formContainer) {
                 formContainer = lastLabel.parentElement && lastLabel.parentElement.parentElement
                   ? lastLabel.parentElement.parentElement : null;
@@ -1304,18 +1342,78 @@
               if (formContainer) {
                 footer = document.createElement('div');
                 footer.id = 'nixvir-editor-footer';
-                footer.innerHTML = '<button id="nixvir-save-btn" type="button">Save</button>';
+                footer.innerHTML =
+                  '<button id="nixvir-save-btn" type="button">Submit for Publishing</button>' +
+                  '<p>Saves your entry and marks it ready for publishing.</p>';
                 formContainer.appendChild(footer);
+
                 document.getElementById('nixvir-save-btn').addEventListener('click', function() {
-                  // Find and click the CMS's real Save button in the top toolbar
+                  var btn = this;
+                  btn.disabled = true;
+                  btn.textContent = 'Saving\u2026';
+                  btn.style.opacity = '0.7';
+
+                  // Step 1: Click the CMS native Save button
+                  var saveBtnFound = false;
                   var allBtns = document.querySelectorAll('#nc-root button');
                   for (var i = 0; i < allBtns.length; i++) {
                     var txt = allBtns[i].textContent.trim().toLowerCase();
-                    if (txt === 'save' || txt === 'publish') {
+                    if (txt === 'save' && allBtns[i].id !== 'nixvir-save-btn') {
                       allBtns[i].click();
-                      return;
+                      saveBtnFound = true;
+                      break;
                     }
                   }
+                  if (!saveBtnFound) {
+                    btn.textContent = 'Submit for Publishing';
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                    return;
+                  }
+
+                  // Step 2: Poll for status dropdown, then set to Ready
+                  btn.textContent = 'Setting status\u2026';
+                  var statusAttempts = 0;
+                  var statusInterval = setInterval(function() {
+                    statusAttempts++;
+                    // Look for the status/draft button in the toolbar
+                    var toolbarBtns = document.querySelectorAll('#nc-root button');
+                    for (var j = 0; j < toolbarBtns.length; j++) {
+                      var btnText = toolbarBtns[j].textContent.trim().toLowerCase();
+                      if (btnText === 'draft' || btnText === 'in review' || btnText.includes('set status')) {
+                        toolbarBtns[j].click();
+                        // After dropdown opens, find and click "Ready"
+                        setTimeout(function() {
+                          var items = document.querySelectorAll('#nc-root li, #nc-root [role="option"], #nc-root [class*="DropdownItem"]');
+                          for (var k = 0; k < items.length; k++) {
+                            if (items[k].textContent.trim().toLowerCase() === 'ready') {
+                              items[k].click();
+                              break;
+                            }
+                          }
+                          btn.textContent = 'Submitted!';
+                          btn.style.background = '#22c55e';
+                          setTimeout(function() {
+                            btn.textContent = 'Submit for Publishing';
+                            btn.style.background = '';
+                            btn.disabled = false;
+                            btn.style.opacity = '1';
+                          }, 2000);
+                        }, 500);
+                        clearInterval(statusInterval);
+                        return;
+                      }
+                    }
+                    if (statusAttempts >= 20) {
+                      clearInterval(statusInterval);
+                      btn.textContent = 'Saved (set status manually)';
+                      btn.disabled = false;
+                      btn.style.opacity = '1';
+                      setTimeout(function() {
+                        btn.textContent = 'Submit for Publishing';
+                      }, 3000);
+                    }
+                  }, 500);
                 });
               }
             }
@@ -1324,23 +1422,54 @@
           footer.remove();
         }
 
+        // --- Runtime fix: boolean widget visibility ---
+        // DecapCMS renders boolean as hidden checkbox + custom toggle.
+        // Emotion CSS-in-JS hides the checkbox. Force it visible.
+        if (isEditorPage) {
+          var checkboxes = document.querySelectorAll('#nc-root input[type="checkbox"]');
+          for (var cb = 0; cb < checkboxes.length; cb++) {
+            var checkbox = checkboxes[cb];
+            checkbox.style.setProperty('opacity', '1', 'important');
+            checkbox.style.setProperty('position', 'relative', 'important');
+            checkbox.style.setProperty('width', '20px', 'important');
+            checkbox.style.setProperty('height', '20px', 'important');
+            checkbox.style.setProperty('min-width', '20px', 'important');
+            checkbox.style.setProperty('min-height', '20px', 'important');
+            checkbox.style.setProperty('cursor', 'pointer', 'important');
+            checkbox.style.setProperty('accent-color', '#3b82f6', 'important');
+            checkbox.style.setProperty('appearance', 'auto', 'important');
+            checkbox.style.setProperty('-webkit-appearance', 'checkbox', 'important');
+            // Add visible On/Off label if not already present
+            var parentLabel = checkbox.closest('label');
+            if (parentLabel && !parentLabel.querySelector('.nixvir-bool-label')) {
+              var stateLabel = document.createElement('span');
+              stateLabel.className = 'nixvir-bool-label';
+              stateLabel.style.cssText = 'margin-left:8px; font-size:13px; color:#9ca3b0;';
+              stateLabel.textContent = checkbox.checked ? 'On' : 'Off';
+              parentLabel.appendChild(stateLabel);
+              checkbox.addEventListener('change', function() {
+                var lbl = this.closest('label');
+                if (lbl) {
+                  var sl = lbl.querySelector('.nixvir-bool-label');
+                  if (sl) sl.textContent = this.checked ? 'On' : 'Off';
+                }
+              });
+            }
+          }
+        }
+
         // --- Runtime fix: recolor required-field indicator bars ---
-        // DecapCMS uses Emotion CSS-in-JS for required indicators (bright
-        // border-left on field containers). CSS can't reliably override
-        // Emotion-injected styles, so we fix them at runtime.
         if (isEditorPage) {
           var fieldDivs = document.querySelectorAll('#nc-root div');
           for (var d = 0; d < fieldDivs.length; d++) {
             var divEl = fieldDivs[d];
             var cs = window.getComputedStyle(divEl);
             var blWidth = parseInt(cs.borderLeftWidth) || 0;
-            // Only check divs that have a visible left border (2-5px is typical indicator width)
             if (blWidth >= 2 && blWidth <= 6) {
               var blColor = cs.borderLeftColor;
               var blMatch = blColor.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
               if (blMatch) {
                 var blR = parseInt(blMatch[1]), blG = parseInt(blMatch[2]), blB = parseInt(blMatch[3]);
-                // If the border-left is white/near-white or bright, recolor to blue
                 if ((blR + blG + blB) / 3 > 180) {
                   divEl.style.setProperty('border-left-color', '#3b82f6', 'important');
                 }

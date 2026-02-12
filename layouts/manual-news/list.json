@@ -1,5 +1,11 @@
 {{- $stories := slice -}}
 {{- range .Pages -}}
+  {{- $pinDays := .Params.pin_days | default 3 -}}
+  {{- $pinUntil := "" -}}
+  {{- with .Params.pub_date -}}
+    {{- $pubDate := time.AsTime . -}}
+    {{- $pinUntil = dateFormat "2006-01-02" ($pubDate.AddDate 0 0 (int $pinDays)) -}}
+  {{- end -}}
   {{- $story := dict
     "title" .Title
     "url" .Params.story_url
@@ -8,8 +14,8 @@
     "content_type" (.Params.content_type | default "article")
     "description" (.Params.description | default "")
     "pub_date" (.Params.pub_date | default "")
-    "pinned" (.Params.pinned | default false)
-    "pin_until" (.Params.pin_until | default "")
+    "pinned" true
+    "pin_until" $pinUntil
     "active" (.Params.active | default true)
   -}}
   {{- $stories = $stories | append $story -}}
