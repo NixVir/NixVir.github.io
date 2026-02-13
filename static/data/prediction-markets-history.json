@@ -35,6 +35,15 @@
       "rate_cuts_mode": 3,
       "oil_price": 63,
       "gas_price": 2.999
+    },
+    {
+      "date": "2026-02-13",
+      "recession_prob": 0.23,
+      "fed_outcome": "Hold",
+      "fed_prob": 0.93,
+      "rate_cuts_mode": 3,
+      "oil_price": 62,
+      "gas_price": 2.932
     }
   ]
 }
