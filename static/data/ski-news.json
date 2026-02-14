@@ -1,6 +1,6 @@
 {
-  "updated": "2026-02-12 11:34:31",
-  "total_articles": 24,
+  "updated": "2026-02-13 11:28:33",
+  "total_articles": 21,
   "scoring_method": "keyword",
   "articles": [
     {
@@ -107,6 +107,30 @@
       "display_score": 25
     },
     {
+      "source": "SnowBrains",
+      "title": "New Cirque T-Bar Opens Friday, February 13, as 6\u201d of Snow Blankets Aspen Snowmass, CO",
+      "url": "https://snowbrains.com/new-cirque-t-bar-opens-friday-as-6-of-snow-blankets-aspen-snowmass-co/",
+      "description": "Aspen Snowmass, Colorado, invites the community and visitors to celebrate the grand opening of the new Cirque T-Bar on Friday, February 13, at Snowmass. A ribbon cutting ceremony will take place at 11 a.m. at the base of the Cirque T-Bar. Aspen Snowmass leadership will make remarks before the first bar loads. The ceremony is open to the public, and [\u2026] The post New Cirque T-Bar Opens Friday, February 13, as 6\u201d of Snow Blankets Aspen Snowmass, CO appeared first on SnowBrains .",
+      "content": "Snowmass, Aspen, Colorado. | Photo: Tamara Susa via Aspen Snowmass Aspen Snowmass , Colorado, invites the community and visitors to celebrate the grand opening of the new Cirque T-Bar on Friday, February 13, at Snowmass. A ribbon cutting ceremony will take place at 11 a.m. at the base of the Cirque T-Bar. Aspen Snowmass leadership will make remarks before the first bar loads. The ceremony is open to the public, and guests are invited to celebrate the opening and ride the new T-Bar for the first time. \u201cOpening the Cirque T-Bar is the result of many months of work across our mountain operations teams, from summer construction to the extensive snowcat and patrol efforts required to prepare this terrain. It\u2019s a meaningful investment in one of our most unique zones at Snowmass, and we\u2019re excited to see guests back up here skiing and riding the Cirque,\u201d Susan Cross, Vice President of Mountain Operations, Aspen Skiing Company, said. Snowmass recorded 6\u201d of fresh snow in the past 24 hours, ref",
+      "pub_date": "2026-02-12",
+      "id": "2fd88e7b429d",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 9,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "resort-operations"
+      ],
+      "approved_date": "2026-02-13",
+      "display_score": 21
+    },
+    {
       "source": "Ski Area Management",
       "title": "Powderhorn Launches Limited Three-Year Pass Tied to 60th Anniversary, Lift Investment",
       "url": "https://www.saminfo.com/news/sam-headline-news/powderhorn-launches-limited-three-year-pass-tied-to-60th-anniversary-lift-investment",
@@ -157,72 +181,102 @@
       "display_score": 20
     },
     {
-      "source": "Snow Industry News",
-      "title": "Boyne Resorts Announces Launch Of The Boyne Forever Foundation",
-      "url": "https://www.snowindustrynews.com/articles/2026/jan/boyne-resorts-announces-launch-of-the-boyne-forever-foundation/",
-      "content": "Boyne Resorts, North America's largest family-owned four-season resort company, today announced the launch of the Boyne Forever Foundation, an independent 501(c)(3) public charity. This strategic philanthropic initiative will work in partnership with all 13 Boyne Resorts properties to amplify their collective impact and create greater year-over-year support for local and national causes. The Foundation represents a historic milestone for the company, channeling nearly 80 years of community commitment into one focused effort driven by the core principles that have defined the Boyne Resorts family since 1948. As an independent public charity, the Boyne Forever Foundation (BFF) will focus its efforts on three priorities that reflect the heart of Boyne Resorts' identity: investing in the communities where resorts are located, caring for the people who bring these resorts to life, and protecting the environment. \"The Boyne Forever Foundation is a strengthening of our commitment to the value",
-      "pub_date": "2026-01-22",
-      "id": "0d2c2054f3b9",
-      "prefilter_business_score": 0,
+      "source": "Google News - Ski Industry",
+      "title": "Winter Tourism Shift: How China\u2019s Ski Industry Is Thriving While Japan Faces Decline - Travel And Tour World",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOSUo3aWt4eHVBY2hkSmlBaVBPQl84al9PZjMzRjJlQzFqN1FvUjlmbXJjVllUd1B0WV9UWGdzeS15a3pNLUI3ZG56N2gxWllnOWoxRUZwbUVLdHh3cklnSUFpSnBWX1RCVWtBSWVCM2V1dEx4OUlYN3Fzc3RIVkE4V3haQVNNRTRyS25xYlFvb09EcUI4RmtvQk5hMTFYZkd6ODNjcjdUQVNUazhRaUJTTC0tUVNnclZUYkNuSE5XOXg5TjU0U0pLSEVZVQ?oc=5",
+      "description": "Winter Tourism Shift: How China\u2019s Ski Industry Is Thriving While Japan Faces Decline Travel And Tour World",
+      "content": "Winter Tourism Shift: How China\u2019s Ski Industry Is Thriving While Japan Faces Decline Travel And Tour World",
+      "pub_date": "2026-02-13",
+      "id": "9967282a081e",
+      "prefilter_business_score": 2,
       "is_macro_relevance": false,
-      "source_boost": 2,
+      "source_boost": 1,
       "score": 9,
       "score_details": {
-        "reason": "Keyword scoring (source: +2)",
+        "reason": "Keyword scoring (source: +1)",
         "method": "keyword"
       },
       "score_method": "keyword",
-      "category": "ski-history",
-      "secondary_categories": [
-        "business-investment"
-      ],
-      "approved_date": "2026-01-21",
-      "display_score": 20
-    },
-    {
-      "source": "Snow Industry News",
-      "title": "Swiss-Ski And Snowboard Community Mourning The Loss Of Ueli Kestenholz.",
-      "url": "https://www.snowindustrynews.com/articles/2026/jan/swiss-ski-and-snowboard-community-mourning-the-loss-of-ueli-kestenholz/",
-      "content": "Swiss-Ski and the snowboard community are mourning the loss of Ueli Kestenholz. The first Swiss Olympic medalist in a snowboard discipline died in an avalanche at the young age of 50. Ueli Kestenholz made a name for himself as a competitive athlete, a name that still resonates 20 years after the end of this chapter. In 1998, the then 22-year-old from Thun suddenly found himself in the spotlight: When snowboarders participated in the Winter Olympics for the first time in Nagano, Ueli won a medal for Switzerland in the first snowboard event in Olympic history: bronze in the parallel giant slalom Ueli's journey in snow sports began with skiing; he was even a member of a ski club when he discovered snowboarding at the age of 14. \"I skateboarded, I was a windsurfer, but I only skied in the winter, and on two planks,\" Ueli Kestenholz explained in a Tamedia interview two years ago. \"Snowboarding offered the opportunity to experience my favorite feeling, gliding sideways, even in winter.\" But ",
-      "pub_date": "2026-01-22",
-      "id": "ecd41a93a99b",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "winter-sports",
-      "secondary_categories": [
-        "safety-incidents",
-        "business-investment"
-      ],
-      "approved_date": "2026-01-22",
-      "display_score": 20
-    },
-    {
-      "source": "Snow Industry News",
-      "title": "Fischer Announces Ranger 102 LTD Ski Inspired By Special Edition Ford Ranger Raptor Build",
-      "url": "https://www.snowindustrynews.com/articles/2026/jan/fischer-announces-ranger-102-ltd-ski-inspired-by-special-edition-ford-ranger-raptor-build/",
-      "content": "Fischer Skis US is excited to announce the upcoming launch of the Ranger 102 LTD, a limited-edition ski inspired by Fischer\u2019s recent collaboration with Ford Motor Company on a one-of-one Fischer Ranger Raptor build that will travel the United States this winter. More than just a name, the Fischer Ranger 102 and Ford Ranger Raptor also share a philosophy: confidence at speed, control in unpredictable terrain, and performance beyond the pavement or piste. Designed for skiers who thrive off the groomers, the Fischer Ranger 102 LTD brings the same mindset to the mountains that the Ford Ranger Raptor brings to desert. \u201cOur Ranger line of skis is designed to offer skiers endless opportunities on the mountain,\u201d said Fischer marketing director Brian Landrigan. \u201cPartnering with Ford on the Ranger Raptor was a natural fit because we\u2019re driven by the shared goal of finding thrills off the beaten path.\u201d The bold new LTD graphic is inspired by the high performance of the Ford Ranger Raptor truck. W",
-      "pub_date": "2026-01-22",
-      "id": "96690ac7cc52",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "winter-sports",
+      "category": "international",
       "secondary_categories": [],
-      "approved_date": "2026-01-22",
-      "display_score": 20
+      "approved_date": "2026-02-13",
+      "display_score": 18
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Palisades Tahoe Forecasting 32-40 Inches of Snow In The Coming Week",
+      "url": "https://unofficialnetworks.com/2026/02/12/palisades-tahoe-snowfall-forecast/",
+      "description": "Palisades Tahoe is gearing up for a significant multi-day storm that could deliver up to 40 inches of snow by Wednesday morning.",
+      "content": "Palisades Tahoe meteorologist Bryan Allegretto is looking at a slow-moving weather system will bring snow to the Sierra Nevada starting Monday, with snowfall rates increasing through the afternoon and evening hours. Storm Timeline The action begins Monday as southerly flow pushes precipitation into the region. A colder storm drops in from the northwest on Tuesday, increasing snowfall rates with westerly flow and frigid temperatures. Snow levels will drop near the base Monday morning, falling to around 5,000 feet by Monday evening and near 4,000 feet Monday night into Tuesday. By early Wednesday morning, the forecast is looking toward some pretty impressive 2-day storm totals, including 22-30 inches at the base, 28-35 inches mid-mountain, and 32-40 inches at the upper mountain. Palisades Tahoe live camera. Credit: Palisades Tahoe Ridgetop winds will be strongest Monday afternoon through Tuesday, with gusts reaching 80+ mph. These extreme conditions will likely affect upper mountain lift",
+      "pub_date": "2026-02-12",
+      "id": "4fc47877df5d",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [
+        "resort-operations"
+      ],
+      "approved_date": "2026-02-13",
+      "display_score": 18
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Underrated Alberta Ski Resort Opens New Chairlift & Terrain Expansion",
+      "url": "https://unofficialnetworks.com/2026/02/12/castle-mountain-opens-stagecoach/",
+      "description": "The Alberta ski resort marked a major milestone in its 60th anniversary season with the opening of a new terrain expansion.",
+      "content": "Alberta \u2014 Yesterday was a historic day for one of the up-and-coming ski resorts in North America. Yesterday, Castle Mountain Resort opened up the Stagecoach Express chairlift for the first time. Previously only accessible to cat skiing guests, this new terrain pod is now serviced by a detachable high-speed quad chairlift. The opening was marked by a ceremonial ribbon-cutting. \u201cThe introduction of our first high-speed lift is a major milestone for Castle and a meaningful step forward for the resort,\u201d said Cole Fawcett, Sales & Marketing Manager at Castle. \u201cThis expansion opens up some incredible new terrain, dramatically improving the amount of skiable acreage and the diversity of trails, and allows more guests to experience more of what makes this place so special. As we mark 60 years at Castle Mountain Resort, this investment reflects both how far we\u2019ve come and our commitment to the future of the mountain.\u201d View this post on Instagram The Stagecoach expansion is kind of a big deal fo",
+      "pub_date": "2026-02-12",
+      "id": "13ddba8db923",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [
+        "canada",
+        "ski-history",
+        "business-investment"
+      ],
+      "approved_date": "2026-02-13",
+      "display_score": 18
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Conclusive Evidence That Skiers At Palisades Tahoe Are Just Better",
+      "url": "https://unofficialnetworks.com/2026/02/12/conclusive-evidence-that-skiers-at-palisades-tahoe-are-just-better/",
+      "description": "Palisades Tahoe is justifiably regarded as having the most talented local skiers in the world.",
+      "content": "Little mid-winter reminder that Olympic Valley has long been a magnet for talent. Generations of the world\u2019s best skiers have called the place home and it looks like the tradition is alive and well. Not sure there\u2019s many other resorts you could find this many skiers casually tossing backies and 3s off a natural feature. The density of high level skiers at Palisades is no joke: @c0nnery One\u2026 two\u2026 three\u2026 lost count. Early season vibes at @palisadestahoe are right around the corner, can\u2019t wait! Tag someone you\u2019d do this with! #guinnessworldrecords #backflip #train #howmany \u266c original sound \u2013 Connery Lundin Palisades has had a rough winter so far but they are about to get hammered with multiple feet in the forecast. Buckle up because this hotbed of skiing talent is about to let loose on some major precipitation. Read the full forecast below. Pallisades Snowfall Report & Forecast by Bryan Allegretto : An additional 3 inches of snow fell on the upper mountain on Wednesday from the lingering ",
+      "pub_date": "2026-02-12",
+      "id": "c15359080733",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [
+        "winter-sports",
+        "transportation",
+        "hospitality"
+      ],
+      "approved_date": "2026-02-13",
+      "display_score": 18
     },
     {
       "source": "SnowBrains",
@@ -275,56 +329,6 @@
       "display_score": 18
     },
     {
-      "source": "Unofficial Networks",
-      "title": "Another Oregon Ski Resort Temporarily Pauses Operations",
-      "url": "https://unofficialnetworks.com/2026/02/09/willamette-pass-pauses-operations/",
-      "description": "While an Oregon ski resort shut down operations on Saturday, recent snowfall and a change in the forecast will help them out.",
-      "content": "Oregon \u2014 Oregon\u2019s rough ski season is expected to take a turn in the right direction this week, but not before another ski resort paused its operations. On Saturday, Willamette Pass announced that its pausing operations following a heavy rain event on February 8th. Like the rest of Oregon\u2019s ski industry, it\u2019s been dealing with spring conditions and a diminishing snowpack. As of Saturday, Willamette Pass has only recieved 36\u2033 of natural snow, and snowmaking has only helped so much. When they were open, it was only on a limited amount of terrain. View this post on Instagram Luckily, the past 24 hours have brought snow back to the ski resort. We\u2019ll see how long their closure takes, but it won\u2019t likely be long. Willamette Pass joins Hoodoo Ski Area, Mt. Ashland, and Mt. Hood Skibowl as Oregon ski areas/resorts that have temporarily suspended operations. In addition, three ski areas in Oregon haven\u2019t been able to open at all. There\u2019s also Ski Bluewood in Washington that recently suspended o",
-      "pub_date": "2026-02-09",
-      "id": "13a6959bcde1",
-      "prefilter_business_score": 1,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "resort-operations",
-        "business-investment"
-      ],
-      "approved_date": "2026-02-10",
-      "display_score": 18
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "Snowboarder Falls Into Hidden Ravine @ Canadian Ski Resort",
-      "url": "https://unofficialnetworks.com/2026/02/09/snowboarder-falls-into-ravine/",
-      "description": "These snowboarders were riding at a resort in British Columbia when the lead boarder fell into a hidden ravine complete with a small stream.",
-      "content": "Skiing or snowboarding off-trail, whether it\u2019s inbounds or backcountry, can come with unexpected hazards. These snowboarders were riding at Revelstoke Mountain Resort in British Columbia when the lead boarder fell into a hidden ravine complete with a small stream. View this post on Instagram A post shared by J\u00e9r\u00e9mie Allaire (@t.ijay_) It seems like the ravine was covered in snow right up until the lead boarder ran over it causing the snow to collapse. Fortunately it wasn\u2019t that deep and the guy seemed just fine despite the fall. Nonetheless, this video serves as a reminder to ski or ride with a buddy if you\u2019re going to head off trail. No doubt the climb out of the ravine was a battle, and if he was alone and had fallen into something deeper or something without much of an exit path, it could have been a long time before anyone found him. Multi-Agency Mountain Rescue Extracts Stranded Climbers After Night On Longs Peak Categories: Canada Snowboarding",
-      "pub_date": "2026-02-09",
-      "id": "b9b1106cd21d",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "canada",
-      "secondary_categories": [
-        "safety-incidents",
-        "transportation"
-      ],
-      "approved_date": "2026-02-10",
-      "display_score": 18
-    },
-    {
       "source": "Ski Area Management",
       "title": "Attendance Up at NSAA Eastern Conference",
       "url": "https://www.saminfo.com/news/sam-headline-news/attendance-up-at-nsaa-eastern-conference",
@@ -346,30 +350,6 @@
         "resort-operations"
       ],
       "approved_date": "2026-02-12",
-      "display_score": 18
-    },
-    {
-      "source": "PlanetSKI",
-      "title": "What A Time For PlanetSKI To Be In Canada",
-      "url": "https://planetski.eu/2026/01/22/what-a-time-for-planetski-to-be-in-canada/",
-      "description": "It\u2019s an interesting time to be here \u2013 not just from a ski perspective with record-breaking amounts of snow, but also from a political one as Canada takes centre stage in the battle with Trump. NEW The post What A Time For PlanetSKI To Be In Canada appeared first on PlanetSKI .",
-      "content": "The Canadian Prime Minister, Mark Carney, has just made what is being judged a landmark and historical speech in Davos, Switzerland, as US President Trump threatens the existing world order with his incoherent ramblings and \u2018policy statements\u2019. Mark Carney\u2019s words at the World Economic Forum in Switzerland seem to have galvanised opposition to Trump and given a strategy for the so-called \u2018medium powers\u2019 to rally and unify around. Trump\u2019s limited grasp of facts was seemingly exemplified when he said to the World Economic Forum, \u201cWithout us, right now you\u2019d all be speaking German.\u201d German is the most widely spoken of the four official languages in Switzerland. It was a one hour and 12 minute meandering address from Trump. PlanetSKI has found that Canadians are shunning the USA \u2013 it\u2019s neighbour and biggest trading partner. They have pretty much boycotted skiing there with numbers significantly down. The US has long been the number one travel destination for Canadians \u2014 not a surprise give",
-      "pub_date": "2026-01-22",
-      "id": "33b8a8a3cca4",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 1,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +1)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "ski-history",
-      "secondary_categories": [
-        "canada"
-      ],
-      "approved_date": "2026-01-22",
       "display_score": 18
     },
     {
@@ -419,32 +399,6 @@
       "display_score": 16
     },
     {
-      "source": "SnowBrains",
-      "title": "Master Plan for Fortress Mountain, AB, Revival Released: Its History, Why it Failed, and Why it Could Now Be Successful",
-      "url": "https://snowbrains.com/master-plan-for-fortress-mountain-ab-revival-released-its-history-why-it-failed-and-why-it-could-now-be-successful/",
-      "description": "Fortress Mountain is located about an hour southwest of Calgary, Alberta. The base of the resort is situated on top of a flat ridge at 6,700 feet. From the old base lodge, you have a 360-degree view of the surrounding mountain peaks above and the Kananaskis Valley below. Thanks to the elevation, Fortress Mountain receives generous amounts of low-density snow [\u2026] The post Master Plan for Fortress Mountain, AB, Revival Released: Its History, Why it Failed, and Why it Could Now Be Successful appear",
-      "content": "Fortress Mountain\u2019s front runs and abandoned facilities are waiting for redevelopment. \u2013 Photo Credit: Black Crows Fortress Mountain is located about an hour southwest of Calgary, Alberta. The base of the resort is situated on top of a flat ridge at 6,700 feet. From the old base lodge, you have a 360-degree view of the surrounding mountain peaks above and the Kananaskis Valley below. Thanks to the elevation, Fortress Mountain receives generous amounts of low-density snow averaging 300 inches annually. The resort operated for the first time in 1967 under the name Snow Ridge. Unfortunately, the resort didn\u2019t have much success in the first few seasons due to the long unpaved road to the resort. The Canadian government did eventually agree to pave 30 of the 36 miles of road but gave no timeframe for when it would get done. Before any work on the road was started, the Supreme Court ordered the owners of Snow Ridge to sell their shares of the resort. The Lodge in its heyday during the late 1",
-      "pub_date": "2026-02-10",
-      "id": "bc094251d548",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 9,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "resort-operations",
-      "secondary_categories": [
-        "canada",
-        "transportation",
-        "hospitality"
-      ],
-      "approved_date": "2026-02-11",
-      "display_score": 16
-    },
-    {
       "source": "PlanetSKI",
       "title": "PlanetSKI\u2019s Canada Road Trip Heads North to Jasper & Marmot Basin",
       "url": "https://planetski.eu/2026/02/09/planetskis-canada-road-trip-heads-north-to-jasper-marmot-basin/",
@@ -470,29 +424,30 @@
       "display_score": 16
     },
     {
-      "source": "Unofficial Networks",
-      "title": "Colorado Ski Resort Offering $999 3-Year Season Pass",
-      "url": "https://unofficialnetworks.com/2026/02/11/powderhorn-three-year-pass/",
-      "description": "The Western Colorado ski resort is offering a $999 three-year pass, but you'll need to act fast to secure one.",
-      "content": "Colorado \u2014 In honor of Powderhorn\u2019s 60th anniversary, the Colorado ski resort is offering a great season pass deal. Yesterday, Powderhorn Mountain Resort announced that it is offering a three-year season pass for only $999. Other perks to this pass include early lift access on select dates, a gathering with management, and a commemorative pass. \u201cFor 60 years, Powderhorn has been a place people return to again and again\u2014sometimes for generations,\u201d said Ryan Schramm, the General Manager of Powderhorn Mountain Resort. \u201cThis 3-Year Pass is our way of saying thank you to the guests who call this mountain home, while also inviting them to be a part of what comes next. In addition to all the improvements we have made so far, the Wild West Express is a transformational investment, and our anniversary season felt like the right moment to connect the future of the mountain with the people who have supported it all along.\u201d This price point is available only on a limited basis and for a limited ti",
-      "pub_date": "2026-02-11",
-      "id": "5e5008bb75cb",
-      "prefilter_business_score": 0,
+      "source": "The Ski Guru",
+      "title": "Tignes Orders Residents to Stay Indoors as Avalanche Danger Reaches Level 5 in the French Alps",
+      "url": "https://www.the-ski-guru.com/2026/02/12/tignes-avalanche-danger-february-2026/",
+      "description": "Authorities in Tignes, one of the major ski resorts in the French Alps, have ordered residents and visitors to remain indoors following exceptional snowfall and extreme avalanche risk across the Haute-Tarentaise area. Avalanche danger in Tignes in February 2026 reached Level 5 \u2014 the highest warning level \u2014 after extreme snowfall across the northern French Alps. Latest \u2026 Continue reading \"Tignes Orders Residents to Stay Indoors as Avalanche Danger Reaches Level 5 in the French Alps\" The post Tign",
+      "content": "Authorities in Tignes , one of the major ski resorts in the French Alps , have ordered residents and visitors to remain indoors following exceptional snowfall and extreme avalanche risk across the Haute-Tarentaise area. Avalanche danger in Tignes in February 2026 reached Level 5 \u2014 the highest warning level \u2014 after extreme snowfall across the northern French Alps. Latest update: Avalanche danger remains high across parts of the Haute-Tarentaise as heavy snowfall continues. The decision came after heavy snowfalls combined with strong winds created highly unstable conditions in the upper valley. According to reports from national and regional media, local authorities implemented a temporary confinement order overnight, asking people not to leave their homes, hotels or residences except in cases of necessity. Why Avalanche Danger in Tignes Reached Level 5 (Maximum Level) The avalanche warning level reached Level 5/5 (Very High) \u2014 the highest classification on the European avalanche scale \u2014",
+      "pub_date": "2026-02-12",
+      "id": "6f8175883091",
+      "prefilter_business_score": 1,
       "is_macro_relevance": false,
       "source_boost": 0,
-      "score": 8,
+      "score": 10,
       "score_details": {
         "reason": "Keyword scoring (source: +0)",
         "method": "keyword"
       },
       "score_method": "keyword",
-      "category": "ski-history",
+      "category": "safety-incidents",
       "secondary_categories": [
-        "resort-operations",
-        "business-investment"
+        "hospitality",
+        "international",
+        "weather-snow"
       ],
-      "approved_date": "2026-02-12",
-      "display_score": 14
+      "approved_date": "2026-02-13",
+      "display_score": 10
     },
     {
       "source": "The Ski Guru",
@@ -543,31 +498,6 @@
       ],
       "approved_date": "2026-02-10",
       "display_score": 10
-    },
-    {
-      "source": "PlanetSKI",
-      "title": "PlanetSKI Heads Out with the Glenshee Ski Patrol",
-      "url": "https://planetski.eu/2026/01/22/planetski-heads-out-with-the-glenshee-ski-patrol/",
-      "description": "What is it like to be rescued by ski patrol? We went downhill in a stretcher to find out. PlanetSKI joins two days of professional ski patrol training in the Scottish Highlands. NEW The post PlanetSKI Heads Out with the Glenshee Ski Patrol appeared first on PlanetSKI .",
-      "content": "Despite over 20 years of skiing, I\u2019ve never been the most technical or agile person on the slopes. But that\u2019s not the reason I find myself wrapped around a fence halfway down a green run at Glenshee Ski Centre on a Saturday afternoon in January. It is, thankfully, a training exercise that myself and others are taking part in. PlanetSKI with the Glenshee Ski Patrol. Image \u00a9 Julia Clarke/PlanetSKI I\u2019m here in the Scottish Highlands to shadow two days of training with the British Association of Ski Patrollers, BASP, and it\u2019s my turn to be the casualty. Under the guidance of BASP president Gerard \u201cGerry\u201d Cameron, I\u2019ve skied about halfway down Claybokie, positioned myself as though my day has ended with a yard sale, and am now awaiting rescue from two men who are going through today\u2019s training. Skiing and snowboarding are of course inherently risky \u2013 patroller and retired surgeon John Holmes, who\u2019s here overseeing the first aid sessions, recalls seeing 13 broken collarbones in a single day ",
-      "pub_date": "2026-01-22",
-      "id": "6870bdf81d75",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 1,
-      "score": 9,
-      "score_details": {
-        "reason": "Keyword scoring (source: +1)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "safety-incidents",
-      "secondary_categories": [
-        "resort-operations",
-        "transportation"
-      ],
-      "approved_date": "2026-01-22",
-      "display_score": 8
     },
     {
       "source": "PlanetSKI",
