@@ -64,7 +64,8 @@ deduplication:
 **How it works:**
 1. Articles are first grouped by normalized title keywords
 2. Then fuzzy matching compares titles at the configured threshold
-3. Lead paragraph comparison catches stories with different headlines but same content
+3. Source suffixes (e.g. " - The Cool Down") are stripped before comparison to catch Google News aggregator variants of the same story
+4. Lead paragraph comparison catches stories with different headlines but same content
 
 ### Focus Topics
 
@@ -158,6 +159,7 @@ deduplication:
 ### Too many duplicates
 - Increase `title_similarity` threshold
 - Enable lead paragraph comparison by ensuring `min_lead_length` is appropriate
+- Note: Source suffix stripping (`_strip_source_suffix()`) automatically handles Google News aggregator variants
 
 ### Missing relevant articles
 - Check if articles are being rejected by source diversity cap
@@ -182,6 +184,9 @@ RSS Feeds → Pre-filter → Source Diversity Cap → Scoring → Deduplication 
 
 - `update_ski_news.py` - Main aggregation script
 - `docs/SKI_NEWS_SCRAPING_DOCUMENTATION.md` - Technical documentation
-- `static/data/ski-news.json` - Output feed
+- `static/data/ski-news.json` - Output feed (automated)
+- `content/manual-news/*.md` - CMS-managed manual stories
+- `layouts/manual-news/list.json` - Hugo template → `/manual-news/index.json`
+- `static/admin/config.yml` - Sveltia CMS configuration
 - `static/data/ski-news-run-log.json` - Run history
 - `static/data/ski-news-source-health.json` - Source status

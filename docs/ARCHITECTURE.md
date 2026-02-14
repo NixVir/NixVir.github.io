@@ -130,6 +130,9 @@ nixvirweb/
 ├── content/                    # Hugo content (Markdown)
 │   ├── _index.md              # Homepage intro
 │   ├── post/                  # Data Insights articles
+│   ├── manual-news/           # CMS-managed manual news stories
+│   │   ├── _index.md         # Section config (enables JSON output)
+│   │   └── *.md              # Individual stories → /manual-news/index.json
 │   ├── about/                 # About page
 │   └── *.md                   # Other pages
 │
@@ -141,6 +144,8 @@ nixvirweb/
 │   │   ├── head-additions.html  # Fonts, focus styles
 │   │   ├── site-navigation.html # Header nav
 │   │   └── schema.html          # JSON-LD structured data
+│   ├── manual-news/
+│   │   └── list.json         # Template: generates /manual-news/index.json
 │   └── page/
 │       ├── dashboard.html    # Hugo-rendered dashboard
 │       └── ski-news.html     # Hugo-rendered news page
@@ -156,6 +161,9 @@ nixvirweb/
 │   │   ├── ski-news.json
 │   │   └── ...
 │   ├── images/               # Site images
+│   ├── admin/                # Sveltia CMS
+│   │   ├── index.html        # CMS entry point
+│   │   └── config.yml        # CMS collections & fields
 │   ├── snow-cover.html       # Interactive snow dashboard (4637 lines)
 │   ├── snotel.html           # SNOTEL snowpack map (1548 lines)
 │   └── dashboard.html        # Economic dashboard (2353 lines)
@@ -222,9 +230,10 @@ dashboard.html fetches /data/dashboard.json
 ## Page Types
 
 ### Hugo-Rendered Pages
-- Homepage (`/`) - layouts/index.html
+- Homepage (`/`) - layouts/index.html (loads automated + manual news feeds)
 - Data Insights (`/post/`) - content/post/*.md
 - About (`/about/`) - content/about/_index.md
+- CMS Admin (`/admin/`) - Sveltia CMS for blog posts and manual news stories
 
 ### Static HTML Pages
 These are standalone HTML files that fetch JSON data client-side:

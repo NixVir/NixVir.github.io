@@ -114,6 +114,16 @@ static/
     snow-cover.json           # Current conditions
     snow-cover-historical.json # 5-year seasonal averages
     temperature-history.json   # Daily temperature anomalies by metro
+content/
+  manual-news/                # CMS-managed manual news stories
+    _index.md                 # Section config (enables JSON output)
+    *.md                      # Individual story files
+static/admin/
+  config.yml                  # Sveltia CMS configuration
+  index.html                  # CMS entry point
+layouts/
+  manual-news/
+    list.json                 # Hugo template generating /manual-news/index.json
 ```
 
 ## Pipeline Scripts
@@ -329,12 +339,14 @@ See `docs/SNOTEL_PAGE_SUMMARY.md` for full implementation details.
 
 ## Ski Business News (`static/ski-news.html`)
 
-RSS aggregator for ski industry business news.
+RSS aggregator for ski industry business news, with CMS-managed manual story injection.
 
 ### Key Files
 - **Script**: `update_ski_news.py` - Main aggregation and scoring pipeline
 - **Config**: `config/ski-news-config.yaml` - Configurable settings
-- **Output**: `static/data/ski-news.json` - Final article feed
+- **Output**: `static/data/ski-news.json` - Final article feed (automated)
+- **Manual Stories**: `content/manual-news/*.md` - CMS-managed stories → `/manual-news/index.json`
+- **CMS**: `static/admin/config.yml` - Sveltia CMS configuration
 - **Documentation**: `docs/SKI_NEWS_SCRAPING_DOCUMENTATION.md` - Full system docs
 
 ### Pipeline Overview
@@ -342,9 +354,23 @@ RSS aggregator for ski industry business news.
 2. **Pre-filter**: Two-tier filtering with PRIMARY_SKI_TERMS + SECONDARY_BUSINESS_TERMS
 3. **Source diversity cap**: Limit articles per source during processing (default: 5)
 4. **Score**: Keyword-based scoring (LLM scoring available but disabled by default)
-5. **Deduplicate**: Title similarity + lead paragraph comparison
+5. **Deduplicate**: Title similarity + lead paragraph comparison + source suffix stripping
 6. **Interleave**: Round-robin source distribution for output diversity
 7. **Output**: JSON feed for frontend display
+
+### Manual News Stories (CMS)
+
+Manual stories are added via Sveltia CMS at `/admin/` and stored as markdown files in `content/manual-news/`. Hugo generates `/manual-news/index.json` at build time.
+
+**Data flow**: CMS save → git commit to master → Netlify build (~1-3 min) → live on site
+
+**Display**: Both the ski-news page AND the front page fetch `/manual-news/index.json` and merge manual stories into the automated feed. Manual stories:
+- Are prepended to the feed (appear first)
+- Support pinning with configurable duration (1-30 days)
+- Can be article, podcast, or video content types
+- Can be deactivated without deleting via the `active` toggle
+
+**Frontmatter fields**: `title`, `story_url`, `source`, `category`, `content_type`, `description`, `pub_date`, `pin_days`, `active`
 
 ### Source Diversity & Interleaving
 The output uses round-robin interleaving to prevent source clustering:
@@ -361,10 +387,19 @@ This prevents the feed from appearing to copy from just a few aggregator sites. 
 - `MAX_PER_SOURCE_OUTPUT = 3` - Cap in final output
 - `MAX_ARTICLES_OUTPUT = 50` - Total articles in feed
 
+### Deduplication
+
+The pipeline deduplicates at two levels:
+
+1. **Pipeline** (`update_ski_news.py`): Title similarity (0.85 threshold) with source suffix stripping via `_strip_source_suffix()` to catch Google News variants like "Article Title - The Cool Down" vs "Article Title - Source B". Also compares lead paragraphs (0.80 threshold).
+
+2. **Front page** (`layouts/index.html`): Normalizes aggregator sources (all `Google News - *` → `Google News` for source-based dedup) and checks title prefix similarity (40+ shared characters = duplicate).
+
 ### Common Mistakes to Avoid
 1. **Sorting by date before source cap** - Creates source clustering; always interleave
 2. **Modifying files outside ski news scope** - The script is self-contained; don't touch config.toml, .gitignore, or other site files when working on news scraping
 3. **Ignoring source health** - Check `static/data/ski-news-source-health.json` for failing feeds
+4. **Front page missing manual stories** - Both `layouts/index.html` and `layouts/page/ski-news.html` must fetch `/manual-news/index.json`
 
 ## Related Projects
 
