@@ -1,6 +1,6 @@
 {
-  "updated": "2026-02-13 11:28:33",
-  "total_articles": 21,
+  "updated": "2026-02-14 11:16:25",
+  "total_articles": 24,
   "scoring_method": "keyword",
   "articles": [
     {
@@ -83,28 +83,38 @@
       "display_score": 29.5
     },
     {
-      "source": "Ski Area Management",
-      "title": "Jack Frost Big Boulder Appoints Tony Torsell as General Manager",
-      "url": "https://www.saminfo.com/news/sam-headline-news/jack-frost-big-boulder-appoints-tony-torsell-as-general-manager",
-      "description": "SAM Magazine\u2014Blakeslee, Pa., Jan. 23, 2026\u2014Vail Resorts has hired Tony Torsell as general manager of Jack Frost Big Boulder, effective Feb. 15. Torsell, who grew up not far from the neighboring ski areas, succeeds previous GM Tony Santora, who is now the vice president of mountain operations at VR-owned Beaver Creek, Colo. \u201cComing back home to lead JFBB is truly special,\u201d said Torsell. \u201cI believe great resorts start with great people, and I know there are great people here. I\u2019m excited to roll u",
-      "content": "SAM Magazine\u2014Blakeslee, Pa., Jan. 23, 2026\u2014Vail Resorts has hired Tony Torsell as general manager of Jack Frost Big Boulder, effective Feb. 15. Torsell, who grew up not far from the neighboring ski areas, succeeds previous GM Tony Santora, who is now the vice president of mountain operations at VR-owned Beaver Creek, Colo. \u201cComing back home to lead JFBB is truly special,\u201d said Torsell. \u201cI believe great resorts start with great people, and I know there are great people here. I\u2019m excited to roll u",
-      "pub_date": "2026-01-23",
-      "id": "d3f8cacc49d7",
-      "prefilter_business_score": 3,
+      "source": "Vail Resorts Investor Relations",
+      "title": "Vail Resorts Announces Fiscal 2026 Second Quarter Earnings Release Date",
+      "url": "https://investors.vailresorts.com/news-releases/news-release-details/vail-resorts-announces-fiscal-2026-second-quarter-earnings",
+      "description": "BROOMFIELD, Colo., Feb. 13, 2026 /PRNewswire/ -- Vail Resorts, Inc. (NYSE: MTN) announced today it will release the Company's financial results for its fiscal second quarter 2026 ended January 31, 2026 after market close on Monday, March 9, 2026. The Company will host a conference call at 5:00 p.m.",
+      "content": "BROOMFIELD, Colo., Feb. 13, 2026 /PRNewswire/ -- Vail Resorts, Inc. (NYSE: MTN) announced today it will release the Company's financial results for its fiscal second quarter 2026 ended January 31, 2026 after market close on Monday, March 9, 2026. The Company will host a conference call at 5:00 p.m.",
+      "pub_date": "2026-02-13",
+      "id": "47fbb4923997",
+      "prefilter_business_score": 2,
       "is_macro_relevance": false,
-      "source_boost": 2,
+      "source_boost": 5,
       "score": 10,
       "score_details": {
-        "reason": "Keyword scoring (source: +2)",
+        "reason": "Keyword scoring (source: +5)",
         "method": "keyword"
       },
       "score_method": "keyword",
-      "category": "business-investment",
+      "category": "winter-sports",
       "secondary_categories": [
-        "resort-operations"
+        "business-investment"
       ],
-      "approved_date": "2026-02-10",
-      "display_score": 25
+      "other_sources": [
+        {
+          "source": "Vail Resorts Investor Relations",
+          "url": "https://investors.vailresorts.com/news-releases/news-release-details/vail-resorts-announces-fiscal-2026-first-quarter-earnings"
+        },
+        {
+          "source": "Vail Resorts Investor Relations",
+          "url": "https://investors.vailresorts.com/news-releases/news-release-details/vail-resorts-reports-certain-ski-season-metrics-season-date-30"
+        }
+      ],
+      "approved_date": "2026-02-14",
+      "display_score": 22
     },
     {
       "source": "SnowBrains",
@@ -181,6 +191,31 @@
       "display_score": 20
     },
     {
+      "source": "Unofficial Networks",
+      "title": "New Cirque T-Bar Officially Opens At Snowmass",
+      "url": "https://unofficialnetworks.com/2026/02/13/aspen-snowmass-new-t-bar/",
+      "description": "Today marked opening day for Aspen Snowmass's new Cirque T-Bar at Snowmass, with a ribbon cutting taking place at 11am.",
+      "content": "Today marked opening day for Aspen Snowmass \u2018s new Cirque T-Bar at Snowmass, with a ribbon cutting taking place at 11am at the base of the new lift. The ceremony was open to the public with guests invited to celebrate and ride the new T-Bar for the first time. The lift provides access to terrain including trails from the High Pass to the High Alpine trails and Rocky Mountain High. The Cirque Headwall and further terrain will open as conditions allow. View this post on Instagram A post shared by Aspen Snowmass (@aspensnowmass) \u201cOpening the Cirque T-Bar is the result of many months of work across our mountain operations teams, from summer construction to the extensive snowcat and patrol efforts required to prepare this terrain. It\u2019s a meaningful investment in one of our most unique zones at Snowmass, and we\u2019re excited to see guests back up here skiing and riding the Cirque.\u201d \u2013 Susan Cross, Vice President of Mountain Operations, Aspen Skiing Company. The new T-Bar doubles the rider capaci",
+      "pub_date": "2026-02-14",
+      "id": "4f629c3d2a2f",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [
+        "business-investment",
+        "transportation"
+      ],
+      "approved_date": "2026-02-14",
+      "display_score": 18
+    },
+    {
       "source": "Google News - Ski Industry",
       "title": "Winter Tourism Shift: How China\u2019s Ski Industry Is Thriving While Japan Faces Decline - Travel And Tour World",
       "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOSUo3aWt4eHVBY2hkSmlBaVBPQl84al9PZjMzRjJlQzFqN1FvUjlmbXJjVllUd1B0WV9UWGdzeS15a3pNLUI3ZG56N2gxWllnOWoxRUZwbUVLdHh3cklnSUFpSnBWX1RCVWtBSWVCM2V1dEx4OUlYN3Fzc3RIVkE4V3haQVNNRTRyS25xYlFvb09EcUI4RmtvQk5hMTFYZkd6ODNjcjdUQVNUazhRaUJTTC0tUVNnclZUYkNuSE5XOXg5TjU0U0pLSEVZVQ?oc=5",
@@ -200,6 +235,54 @@
       "category": "international",
       "secondary_categories": [],
       "approved_date": "2026-02-13",
+      "display_score": 18
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Snowiest.app: A Free, Multi-Model Snow Forecast Tool to Help You Plan a Ski Trip",
+      "url": "https://snowbrains.com/snowiest-app-a-free-multi-model-snow-forecast-tool-to-help-you-plan-a-ski-trip/",
+      "description": "We\u2019ve all been there: staring at three different weather apps trying to decipher if there will be fresh snow for your day at the resort. The issue isn\u2019t a lack of options or data; it\u2019s that predicting weather patterns and snowfall in the mountains is incredibly difficult, and with so many outlooks available, who can you trust? Enter Snowiest.app, a [\u2026] The post Snowiest.app: A Free, Multi-Model Snow Forecast Tool to Help You Plan a Ski Trip appeared first on SnowBrains .",
+      "content": "Snowiest.app is your new model comparison tool to predict the snowfall for your next trip. Photo Snowiest.app We\u2019ve all been there: staring at three different weather apps trying to decipher if there will be fresh snow for your day at the resort. The issue isn\u2019t a lack of options or data; it\u2019s that predicting weather patterns and snowfall in the mountains is incredibly difficult, and with so many outlooks available, who can you trust? Enter Snowiest.app , a free, donation-based weather aggregator website that is putting the raw data directly into the hands of skiers and riders. A breakdown of the resorts expecting to receive the most snowfall in the next 5 days. Photo Snowiest.app Snowiest isn\u2019t a forecaster\u2014it\u2019s a model comparison tool. It helps you see agreement and uncertainty across multiple model outputs in one place . Designed for transparency, it puts the raw numbers front and center. Their data comes from globally recognized weather models such as: ECMWF (European Centre for Me",
+      "pub_date": "2026-02-13",
+      "id": "0493b9d5d51d",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [
+        "international"
+      ],
+      "approved_date": "2026-02-14",
+      "display_score": 18
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Could Park City Mountain Resort, UT, Finally Get Long-Awaited Lift Upgrades?",
+      "url": "https://snowbrains.com/could-park-city-mountain-resort-ut-finally-get-long-awaited-lift-upgrades/",
+      "description": "Vail Resorts resubmitted the Silverlode and Eagle lift projects in hopes of upgrading the two major lifts at Park City Mountain Resort. The nearly 4-year controversy started when PCMR got approval for a conditional use permit, effectively fast-tracking the project through the council. Now they are back again, attempting to get approved by the Park City town council so skiers [\u2026] The post Could Park City Mountain Resort, UT, Finally Get Long-Awaited Lift Upgrades? appeared first on SnowBrains .",
+      "content": "Locals attend a community open house to learn about potential lift upgrades at Park City Mountain Resort. | Credit Kristine Weller/KPCW Vail Resorts resubmitted the Silverlode and Eagle lift projects in hopes of upgrading the two major lifts at Park City Mountain Resort. The nearly 4-year controversy started when PCMR got approval for a conditional use permit, effectively fast-tracking the project through the council. Now they are back again, attempting to get approved by the Park City town council so skiers can enjoy two brand new lifts. The two upgrades would include changing Silverlode Express from a six-pack to an eight-pack, and converting the Eagle Triple into the Eagle Express six-pack with the addition of a mid-station. Yes, these are the same lifts Vail wanted to upgrade back in 2022, but was blocked by four residents stating the resort didn\u2019t share enough information regarding how the upgrades would affect capacity at the resort. Specifically, the residents were concerned tha",
+      "pub_date": "2026-02-13",
+      "id": "275c2a03e00b",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [
+        "business-investment"
+      ],
+      "approved_date": "2026-02-14",
       "display_score": 18
     },
     {
@@ -303,32 +386,6 @@
       "display_score": 18
     },
     {
-      "source": "Unofficial Networks",
-      "title": "Historic Washington Ski Area Needs Help To Survive",
-      "url": "https://unofficialnetworks.com/2026/02/09/badger-mountain-fundraiser/",
-      "description": "The Washington ski area is raising money to pay for future insurance dues and to replace its broken snow groomer.",
-      "content": "Waterville, Washington \u2014 One of the most historic ski areas in the West has yet to operate this winter. Badger Mountain is among the most notable mom-and-pop operations in the Pacific Northwest, with very affordable lift tickets. However, it has limited operations because it relies on natural snowfall. Currently, they need help on two major projects. The non-profit that runs the ski area currently has minimal (if any) money in its bank account, and bills are due. They need to keep the power on and pay for insurance, which costs $350 a month. Their snow groomer is also broken, but they\u2019re being offered a used snow groomer. You can help them out by sending a check to HighLine Grain Growers, C/O Paul Katovich, PO Box 649, Waterville, WA, 98858. Alternatively, you ca n Venmo them (@badgermtski). Lindsey Vonn Undergoes Surgery After Fracturing Leg In Olympic Crash About Badger Mountain Opened back in 1938, Badger Mountain is one of the last community-run ski areas in Washington. The 800-foo",
-      "pub_date": "2026-02-09",
-      "id": "1af51db0307b",
-      "prefilter_business_score": 1,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "ski-history",
-      "secondary_categories": [
-        "winter-sports",
-        "weather-snow",
-        "resort-operations"
-      ],
-      "approved_date": "2026-02-10",
-      "display_score": 18
-    },
-    {
       "source": "Ski Area Management",
       "title": "Attendance Up at NSAA Eastern Conference",
       "url": "https://www.saminfo.com/news/sam-headline-news/attendance-up-at-nsaa-eastern-conference",
@@ -351,52 +408,6 @@
       ],
       "approved_date": "2026-02-12",
       "display_score": 18
-    },
-    {
-      "source": "SnowBrains",
-      "title": "[OLYMPICS] Swiss Skier Mathilde Gremaud Defends Olympic Slopestyle Title in Thriller Against Eileen Gu",
-      "url": "https://snowbrains.com/olympics-swiss-skier-mathilde-gremaud-defends-olympic-slopestyle-title-in-thriller-against-eileen-gu/",
-      "description": "Switzerland\u2019s Mathilde Gremaud successfully defended her Olympic women\u2019s ski slopestyle title on Monday, February 9, claiming gold in a dramatic final that once again came down to tenths of a point against China\u2019s Eileen Gu. Related: Switzerland\u2019s Mathilde Gremaud Claims Slopestyle Win at Stubai, Austria, as Eileen Gu Struggles Going into todays competition, everyone knew it was going to be [\u2026] The post [OLYMPICS] Swiss Skier Mathilde Gremaud Defends Olympic Slopestyle Title in Thriller Against ",
-      "content": "The women\u2019s slopestyle podium: Mathilde Gremaud gold, Eileen Gu silver, Megan Oldam bronze. | Image: FIS Park and Pipe Switzerland\u2019s Mathilde Gremaud successfully defended her Olympic women\u2019s ski slopestyle title on Monday, February 9, claiming gold in a dramatic final that once again came down to tenths of a point against China\u2019s Eileen Gu. Related: Switzerland\u2019s Mathilde Gremaud Claims Slopestyle Win at Stubai, Austria, as Eileen Gu Struggles Going into todays competition, everyone knew it was going to be a show-down between the Swiss and the American-Chinese skier. The two have been neck to neck for years, not least of all since the 2022 Olympics, where Gremaud beat Gu on home ground. However, the rivalry also has a very personal factor: Gremaud\u2019s former coach Misra Noto defected not once but twice to the Chinese team to support Gu at both the 2022 as well as just weeks ahead of the 2026 games. A betrayal that took Gremaud three years to overcome the first time, and that she vows no",
-      "pub_date": "2026-02-10",
-      "id": "95ca36b5d853",
-      "prefilter_business_score": 2,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "winter-sports",
-      "secondary_categories": [],
-      "approved_date": "2026-02-10",
-      "display_score": 16
-    },
-    {
-      "source": "SnowBrains",
-      "title": "The Origins of Skijoring and Modern Competition Today",
-      "url": "https://snowbrains.com/the-origins-of-skijoring-and-modern-competition-today/",
-      "description": "Skijoring is steadily gaining traction in today\u2019s winter sports scene, but where did it come from? For hundreds of years, the residents of northern Scandinavia have used reindeer to pull them for travel on skis in difficult arctic terrain. Even older claims of humans being pulled by dogs with ski-like foot coverings have emerged from the Altai Mountains in Central Asia. [\u2026] The post The Origins of Skijoring and Modern Competition Today appeared first on SnowBrains .",
-      "content": "San Juan Skijoring 2026 in Ridgway, Colorado, with the Mighty San Juan Mountains as a backdrop. Photo Credit: Mark LaRowe Skijoring is steadily gaining traction in today\u2019s winter sports scene, but where did it come from? For hundreds of years, the residents of northern Scandinavia have used reindeer to pull them for travel on skis in difficult arctic terrain. Even older claims of humans being pulled by dogs with ski-like foot coverings have emerged from the Altai Mountains in Central Asia. This was not for sport, but out of necessity for travel purposes. The name \u201cSkijoring\u201d is derived from the Norwegian translation for \u201cSki Driving.\u201d Snow stacks up in Silverton, Colorado, as the course gets spicier by the minute. Photo Credit: Wesley Berg Skijoring has been refined over many years, making for historically fierce competition these days. Modern Skijoring now includes slalom gates, collecting rings while being pulled by a 30-foot rope, and even gap jumps. The team of horse, rider, and sk",
-      "pub_date": "2026-02-10",
-      "id": "965678c69de7",
-      "prefilter_business_score": 2,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "winter-sports",
-      "secondary_categories": [
-        "ski-history"
-      ],
-      "approved_date": "2026-02-11",
-      "display_score": 16
     },
     {
       "source": "PlanetSKI",
@@ -424,6 +435,54 @@
       "display_score": 16
     },
     {
+      "source": "Ski Area Management",
+      "title": "The 2026 I Am a Snowmaker Contest Winner",
+      "url": "https://www.saminfo.com/news/sam-headline-news/the-2026-i-am-a-snowmaker-contest-winner",
+      "description": "SAM Magazine\u2014Killington, Vt., Feb. 3, 2026\u2014 Nearly 7,500 total votes were cast for the six competing snowmaking teams during the 13-day voting period of the 2026 I AM a Snowmaker contest, with Seven Springs, Pa., receiving the most votes to take home the title. Contest sponsor HKD Snowmakers president Charles Santry honored Seven Springs at the HTI dinner in the Killington Peak Lodge during the National Ski Areas Association Eastern Winter Conference on Tuesday, Feb. 3. Each ski area in the cont",
+      "content": "SAM Magazine\u2014Killington, Vt., Feb. 3, 2026\u2014 Nearly 7,500 total votes were cast for the six competing snowmaking teams during the 13-day voting period of the 2026 I AM a Snowmaker contest, with Seven Springs, Pa., receiving the most votes to take home the title. Contest sponsor HKD Snowmakers president Charles Santry honored Seven Springs at the HTI dinner in the Killington Peak Lodge during the National Ski Areas Association Eastern Winter Conference on Tuesday, Feb. 3. Each ski area in the cont",
+      "pub_date": "2026-02-03",
+      "id": "6a5af2600c40",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 8,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "hospitality",
+      "secondary_categories": [
+        "resort-operations"
+      ],
+      "approved_date": "2026-02-14",
+      "display_score": 16
+    },
+    {
+      "source": "PlanetSKI",
+      "title": "PlanetSKI Hits the Mountains & Valleys in Switzerland",
+      "url": "https://planetski.eu/2026/02/14/a-game-of-two-halves/",
+      "description": "Our roving reporter Nick Dalton spends several days on the ski slopes of Grindelwald, then decamps for life and adventure in the valley. A winter experience with a difference. NEW The post PlanetSKI Hits the Mountains & Valleys in Switzerland appeared first on PlanetSKI .",
+      "content": "It was, as they say, a game of two halves So often PlanetSKI is told that there\u2019s much more to winter in the mountains, and so often we\u2019re not fully convinced. Other pastimes when we could be on the slopes? Er, no thanks. But Switzerland\u2019s Jungfrau region and its elegant lakeside town of Interlaken has made us think again. THE SKIING Grindelwald has one of the most dramatic settings in Europe, gazing up at the mighty north face of the Eiger and its surrounding peaks. It\u2019s part of the Jungfrau Ski Region that encompasses two valleys and three resorts, with more than 200km of runs. Grindelwald \u2013 Image \u00a9 PlanetSKI/Nick Dalton Grindelwald ski runs \u2013 Image \u00a9 PlanetSKI/Nick Dalton Grindelwald-Wengen , linking the two picturesque villages, with more than 100km of piste, is central. View of the Eiger. Wonderful to wake up to this view \u2013 Image \u00a9 PlanetSKI/Nick Dalton The Eiger Express gondola, panoramic cars seating 26, speeds up from Grindelwald Terminal just outside town, opens up a world of ",
+      "pub_date": "2026-02-14",
+      "id": "47e1f4f7e46d",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 6,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [
+        "international"
+      ],
+      "approved_date": "2026-02-14",
+      "display_score": 10
+    },
+    {
       "source": "The Ski Guru",
       "title": "Tignes Orders Residents to Stay Indoors as Avalanche Danger Reaches Level 5 in the French Alps",
       "url": "https://www.the-ski-guru.com/2026/02/12/tignes-avalanche-danger-february-2026/",
@@ -447,6 +506,30 @@
         "weather-snow"
       ],
       "approved_date": "2026-02-13",
+      "display_score": 10
+    },
+    {
+      "source": "PlanetSKI",
+      "title": "French Resorts Re-Open Ski Areas as Avalanche Danger Drops",
+      "url": "https://planetski.eu/2026/02/12/massive-snowfall-in-the-alps-leaves-very-high-avalanche-risk/",
+      "description": "The avalanche danger level in many French resorts has dropped to Level 4, but there is still a 'high' risk. Resorts are now re-opening slopes after some resorts shut for skiing completely. UPDATED The post French Resorts Re-Open Ski Areas as Avalanche Danger Drops appeared first on PlanetSKI .",
+      "content": "Saturday 14th February Resorts have now started re-opening slopes after avalanche mitigation work is carried out. The risk has dropped from Level 5 (Very High) to Level 4 (High). The authorities are advising against off piste skiing while urging people to stay to the marked and prepared runs. On Friday two Britons and a Frenchman died off piste in an avalanche in Val d\u2019Isere: Two Britons amoung three dead in Val D\u2019Isere avalanche It is expected there will be further fatalities over the next few days as more people venture off piste once the conditions start to stabilise. Level 3 (considerable) is the level where most accidents occur. The authorities are advising extreme caution as more areas open. Friday 13th February La Plagne is assessing the situation across Friday to see if and when the ski area can open safely following its full closure on Thursday. \u201cIf the avalanche risk is lowered to 4/5 an Avalanche Release Intervention Plan will be triggered immediately to enable the ski area ",
+      "pub_date": "2026-02-12",
+      "id": "bc499ce68f27",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "safety-incidents",
+      "secondary_categories": [
+        "hospitality"
+      ],
+      "approved_date": "2026-02-14",
       "display_score": 10
     },
     {
