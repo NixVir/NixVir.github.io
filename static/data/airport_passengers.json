@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-01-15T13:35:15.933477+00:00",
+  "last_updated": "2026-02-15T13:40:03.795604+00:00",
   "data_lag_note": "BTS T-100 data typically 2-3 months behind. Individual airport sources may be more current.",
   "data_sources": {
     "YVR": {
@@ -88,7 +88,7 @@
     },
     "SLC": {
       "source": "Salt Lake City International Airport - Air Traffic Statistics",
-      "last_month_available": "2025-11"
+      "last_month_available": "2025-12"
     },
     "SUN": {
       "source": "BTS T-100",
@@ -11902,6 +11902,10 @@
       "2025-11": {
         "passengers": 2052283,
         "yoy_pct": -1.28
+      },
+      "2025-12": {
+        "passengers": 2330270,
+        "yoy_pct": -0.74
       }
     },
     "SUN": {

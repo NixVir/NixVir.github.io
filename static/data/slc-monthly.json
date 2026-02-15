@@ -1,9 +1,19 @@
 {
-  "generated": "2026-01-15T13:35:15.795202+00:00",
+  "generated": "2026-02-15T13:40:03.653309+00:00",
   "source": "Salt Lake City International Airport - Air Traffic Statistics",
   "source_url": "https://slcairport.com/about-the-airport/airport-overview/air-traffic-statistics/",
   "airport": "SLC",
   "monthly": [
+    {
+      "airport": "SLC",
+      "year": 2025,
+      "month": 12,
+      "passengers": 2330270,
+      "enplaned": 1064865,
+      "yoy_pct": -0.74,
+      "source_url": "https://slcairport.com/assets/pdfDocuments/Air-Traffic-Statistics/Air-Traffic-Statistics-December-2025.pdf",
+      "extracted": "2026-02-15T13:40:02.091356+00:00"
+    },
     {
       "airport": "SLC",
       "year": 2025,
@@ -12,7 +22,7 @@
       "enplaned": 966501,
       "yoy_pct": -1.28,
       "source_url": "https://slcairport.com/assets/pdfDocuments/Air-Traffic-Statistics/November-2025-Air-Traffic-Statistics.pdf",
-      "extracted": "2026-01-15T13:35:14.931743+00:00"
+      "extracted": "2026-02-15T13:40:00.055004+00:00"
     },
     {
       "airport": "SLC",
@@ -22,7 +32,7 @@
       "enplaned": 1141579,
       "yoy_pct": 0.86,
       "source_url": "https://slcairport.com/assets/pdfDocuments/Air-Traffic-Statistics/Air-Traffic-Statistics-2025-October.pdf",
-      "extracted": "2026-01-15T13:35:13.298551+00:00"
+      "extracted": "2026-02-15T13:39:58.256164+00:00"
     },
     {
       "airport": "SLC",
@@ -32,7 +42,7 @@
       "enplaned": 1080133,
       "yoy_pct": -0.55,
       "source_url": "https://slcairport.com/assets/pdfDocuments/Air-Traffic-Statistics/Air-Traffic-Statistics-September-2025.pdf",
-      "extracted": "2026-01-15T13:35:11.450699+00:00"
+      "extracted": "2026-02-15T13:39:56.168740+00:00"
     },
     {
       "airport": "SLC",
@@ -42,7 +52,7 @@
       "enplaned": 1154953,
       "yoy_pct": 0.6,
       "source_url": "https://slcairport.com/assets/pdfDocuments/Air-Traffic-Statistics/Air-Traffic-Statistics-August-2025.pdf",
-      "extracted": "2026-01-15T13:35:09.757013+00:00"
+      "extracted": "2026-02-15T13:39:54.280310+00:00"
     },
     {
       "airport": "SLC",
@@ -52,7 +62,7 @@
       "enplaned": 1211464,
       "yoy_pct": 2.89,
       "source_url": "https://slcairport.com/assets/pdfDocuments/Air-Traffic-Statistics/Air-Traffic-Statistics-July-2025.pdf",
-      "extracted": "2026-01-15T13:35:07.968157+00:00"
+      "extracted": "2026-02-15T13:39:52.291042+00:00"
     },
     {
       "airport": "SLC",
@@ -62,7 +72,7 @@
       "enplaned": 1160315,
       "yoy_pct": -1.01,
       "source_url": "https://slcairport.com/assets/pdfDocuments/Air-Traffic-Statistics/Air-Traffic-Statistics-June-2025.pdf",
-      "extracted": "2026-01-15T13:35:06.295035+00:00"
+      "extracted": "2026-02-15T13:39:50.430696+00:00"
     },
     {
       "airport": "SLC",
@@ -72,7 +82,7 @@
       "enplaned": 1144037,
       "yoy_pct": -1.15,
       "source_url": "https://slcairport.com/assets/pdfDocuments/Air-Traffic-Statistics/Air-Traffic-Statistics-May-2025.pdf",
-      "extracted": "2026-01-15T13:35:04.592874+00:00"
+      "extracted": "2026-02-15T13:39:48.523531+00:00"
     },
     {
       "airport": "SLC",
@@ -82,7 +92,7 @@
       "enplaned": 1028131,
       "yoy_pct": -3.74,
       "source_url": "https://slcairport.com/assets/pdfDocuments/Air-Traffic-Statistics/Air-Traffic-Statistics-April-2025.pdf",
-      "extracted": "2026-01-15T13:35:02.942161+00:00"
+      "extracted": "2026-02-15T13:39:46.666407+00:00"
     },
     {
       "airport": "SLC",
@@ -92,7 +102,7 @@
       "enplaned": 1206880,
       "yoy_pct": 0.21,
       "source_url": "https://slcairport.com/assets/pdfDocuments/Air-Traffic-Statistics/March-2025-Air-Traffic-Statistics.pdf",
-      "extracted": "2026-01-15T13:35:01.275095+00:00"
+      "extracted": "2026-02-15T13:39:44.790711+00:00"
     },
     {
       "airport": "SLC",
@@ -102,7 +112,7 @@
       "enplaned": 999717,
       "yoy_pct": -3.36,
       "source_url": "https://slcairport.com/assets/pdfDocuments/Air-Traffic-Statistics/February-2025-Air-Traffic-Statistics.pdf",
-      "extracted": "2026-01-15T13:34:59.742978+00:00"
+      "extracted": "2026-02-15T13:39:43.114742+00:00"
     },
     {
       "airport": "SLC",
@@ -112,7 +122,7 @@
       "enplaned": 1031762,
       "yoy_pct": -2.21,
       "source_url": "https://slcairport.com/assets/pdfDocuments/Air-Traffic-Statistics/Air-Traffic-Statistics-January-2025.pdf",
-      "extracted": "2026-01-15T13:34:58.254318+00:00"
+      "extracted": "2026-02-15T13:39:41.479719+00:00"
     },
     {
       "airport": "SLC",
@@ -120,7 +130,7 @@
       "month": 12,
       "passengers": 2347525,
       "source": "2024 annual summary",
-      "extracted": "2026-01-15T13:34:55.973955+00:00",
+      "extracted": "2026-02-15T13:39:38.685297+00:00",
       "yoy_pct": 6.41
     },
     {
@@ -129,7 +139,7 @@
       "month": 11,
       "passengers": 2078797,
       "source": "2024 annual summary",
-      "extracted": "2026-01-15T13:34:55.973953+00:00",
+      "extracted": "2026-02-15T13:39:38.685295+00:00",
       "yoy_pct": -2.72
     },
     {
@@ -138,7 +148,7 @@
       "month": 10,
       "passengers": 2396989,
       "source": "2024 annual summary",
-      "extracted": "2026-01-15T13:34:55.973940+00:00",
+      "extracted": "2026-02-15T13:39:38.685293+00:00",
       "yoy_pct": 3.27
     },
     {
@@ -147,7 +157,7 @@
       "month": 9,
       "passengers": 2318539,
       "source": "2024 annual summary",
-      "extracted": "2026-01-15T13:34:55.973938+00:00",
+      "extracted": "2026-02-15T13:39:38.685291+00:00",
       "yoy_pct": 4.06
     },
     {
@@ -156,7 +166,7 @@
       "month": 8,
       "passengers": 2469630,
       "source": "2024 annual summary",
-      "extracted": "2026-01-15T13:34:55.973936+00:00",
+      "extracted": "2026-02-15T13:39:38.685289+00:00",
       "yoy_pct": 3.7
     },
     {
@@ -165,7 +175,7 @@
       "month": 7,
       "passengers": 2515882,
       "source": "2024 annual summary",
-      "extracted": "2026-01-15T13:34:55.973935+00:00",
+      "extracted": "2026-02-15T13:39:38.685287+00:00",
       "yoy_pct": 0.68
     },
     {
@@ -174,7 +184,7 @@
       "month": 6,
       "passengers": 2550178,
       "source": "2024 annual summary",
-      "extracted": "2026-01-15T13:34:55.973933+00:00",
+      "extracted": "2026-02-15T13:39:38.685286+00:00",
       "yoy_pct": 10.75
     },
     {
@@ -183,7 +193,7 @@
       "month": 5,
       "passengers": 2453164,
       "source": "2024 annual summary",
-      "extracted": "2026-01-15T13:34:55.973931+00:00",
+      "extracted": "2026-02-15T13:39:38.685284+00:00",
       "yoy_pct": 8.43
     },
     {
@@ -192,7 +202,7 @@
       "month": 4,
       "passengers": 2308780,
       "source": "2024 annual summary",
-      "extracted": "2026-01-15T13:34:55.973929+00:00",
+      "extracted": "2026-02-15T13:39:38.685282+00:00",
       "yoy_pct": 8.33
     },
     {
@@ -201,7 +211,7 @@
       "month": 3,
       "passengers": 2497838,
       "source": "2024 annual summary",
-      "extracted": "2026-01-15T13:34:55.973927+00:00",
+      "extracted": "2026-02-15T13:39:38.685280+00:00",
       "yoy_pct": 6.46
     },
     {
@@ -210,7 +220,7 @@
       "month": 2,
       "passengers": 2194717,
       "source": "2024 annual summary",
-      "extracted": "2026-01-15T13:34:55.973924+00:00",
+      "extracted": "2026-02-15T13:39:38.685278+00:00",
       "yoy_pct": 9.97
     },
     {
@@ -219,7 +229,7 @@
       "month": 1,
       "passengers": 2232571,
       "source": "2024 annual summary",
-      "extracted": "2026-01-15T13:34:55.973912+00:00",
+      "extracted": "2026-02-15T13:39:38.685264+00:00",
       "yoy_pct": 4.24
     },
     {
@@ -228,7 +238,7 @@
       "month": 12,
       "passengers": 2206134,
       "source": "2023 annual summary",
-      "extracted": "2026-01-15T13:34:55.688770+00:00"
+      "extracted": "2026-02-15T13:39:38.364440+00:00"
     },
     {
       "airport": "SLC",
@@ -236,7 +246,7 @@
       "month": 11,
       "passengers": 2136904,
       "source": "2023 annual summary",
-      "extracted": "2026-01-15T13:34:55.688769+00:00"
+      "extracted": "2026-02-15T13:39:38.364437+00:00"
     },
     {
       "airport": "SLC",
@@ -244,7 +254,7 @@
       "month": 10,
       "passengers": 2321142,
       "source": "2023 annual summary",
-      "extracted": "2026-01-15T13:34:55.688767+00:00"
+      "extracted": "2026-02-15T13:39:38.364434+00:00"
     },
     {
       "airport": "SLC",
@@ -252,7 +262,7 @@
       "month": 9,
       "passengers": 2228050,
       "source": "2023 annual summary",
-      "extracted": "2026-01-15T13:34:55.688765+00:00"
+      "extracted": "2026-02-15T13:39:38.364431+00:00"
     },
     {
       "airport": "SLC",
@@ -260,7 +270,7 @@
       "month": 8,
       "passengers": 2381469,
       "source": "2023 annual summary",
-      "extracted": "2026-01-15T13:34:55.688763+00:00"
+      "extracted": "2026-02-15T13:39:38.364427+00:00"
     },
     {
       "airport": "SLC",
@@ -268,7 +278,7 @@
       "month": 7,
       "passengers": 2498993,
       "source": "2023 annual summary",
-      "extracted": "2026-01-15T13:34:55.688755+00:00"
+      "extracted": "2026-02-15T13:39:38.364418+00:00"
     },
     {
       "airport": "SLC",
@@ -276,7 +286,7 @@
       "month": 6,
       "passengers": 2302652,
       "source": "2023 annual summary",
-      "extracted": "2026-01-15T13:34:55.688753+00:00"
+      "extracted": "2026-02-15T13:39:38.364416+00:00"
     },
     {
       "airport": "SLC",
@@ -284,7 +294,7 @@
       "month": 5,
       "passengers": 2262366,
       "source": "2023 annual summary",
-      "extracted": "2026-01-15T13:34:55.688751+00:00"
+      "extracted": "2026-02-15T13:39:38.364412+00:00"
     },
     {
       "airport": "SLC",
@@ -292,7 +302,7 @@
       "month": 4,
       "passengers": 2131195,
       "source": "2023 annual summary",
-      "extracted": "2026-01-15T13:34:55.688749+00:00"
+      "extracted": "2026-02-15T13:39:38.364409+00:00"
     },
     {
       "airport": "SLC",
@@ -300,7 +310,7 @@
       "month": 3,
       "passengers": 2346241,
       "source": "2023 annual summary",
-      "extracted": "2026-01-15T13:34:55.688747+00:00"
+      "extracted": "2026-02-15T13:39:38.364406+00:00"
     },
     {
       "airport": "SLC",
@@ -308,7 +318,7 @@
       "month": 2,
       "passengers": 1995793,
       "source": "2023 annual summary",
-      "extracted": "2026-01-15T13:34:55.688744+00:00"
+      "extracted": "2026-02-15T13:39:38.364403+00:00"
     },
     {
       "airport": "SLC",
@@ -316,14 +326,14 @@
       "month": 1,
       "passengers": 2141815,
       "source": "2023 annual summary",
-      "extracted": "2026-01-15T13:34:55.688725+00:00"
+      "extracted": "2026-02-15T13:39:38.364384+00:00"
     }
   ],
   "summary": {
     "2025": {
-      "total_passengers": 25827665,
-      "months_available": 11,
-      "is_complete": false
+      "total_passengers": 28157935,
+      "months_available": 12,
+      "is_complete": true
     },
     "2024": {
       "total_passengers": 28364610,
