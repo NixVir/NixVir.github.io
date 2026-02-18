@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-17 11:34:00",
+  "updated": "2026-02-18 11:33:17",
   "total_articles": 25,
   "scoring_method": "keyword",
   "articles": [
@@ -240,6 +240,31 @@
     },
     {
       "source": "Unofficial Networks",
+      "title": "Is Cloud Seeding Helping Ski Resorts Produce More Snow?",
+      "url": "https://unofficialnetworks.com/2026/02/17/cloud-seeding-benefits/",
+      "description": "While there are ski resorts believe cloud seeding help produce more powder, the critics of the practice are growing.",
+      "content": "As the West deals with a very underwhelming winter (minus this week), some are wondering what ways there are to get out of it. In theory, one solution is cloud seeding, but its effectiveness is debatable. Bloomberg News reported last week that various states and ski resorts are using cloud seeding to increase snowfall totals from snowstorms. Colorado and Utah are currently leading the way, but the results aren\u2019t definitive enough to solve the West\u2019s drought. There are a few methods that are used for cloud seeding. Near Winter Park Resort, a machine places silver iodide into the arm. When storms approach, they can increase precipitation. Alternatively, on cloudy days with no expected precipitation, it can produce snow. This operation is run by DRI, a non-profit research firm. Winter Park estimates that it helped produce 24 inches of snow in 2024. Some of these systems are manually run, while newer ones are remotely operated for more secluded locations. \u201cIf you ask me, it enhances the ef",
+      "pub_date": "2026-02-17",
+      "id": "e870a11e393b",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [
+        "business-investment",
+        "hospitality"
+      ],
+      "approved_date": "2026-02-18",
+      "display_score": 18
+    },
+    {
+      "source": "Unofficial Networks",
       "title": "This Might Be Alberta\u2019s Most Slept On Ski Area",
       "url": "https://unofficialnetworks.com/2026/02/16/alberta-most-slept-on-ski-area/",
       "description": "According to PeakRankings, Castle Mountain is one of the most slept on ski areas in Alberta, overshadowed by the larger Banff area resorts.",
@@ -407,30 +432,6 @@
         "international"
       ],
       "approved_date": "2026-02-14",
-      "display_score": 18
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "Palisades Tahoe Forecasting 32-40 Inches of Snow In The Coming Week",
-      "url": "https://unofficialnetworks.com/2026/02/12/palisades-tahoe-snowfall-forecast/",
-      "description": "Palisades Tahoe is gearing up for a significant multi-day storm that could deliver up to 40 inches of snow by Wednesday morning.",
-      "content": "Palisades Tahoe meteorologist Bryan Allegretto is looking at a slow-moving weather system will bring snow to the Sierra Nevada starting Monday, with snowfall rates increasing through the afternoon and evening hours. Storm Timeline The action begins Monday as southerly flow pushes precipitation into the region. A colder storm drops in from the northwest on Tuesday, increasing snowfall rates with westerly flow and frigid temperatures. Snow levels will drop near the base Monday morning, falling to around 5,000 feet by Monday evening and near 4,000 feet Monday night into Tuesday. By early Wednesday morning, the forecast is looking toward some pretty impressive 2-day storm totals, including 22-30 inches at the base, 28-35 inches mid-mountain, and 32-40 inches at the upper mountain. Palisades Tahoe live camera. Credit: Palisades Tahoe Ridgetop winds will be strongest Monday afternoon through Tuesday, with gusts reaching 80+ mph. These extreme conditions will likely affect upper mountain lift",
-      "pub_date": "2026-02-12",
-      "id": "4fc47877df5d",
-      "prefilter_business_score": 1,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "resort-operations"
-      ],
-      "approved_date": "2026-02-13",
       "display_score": 18
     },
     {
