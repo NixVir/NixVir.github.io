@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-18 11:33:17",
+  "updated": "2026-02-19 11:32:52",
   "total_articles": 25,
   "scoring_method": "keyword",
   "articles": [
@@ -81,6 +81,30 @@
       ],
       "approved_date": "2026-02-10",
       "display_score": 29.5
+    },
+    {
+      "source": "Ski Area Management",
+      "title": "Alterra Names Flueck as Chief Customer Officer, Ikon Pass President",
+      "url": "https://www.saminfo.com/news/sam-headline-news/alterra-names-flueck-as-chief-customer-officer-ikon-pass-president",
+      "description": "SAM Magazine\u2014Denver, Feb. 18, 2026\u2014 Alterra Mountain Company has appointed David Flueck as chief customer officer and president, Ikon Pass. Flueck will lead the company\u2019s customer engagement strategy as well as its sales, marketing and communications functions, and steward continued growth of the Ikon Pass product. He joins Alterra from Marriott International, where he most recently served as global officer of loyalty, cards and new businesses. There, he created and led the Marriott Bonvoy loyal",
+      "content": "SAM Magazine\u2014Denver, Feb. 18, 2026\u2014 Alterra Mountain Company has appointed David Flueck as chief customer officer and president, Ikon Pass. Flueck will lead the company\u2019s customer engagement strategy as well as its sales, marketing and communications functions, and steward continued growth of the Ikon Pass product. He joins Alterra from Marriott International, where he most recently served as global officer of loyalty, cards and new businesses. There, he created and led the Marriott Bonvoy loyal",
+      "pub_date": "2026-02-18",
+      "id": "24b71e019f87",
+      "prefilter_business_score": 3,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "resort-operations"
+      ],
+      "approved_date": "2026-02-19",
+      "display_score": 25
     },
     {
       "source": "SnowBrains",
@@ -166,6 +190,31 @@
     },
     {
       "source": "Ski Area Management",
+      "title": "Presidents\u2019 Day Weekend 2026: A Holiday of Extremes",
+      "url": "https://www.saminfo.com/news/sam-headline-news/presidents-day-weekend-2026-a-holiday-of-extremes",
+      "description": "SAM Magazine\u2014Happy Valley, Ore., Feb. 18, 2026\u2014 Loveland's Annual Mountaintop Matrimony. From record-breaking revenues in the East to \"miracle\" snowfalls in the West, the Presidents\u2019 Day long weekend continued the trend of a ski industry defined by extreme contrasts. While the East Coast basked in one of its strongest seasons in a decade, the West navigated a high-stakes transition from historic drought to a season-saving storm cycle. Here is a regional roundup of the highs, lows, and operationa",
+      "content": "SAM Magazine\u2014Happy Valley, Ore., Feb. 18, 2026\u2014 Loveland's Annual Mountaintop Matrimony. From record-breaking revenues in the East to \"miracle\" snowfalls in the West, the Presidents\u2019 Day long weekend continued the trend of a ski industry defined by extreme contrasts. While the East Coast basked in one of its strongest seasons in a decade, the West navigated a high-stakes transition from historic drought to a season-saving storm cycle. Here is a regional roundup of the highs, lows, and operationa",
+      "pub_date": "2026-02-18",
+      "id": "90c3154717db",
+      "prefilter_business_score": 2,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [
+        "ski-history",
+        "business-investment"
+      ],
+      "approved_date": "2026-02-19",
+      "display_score": 20
+    },
+    {
+      "source": "Ski Area Management",
       "title": "Little Switzerland to Invest $4 Million on Two New Chairlifts",
       "url": "https://www.saminfo.com/news/sam-headline-news/little-switzerland-to-invest-4-million-on-two-new-chairlifts",
       "description": "SAM Magazine\u2014Slinger Wis., Feb. 16, 2026\u2014 Little Switzerland Ski Area will install two new Skytrac quad chairlifts this summer to replace the ski area\u2019s Lift 1 and Lift 2, a unique \u201cup and over\u201d double chairlift that loads from both the base area and backside of the ski area and transports guests uphill in opposite directions to unload at the summit mid-point. It was originally installed in 1964. The $4 million investment is the ski area\u2019s largest single capital improvement to date and will more",
@@ -211,31 +260,6 @@
         "business-investment"
       ],
       "approved_date": "2026-02-12",
-      "display_score": 20
-    },
-    {
-      "source": "Ski Area Management",
-      "title": "Oregon\u2019s Snow Drought Leads to Indefinite Closures",
-      "url": "https://www.saminfo.com/news/sam-headline-news/oregons-snow-drought-leads-to-indefinite-closures",
-      "description": "SAM Magazine\u2014Happy Valley, Ore., Feb. 6, 2026\u2014 Mt. Ashland Ski Area The historic snow drought gripping the Pacific Northwest claimed more operational days this week as four of Oregon\u2019s ski areas announced indefinite suspensions or significant reductions in operations, leaving lift chairs empty and slopes bare across the lower Cascades and Siskiyous. With unseasonably warm temperatures and rain eroding an already fragile snowpack, resort operators at Hoodoo Ski Area, Mt. Hood Skibowl, Mt. Ashland",
-      "content": "SAM Magazine\u2014Happy Valley, Ore., Feb. 6, 2026\u2014 Mt. Ashland Ski Area The historic snow drought gripping the Pacific Northwest claimed more operational days this week as four of Oregon\u2019s ski areas announced indefinite suspensions or significant reductions in operations, leaving lift chairs empty and slopes bare across the lower Cascades and Siskiyous. With unseasonably warm temperatures and rain eroding an already fragile snowpack, resort operators at Hoodoo Ski Area, Mt. Hood Skibowl, Mt. Ashland",
-      "pub_date": "2026-02-06",
-      "id": "fd23652accba",
-      "prefilter_business_score": 1,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "ski-history",
-        "resort-operations"
-      ],
-      "approved_date": "2026-02-10",
       "display_score": 20
     },
     {
@@ -432,30 +456,6 @@
         "international"
       ],
       "approved_date": "2026-02-14",
-      "display_score": 18
-    },
-    {
-      "source": "Ski Area Management",
-      "title": "Attendance Up at NSAA Eastern Conference",
-      "url": "https://www.saminfo.com/news/sam-headline-news/attendance-up-at-nsaa-eastern-conference",
-      "description": "SAM Magazine\u2014Killington, Vt., Feb. 9, 2026\u2014 Colleagues took time to connect sharing stories and highlights from the season. A banner winter across much of the East, marked by consistent cold temperatures for snowmaking, steady natural snowfall, and record holiday attendance at many ski areas, set an upbeat tone for the National Ski Areas Association Eastern Winter Conference. Roughly 621 industry professionals attended the event at Killington, Feb. 3\u20134, up from about 575 last year. The trade sho",
-      "content": "SAM Magazine\u2014Killington, Vt., Feb. 9, 2026\u2014 Colleagues took time to connect sharing stories and highlights from the season. A banner winter across much of the East, marked by consistent cold temperatures for snowmaking, steady natural snowfall, and record holiday attendance at many ski areas, set an upbeat tone for the National Ski Areas Association Eastern Winter Conference. Roughly 621 industry professionals attended the event at Killington, Feb. 3\u20134, up from about 575 last year. The trade sho",
-      "pub_date": "2026-02-09",
-      "id": "bf4e03baaee0",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 9,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "resort-operations"
-      ],
-      "approved_date": "2026-02-12",
       "display_score": 18
     },
     {
