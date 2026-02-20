@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-02-10T06:05:24.865308Z",
+  "fetched_at": "2026-02-20T15:28:06.009006Z",
   "sources": {
     "us": "Sports Handle (sportshandle.com)",
     "ontario": "iGaming Ontario (igamingontario.ca)"
@@ -536,7 +536,7 @@
     {
       "type": "monthly",
       "date": "2025-06-01",
-      "handle_usd": 9709832015.0,
+      "handle_usd": 10014420335.0,
       "revenue_usd": 283229192.0,
       "taxes_usd": null,
       "source": "Sports Handle"
@@ -544,48 +544,48 @@
     {
       "type": "monthly",
       "date": "2025-07-01",
-      "handle_usd": 8028180708.0,
-      "revenue_usd": 847734950.0,
-      "taxes_usd": 186198304.0,
+      "handle_usd": 8802577741.0,
+      "revenue_usd": 931229727.0,
+      "taxes_usd": 207133240.0,
       "source": "Sports Handle"
     },
     {
       "type": "monthly",
       "date": "2025-08-01",
-      "handle_usd": 10635058766.0,
-      "revenue_usd": 253401112.0,
+      "handle_usd": 10976237819.0,
+      "revenue_usd": 255501503.0,
       "taxes_usd": null,
       "source": "Sports Handle"
     },
     {
       "type": "monthly",
       "date": "2025-09-01",
-      "handle_usd": 14702137086.0,
-      "revenue_usd": 271553299.0,
+      "handle_usd": 15230188560.0,
+      "revenue_usd": 272336249.0,
       "taxes_usd": null,
       "source": "Sports Handle"
     },
     {
       "type": "monthly",
       "date": "2025-10-01",
-      "handle_usd": 16665888860.0,
-      "revenue_usd": 348679835.0,
+      "handle_usd": 17275663368.0,
+      "revenue_usd": 352113172.0,
       "taxes_usd": null,
       "source": "Sports Handle"
     },
     {
       "type": "monthly",
       "date": "2025-11-01",
-      "handle_usd": 16152425378.0,
-      "revenue_usd": 434000569.0,
+      "handle_usd": 16534040188.0,
+      "revenue_usd": 436750787.0,
       "taxes_usd": null,
       "source": "Sports Handle"
     },
     {
       "type": "monthly",
       "date": "2025-12-01",
-      "handle_usd": 10173689847.0,
-      "revenue_usd": 308798621.0,
+      "handle_usd": 14666448154.0,
+      "revenue_usd": 403824858.0,
       "taxes_usd": null,
       "source": "Sports Handle"
     }
@@ -650,7 +650,7 @@
     {
       "type": "annual",
       "year": 2025,
-      "handle_usd": 145749046863.0,
+      "handle_usd": 148688652061.0,
       "revenue_usd": null,
       "taxes_usd": null,
       "source": "Sports Handle"
@@ -1206,15 +1206,15 @@
   "summary": {
     "us": {
       "latest_month": "2025-12-01",
-      "latest_handle_usd": 10173689847.0,
-      "latest_revenue_usd": 308798621.0,
-      "ttm_handle_usd": 155922736710.0,
-      "ttm_revenue_usd": 4934552860.0,
-      "ttm_yoy_handle_change": 0.04503251912075578,
-      "handle_per_capita_usd": 599.7,
-      "handle_per_capita_context": "~2 lift tickets",
+      "latest_handle_usd": 14666448154.0,
+      "latest_revenue_usd": 403824858.0,
+      "ttm_handle_usd": 163355100215.0,
+      "ttm_revenue_usd": 5122140770.0,
+      "ttm_yoy_handle_change": 0.0948460467725776,
+      "handle_per_capita_usd": 628.29,
+      "handle_per_capita_context": "~3 lift tickets",
       "latest_annual_year": 2025,
-      "latest_annual_handle_usd": 145749046863.0,
+      "latest_annual_handle_usd": 148688652061.0,
       "latest_annual_revenue_usd": null
     },
     "ontario": {
@@ -1228,7 +1228,7 @@
       "industry_avg_pct": 93.0,
       "label": "Typical bettor payout"
     },
-    "narrative": "Since PASPA was struck down in May 2018, U.S. sports betting handle has grown from $13.1B (2019) to $156B trailing twelve months \u2014 a 5% year-over-year increase. Growth is continuing but at a more moderate pace than the early post-PASPA expansion years. That works out to roughly $600 per U.S. adult per year \u2014 equivalent to about ~2 lift tickets. Ontario, Canada's largest regulated market, has contributed $8.5B USD in trailing twelve-month betting wagers. March Madness typically drives sustained handle volume over three weeks of tournament play.",
+    "narrative": "Since PASPA was struck down in May 2018, U.S. sports betting handle has grown from $13.1B (2019) to $163B trailing twelve months \u2014 a 9% year-over-year increase. Growth is continuing but at a more moderate pace than the early post-PASPA expansion years. That works out to roughly $628 per U.S. adult per year \u2014 equivalent to about ~3 lift tickets. Ontario, Canada's largest regulated market, has contributed $8.5B USD in trailing twelve-month betting wagers. March Madness typically drives sustained handle volume over three weeks of tournament play.",
     "previous": null
   }
 }
