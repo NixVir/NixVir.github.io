@@ -672,6 +672,26 @@
       "secondary_categories": [
         "business-investment"
       ]
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Ski Coach Arrested For Stealing Skis At NY Ski Area",
+      "url": "https://unofficialnetworks.com/2026/02/19/ski-coach-arressted-for-theft-ny/",
+      "description": "A man working as a ski coach was arrested this week for allegedly stealing multiple sets of skis at a New York ski area.",
+      "content": "A man was arrested this week for allegedly stealing multiple sets of Atomic skis during a school ski meet at Mount Peter Ski Area in New York. According to a press release from the Town of Warwick Police Department , the incident occurred on Wednesday, February 11th. Several schools from Bergen County, New Jersey had gathered at Mount Peter for a scheduled ski meet when someone made off with multiple sets of skis. The Warwick Police Department\u2019s Patrol and Detective Divisions launched an investigation immediately, with the estimated value of the stolen equipment placed between $4,000 and $7,000. A review of surveillance footage and multiple witness interviews allowed detectives to identify a suspect, and on Tuesday, February 17th, Kevin R. Malkin, 39, of Hopatcong, New Jersey, was arrested at the Warwick Police Department. He was charged with Grand Larceny in the Third Degree, a Class D Felony under New York State law. While the Warwick Police Department reported that Malkin was a repr",
+      "pub_date": "2026-02-19",
+      "id": "116876f85b5f",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 5,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "safety-incidents",
+      "secondary_categories": []
     }
   ],
   "rejected": [
@@ -1702,6 +1722,28 @@
         "resort-operations",
         "business-investment",
         "transportation"
+      ]
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Tamarack Resort, ID, Extends Half-Price Lift Tickets to Bogus Basin Season Pass Holders Through March 13",
+      "url": "https://snowbrains.com/tamarack-resort-id-extends-half-price-lift-tickets-to-bogus-basin-season-pass-holders-through-march-13/",
+      "description": "Tamarack Resort, Idaho, announced today that all 2025-26 Bogus Basin season pass holders will receive 50% off day lift tickets at Tamarack through March 13, 2026. The offer is effective immediately and may be redeemed by presenting a valid Bogus Basin season pass at the Tamarack ticket office. \u201cWe\u2019re all part of the same Idaho ski community. When your neighbors [\u2026] The post Tamarack Resort, ID, Extends Half-Price Lift Tickets to Bogus Basin Season Pass Holders Through March 13 appeared first on ",
+      "content": "A skier shreds the powder at Tamarack Resort. | Photo: John Webster via Tamarack Resort Tamarack Resort , Idaho, announced today that all 2025-26 Bogus Basin season pass holders will receive 50% off day lift tickets at Tamarack through March 13, 2026. The offer is effective immediately and may be redeemed by presenting a valid Bogus Basin season pass at the Tamarack ticket office. \u201cWe\u2019re all part of the same Idaho ski community. When your neighbors are having a tough year, you step up. We\u2019re proud to open our mountain to Bogus pass holders and give them a chance to enjoy some strong late-season conditions here at Tamarack,\u201d Zander Smith, PR Associate at Tamarack Resort, said. Strong Late-Season Conditions at Tamarack Recent storms have refreshed the mountain, building a 71-inch base at the summit and bringing season-to-date snowfall to 123 inches. Additional accumulation is forecast through the end of February, setting the stage for a strong finish to the ski season. With a summit elev",
+      "pub_date": "2026-02-19",
+      "id": "4adedb5f9cc3",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 1,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [
+        "weather-snow"
       ]
     }
   ]
