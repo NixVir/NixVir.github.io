@@ -692,6 +692,49 @@
       "score_method": "keyword",
       "category": "safety-incidents",
       "secondary_categories": []
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Hilarious Skier Interviewed After Tumbling Down Corbet\u2019s Couloir at Jackson Hole",
+      "url": "https://unofficialnetworks.com/2026/02/20/jackson-hole-funny-crash-interview/",
+      "description": "Corbet's Couloir candid interview after skier tumbles down one of the world's most challenging ski runs.",
+      "content": "Absolutely mint video posted by Jackson Hole Mountain Resort of a casual day spent at the most infamous ski run in North America, Corbet\u2019s Couloir . The concept of the video is quite simple, post a media crew up top to watch the how skiers and snowboarders fair while attempting to descend the impossibly steep terrain and then post an interviewer at the bottom to get their candid post-game reactions. Never a dull moment at Corbet\u2019s Couloir. Would love to see the folks at Jackson Hole revive this format this winter, its a winner! About Corbet\u2019s Couloir : No ski resort in North America has a chute so legendary as Corbet\u2019s Couloir in Wyoming\u2014a crucible where skiers go to prove their mettle (or more often, to retreat in fear). The run is named for Barry Corbet, a mountaineer who in 1960 spotted a narrow crease of snow shaped like an upside-down funnel, high up on the mountain now known as Jackson Hole. Said he: \u201cSomeday someone will ski that.\u201d Categories: Jackson Hole Wyoming Skiing",
+      "pub_date": "2026-02-20",
+      "id": "09fb12da5474",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 5,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "hospitality",
+      "secondary_categories": []
+    },
+    {
+      "source": "SnowBrains",
+      "title": "New Ski Film \u201cBetter Up There\u201d Reveals the Personal Battles Behind French Freeride Star L\u00e9o Slemett",
+      "url": "https://snowbrains.com/new-ski-film-better-up-there-reveals-the-personal-battles-behind-french-freeride-star-leo-slemett/",
+      "description": "Better Up There | The Story of L\u00e9o Slemett is an intimate documentary portrait of French freeride skier L\u00e9o Slemett that goes far beyond competition highlights and powder footage. Directed by alpinist-filmmaker Mathis Dumas, the film traces Slemett\u2019s journey from a talented Chamonix kid to a Freeride World Tour standout, while focusing less on results and more on the personal [\u2026] The post New Ski Film \u201cBetter Up There\u201d Reveals the Personal Battles Behind French Freeride Star L\u00e9o Slemett appeared",
+      "content": "Better Up There | The Story of L\u00e9o Slemett is an intimate documentary portrait of French freeride skier L\u00e9o Slemett that goes far beyond competition highlights and powder footage. Directed by alpinist-filmmaker Mathis Dumas, the film traces Slemett\u2019s journey from a talented Chamonix kid to a Freeride World Tour standout, while focusing less on results and more on the personal struggles that shaped him along the way. The documentary explores the \u201cduality\u201d of the mountains\u2014a place that can give purpose and joy but can also take everything away in an instant. Related: Fear and Loathing On The Freeride World Tour: The Val Thorens Pro Rather than following a traditional sports narrative, the story unfolds as a reflective portrait about resilience. It touches on setbacks, life-altering challenges, and the emotional toll of loss, showing how those experiences reshaped Slemett\u2019s relationship with skiing and with himself. Ultimately, Better Up There is less about winning lines in steep terrain ",
+      "pub_date": "2026-02-20",
+      "id": "2dc478a060ad",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 4,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "hospitality",
+        "international"
+      ]
     }
   ],
   "rejected": [
@@ -1745,6 +1788,26 @@
       "secondary_categories": [
         "weather-snow"
       ]
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Whitetail Resort Trip Report: An Unexpected Hidden Gem in South Central Pennsylvania",
+      "url": "https://snowbrains.com/whitetail-resort-trip-report-an-unexpected-hidden-gem-in-south-central-pennsylvania/",
+      "description": "Whitetail Resort is located in Central Pennsylvania and is a legit hidden gem for skiers and snowboarders in the mid-Atlantic region. This ski resort gets seriously underestimated by many. I was travelling from one resort to another, and Whitetail was on the way to my next destination. I almost didn\u2019t go because I was on the road for two weeks [\u2026] The post Whitetail Resort Trip Report: An Unexpected Hidden Gem in South Central Pennsylvania appeared first on SnowBrains .",
+      "content": "The base area of Whitetail Resort. | Image: SnowBrains Whitetail Resort is located in Central Pennsylvania and is a legit hidden gem for skiers and snowboarders in the mid-Atlantic region. This ski resort gets seriously underestimated by many. I was travelling from one resort to another, and Whitetail was on the way to my next destination. I almost didn\u2019t go because I was on the road for two weeks straight, but I\u2019m so glad I did\u2014it\u2019s way better than I expected. Honestly, some ski resorts I\u2019ve been to in New York, Vermont, or the Poconos aren\u2019t as good as this place. It is located 90 minutes from Washington, D.C., which makes Whitetail a great day, night, or weekend getaway for any winter enthusiast. I got to Whitetail around 2:00 p.m. on Friday of President\u2019s Weekend, and the conditions were great. The ski resort was not crowded at all, even though when I pulled up to the resort, all the parking lots were full. The trails were packed groomers, and the snow was a little soft, but not ic",
+      "pub_date": "2026-02-20",
+      "id": "aa78940f3206",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 1,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "transportation",
+      "secondary_categories": []
     }
   ]
 }
