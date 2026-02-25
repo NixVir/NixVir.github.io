@@ -819,6 +819,29 @@
       "score_method": "keyword",
       "category": "resort-operations",
       "secondary_categories": []
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Event Official at New Jersey School Ski Race Arrested for Theft of Thousands of Dollars Worth of Skis",
+      "url": "https://snowbrains.com/event-official-at-new-jersey-school-ski-race-arrested-for-theft-of-thousands-of-dollars-worth-of-skis/",
+      "description": "A full ski rack on a busy day at a New Jersey resort has tens of thousands of dollars worth of value, skiers simply hope and trust in the good faith of others to not take their precious equipment. This good faith was betrayed on February 11, 2026 at Mount Peter Ski Area when at least seven skis and poles [\u2026] The post Event Official at New Jersey School Ski Race Arrested for Theft of Thousands of Dollars Worth of Skis appeared first on SnowBrains .",
+      "content": "A packed ski rack, worth tens of thousands of dollars. | Photo: MROBENALT A full ski rack on a busy day at a New Jersey resort has tens of thousands of dollars worth of value, skiers simply hope and trust in the good faith of others to not take their precious equipment. This good faith was betrayed on February 11, 2026 at Mount Peter Ski Area when at least seven skis and poles worth between $4,000-7,000 were stolen amidst a school ski race, according to the Warwick Police Department . Many schools and their athletes were competing that evening in a race hosted by the New Jersey Interscholastic Ski Racing Association (NJISRA) when numerous racers\u2014not coincidentally\u2014lost track of their individually mounted and specially tuned skis. The Warwick Police Department arrived at the resort shortly before 8 p.m. in response to this report of many missing and supposedly stolen skis. The police and their detectives immediately began work in collaboration with patrol and mountain operations to find",
+      "pub_date": "2026-02-25",
+      "id": "41308f6a50dd",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 5,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "winter-sports",
+      "secondary_categories": [
+        "safety-incidents",
+        "resort-operations"
+      ]
     }
   ],
   "rejected": [
@@ -1914,6 +1937,28 @@
       "secondary_categories": [
         "winter-sports",
         "resort-operations"
+      ]
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "New York Ski Area Offering Free Skiing This & Next Week",
+      "url": "https://unofficialnetworks.com/2026/02/24/holiday-mountain-free-skiing/",
+      "description": "If you're looking to ski for cheap over the next few weeks, a revived New York ski area is offering a great deal.",
+      "content": "Monticello, New York \u2014 Holiday Mountain has undergone quite the overhaul over the past few years, and they\u2019re offering a great deal for outsiders to check it out. From February 24-26th, Holiday Mountain is offering free lift tickets to each person who has a season pass at another ski resort. This includes Ikon, Epic, and Indy passholders. A separate photo ID is also needed. There will also be a deal for next week. From March 3-5, if you bring in a lift ticket from another mountain this winter, you get a free lift ticket at Holiday Mountain. View this post on Instagram Situated 85 miles away from New York City, Holiday Mountain was on the verge of closure in 2023. However, local businessman Mike Taylor bought the ski area and got to work reinvigorating it. The upgrades have included replacing the Turkey Trot chairlift, lift renovations, adding new runs, putting in a terrain park with a rope tow, extensive snowmaking upgrades, new snow groomers, adding a new snowtubing area, and building",
+      "pub_date": "2026-02-24",
+      "id": "b4e4d7b0e2ac",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 1,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [
+        "business-investment"
       ]
     }
   ]

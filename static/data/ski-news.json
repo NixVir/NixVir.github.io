@@ -1,6 +1,6 @@
 {
-  "updated": "2026-02-24 11:34:38",
-  "total_articles": 28,
+  "updated": "2026-02-25 11:35:07",
+  "total_articles": 27,
   "scoring_method": "keyword",
   "articles": [
     {
@@ -53,34 +53,30 @@
       "display_score": 29.5
     },
     {
-      "source": "Google News - Vail Alterra Ski",
-      "title": "Ski resort CEO issues warning amid unprecedented trend in US region: 'One of the worst' - The Cool Down",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNdi1VSTN5ZzV1cjRtM3E5bjNfeVA4YURPMVd3R01pNzVHMlM1Mk9ob0ZNXzMyWFhnczNIUDdwckZFejQyMkNIc1hZOHZYLW5yeVY0bl9TbEVIV3lkN0U1dzEwdmxwc1ZYZUFfMTFxMnJwRU5JM3ZPRWNnR3RsbmFHcGI3TV9VRkU3d2pqTDdCNWk1YXBGa0ZLeUJPWDloUQ?oc=5",
-      "description": "Ski resort CEO issues warning amid unprecedented trend in US region: 'One of the worst' The Cool Down",
-      "content": "Ski resort CEO issues warning amid unprecedented trend in US region: 'One of the worst' The Cool Down",
-      "pub_date": "2026-02-03",
-      "id": "2ffa375341db",
+      "source": "The Ski Guru",
+      "title": "Pila Records 12,000 Skiers in One Day as Season Surges",
+      "url": "https://www.the-ski-guru.com/2026/02/24/pila-record-presences-season-2026/",
+      "description": "Pila ski resort records 12,000 visitors in one day during Carnival weekend, with season entries up 9% and revenue up 16% as weather disruptions affect neighbouring resorts. The post Pila Records 12,000 Skiers in One Day as Season Surges appeared first on The-Ski-Guru .",
+      "content": "Pila Records a Historic Ski Day The ski resort of Pila in the Aosta Valley has recorded a historic peak of 12,000 skier visits in a single day over the Carnival weekend, confirming what is shaping up to be one of the strongest winter seasons in recent years. Early morning queues formed at the Aosta\u2013Pila gondola base station as visitors arrived in large numbers. Despite the crowds, slope conditions remained good throughout the day thanks to solid snow cover and efficient lift operations. Planning a trip to Pila? For detailed piste maps, where to stay, lift access tips and insider advice, read my full Must-Read Guide to Pila Ski Resort . Season Performance: Growth Across the Board With roughly two months remaining before the scheduled May 3 closure, Pila\u2019s winter 2025/26 figures are already ahead of last year: +9% increase in first entries +16% increase in revenue More than 400,000 skier entries recorded so far Over \u20ac14 million in turnover The numbers confirm a season that is not only bu",
+      "pub_date": "2026-02-24",
+      "id": "ebf0216b5487",
       "prefilter_business_score": 2,
       "is_macro_relevance": false,
-      "source_boost": 2,
+      "source_boost": 0,
       "score": 10,
       "score_details": {
-        "reason": "Keyword scoring (source: +2)",
+        "reason": "Keyword scoring (source: +0)",
         "method": "keyword"
       },
       "score_method": "keyword",
       "category": "business-investment",
       "secondary_categories": [
-        "safety-incidents"
+        "ski-history",
+        "resort-operations",
+        "hospitality"
       ],
-      "other_sources": [
-        {
-          "source": "Google News - Ski Resort Snow Drought",
-          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPTkZ1aU5CSGw0U1JmNlZrRTNtS2F4NjBJdUo1YXhNYlRmVmhjSjl4TXJIc2xjNVJCQ3UtVklJSzdMWktRYkRvMkZEZGMyVU16MHNzNHVvVGh1QkRZRXgxM2t0TXYwTEhpT1R4R3IxU2xpQnhmdFJtel9TZF9EbldvZWhoQS1CUENJajJjOWJlRQ?oc=5"
-        }
-      ],
-      "approved_date": "2026-02-10",
-      "display_score": 29.5
+      "approved_date": "2026-02-25",
+      "display_score": 27
     },
     {
       "source": "Ski Area Management",
@@ -189,6 +185,32 @@
       "display_score": 22
     },
     {
+      "source": "PlanetSKI",
+      "title": "Swiss Ski Resorts Are Changing",
+      "url": "https://planetski.eu/2026/02/24/swiss-ski-resorts-are-changing/",
+      "description": "Ski resorts and winter sports destinations are re-thinking what they offer. That\u2019s according to a report on SwissInfo. NEW The post Swiss Ski Resorts Are Changing appeared first on PlanetSKI .",
+      "content": "The publication lists five main changes underway. See here for the full article on SwissInfo , and we summarise it below. Ski resorts are changing ownership Swiss ski resorts are mainly owned by cable car and lift companies, in which local communities often hold a stake but do not have majority control. In autumn 2025, the municipalities of Flims, Laax and Falera, in the canton of Graub\u00fcnden, made headlines when they banded together to buy their ski area, \u201cWeisse Arena\u201d. Vail Resorts from the United States, the world\u2019s largest ski resort operator, has set its sights on the Alps. It has already acquired the ski lifts of Crans-Montana and Andermatt-Sedrun. Vail Resorts Confirms it is looking to buy more resorts in the Alps Crans Montana \u2013 photo c/o Snow Camp The company often focuses on sites with development potential where lifts, accommodation and leisure facilities can be combined into one huge resort. The presence of these new investors is changing the character of the mountain regio",
+      "pub_date": "2026-02-24",
+      "id": "2e827c526575",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 9,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "resort-operations",
+        "hospitality",
+        "international"
+      ],
+      "approved_date": "2026-02-25",
+      "display_score": 21
+    },
+    {
       "source": "Ski Area Management",
       "title": "Snow People \u2014 January 2026",
       "url": "https://www.saminfo.com/news/sam-headline-news/snow-people-january-2026",
@@ -284,6 +306,31 @@
       "display_score": 20
     },
     {
+      "source": "SnowBrains",
+      "title": "Lawsuit at Park City Mountain, UT, Threatens Closure of 2 Lifts",
+      "url": "https://snowbrains.com/lawsuit-at-park-city-mountain-ut-threatens-closure-of-2-lifts/",
+      "description": "Park City Mountain, Utah, has yet another lift dispute, and it\u2019s not related to the ongoing Silverlode and Eagle lift issues. UI Charitable Advisors (UI), a Utah-based nonprofit, has filed a civil lawsuit against VR CPC Holdings, Inc., a wholly-owned subsidiary of Vail Resorts (Vail), alleging that Vail is unlawfully operating ski lifts and related resort infrastructure on land owned [\u2026] The post Lawsuit at Park City Mountain, UT, Threatens Closure of 2 Lifts appeared first on SnowBrains .",
+      "content": "Map showing the Colony at White Pine Canyon, including the lifts in question.| Credit: Summit Sotheby\u2019s International Realty Park City Mountain, Utah, has yet another lift dispute, and it\u2019s not related to the ongoing Silverlode and Eagle lift issues. UI Charitable Advisors (UI), a Utah-based nonprofit, has filed a civil lawsuit against VR CPC Holdings, Inc., a wholly-owned subsidiary of Vail Resorts (Vail), alleging that Vail is unlawfully operating ski lifts and related resort infrastructure on land owned by UI in the Colony at White Pine Canyon within the Park City Mountain. At the end of 2024, UI purchased land known as Parcel B, which includes the area under the Timberline and Iron Mountain Express ski lifts\u2014major pieces of Park City Resort\u2019s lift network. These lifts are critical in connecting the Mountain Village to the Canyons side of the mountain and were installed in 2008 and 2010, respectively\u2014long before Vail bought Park City and 14+ years before UI bought the land. Related:",
+      "pub_date": "2026-02-24",
+      "id": "fbd25367c2f4",
+      "prefilter_business_score": 2,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 8,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "resort-operations",
+        "safety-incidents"
+      ],
+      "approved_date": "2026-02-25",
+      "display_score": 19
+    },
+    {
       "source": "Unofficial Networks",
       "title": "How Arapahoe Basin Factored Into The U.S. Ski Industry\u2019s Consolidation",
       "url": "https://unofficialnetworks.com/2026/02/20/arapahoe-basin-ski-industry/",
@@ -307,32 +354,6 @@
       ],
       "approved_date": "2026-02-21",
       "display_score": 19
-    },
-    {
-      "source": "SnowBrains",
-      "title": "Record Snowfall in the French Alps\u2014So What About Global Warming?",
-      "url": "https://snowbrains.com/record-snowfall-in-the-french-alps-so-what-about-global-warming/",
-      "description": "After weeks of unsettled weather, the Alps have delivered what many are calling a spectacular turnaround. After what started as a below-average ski season, in less than three weeks, very significant snow accumulations have transformed large swaths of the northern French Alps into a winter wonderland with massive snow depth. Related: Ski Lift at France\u2019s Les 3 Vallees Hit by [\u2026] The post Record Snowfall in the French Alps\u2014So What About Global Warming? appeared first on SnowBrains .",
-      "content": "French resorts are buried in masses of snow this February. | Image: SnowBrains After weeks of unsettled weather, the Alps have delivered what many are calling a spectacular turnaround. After what started as a below-average ski season, in less than three weeks, very significant snow accumulations have transformed large swaths of the northern French Alps into a winter wonderland with massive snow depth. Related: Ski Lift at France\u2019s Les 3 Vallees Hit by Avalanche Will Remain Closed for the Rest of Season Leading the pack are resorts in the Is\u00e8re, northern Savoie, and Haute-Savoie region, which boast snow depth of between 3.5-4.1 meters (11-13 feet). Current snow depths are at levels Thomas Banchard from Meteo Alpes describes as \u201cexceptional for the 21st century.\u201d Resort Peak Snow Depth (cm) Peak Snow Depth (in) Vaujany 410 161.4 Alpe d\u2019Huez 410 161.4 La Rosi\u00e8re 400 157.5 Chamonix Mont-Blanc 390 153.5 Les Carroz 370 145.7 Avoriaz 364 143.3 Buried Cars in France. | Image: SnowBrains Images",
-      "pub_date": "2026-02-23",
-      "id": "8108bd28b870",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "safety-incidents",
-        "international",
-        "resort-operations"
-      ],
-      "approved_date": "2026-02-23",
-      "display_score": 18
     },
     {
       "source": "Unofficial Networks",
@@ -527,6 +548,32 @@
     },
     {
       "source": "The Ski Guru",
+      "title": "Avalanche Hits Two Pistes at La Fl\u00e9g\u00e8re, Chamonix \u2014 Skiers Rescued, No Fatalities",
+      "url": "https://www.the-ski-guru.com/2026/02/24/avalanche-hits-two-pistes-at-la-flegere-chamonix-skiers-rescued-no-fatalities/",
+      "description": "Chamonix, France \u2013 24 February 2026 An avalanche struck two marked ski runs in the La Fl\u00e9g\u00e8re sector of the Chamonix-Mont-Blanc ski area on Tuesday, briefly burying three skiers before they were rescued safely. The slide crossed sections of the red Crochues piste and the black Floria run around midday. According to regional newspaper Le Dauphin\u00e9 Lib\u00e9r\u00e9, the avalanche debris spread across approximately 100 \u2026 Continue reading \"Avalanche Hits Two Pistes at La Fl\u00e9g\u00e8re, Chamonix \u2014 Skiers Rescued, No ",
+      "content": "Chamonix, France \u2013 24 February 2026 An avalanche struck two marked ski runs in the La Fl\u00e9g\u00e8re sector of the Chamonix-Mont-Blanc ski area on Tuesday, briefly burying three skiers before they were rescued safely. The slide crossed sections of the red Crochues piste and the black Floria run around midday. According to regional newspaper Le Dauphin\u00e9 Lib\u00e9r\u00e9 , the avalanche debris spread across approximately 100 metres of terrain within the ski domain. What Happened at La Fl\u00e9g\u00e8re? The avalanche released above the pistes in the Floria sector of La Fl\u00e9g\u00e8re, one of the main lift-accessed areas in Chamonix. Three skiers were partially buried \u2014 reportedly up to chest height \u2014 but were quickly located and freed by piste patrol and rescue teams. None are believed to have suffered life-threatening injuries. Given the scale of the slide, a full rescue operation was launched as a precaution. Ongoing Avalanche Activity Across the Alps This incident in Chamonix comes amid a broader avalanche cycle affec",
+      "pub_date": "2026-02-24",
+      "id": "b5bd04bfe570",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "safety-incidents",
+      "secondary_categories": [
+        "international",
+        "resort-operations",
+        "transportation"
+      ],
+      "approved_date": "2026-02-25",
+      "display_score": 10
+    },
+    {
+      "source": "The Ski Guru",
       "title": "Avalanche Above Pila: Two Ski Mountaineers Rescued at Punta Valletta",
       "url": "https://www.the-ski-guru.com/2026/02/20/punta-valletta-avalanche-pila-2026/",
       "description": "An avalanche occurred today at Punta Valletta, above the resort of Pila in the Aosta Valley, involving two ski mountaineers. According to local reports, the avalanche was triggered shortly after 14:15. Both skiers were caught and temporarily buried. They were rescued by the Soccorso Alpino Valdostano and transported by helicopter to the Ospedale Parini in Aosta. Fortunately, neither sustained serious injuries and they \u2026 Continue reading \"Avalanche Above Pila: Two Ski Mountaineers Rescued at Punt",
@@ -596,32 +643,6 @@
       "display_score": 10
     },
     {
-      "source": "The Ski Guru",
-      "title": "Tignes Orders Residents to Stay Indoors as Avalanche Danger Reaches Level 5 in the French Alps",
-      "url": "https://www.the-ski-guru.com/2026/02/12/tignes-avalanche-danger-february-2026/",
-      "description": "Authorities in Tignes, one of the major ski resorts in the French Alps, have ordered residents and visitors to remain indoors following exceptional snowfall and extreme avalanche risk across the Haute-Tarentaise area. Avalanche danger in Tignes in February 2026 reached Level 5 \u2014 the highest warning level \u2014 after extreme snowfall across the northern French Alps. Latest \u2026 Continue reading \"Tignes Orders Residents to Stay Indoors as Avalanche Danger Reaches Level 5 in the French Alps\" The post Tign",
-      "content": "Authorities in Tignes , one of the major ski resorts in the French Alps , have ordered residents and visitors to remain indoors following exceptional snowfall and extreme avalanche risk across the Haute-Tarentaise area. Avalanche danger in Tignes in February 2026 reached Level 5 \u2014 the highest warning level \u2014 after extreme snowfall across the northern French Alps. Latest update: Avalanche danger remains high across parts of the Haute-Tarentaise as heavy snowfall continues. The decision came after heavy snowfalls combined with strong winds created highly unstable conditions in the upper valley. According to reports from national and regional media, local authorities implemented a temporary confinement order overnight, asking people not to leave their homes, hotels or residences except in cases of necessity. Why Avalanche Danger in Tignes Reached Level 5 (Maximum Level) The avalanche warning level reached Level 5/5 (Very High) \u2014 the highest classification on the European avalanche scale \u2014",
-      "pub_date": "2026-02-12",
-      "id": "6f8175883091",
-      "prefilter_business_score": 1,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "safety-incidents",
-      "secondary_categories": [
-        "hospitality",
-        "international",
-        "weather-snow"
-      ],
-      "approved_date": "2026-02-13",
-      "display_score": 10
-    },
-    {
       "source": "PlanetSKI",
       "title": "French Resorts Re-Open Ski Areas as Avalanche Danger Drops",
       "url": "https://planetski.eu/2026/02/12/massive-snowfall-in-the-alps-leaves-very-high-avalanche-risk/",
@@ -644,57 +665,6 @@
       ],
       "approved_date": "2026-02-14",
       "display_score": 10
-    },
-    {
-      "source": "The Ski Guru",
-      "title": "Avalanche Warnings Ignored in the 2025\u201326 Ski Season: When Rescuers Risk Their Lives to Save Others",
-      "url": "https://www.the-ski-guru.com/2026/02/09/avalanche-warnings-ignored-in-the-2025-26-ski-season-when-rescuers-risk-their-lives-to-save-others/",
-      "description": "\ud83d\udd39 TL;DR \u2013 Read This First The 2025\u201326 winter season has seen unusually unstable snowpacks across both the Alps and North America.Despite repeated avalanche warnings from ski patrols, mountain guides and rescue services, many skiers and snowboarders continue to go off-piste during high-risk periods \u2014 sometimes ignoring advice, challenging warnings, or reacting aggressively when asked \u2026 Continue reading \"Avalanche Warnings Ignored in the 2025\u201326 Ski Season: When Rescuers Risk Their Lives to Save O",
-      "content": "TL;DR \u2013 Read This First The 2025\u201326 winter season has seen unusually unstable snowpacks across both the Alps and North America. Despite repeated avalanche warnings from ski patrols, mountain guides and rescue services, many skiers and snowboarders continue to go off-piste during high-risk periods \u2014 sometimes ignoring advice, challenging warnings, or reacting aggressively when asked to turn back. When accidents happen, the same professionals who tried to prevent these decisions are forced to carry out complex and dangerous rescue operations , often in extremely unstable terrain. Respecting avalanche bulletins and closures doesn\u2019t just protect skiers \u2014 it protects the rescuers who put their lives at risk to save others. Photo: Herbert Maeder. Wikipedia Commons. Marco e Rosa Hutte. 1974. Avalanche Warnings Ignored in the 2025\u201326 Ski Season: When Rescuers Risk Their Lives to Save Others. A Season Marked by Persistent Avalanche Danger This winter has been characterised by fragile snowpacks ",
-      "pub_date": "2026-02-09",
-      "id": "a6b6546174f8",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "safety-incidents",
-      "secondary_categories": [
-        "weather-snow",
-        "resort-operations",
-        "international"
-      ],
-      "approved_date": "2026-02-10",
-      "display_score": 10
-    },
-    {
-      "source": "PlanetSKI",
-      "title": "International Ski Patrollers Day",
-      "url": "https://planetski.eu/2026/02/09/international-ski-patrollers-day/",
-      "description": "Ensuring the slopes are open, safe and fun for everyone, ski patrollers are the unsung heroes of the mountains. Their contribution is marked on Tuesday 10th February. NEW The post International Ski Patrollers Day appeared first on PlanetSKI .",
-      "content": "They work tirelessly to maintain and enhance the ski resort experience from dawn until dusk, throughout the season. \u201cBeing a ski patroller allows me to enjoy the mountains every day throughout the winter whilst contributing to the safety of others,\u201d said Verbier Ski Patroller, Th\u00e9o Besse. \u201cIt combines my passions for the sport, for keeping the mountains safe and working together as a team. \u201cWe go to work every day, no matter the conditions, and though our job is very demanding, it\u2019s also incredibly rewarding.\u201d PlanetSKI spent a day with the Verbier ski patrol in 2024 to see what happens behind the scenes. It is a fascinating read: PlanetSKI spends a full day with the Verbier ski patrol Verbier Piste Patrol. Image \u00a9 PlanetSKI This year we shadowed a course at Glenshee in Scotland: PlanetSKI heads out with the Glenshee ski patrol PlanetSKI with the Glenshee Ski Patrol. Image \u00a9 Julia Clarke/PlanetSKI International Ski Patrollers Day began in 2022 and is organised by Helly Hansen. It has p",
-      "pub_date": "2026-02-09",
-      "id": "6bcda47fd328",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 8,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "safety-incidents",
-      "secondary_categories": [
-        "resort-operations",
-        "international"
-      ],
-      "approved_date": "2026-02-10",
-      "display_score": 6
     }
   ]
 }
