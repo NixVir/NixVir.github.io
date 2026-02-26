@@ -1,6 +1,6 @@
 {
-  "updated": "2026-02-25 11:35:07",
-  "total_articles": 27,
+  "updated": "2026-02-26 11:34:14",
+  "total_articles": 28,
   "scoring_method": "keyword",
   "articles": [
     {
@@ -77,6 +77,28 @@
       ],
       "approved_date": "2026-02-25",
       "display_score": 27
+    },
+    {
+      "source": "Google News - Ski Resort Business",
+      "title": "China Travel International Investment Announces Acquisition of Equity Interests with Detailed Profit Forecast and Valuation for Songhua Lake Ski Resort Project - Minichart",
+      "url": "https://news.google.com/rss/articles/CBMipwJBVV95cUxPbmZHT2RMMWp3blRmcXlqZXlQQ2hLYUhJc184MkVleF83b0RfbzFkaGw4UG5hemZLeFoya1M3U1ZrNTB4S0M5SUl1RFZyM242Vmh3ZFQtVnlzQUtaa0lrSzQ3MGRkT0xpRFcxWklzWVFoSW5LbHJJY3VIb0o2dWZhMjRmcjN5V2pRNWZYcm51V2hqZWF5cmZPXzQ2QnhwSjVHS09sMU1idkp5eFJPRnZxYjJ4ZDhhcjZVdnVYbE4yOEdxbUJBcW5SMF9YTVBPdVE4S0NwYm9McWRvRWNnS18tclZsWHVfYXk1anpRRkZqaDBhbHdzMmZtNlhMbUF0NkMtZ25RNnhrNllVQVkyMl9OTEFmZWIxMy0tUzgwSFFZWnMwb1pLUURJ?oc=5",
+      "description": "China Travel International Investment Announces Acquisition of Equity Interests with Detailed Profit Forecast and Valuation for Songhua Lake Ski Resort Project Minichart",
+      "content": "China Travel International Investment Announces Acquisition of Equity Interests with Detailed Profit Forecast and Valuation for Songhua Lake Ski Resort Project Minichart",
+      "pub_date": "2026-02-25",
+      "id": "7e7e3830a36b",
+      "prefilter_business_score": 4,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [],
+      "approved_date": "2026-02-26",
+      "display_score": 25
     },
     {
       "source": "Ski Area Management",
