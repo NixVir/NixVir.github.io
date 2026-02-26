@@ -1,13 +1,13 @@
 {
   "metadata": {
     "source": "rivers.alberta.ca",
-    "fetched_at": "2026-02-25T19:13:23Z",
+    "fetched_at": "2026-02-26T07:07:13Z",
     "description": "Real-time Snow Water Equivalent from Alberta mountain snow pillows"
   },
   "statistics": {
     "count": 14,
-    "mean_swe_mm": 268.0,
-    "min_swe_mm": 0.9,
+    "mean_swe_mm": 267.2,
+    "min_swe_mm": 0.3,
     "max_swe_mm": 540.0
   },
   "stations": [
@@ -16,36 +16,36 @@
       "name": "Gardiner Creek - EPA",
       "lat": 49.3599410634488,
       "lon": -114.518235,
-      "swe_mm": 468.7,
-      "snow_depth_cm": 141.8,
-      "timestamp": "2026-02-25 11:00:00"
+      "swe_mm": 457.7,
+      "snow_depth_cm": 133.8,
+      "timestamp": "2026-02-25 21:00:00"
     },
     {
       "station_id": "05AA817",
       "name": "South Racehorse Creek - EPA",
       "lat": 49.7901390586048,
       "lon": -114.611994,
-      "swe_mm": 315.0,
+      "swe_mm": 313.1,
       "snow_depth_cm": 124.0,
-      "timestamp": "2026-02-25 11:00:00"
+      "timestamp": "2026-02-25 21:00:00"
     },
     {
       "station_id": "05AB814",
       "name": "Sentinel Peak - EPA",
       "lat": 50.2526,
       "lon": -114.465178,
-      "swe_mm": 0.9,
-      "snow_depth_cm": 2.0,
-      "timestamp": "2026-02-25 11:00:00"
+      "swe_mm": 0.3,
+      "snow_depth_cm": 1.0,
+      "timestamp": "2026-02-25 21:00:00"
     },
     {
       "station_id": "05AD803",
       "name": "Akamina Pass 2 - EPA",
       "lat": 49.02727778,
       "lon": -114.052944,
-      "swe_mm": 166.8,
-      "snow_depth_cm": 88.3,
-      "timestamp": "2026-02-25 11:00:00"
+      "swe_mm": 167.8,
+      "snow_depth_cm": 87.0,
+      "timestamp": "2026-02-25 21:00:00"
     },
     {
       "station_id": "05BB803",
@@ -53,17 +53,17 @@
       "lat": 51.077453,
       "lon": -115.781592,
       "swe_mm": 540.0,
-      "snow_depth_cm": 156.0,
-      "timestamp": "2026-02-25 10:45:00"
+      "snow_depth_cm": 154.0,
+      "timestamp": "2026-02-25 20:45:00"
     },
     {
       "station_id": "05BF824",
       "name": "Three Isle Lake - EPA",
       "lat": 50.632590232417,
       "lon": -115.28129,
-      "swe_mm": 455.8,
-      "snow_depth_cm": 149.7,
-      "timestamp": "2026-02-25 11:30:00"
+      "swe_mm": 456.3,
+      "snow_depth_cm": 150.3,
+      "timestamp": "2026-02-25 21:30:00"
     },
     {
       "station_id": "05BJ805",
@@ -72,7 +72,7 @@
       "lon": -114.990015,
       "swe_mm": 346.0,
       "snow_depth_cm": null,
-      "timestamp": "2026-02-25 11:30:00"
+      "timestamp": "2026-02-25 21:30:00"
     },
     {
       "station_id": "05BL811",
@@ -81,16 +81,16 @@
       "lon": -114.714372,
       "swe_mm": 514.6,
       "snow_depth_cm": 170.0,
-      "timestamp": "2026-02-25 11:00:00"
+      "timestamp": "2026-02-25 21:00:00"
     },
     {
       "station_id": "05CA805",
       "name": "Skoki Lodge - EPA",
       "lat": 51.542155,
       "lon": -116.06097,
-      "swe_mm": 360.4,
+      "swe_mm": 361.4,
       "snow_depth_cm": null,
-      "timestamp": "2026-02-25 11:30:00"
+      "timestamp": "2026-02-25 21:30:00"
     },
     {
       "station_id": "05DA807",
@@ -98,35 +98,35 @@
       "lat": 51.9816683,
       "lon": -116.168977,
       "swe_mm": 153.9,
-      "snow_depth_cm": 92.0,
-      "timestamp": "2026-02-25 11:00:00"
+      "snow_depth_cm": 91.4,
+      "timestamp": "2026-02-25 21:00:00"
     },
     {
       "station_id": "05DB802",
       "name": "Limestone Ridge - EPA",
       "lat": 51.8942282628268,
       "lon": -115.384567,
-      "swe_mm": 94.2,
+      "swe_mm": 94.1,
       "snow_depth_cm": 41.0,
-      "timestamp": "2026-02-25 11:30:00"
+      "timestamp": "2026-02-25 21:30:00"
     },
     {
       "station_id": "05DD804",
       "name": "Southesk - EPA",
       "lat": 52.670833333,
       "lon": -117.225556,
-      "swe_mm": 199.7,
-      "snow_depth_cm": 79.1,
-      "timestamp": "2026-02-25 11:00:00"
+      "swe_mm": 200.6,
+      "snow_depth_cm": 78.9,
+      "timestamp": "2026-02-25 21:00:00"
     },
     {
       "station_id": "07BB811",
       "name": "Paddle Headwaters - EPA",
       "lat": 53.868888889,
       "lon": -115.543056,
-      "swe_mm": 44.0,
-      "snow_depth_cm": 15.2,
-      "timestamp": "2026-02-25 10:00:00"
+      "swe_mm": 42.0,
+      "snow_depth_cm": 14.6,
+      "timestamp": "2026-02-25 21:00:00"
     },
     {
       "station_id": "07BB814",
@@ -134,8 +134,8 @@
       "lat": 54.058888889,
       "lon": -114.794722,
       "swe_mm": 92.6,
-      "snow_depth_cm": 42.8,
-      "timestamp": "2026-02-25 10:00:00"
+      "snow_depth_cm": 42.3,
+      "timestamp": "2026-02-25 20:00:00"
     }
   ]
 }
