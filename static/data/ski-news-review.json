@@ -842,6 +842,26 @@
         "safety-incidents",
         "resort-operations"
       ]
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Ski Resorts Are Installing AI Cameras At The Lifts",
+      "url": "https://unofficialnetworks.com/2026/02/26/ski-resorts-are-installing-ai-cameras-at-the-lifts-smart-anti-fraud-move-or-creepy-surveillance/",
+      "description": "Let\u2019s be honest: nearly everyone knows someone who\u2019s \u201cborrowed a buddy\u2019s pass\u201d at least once. Not you, obviously. But you\u2019ve heard the story. The cousin is visiting for the weekend. The friend was \u201cjust trying to get one day in.\u201d Someone swapping the hoodie used on photo day, like that\u2019s the part that matters. For [\u2026]",
+      "content": "Let\u2019s be honest: nearly everyone knows someone who\u2019s \u201cborrowed a buddy\u2019s pass\u201d at least once. Not you , obviously. But you\u2019ve heard the story. The cousin is visiting for the weekend. The friend was \u201cjust trying to get one day in.\u201d Someone swapping the hoodie used on photo day, like that\u2019s the part that matters. For years, the system relied on one underpaid liftie squinting at a tiny photo on a well worn pass. Before that, it was the green pass and the clipped wicket. And now? Resorts are quietly upgrading that whole dynamic with AI-powered photo checks and cameras aimed right at the scanners. The good old days. The question is\u2026 is this just basic fairness for people paying $1,500+ for a pass\u2014or are resorts turning lift gates into mini Communist China checkpoints? What\u2019s changing: from \u201cliftie eyeball test\u201d to AI photo checks A growing number of resorts and access-system companies are pushing tech that makes pass-sharing harder to pull off. At Mt. Bachelor , the resort began testing new",
+      "pub_date": "2026-02-27",
+      "id": "f72330b37fde",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 5,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": []
     }
   ],
   "rejected": [
@@ -1980,6 +2000,51 @@
       "score_method": "keyword",
       "category": "safety-incidents",
       "secondary_categories": []
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Steamboat Resort, CO, Launches Premium \u201cTrue West Pass\u201d With Priority Lift Access",
+      "url": "https://snowbrains.com/steamboat-resort-co-launches-premium-true-west-pass-with-priority-lift-access/",
+      "description": "Steamboat Resort in Colorado has introduced a new concierge-level add-on product this winter, allowing guests to pay extra for dedicated lift line access, valet services, and other high-touch amenities\u2014a move that has drawn both interest and criticism across the ski industry. The True West Pass, which quietly rolled out in December, is a limited-availability daily upgrade that must be purchased [\u2026] The post Steamboat Resort, CO, Launches Premium \u201cTrue West Pass\u201d With Priority Lift Access appeare",
+      "content": "Steamboat Resort introduced the True West Pass this winter, which offers priority lift entry and concierge-level amenities. | Photo: Steamboat Resort Steamboat Resort in Colorado has introduced a new concierge-level add-on product this winter, allowing guests to pay extra for dedicated lift line access, valet services, and other high-touch amenities\u2014a move that has drawn both interest and criticism across the ski industry. The True West Pass, which quietly rolled out in December, is a limited-availability daily upgrade that must be purchased in addition to a regular lift ticket or season pass. According to reporting by the Steamboat Pilot & Today , the add-on costs vary using dynamic pricing, ranging from about $150 on slower weekdays to as much as $400 on peak weekend daysfor guests age 13 and older. Related: Blue Mountain, ON, Conditions Report: Testing Out Alterra\u2019s New Reserve Pass Resort communications director Maren Franciosi said in a statement to the newspaper that the pass was",
+      "pub_date": "2026-02-26",
+      "id": "7af9d3b9fb5a",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 1,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [
+        "business-investment",
+        "canada"
+      ]
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Mammoth Mountain, CA, to Stay Open Through Memorial Day Again After 7+ Feet of February Snow",
+      "url": "https://snowbrains.com/mammoth-mountain-ca-to-stay-open-through-memorial-day-again-after-7-feet-of-february-snow/",
+      "description": "Mammoth Mountain has announced it will remain open for skiing and snowboarding through at least Memorial Day weekend once again this season, after receiving more than seven feet of snow so far in February. The Eastern Sierra resort confirmed the extended operations as part of what it calls its \u201cSecond Season\u201d\u2014Mammoth\u2019s annual stretch of spring skiing marked by longer days, [\u2026] The post Mammoth Mountain, CA, to Stay Open Through Memorial Day Again After 7+ Feet of February Snow appeared first on ",
+      "content": "For 2 years in a row Mammoth Mountain will be open until at least Memorial Day. | Photo: Mammoth Mountain Mammoth Mountain has announced it will remain open for skiing and snowboarding through at least Memorial Day weekend once again this season, after receiving more than seven feet of snow so far in February. The Eastern Sierra resort confirmed the extended operations as part of what it calls its \u201cSecond Season\u201d\u2014Mammoth\u2019s annual stretch of spring skiing marked by longer days, softening snow, and high-elevation terrain that holds coverage deep into late May and often beyond. Related: From Barren to Blanketed: The Sierra Nevada\u2019s Dramatic Transformation After a series of February storms refilled the upper mountain, conditions have shifted firmly back into midwinter mode, setting the stage for a long spring run. Mammoth\u2019s summit rises to 11,053 feet, and its predominantly north-facing terrain allows snow to preserve well into warmer months, making it one of the most reliable late-season ",
+      "pub_date": "2026-02-26",
+      "id": "4d9fbd5d0cbc",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 1,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [
+        "hospitality"
+      ]
     }
   ]
 }

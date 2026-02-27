@@ -1,6 +1,6 @@
 {
-  "updated": "2026-02-26 11:34:14",
-  "total_articles": 28,
+  "updated": "2026-02-27 11:26:13",
+  "total_articles": 30,
   "scoring_method": "keyword",
   "articles": [
     {
@@ -29,13 +29,37 @@
       "display_score": 33
     },
     {
-      "source": "Google News - Ski Resort Snow Drought",
-      "title": "Ski resort CEO issues warning amid unprecedented trend in US region: 'We can never let [this] happen again' - The Cool Down",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPTkZ1aU5CSGw0U1JmNlZrRTNtS2F4NjBJdUo1YXhNYlRmVmhjSjl4TXJIc2xjNVJCQ3UtVklJSzdMWktRYkRvMkZEZGMyVU16MHNzNHVvVGh1QkRZRXgxM2t0TXYwTEhpT1R4R3IxU2xpQnhmdFJtel9TZF9EbldvZWhoQS1CUENJajJjOWJlRQ?oc=5",
-      "description": "Ski resort CEO issues warning amid unprecedented trend in US region: 'We can never let [this] happen again' The Cool Down",
-      "content": "Ski resort CEO issues warning amid unprecedented trend in US region: 'We can never let [this] happen again' The Cool Down",
-      "pub_date": "2026-02-05",
-      "id": "0a2b1a7886cf",
+      "source": "Skift",
+      "title": "Has JetBlue\u2019s Transatlantic Growth Hit a Ceiling?",
+      "url": "https://skift.com/2026/02/26/has-jetblues-transatlantic-growth-hit-a-ceiling/",
+      "description": "JetBlue\u2019s transatlantic ambitions are beginning to meet practical limits. Summer 2026 reflects an airline fine-tuning growth as slot constraints, fleet availability, and intensifying competition test its model.",
+      "content": "Skift Take: JetBlue\u2019s transatlantic ambitions are beginning to meet practical limits. Summer 2026 reflects an airline fine-tuning growth as slot constraints, fleet availability, and intensifying competition test its model. Read the Complete Story On Skift",
+      "pub_date": "2026-02-26",
+      "id": "e934a696f802",
+      "prefilter_business_score": 3,
+      "is_macro_relevance": false,
+      "source_boost": 4,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +4)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "transportation",
+      "secondary_categories": [
+        "hospitality"
+      ],
+      "approved_date": "2026-02-27",
+      "display_score": 28
+    },
+    {
+      "source": "SIA - Snowsports Industries America",
+      "title": "Wintersteiger V\u2011Edge: Better Tuning for Skis + New Revenue Ops for Ski Retailers",
+      "url": "https://www.snowsports.org/wintersteiger-v-edge-better-tuning-for-skis-new-revenue-opps-for-ski-retailers/",
+      "description": "Wintersteiger V\u2011Edge: Versatile Tuning for Every SkierProvides New Revenue Opportunities for Ski Industry Retailers Salt Lake City, UT (February 26, 2026) \u2014 Wintersteiger has renewed its emphasis on V-Edge, the variable\u2011edge grinding function built into all Jupiter automated ski service machines, providing retailers with high\u2011margin services that improve turn and exit initiation for skiers of [\u2026] The post Wintersteiger V\u2011Edge: Better Tuning for Skis + New Revenue Ops for Ski Retailers appeared f",
+      "content": "Wintersteiger V\u2011Edge: Versatile Tuning for Every Skier Provides New Revenue Opportunities for Ski Industry Retailers Salt Lake City, UT (February 26, 2026) \u2014 Wintersteiger has renewed its emphasis on V-Edge, the variable\u2011edge grinding function built into all Jupiter automated ski service machines, providing retailers with high\u2011margin services that improve turn and exit initiation for skiers of all disciplines. \u201cV-Edge gives shops a simple, reliable way to deliver a noticeable customer benefit and drive incremental revenue from the equipment they already have,\u201d said Wes Price, Sales Manager at Wintersteiger. \u201cIt\u2019s easy to train staff on the Comfort, Sport, and Race settings, and the consistent results help shops convert more rentals, increase repeat business, and strengthen guest loyalty.\u201d Key benefits for ski shops: Jupiter owners can offer V-Edge tuning as an upsell for rental fleets, demo skis, retail, and race customers, without additional major hardware purchases. Three pre-program",
+      "pub_date": "2026-02-26",
+      "id": "fbdf80eacc40",
       "prefilter_business_score": 2,
       "is_macro_relevance": false,
       "source_boost": 2,
@@ -47,10 +71,10 @@
       "score_method": "keyword",
       "category": "business-investment",
       "secondary_categories": [
-        "safety-incidents"
+        "transportation"
       ],
-      "approved_date": "2026-02-10",
-      "display_score": 29.5
+      "approved_date": "2026-02-27",
+      "display_score": 27
     },
     {
       "source": "The Ski Guru",
@@ -77,6 +101,28 @@
       ],
       "approved_date": "2026-02-25",
       "display_score": 27
+    },
+    {
+      "source": "Google News - Ski Resort Business",
+      "title": "Renowned U.P. ski resort\u2019s $8M expansion at risk amid land dispute with nonprofit - Crain's Grand Rapids Business",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOVlhBaWNXMmRrNTk1ZGFQYk8xQnBmY3Z0aklSbFpSVENKU2pyUGgzMTlpM2FadWQ3cTdSZ2RZZV91VV8zSExCN3VxNjRLeEhxS3dqaHdoMmJMMzFrUE1CODE1ZXdvN3N5UGZUSXlzbS1idnc2b3dFMGlHUkh5TEYxRDVlRWQxZ1dmS2NlQTNjZXBtS2IyQmxJRDlDNWRPNVMzU09lTmFKVEtWR003cTZERDh5ejJDMkNheTQtdjFTMW5nTklkNUlyLVRGM2QzVjYyamFwTg?oc=5",
+      "description": "Renowned U.P. ski resort\u2019s $8M expansion at risk amid land dispute with nonprofit Crain's Grand Rapids Business",
+      "content": "Renowned U.P. ski resort\u2019s $8M expansion at risk amid land dispute with nonprofit Crain's Grand Rapids Business",
+      "pub_date": "2026-02-26",
+      "id": "db29d962b230",
+      "prefilter_business_score": 2,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [],
+      "approved_date": "2026-02-27",
+      "display_score": 25
     },
     {
       "source": "Google News - Ski Resort Business",
@@ -569,6 +615,32 @@
       "display_score": 16
     },
     {
+      "source": "PlanetSKI",
+      "title": "Indy Pass Adds 16 New Ski Areas",
+      "url": "https://planetski.eu/2026/02/26/indy-pass-adds-16-new-ski-areas/",
+      "description": "Indy Pass has announced the addition of sixteen new ski areas for the 2026/27 season. Six are in Europe and there are more to come. NEW The post Indy Pass Adds 16 New Ski Areas appeared first on PlanetSKI .",
+      "content": "Indy Pass is announcing the addition of sixteen new ski areas for the 26/27 season. Here at PlanetSKI we have had an Indy Pass for the past two seasons and find it gives us access to some small gems of resorts that are off the radar of many skiers, but well worth a visit. Europe: Les 7 Laux, France Bergbahnen Hohsaas AG, Switzerland Valmorel, France St\u00f6ten i S\u00e4len, Sweden Levi, Finland Stranda Ski Resort, Norway North America: Murray Ski Ridge, Canada Pebble Creek Ski Area, USA Thrill Hills, USA Bethel Village Trails XC, USA Franconia Inn & Outdoor Center XC, USA Great Glen Trails Outdoor Center XC, USA Northern Maine Community Trails XC, USA Steamboat Ski Touring Center XC, USA Haymaker Nordic Center XC, USA The Loppet XC, USA The Indy Pass will continue to add resorts over the off-season and expects major additions before the 26/27 season. \u201cIndy Pass has experienced remarkable growth and with that growth comes responsibility,\u201d said Indy Pass Director, Erik Mogensen. \u201cWe must continue",
+      "pub_date": "2026-02-26",
+      "id": "f5a23a3da0cd",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 8,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [
+        "transportation",
+        "hospitality",
+        "canada"
+      ],
+      "approved_date": "2026-02-27",
+      "display_score": 14
+    },
+    {
       "source": "The Ski Guru",
       "title": "Avalanche Hits Two Pistes at La Fl\u00e9g\u00e8re, Chamonix \u2014 Skiers Rescued, No Fatalities",
       "url": "https://www.the-ski-guru.com/2026/02/24/avalanche-hits-two-pistes-at-la-flegere-chamonix-skiers-rescued-no-fatalities/",
@@ -660,30 +732,6 @@
       "category": "resort-operations",
       "secondary_categories": [
         "international"
-      ],
-      "approved_date": "2026-02-14",
-      "display_score": 10
-    },
-    {
-      "source": "PlanetSKI",
-      "title": "French Resorts Re-Open Ski Areas as Avalanche Danger Drops",
-      "url": "https://planetski.eu/2026/02/12/massive-snowfall-in-the-alps-leaves-very-high-avalanche-risk/",
-      "description": "The avalanche danger level in many French resorts has dropped to Level 4, but there is still a 'high' risk. Resorts are now re-opening slopes after some resorts shut for skiing completely. UPDATED The post French Resorts Re-Open Ski Areas as Avalanche Danger Drops appeared first on PlanetSKI .",
-      "content": "Saturday 14th February Resorts have now started re-opening slopes after avalanche mitigation work is carried out. The risk has dropped from Level 5 (Very High) to Level 4 (High). The authorities are advising against off piste skiing while urging people to stay to the marked and prepared runs. On Friday two Britons and a Frenchman died off piste in an avalanche in Val d\u2019Isere: Two Britons amoung three dead in Val D\u2019Isere avalanche It is expected there will be further fatalities over the next few days as more people venture off piste once the conditions start to stabilise. Level 3 (considerable) is the level where most accidents occur. The authorities are advising extreme caution as more areas open. Friday 13th February La Plagne is assessing the situation across Friday to see if and when the ski area can open safely following its full closure on Thursday. \u201cIf the avalanche risk is lowered to 4/5 an Avalanche Release Intervention Plan will be triggered immediately to enable the ski area ",
-      "pub_date": "2026-02-12",
-      "id": "bc499ce68f27",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "safety-incidents",
-      "secondary_categories": [
-        "hospitality"
       ],
       "approved_date": "2026-02-14",
       "display_score": 10
