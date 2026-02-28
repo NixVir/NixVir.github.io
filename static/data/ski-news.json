@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-27 11:26:13",
+  "updated": "2026-02-28 11:12:33",
   "total_articles": 30,
   "scoring_method": "keyword",
   "articles": [
@@ -196,6 +196,30 @@
     },
     {
       "source": "SnowBrains",
+      "title": "Mad River Glen, VT, Buys 1,100 Acres to Conserve Land for Backcountry Use",
+      "url": "https://snowbrains.com/mad-river-glen-vt-buys-1100-acres-to-conserve-land-for-backcountry-use/",
+      "description": "Mad River Glen has finalized the purchase of more than 1,100 acres of land surrounding its ski area in Fayston, Vermont, securing the property for conservation and backcountry recreation. The cooperatively owned ski area closed the $2.5 million deal Tuesday, general manager Matt Lillard told VTDigger. The acquisition more than doubles the land owned by the resort\u2019s cooperative, which previously [\u2026] The post Mad River Glen, VT, Buys 1,100 Acres to Conserve Land for Backcountry Use appeared first ",
+      "content": "Mad River Glen has purchased a surrounding 1,100 acres of land for recreational and conservation purposes. Photo: Mad River Glen\u2019s iconic single chair. Credit: Vermont.com Mad River Glen has finalized the purchase of more than 1,100 acres of land surrounding its ski area in Fayston, Vermont, securing the property for conservation and backcountry recreation. The cooperatively owned ski area closed the $2.5 million deal Tuesday, general manager Matt Lillard told VTDigger . The acquisition more than doubles the land owned by the resort\u2019s cooperative, which previously held about 700 acres. Lillard said the property will not be developed and instead will be protected for recreational and conservation purposes. \u201cWe will be putting the land in conservation with a focus on recreation and backcountry skiing. We\u2019re not looking to develop it in any way,\u201d he told VTDigger . The purchase was financed through a crowdsourced fundraising effort that raised roughly $2.8 million, according to the resort",
+      "pub_date": "2026-02-27",
+      "id": "0df43af76ba8",
+      "prefilter_business_score": 4,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "safety-incidents"
+      ],
+      "approved_date": "2026-02-28",
+      "display_score": 23
+    },
+    {
+      "source": "SnowBrains",
       "title": "Majority of Western United States with Record Low Snowpack: How it Affects Ski Resorts and What it Means For the Summer",
       "url": "https://snowbrains.com/majority-of-western-united-states-with-record-low-snowpack-how-it-affects-ski-resorts-and-what-it-means-for-the-summer/",
       "description": "This winter has been historic in all the wrong ways for the West. October gave us hope with cold temperatures and early snowfall, but then it warmed up and dried out in November. December threw much of the region into monsoon season when the jet stream pushed warm South Pacific air and moisture into the Cascades and northern Rockies. Then [\u2026] The post Majority of Western United States with Record Low Snowpack: How it Affects Ski Resorts and What it Means For the Summer appeared first on SnowBrai",
@@ -372,31 +396,6 @@
       ],
       "approved_date": "2026-02-19",
       "display_score": 20
-    },
-    {
-      "source": "SnowBrains",
-      "title": "Lawsuit at Park City Mountain, UT, Threatens Closure of 2 Lifts",
-      "url": "https://snowbrains.com/lawsuit-at-park-city-mountain-ut-threatens-closure-of-2-lifts/",
-      "description": "Park City Mountain, Utah, has yet another lift dispute, and it\u2019s not related to the ongoing Silverlode and Eagle lift issues. UI Charitable Advisors (UI), a Utah-based nonprofit, has filed a civil lawsuit against VR CPC Holdings, Inc., a wholly-owned subsidiary of Vail Resorts (Vail), alleging that Vail is unlawfully operating ski lifts and related resort infrastructure on land owned [\u2026] The post Lawsuit at Park City Mountain, UT, Threatens Closure of 2 Lifts appeared first on SnowBrains .",
-      "content": "Map showing the Colony at White Pine Canyon, including the lifts in question.| Credit: Summit Sotheby\u2019s International Realty Park City Mountain, Utah, has yet another lift dispute, and it\u2019s not related to the ongoing Silverlode and Eagle lift issues. UI Charitable Advisors (UI), a Utah-based nonprofit, has filed a civil lawsuit against VR CPC Holdings, Inc., a wholly-owned subsidiary of Vail Resorts (Vail), alleging that Vail is unlawfully operating ski lifts and related resort infrastructure on land owned by UI in the Colony at White Pine Canyon within the Park City Mountain. At the end of 2024, UI purchased land known as Parcel B, which includes the area under the Timberline and Iron Mountain Express ski lifts\u2014major pieces of Park City Resort\u2019s lift network. These lifts are critical in connecting the Mountain Village to the Canyons side of the mountain and were installed in 2008 and 2010, respectively\u2014long before Vail bought Park City and 14+ years before UI bought the land. Related:",
-      "pub_date": "2026-02-24",
-      "id": "fbd25367c2f4",
-      "prefilter_business_score": 2,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 8,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "business-investment",
-      "secondary_categories": [
-        "resort-operations",
-        "safety-incidents"
-      ],
-      "approved_date": "2026-02-25",
-      "display_score": 19
     },
     {
       "source": "Unofficial Networks",
