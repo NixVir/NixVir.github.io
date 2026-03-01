@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-28T14:25:20.862662",
+  "generated": "2026-03-01T14:26:46.871686",
   "source": "NRCS National Water and Climate Center",
   "source_url": "https://www.nrcs.usda.gov/wps/portal/wcc/home/",
   "baseline": "1991-2020 median",
@@ -10,78 +10,78 @@
   },
   "statistics": {
     "overall": {
-      "count": 720,
-      "mean_pct": 60.7,
-      "median_pct": 60,
+      "count": 721,
+      "mean_pct": 59.3,
+      "median_pct": 58,
       "min_pct": 0,
-      "max_pct": 400,
-      "below_normal": 595,
-      "normal": 86,
-      "above_normal": 39
+      "max_pct": 300,
+      "below_normal": 604,
+      "normal": 77,
+      "above_normal": 40
     },
     "by_state": {
       "AK": {
         "count": 25,
-        "mean_pct": 99.7,
+        "mean_pct": 99.3,
         "below_normal": 14,
         "normal": 2,
         "above_normal": 9
       },
       "AZ": {
         "count": 21,
-        "mean_pct": 34.9,
+        "mean_pct": 27.4,
         "below_normal": 19,
         "normal": 1,
         "above_normal": 1
       },
       "CA": {
         "count": 32,
-        "mean_pct": 64.5,
-        "below_normal": 28,
-        "normal": 4,
+        "mean_pct": 62.5,
+        "below_normal": 29,
+        "normal": 3,
         "above_normal": 0
       },
       "CO": {
         "count": 104,
-        "mean_pct": 60.8,
+        "mean_pct": 59.5,
         "below_normal": 102,
         "normal": 2,
         "above_normal": 0
       },
       "ID": {
         "count": 79,
-        "mean_pct": 68.9,
-        "below_normal": 60,
-        "normal": 11,
+        "mean_pct": 68.4,
+        "below_normal": 61,
+        "normal": 10,
         "above_normal": 8
       },
       "MT": {
-        "count": 85,
-        "mean_pct": 79.0,
-        "below_normal": 54,
-        "normal": 27,
+        "count": 84,
+        "mean_pct": 77.8,
+        "below_normal": 57,
+        "normal": 23,
         "above_normal": 4
       },
       "NM": {
         "count": 25,
-        "mean_pct": 23.3,
+        "mean_pct": 19.8,
         "below_normal": 25,
         "normal": 0,
         "above_normal": 0
       },
       "NV": {
-        "count": 28,
-        "mean_pct": 46.4,
-        "below_normal": 26,
+        "count": 29,
+        "mean_pct": 44.2,
+        "below_normal": 27,
         "normal": 1,
         "above_normal": 1
       },
       "OR": {
-        "count": 74,
-        "mean_pct": 30.8,
-        "below_normal": 72,
-        "normal": 1,
-        "above_normal": 1
+        "count": 73,
+        "mean_pct": 31.2,
+        "below_normal": 71,
+        "normal": 0,
+        "above_normal": 2
       },
       "SD": {
         "count": 2,
@@ -92,30 +92,30 @@
       },
       "UT": {
         "count": 100,
-        "mean_pct": 57.8,
-        "below_normal": 92,
-        "normal": 8,
+        "mean_pct": 55.9,
+        "below_normal": 93,
+        "normal": 7,
         "above_normal": 0
       },
       "WA": {
-        "count": 63,
-        "mean_pct": 50.4,
-        "below_normal": 57,
+        "count": 64,
+        "mean_pct": 49.5,
+        "below_normal": 58,
         "normal": 4,
         "above_normal": 2
       },
       "WY": {
-        "count": 82,
-        "mean_pct": 81.7,
-        "below_normal": 44,
-        "normal": 25,
+        "count": 83,
+        "mean_pct": 79.7,
+        "below_normal": 46,
+        "normal": 24,
         "above_normal": 13
       }
     },
     "by_region": {
       "Rocky Mountain": {
         "count": 475,
-        "mean_pct": 66.4,
+        "mean_pct": 64.9,
         "states": [
           "CO",
           "UT",
@@ -134,8 +134,8 @@
         ]
       },
       "Pacific Southwest": {
-        "count": 81,
-        "mean_pct": 50.6,
+        "count": 82,
+        "mean_pct": 47.0,
         "states": [
           "CA",
           "NV",
@@ -143,8 +143,8 @@
         ]
       },
       "Intermountain": {
-        "count": 289,
-        "mean_pct": 66.5,
+        "count": 291,
+        "mean_pct": 64.9,
         "states": [
           "UT",
           "ID",
@@ -162,8 +162,8 @@
       "lat": 41.23583,
       "lon": -120.79192,
       "elevation_ft": 6170,
-      "swe_inches": 3.9,
-      "pct_median": 38
+      "swe_inches": 3.6,
+      "pct_median": 35
     },
     {
       "id": "907",
@@ -172,8 +172,8 @@
       "lat": 37.52217,
       "lon": -112.27118,
       "elevation_ft": 8890,
-      "swe_inches": 3.1,
-      "pct_median": 47
+      "swe_inches": 2.8,
+      "pct_median": 42
     },
     {
       "id": "916",
@@ -192,7 +192,7 @@
       "lat": 61.7493,
       "lon": -150.89199,
       "elevation_ft": 170,
-      "swe_inches": 8.5,
+      "swe_inches": 8.4,
       "pct_median": null
     },
     {
@@ -202,8 +202,8 @@
       "lat": 47.77957,
       "lon": -121.69847,
       "elevation_ft": 3500,
-      "swe_inches": 22.0,
-      "pct_median": 54
+      "swe_inches": 22.1,
+      "pct_median": 53
     },
     {
       "id": "1344",
@@ -253,7 +253,7 @@
       "lon": -117.19255,
       "elevation_ft": 7430,
       "swe_inches": 10.0,
-      "pct_median": 59
+      "pct_median": 58
     },
     {
       "id": "2065",
@@ -262,7 +262,7 @@
       "lat": 61.58337,
       "lon": -159.57708,
       "elevation_ft": 90,
-      "swe_inches": 5.3,
+      "swe_inches": 5.2,
       "pct_median": null
     },
     {
@@ -272,7 +272,7 @@
       "lat": 42.87007,
       "lon": -122.16518,
       "elevation_ft": 6020,
-      "swe_inches": 14.4,
+      "swe_inches": 14.3,
       "pct_median": 49
     },
     {
@@ -302,8 +302,8 @@
       "lat": 45.19085,
       "lon": -119.25392,
       "elevation_ft": 5770,
-      "swe_inches": 5.8,
-      "pct_median": 41
+      "swe_inches": 5.5,
+      "pct_median": 39
     },
     {
       "id": "306",
@@ -312,7 +312,7 @@
       "lat": 43.7569,
       "lon": -115.23907,
       "elevation_ft": 7570,
-      "swe_inches": 20.0,
+      "swe_inches": 19.9,
       "pct_median": 87
     },
     {
@@ -322,7 +322,7 @@
       "lat": 40.59124,
       "lon": -111.63775,
       "elevation_ft": 8750,
-      "swe_inches": 23.0,
+      "swe_inches": 22.9,
       "pct_median": null
     },
     {
@@ -332,8 +332,8 @@
       "lat": 48.13091,
       "lon": -113.02311,
       "elevation_ft": 6870,
-      "swe_inches": 29.0,
-      "pct_median": 113
+      "swe_inches": 28.9,
+      "pct_median": 112
     },
     {
       "id": "308",
@@ -343,7 +343,7 @@
       "lon": -111.40651,
       "elevation_ft": 7360,
       "swe_inches": 0.2,
-      "pct_median": 5
+      "pct_median": 4
     },
     {
       "id": "1140",
@@ -352,8 +352,8 @@
       "lat": 34.45552,
       "lon": -111.38262,
       "elevation_ft": 7730,
-      "swe_inches": 2.6,
-      "pct_median": 25
+      "swe_inches": 2.1,
+      "pct_median": 20
     },
     {
       "id": "309",
@@ -363,7 +363,7 @@
       "lon": -107.84428,
       "elevation_ft": 9360,
       "swe_inches": 13.4,
-      "pct_median": 93
+      "pct_median": 91
     },
     {
       "id": "310",
@@ -382,8 +382,8 @@
       "lat": 48.5712,
       "lon": -115.44573,
       "elevation_ft": 5580,
-      "swe_inches": 11.6,
-      "pct_median": 82
+      "swe_inches": 11.5,
+      "pct_median": 81
     },
     {
       "id": "312",
@@ -392,7 +392,7 @@
       "lat": 44.30342,
       "lon": -115.23447,
       "elevation_ft": 7040,
-      "swe_inches": 17.1,
+      "swe_inches": 17.2,
       "pct_median": 84
     },
     {
@@ -432,8 +432,8 @@
       "lat": 45.79737,
       "lon": -112.52047,
       "elevation_ft": 7120,
-      "swe_inches": 4.0,
-      "pct_median": 66
+      "swe_inches": 3.9,
+      "pct_median": 63
     },
     {
       "id": "1190",
@@ -442,7 +442,7 @@
       "lat": 47.85562,
       "lon": -114.75841,
       "elevation_ft": 5130,
-      "swe_inches": 3.4,
+      "swe_inches": 3.5,
       "pct_median": null
     },
     {
@@ -452,8 +452,8 @@
       "lat": 36.51174,
       "lon": -106.31543,
       "elevation_ft": 9230,
-      "swe_inches": 5.8,
-      "pct_median": 64
+      "swe_inches": 5.5,
+      "pct_median": 57
     },
     {
       "id": "317",
@@ -462,7 +462,7 @@
       "lat": 41.05402,
       "lon": -107.26674,
       "elevation_ft": 7460,
-      "swe_inches": 4.4,
+      "swe_inches": 4.5,
       "pct_median": 44
     },
     {
@@ -472,8 +472,8 @@
       "lat": 44.47147,
       "lon": -112.98191,
       "elevation_ft": 8880,
-      "swe_inches": 7.2,
-      "pct_median": 107
+      "swe_inches": 7.1,
+      "pct_median": 99
     },
     {
       "id": "319",
@@ -482,8 +482,8 @@
       "lat": 44.95222,
       "lon": -116.14293,
       "elevation_ft": 5350,
-      "swe_inches": 8.8,
-      "pct_median": 61
+      "swe_inches": 9.6,
+      "pct_median": 66
     },
     {
       "id": "320",
@@ -492,8 +492,8 @@
       "lat": 43.74367,
       "lon": -113.93797,
       "elevation_ft": 7920,
-      "swe_inches": 14.3,
-      "pct_median": 134
+      "swe_inches": 14.5,
+      "pct_median": 136
     },
     {
       "id": "321",
@@ -502,8 +502,8 @@
       "lat": 41.83391,
       "lon": -115.45278,
       "elevation_ft": 8090,
-      "swe_inches": 8.3,
-      "pct_median": 55
+      "swe_inches": 8.2,
+      "pct_median": 53
     },
     {
       "id": "1166",
@@ -512,7 +512,7 @@
       "lat": 44.3253,
       "lon": -122.0938,
       "elevation_ft": 4720,
-      "swe_inches": 11.8,
+      "swe_inches": 11.6,
       "pct_median": null
     },
     {
@@ -523,7 +523,7 @@
       "lon": -105.6467,
       "elevation_ft": 9490,
       "swe_inches": 11.7,
-      "pct_median": 89
+      "pct_median": 87
     },
     {
       "id": "1061",
@@ -542,8 +542,8 @@
       "lat": 40.8852,
       "lon": -110.8277,
       "elevation_ft": 8510,
-      "swe_inches": 5.1,
-      "pct_median": 69
+      "swe_inches": 4.8,
+      "pct_median": 63
     },
     {
       "id": "324",
@@ -563,7 +563,7 @@
       "lon": -107.06135,
       "elevation_ft": 8200,
       "swe_inches": 3.8,
-      "pct_median": 79
+      "pct_median": 76
     },
     {
       "id": "326",
@@ -582,8 +582,8 @@
       "lat": 37.71433,
       "lon": -107.5124,
       "elevation_ft": 11580,
-      "swe_inches": 10.6,
-      "pct_median": 64
+      "swe_inches": 10.5,
+      "pct_median": 63
     },
     {
       "id": "1041",
@@ -593,7 +593,7 @@
       "lon": -106.51113,
       "elevation_ft": 8530,
       "swe_inches": 5.2,
-      "pct_median": 54
+      "pct_median": 53
     },
     {
       "id": "328",
@@ -612,8 +612,8 @@
       "lat": 39.13683,
       "lon": -111.55813,
       "elevation_ft": 7980,
-      "swe_inches": 2.6,
-      "pct_median": 33
+      "swe_inches": 2.3,
+      "pct_median": 29
     },
     {
       "id": "330",
@@ -623,7 +623,7 @@
       "lon": -111.09782,
       "elevation_ft": 8230,
       "swe_inches": 7.3,
-      "pct_median": 79
+      "pct_median": 78
     },
     {
       "id": "902",
@@ -642,8 +642,8 @@
       "lat": 48.8793,
       "lon": -121.2555,
       "elevation_ft": 3630,
-      "swe_inches": 7.9,
-      "pct_median": 25
+      "swe_inches": 8.0,
+      "pct_median": 24
     },
     {
       "id": "331",
@@ -652,8 +652,8 @@
       "lat": 45.14532,
       "lon": -118.219,
       "elevation_ft": 5140,
-      "swe_inches": 4.2,
-      "pct_median": 47
+      "swe_inches": 3.8,
+      "pct_median": 40
     },
     {
       "id": "1143",
@@ -673,7 +673,7 @@
       "lon": -111.94405,
       "elevation_ft": 7690,
       "swe_inches": 16.4,
-      "pct_median": 59
+      "pct_median": 58
     },
     {
       "id": "333",
@@ -682,8 +682,8 @@
       "lat": 41.38291,
       "lon": -111.92103,
       "elevation_ft": 5970,
-      "swe_inches": 3.9,
-      "pct_median": 25
+      "swe_inches": 3.5,
+      "pct_median": 22
     },
     {
       "id": "334",
@@ -703,7 +703,7 @@
       "lon": -105.77786,
       "elevation_ft": 11300,
       "swe_inches": 9.5,
-      "pct_median": 70
+      "pct_median": 69
     },
     {
       "id": "1182",
@@ -713,7 +713,7 @@
       "lon": -151.53318,
       "elevation_ft": 640,
       "swe_inches": 3.7,
-      "pct_median": 66
+      "pct_median": 65
     },
     {
       "id": "1214",
@@ -722,7 +722,7 @@
       "lat": 40.46182,
       "lon": -112.25233,
       "elevation_ft": 6470,
-      "swe_inches": 0.4,
+      "swe_inches": 0.2,
       "pct_median": null
     },
     {
@@ -732,8 +732,8 @@
       "lat": 39.29148,
       "lon": -117.11506,
       "elevation_ft": 8710,
-      "swe_inches": 4.4,
-      "pct_median": 34
+      "swe_inches": 4.2,
+      "pct_median": 33
     },
     {
       "id": "338",
@@ -752,8 +752,8 @@
       "lat": 38.30183,
       "lon": -112.35672,
       "elevation_ft": 10320,
-      "swe_inches": 8.5,
-      "pct_median": 69
+      "swe_inches": 8.6,
+      "pct_median": 68
     },
     {
       "id": "931",
@@ -772,7 +772,7 @@
       "lat": 39.455,
       "lon": -119.9422,
       "elevation_ft": 8240,
-      "swe_inches": 12.6,
+      "swe_inches": 12.5,
       "pct_median": 69
     },
     {
@@ -782,8 +782,8 @@
       "lat": 42.05257,
       "lon": -122.85487,
       "elevation_ft": 6060,
-      "swe_inches": 6.7,
-      "pct_median": 33
+      "swe_inches": 6.5,
+      "pct_median": 31
     },
     {
       "id": "342",
@@ -802,8 +802,8 @@
       "lat": 42.07875,
       "lon": -123.34393,
       "elevation_ft": 5130,
-      "swe_inches": 0.7,
-      "pct_median": 7
+      "swe_inches": 0.3,
+      "pct_median": 3
     },
     {
       "id": "344",
@@ -812,8 +812,8 @@
       "lat": 42.40717,
       "lon": -122.26617,
       "elevation_ft": 5280,
-      "swe_inches": 5.8,
-      "pct_median": 31
+      "swe_inches": 5.4,
+      "pct_median": 28
     },
     {
       "id": "1155",
@@ -822,7 +822,7 @@
       "lat": 39.46138,
       "lon": -114.64863,
       "elevation_ft": 7530,
-      "swe_inches": 0.0,
+      "swe_inches": 0.1,
       "pct_median": null
     },
     {
@@ -833,7 +833,7 @@
       "lon": -107.35628,
       "elevation_ft": 10950,
       "swe_inches": 11.4,
-      "pct_median": 60
+      "pct_median": 59
     },
     {
       "id": "346",
@@ -853,7 +853,7 @@
       "lon": -111.12803,
       "elevation_ft": 8160,
       "swe_inches": 25.4,
-      "pct_median": 86
+      "pct_median": 85
     },
     {
       "id": "348",
@@ -862,8 +862,8 @@
       "lat": 38.6799,
       "lon": -111.59765,
       "elevation_ft": 9420,
-      "swe_inches": 3.3,
-      "pct_median": 46
+      "swe_inches": 2.9,
+      "pct_median": 39
     },
     {
       "id": "1185",
@@ -912,8 +912,8 @@
       "lat": 40.95814,
       "lon": -110.5828,
       "elevation_ft": 8880,
-      "swe_inches": 6.4,
-      "pct_median": 97
+      "swe_inches": 6.2,
+      "pct_median": 93
     },
     {
       "id": "1144",
@@ -922,8 +922,8 @@
       "lat": 47.98317,
       "lon": -114.35443,
       "elevation_ft": 5660,
-      "swe_inches": 4.7,
-      "pct_median": 44
+      "swe_inches": 4.6,
+      "pct_median": 43
     },
     {
       "id": "350",
@@ -932,8 +932,8 @@
       "lat": 44.37667,
       "lon": -109.79333,
       "elevation_ft": 9830,
-      "swe_inches": 19.1,
-      "pct_median": 111
+      "swe_inches": 19.2,
+      "pct_median": 112
     },
     {
       "id": "351",
@@ -943,7 +943,7 @@
       "lon": -121.85605,
       "elevation_ft": 3660,
       "swe_inches": 8.4,
-      "pct_median": 34
+      "pct_median": 33
     },
     {
       "id": "352",
@@ -952,8 +952,8 @@
       "lat": 47.35037,
       "lon": -120.6796,
       "elevation_ft": 4240,
-      "swe_inches": 3.3,
-      "pct_median": 27
+      "swe_inches": 3.6,
+      "pct_median": 29
     },
     {
       "id": "353",
@@ -962,8 +962,8 @@
       "lat": 42.96413,
       "lon": -110.60992,
       "elevation_ft": 8880,
-      "swe_inches": 20.3,
-      "pct_median": 106
+      "swe_inches": 20.4,
+      "pct_median": 105
     },
     {
       "id": "354",
@@ -983,7 +983,7 @@
       "lon": -113.50099,
       "elevation_ft": 7570,
       "swe_inches": 8.3,
-      "pct_median": 85
+      "pct_median": 83
     },
     {
       "id": "356",
@@ -992,8 +992,8 @@
       "lat": 38.60801,
       "lon": -119.92455,
       "elevation_ft": 8060,
-      "swe_inches": 16.1,
-      "pct_median": 69
+      "swe_inches": 16.0,
+      "pct_median": 67
     },
     {
       "id": "357",
@@ -1002,8 +1002,8 @@
       "lat": 44.24767,
       "lon": -118.51722,
       "elevation_ft": 5880,
-      "swe_inches": 6.0,
-      "pct_median": 44
+      "swe_inches": 5.9,
+      "pct_median": 43
     },
     {
       "id": "1278",
@@ -1012,7 +1012,7 @@
       "lat": 38.94569,
       "lon": -112.15349,
       "elevation_ft": 9320,
-      "swe_inches": 5.7,
+      "swe_inches": 5.5,
       "pct_median": null
     },
     {
@@ -1033,7 +1033,7 @@
       "lon": -107.5811,
       "elevation_ft": 9340,
       "swe_inches": 10.2,
-      "pct_median": 81
+      "pct_median": 80
     },
     {
       "id": "359",
@@ -1052,8 +1052,8 @@
       "lat": 46.5596,
       "lon": -111.28973,
       "elevation_ft": 7890,
-      "swe_inches": 13.2,
-      "pct_median": 85
+      "swe_inches": 13.3,
+      "pct_median": 84
     },
     {
       "id": "361",
@@ -1062,8 +1062,8 @@
       "lat": 44.83052,
       "lon": -118.18787,
       "elevation_ft": 5850,
-      "swe_inches": 4.0,
-      "pct_median": 32
+      "swe_inches": 4.4,
+      "pct_median": 35
     },
     {
       "id": "362",
@@ -1072,8 +1072,8 @@
       "lat": 45.36428,
       "lon": -118.46715,
       "elevation_ft": 4550,
-      "swe_inches": 0.6,
-      "pct_median": 9
+      "swe_inches": 0.7,
+      "pct_median": 10
     },
     {
       "id": "363",
@@ -1082,8 +1082,8 @@
       "lat": 45.27178,
       "lon": -110.24899,
       "elevation_ft": 6720,
-      "swe_inches": 5.5,
-      "pct_median": 72
+      "swe_inches": 5.4,
+      "pct_median": 71
     },
     {
       "id": "364",
@@ -1112,7 +1112,7 @@
       "lat": 45.89107,
       "lon": -110.93851,
       "elevation_ft": 7370,
-      "swe_inches": 13.6,
+      "swe_inches": 13.5,
       "pct_median": 84
     },
     {
@@ -1122,7 +1122,7 @@
       "lat": 37.67994,
       "lon": -112.85674,
       "elevation_ft": 10040,
-      "swe_inches": 10.7,
+      "swe_inches": 10.8,
       "pct_median": null
     },
     {
@@ -1133,7 +1133,7 @@
       "lon": -111.58167,
       "elevation_ft": 8790,
       "swe_inches": 15.2,
-      "pct_median": 91
+      "pct_median": 89
     },
     {
       "id": "1111",
@@ -1142,7 +1142,7 @@
       "lat": 36.31575,
       "lon": -115.69543,
       "elevation_ft": 8900,
-      "swe_inches": 7.5,
+      "swe_inches": 7.2,
       "pct_median": 106
     },
     {
@@ -1153,7 +1153,7 @@
       "lon": -106.23038,
       "elevation_ft": 10250,
       "swe_inches": 13.9,
-      "pct_median": 86
+      "pct_median": 84
     },
     {
       "id": "368",
@@ -1162,8 +1162,8 @@
       "lat": 40.58102,
       "lon": -110.58587,
       "elevation_ft": 10570,
-      "swe_inches": 12.6,
-      "pct_median": 88
+      "swe_inches": 12.7,
+      "pct_median": 86
     },
     {
       "id": "1080",
@@ -1182,7 +1182,7 @@
       "lat": 39.08758,
       "lon": -106.54231,
       "elevation_ft": 10570,
-      "swe_inches": 4.9,
+      "swe_inches": 5.0,
       "pct_median": 58
     },
     {
@@ -1192,8 +1192,8 @@
       "lat": 45.04315,
       "lon": -116.13253,
       "elevation_ft": 6280,
-      "swe_inches": 19.9,
-      "pct_median": 87
+      "swe_inches": 19.8,
+      "pct_median": 86
     },
     {
       "id": "371",
@@ -1202,8 +1202,8 @@
       "lat": 39.134,
       "lon": -111.43722,
       "elevation_ft": 9410,
-      "swe_inches": 7.2,
-      "pct_median": 56
+      "swe_inches": 7.1,
+      "pct_median": 53
     },
     {
       "id": "1192",
@@ -1216,14 +1216,24 @@
       "pct_median": null
     },
     {
+      "id": "1153",
+      "state": "UT",
+      "name": "Buckboard Flat",
+      "lat": 37.86943,
+      "lon": -109.44717,
+      "elevation_ft": 8920,
+      "swe_inches": 3.0,
+      "pct_median": null
+    },
+    {
       "id": "1107",
       "state": "WA",
       "name": "Buckinghorse",
       "lat": 47.7086,
       "lon": -123.45747,
       "elevation_ft": 4850,
-      "swe_inches": 21.3,
-      "pct_median": 50
+      "swe_inches": 21.4,
+      "pct_median": 49
     },
     {
       "id": "938",
@@ -1233,7 +1243,7 @@
       "lon": -106.11316,
       "elevation_ft": 11160,
       "swe_inches": 3.3,
-      "pct_median": 45
+      "pct_median": 43
     },
     {
       "id": "913",
@@ -1242,8 +1252,8 @@
       "lat": 40.22838,
       "lon": -106.5962,
       "elevation_ft": 9240,
-      "swe_inches": 6.8,
-      "pct_median": 59
+      "swe_inches": 6.7,
+      "pct_median": 56
     },
     {
       "id": "374",
@@ -1262,7 +1272,7 @@
       "lat": 46.81003,
       "lon": -121.33058,
       "elevation_ft": 4600,
-      "swe_inches": 11.8,
+      "swe_inches": 11.9,
       "pct_median": 53
     },
     {
@@ -1272,8 +1282,8 @@
       "lat": 48.68688,
       "lon": -117.17633,
       "elevation_ft": 5020,
-      "swe_inches": 12.2,
-      "pct_median": 55
+      "swe_inches": 12.0,
+      "pct_median": 54
     },
     {
       "id": "377",
@@ -1283,7 +1293,7 @@
       "lon": -107.52917,
       "elevation_ft": 7910,
       "swe_inches": 4.6,
-      "pct_median": 58
+      "pct_median": 56
     },
     {
       "id": "1051",
@@ -1292,7 +1302,7 @@
       "lat": 38.71943,
       "lon": -119.8942,
       "elevation_ft": 8180,
-      "swe_inches": 18.4,
+      "swe_inches": 18.0,
       "pct_median": 92
     },
     {
@@ -1313,7 +1323,7 @@
       "lon": -109.45961,
       "elevation_ft": 5920,
       "swe_inches": 0.7,
-      "pct_median": 16
+      "pct_median": 15
     },
     {
       "id": "378",
@@ -1322,8 +1332,8 @@
       "lat": 39.87504,
       "lon": -107.59902,
       "elevation_ft": 9290,
-      "swe_inches": 7.1,
-      "pct_median": 60
+      "swe_inches": 6.9,
+      "pct_median": 57
     },
     {
       "id": "379",
@@ -1332,7 +1342,7 @@
       "lat": 43.69733,
       "lon": -109.67021,
       "elevation_ft": 8760,
-      "swe_inches": 9.3,
+      "swe_inches": 9.2,
       "pct_median": null
     },
     {
@@ -1342,8 +1352,8 @@
       "lat": 40.98492,
       "lon": -110.85075,
       "elevation_ft": 7900,
-      "swe_inches": 2.7,
-      "pct_median": 54
+      "swe_inches": 2.5,
+      "pct_median": 47
     },
     {
       "id": "380",
@@ -1352,8 +1362,8 @@
       "lat": 38.89435,
       "lon": -106.95327,
       "elevation_ft": 10190,
-      "swe_inches": 8.2,
-      "pct_median": 79
+      "swe_inches": 8.0,
+      "pct_median": 77
     },
     {
       "id": "1109",
@@ -1362,8 +1372,8 @@
       "lat": 45.90362,
       "lon": -122.21633,
       "elevation_ft": 2510,
-      "swe_inches": 0.6,
-      "pct_median": 20
+      "swe_inches": 0.2,
+      "pct_median": 5
     },
     {
       "id": "381",
@@ -1373,7 +1383,7 @@
       "lon": -113.32553,
       "elevation_ft": 6410,
       "swe_inches": 7.2,
-      "pct_median": 100
+      "pct_median": 99
     },
     {
       "id": "382",
@@ -1392,8 +1402,8 @@
       "lat": 37.81333,
       "lon": -109.48723,
       "elevation_ft": 8840,
-      "swe_inches": 5.0,
-      "pct_median": 45
+      "swe_inches": 4.8,
+      "pct_median": 41
     },
     {
       "id": "384",
@@ -1403,7 +1413,7 @@
       "lon": -110.51084,
       "elevation_ft": 7870,
       "swe_inches": 10.2,
-      "pct_median": 95
+      "pct_median": 94
     },
     {
       "id": "385",
@@ -1422,8 +1432,8 @@
       "lat": 38.6927,
       "lon": -120.0022,
       "elevation_ft": 8360,
-      "swe_inches": 19.1,
-      "pct_median": 78
+      "swe_inches": 18.7,
+      "pct_median": 76
     },
     {
       "id": "387",
@@ -1432,8 +1442,8 @@
       "lat": 37.65751,
       "lon": -107.80287,
       "elevation_ft": 8990,
-      "swe_inches": 2.9,
-      "pct_median": 32
+      "swe_inches": 2.7,
+      "pct_median": 29
     },
     {
       "id": "1039",
@@ -1442,8 +1452,8 @@
       "lat": 40.283,
       "lon": -111.60992,
       "elevation_ft": 7750,
-      "swe_inches": 4.6,
-      "pct_median": 32
+      "swe_inches": 4.3,
+      "pct_median": 30
     },
     {
       "id": "388",
@@ -1452,8 +1462,8 @@
       "lat": 43.59042,
       "lon": -122.0601,
       "elevation_ft": 5100,
-      "swe_inches": 9.6,
-      "pct_median": 39
+      "swe_inches": 9.2,
+      "pct_median": 37
     },
     {
       "id": "389",
@@ -1463,7 +1473,7 @@
       "lon": -106.31789,
       "elevation_ft": 7940,
       "swe_inches": 3.0,
-      "pct_median": 32
+      "pct_median": 31
     },
     {
       "id": "1130",
@@ -1472,8 +1482,8 @@
       "lat": 43.6748,
       "lon": -109.3774,
       "elevation_ft": 8410,
-      "swe_inches": 4.4,
-      "pct_median": 72
+      "swe_inches": 4.3,
+      "pct_median": 69
     },
     {
       "id": "1326",
@@ -1502,7 +1512,7 @@
       "lat": 39.16337,
       "lon": -114.6133,
       "elevation_ft": 10580,
-      "swe_inches": 8.6,
+      "swe_inches": 8.5,
       "pct_median": null
     },
     {
@@ -1513,7 +1523,7 @@
       "lon": -121.53434,
       "elevation_ft": 5260,
       "swe_inches": 22.3,
-      "pct_median": 45
+      "pct_median": 43
     },
     {
       "id": "391",
@@ -1522,8 +1532,8 @@
       "lat": 41.58216,
       "lon": -120.30253,
       "elevation_ft": 7060,
-      "swe_inches": 4.9,
-      "pct_median": 37
+      "swe_inches": 4.7,
+      "pct_median": 35
     },
     {
       "id": "1139",
@@ -1533,7 +1543,7 @@
       "lon": -112.06221,
       "elevation_ft": 7020,
       "swe_inches": 0.1,
-      "pct_median": 9
+      "pct_median": 6
     },
     {
       "id": "392",
@@ -1543,7 +1553,7 @@
       "lon": -111.04765,
       "elevation_ft": 9160,
       "swe_inches": 12.6,
-      "pct_median": 72
+      "pct_median": 71
     },
     {
       "id": "393",
@@ -1552,8 +1562,8 @@
       "lat": 40.88529,
       "lon": -111.06954,
       "elevation_ft": 8200,
-      "swe_inches": 8.4,
-      "pct_median": 73
+      "swe_inches": 8.5,
+      "pct_median": 72
     },
     {
       "id": "394",
@@ -1562,8 +1572,8 @@
       "lat": 36.95606,
       "lon": -106.65723,
       "elevation_ft": 8360,
-      "swe_inches": 4.1,
-      "pct_median": 49
+      "swe_inches": 3.7,
+      "pct_median": 43
     },
     {
       "id": "1101",
@@ -1572,8 +1582,8 @@
       "lat": 39.2621,
       "lon": -106.62944,
       "elevation_ft": 10090,
-      "swe_inches": 6.8,
-      "pct_median": 56
+      "swe_inches": 6.7,
+      "pct_median": 54
     },
     {
       "id": "395",
@@ -1582,8 +1592,8 @@
       "lat": 43.22625,
       "lon": -121.80662,
       "elevation_ft": 4850,
-      "swe_inches": 0.8,
-      "pct_median": 11
+      "swe_inches": 0.5,
+      "pct_median": 7
     },
     {
       "id": "1260",
@@ -1603,7 +1613,7 @@
       "lon": -110.0105,
       "elevation_ft": 10490,
       "swe_inches": 9.1,
-      "pct_median": 88
+      "pct_median": 86
     },
     {
       "id": "1312",
@@ -1643,7 +1653,7 @@
       "lon": -106.23101,
       "elevation_ft": 9670,
       "swe_inches": 11.9,
-      "pct_median": 70
+      "pct_median": 71
     },
     {
       "id": "398",
@@ -1662,8 +1672,8 @@
       "lat": 37.9725,
       "lon": -111.83355,
       "elevation_ft": 10010,
-      "swe_inches": 6.8,
-      "pct_median": 69
+      "swe_inches": 6.9,
+      "pct_median": 70
     },
     {
       "id": "399",
@@ -1672,8 +1682,8 @@
       "lat": 39.86671,
       "lon": -111.28363,
       "elevation_ft": 8960,
-      "swe_inches": 7.8,
-      "pct_median": 60
+      "swe_inches": 8.1,
+      "pct_median": 62
     },
     {
       "id": "400",
@@ -1682,8 +1692,8 @@
       "lat": 39.89275,
       "lon": -111.25154,
       "elevation_ft": 7850,
-      "swe_inches": 3.8,
-      "pct_median": 41
+      "swe_inches": 3.7,
+      "pct_median": 40
     },
     {
       "id": "401",
@@ -1703,7 +1713,7 @@
       "lon": -107.06074,
       "elevation_ft": 9830,
       "swe_inches": 9.4,
-      "pct_median": 82
+      "pct_median": 81
     },
     {
       "id": "403",
@@ -1713,7 +1723,7 @@
       "lon": -111.8456,
       "elevation_ft": 8770,
       "swe_inches": 9.0,
-      "pct_median": 74
+      "pct_median": 73
     },
     {
       "id": "1059",
@@ -1742,8 +1752,8 @@
       "lat": 42.53305,
       "lon": -122.17683,
       "elevation_ft": 5940,
-      "swe_inches": 3.6,
-      "pct_median": 15
+      "swe_inches": 3.4,
+      "pct_median": 14
     },
     {
       "id": "958",
@@ -1772,8 +1782,8 @@
       "lat": 45.19405,
       "lon": -109.34548,
       "elevation_ft": 7910,
-      "swe_inches": 3.2,
-      "pct_median": 33
+      "swe_inches": 3.3,
+      "pct_median": 32
     },
     {
       "id": "408",
@@ -1782,7 +1792,7 @@
       "lat": 40.39591,
       "lon": -106.60437,
       "elevation_ft": 9170,
-      "swe_inches": 16.6,
+      "swe_inches": 16.7,
       "pct_median": 88
     },
     {
@@ -1792,8 +1802,8 @@
       "lat": 38.41819,
       "lon": -108.38313,
       "elevation_ft": 9160,
-      "swe_inches": 10.1,
-      "pct_median": 70
+      "swe_inches": 10.0,
+      "pct_median": 66
     },
     {
       "id": "904",
@@ -1803,7 +1813,7 @@
       "lon": -108.02468,
       "elevation_ft": 10780,
       "swe_inches": 11.8,
-      "pct_median": 64
+      "pct_median": 63
     },
     {
       "id": "411",
@@ -1813,7 +1823,7 @@
       "lon": -115.29528,
       "elevation_ft": 6320,
       "swe_inches": 24.1,
-      "pct_median": 67
+      "pct_median": 66
     },
     {
       "id": "959",
@@ -1822,8 +1832,8 @@
       "lat": 60.39027,
       "lon": -149.6936,
       "elevation_ft": 1150,
-      "swe_inches": 7.7,
-      "pct_median": 62
+      "swe_inches": 8.4,
+      "pct_median": 68
     },
     {
       "id": "412",
@@ -1832,8 +1842,8 @@
       "lat": 40.20733,
       "lon": -105.5695,
       "elevation_ft": 8570,
-      "swe_inches": 0.2,
-      "pct_median": 4
+      "swe_inches": 0.1,
+      "pct_median": 2
     },
     {
       "id": "413",
@@ -1842,8 +1852,8 @@
       "lat": 47.05678,
       "lon": -112.595,
       "elevation_ft": 5200,
-      "swe_inches": 4.4,
-      "pct_median": 54
+      "swe_inches": 4.5,
+      "pct_median": 56
     },
     {
       "id": "414",
@@ -1852,7 +1862,7 @@
       "lat": 47.08158,
       "lon": -112.72955,
       "elevation_ft": 6980,
-      "swe_inches": 26.8,
+      "swe_inches": 26.6,
       "pct_median": 80
     },
     {
@@ -1863,7 +1873,7 @@
       "lon": -106.17154,
       "elevation_ft": 10500,
       "swe_inches": 7.0,
-      "pct_median": 61
+      "pct_median": 60
     },
     {
       "id": "1209",
@@ -1872,7 +1882,7 @@
       "lat": 38.99651,
       "lon": -115.42478,
       "elevation_ft": 8640,
-      "swe_inches": 0.2,
+      "swe_inches": 0.1,
       "pct_median": null
     },
     {
@@ -1883,7 +1893,7 @@
       "lon": -109.15352,
       "elevation_ft": 8400,
       "swe_inches": 0.2,
-      "pct_median": 29
+      "pct_median": 33
     },
     {
       "id": "1236",
@@ -1892,7 +1902,7 @@
       "lat": 39.65795,
       "lon": -110.37906,
       "elevation_ft": 8210,
-      "swe_inches": 1.3,
+      "swe_inches": 1.0,
       "pct_median": null
     },
     {
@@ -1902,8 +1912,8 @@
       "lat": 40.27551,
       "lon": -115.54017,
       "elevation_ft": 8440,
-      "swe_inches": 5.3,
-      "pct_median": 45
+      "swe_inches": 5.1,
+      "pct_median": 42
     },
     {
       "id": "418",
@@ -1912,8 +1922,8 @@
       "lat": 47.01872,
       "lon": -121.46464,
       "elevation_ft": 5810,
-      "swe_inches": 17.2,
-      "pct_median": 60
+      "swe_inches": 17.4,
+      "pct_median": 61
     },
     {
       "id": "419",
@@ -1922,8 +1932,8 @@
       "lat": 42.6459,
       "lon": -110.81482,
       "elevation_ft": 7710,
-      "swe_inches": 16.1,
-      "pct_median": 93
+      "swe_inches": 15.9,
+      "pct_median": 90
     },
     {
       "id": "1306",
@@ -1932,8 +1942,18 @@
       "lat": 43.51762,
       "lon": -114.80214,
       "elevation_ft": 6780,
-      "swe_inches": 7.0,
+      "swe_inches": 7.1,
       "pct_median": null
+    },
+    {
+      "id": "420",
+      "state": "WA",
+      "name": "Cougar Mountain",
+      "lat": 47.27666,
+      "lon": -121.67138,
+      "elevation_ft": 3210,
+      "swe_inches": 1.1,
+      "pct_median": 9
     },
     {
       "id": "422",
@@ -1942,8 +1962,8 @@
       "lat": 45.19107,
       "lon": -118.55015,
       "elevation_ft": 4840,
-      "swe_inches": 0.4,
-      "pct_median": 13
+      "swe_inches": 0.5,
+      "pct_median": 17
     },
     {
       "id": "423",
@@ -1953,7 +1973,7 @@
       "lon": -115.65508,
       "elevation_ft": 5410,
       "swe_inches": 4.8,
-      "pct_median": 41
+      "pct_median": 40
     },
     {
       "id": "424",
@@ -1962,8 +1982,8 @@
       "lat": 44.437,
       "lon": -111.99384,
       "elevation_ft": 6870,
-      "swe_inches": 6.5,
-      "pct_median": 61
+      "swe_inches": 6.6,
+      "pct_median": 62
     },
     {
       "id": "1010",
@@ -1972,7 +1992,7 @@
       "lat": 42.6381,
       "lon": -120.94917,
       "elevation_ft": 6190,
-      "swe_inches": 0.3,
+      "swe_inches": 0.4,
       "pct_median": 3
     },
     {
@@ -1992,8 +2012,8 @@
       "lat": 40.16749,
       "lon": -107.05769,
       "elevation_ft": 8960,
-      "swe_inches": 5.9,
-      "pct_median": 61
+      "swe_inches": 5.8,
+      "pct_median": 58
     },
     {
       "id": "1045",
@@ -2012,8 +2032,8 @@
       "lat": 41.89318,
       "lon": -120.75202,
       "elevation_ft": 5180,
-      "swe_inches": 0.1,
-      "pct_median": 3
+      "swe_inches": 0.2,
+      "pct_median": 5
     },
     {
       "id": "427",
@@ -2022,8 +2042,8 @@
       "lat": 46.78936,
       "lon": -109.51202,
       "elevation_ft": 6130,
-      "swe_inches": 7.1,
-      "pct_median": 65
+      "swe_inches": 7.0,
+      "pct_median": 64
     },
     {
       "id": "428",
@@ -2032,8 +2052,8 @@
       "lat": 39.32565,
       "lon": -120.36807,
       "elevation_ft": 6890,
-      "swe_inches": 18.5,
-      "pct_median": 66
+      "swe_inches": 18.1,
+      "pct_median": 64
     },
     {
       "id": "430",
@@ -2052,8 +2072,8 @@
       "lat": 37.01877,
       "lon": -106.45275,
       "elevation_ft": 10030,
-      "swe_inches": 12.8,
-      "pct_median": 63
+      "swe_inches": 12.6,
+      "pct_median": 61
     },
     {
       "id": "432",
@@ -2062,8 +2082,8 @@
       "lat": 40.35747,
       "lon": -111.08993,
       "elevation_ft": 7920,
-      "swe_inches": 5.9,
-      "pct_median": 77
+      "swe_inches": 5.3,
+      "pct_median": 69
     },
     {
       "id": "1303",
@@ -2083,7 +2103,7 @@
       "lon": -110.33022,
       "elevation_ft": 7590,
       "swe_inches": 6.0,
-      "pct_median": 80
+      "pct_median": 79
     },
     {
       "id": "433",
@@ -2092,7 +2112,7 @@
       "lat": 46.18367,
       "lon": -113.8533,
       "elevation_ft": 5780,
-      "swe_inches": 7.1,
+      "swe_inches": 7.2,
       "pct_median": 78
     },
     {
@@ -2102,8 +2122,8 @@
       "lat": 44.52147,
       "lon": -122.08718,
       "elevation_ft": 3690,
-      "swe_inches": 0.2,
-      "pct_median": 2
+      "swe_inches": 0.1,
+      "pct_median": 1
     },
     {
       "id": "435",
@@ -2112,7 +2132,7 @@
       "lat": 40.2953,
       "lon": -111.25677,
       "elevation_ft": 8010,
-      "swe_inches": 5.8,
+      "swe_inches": 5.9,
       "pct_median": 49
     },
     {
@@ -2122,8 +2142,8 @@
       "lat": 45.17368,
       "lon": -113.5846,
       "elevation_ft": 8930,
-      "swe_inches": 22.0,
-      "pct_median": 90
+      "swe_inches": 22.1,
+      "pct_median": 89
     },
     {
       "id": "437",
@@ -2133,7 +2153,7 @@
       "lon": -110.67545,
       "elevation_ft": 6440,
       "swe_inches": 7.0,
-      "pct_median": 82
+      "pct_median": 80
     },
     {
       "id": "438",
@@ -2152,7 +2172,7 @@
       "lat": 44.54492,
       "lon": -115.56386,
       "elevation_ft": 6990,
-      "swe_inches": 28.6,
+      "swe_inches": 28.5,
       "pct_median": 88
     },
     {
@@ -2172,8 +2192,8 @@
       "lat": 42.59076,
       "lon": -108.90273,
       "elevation_ft": 9690,
-      "swe_inches": 12.4,
-      "pct_median": 123
+      "swe_inches": 12.3,
+      "pct_median": 118
     },
     {
       "id": "1345",
@@ -2192,8 +2212,8 @@
       "lat": 44.4465,
       "lon": -119.93012,
       "elevation_ft": 5850,
-      "swe_inches": 4.5,
-      "pct_median": 37
+      "swe_inches": 4.4,
+      "pct_median": 36
     },
     {
       "id": "442",
@@ -2202,8 +2222,8 @@
       "lat": 43.18787,
       "lon": -122.14003,
       "elevation_ft": 5280,
-      "swe_inches": 0.0,
-      "pct_median": 0
+      "swe_inches": 0.2,
+      "pct_median": 2
     },
     {
       "id": "443",
@@ -2212,8 +2232,8 @@
       "lat": 39.56361,
       "lon": -115.84421,
       "elevation_ft": 8030,
-      "swe_inches": 0.3,
-      "pct_median": 6
+      "swe_inches": 0.2,
+      "pct_median": 4
     },
     {
       "id": "444",
@@ -2222,8 +2242,8 @@
       "lat": 39.04554,
       "lon": -111.46875,
       "elevation_ft": 9240,
-      "swe_inches": 5.0,
-      "pct_median": 54
+      "swe_inches": 4.8,
+      "pct_median": 51
     },
     {
       "id": "445",
@@ -2243,7 +2263,7 @@
       "lon": -120.18033,
       "elevation_ft": 7370,
       "swe_inches": 11.6,
-      "pct_median": 52
+      "pct_median": 50
     },
     {
       "id": "448",
@@ -2252,8 +2272,8 @@
       "lat": 44.79317,
       "lon": -112.05645,
       "elevation_ft": 7770,
-      "swe_inches": 5.8,
-      "pct_median": 76
+      "swe_inches": 5.7,
+      "pct_median": 74
     },
     {
       "id": "449",
@@ -2263,7 +2283,7 @@
       "lon": -107.15255,
       "elevation_ft": 8700,
       "swe_inches": 8.7,
-      "pct_median": 58
+      "pct_median": 57
     },
     {
       "id": "450",
@@ -2283,7 +2303,7 @@
       "lon": -107.29537,
       "elevation_ft": 8890,
       "swe_inches": 5.2,
-      "pct_median": 60
+      "pct_median": 59
     },
     {
       "id": "452",
@@ -2302,8 +2322,8 @@
       "lat": 40.89343,
       "lon": -115.21104,
       "elevation_ft": 7900,
-      "swe_inches": 4.7,
-      "pct_median": 41
+      "swe_inches": 4.4,
+      "pct_median": 38
     },
     {
       "id": "454",
@@ -2313,7 +2333,7 @@
       "lon": -115.3234,
       "elevation_ft": 7300,
       "swe_inches": 4.4,
-      "pct_median": 46
+      "pct_median": 45
     },
     {
       "id": "455",
@@ -2323,7 +2343,7 @@
       "lon": -111.5377,
       "elevation_ft": 8290,
       "swe_inches": 10.5,
-      "pct_median": 71
+      "pct_median": 70
     },
     {
       "id": "1243",
@@ -2353,7 +2373,7 @@
       "lon": -106.7814,
       "elevation_ft": 8240,
       "swe_inches": 13.4,
-      "pct_median": 80
+      "pct_median": 77
     },
     {
       "id": "943",
@@ -2362,8 +2382,8 @@
       "lat": 47.8722,
       "lon": -123.07879,
       "elevation_ft": 3990,
-      "swe_inches": 3.8,
-      "pct_median": 51
+      "swe_inches": 3.9,
+      "pct_median": 50
     },
     {
       "id": "458",
@@ -2382,8 +2402,8 @@
       "lat": 45.50381,
       "lon": -110.08019,
       "elevation_ft": 6310,
-      "swe_inches": 3.0,
-      "pct_median": 63
+      "swe_inches": 2.9,
+      "pct_median": 59
     },
     {
       "id": "460",
@@ -2393,7 +2413,7 @@
       "lon": -110.2023,
       "elevation_ft": 8010,
       "swe_inches": 7.4,
-      "pct_median": 84
+      "pct_median": 82
     },
     {
       "id": "461",
@@ -2402,7 +2422,7 @@
       "lat": 39.31213,
       "lon": -109.53179,
       "elevation_ft": 8300,
-      "swe_inches": 2.9,
+      "swe_inches": 3.0,
       "pct_median": 43
     },
     {
@@ -2412,8 +2432,8 @@
       "lat": 48.85933,
       "lon": -121.43895,
       "elevation_ft": 5280,
-      "swe_inches": 76.7,
-      "pct_median": 103
+      "swe_inches": 76.6,
+      "pct_median": 101
     },
     {
       "id": "462",
@@ -2422,8 +2442,8 @@
       "lat": 38.5497,
       "lon": -119.80468,
       "elevation_ft": 8660,
-      "swe_inches": 19.8,
-      "pct_median": 71
+      "swe_inches": 19.6,
+      "pct_median": 70
     },
     {
       "id": "936",
@@ -2442,8 +2462,8 @@
       "lat": 38.849,
       "lon": -120.0795,
       "elevation_ft": 7650,
-      "swe_inches": 17.7,
-      "pct_median": 49
+      "swe_inches": 17.4,
+      "pct_median": 48
     },
     {
       "id": "1163",
@@ -2453,7 +2473,7 @@
       "lon": -110.54056,
       "elevation_ft": 9360,
       "swe_inches": 3.6,
-      "pct_median": 43
+      "pct_median": 40
     },
     {
       "id": "464",
@@ -2462,8 +2482,8 @@
       "lat": 44.86887,
       "lon": -118.11387,
       "elevation_ft": 5510,
-      "swe_inches": 5.9,
-      "pct_median": 69
+      "swe_inches": 5.5,
+      "pct_median": 63
     },
     {
       "id": "465",
@@ -2472,8 +2492,8 @@
       "lat": 37.78607,
       "lon": -108.02235,
       "elevation_ft": 10210,
-      "swe_inches": 8.2,
-      "pct_median": 75
+      "swe_inches": 8.1,
+      "pct_median": 74
     },
     {
       "id": "910",
@@ -2482,7 +2502,7 @@
       "lat": 48.69092,
       "lon": -121.90893,
       "elevation_ft": 3050,
-      "swe_inches": 6.5,
+      "swe_inches": 6.4,
       "pct_median": 22
     },
     {
@@ -2493,7 +2513,7 @@
       "lon": -116.12233,
       "elevation_ft": 5680,
       "swe_inches": 13.3,
-      "pct_median": 45
+      "pct_median": 44
     },
     {
       "id": "921",
@@ -2502,8 +2522,8 @@
       "lat": 35.7073,
       "lon": -105.80584,
       "elevation_ft": 8220,
-      "swe_inches": 0.1,
-      "pct_median": 3
+      "swe_inches": 0.0,
+      "pct_median": 0
     },
     {
       "id": "1316",
@@ -2522,7 +2542,7 @@
       "lat": 37.82308,
       "lon": -109.77156,
       "elevation_ft": 8540,
-      "swe_inches": 2.2,
+      "swe_inches": 1.8,
       "pct_median": null
     },
     {
@@ -2532,8 +2552,8 @@
       "lat": 40.84758,
       "lon": -106.96861,
       "elevation_ft": 8710,
-      "swe_inches": 11.4,
-      "pct_median": 77
+      "swe_inches": 11.2,
+      "pct_median": 74
     },
     {
       "id": "468",
@@ -2552,7 +2572,7 @@
       "lat": 40.79637,
       "lon": -107.10113,
       "elevation_ft": 8780,
-      "swe_inches": 9.8,
+      "swe_inches": 9.9,
       "pct_median": null
     },
     {
@@ -2572,7 +2592,7 @@
       "lat": 61.24777,
       "lon": -149.82331,
       "elevation_ft": 170,
-      "swe_inches": 4.6,
+      "swe_inches": 4.5,
       "pct_median": null
     },
     {
@@ -2582,7 +2602,7 @@
       "lat": 37.40563,
       "lon": -106.64136,
       "elevation_ft": 11680,
-      "swe_inches": 11.7,
+      "swe_inches": 11.6,
       "pct_median": null
     },
     {
@@ -2613,7 +2633,7 @@
       "lon": -111.56085,
       "elevation_ft": 7390,
       "swe_inches": 13.3,
-      "pct_median": 75
+      "pct_median": 74
     },
     {
       "id": "472",
@@ -2623,7 +2643,7 @@
       "lon": -109.78422,
       "elevation_ft": 9030,
       "swe_inches": 24.9,
-      "pct_median": 115
+      "pct_median": 114
     },
     {
       "id": "1092",
@@ -2632,7 +2652,7 @@
       "lat": 60.18957,
       "lon": -149.6228,
       "elevation_ft": 360,
-      "swe_inches": 7.4,
+      "swe_inches": 7.5,
       "pct_median": null
     },
     {
@@ -2642,8 +2662,8 @@
       "lat": 38.93403,
       "lon": -120.0545,
       "elevation_ft": 6250,
-      "swe_inches": 2.8,
-      "pct_median": 48
+      "swe_inches": 2.2,
+      "pct_median": 39
     },
     {
       "id": "474",
@@ -2652,8 +2672,8 @@
       "lat": 40.97462,
       "lon": -111.80975,
       "elevation_ft": 7920,
-      "swe_inches": 11.8,
-      "pct_median": 45
+      "swe_inches": 11.6,
+      "pct_median": 44
     },
     {
       "id": "1054",
@@ -2662,8 +2682,8 @@
       "lat": 40.992,
       "lon": -111.81702,
       "elevation_ft": 6850,
-      "swe_inches": 4.6,
-      "pct_median": 26
+      "swe_inches": 4.3,
+      "pct_median": 24
     },
     {
       "id": "475",
@@ -2672,8 +2692,8 @@
       "lat": 38.77246,
       "lon": -111.67662,
       "elevation_ft": 9620,
-      "swe_inches": 7.4,
-      "pct_median": 55
+      "swe_inches": 7.3,
+      "pct_median": 54
     },
     {
       "id": "1268",
@@ -2682,7 +2702,7 @@
       "lat": 63.2026,
       "lon": -145.63442,
       "elevation_ft": 3000,
-      "swe_inches": 6.9,
+      "swe_inches": 6.8,
       "pct_median": null
     },
     {
@@ -2692,7 +2712,7 @@
       "lat": 45.35265,
       "lon": -121.53,
       "elevation_ft": 5970,
-      "swe_inches": 15.8,
+      "swe_inches": 15.9,
       "pct_median": null
     },
     {
@@ -2702,7 +2722,7 @@
       "lat": 43.55545,
       "lon": -113.71931,
       "elevation_ft": 6380,
-      "swe_inches": 3.4,
+      "swe_inches": 3.3,
       "pct_median": null
     },
     {
@@ -2712,7 +2732,7 @@
       "lat": 42.70993,
       "lon": -118.63219,
       "elevation_ft": 7700,
-      "swe_inches": 9.7,
+      "swe_inches": 9.8,
       "pct_median": 46
     },
     {
@@ -2732,8 +2752,8 @@
       "lat": 42.3801,
       "lon": -122.34943,
       "elevation_ft": 4660,
-      "swe_inches": 0.6,
-      "pct_median": 6
+      "swe_inches": 0.3,
+      "pct_median": 3
     },
     {
       "id": "480",
@@ -2743,7 +2763,7 @@
       "lon": -109.94488,
       "elevation_ft": 9110,
       "swe_inches": 30.4,
-      "pct_median": 116
+      "pct_median": 114
     },
     {
       "id": "481",
@@ -2772,7 +2792,7 @@
       "lat": 39.86866,
       "lon": -105.86765,
       "elevation_ft": 11130,
-      "swe_inches": 10.2,
+      "swe_inches": 10.3,
       "pct_median": null
     },
     {
@@ -2782,8 +2802,8 @@
       "lat": 38.68245,
       "lon": -119.9597,
       "elevation_ft": 8050,
-      "swe_inches": 20.7,
-      "pct_median": 78
+      "swe_inches": 20.3,
+      "pct_median": 77
     },
     {
       "id": "1121",
@@ -2792,8 +2812,8 @@
       "lat": 35.26773,
       "lon": -111.74479,
       "elevation_ft": 7360,
-      "swe_inches": 0.2,
-      "pct_median": 50
+      "swe_inches": 0.1,
+      "pct_median": 25
     },
     {
       "id": "483",
@@ -2812,8 +2832,8 @@
       "lat": 42.0505,
       "lon": -111.6012,
       "elevation_ft": 8140,
-      "swe_inches": 20.9,
-      "pct_median": 107
+      "swe_inches": 20.8,
+      "pct_median": 105
     },
     {
       "id": "1277",
@@ -2822,7 +2842,7 @@
       "lat": 40.68799,
       "lon": -120.60805,
       "elevation_ft": 7220,
-      "swe_inches": 6.1,
+      "swe_inches": 5.6,
       "pct_median": null
     },
     {
@@ -2833,7 +2853,7 @@
       "lon": -106.19784,
       "elevation_ft": 11310,
       "swe_inches": 6.3,
-      "pct_median": 51
+      "pct_median": 50
     },
     {
       "id": "486",
@@ -2842,8 +2862,8 @@
       "lat": 33.73687,
       "lon": -108.94327,
       "elevation_ft": 8010,
-      "swe_inches": 0.1,
-      "pct_median": 5
+      "swe_inches": 0.0,
+      "pct_median": 0
     },
     {
       "id": "487",
@@ -2853,7 +2873,7 @@
       "lon": -112.19277,
       "elevation_ft": 6520,
       "swe_inches": 4.6,
-      "pct_median": 77
+      "pct_median": 74
     },
     {
       "id": "641",
@@ -2872,8 +2892,8 @@
       "lat": 35.07356,
       "lon": -111.84477,
       "elevation_ft": 7220,
-      "swe_inches": 0.4,
-      "pct_median": 6
+      "swe_inches": 0.3,
+      "pct_median": 4
     },
     {
       "id": "1262",
@@ -2882,7 +2902,7 @@
       "lat": 41.58008,
       "lon": -115.9364,
       "elevation_ft": 6790,
-      "swe_inches": 1.1,
+      "swe_inches": 1.2,
       "pct_median": null
     },
     {
@@ -2892,8 +2912,8 @@
       "lat": 43.87722,
       "lon": -114.6725,
       "elevation_ft": 7470,
-      "swe_inches": 13.1,
-      "pct_median": 101
+      "swe_inches": 13.2,
+      "pct_median": 102
     },
     {
       "id": "429",
@@ -2913,7 +2933,7 @@
       "lon": -114.71363,
       "elevation_ft": 8790,
       "swe_inches": 16.7,
-      "pct_median": 107
+      "pct_median": 106
     },
     {
       "id": "491",
@@ -2922,8 +2942,8 @@
       "lat": 36.19418,
       "lon": -105.55742,
       "elevation_ft": 9460,
-      "swe_inches": 4.9,
-      "pct_median": 56
+      "swe_inches": 4.8,
+      "pct_median": 54
     },
     {
       "id": "1114",
@@ -2932,8 +2952,8 @@
       "lat": 41.9215,
       "lon": -111.4693,
       "elevation_ft": 7680,
-      "swe_inches": 11.8,
-      "pct_median": 89
+      "swe_inches": 12.1,
+      "pct_median": 90
     },
     {
       "id": "1066",
@@ -2942,8 +2962,8 @@
       "lat": 37.40083,
       "lon": -113.45988,
       "elevation_ft": 8320,
-      "swe_inches": 3.5,
-      "pct_median": 35
+      "swe_inches": 3.0,
+      "pct_median": 30
     },
     {
       "id": "492",
@@ -2973,7 +2993,7 @@
       "lon": -115.81915,
       "elevation_ft": 4250,
       "swe_inches": 6.2,
-      "pct_median": 73
+      "pct_median": 72
     },
     {
       "id": "1221",
@@ -2982,7 +3002,7 @@
       "lat": 39.32019,
       "lon": -111.48827,
       "elevation_ft": 8800,
-      "swe_inches": 5.3,
+      "swe_inches": 5.1,
       "pct_median": null
     },
     {
@@ -2992,7 +3012,7 @@
       "lat": 39.30229,
       "lon": -111.45383,
       "elevation_ft": 9850,
-      "swe_inches": 9.1,
+      "swe_inches": 8.9,
       "pct_median": null
     },
     {
@@ -3002,8 +3022,8 @@
       "lat": 41.91562,
       "lon": -113.41154,
       "elevation_ft": 8960,
-      "swe_inches": 12.5,
-      "pct_median": 81
+      "swe_inches": 12.6,
+      "pct_median": 80
     },
     {
       "id": "945",
@@ -3012,8 +3032,8 @@
       "lat": 42.2062,
       "lon": -121.1334,
       "elevation_ft": 4880,
-      "swe_inches": 0.3,
-      "pct_median": 100
+      "swe_inches": 0.5,
+      "pct_median": 250
     },
     {
       "id": "493",
@@ -3022,8 +3042,8 @@
       "lat": 42.4132,
       "lon": -111.1663,
       "elevation_ft": 6940,
-      "swe_inches": 5.8,
-      "pct_median": 74
+      "swe_inches": 5.7,
+      "pct_median": 72
     },
     {
       "id": "1057",
@@ -3062,7 +3082,7 @@
       "lat": 38.46516,
       "lon": -109.26332,
       "elevation_ft": 10070,
-      "swe_inches": 9.7,
+      "swe_inches": 9.6,
       "pct_median": null
     },
     {
@@ -3073,7 +3093,7 @@
       "lon": -118.3117,
       "elevation_ft": 5400,
       "swe_inches": 2.6,
-      "pct_median": 30
+      "pct_median": 31
     },
     {
       "id": "1256",
@@ -3092,8 +3112,8 @@
       "lat": 38.80034,
       "lon": -111.68333,
       "elevation_ft": 7930,
-      "swe_inches": 0.6,
-      "pct_median": 9
+      "swe_inches": 0.3,
+      "pct_median": 4
     },
     {
       "id": "1184",
@@ -3102,7 +3122,7 @@
       "lat": 38.7882,
       "lon": -111.68892,
       "elevation_ft": 8400,
-      "swe_inches": 3.2,
+      "swe_inches": 3.0,
       "pct_median": null
     },
     {
@@ -3132,8 +3152,8 @@
       "lat": 63.94382,
       "lon": -145.39993,
       "elevation_ft": 1250,
-      "swe_inches": 4.1,
-      "pct_median": 128
+      "swe_inches": 4.2,
+      "pct_median": 131
     },
     {
       "id": "498",
@@ -3142,8 +3162,8 @@
       "lat": 41.67032,
       "lon": -117.56668,
       "elevation_ft": 8500,
-      "swe_inches": 5.6,
-      "pct_median": 34
+      "swe_inches": 5.9,
+      "pct_median": 36
     },
     {
       "id": "499",
@@ -3163,7 +3183,7 @@
       "lon": -114.76663,
       "elevation_ft": 4350,
       "swe_inches": 6.3,
-      "pct_median": 47
+      "pct_median": 46
     },
     {
       "id": "501",
@@ -3173,7 +3193,7 @@
       "lon": -107.23977,
       "elevation_ft": 8560,
       "swe_inches": 3.3,
-      "pct_median": 51
+      "pct_median": 50
     },
     {
       "id": "1058",
@@ -3182,7 +3202,7 @@
       "lat": 37.47051,
       "lon": -106.5379,
       "elevation_ft": 11620,
-      "swe_inches": 2.8,
+      "swe_inches": 3.0,
       "pct_median": null
     },
     {
@@ -3192,7 +3212,7 @@
       "lat": 46.54741,
       "lon": -121.17093,
       "elevation_ft": 5920,
-      "swe_inches": 14.1,
+      "swe_inches": 14.2,
       "pct_median": 70
     },
     {
@@ -3202,8 +3222,8 @@
       "lat": 40.3848,
       "lon": -115.52757,
       "elevation_ft": 8180,
-      "swe_inches": 4.5,
-      "pct_median": 36
+      "swe_inches": 4.1,
+      "pct_median": 32
     },
     {
       "id": "504",
@@ -3222,8 +3242,8 @@
       "lat": 39.64646,
       "lon": -105.8694,
       "elevation_ft": 11110,
-      "swe_inches": 8.4,
-      "pct_median": 62
+      "swe_inches": 8.5,
+      "pct_median": 63
     },
     {
       "id": "506",
@@ -3232,8 +3252,8 @@
       "lat": 43.38939,
       "lon": -110.12943,
       "elevation_ft": 8760,
-      "swe_inches": 11.2,
-      "pct_median": 119
+      "swe_inches": 11.3,
+      "pct_median": 120
     },
     {
       "id": "507",
@@ -3242,8 +3262,8 @@
       "lat": 47.28107,
       "lon": -120.48771,
       "elevation_ft": 5390,
-      "swe_inches": 5.4,
-      "pct_median": 33
+      "swe_inches": 5.5,
+      "pct_median": 32
     },
     {
       "id": "944",
@@ -3262,8 +3282,8 @@
       "lat": 37.49617,
       "lon": -113.94235,
       "elevation_ft": 6790,
-      "swe_inches": 1.6,
-      "pct_median": 21
+      "swe_inches": 1.2,
+      "pct_median": 16
     },
     {
       "id": "508",
@@ -3272,8 +3292,8 @@
       "lat": 38.8519,
       "lon": -119.9374,
       "elevation_ft": 7740,
-      "swe_inches": 12.8,
-      "pct_median": 83
+      "swe_inches": 12.3,
+      "pct_median": 80
     },
     {
       "id": "509",
@@ -3282,8 +3302,8 @@
       "lat": 42.146,
       "lon": -110.67833,
       "elevation_ft": 7860,
-      "swe_inches": 9.2,
-      "pct_median": 101
+      "swe_inches": 9.1,
+      "pct_median": 99
     },
     {
       "id": "510",
@@ -3292,8 +3312,8 @@
       "lat": 48.30754,
       "lon": -114.84075,
       "elevation_ft": 5030,
-      "swe_inches": 6.4,
-      "pct_median": 70
+      "swe_inches": 6.3,
+      "pct_median": 67
     },
     {
       "id": "511",
@@ -3313,7 +3333,7 @@
       "lon": -106.97983,
       "elevation_ft": 8360,
       "swe_inches": 3.5,
-      "pct_median": 69
+      "pct_median": 65
     },
     {
       "id": "969",
@@ -3322,18 +3342,8 @@
       "lat": 34.74594,
       "lon": -111.41219,
       "elevation_ft": 7520,
-      "swe_inches": 1.5,
-      "pct_median": 29
-    },
-    {
-      "id": "896",
-      "state": "UT",
-      "name": "Hardscrabble",
-      "lat": 40.86833,
-      "lon": -111.71865,
-      "elevation_ft": 7270,
-      "swe_inches": 3.9,
-      "pct_median": 26
+      "swe_inches": 1.1,
+      "pct_median": 20
     },
     {
       "id": "514",
@@ -3342,8 +3352,8 @@
       "lat": 37.48997,
       "lon": -112.57602,
       "elevation_ft": 7800,
-      "swe_inches": 2.1,
-      "pct_median": 28
+      "swe_inches": 1.9,
+      "pct_median": 26
     },
     {
       "id": "515",
@@ -3352,7 +3362,7 @@
       "lat": 48.72047,
       "lon": -120.6586,
       "elevation_ft": 6490,
-      "swe_inches": 50.1,
+      "swe_inches": 50.2,
       "pct_median": 137
     },
     {
@@ -3362,8 +3372,8 @@
       "lat": 48.9724,
       "lon": -115.95344,
       "elevation_ft": 6460,
-      "swe_inches": 20.5,
-      "pct_median": 100
+      "swe_inches": 20.4,
+      "pct_median": 99
     },
     {
       "id": "517",
@@ -3372,8 +3382,8 @@
       "lat": 40.79669,
       "lon": -110.88472,
       "elevation_ft": 9170,
-      "swe_inches": 10.3,
-      "pct_median": 88
+      "swe_inches": 10.1,
+      "pct_median": 86
     },
     {
       "id": "1102",
@@ -3382,8 +3392,8 @@
       "lat": 38.29303,
       "lon": -105.85027,
       "elevation_ft": 10700,
-      "swe_inches": 5.6,
-      "pct_median": 44
+      "swe_inches": 5.4,
+      "pct_median": 43
     },
     {
       "id": "518",
@@ -3392,8 +3402,8 @@
       "lat": 38.92431,
       "lon": -119.91641,
       "elevation_ft": 8540,
-      "swe_inches": 11.5,
-      "pct_median": 58
+      "swe_inches": 11.3,
+      "pct_median": 57
     },
     {
       "id": "519",
@@ -3412,7 +3422,7 @@
       "lat": 58.69652,
       "lon": -134.86448,
       "elevation_ft": 2100,
-      "swe_inches": 14.9,
+      "swe_inches": 15.0,
       "pct_median": null
     },
     {
@@ -3422,8 +3432,8 @@
       "lat": 46.48111,
       "lon": -115.63361,
       "elevation_ft": 5800,
-      "swe_inches": 22.3,
-      "pct_median": 61
+      "swe_inches": 22.2,
+      "pct_median": 60
     },
     {
       "id": "521",
@@ -3432,8 +3442,8 @@
       "lat": 40.95009,
       "lon": -110.48419,
       "elevation_ft": 9510,
-      "swe_inches": 4.9,
-      "pct_median": 63
+      "swe_inches": 4.8,
+      "pct_median": 60
     },
     {
       "id": "522",
@@ -3442,8 +3452,8 @@
       "lat": 40.90663,
       "lon": -109.96287,
       "elevation_ft": 9120,
-      "swe_inches": 3.7,
-      "pct_median": 62
+      "swe_inches": 3.4,
+      "pct_median": 56
     },
     {
       "id": "988",
@@ -3452,8 +3462,8 @@
       "lat": 48.89368,
       "lon": -116.75743,
       "elevation_ft": 5000,
-      "swe_inches": 24.6,
-      "pct_median": 91
+      "swe_inches": 24.5,
+      "pct_median": 88
     },
     {
       "id": "1187",
@@ -3462,7 +3472,7 @@
       "lat": 40.0359,
       "lon": -105.75472,
       "elevation_ft": 10630,
-      "swe_inches": 9.6,
+      "swe_inches": 9.7,
       "pct_median": null
     },
     {
@@ -3472,8 +3482,8 @@
       "lat": 45.69682,
       "lon": -118.10657,
       "elevation_ft": 4900,
-      "swe_inches": 8.0,
-      "pct_median": 38
+      "swe_inches": 7.9,
+      "pct_median": 37
     },
     {
       "id": "524",
@@ -3492,7 +3502,7 @@
       "lat": 40.18538,
       "lon": -111.35971,
       "elevation_ft": 7360,
-      "swe_inches": 3.5,
+      "swe_inches": 3.0,
       "pct_median": null
     },
     {
@@ -3503,7 +3513,7 @@
       "lon": -109.09455,
       "elevation_ft": 10080,
       "swe_inches": 10.3,
-      "pct_median": 105
+      "pct_median": 102
     },
     {
       "id": "526",
@@ -3513,7 +3523,7 @@
       "lon": -121.85655,
       "elevation_ft": 4800,
       "swe_inches": 7.4,
-      "pct_median": 44
+      "pct_median": 40
     },
     {
       "id": "527",
@@ -3522,8 +3532,8 @@
       "lat": 40.94168,
       "lon": -115.0954,
       "elevation_ft": 8170,
-      "swe_inches": 3.8,
-      "pct_median": 30
+      "swe_inches": 3.6,
+      "pct_median": 27
     },
     {
       "id": "528",
@@ -3532,8 +3542,8 @@
       "lat": 40.92167,
       "lon": -110.18623,
       "elevation_ft": 9170,
-      "swe_inches": 3.2,
-      "pct_median": 57
+      "swe_inches": 3.1,
+      "pct_median": 54
     },
     {
       "id": "529",
@@ -3542,8 +3552,8 @@
       "lat": 43.66917,
       "lon": -122.56877,
       "elevation_ft": 4930,
-      "swe_inches": 1.2,
-      "pct_median": 8
+      "swe_inches": 0.5,
+      "pct_median": 3
     },
     {
       "id": "530",
@@ -3552,8 +3562,8 @@
       "lat": 46.97511,
       "lon": -115.03486,
       "elevation_ft": 6060,
-      "swe_inches": 32.3,
-      "pct_median": 102
+      "swe_inches": 32.2,
+      "pct_median": 101
     },
     {
       "id": "1318",
@@ -3562,7 +3572,7 @@
       "lat": 58.12411,
       "lon": -135.413,
       "elevation_ft": 1520,
-      "swe_inches": 15.7,
+      "swe_inches": 16.0,
       "pct_median": null
     },
     {
@@ -3573,7 +3583,7 @@
       "lon": -106.05999,
       "elevation_ft": 11600,
       "swe_inches": 6.3,
-      "pct_median": 56
+      "pct_median": 55
     },
     {
       "id": "532",
@@ -3583,7 +3593,7 @@
       "lon": -106.2637,
       "elevation_ft": 10080,
       "swe_inches": 8.0,
-      "pct_median": 60
+      "pct_median": 59
     },
     {
       "id": "1050",
@@ -3592,8 +3602,8 @@
       "lat": 38.83652,
       "lon": -119.88732,
       "elevation_ft": 8580,
-      "swe_inches": 13.1,
-      "pct_median": 76
+      "swe_inches": 12.9,
+      "pct_median": 75
     },
     {
       "id": "533",
@@ -3602,8 +3612,8 @@
       "lat": 41.31372,
       "lon": -111.44624,
       "elevation_ft": 8210,
-      "swe_inches": 10.6,
-      "pct_median": 61
+      "swe_inches": 10.4,
+      "pct_median": 59
     },
     {
       "id": "1122",
@@ -3612,8 +3622,8 @@
       "lat": 40.57717,
       "lon": -105.62584,
       "elevation_ft": 9380,
-      "swe_inches": 7.1,
-      "pct_median": 81
+      "swe_inches": 7.2,
+      "pct_median": 82
     },
     {
       "id": "1158",
@@ -3642,8 +3652,8 @@
       "lat": 47.06565,
       "lon": -121.58778,
       "elevation_ft": 2250,
-      "swe_inches": 0.1,
-      "pct_median": 5
+      "swe_inches": 0.0,
+      "pct_median": 0
     },
     {
       "id": "535",
@@ -3652,7 +3662,7 @@
       "lat": 47.53178,
       "lon": -115.77643,
       "elevation_ft": 4260,
-      "swe_inches": 8.9,
+      "swe_inches": 8.7,
       "pct_median": 87
     },
     {
@@ -3662,7 +3672,7 @@
       "lat": 39.61774,
       "lon": -111.30576,
       "elevation_ft": 9650,
-      "swe_inches": 11.6,
+      "swe_inches": 11.5,
       "pct_median": null
     },
     {
@@ -3672,7 +3682,7 @@
       "lat": 43.71077,
       "lon": -114.15894,
       "elevation_ft": 7590,
-      "swe_inches": 10.7,
+      "swe_inches": 10.8,
       "pct_median": 119
     },
     {
@@ -3682,7 +3692,7 @@
       "lat": 37.93389,
       "lon": -107.6762,
       "elevation_ft": 9780,
-      "swe_inches": 6.6,
+      "swe_inches": 6.5,
       "pct_median": 63
     },
     {
@@ -3692,8 +3702,8 @@
       "lat": 39.45269,
       "lon": -120.29367,
       "elevation_ft": 6970,
-      "swe_inches": 12.9,
-      "pct_median": 101
+      "swe_inches": 12.5,
+      "pct_median": 98
     },
     {
       "id": "540",
@@ -3702,8 +3712,8 @@
       "lat": 39.49001,
       "lon": -120.28226,
       "elevation_ft": 6440,
-      "swe_inches": 6.9,
-      "pct_median": 63
+      "swe_inches": 6.6,
+      "pct_median": 59
     },
     {
       "id": "541",
@@ -3712,8 +3722,8 @@
       "lat": 39.42752,
       "lon": -120.31342,
       "elevation_ft": 8340,
-      "swe_inches": 23.9,
-      "pct_median": 70
+      "swe_inches": 23.4,
+      "pct_median": 68
     },
     {
       "id": "1091",
@@ -3722,7 +3732,7 @@
       "lat": 61.79001,
       "lon": -149.2839,
       "elevation_ft": 3450,
-      "swe_inches": 9.6,
+      "swe_inches": 9.5,
       "pct_median": null
     },
     {
@@ -3732,7 +3742,7 @@
       "lat": 39.07543,
       "lon": -106.61154,
       "elevation_ft": 10570,
-      "swe_inches": 7.2,
+      "swe_inches": 7.3,
       "pct_median": 56
     },
     {
@@ -3743,7 +3753,7 @@
       "lon": -110.67753,
       "elevation_ft": 9400,
       "swe_inches": 17.4,
-      "pct_median": 93
+      "pct_median": 92
     },
     {
       "id": "946",
@@ -3752,8 +3762,8 @@
       "lat": 61.06577,
       "lon": -149.48543,
       "elevation_ft": 2400,
-      "swe_inches": 11.7,
-      "pct_median": 70
+      "swe_inches": 11.6,
+      "pct_median": 68
     },
     {
       "id": "1129",
@@ -3762,7 +3772,7 @@
       "lat": 45.99077,
       "lon": -120.80768,
       "elevation_ft": 5320,
-      "swe_inches": 5.2,
+      "swe_inches": 5.0,
       "pct_median": null
     },
     {
@@ -3772,8 +3782,8 @@
       "lat": 43.80368,
       "lon": -121.94793,
       "elevation_ft": 5540,
-      "swe_inches": 11.7,
-      "pct_median": 44
+      "swe_inches": 11.0,
+      "pct_median": 41
     },
     {
       "id": "546",
@@ -3792,8 +3802,8 @@
       "lat": 39.29228,
       "lon": -106.54907,
       "elevation_ft": 10540,
-      "swe_inches": 7.7,
-      "pct_median": 68
+      "swe_inches": 7.8,
+      "pct_median": 67
     },
     {
       "id": "548",
@@ -3802,8 +3812,8 @@
       "lat": 41.54675,
       "lon": -116.00517,
       "elevation_ft": 7380,
-      "swe_inches": 3.5,
-      "pct_median": 28
+      "swe_inches": 3.2,
+      "pct_median": 26
     },
     {
       "id": "1275",
@@ -3822,8 +3832,8 @@
       "lat": 44.05092,
       "lon": -115.44322,
       "elevation_ft": 7060,
-      "swe_inches": 15.3,
-      "pct_median": 75
+      "swe_inches": 15.4,
+      "pct_median": 74
     },
     {
       "id": "935",
@@ -3833,7 +3843,7 @@
       "lon": -105.80355,
       "elevation_ft": 11030,
       "swe_inches": 6.0,
-      "pct_median": 67
+      "pct_median": 65
     },
     {
       "id": "1287",
@@ -3862,8 +3872,8 @@
       "lat": 38.07125,
       "lon": -112.16788,
       "elevation_ft": 9710,
-      "swe_inches": 3.5,
-      "pct_median": 39
+      "swe_inches": 3.4,
+      "pct_median": 37
     },
     {
       "id": "970",
@@ -3872,8 +3882,8 @@
       "lat": 39.7645,
       "lon": -105.90655,
       "elevation_ft": 10430,
-      "swe_inches": 7.6,
-      "pct_median": 64
+      "swe_inches": 7.5,
+      "pct_median": 62
     },
     {
       "id": "552",
@@ -3882,8 +3892,8 @@
       "lat": 44.38605,
       "lon": -122.16683,
       "elevation_ft": 3530,
-      "swe_inches": 0.3,
-      "pct_median": 3
+      "swe_inches": 0.2,
+      "pct_median": 2
     },
     {
       "id": "553",
@@ -3893,7 +3903,7 @@
       "lon": -122.15413,
       "elevation_ft": 3440,
       "swe_inches": 16.3,
-      "pct_median": 48
+      "pct_median": 47
     },
     {
       "id": "1150",
@@ -3902,7 +3912,7 @@
       "lat": 39.5579,
       "lon": -114.62762,
       "elevation_ft": 7740,
-      "swe_inches": 2.6,
+      "swe_inches": 2.4,
       "pct_median": null
     },
     {
@@ -3912,7 +3922,7 @@
       "lat": 63.53667,
       "lon": -150.98593,
       "elevation_ft": 1590,
-      "swe_inches": 5.7,
+      "swe_inches": 5.8,
       "pct_median": null
     },
     {
@@ -3932,8 +3942,8 @@
       "lat": 67.9297,
       "lon": -162.2906,
       "elevation_ft": 300,
-      "swe_inches": 6.4,
-      "pct_median": 149
+      "swe_inches": 6.5,
+      "pct_median": 141
     },
     {
       "id": "966",
@@ -3942,8 +3952,8 @@
       "lat": 60.72499,
       "lon": -150.47369,
       "elevation_ft": 290,
-      "swe_inches": 4.3,
-      "pct_median": 108
+      "swe_inches": 4.4,
+      "pct_median": 110
     },
     {
       "id": "555",
@@ -3952,8 +3962,8 @@
       "lat": 43.24922,
       "lon": -110.01671,
       "elevation_ft": 7790,
-      "swe_inches": 11.2,
-      "pct_median": 117
+      "swe_inches": 11.3,
+      "pct_median": 115
     },
     {
       "id": "1145",
@@ -3962,8 +3972,8 @@
       "lat": 41.24764,
       "lon": -111.41249,
       "elevation_ft": 7230,
-      "swe_inches": 5.4,
-      "pct_median": 55
+      "swe_inches": 5.2,
+      "pct_median": 53
     },
     {
       "id": "556",
@@ -3972,8 +3982,8 @@
       "lat": 39.3172,
       "lon": -106.61501,
       "elevation_ft": 9610,
-      "swe_inches": 5.6,
-      "pct_median": 56
+      "swe_inches": 5.5,
+      "pct_median": 55
     },
     {
       "id": "557",
@@ -3983,7 +3993,7 @@
       "lon": -112.39273,
       "elevation_ft": 9110,
       "swe_inches": 6.4,
-      "pct_median": 52
+      "pct_median": 50
     },
     {
       "id": "558",
@@ -4003,7 +4013,7 @@
       "lon": -109.54401,
       "elevation_ft": 8740,
       "swe_inches": 3.3,
-      "pct_median": 45
+      "pct_median": 43
     },
     {
       "id": "560",
@@ -4013,7 +4023,7 @@
       "lon": -109.32163,
       "elevation_ft": 9580,
       "swe_inches": 10.4,
-      "pct_median": 122
+      "pct_median": 121
     },
     {
       "id": "1115",
@@ -4022,8 +4032,8 @@
       "lat": 41.96769,
       "lon": -111.59713,
       "elevation_ft": 7280,
-      "swe_inches": 15.1,
-      "pct_median": 92
+      "swe_inches": 15.0,
+      "pct_median": 91
     },
     {
       "id": "561",
@@ -4032,8 +4042,8 @@
       "lat": 37.52664,
       "lon": -113.05386,
       "elevation_ft": 9250,
-      "swe_inches": 14.2,
-      "pct_median": 88
+      "swe_inches": 14.1,
+      "pct_median": 83
     },
     {
       "id": "562",
@@ -4052,8 +4062,8 @@
       "lat": 44.21007,
       "lon": -118.63752,
       "elevation_ft": 5250,
-      "swe_inches": 4.2,
-      "pct_median": 43
+      "swe_inches": 3.8,
+      "pct_median": 40
     },
     {
       "id": "564",
@@ -4062,7 +4072,7 @@
       "lat": 39.93659,
       "lon": -105.59031,
       "elevation_ft": 9700,
-      "swe_inches": 5.7,
+      "swe_inches": 5.8,
       "pct_median": 59
     },
     {
@@ -4083,7 +4093,7 @@
       "lon": -110.43316,
       "elevation_ft": 10120,
       "swe_inches": 8.4,
-      "pct_median": 88
+      "pct_median": 86
     },
     {
       "id": "1116",
@@ -4092,8 +4102,8 @@
       "lat": 40.5502,
       "lon": -110.3529,
       "elevation_ft": 8430,
-      "swe_inches": 2.8,
-      "pct_median": 54
+      "swe_inches": 2.7,
+      "pct_median": 52
     },
     {
       "id": "513",
@@ -4102,8 +4112,8 @@
       "lat": 40.73785,
       "lon": -110.62121,
       "elevation_ft": 10890,
-      "swe_inches": 15.5,
-      "pct_median": 97
+      "swe_inches": 15.6,
+      "pct_median": 98
     },
     {
       "id": "568",
@@ -4122,8 +4132,8 @@
       "lat": 41.51542,
       "lon": -117.63197,
       "elevation_ft": 6390,
-      "swe_inches": 0.0,
-      "pct_median": 0
+      "swe_inches": 0.1,
+      "pct_median": 1
     },
     {
       "id": "570",
@@ -4133,7 +4143,7 @@
       "lon": -115.3812,
       "elevation_ft": 8040,
       "swe_inches": 5.1,
-      "pct_median": 48
+      "pct_median": 47
     },
     {
       "id": "1310",
@@ -4142,7 +4152,7 @@
       "lat": 40.59965,
       "lon": -115.37902,
       "elevation_ft": 8990,
-      "swe_inches": 11.0,
+      "swe_inches": 11.1,
       "pct_median": null
     },
     {
@@ -4163,7 +4173,7 @@
       "lon": -109.08829,
       "elevation_ft": 8880,
       "swe_inches": 5.8,
-      "pct_median": 62
+      "pct_median": 61
     },
     {
       "id": "572",
@@ -4172,8 +4182,8 @@
       "lat": 38.48226,
       "lon": -109.27198,
       "elevation_ft": 9580,
-      "swe_inches": 6.1,
-      "pct_median": 61
+      "swe_inches": 6.0,
+      "pct_median": 59
     },
     {
       "id": "1215",
@@ -4182,7 +4192,7 @@
       "lat": 38.48167,
       "lon": -109.29164,
       "elevation_ft": 8780,
-      "swe_inches": 2.5,
+      "swe_inches": 2.4,
       "pct_median": null
     },
     {
@@ -4192,8 +4202,8 @@
       "lat": 41.77637,
       "lon": -116.02957,
       "elevation_ft": 6680,
-      "swe_inches": 0.9,
-      "pct_median": 10
+      "swe_inches": 0.8,
+      "pct_median": 9
     },
     {
       "id": "574",
@@ -4202,8 +4212,8 @@
       "lat": 38.27594,
       "lon": -119.61281,
       "elevation_ft": 9600,
-      "swe_inches": 37.9,
-      "pct_median": 87
+      "swe_inches": 37.8,
+      "pct_median": 86
     },
     {
       "id": "575",
@@ -4212,8 +4222,8 @@
       "lat": 38.30367,
       "lon": -119.55111,
       "elevation_ft": 7200,
-      "swe_inches": 7.9,
-      "pct_median": 94
+      "swe_inches": 7.0,
+      "pct_median": 85
     },
     {
       "id": "1112",
@@ -4222,8 +4232,8 @@
       "lat": 36.30537,
       "lon": -115.67508,
       "elevation_ft": 8620,
-      "swe_inches": 1.4,
-      "pct_median": 24
+      "swe_inches": 0.9,
+      "pct_median": 16
     },
     {
       "id": "576",
@@ -4242,7 +4252,7 @@
       "lat": 44.20862,
       "lon": -110.66628,
       "elevation_ft": 7880,
-      "swe_inches": 27.9,
+      "swe_inches": 27.8,
       "pct_median": 113
     },
     {
@@ -4252,8 +4262,8 @@
       "lat": 40.3572,
       "lon": -116.8647,
       "elevation_ft": 7370,
-      "swe_inches": 4.6,
-      "pct_median": 50
+      "swe_inches": 4.3,
+      "pct_median": 46
     },
     {
       "id": "578",
@@ -4262,8 +4272,8 @@
       "lat": 45.5041,
       "lon": -110.96625,
       "elevation_ft": 6880,
-      "swe_inches": 4.4,
-      "pct_median": 56
+      "swe_inches": 4.5,
+      "pct_median": 57
     },
     {
       "id": "1056",
@@ -4272,8 +4282,8 @@
       "lat": 41.35891,
       "lon": -111.48749,
       "elevation_ft": 8200,
-      "swe_inches": 10.0,
-      "pct_median": 65
+      "swe_inches": 9.7,
+      "pct_median": 63
     },
     {
       "id": "579",
@@ -4283,7 +4293,7 @@
       "lon": -110.79813,
       "elevation_ft": 9130,
       "swe_inches": 6.6,
-      "pct_median": 66
+      "pct_median": 65
     },
     {
       "id": "580",
@@ -4292,8 +4302,8 @@
       "lat": 37.38028,
       "lon": -106.54823,
       "elevation_ft": 11070,
-      "swe_inches": 5.4,
-      "pct_median": 52
+      "swe_inches": 5.0,
+      "pct_median": 46
     },
     {
       "id": "582",
@@ -4302,8 +4312,8 @@
       "lat": 41.40562,
       "lon": -111.82607,
       "elevation_ft": 6540,
-      "swe_inches": 1.7,
-      "pct_median": 17
+      "swe_inches": 1.3,
+      "pct_median": 13
     },
     {
       "id": "1131",
@@ -4332,8 +4342,8 @@
       "lat": 44.61297,
       "lon": -122.22565,
       "elevation_ft": 4020,
-      "swe_inches": 7.0,
-      "pct_median": 34
+      "swe_inches": 6.8,
+      "pct_median": 33
     },
     {
       "id": "1047",
@@ -4352,7 +4362,7 @@
       "lat": 39.25259,
       "lon": -119.8771,
       "elevation_ft": 6500,
-      "swe_inches": 4.4,
+      "swe_inches": 3.7,
       "pct_median": null
     },
     {
@@ -4373,7 +4383,7 @@
       "lon": -107.92475,
       "elevation_ft": 10190,
       "swe_inches": 8.1,
-      "pct_median": 70
+      "pct_median": 69
     },
     {
       "id": "587",
@@ -4402,8 +4412,8 @@
       "lat": 37.89169,
       "lon": -108.19636,
       "elevation_ft": 9730,
-      "swe_inches": 10.1,
-      "pct_median": 78
+      "swe_inches": 10.0,
+      "pct_median": 74
     },
     {
       "id": "590",
@@ -4413,7 +4423,7 @@
       "lon": -111.42692,
       "elevation_ft": 8820,
       "swe_inches": 12.9,
-      "pct_median": 96
+      "pct_median": 95
     },
     {
       "id": "591",
@@ -4423,7 +4433,7 @@
       "lon": -121.96288,
       "elevation_ft": 3940,
       "swe_inches": 15.4,
-      "pct_median": 53
+      "pct_median": 52
     },
     {
       "id": "1261",
@@ -4432,7 +4442,7 @@
       "lat": 38.07,
       "lon": -110.77241,
       "elevation_ft": 9530,
-      "swe_inches": 3.3,
+      "swe_inches": 3.1,
       "pct_median": null
     },
     {
@@ -4443,7 +4453,7 @@
       "lon": -105.7654,
       "elevation_ft": 9980,
       "swe_inches": 12.1,
-      "pct_median": 96
+      "pct_median": 95
     },
     {
       "id": "592",
@@ -4452,8 +4462,8 @@
       "lat": 37.51255,
       "lon": -113.39661,
       "elevation_ft": 7990,
-      "swe_inches": 0.4,
-      "pct_median": 6
+      "swe_inches": 0.2,
+      "pct_median": 3
     },
     {
       "id": "1001",
@@ -4462,8 +4472,8 @@
       "lat": 58.186,
       "lon": -133.83217,
       "elevation_ft": 840,
-      "swe_inches": 23.4,
-      "pct_median": 86
+      "swe_inches": 24.1,
+      "pct_median": 88
     },
     {
       "id": "1016",
@@ -4472,8 +4482,8 @@
       "lat": 44.78835,
       "lon": -116.08878,
       "elevation_ft": 4890,
-      "swe_inches": 2.0,
-      "pct_median": 29
+      "swe_inches": 1.8,
+      "pct_median": 26
     },
     {
       "id": "593",
@@ -4482,8 +4492,8 @@
       "lat": 37.48756,
       "lon": -112.51458,
       "elevation_ft": 7460,
-      "swe_inches": 1.7,
-      "pct_median": 39
+      "swe_inches": 1.2,
+      "pct_median": 26
     },
     {
       "id": "768",
@@ -4502,8 +4512,8 @@
       "lat": 47.45749,
       "lon": -115.70457,
       "elevation_ft": 5180,
-      "swe_inches": 10.1,
-      "pct_median": 43
+      "swe_inches": 10.0,
+      "pct_median": 42
     },
     {
       "id": "595",
@@ -4523,7 +4533,7 @@
       "lon": -111.70965,
       "elevation_ft": 8150,
       "swe_inches": 12.5,
-      "pct_median": 58
+      "pct_median": 57
     },
     {
       "id": "597",
@@ -4533,7 +4543,7 @@
       "lon": -110.14007,
       "elevation_ft": 8240,
       "swe_inches": 11.9,
-      "pct_median": 95
+      "pct_median": 94
     },
     {
       "id": "1118",
@@ -4553,7 +4563,7 @@
       "lon": -106.74833,
       "elevation_ft": 9350,
       "swe_inches": 14.2,
-      "pct_median": 75
+      "pct_median": 74
     },
     {
       "id": "600",
@@ -4572,7 +4582,7 @@
       "lat": 38.64745,
       "lon": -119.95141,
       "elevation_ft": 8640,
-      "swe_inches": 33.8,
+      "swe_inches": 33.6,
       "pct_median": null
     },
     {
@@ -4582,8 +4592,8 @@
       "lat": 43.82441,
       "lon": -114.26404,
       "elevation_ft": 7870,
-      "swe_inches": 17.3,
-      "pct_median": 118
+      "swe_inches": 17.4,
+      "pct_median": 119
     },
     {
       "id": "602",
@@ -4593,7 +4603,7 @@
       "lon": -105.90264,
       "elevation_ft": 11410,
       "swe_inches": 9.3,
-      "pct_median": 65
+      "pct_median": 64
     },
     {
       "id": "603",
@@ -4673,7 +4683,7 @@
       "lon": -111.11627,
       "elevation_ft": 7710,
       "swe_inches": 16.7,
-      "pct_median": 97
+      "pct_median": 96
     },
     {
       "id": "610",
@@ -4683,7 +4693,7 @@
       "lon": -114.28665,
       "elevation_ft": 6940,
       "swe_inches": 7.5,
-      "pct_median": 47
+      "pct_median": 46
     },
     {
       "id": "612",
@@ -4692,8 +4702,8 @@
       "lat": 39.68338,
       "lon": -111.31818,
       "elevation_ft": 8710,
-      "swe_inches": 8.0,
-      "pct_median": 54
+      "swe_inches": 7.6,
+      "pct_median": 51
     },
     {
       "id": "905",
@@ -4702,8 +4712,8 @@
       "lat": 37.43109,
       "lon": -108.17005,
       "elevation_ft": 10020,
-      "swe_inches": 7.6,
-      "pct_median": 58
+      "swe_inches": 7.3,
+      "pct_median": 52
     },
     {
       "id": "613",
@@ -4732,8 +4742,8 @@
       "lat": 39.16395,
       "lon": -119.89672,
       "elevation_ft": 7860,
-      "swe_inches": 12.0,
-      "pct_median": 61
+      "swe_inches": 11.8,
+      "pct_median": 60
     },
     {
       "id": "616",
@@ -4743,7 +4753,7 @@
       "lon": -109.24019,
       "elevation_ft": 8800,
       "swe_inches": 1.9,
-      "pct_median": 38
+      "pct_median": 37
     },
     {
       "id": "999",
@@ -4752,8 +4762,8 @@
       "lat": 48.76292,
       "lon": -121.69823,
       "elevation_ft": 3520,
-      "swe_inches": 16.9,
-      "pct_median": 37
+      "swe_inches": 16.8,
+      "pct_median": 36
     },
     {
       "id": "617",
@@ -4762,8 +4772,8 @@
       "lat": 33.92123,
       "lon": -109.45872,
       "elevation_ft": 9210,
-      "swe_inches": 0.5,
-      "pct_median": 6
+      "swe_inches": 0.4,
+      "pct_median": 5
     },
     {
       "id": "1096",
@@ -4772,8 +4782,8 @@
       "lat": 61.34918,
       "lon": -142.69355,
       "elevation_ft": 1550,
-      "swe_inches": 7.6,
-      "pct_median": 177
+      "swe_inches": 7.7,
+      "pct_median": 175
     },
     {
       "id": "618",
@@ -4782,8 +4792,8 @@
       "lat": 39.12899,
       "lon": -107.28834,
       "elevation_ft": 8760,
-      "swe_inches": 8.2,
-      "pct_median": 63
+      "swe_inches": 8.0,
+      "pct_median": 60
     },
     {
       "id": "1040",
@@ -4793,7 +4803,7 @@
       "lon": -106.544,
       "elevation_ft": 9500,
       "swe_inches": 5.4,
-      "pct_median": 46
+      "pct_median": 47
     },
     {
       "id": "785",
@@ -4812,7 +4822,7 @@
       "lat": 44.2103,
       "lon": -121.87292,
       "elevation_ft": 4770,
-      "swe_inches": 8.9,
+      "swe_inches": 8.7,
       "pct_median": 27
     },
     {
@@ -4836,16 +4846,6 @@
       "pct_median": 119
     },
     {
-      "id": "897",
-      "state": "WA",
-      "name": "Meadows Pass",
-      "lat": 47.28312,
-      "lon": -121.47197,
-      "elevation_ft": 3230,
-      "swe_inches": 8.2,
-      "pct_median": 33
-    },
-    {
       "id": "1196",
       "state": "WY",
       "name": "Med Bow",
@@ -4862,8 +4862,18 @@
       "lat": 37.85192,
       "lon": -105.43666,
       "elevation_ft": 9650,
-      "swe_inches": 0.9,
-      "pct_median": 16
+      "swe_inches": 0.6,
+      "pct_median": 11
+    },
+    {
+      "id": "621",
+      "state": "UT",
+      "name": "Merchant Valley",
+      "lat": 38.30285,
+      "lon": -112.43637,
+      "elevation_ft": 8710,
+      "swe_inches": 3.5,
+      "pct_median": 34
     },
     {
       "id": "622",
@@ -4872,7 +4882,7 @@
       "lat": 39.05738,
       "lon": -108.05756,
       "elevation_ft": 10160,
-      "swe_inches": 6.1,
+      "swe_inches": 6.2,
       "pct_median": 50
     },
     {
@@ -4882,7 +4892,7 @@
       "lat": 48.82441,
       "lon": -121.92947,
       "elevation_ft": 4940,
-      "swe_inches": 26.5,
+      "swe_inches": 26.8,
       "pct_median": 56
     },
     {
@@ -4913,7 +4923,7 @@
       "lon": -107.03932,
       "elevation_ft": 11260,
       "swe_inches": 9.0,
-      "pct_median": 64
+      "pct_median": 63
     },
     {
       "id": "1014",
@@ -4922,8 +4932,8 @@
       "lat": 39.79565,
       "lon": -106.02802,
       "elevation_ft": 8960,
-      "swe_inches": 5.4,
-      "pct_median": 58
+      "swe_inches": 5.1,
+      "pct_median": 54
     },
     {
       "id": "625",
@@ -4943,7 +4953,7 @@
       "lon": -112.83849,
       "elevation_ft": 9830,
       "swe_inches": 16.7,
-      "pct_median": 98
+      "pct_median": 97
     },
     {
       "id": "1079",
@@ -4953,7 +4963,7 @@
       "lon": -117.94883,
       "elevation_ft": 5580,
       "swe_inches": 16.5,
-      "pct_median": 51
+      "pct_median": 50
     },
     {
       "id": "1322",
@@ -4972,7 +4982,7 @@
       "lat": 40.69656,
       "lon": -111.67712,
       "elevation_ft": 6960,
-      "swe_inches": 6.0,
+      "swe_inches": 5.9,
       "pct_median": null
     },
     {
@@ -4982,7 +4992,7 @@
       "lat": 44.47212,
       "lon": -114.48992,
       "elevation_ft": 8780,
-      "swe_inches": 16.5,
+      "swe_inches": 16.6,
       "pct_median": 106
     },
     {
@@ -4992,8 +5002,8 @@
       "lat": 40.65883,
       "lon": -111.63683,
       "elevation_ft": 8940,
-      "swe_inches": 11.6,
-      "pct_median": 58
+      "swe_inches": 11.3,
+      "pct_median": 56
     },
     {
       "id": "1084",
@@ -5012,8 +5022,8 @@
       "lat": 37.84737,
       "lon": -107.72657,
       "elevation_ft": 10030,
-      "swe_inches": 6.1,
-      "pct_median": 54
+      "swe_inches": 6.0,
+      "pct_median": 53
     },
     {
       "id": "631",
@@ -5033,7 +5043,7 @@
       "lon": -107.68933,
       "elevation_ft": 10610,
       "swe_inches": 7.6,
-      "pct_median": 53
+      "pct_median": 52
     },
     {
       "id": "1094",
@@ -5052,7 +5062,7 @@
       "lat": 38.6683,
       "lon": -119.6087,
       "elevation_ft": 8320,
-      "swe_inches": 10.3,
+      "swe_inches": 10.2,
       "pct_median": 72
     },
     {
@@ -5063,7 +5073,7 @@
       "lon": -111.49688,
       "elevation_ft": 8930,
       "swe_inches": 16.7,
-      "pct_median": 82
+      "pct_median": 81
     },
     {
       "id": "949",
@@ -5072,8 +5082,8 @@
       "lat": 65.07738,
       "lon": -145.87358,
       "elevation_ft": 1840,
-      "swe_inches": 5.6,
-      "pct_median": 122
+      "swe_inches": 5.5,
+      "pct_median": 120
     },
     {
       "id": "635",
@@ -5082,8 +5092,8 @@
       "lat": 45.21759,
       "lon": -110.237,
       "elevation_ft": 8740,
-      "swe_inches": 18.0,
-      "pct_median": 110
+      "swe_inches": 17.9,
+      "pct_median": 108
     },
     {
       "id": "1124",
@@ -5092,8 +5102,8 @@
       "lat": 37.96627,
       "lon": -106.55857,
       "elevation_ft": 11110,
-      "swe_inches": 3.0,
-      "pct_median": 60
+      "swe_inches": 3.1,
+      "pct_median": 62
     },
     {
       "id": "636",
@@ -5102,8 +5112,8 @@
       "lat": 44.41478,
       "lon": -113.39814,
       "elevation_ft": 7490,
-      "swe_inches": 8.0,
-      "pct_median": 99
+      "swe_inches": 8.1,
+      "pct_median": 100
     },
     {
       "id": "638",
@@ -5112,8 +5122,8 @@
       "lat": 45.67008,
       "lon": -113.95315,
       "elevation_ft": 6170,
-      "swe_inches": 10.1,
-      "pct_median": 72
+      "swe_inches": 10.0,
+      "pct_median": 71
     },
     {
       "id": "1035",
@@ -5122,8 +5132,8 @@
       "lat": 61.37727,
       "lon": -148.99917,
       "elevation_ft": 2010,
-      "swe_inches": 5.4,
-      "pct_median": 95
+      "swe_inches": 5.5,
+      "pct_median": 98
     },
     {
       "id": "637",
@@ -5133,7 +5143,7 @@
       "lon": -115.66588,
       "elevation_ft": 6090,
       "swe_inches": 11.5,
-      "pct_median": 48
+      "pct_median": 47
     },
     {
       "id": "639",
@@ -5142,8 +5152,8 @@
       "lat": 44.84237,
       "lon": -114.26871,
       "elevation_ft": 7620,
-      "swe_inches": 9.1,
-      "pct_median": 108
+      "swe_inches": 9.2,
+      "pct_median": 110
     },
     {
       "id": "640",
@@ -5152,8 +5162,8 @@
       "lat": 34.94141,
       "lon": -111.51864,
       "elevation_ft": 7490,
-      "swe_inches": 0.4,
-      "pct_median": 9
+      "swe_inches": 0.0,
+      "pct_median": 0
     },
     {
       "id": "1125",
@@ -5162,8 +5172,8 @@
       "lat": 34.96942,
       "lon": -111.50868,
       "elevation_ft": 8450,
-      "swe_inches": 3.5,
-      "pct_median": 45
+      "swe_inches": 3.1,
+      "pct_median": 41
     },
     {
       "id": "642",
@@ -5172,7 +5182,7 @@
       "lat": 46.90585,
       "lon": -121.4827,
       "elevation_ft": 5400,
-      "swe_inches": 25.6,
+      "swe_inches": 25.5,
       "pct_median": 58
     },
     {
@@ -5182,7 +5192,7 @@
       "lat": 40.60798,
       "lon": -109.8881,
       "elevation_ft": 9550,
-      "swe_inches": 6.3,
+      "swe_inches": 6.4,
       "pct_median": 75
     },
     {
@@ -5192,8 +5202,8 @@
       "lat": 46.805,
       "lon": -116.8535,
       "elevation_ft": 4700,
-      "swe_inches": 6.7,
-      "pct_median": 37
+      "swe_inches": 6.8,
+      "pct_median": 36
     },
     {
       "id": "644",
@@ -5202,8 +5212,8 @@
       "lat": 48.36166,
       "lon": -119.08158,
       "elevation_ft": 5470,
-      "swe_inches": 4.4,
-      "pct_median": 35
+      "swe_inches": 4.5,
+      "pct_median": 34
     },
     {
       "id": "645",
@@ -5212,7 +5222,7 @@
       "lat": 48.05726,
       "lon": -116.23055,
       "elevation_ft": 5270,
-      "swe_inches": 16.5,
+      "swe_inches": 16.6,
       "pct_median": 59
     },
     {
@@ -5232,7 +5242,7 @@
       "lat": 45.27173,
       "lon": -117.68747,
       "elevation_ft": 5760,
-      "swe_inches": 11.9,
+      "swe_inches": 11.8,
       "pct_median": 58
     },
     {
@@ -5242,7 +5252,7 @@
       "lat": 47.7637,
       "lon": -123.026,
       "elevation_ft": 3960,
-      "swe_inches": 11.7,
+      "swe_inches": 11.8,
       "pct_median": 46
     },
     {
@@ -5262,8 +5272,8 @@
       "lat": 47.91727,
       "lon": -112.8238,
       "elevation_ft": 6430,
-      "swe_inches": 15.8,
-      "pct_median": 101
+      "swe_inches": 15.6,
+      "pct_median": 100
     },
     {
       "id": "650",
@@ -5272,8 +5282,8 @@
       "lat": 45.69694,
       "lon": -115.22972,
       "elevation_ft": 6340,
-      "swe_inches": 11.9,
-      "pct_median": 67
+      "swe_inches": 12.1,
+      "pct_median": 68
     },
     {
       "id": "1224",
@@ -5286,23 +5296,13 @@
       "pct_median": null
     },
     {
-      "id": "651",
-      "state": "OR",
-      "name": "Mt Hood Test Site",
-      "lat": 45.32097,
-      "lon": -121.7158,
-      "elevation_ft": 5380,
-      "swe_inches": 16.5,
-      "pct_median": 39
-    },
-    {
       "id": "1269",
       "state": "UT",
       "name": "Mt Pennell",
       "lat": 37.97793,
       "lon": -110.7933,
       "elevation_ft": 9210,
-      "swe_inches": 4.0,
+      "swe_inches": 3.9,
       "pct_median": null
     },
     {
@@ -5312,7 +5312,7 @@
       "lat": 39.31573,
       "lon": -119.89473,
       "elevation_ft": 8810,
-      "swe_inches": 26.7,
+      "swe_inches": 26.5,
       "pct_median": 83
     },
     {
@@ -5322,8 +5322,8 @@
       "lat": 60.95842,
       "lon": -149.08858,
       "elevation_ft": 1500,
-      "swe_inches": 9.0,
-      "pct_median": 38
+      "swe_inches": 8.8,
+      "pct_median": 37
     },
     {
       "id": "1073",
@@ -5332,7 +5332,7 @@
       "lat": 60.55648,
       "lon": -145.72201,
       "elevation_ft": 1450,
-      "swe_inches": 4.5,
+      "swe_inches": 4.4,
       "pct_median": 23
     },
     {
@@ -5353,7 +5353,7 @@
       "lon": -146.15133,
       "elevation_ft": 2750,
       "swe_inches": 7.1,
-      "pct_median": 139
+      "pct_median": 137
     },
     {
       "id": "1259",
@@ -5362,7 +5362,7 @@
       "lat": 48.58526,
       "lon": -119.86624,
       "elevation_ft": 4470,
-      "swe_inches": 2.8,
+      "swe_inches": 2.9,
       "pct_median": null
     },
     {
@@ -5372,8 +5372,8 @@
       "lat": 42.6004,
       "lon": -116.55925,
       "elevation_ft": 5750,
-      "swe_inches": 0.0,
-      "pct_median": 0
+      "swe_inches": 0.1,
+      "pct_median": 2
     },
     {
       "id": "655",
@@ -5382,8 +5382,8 @@
       "lat": 45.25362,
       "lon": -121.73673,
       "elevation_ft": 4070,
-      "swe_inches": 9.7,
-      "pct_median": 46
+      "swe_inches": 8.8,
+      "pct_median": 41
     },
     {
       "id": "656",
@@ -5393,7 +5393,7 @@
       "lon": -112.95927,
       "elevation_ft": 8300,
       "swe_inches": 12.0,
-      "pct_median": 98
+      "pct_median": 96
     },
     {
       "id": "950",
@@ -5403,7 +5403,7 @@
       "lon": -146.21215,
       "elevation_ft": 3020,
       "swe_inches": 9.1,
-      "pct_median": 138
+      "pct_median": 132
     },
     {
       "id": "1053",
@@ -5412,8 +5412,8 @@
       "lat": 48.72263,
       "lon": -116.46312,
       "elevation_ft": 3540,
-      "swe_inches": 2.2,
-      "pct_median": 42
+      "swe_inches": 2.0,
+      "pct_median": 38
     },
     {
       "id": "657",
@@ -5422,8 +5422,8 @@
       "lat": 46.8716,
       "lon": -113.27725,
       "elevation_ft": 6180,
-      "swe_inches": 9.3,
-      "pct_median": 102
+      "swe_inches": 9.2,
+      "pct_median": 101
     },
     {
       "id": "658",
@@ -5432,8 +5432,8 @@
       "lat": 39.29695,
       "lon": -106.60786,
       "elevation_ft": 8710,
-      "swe_inches": 5.0,
-      "pct_median": 76
+      "swe_inches": 4.8,
+      "pct_median": 72
     },
     {
       "id": "1138",
@@ -5442,8 +5442,8 @@
       "lat": 36.17716,
       "lon": -108.94556,
       "elevation_ft": 9050,
-      "swe_inches": 1.6,
-      "pct_median": 22
+      "swe_inches": 1.4,
+      "pct_median": 19
     },
     {
       "id": "903",
@@ -5472,8 +5472,8 @@
       "lat": 43.51185,
       "lon": -121.97982,
       "elevation_ft": 4910,
-      "swe_inches": 4.9,
-      "pct_median": 46
+      "swe_inches": 4.8,
+      "pct_median": 44
     },
     {
       "id": "661",
@@ -5482,7 +5482,7 @@
       "lat": 43.11265,
       "lon": -109.94947,
       "elevation_ft": 8380,
-      "swe_inches": 8.0,
+      "swe_inches": 8.1,
       "pct_median": 93
     },
     {
@@ -5532,8 +5532,8 @@
       "lat": 45.5505,
       "lon": -122.00283,
       "elevation_ft": 3070,
-      "swe_inches": 5.8,
-      "pct_median": 35
+      "swe_inches": 5.7,
+      "pct_median": 32
     },
     {
       "id": "667",
@@ -5543,7 +5543,7 @@
       "lon": -113.75631,
       "elevation_ft": 6110,
       "swe_inches": 30.0,
-      "pct_median": 92
+      "pct_median": 90
     },
     {
       "id": "668",
@@ -5552,8 +5552,8 @@
       "lat": 41.33087,
       "lon": -106.37558,
       "elevation_ft": 10150,
-      "swe_inches": 18.8,
-      "pct_median": 85
+      "swe_inches": 18.9,
+      "pct_median": 86
     },
     {
       "id": "669",
@@ -5562,7 +5562,7 @@
       "lat": 39.07818,
       "lon": -107.14388,
       "elevation_ft": 9190,
-      "swe_inches": 10.2,
+      "swe_inches": 10.3,
       "pct_median": 76
     },
     {
@@ -5592,8 +5592,8 @@
       "lat": 33.89791,
       "lon": -109.15465,
       "elevation_ft": 8550,
-      "swe_inches": 0.4,
-      "pct_median": 400
+      "swe_inches": 0.3,
+      "pct_median": 300
     },
     {
       "id": "1146",
@@ -5602,8 +5602,8 @@
       "lat": 39.3485,
       "lon": -112.192,
       "elevation_ft": 7840,
-      "swe_inches": 2.4,
-      "pct_median": 34
+      "swe_inches": 2.2,
+      "pct_median": 32
     },
     {
       "id": "671",
@@ -5612,8 +5612,8 @@
       "lat": 44.42917,
       "lon": -120.3311,
       "elevation_ft": 5430,
-      "swe_inches": 1.8,
-      "pct_median": 21
+      "swe_inches": 1.6,
+      "pct_median": 18
     },
     {
       "id": "672",
@@ -5623,7 +5623,7 @@
       "lon": -121.44213,
       "elevation_ft": 4010,
       "swe_inches": 15.4,
-      "pct_median": 38
+      "pct_median": 37
     },
     {
       "id": "1008",
@@ -5632,8 +5632,8 @@
       "lat": 46.91348,
       "lon": -110.8536,
       "elevation_ft": 7420,
-      "swe_inches": 8.3,
-      "pct_median": 77
+      "swe_inches": 8.2,
+      "pct_median": 75
     },
     {
       "id": "675",
@@ -5642,8 +5642,8 @@
       "lat": 39.09035,
       "lon": -107.63583,
       "elevation_ft": 9890,
-      "swe_inches": 6.4,
-      "pct_median": 66
+      "swe_inches": 6.3,
+      "pct_median": 63
     },
     {
       "id": "676",
@@ -5653,7 +5653,7 @@
       "lon": -109.00988,
       "elevation_ft": 8990,
       "swe_inches": 1.8,
-      "pct_median": 43
+      "pct_median": 42
     },
     {
       "id": "677",
@@ -5663,7 +5663,7 @@
       "lon": -112.12523,
       "elevation_ft": 6790,
       "swe_inches": 4.4,
-      "pct_median": 48
+      "pct_median": 47
     },
     {
       "id": "784",
@@ -5672,8 +5672,8 @@
       "lat": 39.18986,
       "lon": -120.26576,
       "elevation_ft": 8010,
-      "swe_inches": 21.8,
-      "pct_median": 55
+      "swe_inches": 21.4,
+      "pct_median": 54
     },
     {
       "id": "1170",
@@ -5682,8 +5682,8 @@
       "lat": 36.40869,
       "lon": -105.33038,
       "elevation_ft": 9330,
-      "swe_inches": 0.3,
-      "pct_median": 6
+      "swe_inches": 0.2,
+      "pct_median": 4
     },
     {
       "id": "1148",
@@ -5692,7 +5692,7 @@
       "lat": 37.70463,
       "lon": -112.65037,
       "elevation_ft": 8300,
-      "swe_inches": 1.8,
+      "swe_inches": 1.5,
       "pct_median": null
     },
     {
@@ -5723,7 +5723,7 @@
       "lon": -106.58962,
       "elevation_ft": 9600,
       "swe_inches": 4.7,
-      "pct_median": 59
+      "pct_median": 57
     },
     {
       "id": "681",
@@ -5732,8 +5732,8 @@
       "lat": 48.44488,
       "lon": -120.91551,
       "elevation_ft": 4610,
-      "swe_inches": 24.3,
-      "pct_median": 61
+      "swe_inches": 25.2,
+      "pct_median": 62
     },
     {
       "id": "682",
@@ -5753,7 +5753,7 @@
       "lon": -109.91484,
       "elevation_ft": 9420,
       "swe_inches": 20.9,
-      "pct_median": 123
+      "pct_median": 122
     },
     {
       "id": "684",
@@ -5762,8 +5762,8 @@
       "lat": 40.76184,
       "lon": -111.62917,
       "elevation_ft": 7590,
-      "swe_inches": 6.1,
-      "pct_median": 48
+      "swe_inches": 5.4,
+      "pct_median": 43
     },
     {
       "id": "856",
@@ -5782,8 +5782,8 @@
       "lat": 40.93417,
       "lon": -111.81372,
       "elevation_ft": 7760,
-      "swe_inches": 9.3,
-      "pct_median": 49
+      "swe_inches": 9.0,
+      "pct_median": 47
     },
     {
       "id": "686",
@@ -5792,8 +5792,8 @@
       "lat": 39.92976,
       "lon": -111.63109,
       "elevation_ft": 8050,
-      "swe_inches": 3.1,
-      "pct_median": 27
+      "swe_inches": 2.8,
+      "pct_median": 24
     },
     {
       "id": "687",
@@ -5802,8 +5802,8 @@
       "lat": 45.04148,
       "lon": -121.93252,
       "elevation_ft": 3420,
-      "swe_inches": 3.4,
-      "pct_median": 34
+      "swe_inches": 3.2,
+      "pct_median": 30
     },
     {
       "id": "1299",
@@ -5822,8 +5822,8 @@
       "lat": 46.10242,
       "lon": -121.95555,
       "elevation_ft": 2140,
-      "swe_inches": 1.2,
-      "pct_median": 19
+      "swe_inches": 1.0,
+      "pct_median": 13
     },
     {
       "id": "930",
@@ -5842,8 +5842,8 @@
       "lat": 43.51687,
       "lon": -110.91258,
       "elevation_ft": 8170,
-      "swe_inches": 19.1,
-      "pct_median": 94
+      "swe_inches": 19.0,
+      "pct_median": 91
     },
     {
       "id": "690",
@@ -5862,8 +5862,8 @@
       "lat": 39.01219,
       "lon": -111.58259,
       "elevation_ft": 9010,
-      "swe_inches": 6.1,
-      "pct_median": 54
+      "swe_inches": 5.9,
+      "pct_median": 51
     },
     {
       "id": "1142",
@@ -5872,8 +5872,8 @@
       "lat": 46.49597,
       "lon": -115.7957,
       "elevation_ft": 3080,
-      "swe_inches": 3.3,
-      "pct_median": 36
+      "swe_inches": 3.5,
+      "pct_median": 37
     },
     {
       "id": "692",
@@ -5912,7 +5912,7 @@
       "lat": 38.88185,
       "lon": -112.24915,
       "elevation_ft": 8730,
-      "swe_inches": 6.4,
+      "swe_inches": 6.5,
       "pct_median": 41
     },
     {
@@ -5932,7 +5932,7 @@
       "lat": 46.32318,
       "lon": -121.94219,
       "elevation_ft": 4450,
-      "swe_inches": 16.9,
+      "swe_inches": 16.8,
       "pct_median": null
     },
     {
@@ -5943,7 +5943,7 @@
       "lon": -110.08844,
       "elevation_ft": 8790,
       "swe_inches": 13.0,
-      "pct_median": 98
+      "pct_median": 97
     },
     {
       "id": "697",
@@ -5952,8 +5952,8 @@
       "lat": 38.50576,
       "lon": -119.62624,
       "elevation_ft": 7730,
-      "swe_inches": 10.5,
-      "pct_median": 73
+      "swe_inches": 10.2,
+      "pct_median": 69
     },
     {
       "id": "1244",
@@ -5962,8 +5962,8 @@
       "lat": 40.86293,
       "lon": -115.12067,
       "elevation_ft": 7760,
-      "swe_inches": 5.1,
-      "pct_median": null
+      "swe_inches": 5.0,
+      "pct_median": 44
     },
     {
       "id": "698",
@@ -5972,8 +5972,8 @@
       "lat": 41.87255,
       "lon": -115.24713,
       "elevation_ft": 8370,
-      "swe_inches": 9.5,
-      "pct_median": 59
+      "swe_inches": 9.6,
+      "pct_median": 60
     },
     {
       "id": "932",
@@ -5982,8 +5982,8 @@
       "lat": 48.12632,
       "lon": -115.6234,
       "elevation_ft": 5050,
-      "swe_inches": 16.8,
-      "pct_median": 55
+      "swe_inches": 16.6,
+      "pct_median": 54
     },
     {
       "id": "699",
@@ -5993,7 +5993,7 @@
       "lon": -120.56622,
       "elevation_ft": 3590,
       "swe_inches": 7.9,
-      "pct_median": 54
+      "pct_median": 53
     },
     {
       "id": "700",
@@ -6003,7 +6003,7 @@
       "lon": -110.4696,
       "elevation_ft": 6480,
       "swe_inches": 1.4,
-      "pct_median": 28
+      "pct_median": 27
     },
     {
       "id": "701",
@@ -6012,8 +6012,8 @@
       "lat": 38.48864,
       "lon": -106.33967,
       "elevation_ft": 10790,
-      "swe_inches": 9.5,
-      "pct_median": 78
+      "swe_inches": 9.4,
+      "pct_median": 77
     },
     {
       "id": "2170",
@@ -6033,7 +6033,7 @@
       "lon": -121.51415,
       "elevation_ft": 4480,
       "swe_inches": 13.8,
-      "pct_median": 54
+      "pct_median": 53
     },
     {
       "id": "1300",
@@ -6042,7 +6042,7 @@
       "lat": 41.37428,
       "lon": -111.76673,
       "elevation_ft": 8490,
-      "swe_inches": 14.9,
+      "swe_inches": 14.8,
       "pct_median": null
     },
     {
@@ -6053,7 +6053,7 @@
       "lon": -107.12622,
       "elevation_ft": 9480,
       "swe_inches": 9.1,
-      "pct_median": 107
+      "pct_median": 106
     },
     {
       "id": "704",
@@ -6062,8 +6062,8 @@
       "lat": 43.50513,
       "lon": -115.573,
       "elevation_ft": 4800,
-      "swe_inches": 0.2,
-      "pct_median": 4
+      "swe_inches": 0.3,
+      "pct_median": 6
     },
     {
       "id": "705",
@@ -6083,7 +6083,7 @@
       "lon": -116.24805,
       "elevation_ft": 6240,
       "swe_inches": 13.7,
-      "pct_median": 77
+      "pct_median": 76
     },
     {
       "id": "706",
@@ -6092,8 +6092,8 @@
       "lat": 42.31923,
       "lon": -120.82533,
       "elevation_ft": 5710,
-      "swe_inches": 0.0,
-      "pct_median": 0
+      "swe_inches": 0.1,
+      "pct_median": 7
     },
     {
       "id": "707",
@@ -6103,7 +6103,7 @@
       "lon": -117.08938,
       "elevation_ft": 4710,
       "swe_inches": 6.5,
-      "pct_median": 35
+      "pct_median": 34
     },
     {
       "id": "708",
@@ -6112,8 +6112,8 @@
       "lat": 35.92195,
       "lon": -106.39179,
       "elevation_ft": 9500,
-      "swe_inches": 0.3,
-      "pct_median": 4
+      "swe_inches": 0.2,
+      "pct_median": 3
     },
     {
       "id": "709",
@@ -6122,7 +6122,7 @@
       "lat": 40.36735,
       "lon": -106.74118,
       "elevation_ft": 9390,
-      "swe_inches": 12.4,
+      "swe_inches": 12.5,
       "pct_median": 64
     },
     {
@@ -6132,7 +6132,7 @@
       "lat": 47.85583,
       "lon": -117.03667,
       "elevation_ft": 4210,
-      "swe_inches": 6.3,
+      "swe_inches": 6.4,
       "pct_median": 33
     },
     {
@@ -6152,8 +6152,8 @@
       "lat": 36.2493,
       "lon": -115.62972,
       "elevation_ft": 7840,
-      "swe_inches": 3.4,
-      "pct_median": 68
+      "swe_inches": 2.6,
+      "pct_median": 57
     },
     {
       "id": "711",
@@ -6162,8 +6162,8 @@
       "lat": 48.51865,
       "lon": -120.7358,
       "elevation_ft": 4880,
-      "swe_inches": 28.5,
-      "pct_median": 94
+      "swe_inches": 28.6,
+      "pct_median": 93
     },
     {
       "id": "1324",
@@ -6172,7 +6172,7 @@
       "lat": 37.93571,
       "lon": -106.98192,
       "elevation_ft": 11680,
-      "swe_inches": 6.6,
+      "swe_inches": 6.5,
       "pct_median": null
     },
     {
@@ -6182,8 +6182,8 @@
       "lat": 40.70794,
       "lon": -106.00727,
       "elevation_ft": 9100,
-      "swe_inches": 5.5,
-      "pct_median": 61
+      "swe_inches": 5.6,
+      "pct_median": 62
     },
     {
       "id": "712",
@@ -6193,7 +6193,7 @@
       "lon": -121.70428,
       "elevation_ft": 4410,
       "swe_inches": 16.1,
-      "pct_median": 44
+      "pct_median": 41
     },
     {
       "id": "713",
@@ -6202,8 +6202,8 @@
       "lat": 37.89168,
       "lon": -107.71389,
       "elevation_ft": 11060,
-      "swe_inches": 10.1,
-      "pct_median": 59
+      "swe_inches": 10.0,
+      "pct_median": 58
     },
     {
       "id": "714",
@@ -6213,7 +6213,7 @@
       "lon": -111.27221,
       "elevation_ft": 8990,
       "swe_inches": 6.1,
-      "pct_median": 57
+      "pct_median": 56
     },
     {
       "id": "715",
@@ -6222,8 +6222,8 @@
       "lat": 36.69935,
       "lon": -105.34145,
       "elevation_ft": 9840,
-      "swe_inches": 0.2,
-      "pct_median": 3
+      "swe_inches": 0.1,
+      "pct_median": 1
     },
     {
       "id": "1225",
@@ -6232,7 +6232,7 @@
       "lat": 40.67505,
       "lon": -111.21765,
       "elevation_ft": 8540,
-      "swe_inches": 8.8,
+      "swe_inches": 8.3,
       "pct_median": null
     },
     {
@@ -6242,7 +6242,7 @@
       "lat": 39.49667,
       "lon": -111.72508,
       "elevation_ft": 7190,
-      "swe_inches": 1.9,
+      "swe_inches": 1.7,
       "pct_median": null
     },
     {
@@ -6252,8 +6252,8 @@
       "lat": 42.57089,
       "lon": -106.08969,
       "elevation_ft": 8410,
-      "swe_inches": 4.2,
-      "pct_median": 43
+      "swe_inches": 4.3,
+      "pct_median": 42
     },
     {
       "id": "911",
@@ -6262,8 +6262,8 @@
       "lat": 47.30218,
       "lon": -121.60475,
       "elevation_ft": 3810,
-      "swe_inches": 8.0,
-      "pct_median": 28
+      "swe_inches": 8.1,
+      "pct_median": 27
     },
     {
       "id": "2029",
@@ -6302,8 +6302,8 @@
       "lat": 40.10844,
       "lon": -107.29383,
       "elevation_ft": 10340,
-      "swe_inches": 11.8,
-      "pct_median": 58
+      "swe_inches": 11.9,
+      "pct_median": 57
     },
     {
       "id": "718",
@@ -6313,7 +6313,7 @@
       "lon": -106.04675,
       "elevation_ft": 9710,
       "swe_inches": 6.8,
-      "pct_median": 56
+      "pct_median": 55
     },
     {
       "id": "719",
@@ -6322,8 +6322,8 @@
       "lat": 43.90098,
       "lon": -122.03063,
       "elevation_ft": 4960,
-      "swe_inches": 5.9,
-      "pct_median": 26
+      "swe_inches": 5.6,
+      "pct_median": 24
     },
     {
       "id": "720",
@@ -6332,8 +6332,8 @@
       "lat": 40.54875,
       "lon": -110.69292,
       "elevation_ft": 7880,
-      "swe_inches": 3.8,
-      "pct_median": 58
+      "swe_inches": 3.6,
+      "pct_median": 55
     },
     {
       "id": "721",
@@ -6362,7 +6362,7 @@
       "lat": 38.67101,
       "lon": -112.3305,
       "elevation_ft": 8600,
-      "swe_inches": 1.9,
+      "swe_inches": 1.6,
       "pct_median": null
     },
     {
@@ -6382,8 +6382,8 @@
       "lat": 48.17478,
       "lon": -109.64728,
       "elevation_ft": 4730,
-      "swe_inches": 2.2,
-      "pct_median": 50
+      "swe_inches": 2.1,
+      "pct_median": 48
     },
     {
       "id": "939",
@@ -6393,7 +6393,7 @@
       "lon": -106.08063,
       "elevation_ft": 10420,
       "swe_inches": 1.3,
-      "pct_median": 32
+      "pct_median": 31
     },
     {
       "id": "724",
@@ -6402,8 +6402,8 @@
       "lat": 38.99927,
       "lon": -120.13139,
       "elevation_ft": 7560,
-      "swe_inches": 12.1,
-      "pct_median": 60
+      "swe_inches": 11.6,
+      "pct_median": 57
     },
     {
       "id": "725",
@@ -6413,7 +6413,7 @@
       "lon": -110.43367,
       "elevation_ft": 8090,
       "swe_inches": 6.2,
-      "pct_median": 55
+      "pct_median": 54
     },
     {
       "id": "929",
@@ -6422,8 +6422,8 @@
       "lat": 45.87395,
       "lon": -110.92783,
       "elevation_ft": 6610,
-      "swe_inches": 5.9,
-      "pct_median": 52
+      "swe_inches": 5.7,
+      "pct_median": 47
     },
     {
       "id": "726",
@@ -6432,8 +6432,8 @@
       "lat": 45.54475,
       "lon": -123.37331,
       "elevation_ft": 3090,
-      "swe_inches": 3.5,
-      "pct_median": 175
+      "swe_inches": 3.3,
+      "pct_median": 138
     },
     {
       "id": "727",
@@ -6442,7 +6442,7 @@
       "lat": 45.69259,
       "lon": -113.96828,
       "elevation_ft": 7890,
-      "swe_inches": 17.3,
+      "swe_inches": 17.4,
       "pct_median": 88
     },
     {
@@ -6452,8 +6452,8 @@
       "lat": 41.40107,
       "lon": -107.2574,
       "elevation_ft": 7830,
-      "swe_inches": 5.7,
-      "pct_median": 50
+      "swe_inches": 5.2,
+      "pct_median": 46
     },
     {
       "id": "1100",
@@ -6462,8 +6462,8 @@
       "lat": 38.69985,
       "lon": -106.36805,
       "elevation_ft": 10420,
-      "swe_inches": 3.8,
-      "pct_median": 44
+      "swe_inches": 3.9,
+      "pct_median": 45
     },
     {
       "id": "728",
@@ -6482,8 +6482,8 @@
       "lat": 43.61193,
       "lon": -122.11758,
       "elevation_ft": 4220,
-      "swe_inches": 1.6,
-      "pct_median": 9
+      "swe_inches": 1.4,
+      "pct_median": 8
     },
     {
       "id": "730",
@@ -6493,7 +6493,7 @@
       "lon": -110.9099,
       "elevation_ft": 7630,
       "swe_inches": 9.7,
-      "pct_median": 91
+      "pct_median": 90
     },
     {
       "id": "1172",
@@ -6522,8 +6522,8 @@
       "lat": 41.11179,
       "lon": -107.17043,
       "elevation_ft": 8150,
-      "swe_inches": 8.2,
-      "pct_median": 80
+      "swe_inches": 8.1,
+      "pct_median": 79
     },
     {
       "id": "922",
@@ -6532,8 +6532,8 @@
       "lat": 35.77154,
       "lon": -105.78487,
       "elevation_ft": 11480,
-      "swe_inches": 6.8,
-      "pct_median": 62
+      "swe_inches": 6.7,
+      "pct_median": 60
     },
     {
       "id": "1280",
@@ -6542,7 +6542,7 @@
       "lat": 39.92076,
       "lon": -111.71802,
       "elevation_ft": 7830,
-      "swe_inches": 6.3,
+      "swe_inches": 6.4,
       "pct_median": null
     },
     {
@@ -6563,7 +6563,7 @@
       "lon": -106.37085,
       "elevation_ft": 11490,
       "swe_inches": 5.7,
-      "pct_median": 63
+      "pct_median": 62
     },
     {
       "id": "734",
@@ -6576,6 +6576,16 @@
       "pct_median": 36
     },
     {
+      "id": "1231",
+      "state": "WA",
+      "name": "Satus Pass",
+      "lat": 45.98797,
+      "lon": -120.67734,
+      "elevation_ft": 3960,
+      "swe_inches": 4.3,
+      "pct_median": 49
+    },
+    {
       "id": "735",
       "state": "ID",
       "name": "Savage Pass",
@@ -6583,7 +6593,7 @@
       "lon": -114.63333,
       "elevation_ft": 6170,
       "swe_inches": 16.8,
-      "pct_median": 83
+      "pct_median": 82
     },
     {
       "id": "1068",
@@ -6602,7 +6612,7 @@
       "lat": 40.13632,
       "lon": -105.58486,
       "elevation_ft": 9640,
-      "swe_inches": 13.8,
+      "swe_inches": 13.7,
       "pct_median": null
     },
     {
@@ -6612,8 +6622,8 @@
       "lat": 45.00107,
       "lon": -117.16522,
       "elevation_ft": 5400,
-      "swe_inches": 13.7,
-      "pct_median": 58
+      "swe_inches": 13.6,
+      "pct_median": 56
     },
     {
       "id": "737",
@@ -6622,8 +6632,8 @@
       "lat": 39.01467,
       "lon": -107.04933,
       "elevation_ft": 10640,
-      "swe_inches": 17.3,
-      "pct_median": 73
+      "swe_inches": 17.8,
+      "pct_median": 74
     },
     {
       "id": "915",
@@ -6633,7 +6643,7 @@
       "lon": -113.83732,
       "elevation_ft": 8620,
       "swe_inches": 7.3,
-      "pct_median": 95
+      "pct_median": 92
     },
     {
       "id": "738",
@@ -6642,8 +6652,8 @@
       "lat": 48.37428,
       "lon": -116.63917,
       "elevation_ft": 6090,
-      "swe_inches": 27.2,
-      "pct_median": 70
+      "swe_inches": 27.1,
+      "pct_median": 69
     },
     {
       "id": "739",
@@ -6652,8 +6662,8 @@
       "lat": 37.64562,
       "lon": -108.00833,
       "elevation_ft": 9160,
-      "swe_inches": 6.7,
-      "pct_median": 70
+      "swe_inches": 6.6,
+      "pct_median": 66
     },
     {
       "id": "740",
@@ -6662,8 +6672,8 @@
       "lat": 45.18848,
       "lon": -115.97152,
       "elevation_ft": 6530,
-      "swe_inches": 21.7,
-      "pct_median": 86
+      "swe_inches": 21.6,
+      "pct_median": 85
     },
     {
       "id": "741",
@@ -6672,8 +6682,8 @@
       "lat": 42.52463,
       "lon": -111.95632,
       "elevation_ft": 7800,
-      "swe_inches": 10.6,
-      "pct_median": 75
+      "swe_inches": 10.5,
+      "pct_median": 72
     },
     {
       "id": "742",
@@ -6682,7 +6692,7 @@
       "lat": 39.31042,
       "lon": -111.43297,
       "elevation_ft": 9900,
-      "swe_inches": 5.1,
+      "swe_inches": 5.2,
       "pct_median": 52
     },
     {
@@ -6692,7 +6702,7 @@
       "lat": 45.52688,
       "lon": -123.29857,
       "elevation_ft": 2070,
-      "swe_inches": 0.7,
+      "swe_inches": 0.4,
       "pct_median": null
     },
     {
@@ -6702,8 +6712,8 @@
       "lat": 36.00152,
       "lon": -106.83408,
       "elevation_ft": 8560,
-      "swe_inches": 0.5,
-      "pct_median": 7
+      "swe_inches": 0.1,
+      "pct_median": 1
     },
     {
       "id": "1043",
@@ -6722,7 +6732,7 @@
       "lat": 42.69825,
       "lon": -122.14165,
       "elevation_ft": 5690,
-      "swe_inches": 8.1,
+      "swe_inches": 8.0,
       "pct_median": 33
     },
     {
@@ -6732,8 +6742,8 @@
       "lat": 41.73732,
       "lon": -115.47215,
       "elevation_ft": 7360,
-      "swe_inches": 4.1,
-      "pct_median": 47
+      "swe_inches": 3.8,
+      "pct_median": 43
     },
     {
       "id": "747",
@@ -6742,8 +6752,8 @@
       "lat": 46.56603,
       "lon": -115.74216,
       "elevation_ft": 4590,
-      "swe_inches": 9.7,
-      "pct_median": 45
+      "swe_inches": 9.6,
+      "pct_median": 44
     },
     {
       "id": "1060",
@@ -6752,8 +6762,8 @@
       "lat": 37.50356,
       "lon": -108.11405,
       "elevation_ft": 10730,
-      "swe_inches": 9.3,
-      "pct_median": 64
+      "swe_inches": 8.9,
+      "pct_median": 59
     },
     {
       "id": "748",
@@ -6763,7 +6773,7 @@
       "lon": -122.25393,
       "elevation_ft": 3990,
       "swe_inches": 14.0,
-      "pct_median": 48
+      "pct_median": 47
     },
     {
       "id": "749",
@@ -6772,8 +6782,8 @@
       "lat": 43.2103,
       "lon": -111.68792,
       "elevation_ft": 6630,
-      "swe_inches": 5.7,
-      "pct_median": 53
+      "swe_inches": 5.5,
+      "pct_median": 50
     },
     {
       "id": "750",
@@ -6793,7 +6803,7 @@
       "lon": -107.42947,
       "elevation_ft": 9570,
       "swe_inches": 11.1,
-      "pct_median": 95
+      "pct_median": 94
     },
     {
       "id": "752",
@@ -6812,8 +6822,8 @@
       "lat": 44.97572,
       "lon": -111.95215,
       "elevation_ft": 6990,
-      "swe_inches": 2.7,
-      "pct_median": 59
+      "swe_inches": 2.6,
+      "pct_median": 57
     },
     {
       "id": "754",
@@ -6823,7 +6833,7 @@
       "lon": -110.95758,
       "elevation_ft": 8060,
       "swe_inches": 14.8,
-      "pct_median": 94
+      "pct_median": 93
     },
     {
       "id": "1169",
@@ -6832,8 +6842,8 @@
       "lat": 36.78765,
       "lon": -105.2392,
       "elevation_ft": 10070,
-      "swe_inches": 0.2,
-      "pct_median": 4
+      "swe_inches": 0.0,
+      "pct_median": 0
     },
     {
       "id": "1034",
@@ -6862,8 +6872,8 @@
       "lat": 42.95615,
       "lon": -121.18123,
       "elevation_ft": 5750,
-      "swe_inches": 1.0,
-      "pct_median": 11
+      "swe_inches": 0.9,
+      "pct_median": 10
     },
     {
       "id": "757",
@@ -6872,8 +6882,8 @@
       "lat": 33.3696,
       "lon": -108.70711,
       "elevation_ft": 9080,
-      "swe_inches": 3.7,
-      "pct_median": 49
+      "swe_inches": 3.2,
+      "pct_median": 44
     },
     {
       "id": "759",
@@ -6882,18 +6892,8 @@
       "lat": 42.75333,
       "lon": -118.68785,
       "elevation_ft": 7000,
-      "swe_inches": 3.0,
-      "pct_median": 24
-    },
-    {
-      "id": "760",
-      "state": "MT",
-      "name": "Skalkaho Summit",
-      "lat": 46.24212,
-      "lon": -113.7725,
-      "elevation_ft": 7260,
-      "swe_inches": 16.6,
-      "pct_median": 95
+      "swe_inches": 2.9,
+      "pct_median": 23
     },
     {
       "id": "1257",
@@ -6912,8 +6912,8 @@
       "lat": 47.68433,
       "lon": -121.61007,
       "elevation_ft": 3320,
-      "swe_inches": 17.9,
-      "pct_median": 59
+      "swe_inches": 17.7,
+      "pct_median": 55
     },
     {
       "id": "1286",
@@ -6922,7 +6922,7 @@
       "lat": 45.36526,
       "lon": -113.71834,
       "elevation_ft": 8600,
-      "swe_inches": 23.8,
+      "swe_inches": 23.7,
       "pct_median": null
     },
     {
@@ -6942,8 +6942,8 @@
       "lat": 42.56248,
       "lon": -111.29797,
       "elevation_ft": 7240,
-      "swe_inches": 12.5,
-      "pct_median": 102
+      "swe_inches": 12.4,
+      "pct_median": 100
     },
     {
       "id": "762",
@@ -6952,8 +6952,8 @@
       "lat": 37.99076,
       "lon": -107.20392,
       "elevation_ft": 11560,
-      "swe_inches": 6.4,
-      "pct_median": 62
+      "swe_inches": 6.3,
+      "pct_median": 59
     },
     {
       "id": "926",
@@ -6963,7 +6963,7 @@
       "lon": -113.83402,
       "elevation_ft": 9540,
       "swe_inches": 19.5,
-      "pct_median": 157
+      "pct_median": 155
     },
     {
       "id": "763",
@@ -6972,8 +6972,8 @@
       "lat": 40.78931,
       "lon": -111.09192,
       "elevation_ft": 7640,
-      "swe_inches": 4.6,
-      "pct_median": 40
+      "swe_inches": 4.3,
+      "pct_median": 38
     },
     {
       "id": "1167",
@@ -6982,7 +6982,7 @@
       "lat": 44.30325,
       "lon": -122.04053,
       "elevation_ft": 3270,
-      "swe_inches": 0.2,
+      "swe_inches": 0.4,
       "pct_median": null
     },
     {
@@ -6993,7 +6993,7 @@
       "lon": -110.66917,
       "elevation_ft": 6900,
       "swe_inches": 11.0,
-      "pct_median": 77
+      "pct_median": 75
     },
     {
       "id": "765",
@@ -7002,8 +7002,8 @@
       "lat": 42.4949,
       "lon": -110.53203,
       "elevation_ft": 8080,
-      "swe_inches": 7.9,
-      "pct_median": 75
+      "swe_inches": 7.8,
+      "pct_median": 72
     },
     {
       "id": "767",
@@ -7012,8 +7012,8 @@
       "lat": 43.94885,
       "lon": -119.54013,
       "elevation_ft": 6230,
-      "swe_inches": 5.4,
-      "pct_median": 68
+      "swe_inches": 5.3,
+      "pct_median": 65
     },
     {
       "id": "766",
@@ -7022,7 +7022,7 @@
       "lat": 40.56914,
       "lon": -111.65852,
       "elevation_ft": 9170,
-      "swe_inches": 22.3,
+      "swe_inches": 22.4,
       "pct_median": 82
     },
     {
@@ -7033,7 +7033,7 @@
       "lon": -111.65084,
       "elevation_ft": 9720,
       "swe_inches": 13.8,
-      "pct_median": 94
+      "pct_median": 93
     },
     {
       "id": "1132",
@@ -7042,8 +7042,8 @@
       "lat": 44.34847,
       "lon": -107.0136,
       "elevation_ft": 8680,
-      "swe_inches": 1.8,
-      "pct_median": 35
+      "swe_inches": 1.7,
+      "pct_median": 33
     },
     {
       "id": "769",
@@ -7052,8 +7052,8 @@
       "lat": 43.48407,
       "lon": -114.82692,
       "elevation_ft": 5780,
-      "swe_inches": 0.3,
-      "pct_median": 3
+      "swe_inches": 0.1,
+      "pct_median": 1
     },
     {
       "id": "770",
@@ -7062,8 +7062,8 @@
       "lat": 42.95275,
       "lon": -111.35933,
       "elevation_ft": 6830,
-      "swe_inches": 6.5,
-      "pct_median": 60
+      "swe_inches": 6.4,
+      "pct_median": 59
     },
     {
       "id": "771",
@@ -7082,8 +7082,8 @@
       "lat": 46.23713,
       "lon": -117.39435,
       "elevation_ft": 3960,
-      "swe_inches": 0.9,
-      "pct_median": 150
+      "swe_inches": 0.8,
+      "pct_median": 200
     },
     {
       "id": "772",
@@ -7103,7 +7103,7 @@
       "lon": -105.53671,
       "elevation_ft": 10790,
       "swe_inches": 7.8,
-      "pct_median": 57
+      "pct_median": 56
     },
     {
       "id": "925",
@@ -7112,8 +7112,8 @@
       "lat": 45.44575,
       "lon": -122.03125,
       "elevation_ft": 2690,
-      "swe_inches": 0.6,
-      "pct_median": 19
+      "swe_inches": 0.5,
+      "pct_median": 13
     },
     {
       "id": "774",
@@ -7142,8 +7142,8 @@
       "lat": 46.1795,
       "lon": -121.92661,
       "elevation_ft": 3400,
-      "swe_inches": 11.5,
-      "pct_median": 52
+      "swe_inches": 11.4,
+      "pct_median": 48
     },
     {
       "id": "777",
@@ -7152,8 +7152,8 @@
       "lat": 46.26113,
       "lon": -122.1772,
       "elevation_ft": 3520,
-      "swe_inches": 3.6,
-      "pct_median": 69
+      "swe_inches": 3.5,
+      "pct_median": 51
     },
     {
       "id": "1117",
@@ -7162,8 +7162,8 @@
       "lat": 40.83868,
       "lon": -110.00527,
       "elevation_ft": 10240,
-      "swe_inches": 9.0,
-      "pct_median": 97
+      "swe_inches": 8.9,
+      "pct_median": 96
     },
     {
       "id": "778",
@@ -7182,7 +7182,7 @@
       "lat": 42.52516,
       "lon": -110.66148,
       "elevation_ft": 9020,
-      "swe_inches": 18.8,
+      "swe_inches": 18.9,
       "pct_median": 97
     },
     {
@@ -7192,8 +7192,8 @@
       "lat": 37.69883,
       "lon": -107.77841,
       "elevation_ft": 10660,
-      "swe_inches": 11.3,
-      "pct_median": 59
+      "swe_inches": 11.2,
+      "pct_median": 58
     },
     {
       "id": "781",
@@ -7203,17 +7203,7 @@
       "lon": -110.62165,
       "elevation_ft": 8080,
       "swe_inches": 15.5,
-      "pct_median": 90
-    },
-    {
-      "id": "786",
-      "state": "WY",
-      "name": "St. Lawrence Alt",
-      "lat": 43.03312,
-      "lon": -109.17021,
-      "elevation_ft": 8610,
-      "swe_inches": 2.6,
-      "pct_median": null
+      "pct_median": 89
     },
     {
       "id": "787",
@@ -7223,7 +7213,7 @@
       "lon": -114.86298,
       "elevation_ft": 6040,
       "swe_inches": 28.7,
-      "pct_median": 107
+      "pct_median": 106
     },
     {
       "id": "788",
@@ -7232,7 +7222,7 @@
       "lat": 47.27427,
       "lon": -121.34162,
       "elevation_ft": 3850,
-      "swe_inches": 9.3,
+      "swe_inches": 9.4,
       "pct_median": 31
     },
     {
@@ -7272,8 +7262,8 @@
       "lat": 47.74607,
       "lon": -121.09288,
       "elevation_ft": 3940,
-      "swe_inches": 17.8,
-      "pct_median": 56
+      "swe_inches": 17.4,
+      "pct_median": 54
     },
     {
       "id": "792",
@@ -7292,7 +7282,7 @@
       "lat": 40.22532,
       "lon": -105.9198,
       "elevation_ft": 8760,
-      "swe_inches": 3.7,
+      "swe_inches": 3.3,
       "pct_median": null
     },
     {
@@ -7302,8 +7292,8 @@
       "lat": 42.12587,
       "lon": -120.8361,
       "elevation_ft": 5760,
-      "swe_inches": 0.2,
-      "pct_median": 5
+      "swe_inches": 0.3,
+      "pct_median": 8
     },
     {
       "id": "795",
@@ -7312,8 +7302,8 @@
       "lat": 40.16483,
       "lon": -111.20665,
       "elevation_ft": 8100,
-      "swe_inches": 5.9,
-      "pct_median": 49
+      "swe_inches": 5.7,
+      "pct_median": 47
     },
     {
       "id": "1009",
@@ -7323,7 +7313,7 @@
       "lon": -110.90198,
       "elevation_ft": 6550,
       "swe_inches": 6.8,
-      "pct_median": 73
+      "pct_median": 72
     },
     {
       "id": "1311",
@@ -7342,8 +7332,8 @@
       "lat": 46.99521,
       "lon": -113.92667,
       "elevation_ft": 7270,
-      "swe_inches": 29.6,
-      "pct_median": 110
+      "swe_inches": 29.5,
+      "pct_median": 109
     },
     {
       "id": "797",
@@ -7352,8 +7342,8 @@
       "lat": 37.47647,
       "lon": -107.63348,
       "elevation_ft": 11230,
-      "swe_inches": 8.5,
-      "pct_median": 63
+      "swe_inches": 8.4,
+      "pct_median": 61
     },
     {
       "id": "798",
@@ -7363,7 +7353,7 @@
       "lon": -107.40035,
       "elevation_ft": 8840,
       "swe_inches": 5.9,
-      "pct_median": 63
+      "pct_median": 62
     },
     {
       "id": "800",
@@ -7372,7 +7362,7 @@
       "lat": 42.6957,
       "lon": -120.80158,
       "elevation_ft": 7080,
-      "swe_inches": 4.1,
+      "swe_inches": 4.0,
       "pct_median": null
     },
     {
@@ -7392,8 +7382,8 @@
       "lat": 43.44907,
       "lon": -122.13808,
       "elevation_ft": 5610,
-      "swe_inches": 12.3,
-      "pct_median": 43
+      "swe_inches": 12.1,
+      "pct_median": 42
     },
     {
       "id": "1194",
@@ -7402,7 +7392,7 @@
       "lat": 41.48953,
       "lon": -118.99663,
       "elevation_ft": 7600,
-      "swe_inches": 3.8,
+      "swe_inches": 3.7,
       "pct_median": null
     },
     {
@@ -7412,8 +7402,8 @@
       "lat": 38.39747,
       "lon": -119.53522,
       "elevation_ft": 9360,
-      "swe_inches": 13.8,
-      "pct_median": 76
+      "swe_inches": 13.5,
+      "pct_median": 75
     },
     {
       "id": "802",
@@ -7422,8 +7412,8 @@
       "lat": 39.71803,
       "lon": -106.1577,
       "elevation_ft": 9350,
-      "swe_inches": 5.6,
-      "pct_median": 65
+      "swe_inches": 5.4,
+      "pct_median": 61
     },
     {
       "id": "1078",
@@ -7432,8 +7422,8 @@
       "lat": 42.78637,
       "lon": -121.97715,
       "elevation_ft": 5400,
-      "swe_inches": 6.5,
-      "pct_median": 42
+      "swe_inches": 6.3,
+      "pct_median": 39
     },
     {
       "id": "1249",
@@ -7442,7 +7432,7 @@
       "lat": 38.048,
       "lon": -111.33981,
       "elevation_ft": 10010,
-      "swe_inches": 11.6,
+      "swe_inches": 11.7,
       "pct_median": null
     },
     {
@@ -7463,7 +7453,7 @@
       "lon": -121.76345,
       "elevation_ft": 4280,
       "swe_inches": 19.0,
-      "pct_median": 50
+      "pct_median": 48
     },
     {
       "id": "967",
@@ -7482,7 +7472,7 @@
       "lat": 37.59711,
       "lon": -112.92949,
       "elevation_ft": 8050,
-      "swe_inches": 4.7,
+      "swe_inches": 4.6,
       "pct_median": null
     },
     {
@@ -7492,8 +7482,8 @@
       "lat": 48.57142,
       "lon": -120.78267,
       "elevation_ft": 3930,
-      "swe_inches": 12.1,
-      "pct_median": 76
+      "swe_inches": 11.4,
+      "pct_median": 72
     },
     {
       "id": "1077",
@@ -7502,8 +7492,8 @@
       "lat": 42.41323,
       "lon": -121.68002,
       "elevation_ft": 6830,
-      "swe_inches": 7.9,
-      "pct_median": 46
+      "swe_inches": 7.6,
+      "pct_median": 44
     },
     {
       "id": "805",
@@ -7513,7 +7503,7 @@
       "lon": -113.96887,
       "elevation_ft": 7640,
       "swe_inches": 10.9,
-      "pct_median": 99
+      "pct_median": 98
     },
     {
       "id": "1012",
@@ -7522,8 +7512,8 @@
       "lat": 46.1638,
       "lon": -122.18402,
       "elevation_ft": 4440,
-      "swe_inches": 26.4,
-      "pct_median": 54
+      "swe_inches": 26.5,
+      "pct_median": 52
     },
     {
       "id": "806",
@@ -7542,8 +7532,8 @@
       "lat": 44.47825,
       "lon": -110.03808,
       "elevation_ft": 7140,
-      "swe_inches": 8.6,
-      "pct_median": 84
+      "swe_inches": 8.8,
+      "pct_median": 86
     },
     {
       "id": "809",
@@ -7552,8 +7542,8 @@
       "lat": 39.17162,
       "lon": -120.15362,
       "elevation_ft": 6760,
-      "swe_inches": 3.8,
-      "pct_median": 34
+      "swe_inches": 3.2,
+      "pct_median": 30
     },
     {
       "id": "1247",
@@ -7562,7 +7552,7 @@
       "lat": 39.74104,
       "lon": -113.98262,
       "elevation_ft": 9110,
-      "swe_inches": 4.1,
+      "swe_inches": 4.2,
       "pct_median": null
     },
     {
@@ -7573,7 +7563,7 @@
       "lon": -105.45617,
       "elevation_ft": 11020,
       "swe_inches": 6.9,
-      "pct_median": 50
+      "pct_median": 48
     },
     {
       "id": "1307",
@@ -7582,7 +7572,7 @@
       "lat": 36.54099,
       "lon": -105.35944,
       "elevation_ft": 10990,
-      "swe_inches": 5.9,
+      "swe_inches": 5.8,
       "pct_median": null
     },
     {
@@ -7612,8 +7602,8 @@
       "lat": 45.07707,
       "lon": -117.55067,
       "elevation_ft": 5730,
-      "swe_inches": 9.2,
-      "pct_median": 53
+      "swe_inches": 9.1,
+      "pct_median": 52
     },
     {
       "id": "1266",
@@ -7643,7 +7633,7 @@
       "lon": -111.71,
       "elevation_ft": 7950,
       "swe_inches": 8.7,
-      "pct_median": 85
+      "pct_median": 84
     },
     {
       "id": "951",
@@ -7662,8 +7652,8 @@
       "lat": 40.6235,
       "lon": -111.53322,
       "elevation_ft": 9260,
-      "swe_inches": 12.9,
-      "pct_median": 74
+      "swe_inches": 13.0,
+      "pct_median": 75
     },
     {
       "id": "1226",
@@ -7672,7 +7662,7 @@
       "lat": 39.23803,
       "lon": -111.51998,
       "elevation_ft": 8790,
-      "swe_inches": 5.1,
+      "swe_inches": 5.0,
       "pct_median": null
     },
     {
@@ -7682,8 +7672,8 @@
       "lat": 44.14425,
       "lon": -121.64095,
       "elevation_ft": 5680,
-      "swe_inches": 1.3,
-      "pct_median": 10
+      "swe_inches": 1.2,
+      "pct_median": 9
     },
     {
       "id": "816",
@@ -7693,7 +7683,7 @@
       "lon": -110.57717,
       "elevation_ft": 7970,
       "swe_inches": 15.5,
-      "pct_median": 123
+      "pct_median": 120
     },
     {
       "id": "817",
@@ -7702,8 +7692,8 @@
       "lat": 48.52753,
       "lon": -120.9895,
       "elevation_ft": 4310,
-      "swe_inches": 21.9,
-      "pct_median": 91
+      "swe_inches": 22.5,
+      "pct_median": 92
     },
     {
       "id": "818",
@@ -7716,6 +7706,16 @@
       "pct_median": 0
     },
     {
+      "id": "819",
+      "state": "WY",
+      "name": "Timber Creek",
+      "lat": 44.0274,
+      "lon": -109.17879,
+      "elevation_ft": 7910,
+      "swe_inches": 0.0,
+      "pct_median": 0
+    },
+    {
       "id": "1097",
       "state": "UT",
       "name": "Timberline",
@@ -7723,7 +7723,7 @@
       "lon": -110.43395,
       "elevation_ft": 8720,
       "swe_inches": 4.2,
-      "pct_median": 51
+      "pct_median": 50
     },
     {
       "id": "820",
@@ -7732,8 +7732,8 @@
       "lat": 40.42817,
       "lon": -111.61633,
       "elevation_ft": 8180,
-      "swe_inches": 13.8,
-      "pct_median": 90
+      "swe_inches": 13.9,
+      "pct_median": 89
     },
     {
       "id": "899",
@@ -7743,7 +7743,7 @@
       "lon": -121.46975,
       "elevation_ft": 3000,
       "swe_inches": 7.0,
-      "pct_median": 29
+      "pct_median": 30
     },
     {
       "id": "821",
@@ -7752,8 +7752,8 @@
       "lat": 44.65567,
       "lon": -118.42617,
       "elevation_ft": 5150,
-      "swe_inches": 4.3,
-      "pct_median": 42
+      "swe_inches": 4.2,
+      "pct_median": 40
     },
     {
       "id": "893",
@@ -7762,8 +7762,8 @@
       "lat": 46.34937,
       "lon": -111.85308,
       "elevation_ft": 6880,
-      "swe_inches": 5.0,
-      "pct_median": 69
+      "swe_inches": 4.8,
+      "pct_median": 68
     },
     {
       "id": "1136",
@@ -7772,8 +7772,8 @@
       "lat": 41.3187,
       "lon": -116.3408,
       "elevation_ft": 7700,
-      "swe_inches": 7.1,
-      "pct_median": 53
+      "swe_inches": 6.8,
+      "pct_median": 50
     },
     {
       "id": "822",
@@ -7783,7 +7783,7 @@
       "lon": -110.0578,
       "elevation_ft": 9590,
       "swe_inches": 19.8,
-      "pct_median": 107
+      "pct_median": 105
     },
     {
       "id": "2080",
@@ -7792,7 +7792,7 @@
       "lat": 63.32529,
       "lon": -143.03834,
       "elevation_ft": 1640,
-      "swe_inches": 4.1,
+      "swe_inches": 4.2,
       "pct_median": null
     },
     {
@@ -7802,8 +7802,8 @@
       "lat": 43.22718,
       "lon": -122.42537,
       "elevation_ft": 3240,
-      "swe_inches": 0.0,
-      "pct_median": 0
+      "swe_inches": 0.3,
+      "pct_median": 11
     },
     {
       "id": "1089",
@@ -7822,8 +7822,8 @@
       "lat": 36.47498,
       "lon": -105.19534,
       "elevation_ft": 10210,
-      "swe_inches": 1.7,
-      "pct_median": 24
+      "swe_inches": 1.4,
+      "pct_median": 20
     },
     {
       "id": "823",
@@ -7832,8 +7832,8 @@
       "lat": 41.89833,
       "lon": -111.62957,
       "elevation_ft": 8450,
-      "swe_inches": 25.5,
-      "pct_median": 89
+      "swe_inches": 25.4,
+      "pct_median": 88
     },
     {
       "id": "1113",
@@ -7842,8 +7842,8 @@
       "lat": 41.88573,
       "lon": -111.56918,
       "elevation_ft": 6320,
-      "swe_inches": 3.4,
-      "pct_median": 32
+      "swe_inches": 3.2,
+      "pct_median": 29
     },
     {
       "id": "824",
@@ -7852,7 +7852,7 @@
       "lat": 46.11868,
       "lon": -117.8505,
       "elevation_ft": 5520,
-      "swe_inches": 10.7,
+      "swe_inches": 10.8,
       "pct_median": 43
     },
     {
@@ -7863,7 +7863,7 @@
       "lon": -106.67655,
       "elevation_ft": 10610,
       "swe_inches": 25.8,
-      "pct_median": 74
+      "pct_median": 73
     },
     {
       "id": "826",
@@ -7872,8 +7872,8 @@
       "lat": 42.69525,
       "lon": -108.89572,
       "elevation_ft": 8720,
-      "swe_inches": 4.6,
-      "pct_median": 71
+      "swe_inches": 4.5,
+      "pct_median": 69
     },
     {
       "id": "827",
@@ -7882,7 +7882,7 @@
       "lat": 39.99881,
       "lon": -107.23618,
       "elevation_ft": 9750,
-      "swe_inches": 5.6,
+      "swe_inches": 5.7,
       "pct_median": null
     },
     {
@@ -7893,7 +7893,7 @@
       "lon": -105.52706,
       "elevation_ft": 8740,
       "swe_inches": 0.1,
-      "pct_median": 50
+      "pct_median": 25
     },
     {
       "id": "828",
@@ -7902,7 +7902,7 @@
       "lat": 40.678,
       "lon": -110.94873,
       "elevation_ft": 9970,
-      "swe_inches": 16.7,
+      "swe_inches": 16.8,
       "pct_median": 96
     },
     {
@@ -7913,7 +7913,7 @@
       "lon": -105.23259,
       "elevation_ft": 10860,
       "swe_inches": 4.4,
-      "pct_median": 58
+      "pct_median": 55
     },
     {
       "id": "1171",
@@ -7922,8 +7922,8 @@
       "lat": 48.07471,
       "lon": -120.84989,
       "elevation_ft": 2890,
-      "swe_inches": 20.0,
-      "pct_median": 69
+      "swe_inches": 20.1,
+      "pct_median": 68
     },
     {
       "id": "830",
@@ -7933,7 +7933,7 @@
       "lon": -115.43818,
       "elevation_ft": 7790,
       "swe_inches": 21.9,
-      "pct_median": 80
+      "pct_median": 78
     },
     {
       "id": "831",
@@ -7943,7 +7943,7 @@
       "lon": -110.5914,
       "elevation_ft": 8520,
       "swe_inches": 19.5,
-      "pct_median": 104
+      "pct_median": 101
     },
     {
       "id": "832",
@@ -7953,7 +7953,7 @@
       "lon": -120.29412,
       "elevation_ft": 5480,
       "swe_inches": 4.4,
-      "pct_median": 47
+      "pct_median": 46
     },
     {
       "id": "833",
@@ -7972,8 +7972,8 @@
       "lat": 39.30087,
       "lon": -120.18407,
       "elevation_ft": 6500,
-      "swe_inches": 11.0,
-      "pct_median": 76
+      "swe_inches": 10.5,
+      "pct_median": 74
     },
     {
       "id": "954",
@@ -7982,7 +7982,7 @@
       "lat": 60.78043,
       "lon": -149.18325,
       "elevation_ft": 1860,
-      "swe_inches": 17.2,
+      "swe_inches": 17.5,
       "pct_median": 73
     },
     {
@@ -7992,8 +7992,8 @@
       "lat": 46.14287,
       "lon": -114.44755,
       "elevation_ft": 5530,
-      "swe_inches": 8.3,
-      "pct_median": 58
+      "swe_inches": 8.5,
+      "pct_median": 59
     },
     {
       "id": "836",
@@ -8002,7 +8002,7 @@
       "lat": 46.1438,
       "lon": -114.5056,
       "elevation_ft": 6380,
-      "swe_inches": 26.2,
+      "swe_inches": 26.1,
       "pct_median": 80
     },
     {
@@ -8012,7 +8012,7 @@
       "lat": 44.15178,
       "lon": -110.22122,
       "elevation_ft": 9240,
-      "swe_inches": 28.4,
+      "swe_inches": 28.5,
       "pct_median": 126
     },
     {
@@ -8042,7 +8042,7 @@
       "lat": 39.4155,
       "lon": -111.2491,
       "elevation_ft": 8600,
-      "swe_inches": 3.8,
+      "swe_inches": 3.6,
       "pct_median": null
     },
     {
@@ -8053,7 +8053,7 @@
       "lon": -107.25971,
       "elevation_ft": 9370,
       "swe_inches": 3.2,
-      "pct_median": 57
+      "pct_median": 55
     },
     {
       "id": "840",
@@ -8062,7 +8062,7 @@
       "lat": 37.48563,
       "lon": -106.83528,
       "elevation_ft": 10140,
-      "swe_inches": 12.7,
+      "swe_inches": 12.6,
       "pct_median": 53
     },
     {
@@ -8072,8 +8072,8 @@
       "lat": 38.99071,
       "lon": -106.74504,
       "elevation_ft": 10710,
-      "swe_inches": 8.2,
-      "pct_median": 79
+      "swe_inches": 8.1,
+      "pct_median": 78
     },
     {
       "id": "1055",
@@ -8083,7 +8083,7 @@
       "lon": -145.64807,
       "elevation_ft": 1730,
       "swe_inches": 14.1,
-      "pct_median": 87
+      "pct_median": 85
     },
     {
       "id": "1098",
@@ -8092,8 +8092,8 @@
       "lat": 41.86425,
       "lon": -111.50603,
       "elevation_ft": 8610,
-      "swe_inches": 18.1,
-      "pct_median": 79
+      "swe_inches": 18.2,
+      "pct_median": 80
     },
     {
       "id": "1005",
@@ -8102,8 +8102,8 @@
       "lat": 37.6148,
       "lon": -105.37322,
       "elevation_ft": 10720,
-      "swe_inches": 3.9,
-      "pct_median": 41
+      "swe_inches": 3.8,
+      "pct_median": 40
     },
     {
       "id": "1137",
@@ -8112,7 +8112,7 @@
       "lat": 39.4495,
       "lon": -115.9834,
       "elevation_ft": 7890,
-      "swe_inches": 2.8,
+      "swe_inches": 2.3,
       "pct_median": null
     },
     {
@@ -8122,8 +8122,8 @@
       "lat": 36.02653,
       "lon": -106.81361,
       "elevation_ft": 9350,
-      "swe_inches": 5.0,
-      "pct_median": 54
+      "swe_inches": 4.8,
+      "pct_median": 49
     },
     {
       "id": "842",
@@ -8132,7 +8132,7 @@
       "lat": 39.61765,
       "lon": -106.38019,
       "elevation_ft": 10290,
-      "swe_inches": 8.3,
+      "swe_inches": 8.4,
       "pct_median": 60
     },
     {
@@ -8142,8 +8142,8 @@
       "lat": 37.48524,
       "lon": -107.50748,
       "elevation_ft": 10740,
-      "swe_inches": 7.8,
-      "pct_median": 60
+      "swe_inches": 7.6,
+      "pct_median": 58
     },
     {
       "id": "979",
@@ -8152,8 +8152,8 @@
       "lat": 44.37665,
       "lon": -116.3366,
       "elevation_ft": 4960,
-      "swe_inches": 1.1,
-      "pct_median": 15
+      "swe_inches": 0.9,
+      "pct_median": 13
     },
     {
       "id": "845",
@@ -8162,7 +8162,7 @@
       "lat": 43.79942,
       "lon": -114.85273,
       "elevation_ft": 8930,
-      "swe_inches": 26.7,
+      "swe_inches": 26.8,
       "pct_median": 108
     },
     {
@@ -8172,8 +8172,8 @@
       "lat": 38.07298,
       "lon": -119.23433,
       "elevation_ft": 9400,
-      "swe_inches": 13.3,
-      "pct_median": 102
+      "swe_inches": 13.2,
+      "pct_median": 101
     },
     {
       "id": "1188",
@@ -8182,7 +8182,7 @@
       "lat": 37.88248,
       "lon": -107.36428,
       "elevation_ft": 11110,
-      "swe_inches": 4.2,
+      "swe_inches": 4.3,
       "pct_median": null
     },
     {
@@ -8192,8 +8192,8 @@
       "lat": 47.91998,
       "lon": -112.79087,
       "elevation_ft": 5640,
-      "swe_inches": 6.1,
-      "pct_median": 66
+      "swe_inches": 6.2,
+      "pct_median": 67
     },
     {
       "id": "848",
@@ -8202,7 +8202,7 @@
       "lat": 39.13545,
       "lon": -120.21865,
       "elevation_ft": 6750,
-      "swe_inches": 16.2,
+      "swe_inches": 16.0,
       "pct_median": 56
     },
     {
@@ -8212,8 +8212,8 @@
       "lat": 39.13242,
       "lon": -114.95575,
       "elevation_ft": 9170,
-      "swe_inches": 6.7,
-      "pct_median": 63
+      "swe_inches": 6.3,
+      "pct_median": 59
     },
     {
       "id": "850",
@@ -8232,7 +8232,7 @@
       "lat": 47.94485,
       "lon": -123.42594,
       "elevation_ft": 5010,
-      "swe_inches": 13.7,
+      "swe_inches": 13.8,
       "pct_median": 40
     },
     {
@@ -8242,8 +8242,8 @@
       "lat": 41.1591,
       "lon": -106.92809,
       "elevation_ft": 9250,
-      "swe_inches": 13.2,
-      "pct_median": 79
+      "swe_inches": 13.1,
+      "pct_median": 78
     },
     {
       "id": "853",
@@ -8252,8 +8252,8 @@
       "lat": 37.575,
       "lon": -112.90155,
       "elevation_ft": 9150,
-      "swe_inches": 6.9,
-      "pct_median": 63
+      "swe_inches": 6.7,
+      "pct_median": 59
     },
     {
       "id": "909",
@@ -8262,8 +8262,8 @@
       "lat": 48.8661,
       "lon": -121.78976,
       "elevation_ft": 4040,
-      "swe_inches": 12.2,
-      "pct_median": 44
+      "swe_inches": 12.4,
+      "pct_median": 45
     },
     {
       "id": "1160",
@@ -8272,8 +8272,8 @@
       "lat": 37.51968,
       "lon": -107.32139,
       "elevation_ft": 10730,
-      "swe_inches": 8.3,
-      "pct_median": 59
+      "swe_inches": 8.2,
+      "pct_median": 56
     },
     {
       "id": "854",
@@ -8282,8 +8282,8 @@
       "lat": 35.77584,
       "lon": -105.54337,
       "elevation_ft": 11110,
-      "swe_inches": 1.0,
-      "pct_median": 9
+      "swe_inches": 0.7,
+      "pct_median": 6
     },
     {
       "id": "855",
@@ -8293,7 +8293,7 @@
       "lon": -116.45413,
       "elevation_ft": 5590,
       "swe_inches": 13.3,
-      "pct_median": 71
+      "pct_median": 70
     },
     {
       "id": "924",
@@ -8303,7 +8303,7 @@
       "lon": -111.09199,
       "elevation_ft": 6680,
       "swe_inches": 7.9,
-      "pct_median": 88
+      "pct_median": 85
     },
     {
       "id": "1147",
@@ -8312,8 +8312,8 @@
       "lat": 39.00995,
       "lon": -114.31021,
       "elevation_ft": 10070,
-      "swe_inches": 9.2,
-      "pct_median": 118
+      "swe_inches": 9.1,
+      "pct_median": 111
     },
     {
       "id": "857",
@@ -8322,8 +8322,8 @@
       "lat": 37.21423,
       "lon": -105.12262,
       "elevation_ft": 10260,
-      "swe_inches": 3.1,
-      "pct_median": 35
+      "swe_inches": 3.0,
+      "pct_median": 34
     },
     {
       "id": "858",
@@ -8333,7 +8333,7 @@
       "lon": -111.14998,
       "elevation_ft": 6790,
       "swe_inches": 10.9,
-      "pct_median": 91
+      "pct_median": 89
     },
     {
       "id": "859",
@@ -8343,7 +8343,7 @@
       "lon": -106.90795,
       "elevation_ft": 8950,
       "swe_inches": 18.9,
-      "pct_median": 89
+      "pct_median": 88
     },
     {
       "id": "860",
@@ -8383,7 +8383,7 @@
       "lon": -121.38153,
       "elevation_ft": 4440,
       "swe_inches": 12.0,
-      "pct_median": 65
+      "pct_median": 62
     },
     {
       "id": "864",
@@ -8392,8 +8392,8 @@
       "lat": 39.9645,
       "lon": -110.98845,
       "elevation_ft": 8620,
-      "swe_inches": 5.2,
-      "pct_median": 57
+      "swe_inches": 5.1,
+      "pct_median": 54
     },
     {
       "id": "865",
@@ -8412,8 +8412,8 @@
       "lat": 39.89166,
       "lon": -110.74604,
       "elevation_ft": 9170,
-      "swe_inches": 6.5,
-      "pct_median": 75
+      "swe_inches": 6.3,
+      "pct_median": 72
     },
     {
       "id": "1042",
@@ -8422,8 +8422,8 @@
       "lat": 40.201,
       "lon": -105.6025,
       "elevation_ft": 9410,
-      "swe_inches": 8.4,
-      "pct_median": 71
+      "swe_inches": 8.3,
+      "pct_median": 70
     },
     {
       "id": "866",
@@ -8433,7 +8433,7 @@
       "lon": -109.48078,
       "elevation_ft": 7850,
       "swe_inches": 0.3,
-      "pct_median": 13
+      "pct_median": 12
     },
     {
       "id": "867",
@@ -8442,7 +8442,7 @@
       "lat": 42.75743,
       "lon": -112.47783,
       "elevation_ft": 6480,
-      "swe_inches": 5.6,
+      "swe_inches": 5.7,
       "pct_median": 46
     },
     {
@@ -8452,8 +8452,8 @@
       "lat": 42.81513,
       "lon": -110.83515,
       "elevation_ft": 8060,
-      "swe_inches": 20.8,
-      "pct_median": 90
+      "swe_inches": 21.1,
+      "pct_median": 89
     },
     {
       "id": "869",
@@ -8462,8 +8462,8 @@
       "lat": 40.34734,
       "lon": -106.0952,
       "elevation_ft": 9520,
-      "swe_inches": 5.9,
-      "pct_median": 56
+      "swe_inches": 5.8,
+      "pct_median": 55
     },
     {
       "id": "1317",
@@ -8472,7 +8472,7 @@
       "lat": 38.27203,
       "lon": -119.45124,
       "elevation_ft": 8220,
-      "swe_inches": 8.6,
+      "swe_inches": 8.3,
       "pct_median": null
     },
     {
@@ -8492,8 +8492,8 @@
       "lat": 42.01257,
       "lon": -115.00278,
       "elevation_ft": 7110,
-      "swe_inches": 3.0,
-      "pct_median": 24
+      "swe_inches": 2.9,
+      "pct_median": 23
     },
     {
       "id": "872",
@@ -8512,8 +8512,8 @@
       "lat": 45.06704,
       "lon": -118.15185,
       "elevation_ft": 5730,
-      "swe_inches": 4.4,
-      "pct_median": 34
+      "swe_inches": 4.3,
+      "pct_median": 32
     },
     {
       "id": "1164",
@@ -8522,7 +8522,7 @@
       "lat": 40.47733,
       "lon": -111.04469,
       "elevation_ft": 9770,
-      "swe_inches": 11.3,
+      "swe_inches": 11.4,
       "pct_median": null
     },
     {
@@ -8533,7 +8533,7 @@
       "lon": -106.80234,
       "elevation_ft": 10930,
       "swe_inches": 14.6,
-      "pct_median": 62
+      "pct_median": 60
     },
     {
       "id": "875",
@@ -8553,7 +8553,7 @@
       "lon": -112.81428,
       "elevation_ft": 5970,
       "swe_inches": 5.2,
-      "pct_median": 70
+      "pct_median": 68
     },
     {
       "id": "877",
@@ -8572,7 +8572,7 @@
       "lat": 39.13233,
       "lon": -111.35685,
       "elevation_ft": 9330,
-      "swe_inches": 5.2,
+      "swe_inches": 4.9,
       "pct_median": null
     },
     {
@@ -8582,7 +8582,7 @@
       "lat": 37.74797,
       "lon": -112.77495,
       "elevation_ft": 8680,
-      "swe_inches": 0.7,
+      "swe_inches": 0.5,
       "pct_median": null
     },
     {
@@ -8592,8 +8592,8 @@
       "lat": 43.93225,
       "lon": -109.81775,
       "elevation_ft": 8340,
-      "swe_inches": 13.6,
-      "pct_median": 116
+      "swe_inches": 13.1,
+      "pct_median": 111
     },
     {
       "id": "1033",
@@ -8602,8 +8602,8 @@
       "lat": 40.79492,
       "lon": -106.59544,
       "elevation_ft": 9320,
-      "swe_inches": 17.2,
-      "pct_median": 76
+      "swe_inches": 17.1,
+      "pct_median": 74
     }
   ]
 }
