@@ -136,6 +136,15 @@
       "fed_outcome": "Hold",
       "fed_prob": 0.95,
       "rate_cuts_mode": 2
+    },
+    {
+      "date": "2026-03-03",
+      "recession_prob": 0.24,
+      "fed_outcome": "Hold",
+      "fed_prob": 0.96,
+      "rate_cuts_mode": 1,
+      "oil_price": 73,
+      "gas_price": 3.22
     }
   ]
 }
