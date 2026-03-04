@@ -1,6 +1,6 @@
 {
-  "updated": "2026-03-03 11:25:44",
-  "total_articles": 30,
+  "updated": "2026-03-04 11:24:14",
+  "total_articles": 31,
   "scoring_method": "keyword",
   "articles": [
     {
@@ -328,6 +328,30 @@
       "display_score": 22
     },
     {
+      "source": "Ski Area Management",
+      "title": "Pomerelle Sold to Longtime Mountain Manager",
+      "url": "https://www.saminfo.com/news/sam-headline-news/pomerelle-sold-to-longtime-mountain-manager",
+      "description": "SAM Magazine\u2014Albion, Idaho, March 3, 2026\u2014 Pomerelle Mountain Resort in southern Idaho has been sold to mountain manager Zach Alexander and his wife, Crystal, according to Ski Idaho. The Anderson family, which has owned and operated the ski area for decades, finalized the sale this month. Financial terms were not disclosed. Local Freshies first reported the sale. Alexander has longstanding ties to the resort, having grown up on the hill and worked in nearly every department. His grandparents, Ba",
+      "content": "SAM Magazine\u2014Albion, Idaho, March 3, 2026\u2014 Pomerelle Mountain Resort in southern Idaho has been sold to mountain manager Zach Alexander and his wife, Crystal, according to Ski Idaho. The Anderson family, which has owned and operated the ski area for decades, finalized the sale this month. Financial terms were not disclosed. Local Freshies first reported the sale. Alexander has longstanding ties to the resort, having grown up on the hill and worked in nearly every department. His grandparents, Ba",
+      "pub_date": "2026-03-03",
+      "id": "f8293b939064",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 8,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "safety-incidents"
+      ],
+      "approved_date": "2026-03-04",
+      "display_score": 21
+    },
+    {
       "source": "SnowBrains",
       "title": "Camelback Mountain Resort, PA, Surges with Record Growth, New Leadership, and Major Mountain Improvements",
       "url": "https://snowbrains.com/camelback-mountain-resort-pa-surges-with-record-growth-new-leadership-and-major-mountain-improvements/",
@@ -404,31 +428,6 @@
       "display_score": 21
     },
     {
-      "source": "Ski Area Management",
-      "title": "Presidents\u2019 Day Weekend 2026: A Holiday of Extremes",
-      "url": "https://www.saminfo.com/news/sam-headline-news/presidents-day-weekend-2026-a-holiday-of-extremes",
-      "description": "SAM Magazine\u2014Happy Valley, Ore., Feb. 18, 2026\u2014 Loveland's Annual Mountaintop Matrimony. From record-breaking revenues in the East to \"miracle\" snowfalls in the West, the Presidents\u2019 Day long weekend continued the trend of a ski industry defined by extreme contrasts. While the East Coast basked in one of its strongest seasons in a decade, the West navigated a high-stakes transition from historic drought to a season-saving storm cycle. Here is a regional roundup of the highs, lows, and operationa",
-      "content": "SAM Magazine\u2014Happy Valley, Ore., Feb. 18, 2026\u2014 Loveland's Annual Mountaintop Matrimony. From record-breaking revenues in the East to \"miracle\" snowfalls in the West, the Presidents\u2019 Day long weekend continued the trend of a ski industry defined by extreme contrasts. While the East Coast basked in one of its strongest seasons in a decade, the West navigated a high-stakes transition from historic drought to a season-saving storm cycle. Here is a regional roundup of the highs, lows, and operationa",
-      "pub_date": "2026-02-18",
-      "id": "90c3154717db",
-      "prefilter_business_score": 2,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "ski-history",
-        "business-investment"
-      ],
-      "approved_date": "2026-02-19",
-      "display_score": 20
-    },
-    {
       "source": "Unofficial Networks",
       "title": "How Arapahoe Basin Factored Into The U.S. Ski Industry\u2019s Consolidation",
       "url": "https://unofficialnetworks.com/2026/02/20/arapahoe-basin-ski-industry/",
@@ -455,6 +454,56 @@
     },
     {
       "source": "Unofficial Networks",
+      "title": "Small British Columbia Ski Resort Having Turbulent Season",
+      "url": "https://unofficialnetworks.com/2026/03/03/fairmont-hot-springs-turbulent/",
+      "description": "After some high-level employees left the ski resort this past fall, they have struggled with operations this winter.",
+      "content": "British Columbia \u2014 It\u2019s been a topsy-turvy winter for Fairmont Hot Springs Resort . Before the season started, there were reportedly several notable staff departures, raising questions about whether it would operate at all this winter. However, it is operating, albeit with some modifications compared to the typical season. According to The Columbia Valley Pioneer , ski season began for Fairmont on January 9th, which was a couple of weeks later than usual. However, it opened with limited lifts and terrain. This was due to the chairlift failing inspection twice. Add in warmer-than-average temperatures and inconsistent snowfall, and it\u2019s been frustrating among guests. The chairlift finally opened on February 17th. Some guests were thrilled, while others said they wouldn\u2019t renew their passes next year because of the delay. \u201cIt\u2019s great that the chair is open and the recent snow will help extend the season a bit, but for many the damage is done. The poor \u2014 or non existent \u2014 communication to ",
+      "pub_date": "2026-03-03",
+      "id": "8dc01a7df2dd",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "canada",
+      "secondary_categories": [
+        "ski-history",
+        "resort-operations",
+        "weather-snow"
+      ],
+      "approved_date": "2026-03-04",
+      "display_score": 18
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Jay Peak Is Still Beating Alaska: Top 5 U.S. Snowfall Totals This Season",
+      "url": "https://unofficialnetworks.com/2026/03/03/top-5-us-snowfall-totals/",
+      "description": "These are the 5 ski resorts that have seen the most snowfall so far this winter across the United States.",
+      "content": "For quite a while this winter the snowfalls statistics have looked a little whacky across the United States. Ski resorts that are usually nowhere near the top of the season snowfall total list were right up there, far ahead of the typical biggest winners. Things are starting to look a bit more normal, but, surprisingly, a Vermont resort is still topping the list. These are the 5 ski resorts that have seen the most snowfall so far this winter. The 5 Ski Resorts That Have Seen The Most Snow This Season 5. Jackson Hole Mountain Resort , Wyoming \u2013 288 inches of snowfall this season. View this post on Instagram A post shared by Jackson Hole Mountain Resort (@jacksonhole) 98 inch snow depth at the summit. 67 inch snow depth at mid-mountain. 4 inches of snow in the last 48 hours. 4. Sugar Bowl Resort , California \u2013 290 inches of snowfall this season. 71 inch snow depth at the summit. 37 inch snow depth at the base. 2 inches of snow in the last 7 days. 3. Alyeska Resort , Alaska \u2013 316 inches o",
+      "pub_date": "2026-03-03",
+      "id": "6885dabd585c",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [
+        "hospitality"
+      ],
+      "approved_date": "2026-03-04",
+      "display_score": 18
+    },
+    {
+      "source": "Unofficial Networks",
       "title": "Jay Nears 350\u201d Before March: The Northeast Ski Season Is in Full Throwback Mode",
       "url": "https://unofficialnetworks.com/2026/02/23/jay-nears-350-before-march-the-northeast-ski-season-is-in-full-throwback-mode/",
       "description": "Jay, Vermont \u2013 As of Feb. 23, 2026, northern Vermont is already at (or above) full-season snowfall totals. If you\u2019ve been looking around this winter thinking, \u201cWait\u2026 is this what it used to be like?\u201d\u2014you\u2019re not imagining it. Jay Peak is flirting with ~348 inches before March, and Stowe is already around ~252 inches on [\u2026]",
@@ -473,31 +522,6 @@
       "category": "weather-snow",
       "secondary_categories": [],
       "approved_date": "2026-02-24",
-      "display_score": 18
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "California Ski Resort Measures 8+ Feet of Snow in 72 Hours",
-      "url": "https://unofficialnetworks.com/2026/02/19/lake-tahoe-ski-resort-measures-8-feet-of-snow-in-72-hours/",
-      "description": "Palisades Tahoe just reported their snow totals for the past 72 hours and it is truly monumental.",
-      "content": "Palisades Tahoe just reported their snow totals for the past 72 hours and it is truly monumental: \u201cNearly 8 feet of snow in just 72 hours. Thank you to all of our mountain operations teams who show up in the dark, in the wind, and in the freezing cold to rebuild the mountain. It takes round-the-clock effort, grit, and a whole lot of heart.\u201d -Palisades Tahoe The incredible influx of snow has made operating the iconic resort extremely difficult. Today all lifts at Palisades were closed for the day, with the exception of First Venture and Ahsoka carpet while Alpine remained open (Roundhouse down only) : Yesterday was truly epic at Palisades Tahoe where smiling guests were met with 6 feet of freshies thanks to the hard work of the Ski Patrol and Mountain Operations teams who managed to open the lower mountain: \u201cThere are plenty of waist deep turns to be had out there on KT-22, Red Dog, Resort Chair, and Roundhouse.\u201d -Palisades Tahoe We echo Palisades Tahoe\u2019s reminder that deep snow also me",
-      "pub_date": "2026-02-20",
-      "id": "b569a6323a6e",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "safety-incidents",
-        "resort-operations"
-      ],
-      "approved_date": "2026-02-20",
       "display_score": 18
     },
     {
@@ -522,32 +546,6 @@
         "safety-incidents"
       ],
       "approved_date": "2026-02-20",
-      "display_score": 18
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "Nearly 8 Feet of Snow Slams Popular California Ski Resort",
-      "url": "https://unofficialnetworks.com/2026/02/20/8-feet-snow-mammoth-mountain/",
-      "description": "Mammoth Mountain is digging out after a powerful storm cycle dropped massive totals across the Eastern Sierra.",
-      "content": "Mammoth Mountain is digging out after a powerful storm cycle dropped massive totals across the Eastern Sierra, with 63 inches reported at Main Lodge and a staggering 94 inches at the summit. The deep snowfall is welcome news for skiers and snowboarders, but it also brought significant operational challenges. Main Lodge operations are scheduled to reopen today as crews continue extensive snow removal and avalanche mitigation work across the mountain. Huge snowfall totals at Mammoth Mountain. Credit: Cody Mathison/ MMSA Visitors should expect a gradual rollout of terrain. Lift openings and access to certain areas may be delayed as patrol teams work to ensure conditions are safe. After nearly eight feet of snow at the summit, it will take time to dig out lifts, assess terrain, and complete control work. Light snow is forecast for Saturday and Sunday, keeping conditions fresh through the weekend. Another round of storms is expected to move into the region starting Tuesday, which could add ",
-      "pub_date": "2026-02-20",
-      "id": "104bef41aff6",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "safety-incidents",
-        "resort-operations",
-        "hospitality"
-      ],
-      "approved_date": "2026-02-21",
       "display_score": 18
     },
     {
@@ -598,6 +596,32 @@
       "display_score": 18
     },
     {
+      "source": "PlanetSKI",
+      "title": "It\u2019s Looking Good For Late Season Skiing in the Alps",
+      "url": "https://planetski.eu/2026/03/03/its-looking-good-for-late-season-skiing-in-the-alps/",
+      "description": "It's set to be a great end to the winter ski season in the Alps. Favourable holiday dates, plenty of snow and then there's the Olympic affect. PlanetSKI looks ahead to skiing into Spring. NEW The post It\u2019s Looking Good For Late Season Skiing in the Alps appeared first on PlanetSKI .",
+      "content": "UK operators report that Easter bookings are busy at the moment with resorts also reporting growing interest and bookings. This increased interest in Easter is reflected in a significant increase in online search traffic according to Google, which reports a rise of a double digit increase across Easter ski holiday searches. This year Easter Sunday is April 5th \u2013 last year it was two weeks later on April 20th. The second half of February saw snow across the Alps and some very significant falls in places. We reported on the snow at the time on PlanetSKI: The half-term PlanetSKI snow report Images across social media sparked interest. Les Menuires, France. Image c/o Les Menuires Tourist Office. Les Menuires, France. Image c/o Les Menuires Tourist Office. There has also been a trend in recent years for people to look at skiing at the end of the season following several poor Xmas and New Year holiday periods. \u201cEaster has grown in popularity every year since we returned to ski holidays after",
+      "pub_date": "2026-03-03",
+      "id": "8f14e0a14b57",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 8,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [
+        "winter-sports",
+        "international",
+        "transportation"
+      ],
+      "approved_date": "2026-03-04",
+      "display_score": 17
+    },
+    {
       "source": "Google News - Ski Industry",
       "title": "Skiing's Prickliest Problem: Housing - Ski Area Management",
       "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5QUUpickVfTnN3S25haERVeF90T3VUTkpBVzZ5RjlnVHkwNldhMFB1dnBYSTdyb0dic2RjcWE3S2dwZTlsWEo1TW9VZjBZYkE2MmlrWXdBSGhQdmhEVlRlaHE5OHJ0VDk0em0tUFlZXy1tdw?oc=5",
@@ -644,6 +668,53 @@
       ],
       "approved_date": "2026-02-27",
       "display_score": 14
+    },
+    {
+      "source": "Vail Resorts Investor Relations",
+      "title": "Epic Pass Lowers Prices for Gen Z to Make Hitting the Slopes Easier for Young Skiers and Snowboarders",
+      "url": "https://investors.vailresorts.com/news-releases/news-release-details/epic-pass-lowers-prices-gen-z-make-hitting-slopes-easier-young",
+      "description": "New pricing for 13- to 30-year-olds offers a 20% discount off full-price Epic & Epic Local Passes Season-long Pass Holders who buy early get 10 Epic Friend Tickets for half-off lift tickets Skiers and snowboarders who visited on a lift ticket this season can save up to $175 on a 2026/27 Epic Pass",
+      "content": "New pricing for 13- to 30-year-olds offers a 20% discount off full-price Epic & Epic Local Passes Season-long Pass Holders who buy early get 10 Epic Friend Tickets for half-off lift tickets Skiers and snowboarders who visited on a lift ticket this season can save up to $175 on a 2026/27 Epic Pass",
+      "pub_date": "2026-03-03",
+      "id": "ddd6fdfb861d",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 5,
+      "score": 6,
+      "score_details": {
+        "reason": "Keyword scoring (source: +5)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [],
+      "approved_date": "2026-03-04",
+      "display_score": 12
+    },
+    {
+      "source": "The Ski Guru",
+      "title": "Two Ski Mountaineers Found Dead After Avalanche on Tamlspitze, Tyrol",
+      "url": "https://www.the-ski-guru.com/2026/03/03/tamlspitze-avalanche-tyrol-february-2026/",
+      "description": "Two ski mountaineers, aged 44 and 47, were found dead after an avalanche on Tamlspitze in Tyrol on 28 February 2026. The incident occurred during a period of elevated avalanche danger across the Eastern Alps and forms part of the broader February 2026 avalanche cycle. The post Two Ski Mountaineers Found Dead After Avalanche on Tamlspitze, Tyrol appeared first on The-Ski-Guru .",
+      "content": "Repeated avalanche fatalities across the Alps in late February 2026 continue to underline the structural instability affecting multiple regions this winter. The latest tragedy occurred on Tamlspitze , in the municipality of Tux , within the Austrian state of Tyrol , where two ski mountaineers aged 44 and 47 were found dead beneath avalanche debris after failing to return from a summit tour. This incident forms part of the broader February 2026 Avalanche Cycle Across the Alps , which has seen fatalities and repeated Level 4 warnings across France, Italy, Austria and Switzerland. What Happened on Tamlspitze According to Austrian local media reports and police information, the two men set out on 28 February for what was intended to be a standard ski mountaineering ascent of Tamlspitze in the Tux Valley. When they did not return, they were reported missing later that day. Alpine Rescue teams initiated search operations immediately. However, persistent avalanche danger in the region forced ",
+      "pub_date": "2026-03-03",
+      "id": "108e34022ce6",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "safety-incidents",
+      "secondary_categories": [
+        "transportation",
+        "international"
+      ],
+      "approved_date": "2026-03-04",
+      "display_score": 10
     },
     {
       "source": "The Ski Guru",
@@ -693,54 +764,6 @@
         "transportation"
       ],
       "approved_date": "2026-02-25",
-      "display_score": 10
-    },
-    {
-      "source": "The Ski Guru",
-      "title": "Avalanche Above Pila: Two Ski Mountaineers Rescued at Punta Valletta",
-      "url": "https://www.the-ski-guru.com/2026/02/20/punta-valletta-avalanche-pila-2026/",
-      "description": "An avalanche occurred today at Punta Valletta, above the resort of Pila in the Aosta Valley, involving two ski mountaineers. According to local reports, the avalanche was triggered shortly after 14:15. Both skiers were caught and temporarily buried. They were rescued by the Soccorso Alpino Valdostano and transported by helicopter to the Ospedale Parini in Aosta. Fortunately, neither sustained serious injuries and they \u2026 Continue reading \"Avalanche Above Pila: Two Ski Mountaineers Rescued at Punt",
-      "content": "An avalanche occurred today at Punta Valletta , above the resort of Pila in the Aosta Valley, involving two ski mountaineers. According to local reports, the avalanche was triggered shortly after 14:15. Both skiers were caught and temporarily buried. They were rescued by the Soccorso Alpino Valdostano and transported by helicopter to the Ospedale Parini in Aosta. Fortunately, neither sustained serious injuries and they were expected to be discharged. What Happened at Punta Valletta? Punta Valletta is a well-known ski touring objective above Pila, frequently accessed by experienced ski mountaineers seeking terrain beyond the marked ski area boundaries. While full technical details of the snowpack at the exact release point have not yet been officially published, the incident once again highlights how unstable layers and wind-loaded slopes can persist even when conditions appear manageable. This event follows several other avalanche incidents reported across the region this February. For",
-      "pub_date": "2026-02-20",
-      "id": "38a58ba90480",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "safety-incidents",
-      "secondary_categories": [
-        "weather-snow"
-      ],
-      "approved_date": "2026-02-21",
-      "display_score": 10
-    },
-    {
-      "source": "PlanetSKI",
-      "title": "PlanetSKI Hits the Mountains & Valleys in Switzerland",
-      "url": "https://planetski.eu/2026/02/14/a-game-of-two-halves/",
-      "description": "Our roving reporter Nick Dalton spends several days on the ski slopes of Grindelwald, then decamps for life and adventure in the valley. A winter experience with a difference. NEW The post PlanetSKI Hits the Mountains & Valleys in Switzerland appeared first on PlanetSKI .",
-      "content": "It was, as they say, a game of two halves So often PlanetSKI is told that there\u2019s much more to winter in the mountains, and so often we\u2019re not fully convinced. Other pastimes when we could be on the slopes? Er, no thanks. But Switzerland\u2019s Jungfrau region and its elegant lakeside town of Interlaken has made us think again. THE SKIING Grindelwald has one of the most dramatic settings in Europe, gazing up at the mighty north face of the Eiger and its surrounding peaks. It\u2019s part of the Jungfrau Ski Region that encompasses two valleys and three resorts, with more than 200km of runs. Grindelwald \u2013 Image \u00a9 PlanetSKI/Nick Dalton Grindelwald ski runs \u2013 Image \u00a9 PlanetSKI/Nick Dalton Grindelwald-Wengen , linking the two picturesque villages, with more than 100km of piste, is central. View of the Eiger. Wonderful to wake up to this view \u2013 Image \u00a9 PlanetSKI/Nick Dalton The Eiger Express gondola, panoramic cars seating 26, speeds up from Grindelwald Terminal just outside town, opens up a world of ",
-      "pub_date": "2026-02-14",
-      "id": "47e1f4f7e46d",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 6,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "resort-operations",
-      "secondary_categories": [
-        "international"
-      ],
-      "approved_date": "2026-02-14",
       "display_score": 10
     }
   ]

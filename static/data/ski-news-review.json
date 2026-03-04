@@ -862,6 +862,52 @@
       "score_method": "keyword",
       "category": "resort-operations",
       "secondary_categories": []
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Big White Ski Resort, BC, Report: Big Terrain, Full Access, & Spring Laps",
+      "url": "https://snowbrains.com/big-white-ski-resort-bc-report-big-terrain-full-access-spring-laps/",
+      "description": "Report from March 1, 2026 March arrived in style at Big White (Kelowna, BC), delivering expansive terrain, consistent coverage, and a full mountain experience from top to bottom. Every single one of the resort\u2019s 116 runs was open, and all 16 lifts were spinning. In early March, that\u2019s a big deal. Arriving at a mountain firing on all cylinders\u2014with no [\u2026] The post Big White Ski Resort, BC, Report: Big Terrain, Full Access, & Spring Laps appeared first on SnowBrains .",
+      "content": "The sun rising over crisp corduroy in the Big White Ski Resort Village. | Photo: Nicky Blumm Report from March 1, 2026 March arrived in style at Big White (Kelowna, BC) , delivering expansive terrain, consistent coverage, and a full mountain experience from top to bottom. Every single one of the resort\u2019s 116 runs was open , and all 16 lifts were spinning . In early March, that\u2019s a big deal. Arriving at a mountain firing on all cylinders\u2014with no closures shrinking the map, is a decadent experience during this trying winter. Big White provided wide-open freedom across five alpine bowls and perfectly spaced glades. A view up The Cliff Chair at Big White; the wind deposits in this bowl had it feeling fresh after a week without snow. | Photo: Nicky Blumm Coverage remains strong, with a reported 157 cm (over five feet) settled base. That depth keeps Big White skiing like winter even as spring approaches during a low snow year. On the slopes, natural features are filled in, tree runs are supp",
+      "pub_date": "2026-03-03",
+      "id": "ff42b3a5b50a",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 5,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "canada",
+      "secondary_categories": [
+        "business-investment",
+        "resort-operations",
+        "hospitality"
+      ]
+    },
+    {
+      "source": "Google News - Ski Industry",
+      "title": "Vail Resorts CEO Rob Katz Opens Up About Expensive Lift Tickets, Crowding In Wall Street Journal Interview - SnowBrains",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPNXVQeVBMel8wcHVJVWQ0R042SVV3QkhKcFFzZGhuWExwUlFwQWpPNElLNVZNZzNzMjNrcDA2XzdzSHlnRzhJZTJ5MHJqaVZzYzZPWExfX3I3ZHNScVhTbzRNZW8tc2NnVXBEYkxXTjBsZG5ZWVlCZ0g3azRvRkcwWFRNelBCVFBoU1VnNzBpY24zQkJweXFMRTVBMDlHY1l6SEs2NzJ6dmF3a3djcU1rNlJjTnlHR0lXUlBQSDlUd1F3TVhkd2tYWg?oc=5",
+      "description": "Vail Resorts CEO Rob Katz Opens Up About Expensive Lift Tickets, Crowding In Wall Street Journal Interview SnowBrains",
+      "content": "Vail Resorts CEO Rob Katz Opens Up About Expensive Lift Tickets, Crowding In Wall Street Journal Interview SnowBrains",
+      "pub_date": "2026-03-01",
+      "id": "93d6409dbbb9",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 1,
+      "score": 5,
+      "score_details": {
+        "reason": "Keyword scoring (source: +1)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "resort-operations"
+      ]
     }
   ],
   "rejected": [
