@@ -1,33 +1,8 @@
 {
-  "updated": "2026-03-04 11:24:14",
-  "total_articles": 31,
+  "updated": "2026-03-05 11:27:47",
+  "total_articles": 34,
   "scoring_method": "keyword",
   "articles": [
-    {
-      "source": "Skift",
-      "title": "Hilton CEO: 2026 \u2018Will Be a Lot Better Than 25\u2019 After Results Show Sluggish Growth",
-      "url": "https://skift.com/2026/02/11/hilton-ceo-2026-will-be-a-lot-better-than-25-after-results-show-sluggish-growth/",
-      "description": "Hilton\u2019s muted growth in revenue per available room last year primarily reflected an economic strain on mid-market travelers. Yet CEO Chris Nassetta is optimistic about what he's seeing in the overall bookings data for 2026.",
-      "content": "Skift Take: Hilton\u2019s muted growth in revenue per available room last year primarily reflected an economic strain on mid-market travelers. Yet CEO Chris Nassetta is optimistic about what he's seeing in the overall bookings data for 2026. Read the Complete Story On Skift",
-      "pub_date": "2026-02-11",
-      "id": "838c69040525",
-      "prefilter_business_score": 3,
-      "is_macro_relevance": false,
-      "source_boost": 4,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +4)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "business-investment",
-      "secondary_categories": [
-        "transportation",
-        "hospitality"
-      ],
-      "approved_date": "2026-02-12",
-      "display_score": 33
-    },
     {
       "source": "Skift",
       "title": "Has JetBlue\u2019s Transatlantic Growth Hit a Ceiling?",
@@ -101,6 +76,28 @@
       ],
       "approved_date": "2026-02-25",
       "display_score": 27
+    },
+    {
+      "source": "Google News - Ski Resort Business",
+      "title": "French Ski Resort Investment 2025 Sparks a \u20ac555 Million Alpine Revolution Set to Redefine Global Winter Tourism - Travel And Tour World",
+      "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNa0U4aE1zZXk1bzk5Q0NQeEd2WUZRLTAxMGRmVE1DQnhYdldsMHRjV3hoTmc0R0k1MFJTM3hZMDFHMzRKanBvakg3eGxNa004R184eElmX2VETkVKeUxjQ0JudDdvNVpBcUQyLXU2M2g0VzdHcTVFdE1XNG5TLVZvdUJtV0hJQWdVRWFham5oZjVkYWZrMEUtNGt2ZFhtd2hsLV9vemdfNEt1QXFHWV8yVjB0YlhxajVsVWZYSmkwMGgyZGM1VXNrLVB6N0lINnVmN1gxVWZDdHgyVjR2eWl3TnZVYjF6ZU5KSDRfT0NYdXlpQQ?oc=5",
+      "description": "French Ski Resort Investment 2025 Sparks a \u20ac555 Million Alpine Revolution Set to Redefine Global Winter Tourism Travel And Tour World",
+      "content": "French Ski Resort Investment 2025 Sparks a \u20ac555 Million Alpine Revolution Set to Redefine Global Winter Tourism Travel And Tour World",
+      "pub_date": "2026-03-04",
+      "id": "2a03d0c8a82c",
+      "prefilter_business_score": 2,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [],
+      "approved_date": "2026-03-05",
+      "display_score": 25
     },
     {
       "source": "Google News - Ski Resort Business",
@@ -428,6 +425,30 @@
       "display_score": 21
     },
     {
+      "source": "Google News - Ski Pass Prices",
+      "title": "Vail Resorts Adds Young Adult and Teen Epic Pass Options for 2026-27 - Ski Area Management",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQS0xsdHNYaHdfeW1iQUhYak9GeW50N29uSHFnVjBqaExvVTA3WTIta0pMMzYwY0k4ZW9MR0tnbmtudnRKTDJFVUJabENfTFkxTVZJX2w1VEowbGFRY0p4YXZITFpMVHhLaml4TDFyVGRhUE4xV0JNNGxoYV9CSWFsMnNkRFpPNlpDM3RPRW5FREpseUM1aldnUi1JZ2lrTE9HMi1rcEFKX0hpRGVqN0hIN0JXQzZ2Zw?oc=5",
+      "description": "Vail Resorts Adds Young Adult and Teen Epic Pass Options for 2026-27 Ski Area Management",
+      "content": "Vail Resorts Adds Young Adult and Teen Epic Pass Options for 2026-27 Ski Area Management",
+      "pub_date": "2026-03-04",
+      "id": "14f84077d27b",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 1,
+      "score": 7,
+      "score_details": {
+        "reason": "Keyword scoring (source: +1)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "resort-operations"
+      ],
+      "approved_date": "2026-03-05",
+      "display_score": 19
+    },
+    {
       "source": "Unofficial Networks",
       "title": "How Arapahoe Basin Factored Into The U.S. Ski Industry\u2019s Consolidation",
       "url": "https://unofficialnetworks.com/2026/02/20/arapahoe-basin-ski-industry/",
@@ -454,6 +475,58 @@
     },
     {
       "source": "Unofficial Networks",
+      "title": "Conservation Groups Line Up Against Canadian Ski Resort\u2019s Revival",
+      "url": "https://unofficialnetworks.com/2026/03/04/fortress-mountain-conservation-groups/",
+      "description": "Conservation groups are speaking out against the conversion of a partially abandoned Alberta ski resort into a four-season destination.",
+      "content": "Alberta \u2014 The public comment period for the revival of Fortress Mountain Resort has come and gone. However, the debate over its proposed size is far from over. February 27th was the last day of the public comment period for growing Fortress Mountain Resort from its decrepit state into a four-season destination. The first phase would focus on summer business, with additions such as a few gondolas (including a scenic gondola to Whiskey Ridge), ziplining, a mountain coaster, a canyon swing, and hiking and biking trails. There would be some winter activities, such as cat-skiing and snowshoeing (which are currently available). Lift-served skiing is part of the second phase of development, which would feature all-new lifts. One challenge skiing operations face is heavy winds, which factored into the resort\u2019s demise a few decades ago. Pushback Before the public comment period closed, various conservation groups spoke out against the plans. There are concerns that the public lands proposal is ",
+      "pub_date": "2026-03-04",
+      "id": "23033d8dd869",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "canada",
+      "secondary_categories": [
+        "resort-operations",
+        "transportation",
+        "safety-incidents"
+      ],
+      "approved_date": "2026-03-05",
+      "display_score": 18
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "British Columbia Ski Resort Opens First Phase Of Large Terrain Expansion",
+      "url": "https://unofficialnetworks.com/2026/03/04/troll-resort-pinegrove-expansion/",
+      "description": "The first phase of the Pinegrove expansion opened this winter, which has added several new trails to a BC ski resort.",
+      "content": "Quesnel, British Columbia \u2014 After decades of dreaming and planning, along with a few years of clearing and construction, a new terrain expansion has opened at an under-the-radar ski resort in British Columbia. Back in January, Troll Resort opened its first runs as part of the Pinegrove expansion. This new terrain pod is serviced by a t-bar, which is one of the longest on the continent. The Black T-Bar has a 100-meter 49.4% grade near the beginning, but riders barely notice the steepness thanks to the detailed layout and engineering. The terrain pod is full of steep terrain, but also features meandering trails for those who are less experienced. This winter has seen the opening of four new trails in this terrain pod. The first two trails opened up in January: Lars\u2019 Legacy (black) and Longest Way Down (green). After an extended closure due to a low snowpack, they reopened these trails this past weekend. They also opened two more trails, North Face and Best Day Ever, both black diamonds. ",
+      "pub_date": "2026-03-04",
+      "id": "e1eec94c1dbf",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [
+        "canada",
+        "weather-snow",
+        "transportation"
+      ],
+      "approved_date": "2026-03-05",
+      "display_score": 18
+    },
+    {
+      "source": "Unofficial Networks",
       "title": "Small British Columbia Ski Resort Having Turbulent Season",
       "url": "https://unofficialnetworks.com/2026/03/03/fairmont-hot-springs-turbulent/",
       "description": "After some high-level employees left the ski resort this past fall, they have struggled with operations this winter.",
@@ -476,52 +549,6 @@
         "weather-snow"
       ],
       "approved_date": "2026-03-04",
-      "display_score": 18
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "Jay Peak Is Still Beating Alaska: Top 5 U.S. Snowfall Totals This Season",
-      "url": "https://unofficialnetworks.com/2026/03/03/top-5-us-snowfall-totals/",
-      "description": "These are the 5 ski resorts that have seen the most snowfall so far this winter across the United States.",
-      "content": "For quite a while this winter the snowfalls statistics have looked a little whacky across the United States. Ski resorts that are usually nowhere near the top of the season snowfall total list were right up there, far ahead of the typical biggest winners. Things are starting to look a bit more normal, but, surprisingly, a Vermont resort is still topping the list. These are the 5 ski resorts that have seen the most snowfall so far this winter. The 5 Ski Resorts That Have Seen The Most Snow This Season 5. Jackson Hole Mountain Resort , Wyoming \u2013 288 inches of snowfall this season. View this post on Instagram A post shared by Jackson Hole Mountain Resort (@jacksonhole) 98 inch snow depth at the summit. 67 inch snow depth at mid-mountain. 4 inches of snow in the last 48 hours. 4. Sugar Bowl Resort , California \u2013 290 inches of snowfall this season. 71 inch snow depth at the summit. 37 inch snow depth at the base. 2 inches of snow in the last 7 days. 3. Alyeska Resort , Alaska \u2013 316 inches o",
-      "pub_date": "2026-03-03",
-      "id": "6885dabd585c",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "hospitality"
-      ],
-      "approved_date": "2026-03-04",
-      "display_score": 18
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "Jay Nears 350\u201d Before March: The Northeast Ski Season Is in Full Throwback Mode",
-      "url": "https://unofficialnetworks.com/2026/02/23/jay-nears-350-before-march-the-northeast-ski-season-is-in-full-throwback-mode/",
-      "description": "Jay, Vermont \u2013 As of Feb. 23, 2026, northern Vermont is already at (or above) full-season snowfall totals. If you\u2019ve been looking around this winter thinking, \u201cWait\u2026 is this what it used to be like?\u201d\u2014you\u2019re not imagining it. Jay Peak is flirting with ~348 inches before March, and Stowe is already around ~252 inches on [\u2026]",
-      "content": "Jay, Vermont \u2013 As of Feb. 23, 2026, northern Vermont is already at (or above) full-season snowfall totals. If you\u2019ve been looking around this winter thinking, \u201cWait\u2026 is this what it used to be like?\u201d\u2014you\u2019re not imagining it. Jay Peak is flirting with ~348 inches before March , and Stowe is already around ~252 inches on the season as of Feb. 23, 2026 . In a region where winters can be a coin flip lately, this season has been a good one, a real good one. View this post on Instagram By the numbers (Feb. 23, 2026) Jay Peak ~348\u201d season-to-date (Oct. 1\u2013Feb. 23) ~305\u201d average full season Stowe ~252\u201d season-to-date (Oct. 1\u2013Feb. 23) ~224\u201d average full season How does this compare to recent winters Stowe is basically already at last season\u2019s final number, and Jay is already past what many recent seasons finish with\u2014 and March hasn\u2019t even shown up yet. Snow totals for Jay could reach over 400\u2033 when it\u2019s all said and done. La Nina has had a big impact on the 2025/26 ski seaosn. Why has it been so",
-      "pub_date": "2026-02-23",
-      "id": "52b5e25cddd7",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [],
-      "approved_date": "2026-02-24",
       "display_score": 18
     },
     {
@@ -596,30 +623,48 @@
       "display_score": 18
     },
     {
-      "source": "PlanetSKI",
-      "title": "It\u2019s Looking Good For Late Season Skiing in the Alps",
-      "url": "https://planetski.eu/2026/03/03/its-looking-good-for-late-season-skiing-in-the-alps/",
-      "description": "It's set to be a great end to the winter ski season in the Alps. Favourable holiday dates, plenty of snow and then there's the Olympic affect. PlanetSKI looks ahead to skiing into Spring. NEW The post It\u2019s Looking Good For Late Season Skiing in the Alps appeared first on PlanetSKI .",
-      "content": "UK operators report that Easter bookings are busy at the moment with resorts also reporting growing interest and bookings. This increased interest in Easter is reflected in a significant increase in online search traffic according to Google, which reports a rise of a double digit increase across Easter ski holiday searches. This year Easter Sunday is April 5th \u2013 last year it was two weeks later on April 20th. The second half of February saw snow across the Alps and some very significant falls in places. We reported on the snow at the time on PlanetSKI: The half-term PlanetSKI snow report Images across social media sparked interest. Les Menuires, France. Image c/o Les Menuires Tourist Office. Les Menuires, France. Image c/o Les Menuires Tourist Office. There has also been a trend in recent years for people to look at skiing at the end of the season following several poor Xmas and New Year holiday periods. \u201cEaster has grown in popularity every year since we returned to ski holidays after",
-      "pub_date": "2026-03-03",
-      "id": "8f14e0a14b57",
-      "prefilter_business_score": 0,
+      "source": "Google News - Vail Alterra Ski",
+      "title": "Park City Mountain reduces Epic Pass prices for \u2018Gen Z\u2019 visitors - ABC4 Utah",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOWlV0Zy1wWnN1dnhnUGN0OVpKMU5ENHhZczA4RDRUUEF4YkFOa0VldVdXcU0xVmFHUFNScVI4V3ZuLUpjcW9hdTZld0hBS0VJY2pCWkQ3RW1RTkRYVURadlRTWjdTc0NUQlBNX1FodnBUUzEtRU5ubUFQQW1QSHVBbGZraXB6azdYWk11TzB1T3lWVHpJVktDQXRHZnI1NnRjU3pHblJUVW7SAa4BQVVfeXFMUHR4OEtYdFlZNllvcGpOTnBrNk0yTVp6bURTNTU2UnpHUHoxZnk2SDVVRUZaTFE1ZWNWeDlfSkxVX0c4S2dSLWpXVFVUbFJuSFNpb29RcEhPRTU1dVVGYjZmUEh0OUlBRUkzZkNGdF80a2ZzR0ppVzJoNlN4LXBjbE9sOV9pc1RvV3lDQS1EM2tXMHFRQWE4S3g4cDJVdU9qS083djRtNTJpRDNpem9n?oc=5",
+      "description": "Park City Mountain reduces Epic Pass prices for \u2018Gen Z\u2019 visitors ABC4 Utah",
+      "content": "Park City Mountain reduces Epic Pass prices for \u2018Gen Z\u2019 visitors ABC4 Utah",
+      "pub_date": "2026-03-05",
+      "id": "a2e4f09c3314",
+      "prefilter_business_score": 1,
       "is_macro_relevance": false,
-      "source_boost": 0,
+      "source_boost": 2,
       "score": 8,
       "score_details": {
-        "reason": "Keyword scoring (source: +0)",
+        "reason": "Keyword scoring (source: +2)",
         "method": "keyword"
       },
       "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "winter-sports",
-        "international",
-        "transportation"
-      ],
-      "approved_date": "2026-03-04",
-      "display_score": 17
+      "category": "resort-operations",
+      "secondary_categories": [],
+      "approved_date": "2026-03-05",
+      "display_score": 16
+    },
+    {
+      "source": "Google News - Vail Alterra Ski",
+      "title": "Skiing just got cheaper for 20-somethings: Epic Pass slashes youth prices - Stock Titan",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQR0J1TWVHOFJnN2pQRGpQYTdXNFpwc1RNMllySkRLRjJZdTZGelBYSkZRa000UmZIbGU5aTB1OW96cmhFckZzMzU3YUlWQUNKRHEzeU40VTdxSUpIUXlLVGNkVHhhT2MxZnpYNWhOazBSYkVxMFpKc3BGUkVEV2JmcGF5YzNaaEZkZEtoYWY2R1JHTl9qa1I3Uk5kYktnTGtTOEJnVUczcmt3cFlLV3lpa0pWZkwySjAzTzlwZ293?oc=5",
+      "description": "Skiing just got cheaper for 20-somethings: Epic Pass slashes youth prices Stock Titan",
+      "content": "Skiing just got cheaper for 20-somethings: Epic Pass slashes youth prices Stock Titan",
+      "pub_date": "2026-03-03",
+      "id": "279ac1541c20",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 8,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [],
+      "approved_date": "2026-03-05",
+      "display_score": 16
     },
     {
       "source": "Google News - Ski Industry",
@@ -668,6 +713,33 @@
       ],
       "approved_date": "2026-02-27",
       "display_score": 14
+    },
+    {
+      "source": "PlanetSKI",
+      "title": "It\u2019s Looking Good For Late Season Skiing in the Alps",
+      "url": "https://planetski.eu/2026/03/03/its-looking-good-for-late-season-skiing-in-the-alps/",
+      "description": "It's set to be a great end to the winter ski season in the Alps. Favourable holiday dates, plenty of snow and then there's the Olympic affect. PlanetSKI looks ahead to skiing into Spring. NEW The post It\u2019s Looking Good For Late Season Skiing in the Alps appeared first on PlanetSKI .",
+      "content": "UK operators report that Easter bookings are busy at the moment with resorts also reporting growing interest and bookings. This increased interest in Easter is reflected in a significant increase in online search traffic according to Google, which reports a rise of a double digit increase across Easter ski holiday searches. This year Easter Sunday is April 5th \u2013 last year it was two weeks later on April 20th. The second half of February saw snow across the Alps and some very significant falls in places. We reported on the snow at the time on PlanetSKI: The half-term PlanetSKI snow report Images across social media sparked interest. Les Menuires, France. Image c/o Les Menuires Tourist Office. Les Menuires, France. Image c/o Les Menuires Tourist Office. There has also been a trend in recent years for people to look at skiing at the end of the season following several poor Xmas and New Year holiday periods. \u201cEaster has grown in popularity every year since we returned to ski holidays after",
+      "pub_date": "2026-03-03",
+      "id": "8f14e0a14b57",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 6,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [
+        "winter-sports",
+        "international",
+        "transportation"
+      ],
+      "approved_date": "2026-03-04",
+      "display_score": 13,
+      "rescored": true
     },
     {
       "source": "Vail Resorts Investor Relations",
