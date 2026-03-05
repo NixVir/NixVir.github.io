@@ -1,14 +1,14 @@
 {
   "metadata": {
     "source": "rivers.alberta.ca",
-    "fetched_at": "2026-03-05T07:00:08Z",
+    "fetched_at": "2026-03-05T19:20:18Z",
     "description": "Real-time Snow Water Equivalent from Alberta mountain snow pillows"
   },
   "statistics": {
-    "count": 13,
-    "mean_swe_mm": 303.1,
-    "min_swe_mm": 54.0,
-    "max_swe_mm": 567.0
+    "count": 14,
+    "mean_swe_mm": 281.0,
+    "min_swe_mm": 0.4,
+    "max_swe_mm": 568.0
   },
   "stations": [
     {
@@ -16,72 +16,72 @@
       "name": "Gardiner Creek - EPA",
       "lat": 49.3599410634488,
       "lon": -114.518235,
-      "swe_mm": 417.6,
+      "swe_mm": 422.5,
       "snow_depth_cm": 124.8,
-      "timestamp": "2026-03-04 23:00:00"
+      "timestamp": "2026-03-05 11:00:00"
     },
     {
       "station_id": "05AA817",
       "name": "South Racehorse Creek - EPA",
       "lat": 49.7901390586048,
       "lon": -114.611994,
-      "swe_mm": 333.9,
+      "swe_mm": 333.0,
       "snow_depth_cm": 124.0,
-      "timestamp": "2026-03-04 23:00:00"
+      "timestamp": "2026-03-05 11:00:00"
     },
     {
       "station_id": "05AB814",
       "name": "Sentinel Peak - EPA",
       "lat": 50.2526,
       "lon": -114.465178,
-      "swe_mm": null,
-      "snow_depth_cm": 1.0,
-      "timestamp": "2026-03-04 22:00:00"
+      "swe_mm": 0.4,
+      "snow_depth_cm": 2.0,
+      "timestamp": "2026-03-05 11:00:00"
     },
     {
       "station_id": "05AD803",
       "name": "Akamina Pass 2 - EPA",
       "lat": 49.02727778,
       "lon": -114.052944,
-      "swe_mm": 162.1,
-      "snow_depth_cm": 75.1,
-      "timestamp": "2026-03-04 23:00:00"
+      "swe_mm": 153.5,
+      "snow_depth_cm": 74.6,
+      "timestamp": "2026-03-05 11:00:00"
     },
     {
       "station_id": "05BB803",
       "name": "Sunshine Village - EPA",
       "lat": 51.077453,
       "lon": -115.781592,
-      "swe_mm": 567.0,
-      "snow_depth_cm": 154.0,
-      "timestamp": "2026-03-04 22:45:00"
+      "swe_mm": 568.0,
+      "snow_depth_cm": 153.0,
+      "timestamp": "2026-03-05 10:45:00"
     },
     {
       "station_id": "05BF824",
       "name": "Three Isle Lake - EPA",
       "lat": 50.632590232417,
       "lon": -115.28129,
-      "swe_mm": 475.9,
-      "snow_depth_cm": 151.4,
-      "timestamp": "2026-03-04 23:30:00"
+      "swe_mm": 477.9,
+      "snow_depth_cm": 153.5,
+      "timestamp": "2026-03-05 11:30:00"
     },
     {
       "station_id": "05BJ805",
       "name": "Little Elbow Summit - EPA",
       "lat": 50.70548667,
       "lon": -114.990015,
-      "swe_mm": 365.8,
+      "swe_mm": 364.9,
       "snow_depth_cm": null,
-      "timestamp": "2026-03-04 23:30:00"
+      "timestamp": "2026-03-05 10:30:00"
     },
     {
       "station_id": "05BL811",
       "name": "Lost Creek South - EPA",
       "lat": 50.1704135164618,
       "lon": -114.714372,
-      "swe_mm": 541.8,
-      "snow_depth_cm": 178.0,
-      "timestamp": "2026-03-04 23:00:00"
+      "swe_mm": 540.9,
+      "snow_depth_cm": 173.0,
+      "timestamp": "2026-03-05 11:00:00"
     },
     {
       "station_id": "05CA805",
@@ -90,16 +90,16 @@
       "lon": -116.06097,
       "swe_mm": 402.3,
       "snow_depth_cm": null,
-      "timestamp": "2026-03-04 23:30:00"
+      "timestamp": "2026-03-05 11:30:00"
     },
     {
       "station_id": "05DA807",
       "name": "Whiterabbit Creek - EPA",
       "lat": 51.9816683,
       "lon": -116.168977,
-      "swe_mm": 180.4,
-      "snow_depth_cm": 106.2,
-      "timestamp": "2026-03-04 23:00:00"
+      "swe_mm": 176.6,
+      "snow_depth_cm": 105.7,
+      "timestamp": "2026-03-05 11:00:00"
     },
     {
       "station_id": "05DB802",
@@ -107,8 +107,8 @@
       "lat": 51.8942282628268,
       "lon": -115.384567,
       "swe_mm": 113.7,
-      "snow_depth_cm": 53.0,
-      "timestamp": "2026-03-04 23:30:00"
+      "snow_depth_cm": 52.0,
+      "timestamp": "2026-03-05 11:30:00"
     },
     {
       "station_id": "05DD804",
@@ -116,8 +116,8 @@
       "lat": 52.670833333,
       "lon": -117.225556,
       "swe_mm": 226.1,
-      "snow_depth_cm": 87.3,
-      "timestamp": "2026-03-04 23:00:00"
+      "snow_depth_cm": 87.0,
+      "timestamp": "2026-03-05 11:00:00"
     },
     {
       "station_id": "07BB811",
@@ -125,8 +125,8 @@
       "lat": 53.868888889,
       "lon": -115.543056,
       "swe_mm": 54.0,
-      "snow_depth_cm": 20.5,
-      "timestamp": "2026-03-04 22:00:00"
+      "snow_depth_cm": 20.2,
+      "timestamp": "2026-03-05 10:00:00"
     },
     {
       "station_id": "07BB814",
@@ -134,8 +134,8 @@
       "lat": 54.058888889,
       "lon": -114.794722,
       "swe_mm": 100.2,
-      "snow_depth_cm": 56.1,
-      "timestamp": "2026-03-04 22:00:00"
+      "snow_depth_cm": 54.6,
+      "timestamp": "2026-03-05 10:00:00"
     }
   ]
 }
