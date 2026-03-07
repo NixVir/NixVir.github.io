@@ -1,6 +1,6 @@
 {
-  "updated": "2026-03-06 11:22:32",
-  "total_articles": 35,
+  "updated": "2026-03-07 11:13:41",
+  "total_articles": 34,
   "scoring_method": "keyword",
   "articles": [
     {
@@ -76,6 +76,28 @@
       ],
       "approved_date": "2026-02-25",
       "display_score": 27
+    },
+    {
+      "source": "Google News - Vail Alterra Ski",
+      "title": "Vail Resorts's Earnings: A Preview - Benzinga",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOeThBMW93UjI1VUw2Z0ZEdHZfRjRyaTY3V3I3YTNfVk9DQU83UzJOUVNOMHV2dnlyYWhmVjJzdzBJZ3BQQ25VZmZZVF9xUDFUc1Bra3Y1R1NiTnhKSXpkSW9RWm9TQ0NoWHJoUmowN2MtNWpwbXZSNDJ2S2VCdHNiOTZVWnVOSF9ja2dFZVJWRFljNHpX?oc=5",
+      "description": "Vail Resorts's Earnings: A Preview Benzinga",
+      "content": "Vail Resorts's Earnings: A Preview Benzinga",
+      "pub_date": "2026-03-06",
+      "id": "0454b85c9c77",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [],
+      "approved_date": "2026-03-07",
+      "display_score": 25
     },
     {
       "source": "Google News - Ski Resort Business",
@@ -291,40 +313,6 @@
       "display_score": 22.5
     },
     {
-      "source": "Vail Resorts Investor Relations",
-      "title": "Vail Resorts Announces Fiscal 2026 Second Quarter Earnings Release Date",
-      "url": "https://investors.vailresorts.com/news-releases/news-release-details/vail-resorts-announces-fiscal-2026-second-quarter-earnings",
-      "description": "BROOMFIELD, Colo., Feb. 13, 2026 /PRNewswire/ -- Vail Resorts, Inc. (NYSE: MTN) announced today it will release the Company's financial results for its fiscal second quarter 2026 ended January 31, 2026 after market close on Monday, March 9, 2026. The Company will host a conference call at 5:00 p.m.",
-      "content": "BROOMFIELD, Colo., Feb. 13, 2026 /PRNewswire/ -- Vail Resorts, Inc. (NYSE: MTN) announced today it will release the Company's financial results for its fiscal second quarter 2026 ended January 31, 2026 after market close on Monday, March 9, 2026. The Company will host a conference call at 5:00 p.m.",
-      "pub_date": "2026-02-13",
-      "id": "47fbb4923997",
-      "prefilter_business_score": 2,
-      "is_macro_relevance": false,
-      "source_boost": 5,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +5)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "winter-sports",
-      "secondary_categories": [
-        "business-investment"
-      ],
-      "other_sources": [
-        {
-          "source": "Vail Resorts Investor Relations",
-          "url": "https://investors.vailresorts.com/news-releases/news-release-details/vail-resorts-announces-fiscal-2026-first-quarter-earnings"
-        },
-        {
-          "source": "Vail Resorts Investor Relations",
-          "url": "https://investors.vailresorts.com/news-releases/news-release-details/vail-resorts-reports-certain-ski-season-metrics-season-date-30"
-        }
-      ],
-      "approved_date": "2026-02-14",
-      "display_score": 22
-    },
-    {
       "source": "Ski Area Management",
       "title": "Pomerelle Sold to Longtime Mountain Manager",
       "url": "https://www.saminfo.com/news/sam-headline-news/pomerelle-sold-to-longtime-mountain-manager",
@@ -498,6 +486,30 @@
       "display_score": 19
     },
     {
+      "source": "Unofficial Networks",
+      "title": "These 4 Ski Resorts Saw 20+ Inches Of Snow In The Last 24 Hours",
+      "url": "https://unofficialnetworks.com/2026/03/06/20-inches-of-snow/",
+      "description": "4 ski areas across North America saw more than 20 inches of new snow in the last 24 hours, 2 of which saw 2 feet are more.",
+      "content": "The meteorological winter officially concluded with the start of March, yet it feels like some areas are only just starting to see real winter weather. The last 24 hour have been huge for quite a few ski areas, and the snow is coming down heavy at quite a few resorts today. According to their snow reports, 4 ski areas across North America saw more than 20 inches of new snow in the last 24 hours, 2 of which saw 2 feet are more. 4. Pebble Creek Ski Area , Idaho \u2013 20 inches in the last 24 hours View this post on Instagram A post shared by Pebble Creek Ski Area (@pebbleskiarea) 20 inches of snow in the last 48 hours. 60 inch depth at the summit. 14 inch depth at the base. 3. Alta Ski Area , Utah \u2013 21 inches in the last 24 hours 14 inches in the last 12 hours. 28 inch storm total. 259 inch season snowfall total. 2. Snowbird , Utah \u2013 24 inches in the last 24 hours View this post on Instagram A post shared by Snowbird (@snowbird) 18 inches of snow overnight. 30 inches in the last 48 hours. 24",
+      "pub_date": "2026-03-06",
+      "id": "b37728f11bb7",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [
+        "hospitality"
+      ],
+      "approved_date": "2026-03-07",
+      "display_score": 18
+    },
+    {
       "source": "The Ski Guru",
       "title": "Investment as \u201cMulti-Risk Insurance\u201d: How Ski Resorts Are Reinventing Infrastructure Across the Alps and North America",
       "url": "https://www.the-ski-guru.com/2026/03/05/ski-resort-investment/",
@@ -575,32 +587,6 @@
       "display_score": 18
     },
     {
-      "source": "Unofficial Networks",
-      "title": "Small British Columbia Ski Resort Having Turbulent Season",
-      "url": "https://unofficialnetworks.com/2026/03/03/fairmont-hot-springs-turbulent/",
-      "description": "After some high-level employees left the ski resort this past fall, they have struggled with operations this winter.",
-      "content": "British Columbia \u2014 It\u2019s been a topsy-turvy winter for Fairmont Hot Springs Resort . Before the season started, there were reportedly several notable staff departures, raising questions about whether it would operate at all this winter. However, it is operating, albeit with some modifications compared to the typical season. According to The Columbia Valley Pioneer , ski season began for Fairmont on January 9th, which was a couple of weeks later than usual. However, it opened with limited lifts and terrain. This was due to the chairlift failing inspection twice. Add in warmer-than-average temperatures and inconsistent snowfall, and it\u2019s been frustrating among guests. The chairlift finally opened on February 17th. Some guests were thrilled, while others said they wouldn\u2019t renew their passes next year because of the delay. \u201cIt\u2019s great that the chair is open and the recent snow will help extend the season a bit, but for many the damage is done. The poor \u2014 or non existent \u2014 communication to ",
-      "pub_date": "2026-03-03",
-      "id": "8dc01a7df2dd",
-      "prefilter_business_score": 1,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "canada",
-      "secondary_categories": [
-        "ski-history",
-        "resort-operations",
-        "weather-snow"
-      ],
-      "approved_date": "2026-03-04",
-      "display_score": 18
-    },
-    {
       "source": "Google News - Vail Alterra Ski",
       "title": "Property rights lawsuit could close two Park City Mountain ski lifts - Park Record",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNQUhrSFlrNWZJN0lkU3JlMDIyQ1VldHhsM3BZMy1nSE5aZUF6TjRqTHhvcC1vT3R0aGZfUnpPYlIxdXlNRWNZQjRiWUVSOFc1MjVrZDh2ejk4ZXIxSm1jX2dMQzhiZVMzd3hhRjVHOGk2dWVEUTBOdE9UWHhqZkMyVzJydHZ6c3lwakJWbklVX1U1dkxkWWlyMXVjaGdlTTdFOE03b1l4MWg0eEk?oc=5",
@@ -650,26 +636,30 @@
       "display_score": 18
     },
     {
-      "source": "Google News - Ski Industry",
-      "title": "Winter Tourism Shift: How China\u2019s Ski Industry Is Thriving While Japan Faces Decline - Travel And Tour World",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOSUo3aWt4eHVBY2hkSmlBaVBPQl84al9PZjMzRjJlQzFqN1FvUjlmbXJjVllUd1B0WV9UWGdzeS15a3pNLUI3ZG56N2gxWllnOWoxRUZwbUVLdHh3cklnSUFpSnBWX1RCVWtBSWVCM2V1dEx4OUlYN3Fzc3RIVkE4V3haQVNNRTRyS25xYlFvb09EcUI4RmtvQk5hMTFYZkd6ODNjcjdUQVNUazhRaUJTTC0tUVNnclZUYkNuSE5XOXg5TjU0U0pLSEVZVQ?oc=5",
-      "description": "Winter Tourism Shift: How China\u2019s Ski Industry Is Thriving While Japan Faces Decline Travel And Tour World",
-      "content": "Winter Tourism Shift: How China\u2019s Ski Industry Is Thriving While Japan Faces Decline Travel And Tour World",
-      "pub_date": "2026-02-13",
-      "id": "9967282a081e",
-      "prefilter_business_score": 2,
+      "source": "PlanetSKI",
+      "title": "It\u2019s Looking Good For Late Season Skiing in the Alps",
+      "url": "https://planetski.eu/2026/03/03/its-looking-good-for-late-season-skiing-in-the-alps/",
+      "description": "It's set to be a great end to the winter ski season in the Alps. Favourable holiday dates, plenty of snow and then there's the Olympic affect. PlanetSKI looks ahead to skiing into Spring. NEW The post It\u2019s Looking Good For Late Season Skiing in the Alps appeared first on PlanetSKI .",
+      "content": "UK operators report that Easter bookings are busy at the moment with resorts also reporting growing interest and bookings. This increased interest in Easter is reflected in a significant increase in online search traffic according to Google, which reports a rise of a double digit increase across Easter ski holiday searches. This year Easter Sunday is April 5th \u2013 last year it was two weeks later on April 20th. The second half of February saw snow across the Alps and some very significant falls in places. We reported on the snow at the time on PlanetSKI: The half-term PlanetSKI snow report Images across social media sparked interest. Les Menuires, France. Image c/o Les Menuires Tourist Office. Les Menuires, France. Image c/o Les Menuires Tourist Office. There has also been a trend in recent years for people to look at skiing at the end of the season following several poor Xmas and New Year holiday periods. \u201cEaster has grown in popularity every year since we returned to ski holidays after",
+      "pub_date": "2026-03-03",
+      "id": "8f14e0a14b57",
+      "prefilter_business_score": 0,
       "is_macro_relevance": false,
-      "source_boost": 1,
-      "score": 9,
+      "source_boost": 0,
+      "score": 8,
       "score_details": {
-        "reason": "Keyword scoring (source: +1)",
+        "reason": "Keyword scoring (source: +0)",
         "method": "keyword"
       },
       "score_method": "keyword",
-      "category": "international",
-      "secondary_categories": [],
-      "approved_date": "2026-02-13",
-      "display_score": 18
+      "category": "weather-snow",
+      "secondary_categories": [
+        "winter-sports",
+        "international",
+        "transportation"
+      ],
+      "approved_date": "2026-03-07",
+      "display_score": 17
     },
     {
       "source": "Google News - Vail Alterra Ski",
@@ -679,28 +669,6 @@
       "content": "Park City Mountain reduces Epic Pass prices for \u2018Gen Z\u2019 visitors ABC4 Utah",
       "pub_date": "2026-03-05",
       "id": "a2e4f09c3314",
-      "prefilter_business_score": 1,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 8,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "resort-operations",
-      "secondary_categories": [],
-      "approved_date": "2026-03-05",
-      "display_score": 16
-    },
-    {
-      "source": "Google News - Vail Alterra Ski",
-      "title": "Skiing just got cheaper for 20-somethings: Epic Pass slashes youth prices - Stock Titan",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQR0J1TWVHOFJnN2pQRGpQYTdXNFpwc1RNMllySkRLRjJZdTZGelBYSkZRa000UmZIbGU5aTB1OW96cmhFckZzMzU3YUlWQUNKRHEzeU40VTdxSUpIUXlLVGNkVHhhT2MxZnpYNWhOazBSYkVxMFpKc3BGUkVEV2JmcGF5YzNaaEZkZEtoYWY2R1JHTl9qa1I3Uk5kYktnTGtTOEJnVUczcmt3cFlLV3lpa0pWZkwySjAzTzlwZ293?oc=5",
-      "description": "Skiing just got cheaper for 20-somethings: Epic Pass slashes youth prices Stock Titan",
-      "content": "Skiing just got cheaper for 20-somethings: Epic Pass slashes youth prices Stock Titan",
-      "pub_date": "2026-03-03",
-      "id": "279ac1541c20",
       "prefilter_business_score": 1,
       "is_macro_relevance": false,
       "source_boost": 2,
@@ -835,31 +803,26 @@
       "display_score": 10
     },
     {
-      "source": "PlanetSKI",
-      "title": "It\u2019s Looking Good For Late Season Skiing in the Alps",
-      "url": "https://planetski.eu/2026/03/03/its-looking-good-for-late-season-skiing-in-the-alps/",
-      "description": "It's set to be a great end to the winter ski season in the Alps. Favourable holiday dates, plenty of snow and then there's the Olympic affect. PlanetSKI looks ahead to skiing into Spring. NEW The post It\u2019s Looking Good For Late Season Skiing in the Alps appeared first on PlanetSKI .",
-      "content": "UK operators report that Easter bookings are busy at the moment with resorts also reporting growing interest and bookings. This increased interest in Easter is reflected in a significant increase in online search traffic according to Google, which reports a rise of a double digit increase across Easter ski holiday searches. This year Easter Sunday is April 5th \u2013 last year it was two weeks later on April 20th. The second half of February saw snow across the Alps and some very significant falls in places. We reported on the snow at the time on PlanetSKI: The half-term PlanetSKI snow report Images across social media sparked interest. Les Menuires, France. Image c/o Les Menuires Tourist Office. Les Menuires, France. Image c/o Les Menuires Tourist Office. There has also been a trend in recent years for people to look at skiing at the end of the season following several poor Xmas and New Year holiday periods. \u201cEaster has grown in popularity every year since we returned to ski holidays after",
-      "pub_date": "2026-03-03",
-      "id": "8f14e0a14b57",
-      "prefilter_business_score": 0,
+      "source": "Google News - Ski Industry",
+      "title": "Oregon ski resorts, recreation industry 'reasonably hopeful' about liability waiver reform - The Business Journals",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPTVJybWR1M1ZHTG9uTmtGR3VpbG5OQ0tBQ2o5Vjc3S0VEdmlhOW9KcmRuQUVvMTVhaTRzb3NMRERBMXpxRUdSblVkNk1EREg0OFVRdGRQRFJ3cXhlLXdudEVndi1oaEFIcThZRHhQQXlPcmhVeVBQaEFLc2dpN0NFOWdKTEVHdXNEUlAtbDdZVlRzc3YtMU5ma3E4NFlZeFpsRnF4Wms1WGM?oc=5",
+      "description": "Oregon ski resorts, recreation industry 'reasonably hopeful' about liability waiver reform The Business Journals",
+      "content": "Oregon ski resorts, recreation industry 'reasonably hopeful' about liability waiver reform The Business Journals",
+      "pub_date": "2026-03-06",
+      "id": "63442bca062b",
+      "prefilter_business_score": 1,
       "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 4,
+      "source_boost": 1,
+      "score": 7,
       "score_details": {
-        "reason": "Keyword scoring (source: +0)",
+        "reason": "Keyword scoring (source: +1)",
         "method": "keyword"
       },
       "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "winter-sports",
-        "international",
-        "transportation"
-      ],
-      "approved_date": "2026-03-04",
-      "display_score": 9,
-      "rescored": true
+      "category": "safety-incidents",
+      "secondary_categories": [],
+      "approved_date": "2026-03-07",
+      "display_score": 6
     }
   ]
 }
