@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-07 11:13:41",
+  "updated": "2026-03-08 11:14:58",
   "total_articles": 34,
   "scoring_method": "keyword",
   "articles": [
@@ -76,6 +76,28 @@
       ],
       "approved_date": "2026-02-25",
       "display_score": 27
+    },
+    {
+      "source": "Google News - Vail Alterra Ski",
+      "title": "Vail Resorts (MTN) Reports Earnings Tomorrow: What To Expect - Finviz",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOX3pId3lkWHJnZlh6aGNndnA2N0xiWnFaUEVjanFRTmd3QnBMOEl1RzVlbE95SnZJV00wQmowUlhNbGw5d1JGNllYdkRFbTBvd3R6SWZRV0xlSFFpRE5qWXBGSkpIbEtXSXVONzkzYmx2UE1rd205UWNRQnhFQWNCSEpmSVhIV3R1eXpvR1c5QWNwUQ?oc=5",
+      "description": "Vail Resorts (MTN) Reports Earnings Tomorrow: What To Expect Finviz",
+      "content": "Vail Resorts (MTN) Reports Earnings Tomorrow: What To Expect Finviz",
+      "pub_date": "2026-03-08",
+      "id": "a4ca718f20ec",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [],
+      "approved_date": "2026-03-08",
+      "display_score": 25
     },
     {
       "source": "Google News - Vail Alterra Ski",
@@ -636,54 +658,6 @@
       "display_score": 18
     },
     {
-      "source": "PlanetSKI",
-      "title": "It\u2019s Looking Good For Late Season Skiing in the Alps",
-      "url": "https://planetski.eu/2026/03/03/its-looking-good-for-late-season-skiing-in-the-alps/",
-      "description": "It's set to be a great end to the winter ski season in the Alps. Favourable holiday dates, plenty of snow and then there's the Olympic affect. PlanetSKI looks ahead to skiing into Spring. NEW The post It\u2019s Looking Good For Late Season Skiing in the Alps appeared first on PlanetSKI .",
-      "content": "UK operators report that Easter bookings are busy at the moment with resorts also reporting growing interest and bookings. This increased interest in Easter is reflected in a significant increase in online search traffic according to Google, which reports a rise of a double digit increase across Easter ski holiday searches. This year Easter Sunday is April 5th \u2013 last year it was two weeks later on April 20th. The second half of February saw snow across the Alps and some very significant falls in places. We reported on the snow at the time on PlanetSKI: The half-term PlanetSKI snow report Images across social media sparked interest. Les Menuires, France. Image c/o Les Menuires Tourist Office. Les Menuires, France. Image c/o Les Menuires Tourist Office. There has also been a trend in recent years for people to look at skiing at the end of the season following several poor Xmas and New Year holiday periods. \u201cEaster has grown in popularity every year since we returned to ski holidays after",
-      "pub_date": "2026-03-03",
-      "id": "8f14e0a14b57",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 8,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "winter-sports",
-        "international",
-        "transportation"
-      ],
-      "approved_date": "2026-03-07",
-      "display_score": 17
-    },
-    {
-      "source": "Google News - Vail Alterra Ski",
-      "title": "Park City Mountain reduces Epic Pass prices for \u2018Gen Z\u2019 visitors - ABC4 Utah",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOWlV0Zy1wWnN1dnhnUGN0OVpKMU5ENHhZczA4RDRUUEF4YkFOa0VldVdXcU0xVmFHUFNScVI4V3ZuLUpjcW9hdTZld0hBS0VJY2pCWkQ3RW1RTkRYVURadlRTWjdTc0NUQlBNX1FodnBUUzEtRU5ubUFQQW1QSHVBbGZraXB6azdYWk11TzB1T3lWVHpJVktDQXRHZnI1NnRjU3pHblJUVW7SAa4BQVVfeXFMUHR4OEtYdFlZNllvcGpOTnBrNk0yTVp6bURTNTU2UnpHUHoxZnk2SDVVRUZaTFE1ZWNWeDlfSkxVX0c4S2dSLWpXVFVUbFJuSFNpb29RcEhPRTU1dVVGYjZmUEh0OUlBRUkzZkNGdF80a2ZzR0ppVzJoNlN4LXBjbE9sOV9pc1RvV3lDQS1EM2tXMHFRQWE4S3g4cDJVdU9qS083djRtNTJpRDNpem9n?oc=5",
-      "description": "Park City Mountain reduces Epic Pass prices for \u2018Gen Z\u2019 visitors ABC4 Utah",
-      "content": "Park City Mountain reduces Epic Pass prices for \u2018Gen Z\u2019 visitors ABC4 Utah",
-      "pub_date": "2026-03-05",
-      "id": "a2e4f09c3314",
-      "prefilter_business_score": 1,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 8,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "resort-operations",
-      "secondary_categories": [],
-      "approved_date": "2026-03-05",
-      "display_score": 16
-    },
-    {
       "source": "Google News - Ski Industry",
       "title": "Skiing's Prickliest Problem: Housing - Ski Area Management",
       "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5QUUpickVfTnN3S25haERVeF90T3VUTkpBVzZ5RjlnVHkwNldhMFB1dnBYSTdyb0dic2RjcWE3S2dwZTlsWEo1TW9VZjBZYkE2MmlrWXdBSGhQdmhEVlRlaHE5OHJ0VDk0em0tUFlZXy1tdw?oc=5",
@@ -730,6 +704,33 @@
       ],
       "approved_date": "2026-02-27",
       "display_score": 14
+    },
+    {
+      "source": "PlanetSKI",
+      "title": "It\u2019s Looking Good For Late Season Skiing in the Alps",
+      "url": "https://planetski.eu/2026/03/03/its-looking-good-for-late-season-skiing-in-the-alps/",
+      "description": "It's set to be a great end to the winter ski season in the Alps. Favourable holiday dates, plenty of snow and then there's the Olympic affect. PlanetSKI looks ahead to skiing into Spring. NEW The post It\u2019s Looking Good For Late Season Skiing in the Alps appeared first on PlanetSKI .",
+      "content": "UK operators report that Easter bookings are busy at the moment with resorts also reporting growing interest and bookings. This increased interest in Easter is reflected in a significant increase in online search traffic according to Google, which reports a rise of a double digit increase across Easter ski holiday searches. This year Easter Sunday is April 5th \u2013 last year it was two weeks later on April 20th. The second half of February saw snow across the Alps and some very significant falls in places. We reported on the snow at the time on PlanetSKI: The half-term PlanetSKI snow report Images across social media sparked interest. Les Menuires, France. Image c/o Les Menuires Tourist Office. Les Menuires, France. Image c/o Les Menuires Tourist Office. There has also been a trend in recent years for people to look at skiing at the end of the season following several poor Xmas and New Year holiday periods. \u201cEaster has grown in popularity every year since we returned to ski holidays after",
+      "pub_date": "2026-03-03",
+      "id": "8f14e0a14b57",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 6,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [
+        "winter-sports",
+        "international",
+        "transportation"
+      ],
+      "approved_date": "2026-03-07",
+      "display_score": 13,
+      "rescored": true
     },
     {
       "source": "Vail Resorts Investor Relations",
