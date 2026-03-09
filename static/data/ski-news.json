@@ -1,6 +1,6 @@
 {
-  "updated": "2026-03-08 11:14:58",
-  "total_articles": 34,
+  "updated": "2026-03-09 11:29:53",
+  "total_articles": 33,
   "scoring_method": "keyword",
   "articles": [
     {
@@ -509,6 +509,30 @@
     },
     {
       "source": "Unofficial Networks",
+      "title": "Will This California Ski Resort Reopen This Winter?",
+      "url": "https://unofficialnetworks.com/2026/03/08/will-this-california-ski-resort-reopen-this-winter/",
+      "description": "A California ski resort closed again last week due to low snowpack, and the long-range forecast is looking dry.",
+      "content": "McCloud, California \u2014 There have been good moments this season at the Mt. Shasta Ski Park. Major dumps in late December and February have led to some nice powder skiing. Unfortunately, warm weather and rain have also played a role, which resulted in two closures. The first came on February 9th, but didn\u2019t last too long due to the snow. The latest closure was announced on March 1st. Since then, they\u2019ve been closed. While the upper elevations still have snowpack, the base area looks pretty bare. View this post on Instagram With snow not on the radar for the next 10 days (according to OpenSnow), it raises the question of whether Mt. Shasta Ski Park will operate again this season. They do seem hopeful for a late March miracle, so they could reopen if there\u2019s spring snowfall. It goes to show how inconsistent this season has been for California\u2019s ski industry. Only 2 Ski Resorts in North America Have Over a Mile of Vertical And Neither Is in the U.S. About Mt. Shasta Ski Park Situated below ",
+      "pub_date": "2026-03-08",
+      "id": "11945d98f893",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [
+        "safety-incidents"
+      ],
+      "approved_date": "2026-03-09",
+      "display_score": 18
+    },
+    {
+      "source": "Unofficial Networks",
       "title": "These 4 Ski Resorts Saw 20+ Inches Of Snow In The Last 24 Hours",
       "url": "https://unofficialnetworks.com/2026/03/06/20-inches-of-snow/",
       "description": "4 ski areas across North America saw more than 20 inches of new snow in the last 24 hours, 2 of which saw 2 feet are more.",
@@ -583,32 +607,6 @@
       "display_score": 18
     },
     {
-      "source": "Unofficial Networks",
-      "title": "British Columbia Ski Resort Opens First Phase Of Large Terrain Expansion",
-      "url": "https://unofficialnetworks.com/2026/03/04/troll-resort-pinegrove-expansion/",
-      "description": "The first phase of the Pinegrove expansion opened this winter, which has added several new trails to a BC ski resort.",
-      "content": "Quesnel, British Columbia \u2014 After decades of dreaming and planning, along with a few years of clearing and construction, a new terrain expansion has opened at an under-the-radar ski resort in British Columbia. Back in January, Troll Resort opened its first runs as part of the Pinegrove expansion. This new terrain pod is serviced by a t-bar, which is one of the longest on the continent. The Black T-Bar has a 100-meter 49.4% grade near the beginning, but riders barely notice the steepness thanks to the detailed layout and engineering. The terrain pod is full of steep terrain, but also features meandering trails for those who are less experienced. This winter has seen the opening of four new trails in this terrain pod. The first two trails opened up in January: Lars\u2019 Legacy (black) and Longest Way Down (green). After an extended closure due to a low snowpack, they reopened these trails this past weekend. They also opened two more trails, North Face and Best Day Ever, both black diamonds. ",
-      "pub_date": "2026-03-04",
-      "id": "e1eec94c1dbf",
-      "prefilter_business_score": 1,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "resort-operations",
-      "secondary_categories": [
-        "canada",
-        "weather-snow",
-        "transportation"
-      ],
-      "approved_date": "2026-03-05",
-      "display_score": 18
-    },
-    {
       "source": "Google News - Vail Alterra Ski",
       "title": "Property rights lawsuit could close two Park City Mountain ski lifts - Park Record",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNQUhrSFlrNWZJN0lkU3JlMDIyQ1VldHhsM3BZMy1nSE5aZUF6TjRqTHhvcC1vT3R0aGZfUnpPYlIxdXlNRWNZQjRiWUVSOFc1MjVrZDh2ejk4ZXIxSm1jX2dMQzhiZVMzd3hhRjVHOGk2dWVEUTBOdE9UWHhqZkMyVzJydHZ6c3lwakJWbklVX1U1dkxkWWlyMXVjaGdlTTdFOE03b1l4MWg0eEk?oc=5",
@@ -658,28 +656,6 @@
       "display_score": 18
     },
     {
-      "source": "Google News - Ski Industry",
-      "title": "Skiing's Prickliest Problem: Housing - Ski Area Management",
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5QUUpickVfTnN3S25haERVeF90T3VUTkpBVzZ5RjlnVHkwNldhMFB1dnBYSTdyb0dic2RjcWE3S2dwZTlsWEo1TW9VZjBZYkE2MmlrWXdBSGhQdmhEVlRlaHE5OHJ0VDk0em0tUFlZXy1tdw?oc=5",
-      "description": "Skiing's Prickliest Problem: Housing Ski Area Management",
-      "content": "Skiing's Prickliest Problem: Housing Ski Area Management",
-      "pub_date": "2026-02-15",
-      "id": "e1dd0cba9049",
-      "prefilter_business_score": 2,
-      "is_macro_relevance": false,
-      "source_boost": 1,
-      "score": 8,
-      "score_details": {
-        "reason": "Keyword scoring (source: +1)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "resort-operations",
-      "secondary_categories": [],
-      "approved_date": "2026-02-24",
-      "display_score": 16
-    },
-    {
       "source": "PlanetSKI",
       "title": "Indy Pass Adds 16 New Ski Areas",
       "url": "https://planetski.eu/2026/02/26/indy-pass-adds-16-new-ski-areas/",
@@ -704,33 +680,6 @@
       ],
       "approved_date": "2026-02-27",
       "display_score": 14
-    },
-    {
-      "source": "PlanetSKI",
-      "title": "It\u2019s Looking Good For Late Season Skiing in the Alps",
-      "url": "https://planetski.eu/2026/03/03/its-looking-good-for-late-season-skiing-in-the-alps/",
-      "description": "It's set to be a great end to the winter ski season in the Alps. Favourable holiday dates, plenty of snow and then there's the Olympic affect. PlanetSKI looks ahead to skiing into Spring. NEW The post It\u2019s Looking Good For Late Season Skiing in the Alps appeared first on PlanetSKI .",
-      "content": "UK operators report that Easter bookings are busy at the moment with resorts also reporting growing interest and bookings. This increased interest in Easter is reflected in a significant increase in online search traffic according to Google, which reports a rise of a double digit increase across Easter ski holiday searches. This year Easter Sunday is April 5th \u2013 last year it was two weeks later on April 20th. The second half of February saw snow across the Alps and some very significant falls in places. We reported on the snow at the time on PlanetSKI: The half-term PlanetSKI snow report Images across social media sparked interest. Les Menuires, France. Image c/o Les Menuires Tourist Office. Les Menuires, France. Image c/o Les Menuires Tourist Office. There has also been a trend in recent years for people to look at skiing at the end of the season following several poor Xmas and New Year holiday periods. \u201cEaster has grown in popularity every year since we returned to ski holidays after",
-      "pub_date": "2026-03-03",
-      "id": "8f14e0a14b57",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 6,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "winter-sports",
-        "international",
-        "transportation"
-      ],
-      "approved_date": "2026-03-07",
-      "display_score": 13,
-      "rescored": true
     },
     {
       "source": "Vail Resorts Investor Relations",
@@ -802,6 +751,33 @@
       ],
       "approved_date": "2026-03-02",
       "display_score": 10
+    },
+    {
+      "source": "PlanetSKI",
+      "title": "It\u2019s Looking Good For Late Season Skiing in the Alps",
+      "url": "https://planetski.eu/2026/03/03/its-looking-good-for-late-season-skiing-in-the-alps/",
+      "description": "It's set to be a great end to the winter ski season in the Alps. Favourable holiday dates, plenty of snow and then there's the Olympic affect. PlanetSKI looks ahead to skiing into Spring. NEW The post It\u2019s Looking Good For Late Season Skiing in the Alps appeared first on PlanetSKI .",
+      "content": "UK operators report that Easter bookings are busy at the moment with resorts also reporting growing interest and bookings. This increased interest in Easter is reflected in a significant increase in online search traffic according to Google, which reports a rise of a double digit increase across Easter ski holiday searches. This year Easter Sunday is April 5th \u2013 last year it was two weeks later on April 20th. The second half of February saw snow across the Alps and some very significant falls in places. We reported on the snow at the time on PlanetSKI: The half-term PlanetSKI snow report Images across social media sparked interest. Les Menuires, France. Image c/o Les Menuires Tourist Office. Les Menuires, France. Image c/o Les Menuires Tourist Office. There has also been a trend in recent years for people to look at skiing at the end of the season following several poor Xmas and New Year holiday periods. \u201cEaster has grown in popularity every year since we returned to ski holidays after",
+      "pub_date": "2026-03-03",
+      "id": "8f14e0a14b57",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 4,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [
+        "winter-sports",
+        "international",
+        "transportation"
+      ],
+      "approved_date": "2026-03-07",
+      "display_score": 9,
+      "rescored": true
     },
     {
       "source": "Google News - Ski Industry",
