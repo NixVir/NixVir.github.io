@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-09 11:29:53",
+  "updated": "2026-03-10 11:26:43",
   "total_articles": 33,
   "scoring_method": "keyword",
   "articles": [
@@ -76,6 +76,42 @@
       ],
       "approved_date": "2026-02-25",
       "display_score": 27
+    },
+    {
+      "source": "Google News - WSJ Ski",
+      "title": "Vail Forecasts Lower Profit After Sparse Snow Deters Skiers - WSJ",
+      "url": "https://news.google.com/rss/articles/CBMirwNBVV95cUxOLThFRm44ejZlelZ4YWpCSWtJXzN6MjV6aVVmVHJxcnpFZWlDVnhUUDBMbXBOaVBqRUt6XzEwTW5aeWdNRHJoajZYWk9iSkRBTFBwRi1FQk54cUpiMFNjeHB0NW82YnFGUjA2VHpRY2h4ZldSZmpRSWcyc0NCMjFCejhzakFadURVbUl6dlZzR19vN2l3ZVBObzk5WFhiVlExUTRiSVlreVp6dUMtRWNweHZOTFplM3JpbHQwd0VDTC1uQkN2MFR6VlU5YUtkSGg3TUhUSTVYSWczQWtnd2JwRmt3U013Nlo2OHBYSEVoa0xhay1aeHgxQ2syWUk2U2p6SEZOVGphSUxVSExoRi1ab1RZeVI2b1hWU3c1WHloUGF0VHJaRTlUNFVfRnZrT2FGTzhqcF9lcHl6QnY3eTI5bTRDV3M1d0hPNHA0NzNQa1pwMFI5UDVWTEIycUk5OHhIdURtWHI1c2lkRVY2YnRwbXZjSWpvMzlONXdZekp4a1UxTks1OGFES1VqX3J6eW1VYnJ0ZnZOZnNnMFl0MjFtRjR3Qkk1RzVmaFJGOVd1UQ?oc=5",
+      "description": "Vail Forecasts Lower Profit After Sparse Snow Deters Skiers WSJ",
+      "content": "Vail Forecasts Lower Profit After Sparse Snow Deters Skiers WSJ",
+      "pub_date": "2026-03-09",
+      "id": "664fae7a9fef",
+      "prefilter_business_score": 2,
+      "is_macro_relevance": false,
+      "source_boost": 6,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +6)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [],
+      "other_sources": [
+        {
+          "source": "Google News - Vail Alterra Ski",
+          "url": "https://news.google.com/rss/articles/CBMirwNBVV95cUxNUXVBMlVuZUdEak5MamhlM0VjaVBBdnE2Y2cwZ2FVZEVkd0RMS09YblFQWURZYm9vbGVlRnNMeWczMHQybjdfWVlUMW1yWWFJOXFIVy1ZRDdhcjFtV3FaRXdRa1cxeThEOGV5SEppaU5uYW11M3hWLTItSnlzTHA4dmtpaG1WTGhUNVVGamxHNGJFNmt6bUp6eV9rdXVEdE1oQTJwUHYxdnlObHFRekxJb0k3NUNvZF9pMlRvc2ZNYk5NZkUzOUhGMHh6eWZuTnc1c1REM29wT0xwQVFxQkU3MjZkMUU3YnBLLW96Vm1Zbk9ES0liZFkycEVrQVVPODFBRjAyLW9QbE1JSUdGYXMtS0w4ZVIzMHE3X2R3U0N5bG5nZXlaMnViRTE0dG5RUC1tTFlqMXdkMnZHcWZWLVl1dWkxbElGU3RRU0I1QXJPSFc4QXpEYXBIeTdWenBwY2tmeWg3UFhZbTIzUXZnTEprX2VsZXZfU2ltRU9rakdVLXA2Y2FGR00tVUthMVN1R0w4RURRWnN3aUVqUTRsT0NqYWsydl8zcDdlSWVxVHg0VQ?oc=5"
+        },
+        {
+          "source": "Google News - Canada Ski Industry",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNQklZVmRub0pPOVBqdWpxeW9VSXp3aGp1QXVjTUhzSEtXVFlhNzZmNGQyZDdTRlJidnU1TUpDMW5iR29yTzdWOUpHY2VHNTg4bGVCdmdPamdnallQZTNHdXBtSmVwLTBMN09KM3otX09QN09sYnhnZ21IXy1ZM0JlOEw5ZW12NUlfNUNndGtwYVVteVI4Szl4QVBTU3dBVkpramZMUGNvUEhNZXpPbi1CbHpWMA?oc=5"
+        },
+        {
+          "source": "Google News - Ski Season Conditions",
+          "url": "https://news.google.com/rss/articles/CBMirwNBVV95cUxQYXJfUXlFU3pEazN2UjZqUkdmN1dWN3ZUczJlTklHVzFkVnlWeWRJNGRfU2FhZVpJUWlKazdxbFVoUTdBSkRFTTZjTFBVam5vQ005Q2NEakZBRzlfTmgzNms3VktkQWNWT0Ixekt0d2JQdFZzVDItdWJ1NnVFeFlrMm9iNWR6dUZpcThZS3NvejA0bmVIMFhCT0h6M1dESzVNU3l3bUEwQTNFY3V4cWluVzBOVjdGV2hNWllfM19xOUVfSjhFTjl2TnpvOWQ2Vy1oRHBOZFRiQVoxaGJCQWFqOHd6bHFyYVdpMUZGLWxhSlVCUHphbU5NbTVSY19jM3ZaaXc1TmZLcDA0MjRJc2MyTVhiZW5CeTZHMFVaTkUtVU9HOHZ1SEQySG9mMy1Ea0pSem8zaTJKVElDb3VGTFhNTWFGTGNnaVZOTG1aOVFORnNjVWZZd2g0OWk2R21qNVFXWVhTZ2F3UU4zQndpb01HOGtveW5pdDdNVUo4Y19qalRSWGVEQjdpbk51NDMzUXNMbmZzUFY3eVJJZTRSZVVwQnpEZG53UU5PdC1UNHdRZw?oc=5"
+        }
+      ],
+      "approved_date": "2026-03-10",
+      "display_score": 25
     },
     {
       "source": "Google News - Vail Alterra Ski",
@@ -311,30 +347,6 @@
       "display_score": 23
     },
     {
-      "source": "SnowBrains",
-      "title": "Majority of Western United States with Record Low Snowpack: How it Affects Ski Resorts and What it Means For the Summer",
-      "url": "https://snowbrains.com/majority-of-western-united-states-with-record-low-snowpack-how-it-affects-ski-resorts-and-what-it-means-for-the-summer/",
-      "description": "This winter has been historic in all the wrong ways for the West. October gave us hope with cold temperatures and early snowfall, but then it warmed up and dried out in November. December threw much of the region into monsoon season when the jet stream pushed warm South Pacific air and moisture into the Cascades and northern Rockies. Then [\u2026] The post Majority of Western United States with Record Low Snowpack: How it Affects Ski Resorts and What it Means For the Summer appeared first on SnowBrai",
-      "content": "Water content within snowpack is below average across the entire West. | Photo Credit: drought.gov This winter has been historic in all the wrong ways for the West. October gave us hope with cold temperatures and early snowfall, but then it warmed up and dried out in November. December threw much of the region into monsoon season when the jet stream pushed warm South Pacific air and moisture into the Cascades and northern Rockies. Then New Year\u2019s came, and Mother Nature decided to take part in Dry January. Related: February 2026: State of the Western U.S. Snowpack\u2014Trending in the Wrong Direction Images from the top of Arapahoe Basin show just how low the snowpack is, with plenty of exposed rock and dirt. | Photo Credit: Arapahoe Basin Ski Area/Facebook It\u2019s currently the peak of winter, and some major ski destinations have less than two-thirds of their terrain open. Breckenridge is operating 115 of 193 runs, Snowbasin 72 of 115, and Park City a mere 214 of 349. Related: SnowBrains Fore",
-      "pub_date": "2026-02-16",
-      "id": "9c568d56f69a",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "ski-history"
-      ],
-      "approved_date": "2026-02-17",
-      "display_score": 22.5
-    },
-    {
       "source": "Ski Area Management",
       "title": "Pomerelle Sold to Longtime Mountain Manager",
       "url": "https://www.saminfo.com/news/sam-headline-news/pomerelle-sold-to-longtime-mountain-manager",
@@ -509,6 +521,57 @@
     },
     {
       "source": "Unofficial Networks",
+      "title": "Steamboat Ski & Resort Corp. Expands Its Portfolio",
+      "url": "https://unofficialnetworks.com/2026/03/09/steamboat-resort-group-sale/",
+      "description": "Last week, the owner of a massive Colorado ski resort purchased a local property management and hospitality company.",
+      "content": "Steamboat Springs, Colorado \u2014 Steamboat Ski & Resort Corp. is growing its presence in Yampa Valley. Last week, the Steamboat Pilot & Today reported that Resort Group has been sold to Steamboat Ski & Resort Corp. For reference, Steamboat is part of the Alterra Mountain Company. Resort Group brings extensive hospitality and lodging offerings to the ski resort\u2019s portfolio. The benefit of this merger for Resort Group is increased investment and additional resources. Home or property owners associated with Resort Group benefit from increased revenue from their rentals. They will also benefit from the ski resort\u2019s marketing ability. \u201cThis is an exciting step forward for the lodging landscape in Steamboat,\u201d said Blair McNamara, Steamboat\u2019s VP of Lodging. \u201c By combining Resort Group\u2019s proven track record and SSRC\u2019s brand, systems and approach, we\u2019re building a lodging platform that benefits guests, owners, employees and the broader community.\u201d Apparently, the Christmas parties there are lit. E",
+      "pub_date": "2026-03-09",
+      "id": "1ac2a79bad3e",
+      "prefilter_business_score": 2,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "hospitality",
+      "secondary_categories": [
+        "business-investment",
+        "transportation"
+      ],
+      "approved_date": "2026-03-10",
+      "display_score": 18
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Jackson Hole, WY, Breaks 300 Inches of Snowfall For the Season",
+      "url": "https://snowbrains.com/jackson-hole-wy-breaks-300-inches-of-snowfall-for-the-season/",
+      "description": "Winter isn\u2019t finished with the Tetons just yet. As of March 9, 2026, Jackson Hole Mountain Resort (JHMR) has officially crossed the 300-inch mark for total seasonal snowfall, a significant milestone that shows a resilient winter season despite a late start. Related: SnowBrains Forecast: Windy Start, Then a Snowier Turn for the Northern Rockies The resort\u2019s morning snow report confirms [\u2026] The post Jackson Hole, WY, Breaks 300 Inches of Snowfall For the Season appeared first on SnowBrains .",
+      "content": "Jackson Hole has now received over 300 inches of snowfall for the season as of March 9, 2026. | Skier: Kai Jones | Photo: Jackson Hole Mountain Resort Winter isn\u2019t finished with the Tetons just yet. As of March 9, 2026, Jackson Hole Mountain Resort (JHMR) has officially crossed the 300-inch mark for total seasonal snowfall, a significant milestone that shows a resilient winter season despite a late start. Related: SnowBrains Forecast: Windy Start, Then a Snowier Turn for the Northern Rockies The resort\u2019s morning snow report confirms that the summit currently sits at 301 inches for the year, with mid-mountain totals reaching 209 inches. Another 3 inches of fresh snow fell overnight after the lifts stopped spinning Sunday, setting the stage for what JHMR staff are calling a \u201cfantastic start\u201d to the second week of March. Reaching the 300-inch threshold by the first week of March keeps the 2025-26 season within striking distance of Jackson Hole\u2019s historical averages of 458 inches per seaso",
+      "pub_date": "2026-03-09",
+      "id": "5857de0ac450",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [
+        "ski-history",
+        "hospitality",
+        "resort-operations"
+      ],
+      "approved_date": "2026-03-10",
+      "display_score": 18
+    },
+    {
+      "source": "Unofficial Networks",
       "title": "Will This California Ski Resort Reopen This Winter?",
       "url": "https://unofficialnetworks.com/2026/03/08/will-this-california-ski-resort-reopen-this-winter/",
       "description": "A California ski resort closed again last week due to low snowpack, and the long-range forecast is looking dry.",
@@ -581,32 +644,6 @@
       "display_score": 18
     },
     {
-      "source": "Unofficial Networks",
-      "title": "Conservation Groups Line Up Against Canadian Ski Resort\u2019s Revival",
-      "url": "https://unofficialnetworks.com/2026/03/04/fortress-mountain-conservation-groups/",
-      "description": "Conservation groups are speaking out against the conversion of a partially abandoned Alberta ski resort into a four-season destination.",
-      "content": "Alberta \u2014 The public comment period for the revival of Fortress Mountain Resort has come and gone. However, the debate over its proposed size is far from over. February 27th was the last day of the public comment period for growing Fortress Mountain Resort from its decrepit state into a four-season destination. The first phase would focus on summer business, with additions such as a few gondolas (including a scenic gondola to Whiskey Ridge), ziplining, a mountain coaster, a canyon swing, and hiking and biking trails. There would be some winter activities, such as cat-skiing and snowshoeing (which are currently available). Lift-served skiing is part of the second phase of development, which would feature all-new lifts. One challenge skiing operations face is heavy winds, which factored into the resort\u2019s demise a few decades ago. Pushback Before the public comment period closed, various conservation groups spoke out against the plans. There are concerns that the public lands proposal is ",
-      "pub_date": "2026-03-04",
-      "id": "23033d8dd869",
-      "prefilter_business_score": 1,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "canada",
-      "secondary_categories": [
-        "resort-operations",
-        "transportation",
-        "safety-incidents"
-      ],
-      "approved_date": "2026-03-05",
-      "display_score": 18
-    },
-    {
       "source": "Google News - Vail Alterra Ski",
       "title": "Property rights lawsuit could close two Park City Mountain ski lifts - Park Record",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNQUhrSFlrNWZJN0lkU3JlMDIyQ1VldHhsM3BZMy1nSE5aZUF6TjRqTHhvcC1vT3R0aGZfUnpPYlIxdXlNRWNZQjRiWUVSOFc1MjVrZDh2ejk4ZXIxSm1jX2dMQzhiZVMzd3hhRjVHOGk2dWVEUTBOdE9UWHhqZkMyVzJydHZ6c3lwakJWbklVX1U1dkxkWWlyMXVjaGdlTTdFOE03b1l4MWg0eEk?oc=5",
@@ -631,29 +668,30 @@
       "display_score": 18
     },
     {
-      "source": "Google News - Ski Industry",
-      "title": "Italy\u2019s Ski Resorts Face Unprecedented Visitor Decline as Milan-Cortina Olympics Disrupt Tourism Growth and Trigger Severe Economic Losses Across the Dolomites - Travel And Tour World",
-      "url": "https://news.google.com/rss/articles/CBMisAJBVV95cUxQSEYxMmpDUGRoYWNEbVJGVHBzczlEQXQ2eGxXaWlVNnNsQkxFQlNCbHhmWXZtVG1wb2VERlBvVnpfYzVTcTdPN3g1U21TZ1JMZTktd2I3MXVxSHZBQnlHemdvaDJvNVdlYTk3eDhqMVYtM1FLYWxXWTI3QnhWb283cGtoWW0xeEtUOTE5ODMyZ0RHRy1hcloxQlVuWWVyQmVvNEJtYmFYWVpwbS1uNXhJYnp1eXRuYVItNkFwUDF2Yjh4ejhabEE5a0JTTkI4djM0ZHJZdi04c0xyYXh1c0hUNUx3MzBYMHBMRTZpeDNtenU5LVhQTUV5emRqa1hfMlhuaE9nN25YV1lzeXlGZVJoeDY4eFFzT2htUml5R3htQTRHem9LSlJnVmUwMXFsWkl2?oc=5",
-      "description": "Italy\u2019s Ski Resorts Face Unprecedented Visitor Decline as Milan-Cortina Olympics Disrupt Tourism Growth and Trigger Severe Economic Losses Across the Dolomites Travel And Tour World",
-      "content": "Italy\u2019s Ski Resorts Face Unprecedented Visitor Decline as Milan-Cortina Olympics Disrupt Tourism Growth and Trigger Severe Economic Losses Across the Dolomites Travel And Tour World",
-      "pub_date": "2026-02-16",
-      "id": "5ca6932346c0",
-      "prefilter_business_score": 5,
+      "source": "PlanetSKI",
+      "title": "It\u2019s Looking Good For Late Season Skiing in the Alps",
+      "url": "https://planetski.eu/2026/03/03/its-looking-good-for-late-season-skiing-in-the-alps/",
+      "description": "It's set to be a great end to the winter ski season in the Alps. Favourable holiday dates, plenty of snow and then there's the Olympic effect. PlanetSKI looks ahead to skiing into Spring. UPDATED The post It\u2019s Looking Good For Late Season Skiing in the Alps appeared first on PlanetSKI .",
+      "content": "UK operators report that Easter bookings are busy at the moment with resorts also reporting growing interest and bookings. This increased interest in Easter is reflected in a significant increase in online search traffic according to Google, which reports a rise of a double digit increase across Easter ski holiday searches. This year Easter Sunday is April 5th \u2013 last year it was two weeks later on April 20th. The second half of February saw snow across the Alps and some very significant falls in places. We reported on the snow at the time on PlanetSKI: The half-term PlanetSKI snow report Images across social media sparked interest. Les Menuires, France. Image c/o Les Menuires Tourist Office. Les Menuires, France. Image c/o Les Menuires Tourist Office. There has also been a trend in recent years for people to look at skiing at the end of the season following several poor Xmas and New Year holiday periods. \u201cEaster has grown in popularity every year since we returned to ski holidays after",
+      "pub_date": "2026-03-03",
+      "id": "8f14e0a14b57",
+      "prefilter_business_score": 0,
       "is_macro_relevance": false,
-      "source_boost": 1,
-      "score": 10,
+      "source_boost": 0,
+      "score": 8,
       "score_details": {
-        "reason": "Keyword scoring (source: +1)",
+        "reason": "Keyword scoring (source: +0)",
         "method": "keyword"
       },
       "score_method": "keyword",
-      "category": "winter-sports",
+      "category": "weather-snow",
       "secondary_categories": [
-        "business-investment",
-        "international"
+        "winter-sports",
+        "international",
+        "transportation"
       ],
-      "approved_date": "2026-02-17",
-      "display_score": 18
+      "approved_date": "2026-03-10",
+      "display_score": 17
     },
     {
       "source": "PlanetSKI",
@@ -751,33 +789,6 @@
       ],
       "approved_date": "2026-03-02",
       "display_score": 10
-    },
-    {
-      "source": "PlanetSKI",
-      "title": "It\u2019s Looking Good For Late Season Skiing in the Alps",
-      "url": "https://planetski.eu/2026/03/03/its-looking-good-for-late-season-skiing-in-the-alps/",
-      "description": "It's set to be a great end to the winter ski season in the Alps. Favourable holiday dates, plenty of snow and then there's the Olympic affect. PlanetSKI looks ahead to skiing into Spring. NEW The post It\u2019s Looking Good For Late Season Skiing in the Alps appeared first on PlanetSKI .",
-      "content": "UK operators report that Easter bookings are busy at the moment with resorts also reporting growing interest and bookings. This increased interest in Easter is reflected in a significant increase in online search traffic according to Google, which reports a rise of a double digit increase across Easter ski holiday searches. This year Easter Sunday is April 5th \u2013 last year it was two weeks later on April 20th. The second half of February saw snow across the Alps and some very significant falls in places. We reported on the snow at the time on PlanetSKI: The half-term PlanetSKI snow report Images across social media sparked interest. Les Menuires, France. Image c/o Les Menuires Tourist Office. Les Menuires, France. Image c/o Les Menuires Tourist Office. There has also been a trend in recent years for people to look at skiing at the end of the season following several poor Xmas and New Year holiday periods. \u201cEaster has grown in popularity every year since we returned to ski holidays after",
-      "pub_date": "2026-03-03",
-      "id": "8f14e0a14b57",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 4,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "winter-sports",
-        "international",
-        "transportation"
-      ],
-      "approved_date": "2026-03-07",
-      "display_score": 9,
-      "rescored": true
     },
     {
       "source": "Google News - Ski Industry",

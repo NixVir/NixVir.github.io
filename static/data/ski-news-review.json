@@ -1016,6 +1016,29 @@
       "score_method": "keyword",
       "category": "resort-operations",
       "secondary_categories": []
+    },
+    {
+      "source": "PlanetSKI",
+      "title": "PlanetSKI Hunts Powder & Adventures in the Tatras",
+      "url": "https://planetski.eu/2026/03/09/planetski-hunts-powder-adventures-in-the-tatras/",
+      "description": "The Slovakian ski area is not the most obvious place to search for powder. Wrong. It is also a ski mountain experience like no other. NEW The post PlanetSKI Hunts Powder & Adventures in the Tatras appeared first on PlanetSKI .",
+      "content": "Storm chasing can be a precarious and frustrating pastime with so many factors needing to align to deliver epic days in the mountains. It requires a \u201cC\u2019est la Vie\u2019 temperament, a glass half full attitude, patience by the bucketful, and then a fair smattering of luck. What would the Tatras hold on PlanetSKI\u2019s mid-winter visit? I was aiming for powder snow and mountain adventures \u2013 the visit did not disappoint. Instead of heading to Jasn\u00e1 as the rest of the skiers and snowboarders on the flight did, we took a 30-minute drive to the small mountain town of Tatranska at the foot of Tatransk\u00e1 Lomnica ski area in the High Tatras region. It actually took longer to leave the plane, pass through the new EES photo & fingerprints procedure, and collect our bags than it did to travel from Poprad Airport to the front door of our hotel. But only by 5 minutes. Our palatial home away from home in the High Tatras is the Grand Hotel Praha. Grand Hotel Praha, Tatras. Image \u00a9 Mike Richards/PlanetSKI Dating",
+      "pub_date": "2026-03-09",
+      "id": "e0a284fb283a",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 5,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "transportation",
+      "secondary_categories": [
+        "resort-operations",
+        "hospitality"
+      ]
     }
   ],
   "rejected": [
@@ -2282,6 +2305,49 @@
       },
       "score_method": "keyword",
       "category": "transportation",
+      "secondary_categories": []
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Spring Passes Now on Sale at Banff Sunshine Village, AB",
+      "url": "https://snowbrains.com/spring-passes-now-on-sale-at-banff-sunshine-village-ab/",
+      "description": "Banff Sunshine Village, Alberta, has officially launched its Spring Passes to make spring skiing just a little more tempting in the Canadian Rockies. The pass unlocks 72 days of skiing and riding, running from March 8 through the May Long Weekend, making it one of the longest spring ski windows in North America. The late-season product is designed for skiers [\u2026] The post Spring Passes Now on Sale at Banff Sunshine Village, AB appeared first on SnowBrains .",
+      "content": "Banff Sunshine offers some of the best spring skiing in the Canadian Rockies. | Image: Brett Currie/SnowBrains Banff Sunshine Village , Alberta, has officially launched its Spring Passes to make spring skiing just a little more tempting in the Canadian Rockies. The pass unlocks 72 days of skiing and riding, running from March 8 through the May Long Weekend, making it one of the longest spring ski windows in North America. The late-season product is designed for skiers who want to chase soft snow, longer daylight hours, and the lively atmosphere that comes with springtime on the slopes. Related: Banff Sunshine Village, AB, Report: Beautiful Location, Big Mountain Feel & Diverse Terrain Banff Sunshine Village Spring Pass Prices Please note, prices are listed in Canadian dollars and do not include GST. Adult Spring Pass: $727 Senior Spring Pass: $537 Student Spring Pass: $457 Youth Spring Pass: $397 Child Spring Pass: $197 Spring passes provide unlimited skiing and riding during the valid",
+      "pub_date": "2026-03-10",
+      "id": "c01ae83fd04f",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "dashboard_indicator_boost": 2,
+      "source_boost": 0,
+      "score": 3,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "canada",
+      "secondary_categories": [
+        "resort-operations"
+      ]
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Snowboarder Goes Uphill Using Modified Drone Propellors",
+      "url": "https://unofficialnetworks.com/2026/03/09/snowboarder-goes-uphill-using-modified-drone-propellors/",
+      "description": "Modified drone stick takes snowboarder uphill at ski resort.",
+      "content": "A series of heavy duty quad-copter drones propellors mounted to a stick provided enough momentum to take this snowboarder up a groomed run at a ski resort. While this design is somewhat gimmicky and impractical for catching a ride up a mountain and then riding down in a normal snowboard fashion, if it could fly down by itself and meet you at the bottom we would really have something. Very cool to see tinkerers finding creative uses for drones in outdoor sports. Categories: Snowboarding",
+      "pub_date": "2026-03-09",
+      "id": "b022ea6728e8",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 1,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
       "secondary_categories": []
     }
   ]
