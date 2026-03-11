@@ -1,8 +1,30 @@
 {
-  "updated": "2026-03-10 11:26:43",
+  "updated": "2026-03-11 11:27:37",
   "total_articles": 33,
   "scoring_method": "keyword",
   "articles": [
+    {
+      "source": "Ski Area Management",
+      "title": "Vail Resorts Cites Mild Winter in Rockies for Tough Q2 Results",
+      "url": "https://www.saminfo.com/news/sam-headline-news/vail-resorts-cites-mild-winter-in-rockies-for-tough-q2-results",
+      "description": "SAM Magazine\u2014Broomfield, Colo., March 10, 2026\u2014 Vail Resorts CEO Rob Katz pointed to \u201cthe most difficult weather environment in the Rockies we have ever seen\u201d as the primary culprit for the company\u2019s financial declines in both the second quarter ended Jan. 31, 2026, and season-to-date metrics. Q2 resort reported EBITDA was down 8.3 percent year-over-year and net income was off 15 percent, while season-to-date skier visits as of March 1 were down nearly 12 percent compared to the same period last",
+      "content": "SAM Magazine\u2014Broomfield, Colo., March 10, 2026\u2014 Vail Resorts CEO Rob Katz pointed to \u201cthe most difficult weather environment in the Rockies we have ever seen\u201d as the primary culprit for the company\u2019s financial declines in both the second quarter ended Jan. 31, 2026, and season-to-date metrics. Q2 resort reported EBITDA was down 8.3 percent year-over-year and net income was off 15 percent, while season-to-date skier visits as of March 1 were down nearly 12 percent compared to the same period last",
+      "pub_date": "2026-03-10",
+      "id": "5670271a7ddc",
+      "prefilter_business_score": 4,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [],
+      "approved_date": "2026-03-11",
+      "display_score": 29
+    },
     {
       "source": "Skift",
       "title": "Has JetBlue\u2019s Transatlantic Growth Hit a Ceiling?",
@@ -26,6 +48,57 @@
       ],
       "approved_date": "2026-02-27",
       "display_score": 28
+    },
+    {
+      "source": "The Ski Guru",
+      "title": "Vail Resorts Reports Declining Skier Visits \u2014 What the Numbers Reveal About the Modern Ski Industry",
+      "url": "https://www.the-ski-guru.com/2026/03/10/vail-resorts-skier-visits-2026/",
+      "description": "Vail Resorts has reported a significant drop in skier visits during the 2025\u201326 winter season, highlighting how weather variability and changing travel patterns can affect ski tourism. Yet the company\u2019s pass-based model has helped stabilize revenue despite fewer visitors on the slopes. This article examines what the numbers reveal about the Epic Pass system, resort economics and the broader shifts shaping the global ski industry. The post Vail Resorts Reports Declining Skier Visits \u2014 What the Nu",
+      "content": "Early season operating metrics released by Vail Resorts show a noticeable decline in skier visits across its North American resort portfolio during the 2025\u201326 winter season. The figures, reported through the company\u2019s investor communications and widely covered by financial and industry media, offer an interesting window into how the modern ski resort business model operates during a difficult winter . While the headline numbers point to a challenging season, the underlying data reveals something more nuanced about how large resort operators manage financial volatility. Skier Visits Down \u2014 One of the Sharpest Drops in Recent Years According to season-to-date operating metrics, skier visits across Vail Resorts\u2019 North American mountain resorts were down approximately 20% compared with the previous season . The company attributes the decline primarily to weak early-season snowfall across the Western United States , which significantly delayed terrain openings at several major destinations",
+      "pub_date": "2026-03-10",
+      "id": "10ce75b1a0d3",
+      "prefilter_business_score": 3,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "weather-snow",
+        "resort-operations",
+        "transportation"
+      ],
+      "approved_date": "2026-03-11",
+      "display_score": 27
+    },
+    {
+      "source": "PlanetSKI",
+      "title": "Vail Resorts Admits Visits & Revenue Down",
+      "url": "https://planetski.eu/2026/03/10/vail-resorts-admits-visits-revenue-down/",
+      "description": "As expected, numbers have fallen after a poor winter for snow in the many of the major US resorts. NEW The post Vail Resorts Admits Visits & Revenue Down appeared first on PlanetSKI .",
+      "content": "The US resort owner said it is due to a \u2018worst-case weather scenario\u2019. The comments come from the CEO, Rob Katz, and follows one of the worst winters for snow in decades in parts of the USA. In a news release for shareholders and investors the company admitted: Skier visits fell 11.9% Total lift revenue down 3.6% Ski school revenue down 8.2% Dining revenue down 8.6% Retail/rental revenue down 5.7% In the second financial quarter the net revenue decreased 4.7% , that\u2019s $53.2m. \u201cThis has been the most challenging winter across the Rockies that we have ever experienced with the lowest snowfall levels in more than 30 years for our Colorado and Utah resorts, combined with warmer temperatures, resulting in reduced terrain throughout the quarter and into February,\u201d said Katz in a statement. Vail Resorts\u2019 stock price fell more than 3% after the earnings announcement. Skiing in the USA. Image \u00a9 PlanetSKI. Vail Resorts said it was pleased with the strength and stability shown by the operating mo",
+      "pub_date": "2026-03-10",
+      "id": "bd39ce9d5083",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "weather-snow",
+        "resort-operations"
+      ],
+      "approved_date": "2026-03-11",
+      "display_score": 27
     },
     {
       "source": "SIA - Snowsports Industries America",
@@ -76,6 +149,53 @@
       ],
       "approved_date": "2026-02-25",
       "display_score": 27
+    },
+    {
+      "source": "Google News - Vail Alterra Ski",
+      "title": "Vail Resorts reports drops in skier visits, revenue amid \u2018worst-case weather scenario\u2019 in West, but CEO sees \u2018meaningful stability\u2019 - AspenTimes.com",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQZnB0MUhHU2lLTl9KZXRZNnB6TnExd1Z5dlZ3OXVfaGh6cEh2SHppMkp6dFNEUTVYN19zR29QcnNKMmh1T3RxQ0kwcm9WSkZjYkh3elAzSHVSWHNCRnU4SmFtdUNqelVoY1FOSWVHUVVFNlg1Q1ZBTTU0UW5kQVhfTXgwdlhCbGFybWpnZzFHZ2lWb1ZZZVRtTHZhOW50YzZZLTVBTGN5eTR6dGlYaGF2V01EWk9iS00?oc=5",
+      "description": "Vail Resorts reports drops in skier visits, revenue amid \u2018worst-case weather scenario\u2019 in West, but CEO sees \u2018meaningful stability\u2019 AspenTimes.com",
+      "content": "Vail Resorts reports drops in skier visits, revenue amid \u2018worst-case weather scenario\u2019 in West, but CEO sees \u2018meaningful stability\u2019 AspenTimes.com",
+      "pub_date": "2026-03-10",
+      "id": "56182a133fa1",
+      "prefilter_business_score": 2,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [],
+      "approved_date": "2026-03-11",
+      "display_score": 25
+    },
+    {
+      "source": "Google News - Vail Alterra Ski",
+      "title": "Vail Resorts cuts profit forecast as warm winter lingers in the Rockies - The Business Journals",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQQ1lKSlJhN1ZEYjV6ZUlYY3Q3VERvV0hXaXNBY2lTWE95Zjh6RWRkMEF1clBOMS1ERGpUbC1xWUNrTUNWVmdsazN1elRROFM3LVUxWWtQMkpCWGpNeWdwUWM3OEtUTEppY1N5eTJKS2ZBVEZCV1R1MzZLVUNrNG5FdEJUNG9jTlUtbFU3Z1pWdXYzandsb1hNN3V0dkU5S0w5WjJfZQ?oc=5",
+      "description": "Vail Resorts cuts profit forecast as warm winter lingers in the Rockies The Business Journals",
+      "content": "Vail Resorts cuts profit forecast as warm winter lingers in the Rockies The Business Journals",
+      "pub_date": "2026-03-10",
+      "id": "cbd62dfca59c",
+      "prefilter_business_score": 2,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "weather-snow"
+      ],
+      "other_sources": [],
+      "approved_date": "2026-03-11",
+      "display_score": 25
     },
     {
       "source": "Google News - WSJ Ski",
@@ -273,6 +393,28 @@
     },
     {
       "source": "SnowBrains",
+      "title": "Ski Industry Giants Shake Up Continues: Alterra CEO Jared Smith to Step Down After 2025-26 Season",
+      "url": "https://snowbrains.com/ski-industry-giants-shake-up-continues-alterra-ceo-jared-smith-to-step-down-after-2025-26-season/",
+      "description": "Alterra Mountain Company announced a leadership transition Tuesday, March 10, with Chief Executive Officer Jared Smith planning to step down at the end of the current winter season. Smith said serving as CEO had been \u201can honor,\u201d noting that the company had expanded significantly during his tenure. \u201cServing as CEO of Alterra has been an honor, and I am deeply [\u2026] The post Ski Industry Giants Shake Up Continues: Alterra CEO Jared Smith to Step Down After 2025-26 Season appeared first on SnowBrains",
+      "content": "Jared Smith served as CEO at Alterra since June 2022. | Image: Alterra Mountain Company Alterra Mountain Company announced a leadership transition Tuesday, March 10, with Chief Executive Officer Jared Smith planning to step down at the end of the current winter season. Smith said serving as CEO had been \u201can honor,\u201d noting that the company had expanded significantly during his tenure. \u201cServing as CEO of Alterra has been an honor, and I am deeply proud of the incredible people, capabilities and businesses we\u2019ve added to this amazing company,\u201d Smith said in the company\u2019s press release. \u201cThe commitment of the ownership group to these mountains, and to the team members and communities they serve, is truly unique.\u201d Alterra\u2019s board will now begin a comprehensive search for a new chief executive, while an interim leadership structure will oversee operations through the end of the season. Smith will remain available over the next year to help support the transition. During the transition, an Ex",
+      "pub_date": "2026-03-11",
+      "id": "84089f123a34",
+      "prefilter_business_score": 2,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [],
+      "approved_date": "2026-03-11",
+      "display_score": 23
+    },
+    {
+      "source": "SnowBrains",
       "title": "French Ski Resorts Invest \u20ac555 Million in 2025, Maintaining Record-Level Commitment",
       "url": "https://snowbrains.com/french-ski-resorts-invest-e555-million-in-2025-maintaining-record-level-commitment/",
       "description": "French ski resorts invested \u20ac555 million in 2025, maintaining a historically high level of spending and reinforcing the sector\u2019s central role in mountain economies, according to the annual investment survey conducted by Montagne Leaders magazine in partnership with Atout France and Domaines Skiables de France. The total is nearly identical to 2024 and stands 50% above the ten-year average, keeping [\u2026] The post French Ski Resorts Invest \u20ac555 Million in 2025, Maintaining Record-Level Commitment ap",
@@ -423,54 +565,6 @@
       "display_score": 21
     },
     {
-      "source": "Ski Area Management",
-      "title": "Snow People \u2014 January 2026",
-      "url": "https://www.saminfo.com/news/sam-headline-news/snow-people-january-2026",
-      "description": "In SAM\u2019s Snow People, we highlight personnel moves in the mountain resort industry. From resort hires, promotions, and retirements to awards, obits, and supplier news, we celebrate the people that make this industry thrive. PEOPLE MASON WILLETT, MOUNT SUNAPEE, NH Vail Resorts has appointed Mason Willett as director of mountain operations at Mount Sunapee. Willett has been with Vail Resorts for more than 10 years. Most recently, he served as senior manager of guest services at Beaver Creek. B Kat",
-      "content": "In SAM\u2019s Snow People, we highlight personnel moves in the mountain resort industry. From resort hires, promotions, and retirements to awards, obits, and supplier news, we celebrate the people that make this industry thrive. PEOPLE MASON WILLETT, MOUNT SUNAPEE, NH Vail Resorts has appointed Mason Willett as director of mountain operations at Mount Sunapee. Willett has been with Vail Resorts for more than 10 years. Most recently, he served as senior manager of guest services at Beaver Creek. B Kat",
-      "pub_date": "2026-02-23",
-      "id": "5cca9facc9d7",
-      "prefilter_business_score": 1,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 8,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "business-investment",
-      "secondary_categories": [
-        "resort-operations"
-      ],
-      "approved_date": "2026-02-24",
-      "display_score": 21
-    },
-    {
-      "source": "Google News - Vail Alterra Ski",
-      "title": "Colorado winter storm warning warns of strengthening forecast for mountains, ski resorts - SummitDaily.com",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNa29CM1NESjNxcGtLOXlCcWxCTjdFNEp3UzlpeFl0NkZFeW9ZdFo2alhQMGFlenlvOTVlUkdVUXhjTENrSFJVajVUZkV2eUo4WENZcnBSaGYxc2VPREpQalN4R0VLMmVhUXRxWHZMMUpwTEdYc2gwbkxpLU1GX0pvbnVHV01vRkFmZFhQVXp4UlNCVkloa05Cd1MyLXI?oc=5",
-      "description": "Colorado winter storm warning warns of strengthening forecast for mountains, ski resorts SummitDaily.com",
-      "content": "Colorado winter storm warning warns of strengthening forecast for mountains, ski resorts SummitDaily.com",
-      "pub_date": "2026-03-05",
-      "id": "9e0a5a8fcc58",
-      "prefilter_business_score": 1,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "safety-incidents"
-      ],
-      "approved_date": "2026-03-06",
-      "display_score": 20
-    },
-    {
       "source": "Google News - Ski Pass Prices",
       "title": "Vail Resorts Adds Young Adult and Teen Epic Pass Options for 2026-27 - Ski Area Management",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQS0xsdHNYaHdfeW1iQUhYak9GeW50N29uSHFnVjBqaExvVTA3WTIta0pMMzYwY0k4ZW9MR0tnbmtudnRKTDJFVUJabENfTFkxTVZJX2w1VEowbGFRY0p4YXZITFpMVHhLaml4TDFyVGRhUE4xV0JNNGxoYV9CSWFsMnNkRFpPNlpDM3RPRW5FREpseUM1aldnUi1JZ2lrTE9HMi1rcEFKX0hpRGVqN0hIN0JXQzZ2Zw?oc=5",
@@ -521,6 +615,32 @@
     },
     {
       "source": "Unofficial Networks",
+      "title": "Idaho\u2019s Oldest Ski Resort Honors Mountain Manager With New Trail",
+      "url": "https://unofficialnetworks.com/2026/03/10/sun-valley-mountain-manager-trail/",
+      "description": "One of the four new trails/glades that debuted this season at Sun Valley is named after a legendary employee.",
+      "content": "Sun Valley, Idaho \u2014 Sun Valley is having a memorable 90th anniversary season, thanks in part to the introduction of four new trails/glades. This season, Sun Valley Resort is debuting four new runs/glades thanks to tree harvesting work over the past offseason. One of these runs is now known as Tim\u2019s. This black diamond is named after Tim Silva, the Mountain Manager who has worked at the Idaho ski resort for over 35 years. Tim\u2019s is located to the skier\u2019s left of the Exhibition trail. The other new runs/glades include Pioneer Bowl (black diamond), Bear Den (black diamond), and Sheep Camp (blue square). Pioneer Bowl is situated on the skier\u2019s left of Sleeping Bear, while Bear Den and Sheep Camp are situated on the skier\u2019s left of Olympic Lane. Over the past five years, Sun Valley has thinned out over 350 acres of trees, reducing wildfire risk and creating great skiing. View this post on Instagram Other upgrades for the 2025-26 season include the introduction of RFID technology, a new famil",
+      "pub_date": "2026-03-10",
+      "id": "2eb20afa6646",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "ski-history",
+      "secondary_categories": [
+        "winter-sports",
+        "resort-operations",
+        "transportation"
+      ],
+      "approved_date": "2026-03-11",
+      "display_score": 18
+    },
+    {
+      "source": "Unofficial Networks",
       "title": "Steamboat Ski & Resort Corp. Expands Its Portfolio",
       "url": "https://unofficialnetworks.com/2026/03/09/steamboat-resort-group-sale/",
       "description": "Last week, the owner of a massive Colorado ski resort purchased a local property management and hospitality company.",
@@ -540,32 +660,6 @@
       "secondary_categories": [
         "business-investment",
         "transportation"
-      ],
-      "approved_date": "2026-03-10",
-      "display_score": 18
-    },
-    {
-      "source": "SnowBrains",
-      "title": "Jackson Hole, WY, Breaks 300 Inches of Snowfall For the Season",
-      "url": "https://snowbrains.com/jackson-hole-wy-breaks-300-inches-of-snowfall-for-the-season/",
-      "description": "Winter isn\u2019t finished with the Tetons just yet. As of March 9, 2026, Jackson Hole Mountain Resort (JHMR) has officially crossed the 300-inch mark for total seasonal snowfall, a significant milestone that shows a resilient winter season despite a late start. Related: SnowBrains Forecast: Windy Start, Then a Snowier Turn for the Northern Rockies The resort\u2019s morning snow report confirms [\u2026] The post Jackson Hole, WY, Breaks 300 Inches of Snowfall For the Season appeared first on SnowBrains .",
-      "content": "Jackson Hole has now received over 300 inches of snowfall for the season as of March 9, 2026. | Skier: Kai Jones | Photo: Jackson Hole Mountain Resort Winter isn\u2019t finished with the Tetons just yet. As of March 9, 2026, Jackson Hole Mountain Resort (JHMR) has officially crossed the 300-inch mark for total seasonal snowfall, a significant milestone that shows a resilient winter season despite a late start. Related: SnowBrains Forecast: Windy Start, Then a Snowier Turn for the Northern Rockies The resort\u2019s morning snow report confirms that the summit currently sits at 301 inches for the year, with mid-mountain totals reaching 209 inches. Another 3 inches of fresh snow fell overnight after the lifts stopped spinning Sunday, setting the stage for what JHMR staff are calling a \u201cfantastic start\u201d to the second week of March. Reaching the 300-inch threshold by the first week of March keeps the 2025-26 season within striking distance of Jackson Hole\u2019s historical averages of 458 inches per seaso",
-      "pub_date": "2026-03-09",
-      "id": "5857de0ac450",
-      "prefilter_business_score": 1,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "ski-history",
-        "hospitality",
-        "resort-operations"
       ],
       "approved_date": "2026-03-10",
       "display_score": 18
@@ -595,30 +689,6 @@
       "display_score": 18
     },
     {
-      "source": "Unofficial Networks",
-      "title": "These 4 Ski Resorts Saw 20+ Inches Of Snow In The Last 24 Hours",
-      "url": "https://unofficialnetworks.com/2026/03/06/20-inches-of-snow/",
-      "description": "4 ski areas across North America saw more than 20 inches of new snow in the last 24 hours, 2 of which saw 2 feet are more.",
-      "content": "The meteorological winter officially concluded with the start of March, yet it feels like some areas are only just starting to see real winter weather. The last 24 hour have been huge for quite a few ski areas, and the snow is coming down heavy at quite a few resorts today. According to their snow reports, 4 ski areas across North America saw more than 20 inches of new snow in the last 24 hours, 2 of which saw 2 feet are more. 4. Pebble Creek Ski Area , Idaho \u2013 20 inches in the last 24 hours View this post on Instagram A post shared by Pebble Creek Ski Area (@pebbleskiarea) 20 inches of snow in the last 48 hours. 60 inch depth at the summit. 14 inch depth at the base. 3. Alta Ski Area , Utah \u2013 21 inches in the last 24 hours 14 inches in the last 12 hours. 28 inch storm total. 259 inch season snowfall total. 2. Snowbird , Utah \u2013 24 inches in the last 24 hours View this post on Instagram A post shared by Snowbird (@snowbird) 18 inches of snow overnight. 30 inches in the last 48 hours. 24",
-      "pub_date": "2026-03-06",
-      "id": "b37728f11bb7",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "hospitality"
-      ],
-      "approved_date": "2026-03-07",
-      "display_score": 18
-    },
-    {
       "source": "The Ski Guru",
       "title": "Investment as \u201cMulti-Risk Insurance\u201d: How Ski Resorts Are Reinventing Infrastructure Across the Alps and North America",
       "url": "https://www.the-ski-guru.com/2026/03/05/ski-resort-investment/",
@@ -642,56 +712,6 @@
       ],
       "approved_date": "2026-03-06",
       "display_score": 18
-    },
-    {
-      "source": "Google News - Vail Alterra Ski",
-      "title": "Property rights lawsuit could close two Park City Mountain ski lifts - Park Record",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNQUhrSFlrNWZJN0lkU3JlMDIyQ1VldHhsM3BZMy1nSE5aZUF6TjRqTHhvcC1vT3R0aGZfUnpPYlIxdXlNRWNZQjRiWUVSOFc1MjVrZDh2ejk4ZXIxSm1jX2dMQzhiZVMzd3hhRjVHOGk2dWVEUTBOdE9UWHhqZkMyVzJydHZ6c3lwakJWbklVX1U1dkxkWWlyMXVjaGdlTTdFOE03b1l4MWg0eEk?oc=5",
-      "description": "Property rights lawsuit could close two Park City Mountain ski lifts Park Record",
-      "content": "Property rights lawsuit could close two Park City Mountain ski lifts Park Record",
-      "pub_date": "2026-02-20",
-      "id": "cf2cc772d356",
-      "prefilter_business_score": 2,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 9,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "resort-operations",
-      "secondary_categories": [
-        "safety-incidents"
-      ],
-      "approved_date": "2026-02-20",
-      "display_score": 18
-    },
-    {
-      "source": "PlanetSKI",
-      "title": "It\u2019s Looking Good For Late Season Skiing in the Alps",
-      "url": "https://planetski.eu/2026/03/03/its-looking-good-for-late-season-skiing-in-the-alps/",
-      "description": "It's set to be a great end to the winter ski season in the Alps. Favourable holiday dates, plenty of snow and then there's the Olympic effect. PlanetSKI looks ahead to skiing into Spring. UPDATED The post It\u2019s Looking Good For Late Season Skiing in the Alps appeared first on PlanetSKI .",
-      "content": "UK operators report that Easter bookings are busy at the moment with resorts also reporting growing interest and bookings. This increased interest in Easter is reflected in a significant increase in online search traffic according to Google, which reports a rise of a double digit increase across Easter ski holiday searches. This year Easter Sunday is April 5th \u2013 last year it was two weeks later on April 20th. The second half of February saw snow across the Alps and some very significant falls in places. We reported on the snow at the time on PlanetSKI: The half-term PlanetSKI snow report Images across social media sparked interest. Les Menuires, France. Image c/o Les Menuires Tourist Office. Les Menuires, France. Image c/o Les Menuires Tourist Office. There has also been a trend in recent years for people to look at skiing at the end of the season following several poor Xmas and New Year holiday periods. \u201cEaster has grown in popularity every year since we returned to ski holidays after",
-      "pub_date": "2026-03-03",
-      "id": "8f14e0a14b57",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 8,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "winter-sports",
-        "international",
-        "transportation"
-      ],
-      "approved_date": "2026-03-10",
-      "display_score": 17
     },
     {
       "source": "PlanetSKI",
@@ -764,30 +784,6 @@
         "international"
       ],
       "approved_date": "2026-03-04",
-      "display_score": 10
-    },
-    {
-      "source": "The Ski Guru",
-      "title": "Avalanche Fatality at Nakiska Ski Area",
-      "url": "https://www.the-ski-guru.com/2026/03/01/avalanche-nakiska-fatality-kananaskis/",
-      "description": "The Nakiska avalanche in Kananaskis Country, Alberta, left a 15-year-old skier dead. Authorities confirmed two people were caught in the slide. The post Avalanche Fatality at Nakiska Ski Area appeared first on The-Ski-Guru .",
-      "content": "A 15-year-old skier has died after being buried in an avalanche near the Nakiska Ski Area in Kananaskis Country, Alberta on Friday, February 28, 2026 . Emergency responders were called to the area after reports that two people were caught in the avalanche . One skier escaped and was uninjured, while the other \u2014 the 15-year-old \u2014 was found unresponsive and later died at Alberta Children\u2019s Hospital. Officials say the incident occurred near the Nakiska ski hill \u2014 west of Calgary \u2014 and authorities are continuing their investigation into the exact circumstances. Avalanche Danger in Kananaskis Country Avalanche Canada, the national public avalanche safety organization responsible for forecasting avalanche conditions across western Canada, provides ongoing danger ratings for Kananaskis Country and other mountainous regions. As of recent regional forecasts: Avalanche danger in parts of Kananaskis Country has been rated as Considerable (Level 3) or Moderate (Level 2) depending on elevation and ",
-      "pub_date": "2026-03-01",
-      "id": "0cb5a2beae56",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "safety-incidents",
-      "secondary_categories": [
-        "canada"
-      ],
-      "approved_date": "2026-03-02",
       "display_score": 10
     },
     {
