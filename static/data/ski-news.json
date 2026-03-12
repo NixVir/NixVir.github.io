@@ -1,8 +1,59 @@
 {
-  "updated": "2026-03-11 11:27:37",
+  "updated": "2026-03-12 11:27:20",
   "total_articles": 33,
   "scoring_method": "keyword",
   "articles": [
+    {
+      "source": "Google News - Vail Alterra Ski",
+      "title": "Vail Resorts shares fall as weak snowfall hits quarterly results - Pique Newsmagazine",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQb0UtYzlCeF9VcGFUTFQtZlBiUnRPV1dSR01LMjg0SXRHMDN0QWNScDBBQlJhX3lmMzVnSV9sNHhjOVlmVC1KYzhhQ2pWVEhlV0RNV2dndTRsTFFPY0YtYnY5eFkzTUYzWHRnRTVQUHlhNnhnTUQ5djNleUtYdDc3NjE5emgyUUZBTmpUQzdaN3l6UHp5NC1sTHU5MzkzNVJzSkkwaXl6VDFHb2xQUnFfTjR1Zl9UaUxERmc?oc=5",
+      "description": "Vail Resorts shares fall as weak snowfall hits quarterly results Pique Newsmagazine",
+      "content": "Vail Resorts shares fall as weak snowfall hits quarterly results Pique Newsmagazine",
+      "pub_date": "2026-03-12",
+      "id": "57ebc844096e",
+      "prefilter_business_score": 2,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "weather-snow"
+      ],
+      "other_sources": [],
+      "approved_date": "2026-03-12",
+      "display_score": 32.5
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Vail Resorts Profits Fall as Poor Snowfall Puts Damper on 2025-26 Season",
+      "url": "https://snowbrains.com/vail-resorts-profits-fall-as-poor-snowfall-puts-damper-on-2025-26-season/",
+      "description": "Vail Resorts reported its quarterly earnings for Q2 of the 2026 fiscal year ended January 31. According to the press release and 10Q filing from March 9, the company has been struggling with the historically low snowfall affecting many of its key resorts, resulting in lower quarterly earnings and lower visitation numbers. Chief executive Rob Katz described the winter as [\u2026] The post Vail Resorts Profits Fall as Poor Snowfall Puts Damper on 2025-26 Season appeared first on SnowBrains .",
+      "content": "Vail Resorts, which now owns more than 40 ski areas worldwide, revolutionized the business of skiing. | Image: Vail Resorts Vail Resorts reported its quarterly earnings for Q2 of the 2026 fiscal year ended January 31. According to the press release and 10Q filing from March 9, the company has been struggling with the historically low snowfall affecting many of its key resorts, resulting in lower quarterly earnings and lower visitation numbers. Chief executive Rob Katz described the winter as \u201cthe most challenging across the Rockies that we have ever experienced,\u201d citing the lowest snowfall in more than 30 years at resorts in Colorado and Utah. Limited terrain and warm temperatures reduced visits and spending across the company\u2019s destination resorts. Robert Katz returned as CEO in May last year in a bid to boost the company\u2019s stagnating business. Related: Robert Katz Returns as Vail Resorts CEO in Surprise Leadership Shake Up The company posted net income of $210 million for Q2 2026, do",
+      "pub_date": "2026-03-12",
+      "id": "32b1d0d6ec96",
+      "prefilter_business_score": 5,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "winter-sports",
+        "ski-history",
+        "weather-snow"
+      ],
+      "approved_date": "2026-03-12",
+      "display_score": 32
+    },
     {
       "source": "Ski Area Management",
       "title": "Vail Resorts Cites Mild Winter in Rockies for Tough Q2 Results",
@@ -152,6 +203,30 @@
     },
     {
       "source": "Google News - Vail Alterra Ski",
+      "title": "Low snow hits Vail Resorts earnings, company cuts full-year forecast - TownLift, Park City News",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOdEExT3BMRF8wWmRHTFZNQXFyTGs1Ti1xNVFLQUV6a2Z3b1BfVGYwdlRVRmtGaERmTXpSNGJ5ZnUxc0Q2dmpzdEZJalh6UFc1TzBuRF9vcUR4STl4UDh4cnNRaENmREdjdXBCYmhZMGNFOW8xVWNhWjVmMTBvclpQREZkcjZUNDhNRGlscWExSm1YYzFkWXI3NzJ6Yy15eTBLM3lEY3pXRGZFNkI5cWE2ZQ?oc=5",
+      "description": "Low snow hits Vail Resorts earnings, company cuts full-year forecast TownLift, Park City News",
+      "content": "Low snow hits Vail Resorts earnings, company cuts full-year forecast TownLift, Park City News",
+      "pub_date": "2026-03-11",
+      "id": "d850ca2bbd2f",
+      "prefilter_business_score": 2,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "resort-operations"
+      ],
+      "approved_date": "2026-03-12",
+      "display_score": 25
+    },
+    {
+      "source": "Google News - Vail Alterra Ski",
       "title": "Vail Resorts reports drops in skier visits, revenue amid \u2018worst-case weather scenario\u2019 in West, but CEO sees \u2018meaningful stability\u2019 - AspenTimes.com",
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQZnB0MUhHU2lLTl9KZXRZNnB6TnExd1Z5dlZ3OXVfaGh6cEh2SHppMkp6dFNEUTVYN19zR29QcnNKMmh1T3RxQ0kwcm9WSkZjYkh3elAzSHVSWHNCRnU4SmFtdUNqelVoY1FOSWVHUVVFNlg1Q1ZBTTU0UW5kQVhfTXgwdlhCbGFybWpnZzFHZ2lWb1ZZZVRtTHZhOW50YzZZLTVBTGN5eTR6dGlYaGF2V01EWk9iS00?oc=5",
       "description": "Vail Resorts reports drops in skier visits, revenue amid \u2018worst-case weather scenario\u2019 in West, but CEO sees \u2018meaningful stability\u2019 AspenTimes.com",
@@ -231,50 +306,6 @@
         }
       ],
       "approved_date": "2026-03-10",
-      "display_score": 25
-    },
-    {
-      "source": "Google News - Vail Alterra Ski",
-      "title": "Vail Resorts (MTN) Reports Earnings Tomorrow: What To Expect - Finviz",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOX3pId3lkWHJnZlh6aGNndnA2N0xiWnFaUEVjanFRTmd3QnBMOEl1RzVlbE95SnZJV00wQmowUlhNbGw5d1JGNllYdkRFbTBvd3R6SWZRV0xlSFFpRE5qWXBGSkpIbEtXSXVONzkzYmx2UE1rd205UWNRQnhFQWNCSEpmSVhIV3R1eXpvR1c5QWNwUQ?oc=5",
-      "description": "Vail Resorts (MTN) Reports Earnings Tomorrow: What To Expect Finviz",
-      "content": "Vail Resorts (MTN) Reports Earnings Tomorrow: What To Expect Finviz",
-      "pub_date": "2026-03-08",
-      "id": "a4ca718f20ec",
-      "prefilter_business_score": 1,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "business-investment",
-      "secondary_categories": [],
-      "approved_date": "2026-03-08",
-      "display_score": 25
-    },
-    {
-      "source": "Google News - Vail Alterra Ski",
-      "title": "Vail Resorts's Earnings: A Preview - Benzinga",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOeThBMW93UjI1VUw2Z0ZEdHZfRjRyaTY3V3I3YTNfVk9DQU83UzJOUVNOMHV2dnlyYWhmVjJzdzBJZ3BQQ25VZmZZVF9xUDFUc1Bra3Y1R1NiTnhKSXpkSW9RWm9TQ0NoWHJoUmowN2MtNWpwbXZSNDJ2S2VCdHNiOTZVWnVOSF9ja2dFZVJWRFljNHpX?oc=5",
-      "description": "Vail Resorts's Earnings: A Preview Benzinga",
-      "content": "Vail Resorts's Earnings: A Preview Benzinga",
-      "pub_date": "2026-03-06",
-      "id": "0454b85c9c77",
-      "prefilter_business_score": 1,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "business-investment",
-      "secondary_categories": [],
-      "approved_date": "2026-03-07",
       "display_score": 25
     },
     {
@@ -368,30 +399,6 @@
       "display_score": 25
     },
     {
-      "source": "Ski Area Management",
-      "title": "Alterra Names Flueck as Chief Customer Officer, Ikon Pass President",
-      "url": "https://www.saminfo.com/news/sam-headline-news/alterra-names-flueck-as-chief-customer-officer-ikon-pass-president",
-      "description": "SAM Magazine\u2014Denver, Feb. 18, 2026\u2014 Alterra Mountain Company has appointed David Flueck as chief customer officer and president, Ikon Pass. Flueck will lead the company\u2019s customer engagement strategy as well as its sales, marketing and communications functions, and steward continued growth of the Ikon Pass product. He joins Alterra from Marriott International, where he most recently served as global officer of loyalty, cards and new businesses. There, he created and led the Marriott Bonvoy loyal",
-      "content": "SAM Magazine\u2014Denver, Feb. 18, 2026\u2014 Alterra Mountain Company has appointed David Flueck as chief customer officer and president, Ikon Pass. Flueck will lead the company\u2019s customer engagement strategy as well as its sales, marketing and communications functions, and steward continued growth of the Ikon Pass product. He joins Alterra from Marriott International, where he most recently served as global officer of loyalty, cards and new businesses. There, he created and led the Marriott Bonvoy loyal",
-      "pub_date": "2026-02-18",
-      "id": "24b71e019f87",
-      "prefilter_business_score": 3,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "business-investment",
-      "secondary_categories": [
-        "resort-operations"
-      ],
-      "approved_date": "2026-02-19",
-      "display_score": 25
-    },
-    {
       "source": "SnowBrains",
       "title": "Ski Industry Giants Shake Up Continues: Alterra CEO Jared Smith to Step Down After 2025-26 Season",
       "url": "https://snowbrains.com/ski-industry-giants-shake-up-continues-alterra-ceo-jared-smith-to-step-down-after-2025-26-season/",
@@ -411,6 +418,52 @@
       "category": "business-investment",
       "secondary_categories": [],
       "approved_date": "2026-03-11",
+      "display_score": 23
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Alterra Mountain Company Announces Departure of CEO",
+      "url": "https://unofficialnetworks.com/2026/03/11/alterra-ceo-departure/",
+      "description": "During his tenure, Smith continued the growth of Alterra, which included acquisitions like Arapahoe Basin, Schweitzer, and Ski Butlers.",
+      "content": "Denver, Colorado \u2014 In a surprising development, one of the big players in North America\u2019s ski industry is changing up its leadership team. Yesterday, the Alterra Mountain Company announced that Jared Smith will be leaving his position at the end of the 2025-26 ski season. A reason why was not given. \u201cServing as CEO of Alterra has been an honor, and I am deeply proud of the incredible people, capabilities and businesses we\u2019ve added to this amazing company, \u201d said Jared Smith. \u201cThe commitment of the ownership group to these mountains, and to the team members and communities they serve, is truly unique. I\u2019m confident the progress we\u2019ve made has positioned the company well to build on that foundation in the years of growth ahead.\u201d Jared Smith was first hired as the company\u2019s President in 2021 and then became CEO in August 2022. He\u2019s a bit of an enigma, which is the benefit you have when you\u2019re running a private company. He conducted some interviews during his tenure, including a couple wit",
+      "pub_date": "2026-03-11",
+      "id": "ea306fefa4ae",
+      "prefilter_business_score": 3,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [],
+      "approved_date": "2026-03-12",
+      "display_score": 23
+    },
+    {
+      "source": "Ski Area Management",
+      "title": "Smith to Step Down as Alterra CEO",
+      "url": "https://www.saminfo.com/news/sam-headline-news/smith-to-step-down-as-alterra-ceo",
+      "description": "SAM Magazine\u2014Denver, March 11, 2026\u2014 Jared Smith plans to step down from his role as chief executive officer of Alterra Mountain Company at the end of this season. An exact end date was not shared. Smith joined Alterra as president in June 2021, reporting to then-CEO Rusty Gregory. He previously served as president and global chairman of Ticketmaster. He succeeded Gregory as CEO on Aug. 1, 2022. During his time at Alterra, the company grew its portfolio of ski areas as well as related businesses",
+      "content": "SAM Magazine\u2014Denver, March 11, 2026\u2014 Jared Smith plans to step down from his role as chief executive officer of Alterra Mountain Company at the end of this season. An exact end date was not shared. Smith joined Alterra as president in June 2021, reporting to then-CEO Rusty Gregory. He previously served as president and global chairman of Ticketmaster. He succeeded Gregory as CEO on Aug. 1, 2022. During his time at Alterra, the company grew its portfolio of ski areas as well as related businesses",
+      "pub_date": "2026-03-11",
+      "id": "5978515105b4",
+      "prefilter_business_score": 3,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 9,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "resort-operations"
+      ],
+      "approved_date": "2026-03-12",
       "display_score": 23
     },
     {
@@ -513,32 +566,6 @@
       "display_score": 21
     },
     {
-      "source": "SnowBrains",
-      "title": "Camelback Mountain Resort, PA, Surges with Record Growth, New Leadership, and Major Mountain Improvements",
-      "url": "https://snowbrains.com/camelback-mountain-resort-pa-surges-with-record-growth-new-leadership-and-major-mountain-improvements/",
-      "description": "As the 2025-26 ski season powers through winter storms and favorable conditions, Camelback Mountain Resort in Pennsylvania\u2019s Poconos Mountains has emerged as a standout success story, boasting significant increases in skier visitations. Data from the popular ski tracking app Slopes, combined with insights from resort leadership, paint a picture of robust growth driven by strategic investments, an accessible location, and [\u2026] The post Camelback Mountain Resort, PA, Surges with Record Growth, New ",
-      "content": "Camelback Resort is about 1 and a 1/2 hours from NYC and about 2 hours from Philadelphia. | Image: Camelback Mountain Resort As the 2025-26 ski season powers through winter storms and favorable conditions, Camelback Mountain Resort in Pennsylvania\u2019s Poconos Mountains has emerged as a standout success story, boasting significant increases in skier visitations. Data from the popular ski tracking app Slopes , combined with insights from resort leadership, paint a picture of robust growth driven by strategic investments, an accessible location, and innovative marketing. Camelback saw a 126% increase in visitations during Christmas week 2025 compared to the same period in 2024, making it the fastest-growing ski resort in the country for that holiday stretch, according to data released by Slopes. This surge aligns with broader trends in the Northeast, where resorts experienced gains while Western U.S. destinations faced declines due to a lack of snow and poor conditions. Slopes\u2019 location-bas",
-      "pub_date": "2026-03-01",
-      "id": "8cd43d0884e5",
-      "prefilter_business_score": 3,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "business-investment",
-        "transportation",
-        "hospitality"
-      ],
-      "approved_date": "2026-03-02",
-      "display_score": 21
-    },
-    {
       "source": "PlanetSKI",
       "title": "Swiss Ski Resorts Are Changing",
       "url": "https://planetski.eu/2026/02/24/swiss-ski-resorts-are-changing/",
@@ -615,6 +642,32 @@
     },
     {
       "source": "Unofficial Networks",
+      "title": "The 8 Oldest Ski Areas In Colorado",
+      "url": "https://unofficialnetworks.com/2026/03/11/oldest-ski-areas-colorado/",
+      "description": "Colorado's first ski area opened in 1915, but it wouldn't be until 1937 that another ski area come around and open its slopes.",
+      "content": "Colorado\u2019s ski history is deep and rich. It includes the oldest ski area in the United States, predating anything on the East Coast or West, and includes the story of the 10th Mountain Division. The state\u2019s first ski area came about in 1915, but it wouldn\u2019t be until 1937 that another ski area, which would remain operating until today, would open. These are the 8 oldest ski areas in Colorado. 1. Howelsen Hill Ski Area \u2013 Opened in 1915 1 triple chairlift, 3 surface lifts 17 alpine trails, 9 nordic trails Training grounds for more than 100 Olympians 2. Loveland Ski Area \u2013 Opened in 1937 View this post on Instagram A post shared by Loveland Ski Area (@lovelandskiarea) 9 chairlifts, 2 surface lifts 94 trails More than 380 inches of snowfall annually on average 3. Monarch Mountain \u2013 Opened in 1939 9 lifts, including surface lifts 80 total trails Average annual snowfall of 350 inches 4. Wolf Creek \u2013 Opened in 1939 View this post on Instagram A post shared by WolfCreekSki (@wolfcreekski) 11 li",
+      "pub_date": "2026-03-11",
+      "id": "a42eb07b68dc",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [
+        "ski-history",
+        "resort-operations",
+        "transportation"
+      ],
+      "approved_date": "2026-03-12",
+      "display_score": 18
+    },
+    {
+      "source": "Unofficial Networks",
       "title": "Idaho\u2019s Oldest Ski Resort Honors Mountain Manager With New Trail",
       "url": "https://unofficialnetworks.com/2026/03/10/sun-valley-mountain-manager-trail/",
       "description": "One of the four new trails/glades that debuted this season at Sun Valley is named after a legendary employee.",
@@ -637,55 +690,6 @@
         "transportation"
       ],
       "approved_date": "2026-03-11",
-      "display_score": 18
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "Steamboat Ski & Resort Corp. Expands Its Portfolio",
-      "url": "https://unofficialnetworks.com/2026/03/09/steamboat-resort-group-sale/",
-      "description": "Last week, the owner of a massive Colorado ski resort purchased a local property management and hospitality company.",
-      "content": "Steamboat Springs, Colorado \u2014 Steamboat Ski & Resort Corp. is growing its presence in Yampa Valley. Last week, the Steamboat Pilot & Today reported that Resort Group has been sold to Steamboat Ski & Resort Corp. For reference, Steamboat is part of the Alterra Mountain Company. Resort Group brings extensive hospitality and lodging offerings to the ski resort\u2019s portfolio. The benefit of this merger for Resort Group is increased investment and additional resources. Home or property owners associated with Resort Group benefit from increased revenue from their rentals. They will also benefit from the ski resort\u2019s marketing ability. \u201cThis is an exciting step forward for the lodging landscape in Steamboat,\u201d said Blair McNamara, Steamboat\u2019s VP of Lodging. \u201c By combining Resort Group\u2019s proven track record and SSRC\u2019s brand, systems and approach, we\u2019re building a lodging platform that benefits guests, owners, employees and the broader community.\u201d Apparently, the Christmas parties there are lit. E",
-      "pub_date": "2026-03-09",
-      "id": "1ac2a79bad3e",
-      "prefilter_business_score": 2,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "hospitality",
-      "secondary_categories": [
-        "business-investment",
-        "transportation"
-      ],
-      "approved_date": "2026-03-10",
-      "display_score": 18
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "Will This California Ski Resort Reopen This Winter?",
-      "url": "https://unofficialnetworks.com/2026/03/08/will-this-california-ski-resort-reopen-this-winter/",
-      "description": "A California ski resort closed again last week due to low snowpack, and the long-range forecast is looking dry.",
-      "content": "McCloud, California \u2014 There have been good moments this season at the Mt. Shasta Ski Park. Major dumps in late December and February have led to some nice powder skiing. Unfortunately, warm weather and rain have also played a role, which resulted in two closures. The first came on February 9th, but didn\u2019t last too long due to the snow. The latest closure was announced on March 1st. Since then, they\u2019ve been closed. While the upper elevations still have snowpack, the base area looks pretty bare. View this post on Instagram With snow not on the radar for the next 10 days (according to OpenSnow), it raises the question of whether Mt. Shasta Ski Park will operate again this season. They do seem hopeful for a late March miracle, so they could reopen if there\u2019s spring snowfall. It goes to show how inconsistent this season has been for California\u2019s ski industry. Only 2 Ski Resorts in North America Have Over a Mile of Vertical And Neither Is in the U.S. About Mt. Shasta Ski Park Situated below ",
-      "pub_date": "2026-03-08",
-      "id": "11945d98f893",
-      "prefilter_business_score": 1,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "safety-incidents"
-      ],
-      "approved_date": "2026-03-09",
       "display_score": 18
     },
     {
