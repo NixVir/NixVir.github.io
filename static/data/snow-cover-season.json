@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-11 11:35 UTC",
+  "generated": "2026-03-12 11:33 UTC",
   "description": "Current season snow cover data (Oct 1, 2025 onwards)",
   "season": "2025-2026",
   "usa": [
@@ -812,6 +812,11 @@
       "date": "2026-03-11",
       "value": 15.9,
       "depth_inches": null
+    },
+    {
+      "date": "2026-03-12",
+      "value": 14.6,
+      "depth_inches": null
     }
   ],
   "canada": [
@@ -1462,6 +1467,10 @@
     {
       "date": "2026-03-11",
       "value": 83.8
+    },
+    {
+      "date": "2026-03-12",
+      "value": 82.7
     }
   ]
 }
