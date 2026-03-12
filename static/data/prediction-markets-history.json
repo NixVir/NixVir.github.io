@@ -198,6 +198,12 @@
       "rate_cuts_mode": 2,
       "oil_price": 85,
       "gas_price": 3.59
+    },
+    {
+      "date": "2026-03-12",
+      "rate_cuts_mode": 9,
+      "oil_price": 97,
+      "gas_price": 3.47
     }
   ]
 }
