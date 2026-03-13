@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-03-12T15:30:20.052785Z",
+  "fetched_at": "2026-03-13T15:10:08.476788Z",
   "kalshi": {
     "recession": [
       {
@@ -4499,71 +4499,6 @@
             "volume_24h": null,
             "open_interest": null,
             "close_time": "2026-03-27T12:25:00Z"
-          },
-          {
-            "ticker": "KXPCECORE-26JAN-T0.4",
-            "title": "Will the rate of core PCE inflation be above 0.4% in January 2026?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-13T12:25:00Z"
-          },
-          {
-            "ticker": "KXPCECORE-26JAN-T0.3",
-            "title": "Will the rate of core PCE inflation be above 0.3% in January 2026?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-13T12:25:00Z"
-          },
-          {
-            "ticker": "KXPCECORE-26JAN-T0.2",
-            "title": "Will the rate of core PCE inflation be above 0.2% in January 2026?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-13T12:25:00Z"
-          },
-          {
-            "ticker": "KXPCECORE-26JAN-T0.1",
-            "title": "Will the rate of core PCE inflation be above 0.1% in January 2026?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-13T12:25:00Z"
-          },
-          {
-            "ticker": "KXPCECORE-26JAN-T0.0",
-            "title": "Will the rate of core PCE inflation be above 0.0% in January 2026?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-13T12:25:00Z"
           }
         ]
       }
@@ -4774,19 +4709,6 @@
         "series": "KXWTIMAX",
         "display_name": "WTI Yearly High",
         "markets": [
-          {
-            "ticker": "KXWTIMAX-26DEC31-T95",
-            "title": "Will the maximum WTI front month settle price reach $95.01 by Dec 31, 2026?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-12-31T19:30:00Z"
-          },
           {
             "ticker": "KXWTIMAX-26DEC31-T180",
             "title": "Will the maximum WTI front month settle price reach $180.01 by Dec 31, 2026?",
@@ -5586,13 +5508,13 @@
     ],
     "narrative": "Energy costs are elevated with oil above $80, which may increase operating and travel expenses.",
     "previous": {
-      "date": "2026-03-05",
-      "recession_prob": 0.22,
+      "date": "2026-03-06",
+      "recession_prob": 0.24,
       "fed_outcome": "Hold",
       "fed_prob": 0.98,
       "rate_cuts_mode": 1,
       "oil_price": 73,
-      "gas_price": 3.33
+      "gas_price": 3.43
     }
   }
 }
