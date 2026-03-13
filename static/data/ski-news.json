@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-12 11:27:20",
+  "updated": "2026-03-13 11:25:04",
   "total_articles": 33,
   "scoring_method": "keyword",
   "articles": [
@@ -202,6 +202,30 @@
       "display_score": 27
     },
     {
+      "source": "Ski Area Management",
+      "title": "Mogensen Takes Full Ownership of Black Mountain (N.H.)",
+      "url": "https://www.saminfo.com/news/sam-headline-news/mogensen-takes-full-ownership-of-black-mountain-n-h",
+      "description": "SAM Magazine\u2014Jackson, N.H., March 12, 2026\u2014 Indy Pass director and Entabeni Systems CEO Erik Mogensen has bought out early investors to take full ownership of Black Mountain in New Hampshire, in a significant shift from his original plan to sell ownership shares to individuals and create a board of trustees to operate the ski area. Mogensen led the acquisition of the ski area through the Indy Pass in October 2024 and has served as its acting general manager for much of the time since then. \u201cMy g",
+      "content": "SAM Magazine\u2014Jackson, N.H., March 12, 2026\u2014 Indy Pass director and Entabeni Systems CEO Erik Mogensen has bought out early investors to take full ownership of Black Mountain in New Hampshire, in a significant shift from his original plan to sell ownership shares to individuals and create a board of trustees to operate the ski area. Mogensen led the acquisition of the ski area through the Indy Pass in October 2024 and has served as its acting general manager for much of the time since then. \u201cMy g",
+      "pub_date": "2026-03-12",
+      "id": "ff500fbf9437",
+      "prefilter_business_score": 4,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "resort-operations"
+      ],
+      "approved_date": "2026-03-13",
+      "display_score": 25
+    },
+    {
       "source": "Google News - Vail Alterra Ski",
       "title": "Low snow hits Vail Resorts earnings, company cuts full-year forecast - TownLift, Park City News",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOdEExT3BMRF8wWmRHTFZNQXFyTGs1Ti1xNVFLQUV6a2Z3b1BfVGYwdlRVRmtGaERmTXpSNGJ5ZnUxc0Q2dmpzdEZJalh6UFc1TzBuRF9vcUR4STl4UDh4cnNRaENmREdjdXBCYmhZMGNFOW8xVWNhWjVmMTBvclpQREZkcjZUNDhNRGlscWExSm1YYzFkWXI3NzJ6Yy15eTBLM3lEY3pXRGZFNkI5cWE2ZQ?oc=5",
@@ -399,6 +423,58 @@
       "display_score": 25
     },
     {
+      "source": "The Ski Guru",
+      "title": "Ikon Pass Owner Alterra Mountain Company CEO to Step Down at End of Ski Season",
+      "url": "https://www.the-ski-guru.com/2026/03/12/alterra-ceo-stepping-down-ikon-pass/",
+      "description": "Alterra Mountain Company CEO Jared Smith will step down at the end of the ski season, marking a leadership transition at the company behind the Ikon Pass. The change comes as global multi-resort passes and corporate consolidation continue reshaping the ski industry and competition between major resort operators. The post Ikon Pass Owner Alterra Mountain Company CEO to Step Down at End of Ski Season appeared first on The-Ski-Guru .",
+      "content": "A leadership change is coming to one of the most influential companies in the global ski industry. Jared Smith has announced he will step down as chief executive officer of Alterra Mountain Company at the end of the current ski season, marking a transition at the company behind the Ikon Pass. The Denver-based resort operator said Smith will remain involved during the transition while the company searches for a new chief executive. A Leadership Change at One of the Ski Industry\u2019s Largest Operators Alterra Mountain Company is one of the two dominant corporate players in modern ski tourism, alongside Vail Resorts. Founded in 2018 and headquartered in Denver, Alterra operates and partners with dozens of ski destinations across North America and internationally. The company\u2019s Ikon Pass provides access to more than 70 ski areas worldwide through a mix of owned resorts and partner agreements. Under Smith\u2019s leadership, Alterra continued expanding both its resort portfolio and its global pass n",
+      "pub_date": "2026-03-12",
+      "id": "4772470beac7",
+      "prefilter_business_score": 3,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "ski-history",
+        "resort-operations",
+        "international"
+      ],
+      "approved_date": "2026-03-13",
+      "display_score": 23
+    },
+    {
+      "source": "The Ski Guru",
+      "title": "Indy Pass Owner Moves Headquarters to New Hampshire as Black Mountain Becomes Innovation Hub",
+      "url": "https://www.the-ski-guru.com/2026/03/12/indy-pass-black-mountain-innovation-hub/",
+      "description": "Indy Pass owner Erik Mogensen is relocating headquarters to New Hampshire while turning Black Mountain into an innovation hub designed to help independent ski areas compete in a consolidating ski industry. The post Indy Pass Owner Moves Headquarters to New Hampshire as Black Mountain Becomes Innovation Hub appeared first on The-Ski-Guru .",
+      "content": "The company behind the rapidly expanding Indy Pass has announced it will relocate its headquarters to Jackson, New Hampshire, while transforming the historic Black Mountain ski area into what it calls an \u201cIndependent Mountain Laboratory.\u201d Erik Mogensen, CEO of Entabeni Systems , said the mountain will serve as a real-world testing ground for technologies, operational systems and management strategies designed to help independent ski resorts compete in an industry increasingly dominated by large corporate operators. The announcement includes the buyout of early investors in Black Mountain, returning the resort to 100 percent private ownership under Mogensen\u2019s leadership . A Test Mountain for Independent Ski Areas Black Mountain will operate both as a ski area and as an innovation hub where new software, hardware and operational tools can be developed and tested before being shared with other independent ski resorts. According to Mogensen, many smaller ski areas lack the resources and ti",
+      "pub_date": "2026-03-12",
+      "id": "4a950ac3151b",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "ski-history",
+        "resort-operations",
+        "hospitality"
+      ],
+      "approved_date": "2026-03-13",
+      "display_score": 23
+    },
+    {
       "source": "SnowBrains",
       "title": "Ski Industry Giants Shake Up Continues: Alterra CEO Jared Smith to Step Down After 2025-26 Season",
       "url": "https://snowbrains.com/ski-industry-giants-shake-up-continues-alterra-ceo-jared-smith-to-step-down-after-2025-26-season/",
@@ -542,27 +618,29 @@
       "display_score": 23
     },
     {
-      "source": "Ski Area Management",
-      "title": "Pomerelle Sold to Longtime Mountain Manager",
-      "url": "https://www.saminfo.com/news/sam-headline-news/pomerelle-sold-to-longtime-mountain-manager",
-      "description": "SAM Magazine\u2014Albion, Idaho, March 3, 2026\u2014 Pomerelle Mountain Resort in southern Idaho has been sold to mountain manager Zach Alexander and his wife, Crystal, according to Ski Idaho. The Anderson family, which has owned and operated the ski area for decades, finalized the sale this month. Financial terms were not disclosed. Local Freshies first reported the sale. Alexander has longstanding ties to the resort, having grown up on the hill and worked in nearly every department. His grandparents, Ba",
-      "content": "SAM Magazine\u2014Albion, Idaho, March 3, 2026\u2014 Pomerelle Mountain Resort in southern Idaho has been sold to mountain manager Zach Alexander and his wife, Crystal, according to Ski Idaho. The Anderson family, which has owned and operated the ski area for decades, finalized the sale this month. Financial terms were not disclosed. Local Freshies first reported the sale. Alexander has longstanding ties to the resort, having grown up on the hill and worked in nearly every department. His grandparents, Ba",
-      "pub_date": "2026-03-03",
-      "id": "f8293b939064",
+      "source": "Unofficial Networks",
+      "title": "Abandoned Ski Resort in Michigan Purchased For $8 Million By Conservancy Group",
+      "url": "https://unofficialnetworks.com/2026/03/12/abandoned-ski-resort-in-michigan-purchased-for-8-million-by-conservancy-group/",
+      "description": "The Leelanau Conservancy completed the acquisition of the former Sugar Loaf Ski Resort following an $8 million fundraising campaign.",
+      "content": "Cleveland Township, Mich. \u2014 An abandoned Northern Michigan ski resort is set to become a public outdoor recreation area after a land conservancy finalized the purchase of the property. MLive reports The Leelanau Conservancy announced March 11 that it completed the acquisition of the former Sugar Loaf Ski Resort following an $8 million fundraising campaign. The 288-acre property will now undergo ecological restoration and be developed for public access. History of Sugar Loaf Ski Resort Plans for the site include a network of hiking and biking trails along with winter recreation such as snowshoeing, cross-country skiing and backcountry skiing. Officials also plan to add universal-access features, a family sledding hill, a nature play area and a summit pavilion overlooking Lake Michigan. Conservation efforts will focus on removing invasive species, reducing erosion and improving local water quality. The Edmund F. and Virginia B. Ball Foundation purchased the property in 2020 through a sub",
+      "pub_date": "2026-03-12",
+      "id": "9085362a0c04",
       "prefilter_business_score": 1,
       "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 8,
+      "source_boost": 0,
+      "score": 9,
       "score_details": {
-        "reason": "Keyword scoring (source: +2)",
+        "reason": "Keyword scoring (source: +0)",
         "method": "keyword"
       },
       "score_method": "keyword",
       "category": "business-investment",
       "secondary_categories": [
-        "safety-incidents"
+        "ski-history",
+        "transportation",
+        "winter-sports"
       ],
-      "approved_date": "2026-03-04",
+      "approved_date": "2026-03-13",
       "display_score": 21
     },
     {
@@ -642,38 +720,12 @@
     },
     {
       "source": "Unofficial Networks",
-      "title": "The 8 Oldest Ski Areas In Colorado",
-      "url": "https://unofficialnetworks.com/2026/03/11/oldest-ski-areas-colorado/",
-      "description": "Colorado's first ski area opened in 1915, but it wouldn't be until 1937 that another ski area come around and open its slopes.",
-      "content": "Colorado\u2019s ski history is deep and rich. It includes the oldest ski area in the United States, predating anything on the East Coast or West, and includes the story of the 10th Mountain Division. The state\u2019s first ski area came about in 1915, but it wouldn\u2019t be until 1937 that another ski area, which would remain operating until today, would open. These are the 8 oldest ski areas in Colorado. 1. Howelsen Hill Ski Area \u2013 Opened in 1915 1 triple chairlift, 3 surface lifts 17 alpine trails, 9 nordic trails Training grounds for more than 100 Olympians 2. Loveland Ski Area \u2013 Opened in 1937 View this post on Instagram A post shared by Loveland Ski Area (@lovelandskiarea) 9 chairlifts, 2 surface lifts 94 trails More than 380 inches of snowfall annually on average 3. Monarch Mountain \u2013 Opened in 1939 9 lifts, including surface lifts 80 total trails Average annual snowfall of 350 inches 4. Wolf Creek \u2013 Opened in 1939 View this post on Instagram A post shared by WolfCreekSki (@wolfcreekski) 11 li",
-      "pub_date": "2026-03-11",
-      "id": "a42eb07b68dc",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "ski-history",
-        "resort-operations",
-        "transportation"
-      ],
-      "approved_date": "2026-03-12",
-      "display_score": 18
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "Idaho\u2019s Oldest Ski Resort Honors Mountain Manager With New Trail",
-      "url": "https://unofficialnetworks.com/2026/03/10/sun-valley-mountain-manager-trail/",
-      "description": "One of the four new trails/glades that debuted this season at Sun Valley is named after a legendary employee.",
-      "content": "Sun Valley, Idaho \u2014 Sun Valley is having a memorable 90th anniversary season, thanks in part to the introduction of four new trails/glades. This season, Sun Valley Resort is debuting four new runs/glades thanks to tree harvesting work over the past offseason. One of these runs is now known as Tim\u2019s. This black diamond is named after Tim Silva, the Mountain Manager who has worked at the Idaho ski resort for over 35 years. Tim\u2019s is located to the skier\u2019s left of the Exhibition trail. The other new runs/glades include Pioneer Bowl (black diamond), Bear Den (black diamond), and Sheep Camp (blue square). Pioneer Bowl is situated on the skier\u2019s left of Sleeping Bear, while Bear Den and Sheep Camp are situated on the skier\u2019s left of Olympic Lane. Over the past five years, Sun Valley has thinned out over 350 acres of trees, reducing wildfire risk and creating great skiing. View this post on Instagram Other upgrades for the 2025-26 season include the introduction of RFID technology, a new famil",
-      "pub_date": "2026-03-10",
-      "id": "2eb20afa6646",
+      "title": "New Zealand\u2019s Largest Ski Resort Details Offseason Projects",
+      "url": "https://unofficialnetworks.com/2026/03/12/cardrona-alpine-resort-2026/",
+      "description": "After opening a new terrain expansion last year, the New Zealand ski resort is making various improvements across the mountain.",
+      "content": "New Zealand \u2014 Cardrona Alpine Resort made a lot of major moves last year. The opening of the Soho Basin expansion made Cardrona the largest ski resort in New Zealand. While they haven\u2019t been as busy as last offseason, work continues on various improvements. Cardrona has given guests a few updates regarding projects this offseason. Regarding Soho Basin, redesigned runs and a snowmaking basin will be added. This will allow for more reliable conditions and earlier openings. In terms of redesigned runs, one example is Snow Farmer. Last winter, guests used the summer road to ski down, which wasn\u2019t the route\u2019s intended purpose. This upcoming winter will see a defined piste, meaning it\u2019s easier to get down on it. Last month, Cardrona showed work on various projects. Work continues on a new snowmaking dam/pond, which will greatly increase their snowmaking capacity. A new pumphouse is being added, which will allow for snowmaking in Soho Basin. Third, upgrades are being made to the base area. Th",
+      "pub_date": "2026-03-12",
+      "id": "e87c796e76ab",
       "prefilter_business_score": 1,
       "is_macro_relevance": false,
       "source_boost": 0,
@@ -683,38 +735,12 @@
         "method": "keyword"
       },
       "score_method": "keyword",
-      "category": "ski-history",
+      "category": "international",
       "secondary_categories": [
-        "winter-sports",
         "resort-operations",
         "transportation"
       ],
-      "approved_date": "2026-03-11",
-      "display_score": 18
-    },
-    {
-      "source": "The Ski Guru",
-      "title": "Investment as \u201cMulti-Risk Insurance\u201d: How Ski Resorts Are Reinventing Infrastructure Across the Alps and North America",
-      "url": "https://www.the-ski-guru.com/2026/03/05/ski-resort-investment/",
-      "description": "Ski resorts across the Alps and North America are investing billions in lifts, snowmaking and digital technologies. These investments are increasingly designed as \u201cmulti-risk insurance\u201d to manage climate variability, visitor flows and global competition in the ski industry. The post Investment as \u201cMulti-Risk Insurance\u201d: How Ski Resorts Are Reinventing Infrastructure Across the Alps and North America appeared first on The-Ski-Guru .",
-      "content": "The global ski industry is entering a new phase of infrastructure investment. Across the Alps and North America, ski resort investment is accelerating as operators modernise lifts, expand snowmaking systems and adopt new digital technologies. While modernisation has always been part of the ski resort business model, the nature of investment is changing. Resorts are no longer investing solely to improve comfort or capacity. Increasingly, infrastructure spending is designed to manage a combination of risks: climate variability, visitor flow management, regulatory pressure and rising operating costs. In France, where investment data is closely monitored through an industry barometer conducted by Montagne Leaders in partnership with Atout France and Domaines Skiables de France (DSF), ski areas invested \u20ac555 million in 2025 , roughly 32% of pre-tax turnover . This level of reinvestment is significantly above the long-term average and illustrates the structural importance of infrastructure i",
-      "pub_date": "2026-03-05",
-      "id": "1bfbd66a0037",
-      "prefilter_business_score": 4,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "resort-operations",
-      "secondary_categories": [
-        "business-investment",
-        "international"
-      ],
-      "approved_date": "2026-03-06",
+      "approved_date": "2026-03-13",
       "display_score": 18
     },
     {
@@ -764,31 +790,6 @@
       "secondary_categories": [],
       "approved_date": "2026-03-04",
       "display_score": 12
-    },
-    {
-      "source": "The Ski Guru",
-      "title": "Two Ski Mountaineers Found Dead After Avalanche on Tamlspitze, Tyrol",
-      "url": "https://www.the-ski-guru.com/2026/03/03/tamlspitze-avalanche-tyrol-february-2026/",
-      "description": "Two ski mountaineers, aged 44 and 47, were found dead after an avalanche on Tamlspitze in Tyrol on 28 February 2026. The incident occurred during a period of elevated avalanche danger across the Eastern Alps and forms part of the broader February 2026 avalanche cycle. The post Two Ski Mountaineers Found Dead After Avalanche on Tamlspitze, Tyrol appeared first on The-Ski-Guru .",
-      "content": "Repeated avalanche fatalities across the Alps in late February 2026 continue to underline the structural instability affecting multiple regions this winter. The latest tragedy occurred on Tamlspitze , in the municipality of Tux , within the Austrian state of Tyrol , where two ski mountaineers aged 44 and 47 were found dead beneath avalanche debris after failing to return from a summit tour. This incident forms part of the broader February 2026 Avalanche Cycle Across the Alps , which has seen fatalities and repeated Level 4 warnings across France, Italy, Austria and Switzerland. What Happened on Tamlspitze According to Austrian local media reports and police information, the two men set out on 28 February for what was intended to be a standard ski mountaineering ascent of Tamlspitze in the Tux Valley. When they did not return, they were reported missing later that day. Alpine Rescue teams initiated search operations immediately. However, persistent avalanche danger in the region forced ",
-      "pub_date": "2026-03-03",
-      "id": "108e34022ce6",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "safety-incidents",
-      "secondary_categories": [
-        "transportation",
-        "international"
-      ],
-      "approved_date": "2026-03-04",
-      "display_score": 10
     },
     {
       "source": "Google News - Ski Industry",
