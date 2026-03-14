@@ -2504,6 +2504,52 @@
       "secondary_categories": [
         "safety-incidents"
       ]
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Snowy Canadian Ski Resort Issues Apology Due To Chairlift Woes",
+      "url": "https://unofficialnetworks.com/2026/03/13/revelstoke-chairlift-apology/",
+      "description": "\"We know this situation has been frustrating, especially during a time when conditions on the mountain are so good.\"",
+      "content": "British Columbia \u2014 When it comes to the great ski resorts in Canada and North America, Revelstoke Mountain Resort could be among the greatest. However, with it being one of the newest ski resorts on the continent, there are quirks to the experience. Lift redundancy isn\u2019t exactly a thing at Revelstoke, leading to long lines in the morning for the gondola, along with a lack of ways to get to terrain if one of the upper mountain chairlifts is closed. Situated on the upper mountain, the Stoke Chair is the only lift that can be used to access Sub Peak. This terrain pod serves beginner, intermediate, advanced, and expert trails and glades. Last week, the detachable high-speed quad chairlift went down due to a mechanical issue. During a routine lift maintenance inspection last week, they discovered an issue with the gearbox. The required parts were sourced from international suppliers, delaying the repair process. In response, Revelstoke offered 50% off lift tickets during its closure and ext",
+      "pub_date": "2026-03-13",
+      "id": "44612318fd6c",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 3,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "canada",
+      "secondary_categories": [
+        "resort-operations",
+        "transportation",
+        "hospitality"
+      ]
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Denver to Mammoth: Why This 2-Hour Flight Beats the Drive Up Interstate 70",
+      "url": "https://unofficialnetworks.com/2026/03/13/denver-to-mammoth-easy-trip/",
+      "description": "Next time you're planning to head up I-70 to the Colorado mountains for a weekend, consider making the trip to Mammoth Mountain instead.",
+      "content": "This season has been a rough one for Colorado skiers and snowboarders. The powder days have been few and far between, and when they have come, the I-70 traffic has turned every storm into a parking lot experience. Next time you\u2019re planning to head up I-70 for access to the mountains for a weekend, especially if you\u2019re coming from the Denver area (or are planning to fly into Denver and travel from the airport) , consider making the trip to Mammoth Mountain in California instead. It\u2019s a lot easier than you might think. Skiing at Mammoth Mountain. The Flight: What to Actually Expect Getting to Mammoth from Denver is shockingly easy. United Airlines offers direct flights from Denver International Airport to Bishop Airport throughout much of the year, taking a short two hours to land just 45 minutes from the ski resort. Flights run daily throughout most of the winter, slowing down and stopping in the spring before kicking back on for summer travel. Bishop Airport is worth experiencing on it",
+      "pub_date": "2026-03-13",
+      "id": "8d74058c4816",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 2,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "transportation",
+      "secondary_categories": [
+        "weather-snow"
+      ]
     }
   ]
 }

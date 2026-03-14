@@ -1,6 +1,6 @@
 {
-  "updated": "2026-03-13 11:25:04",
-  "total_articles": 33,
+  "updated": "2026-03-14 11:18:22",
+  "total_articles": 34,
   "scoring_method": "keyword",
   "articles": [
     {
@@ -53,6 +53,28 @@
       ],
       "approved_date": "2026-03-12",
       "display_score": 32
+    },
+    {
+      "source": "Google News - Vail Alterra Ski",
+      "title": "Skier Visits Are Down Significantly Following \"Worst\" Season In Recent Memory, Says Vail Resorts CEO - POWDER Magazine",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFAwNDh2NTJBcnRUc1RCaDM1Z0RMeW8ybjkyWGprYTN6OFlmSTZQQXFULTlLQzZ1clg3ai01LUc5Z1B1QVI1OWZNUWF1UlUxYkMzVUVycGNocVUwREVER1NLUW5HWXJoS1ZoMHBuSGcxS0VJVUhG?oc=5",
+      "description": "Skier Visits Are Down Significantly Following \"Worst\" Season In Recent Memory, Says Vail Resorts CEO POWDER Magazine",
+      "content": "Skier Visits Are Down Significantly Following \"Worst\" Season In Recent Memory, Says Vail Resorts CEO POWDER Magazine",
+      "pub_date": "2026-03-09",
+      "id": "fa8b43d10324",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [],
+      "approved_date": "2026-03-14",
+      "display_score": 31.0
     },
     {
       "source": "Ski Area Management",
@@ -251,13 +273,13 @@
     },
     {
       "source": "Google News - Vail Alterra Ski",
-      "title": "Vail Resorts reports drops in skier visits, revenue amid \u2018worst-case weather scenario\u2019 in West, but CEO sees \u2018meaningful stability\u2019 - AspenTimes.com",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQZnB0MUhHU2lLTl9KZXRZNnB6TnExd1Z5dlZ3OXVfaGh6cEh2SHppMkp6dFNEUTVYN19zR29QcnNKMmh1T3RxQ0kwcm9WSkZjYkh3elAzSHVSWHNCRnU4SmFtdUNqelVoY1FOSWVHUVVFNlg1Q1ZBTTU0UW5kQVhfTXgwdlhCbGFybWpnZzFHZ2lWb1ZZZVRtTHZhOW50YzZZLTVBTGN5eTR6dGlYaGF2V01EWk9iS00?oc=5",
-      "description": "Vail Resorts reports drops in skier visits, revenue amid \u2018worst-case weather scenario\u2019 in West, but CEO sees \u2018meaningful stability\u2019 AspenTimes.com",
-      "content": "Vail Resorts reports drops in skier visits, revenue amid \u2018worst-case weather scenario\u2019 in West, but CEO sees \u2018meaningful stability\u2019 AspenTimes.com",
-      "pub_date": "2026-03-10",
-      "id": "56182a133fa1",
-      "prefilter_business_score": 2,
+      "title": "Ski industry shakeup coming as Alterra Mountain Company CEO steps down - ABC4 Utah",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPLWIzd2ltWlc1VlkxdUdMUFlSZ2xoRFlfeno5NVA5Yy1aMW45WnQtQmJhOXlSUFVDMnFqcUF3eTV2T2F5bnFQX3lHeDlXbklvb09BY2VaR2w0UGw4ZEFsamx4TmxLdEMtUzVRRTlTOG1XeXhLR3Z2UkJEenJuWnFGdFhYUlF0LTRGZ3hScEwwSWhYVmJmTG8tT19kenNpRTNjQ0JId21CTVrSAa4BQVVfeXFMUGZnYlhRWGJicUVnX3lhUTZtdGdSMmJQTlF0cnZKMFRrR3hWbmxYN1JTb09wck51VW43S0RRa3BDRlZPMTdnTzVaVGpLc1NEa0JodURudDhLdmEtWnhLRVRoYlpFWE1DanJTbFV6Z3N2ellxOWZvQWRWWjB5eXQyNmlKMVpLdjN1OTVyS0hyR1c2QjJ0T01pNW5JWWxqcG5Sa0dEY0p3TGZ1WW1fN2dn?oc=5",
+      "description": "Ski industry shakeup coming as Alterra Mountain Company CEO steps down ABC4 Utah",
+      "content": "Ski industry shakeup coming as Alterra Mountain Company CEO steps down ABC4 Utah",
+      "pub_date": "2026-03-11",
+      "id": "b8766178665b",
+      "prefilter_business_score": 1,
       "is_macro_relevance": false,
       "source_boost": 2,
       "score": 10,
@@ -268,32 +290,13 @@
       "score_method": "keyword",
       "category": "business-investment",
       "secondary_categories": [],
-      "approved_date": "2026-03-11",
-      "display_score": 25
-    },
-    {
-      "source": "Google News - Vail Alterra Ski",
-      "title": "Vail Resorts cuts profit forecast as warm winter lingers in the Rockies - The Business Journals",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQQ1lKSlJhN1ZEYjV6ZUlYY3Q3VERvV0hXaXNBY2lTWE95Zjh6RWRkMEF1clBOMS1ERGpUbC1xWUNrTUNWVmdsazN1elRROFM3LVUxWWtQMkpCWGpNeWdwUWM3OEtUTEppY1N5eTJKS2ZBVEZCV1R1MzZLVUNrNG5FdEJUNG9jTlUtbFU3Z1pWdXYzandsb1hNN3V0dkU5S0w5WjJfZQ?oc=5",
-      "description": "Vail Resorts cuts profit forecast as warm winter lingers in the Rockies The Business Journals",
-      "content": "Vail Resorts cuts profit forecast as warm winter lingers in the Rockies The Business Journals",
-      "pub_date": "2026-03-10",
-      "id": "cbd62dfca59c",
-      "prefilter_business_score": 2,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "business-investment",
-      "secondary_categories": [
-        "weather-snow"
+      "other_sources": [
+        {
+          "source": "Google News - Ski Industry",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPc0NGMzdpYVN0bGQwSkYwYUtDLU42RVRNRVF0Yzk2cVlUUFhtUGhmRGx5aURNWWcyZVBXM3RwcWZMUWVocy1NckpWSFdFcjdNRmMza0txekpFNzlYTHc4eG5ZRlhQelRYX3JnaVZjeWpDLWhtRWM4czk3M1dxZ3FwaDhyb0VMZ2J6?oc=5"
+        }
       ],
-      "other_sources": [],
-      "approved_date": "2026-03-11",
+      "approved_date": "2026-03-14",
       "display_score": 25
     },
     {
@@ -421,6 +424,31 @@
       ],
       "approved_date": "2026-02-24",
       "display_score": 25
+    },
+    {
+      "source": "Google News - Ski Industry",
+      "title": "Indy Pass CEO Erik Mogensen Takes Full Ownership of Black Mountain, NH, Transforming It Into a Ski Industry Innovation Hub - SnowBrains",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNLXlpUWtMYVM1ZHVBMUZxR3Jsb0R3aWUyWEJLU283R3pNVnhmcWVPakM0ZWtJM0ZSb3F1RjF5RW14T0hpODRBQ2c5ZzBYZHEyTUNuZDhKWUk3b083YVVKNzNyM25YTjc1bTgyNkd1SXBKa1l1aXdZMjNHOHJxT3NfcFVaUi1LQUJqU2IwZGxyUU5mOXR3Vm9GMUpJcEJ5WjUwdmFzMkt5TUNjckVfaXVoQktBTlI4XzcyQXg2TVcwZms5Q3hHMzFnUTE0ZEJ3R0N1Q3BZZXhsLU1tTURS?oc=5",
+      "description": "Indy Pass CEO Erik Mogensen Takes Full Ownership of Black Mountain, NH, Transforming It Into a Ski Industry Innovation Hub SnowBrains",
+      "content": "Indy Pass CEO Erik Mogensen Takes Full Ownership of Black Mountain, NH, Transforming It Into a Ski Industry Innovation Hub SnowBrains",
+      "pub_date": "2026-03-13",
+      "id": "5929b94e32c5",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 1,
+      "score": 9,
+      "score_details": {
+        "reason": "Keyword scoring (source: +1)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "resort-operations",
+        "hospitality"
+      ],
+      "approved_date": "2026-03-14",
+      "display_score": 23
     },
     {
       "source": "The Ski Guru",
@@ -695,31 +723,6 @@
     },
     {
       "source": "Unofficial Networks",
-      "title": "How Arapahoe Basin Factored Into The U.S. Ski Industry\u2019s Consolidation",
-      "url": "https://unofficialnetworks.com/2026/02/20/arapahoe-basin-ski-industry/",
-      "description": "How Arapahoe Basin has factored into the multi-mountain pass battle between the Alterra Mountain Company and Vail Resorts.",
-      "content": "Colorado \u2014 While some skiers don\u2019t like it, big ski economics are here to stay. The subscription-like model of multi-mountain passes has generated reliable revenue for major ski resort corporations, particularly Vail Resorts and the Alterra Mountain Company. It\u2019s proven to be a vital source of income during low-snow years, such as the one we\u2019re living through. It\u2019s allowed skiers to basically go to any ski region for vacation, but it also has brought crowds. A relatively new video from Bloomberg Television dives into the mega-pass model and how it has propelled Vail and Alterra into household names among skiers. Bloomberg interviewed Rob Katz, CEO of Vail Resorts, and Jared Smith, the CEO of Alterra Mountain Company, to ask them how the industry has changed. Arapahoe Basin I\u2019d argue the other main story the video tells is Arapahoe Basin\u2019s role in the season pass wars. In the 1990s, Arapahoe Basin, Breckenridge, and Keystone were sold to Vail, when it was much smaller. However, the DOJ ",
-      "pub_date": "2026-02-20",
-      "id": "657822aa0a86",
-      "prefilter_business_score": 1,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 8,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "business-investment",
-      "secondary_categories": [
-        "resort-operations",
-        "hospitality"
-      ],
-      "approved_date": "2026-02-21",
-      "display_score": 19
-    },
-    {
-      "source": "Unofficial Networks",
       "title": "New Zealand\u2019s Largest Ski Resort Details Offseason Projects",
       "url": "https://unofficialnetworks.com/2026/03/12/cardrona-alpine-resort-2026/",
       "description": "After opening a new terrain expansion last year, the New Zealand ski resort is making various improvements across the mountain.",
@@ -741,6 +744,31 @@
         "transportation"
       ],
       "approved_date": "2026-03-13",
+      "display_score": 18
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "California Ski Resort Won\u2019t Reopen This Season",
+      "url": "https://unofficialnetworks.com/2026/03/12/california-ski-resort-wont-reopen-this-season/",
+      "description": "A California ski resort closed again last week due to low snowpack, and the long-range forecast has led to the end of its season.",
+      "content": "McCloud, California \u2014 Earlier this week, it appeared that the writing could be on the wall for Mt. Shasta Ski Park. Early last week, Mt. Shasta Ski Park announced it was temporarily shutting down operations. On Sunday , I questioned whether Mt. Shasta Ski Park would be able to reopen due to a disappearing snowpack at the base area and a dry forecast in the days ahead. It turns out that those concerns were justified. On Tuesday, Mt. Shasta Ski Park announced that its 2025-26 ski season has come to a close. A less-than-ideal forecast, along with the continued depreciation of the snowpack, led the ski resort to throw in the towel. View this post on Instagram There were some good moments this season at the Mt. Shasta Ski Park. Major dumps in late December and February have led to some nice powder skiing. Unfortunately, warm weather and rain have also played a role, which resulted in two closures. The first came on February 9th, but didn\u2019t last too long due to the new snow. The second and u",
+      "pub_date": "2026-03-12",
+      "id": "980dcc8cf8e4",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [
+        "business-investment",
+        "safety-incidents"
+      ],
+      "approved_date": "2026-03-14",
       "display_score": 18
     },
     {
