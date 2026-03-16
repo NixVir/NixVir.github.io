@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-15 11:19:32",
+  "updated": "2026-03-16 11:41:03",
   "total_articles": 34,
   "scoring_method": "keyword",
   "articles": [
@@ -721,6 +721,28 @@
     },
     {
       "source": "Unofficial Networks",
+      "title": "Weather Expert Shares Dire Prediction For California\u2019s 2026 Ski Season",
+      "url": "https://unofficialnetworks.com/2026/03/15/weather-expert-california-ski-season/",
+      "description": "California is expected to see a massive heat wave this week, which could result in some ski resorts closing early.",
+      "content": "California \u2014 If you have a ski trip out in the American West scheduled for this week, you may want to cancel it. That\u2019s because a massive heat wave is set to hit the West. This will result in rapid snowmelt and closures at various ski resorts. One weather expert warned of the conundrum ski resorts will soon face. Colin McCarthy , who\u2019s known for his storm watching posts on Twitter, revealed what temperatures ski resorts could be seeing in the weeks ahead. Multiple days with temperatures above 70 degrees at the base areas will rapidly melt the snowpack. He\u2019s claiming that most ski resorts will close within the next two weeks, meaning that they wouldn\u2019t even make it to April. No snow will be left by next weekend at many ski resorts in California below 8,000 feet as the worst March heatwave in state history arrives. The base elevation of every ski resort will be 70\u00b0F+ for at least 4 straight days next week. Even Mammoth is forecast to hit 75\u00b0F next\u2026 https://t.co/Tx2qj3mRJ4 \u2014 Colin McCarth",
+      "pub_date": "2026-03-15",
+      "id": "5dbb76c0e687",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [],
+      "approved_date": "2026-03-16",
+      "display_score": 18
+    },
+    {
+      "source": "Unofficial Networks",
       "title": "New Zealand\u2019s Largest Ski Resort Details Offseason Projects",
       "url": "https://unofficialnetworks.com/2026/03/12/cardrona-alpine-resort-2026/",
       "description": "After opening a new terrain expansion last year, the New Zealand ski resort is making various improvements across the mountain.",
@@ -742,31 +764,6 @@
         "transportation"
       ],
       "approved_date": "2026-03-13",
-      "display_score": 18
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "California Ski Resort Won\u2019t Reopen This Season",
-      "url": "https://unofficialnetworks.com/2026/03/12/california-ski-resort-wont-reopen-this-season/",
-      "description": "A California ski resort closed again last week due to low snowpack, and the long-range forecast has led to the end of its season.",
-      "content": "McCloud, California \u2014 Earlier this week, it appeared that the writing could be on the wall for Mt. Shasta Ski Park. Early last week, Mt. Shasta Ski Park announced it was temporarily shutting down operations. On Sunday , I questioned whether Mt. Shasta Ski Park would be able to reopen due to a disappearing snowpack at the base area and a dry forecast in the days ahead. It turns out that those concerns were justified. On Tuesday, Mt. Shasta Ski Park announced that its 2025-26 ski season has come to a close. A less-than-ideal forecast, along with the continued depreciation of the snowpack, led the ski resort to throw in the towel. View this post on Instagram There were some good moments this season at the Mt. Shasta Ski Park. Major dumps in late December and February have led to some nice powder skiing. Unfortunately, warm weather and rain have also played a role, which resulted in two closures. The first came on February 9th, but didn\u2019t last too long due to the new snow. The second and u",
-      "pub_date": "2026-03-12",
-      "id": "980dcc8cf8e4",
-      "prefilter_business_score": 1,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [
-        "business-investment",
-        "safety-incidents"
-      ],
-      "approved_date": "2026-03-14",
       "display_score": 18
     },
     {
