@@ -1212,6 +1212,26 @@
       "score_method": "keyword",
       "category": "hospitality",
       "secondary_categories": []
+    },
+    {
+      "source": "Google News - Ski Industry",
+      "title": "Lake County\u2019s Ski Cooper sees surge in visitors, spending after slashing midweek lift tickets by half - The Colorado Sun",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9lQlhqbk1oLVNpcGRIQ0ZEcHl0T0Jzem1mLU00cWtDRVJJWlVETkluQ0JrZHhDeEZPSTRhSkxuNm0zNjdsUm50UHhTV204OThCRUdiVklzQzE4NFl5dkpQV3M2c1BwbFFGbmc?oc=5",
+      "description": "Lake County\u2019s Ski Cooper sees surge in visitors, spending after slashing midweek lift tickets by half The Colorado Sun",
+      "content": "Lake County\u2019s Ski Cooper sees surge in visitors, spending after slashing midweek lift tickets by half The Colorado Sun",
+      "pub_date": "2025-02-28",
+      "id": "195efdeca051",
+      "prefilter_business_score": 2,
+      "is_macro_relevance": false,
+      "source_boost": 1,
+      "score": 4,
+      "score_details": {
+        "reason": "Keyword scoring (source: +1)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": []
     }
   ],
   "rejected": [
@@ -2612,6 +2632,28 @@
       "secondary_categories": [
         "safety-incidents",
         "resort-operations"
+      ]
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Is the Season Nearly Over? Colorado Ski Resorts Face Major Heat This Week",
+      "url": "https://unofficialnetworks.com/2026/03/16/colorado-warm-weather-ski-season/",
+      "description": "The week ahead is looking like pretty rough for Colorado's ski resorts, with no snow and very high temperatures heading into the weekend.",
+      "content": "Sunday, March 15th, was a bit of a sleeper powder day at several ski areas throughout Colorado. Copper Mountain reported just 1 inch overnight, but there were several nice pockets of fresh snow to be found around the mountain. Other ski areas reported quite a bit more snow, like Winter Park, and several ski areas are still seeing snow today (Monday, March 16th) . It\u2019s welcome, but it\u2019s nowhere near enough to fix what\u2019s been a pretty lackluster winter season so far. Snow Depth percent of median POR in Colorado as of March 15th. Credit: USDA The week ahead is looking like pretty rough for Colorado\u2019s ski resorts, too. There\u2019s no more snow in the 7-day forecast and, as if that wasn\u2019t enough, temperatures are expected to really climb by this weekend. According to the National Weather Service , Denver is expected to see temperatures at least into the 80s throughout this week, with a high near 86\u00b0F on both Friday and Saturday. Some forecasts have Denver\u2019s temperatures reaching as high as 90\u00b0F",
+      "pub_date": "2026-03-16",
+      "id": "88f6a59cff74",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 1,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [
+        "hospitality"
       ]
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "updated": "2026-03-16 11:41:03",
-  "total_articles": 34,
+  "updated": "2026-03-17 11:37:48",
+  "total_articles": 35,
   "scoring_method": "keyword",
   "articles": [
     {
@@ -224,6 +224,74 @@
       "display_score": 27
     },
     {
+      "source": "Google News - Vail Alterra Ski",
+      "title": "Vail Resorts (MTN) CEO's Significant Stock Purchase Boosts Shares - GuruFocus",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNd0FSLVRhbktMdS1GUFlKcy01ak5kN0VOZjhvYnk4SndueG9wRUZiMjlqb09NWGRtNGc4cUg3cnI2Y2t2YlJQeUg4X3pUeml0Y0EzLW40QW9ROFY4TUxDVmxwa1JqOTduRVh0OXo5YWNUMFNTQWtIVml3U2QzOVlKYldWeXJWZmRHMXhJV09MOWVGdmR5NzY2VFdLNWw0TEd5Ny1z?oc=5",
+      "description": "Vail Resorts (MTN) CEO's Significant Stock Purchase Boosts Shares GuruFocus",
+      "content": "Vail Resorts (MTN) CEO's Significant Stock Purchase Boosts Shares GuruFocus",
+      "pub_date": "2026-03-17",
+      "id": "270a33f38fd7",
+      "prefilter_business_score": 3,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [],
+      "approved_date": "2026-03-17",
+      "display_score": 25
+    },
+    {
+      "source": "Google News - Vail Alterra Ski",
+      "title": "Vail Resorts reports drops in skier visits, revenue amid \u2018worst-case weather scenario\u2019 in West, but CEO sees \u2018meaningful stability\u2019 - VailDaily.com",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxONDFyV0FreGs4aDlSTHR1OWtZQkhiS1VFajJCWjREZlJMbnExTl9ieWNhZDdrWVpWNUxIcWpVQ0hOaXFTV3RSMW5OMDI4bzNvNERHeEh6YTdOMjFmQXB1eGhyX3JnX2FockU5MnVUa2FqZEVVTXRfWjVfWmpnaEtRVGNQOENlNVNJYU1HTnBRV0J5MmhFQUM5MjlhbE9UVGZNSFlXdnV1VERNakpBcjU2QzY5eHZfQQ?oc=5",
+      "description": "Vail Resorts reports drops in skier visits, revenue amid \u2018worst-case weather scenario\u2019 in West, but CEO sees \u2018meaningful stability\u2019 VailDaily.com",
+      "content": "Vail Resorts reports drops in skier visits, revenue amid \u2018worst-case weather scenario\u2019 in West, but CEO sees \u2018meaningful stability\u2019 VailDaily.com",
+      "pub_date": "2026-03-17",
+      "id": "bb172912ab0e",
+      "prefilter_business_score": 2,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [],
+      "approved_date": "2026-03-17",
+      "display_score": 25
+    },
+    {
+      "source": "Vail Resorts Investor Relations",
+      "title": "Vail Resorts to Bring My Epic Gear Experience to All Rentals",
+      "url": "https://investors.vailresorts.com/news-releases/news-release-details/vail-resorts-bring-my-epic-gear-experience-all-rentals",
+      "description": "Company unveils plans to transform the rental experience for every skier and rider; multi-year roadmap to bring more choice, convenience and personalization to all gear rentals Next season, anyone renting Demo skis or snowboards can pick their model from the best gear selection online across 12",
+      "content": "Company unveils plans to transform the rental experience for every skier and rider; multi-year roadmap to bring more choice, convenience and personalization to all gear rentals Next season, anyone renting Demo skis or snowboards can pick their model from the best gear selection online across 12",
+      "pub_date": "2026-03-16",
+      "id": "99b534fad8d2",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 5,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +5)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "transportation"
+      ],
+      "approved_date": "2026-03-17",
+      "display_score": 25
+    },
+    {
       "source": "Ski Area Management",
       "title": "Mogensen Takes Full Ownership of Black Mountain (N.H.)",
       "url": "https://www.saminfo.com/news/sam-headline-news/mogensen-takes-full-ownership-of-black-mountain-n-h",
@@ -245,58 +313,6 @@
         "resort-operations"
       ],
       "approved_date": "2026-03-13",
-      "display_score": 25
-    },
-    {
-      "source": "Google News - Vail Alterra Ski",
-      "title": "Low snow hits Vail Resorts earnings, company cuts full-year forecast - TownLift, Park City News",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOdEExT3BMRF8wWmRHTFZNQXFyTGs1Ti1xNVFLQUV6a2Z3b1BfVGYwdlRVRmtGaERmTXpSNGJ5ZnUxc0Q2dmpzdEZJalh6UFc1TzBuRF9vcUR4STl4UDh4cnNRaENmREdjdXBCYmhZMGNFOW8xVWNhWjVmMTBvclpQREZkcjZUNDhNRGlscWExSm1YYzFkWXI3NzJ6Yy15eTBLM3lEY3pXRGZFNkI5cWE2ZQ?oc=5",
-      "description": "Low snow hits Vail Resorts earnings, company cuts full-year forecast TownLift, Park City News",
-      "content": "Low snow hits Vail Resorts earnings, company cuts full-year forecast TownLift, Park City News",
-      "pub_date": "2026-03-11",
-      "id": "d850ca2bbd2f",
-      "prefilter_business_score": 2,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "business-investment",
-      "secondary_categories": [
-        "resort-operations"
-      ],
-      "approved_date": "2026-03-12",
-      "display_score": 25
-    },
-    {
-      "source": "Google News - Vail Alterra Ski",
-      "title": "Ski industry shakeup coming as Alterra Mountain Company CEO steps down - ABC4 Utah",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPLWIzd2ltWlc1VlkxdUdMUFlSZ2xoRFlfeno5NVA5Yy1aMW45WnQtQmJhOXlSUFVDMnFqcUF3eTV2T2F5bnFQX3lHeDlXbklvb09BY2VaR2w0UGw4ZEFsamx4TmxLdEMtUzVRRTlTOG1XeXhLR3Z2UkJEenJuWnFGdFhYUlF0LTRGZ3hScEwwSWhYVmJmTG8tT19kenNpRTNjQ0JId21CTVrSAa4BQVVfeXFMUGZnYlhRWGJicUVnX3lhUTZtdGdSMmJQTlF0cnZKMFRrR3hWbmxYN1JTb09wck51VW43S0RRa3BDRlZPMTdnTzVaVGpLc1NEa0JodURudDhLdmEtWnhLRVRoYlpFWE1DanJTbFV6Z3N2ellxOWZvQWRWWjB5eXQyNmlKMVpLdjN1OTVyS0hyR1c2QjJ0T01pNW5JWWxqcG5Sa0dEY0p3TGZ1WW1fN2dn?oc=5",
-      "description": "Ski industry shakeup coming as Alterra Mountain Company CEO steps down ABC4 Utah",
-      "content": "Ski industry shakeup coming as Alterra Mountain Company CEO steps down ABC4 Utah",
-      "pub_date": "2026-03-11",
-      "id": "b8766178665b",
-      "prefilter_business_score": 1,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "business-investment",
-      "secondary_categories": [],
-      "other_sources": [
-        {
-          "source": "Google News - Ski Industry",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPc0NGMzdpYVN0bGQwSkYwYUtDLU42RVRNRVF0Yzk2cVlUUFhtUGhmRGx5aURNWWcyZVBXM3RwcWZMUWVocy1NckpWSFdFcjdNRmMza0txekpFNzlYTHc4eG5ZRlhQelRYX3JnaVZjeWpDLWhtRWM4czk3M1dxZ3FwaDhyb0VMZ2J6?oc=5"
-        }
-      ],
-      "approved_date": "2026-03-14",
       "display_score": 25
     },
     {
@@ -399,30 +415,6 @@
       "category": "business-investment",
       "secondary_categories": [],
       "approved_date": "2026-02-26",
-      "display_score": 25
-    },
-    {
-      "source": "Ski Area Management",
-      "title": "Transformative Big Sky Leader Taylor Middleton Dies at 68",
-      "url": "https://www.saminfo.com/news/sam-headline-news/transformative-big-sky-leader-taylor-middleton-dies-at-68",
-      "description": "SAM Magazine\u2014Big Sky, Mont., Feb. 23, 2026\u2014Taylor Middleton, the longtime Big Sky Resort executive who led the Montana destination through decades of expansion and repositioned it as one of North America\u2019s premier ski resorts, died Friday at his home in Big Sky. He was 68. An Alabama native and 1979 University of Alabama graduate, Middleton arrived at Big Sky 46 years ago as a front desk attendant at the Huntley Lodge. He moved into sales and marketing, became general manager in 1998, and later ",
-      "content": "SAM Magazine\u2014Big Sky, Mont., Feb. 23, 2026\u2014Taylor Middleton, the longtime Big Sky Resort executive who led the Montana destination through decades of expansion and repositioned it as one of North America\u2019s premier ski resorts, died Friday at his home in Big Sky. He was 68. An Alabama native and 1979 University of Alabama graduate, Middleton arrived at Big Sky 46 years ago as a front desk attendant at the Huntley Lodge. He moved into sales and marketing, became general manager in 1998, and later ",
-      "pub_date": "2026-02-23",
-      "id": "e7474096658f",
-      "prefilter_business_score": 4,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "business-investment",
-      "secondary_categories": [
-        "hospitality"
-      ],
-      "approved_date": "2026-02-24",
       "display_score": 25
     },
     {
@@ -696,6 +688,31 @@
       "display_score": 21
     },
     {
+      "source": "Ski Area Management",
+      "title": "Utah\u2019s Powder Mountain to Invest $40M in Public Side of Resort",
+      "url": "https://www.saminfo.com/news/sam-headline-news/utahs-powder-mountain-to-invest-40m-in-public-side-of-resort",
+      "description": "SAM Magazine\u2014Eden, Utah, March 10, 2026\u2014 SunDown Lodge Rendering Powder Mountain will invest $40 million in a terrain expansion and base-area improvements on the public side of the resort as part of its evolving public/private operating model. The multi-year investment plan includes three lifts, a new lodge, and a 1,000-acre terrain expansion. Reed Hastings, the Netflix co-founder who acquired a controlling stake in the resort in 2023, has been shifting Powder Mountain toward a model in which re",
+      "content": "SAM Magazine\u2014Eden, Utah, March 10, 2026\u2014 SunDown Lodge Rendering Powder Mountain will invest $40 million in a terrain expansion and base-area improvements on the public side of the resort as part of its evolving public/private operating model. The multi-year investment plan includes three lifts, a new lodge, and a 1,000-acre terrain expansion. Reed Hastings, the Netflix co-founder who acquired a controlling stake in the resort in 2023, has been shifting Powder Mountain toward a model in which re",
+      "pub_date": "2026-03-10",
+      "id": "218cfb65abdc",
+      "prefilter_business_score": 2,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [
+        "business-investment",
+        "hospitality"
+      ],
+      "approved_date": "2026-03-17",
+      "display_score": 20
+    },
+    {
       "source": "Google News - Ski Pass Prices",
       "title": "Vail Resorts Adds Young Adult and Teen Epic Pass Options for 2026-27 - Ski Area Management",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQS0xsdHNYaHdfeW1iQUhYak9GeW50N29uSHFnVjBqaExvVTA3WTIta0pMMzYwY0k4ZW9MR0tnbmtudnRKTDJFVUJabENfTFkxTVZJX2w1VEowbGFRY0p4YXZITFpMVHhLaml4TDFyVGRhUE4xV0JNNGxoYV9CSWFsMnNkRFpPNlpDM3RPRW5FREpseUM1aldnUi1JZ2lrTE9HMi1rcEFKX0hpRGVqN0hIN0JXQzZ2Zw?oc=5",
@@ -721,6 +738,32 @@
     },
     {
       "source": "Unofficial Networks",
+      "title": "Wyoming Ski Resort Frustrated After UTV Driver Damages Beginner Trail",
+      "url": "https://unofficialnetworks.com/2026/03/16/pine-creek-utv-damage/",
+      "description": "A Wyoming ski resort declined to press charges against a UTV driver who damaged one of its open trails earlier this month.",
+      "content": "Cokeville, Wyoming \u2014 In a low-snow winter, any slight on a ski trail can make a big difference. That\u2019s what Pine Creek has been dealing with over the past week. On March 8th, a dumbass UTV driver decided that it was appropriate to ride through a beginner trail at Pine Creek. As the vehicle reached a steeper section, it brought up dirt and mud, damaging the trail and its snowpack. In a winter where there hasn\u2019t been much natural snow, and a warm front is on the way, that\u2019s a tough break. \u201cAs a small ski area, with a rural demographic, we don\u2019t get the same mega volumes of skiers coming through,\u201d said Alicia Etcheverry, one of the managers of the ski resort, to BuckRail . \u201cWe don\u2019t have the same resources as the big ski areas. \u2026 With the warm temps, we\u2019ve been burning through and grooming everything we can. It\u2019s a punch to morale.\u201d They did end up finding the culprits, who were surprisingly remorseful about their actions. The ski resort decided against drawing charges. \u201cWhen you get dama",
+      "pub_date": "2026-03-16",
+      "id": "21186340f3b4",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [
+        "transportation",
+        "hospitality",
+        "business-investment"
+      ],
+      "approved_date": "2026-03-17",
+      "display_score": 18
+    },
+    {
+      "source": "Unofficial Networks",
       "title": "Weather Expert Shares Dire Prediction For California\u2019s 2026 Ski Season",
       "url": "https://unofficialnetworks.com/2026/03/15/weather-expert-california-ski-season/",
       "description": "California is expected to see a massive heat wave this week, which could result in some ski resorts closing early.",
@@ -739,31 +782,6 @@
       "category": "weather-snow",
       "secondary_categories": [],
       "approved_date": "2026-03-16",
-      "display_score": 18
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "New Zealand\u2019s Largest Ski Resort Details Offseason Projects",
-      "url": "https://unofficialnetworks.com/2026/03/12/cardrona-alpine-resort-2026/",
-      "description": "After opening a new terrain expansion last year, the New Zealand ski resort is making various improvements across the mountain.",
-      "content": "New Zealand \u2014 Cardrona Alpine Resort made a lot of major moves last year. The opening of the Soho Basin expansion made Cardrona the largest ski resort in New Zealand. While they haven\u2019t been as busy as last offseason, work continues on various improvements. Cardrona has given guests a few updates regarding projects this offseason. Regarding Soho Basin, redesigned runs and a snowmaking basin will be added. This will allow for more reliable conditions and earlier openings. In terms of redesigned runs, one example is Snow Farmer. Last winter, guests used the summer road to ski down, which wasn\u2019t the route\u2019s intended purpose. This upcoming winter will see a defined piste, meaning it\u2019s easier to get down on it. Last month, Cardrona showed work on various projects. Work continues on a new snowmaking dam/pond, which will greatly increase their snowmaking capacity. A new pumphouse is being added, which will allow for snowmaking in Soho Basin. Third, upgrades are being made to the base area. Th",
-      "pub_date": "2026-03-12",
-      "id": "e87c796e76ab",
-      "prefilter_business_score": 1,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "international",
-      "secondary_categories": [
-        "resort-operations",
-        "transportation"
-      ],
-      "approved_date": "2026-03-13",
       "display_score": 18
     },
     {
