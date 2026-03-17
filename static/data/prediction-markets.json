@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-03-16T15:40:34.380072Z",
+  "fetched_at": "2026-03-17T15:38:50.653979Z",
   "kalshi": {
     "recession": [
       {
@@ -2961,6 +2961,45 @@
         "display_name": "Monthly CPI",
         "markets": [
           {
+            "ticker": "KXCPI-26MAR-T1.3",
+            "title": "Will CPI rise more than 1.3% in March 2026?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-04-10T12:25:00Z"
+          },
+          {
+            "ticker": "KXCPI-26MAR-T1.2",
+            "title": "Will CPI rise more than 1.2% in March 2026?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-04-10T12:25:00Z"
+          },
+          {
+            "ticker": "KXCPI-26MAR-T1.1",
+            "title": "Will CPI rise more than 1.1% in March 2026?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-04-10T12:25:00Z"
+          },
+          {
             "ticker": "KXCPI-26MAR-T1.0",
             "title": "Will CPI rise more than 1.0% in March 2026?",
             "yes_price": 0,
@@ -4866,6 +4905,402 @@
             "close_time": "2026-12-31T19:30:00Z"
           }
         ]
+      },
+      {
+        "series": "KXAAAGASW",
+        "display_name": "Gas Price Direction",
+        "markets": [
+          {
+            "ticker": "KXAAAGASW-26MAR23-4.100",
+            "title": "Will average **gas prices** be above $4.100?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-4.080",
+            "title": "Will average **gas prices** be above $4.080?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-4.060",
+            "title": "Will average **gas prices** be above $4.060?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-4.040",
+            "title": "Will average **gas prices** be above $4.040?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-4.020",
+            "title": "Will average **gas prices** be above $4.020?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-4.000",
+            "title": "Will average **gas prices** be above $4.000?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-3.980",
+            "title": "Will average **gas prices** be above $3.980?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-3.960",
+            "title": "Will average **gas prices** be above $3.960?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-3.940",
+            "title": "Will average **gas prices** be above $3.940?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-3.920",
+            "title": "Will average **gas prices** be above $3.920?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-3.900",
+            "title": "Will average **gas prices** be above $3.900?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-3.880",
+            "title": "Will average **gas prices** be above $3.880?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-3.860",
+            "title": "Will average **gas prices** be above $3.860?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-3.840",
+            "title": "Will average **gas prices** be above $3.840?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-3.820",
+            "title": "Will average **gas prices** be above $3.820?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-3.810",
+            "title": "Will average **gas prices** be above $3.810?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-3.800",
+            "title": "Will average **gas prices** be above $3.800?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-3.790",
+            "title": "Will average **gas prices** be above $3.790?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-3.780",
+            "title": "Will average **gas prices** be above $3.780?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-3.770",
+            "title": "Will average **gas prices** be above $3.770?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-3.760",
+            "title": "Will average **gas prices** be above $3.760?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-3.750",
+            "title": "Will average **gas prices** be above $3.750?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-3.740",
+            "title": "Will average **gas prices** be above $3.740?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-3.730",
+            "title": "Will average **gas prices** be above $3.730?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-3.720",
+            "title": "Will average **gas prices** be above $3.720?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-3.710",
+            "title": "Will average **gas prices** be above $3.710?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-3.700",
+            "title": "Will average **gas prices** be above $3.700?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-3.690",
+            "title": "Will average **gas prices** be above $3.690?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-3.680",
+            "title": "Will average **gas prices** be above $3.680?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-3.670",
+            "title": "Will average **gas prices** be above $3.670?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          }
+        ]
       }
     ]
   },
@@ -5036,16 +5471,179 @@
         "volume": 0,
         "open_interest": 0,
         "resolves": "2026-03-20T18:30:00Z"
+      },
+      {
+        "metric": "Gas Price Outlook",
+        "value": 3.67,
+        "probability": 0.0,
+        "format": "price",
+        "levels": [
+          {
+            "price": 3.67,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.670?"
+          },
+          {
+            "price": 3.68,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.680?"
+          },
+          {
+            "price": 3.69,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.690?"
+          },
+          {
+            "price": 3.7,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.700?"
+          },
+          {
+            "price": 3.71,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.710?"
+          },
+          {
+            "price": 3.72,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.720?"
+          },
+          {
+            "price": 3.73,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.730?"
+          },
+          {
+            "price": 3.74,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.740?"
+          },
+          {
+            "price": 3.75,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.750?"
+          },
+          {
+            "price": 3.76,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.760?"
+          },
+          {
+            "price": 3.77,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.770?"
+          },
+          {
+            "price": 3.78,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.780?"
+          },
+          {
+            "price": 3.79,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.790?"
+          },
+          {
+            "price": 3.8,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.800?"
+          },
+          {
+            "price": 3.81,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.810?"
+          },
+          {
+            "price": 3.82,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.820?"
+          },
+          {
+            "price": 3.84,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.840?"
+          },
+          {
+            "price": 3.86,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.860?"
+          },
+          {
+            "price": 3.88,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.880?"
+          },
+          {
+            "price": 3.9,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.900?"
+          },
+          {
+            "price": 3.92,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.920?"
+          },
+          {
+            "price": 3.94,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.940?"
+          },
+          {
+            "price": 3.96,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.960?"
+          },
+          {
+            "price": 3.98,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.980?"
+          },
+          {
+            "price": 4.0,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $4.000?"
+          },
+          {
+            "price": 4.02,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $4.020?"
+          },
+          {
+            "price": 4.04,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $4.040?"
+          },
+          {
+            "price": 4.06,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $4.060?"
+          },
+          {
+            "price": 4.08,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $4.080?"
+          },
+          {
+            "price": 4.1,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $4.100?"
+          }
+        ],
+        "interpretation": "lower_better",
+        "volume": 0,
+        "open_interest": 0,
+        "resolves": "2026-03-23T03:59:00Z"
       }
     ],
     "narrative": "Energy costs are elevated with oil above $80, which may increase operating and travel expenses.",
     "previous": {
-      "date": "2026-03-09",
-      "recession_prob": 0.32,
+      "date": "2026-03-10",
+      "recession_prob": 0.27,
       "fed_outcome": "Hold",
-      "fed_prob": 0.97,
-      "rate_cuts_mode": 2,
-      "oil_price": 97
+      "fed_prob": 0.98,
+      "rate_cuts_mode": 1,
+      "oil_price": 85,
+      "gas_price": 3.63
     }
   }
 }
