@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-03-17T15:38:50.653979Z",
+  "fetched_at": "2026-03-18T15:47:50.489732Z",
   "kalshi": {
     "recession": [
       {
@@ -5637,13 +5637,13 @@
     ],
     "narrative": "Energy costs are elevated with oil above $80, which may increase operating and travel expenses.",
     "previous": {
-      "date": "2026-03-10",
-      "recession_prob": 0.27,
+      "date": "2026-03-11",
+      "recession_prob": 0.28,
       "fed_outcome": "Hold",
       "fed_prob": 0.98,
-      "rate_cuts_mode": 1,
+      "rate_cuts_mode": 2,
       "oil_price": 85,
-      "gas_price": 3.63
+      "gas_price": 3.59
     }
   }
 }
