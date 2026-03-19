@@ -1,6 +1,6 @@
 {
-  "updated": "2026-03-18 11:39:27",
-  "total_articles": 34,
+  "updated": "2026-03-19 11:29:36",
+  "total_articles": 35,
   "scoring_method": "keyword",
   "articles": [
     {
@@ -199,12 +199,12 @@
     },
     {
       "source": "Google News - Vail Alterra Ski",
-      "title": "Vail Resorts (MTN) CEO's Significant Stock Purchase Boosts Shares - GuruFocus",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNd0FSLVRhbktMdS1GUFlKcy01ak5kN0VOZjhvYnk4SndueG9wRUZiMjlqb09NWGRtNGc4cUg3cnI2Y2t2YlJQeUg4X3pUeml0Y0EzLW40QW9ROFY4TUxDVmxwa1JqOTduRVh0OXo5YWNUMFNTQWtIVml3U2QzOVlKYldWeXJWZmRHMXhJV09MOWVGdmR5NzY2VFdLNWw0TEd5Ny1z?oc=5",
-      "description": "Vail Resorts (MTN) CEO's Significant Stock Purchase Boosts Shares GuruFocus",
-      "content": "Vail Resorts (MTN) CEO's Significant Stock Purchase Boosts Shares GuruFocus",
-      "pub_date": "2026-03-17",
-      "id": "270a33f38fd7",
+      "title": "Vail Resorts CEO invests $5 million in company stock after difficult earnings report - TownLift Park City",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNdzFHX3AxclUzVHNUSjN1TmYxeDZ1b1NsM2dFWDJlUk1KVlRoc3BrZmd1eE1pbV9mTS1KWF9YUGRpeU82cDVCYTh5QWtydUJuaFYwQnFoREtoVDdHZlhuQUlyTU0ydmNpTC1nSWFUcG5GbkN1czd0Rzk1QjNBU3VYUndqT01OV2tsWC0tVUNmVXlrWXZnbWxwVWNrN0JMVFhRWldMZUdHNUVpbzAzV0xpRDhvQQ?oc=5",
+      "description": "Vail Resorts CEO invests $5 million in company stock after difficult earnings report TownLift Park City",
+      "content": "Vail Resorts CEO invests $5 million in company stock after difficult earnings report TownLift Park City",
+      "pub_date": "2026-03-18",
+      "id": "7d317ad56c89",
       "prefilter_business_score": 3,
       "is_macro_relevance": false,
       "source_boost": 2,
@@ -215,19 +215,45 @@
       },
       "score_method": "keyword",
       "category": "business-investment",
-      "secondary_categories": [],
-      "approved_date": "2026-03-17",
+      "secondary_categories": [
+        "resort-operations"
+      ],
+      "approved_date": "2026-03-19",
+      "display_score": 25
+    },
+    {
+      "source": "Google News - Ski Pass Prices",
+      "title": "Vail Resorts CEO Katz, 20 years on, talks pass products, crowding, acquisitions and growth - VailDaily.com",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNS29TM1FxODhHa3h1clFDM2E5aVZGcWZsU1R5VXVaX0JySXQybEd1cGIwclVZam9UX2FPRkZ1b0JDQ1Ftc2g1ZjNEYWU4TTZHbVJuU0pWR3VkV2pmSzBUa000eTdOczBhNU84SE9taWdZLWlpLVM2Zm4zNDlBMEZYWTEwQ2tEVFMzcEVwb3Z2QXlWR0ptMlB4YngyWUZfcjZ1M285RmkyUGRkYllDRVJweXpTTUViNUlyOXc?oc=5",
+      "description": "Vail Resorts CEO Katz, 20 years on, talks pass products, crowding, acquisitions and growth VailDaily.com",
+      "content": "Vail Resorts CEO Katz, 20 years on, talks pass products, crowding, acquisitions and growth VailDaily.com",
+      "pub_date": "2026-03-18",
+      "id": "67ffc64c2bf0",
+      "prefilter_business_score": 3,
+      "is_macro_relevance": false,
+      "source_boost": 1,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +1)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "resort-operations"
+      ],
+      "approved_date": "2026-03-19",
       "display_score": 25
     },
     {
       "source": "Google News - Vail Alterra Ski",
-      "title": "Vail Resorts reports drops in skier visits, revenue amid \u2018worst-case weather scenario\u2019 in West, but CEO sees \u2018meaningful stability\u2019 - VailDaily.com",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxONDFyV0FreGs4aDlSTHR1OWtZQkhiS1VFajJCWjREZlJMbnExTl9ieWNhZDdrWVpWNUxIcWpVQ0hOaXFTV3RSMW5OMDI4bzNvNERHeEh6YTdOMjFmQXB1eGhyX3JnX2FockU5MnVUa2FqZEVVTXRfWjVfWmpnaEtRVGNQOENlNVNJYU1HTnBRV0J5MmhFQUM5MjlhbE9UVGZNSFlXdnV1VERNakpBcjU2QzY5eHZfQQ?oc=5",
-      "description": "Vail Resorts reports drops in skier visits, revenue amid \u2018worst-case weather scenario\u2019 in West, but CEO sees \u2018meaningful stability\u2019 VailDaily.com",
-      "content": "Vail Resorts reports drops in skier visits, revenue amid \u2018worst-case weather scenario\u2019 in West, but CEO sees \u2018meaningful stability\u2019 VailDaily.com",
+      "title": "Vail Resorts (MTN) CEO's Significant Stock Purchase Boosts Shares - GuruFocus",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNd0FSLVRhbktMdS1GUFlKcy01ak5kN0VOZjhvYnk4SndueG9wRUZiMjlqb09NWGRtNGc4cUg3cnI2Y2t2YlJQeUg4X3pUeml0Y0EzLW40QW9ROFY4TUxDVmxwa1JqOTduRVh0OXo5YWNUMFNTQWtIVml3U2QzOVlKYldWeXJWZmRHMXhJV09MOWVGdmR5NzY2VFdLNWw0TEd5Ny1z?oc=5",
+      "description": "Vail Resorts (MTN) CEO's Significant Stock Purchase Boosts Shares GuruFocus",
+      "content": "Vail Resorts (MTN) CEO's Significant Stock Purchase Boosts Shares GuruFocus",
       "pub_date": "2026-03-17",
-      "id": "bb172912ab0e",
-      "prefilter_business_score": 2,
+      "id": "270a33f38fd7",
+      "prefilter_business_score": 3,
       "is_macro_relevance": false,
       "source_boost": 2,
       "score": 10,
@@ -370,26 +396,28 @@
       "display_score": 25
     },
     {
-      "source": "Google News - Ski Resort Business",
-      "title": "China Travel International Investment Announces Acquisition of Equity Interests with Detailed Profit Forecast and Valuation for Songhua Lake Ski Resort Project - Minichart",
-      "url": "https://news.google.com/rss/articles/CBMipwJBVV95cUxPbmZHT2RMMWp3blRmcXlqZXlQQ2hLYUhJc184MkVleF83b0RfbzFkaGw4UG5hemZLeFoya1M3U1ZrNTB4S0M5SUl1RFZyM242Vmh3ZFQtVnlzQUtaa0lrSzQ3MGRkT0xpRFcxWklzWVFoSW5LbHJJY3VIb0o2dWZhMjRmcjN5V2pRNWZYcm51V2hqZWF5cmZPXzQ2QnhwSjVHS09sMU1idkp5eFJPRnZxYjJ4ZDhhcjZVdnVYbE4yOEdxbUJBcW5SMF9YTVBPdVE4S0NwYm9McWRvRWNnS18tclZsWHVfYXk1anpRRkZqaDBhbHdzMmZtNlhMbUF0NkMtZ25RNnhrNllVQVkyMl9OTEFmZWIxMy0tUzgwSFFZWnMwb1pLUURJ?oc=5",
-      "description": "China Travel International Investment Announces Acquisition of Equity Interests with Detailed Profit Forecast and Valuation for Songhua Lake Ski Resort Project Minichart",
-      "content": "China Travel International Investment Announces Acquisition of Equity Interests with Detailed Profit Forecast and Valuation for Songhua Lake Ski Resort Project Minichart",
-      "pub_date": "2026-02-25",
-      "id": "7e7e3830a36b",
-      "prefilter_business_score": 4,
+      "source": "SnowBrains",
+      "title": "Rob Katz Bought $5 million in Vail Stock on Monday, Still No Plan To Fix Reputation Issues",
+      "url": "https://snowbrains.com/rob-katz-bought-5-million-in-vail-stock-on-monday-still-no-plan-to-fix-reputation-issues/",
+      "description": "It is no secret that Vail Resorts\u2019 stock price has been struggling for years. After peaking in November 2021, the stock price is now worth roughly a third of what it was after a relentless five-year decline. Vail Daily reported that Vail Resorts CEO Rob Katz recently purchased roughly $5 million in Vail Resorts stock, bringing his holdings to almost [\u2026] The post Rob Katz Bought $5 million in Vail Stock on Monday, Still No Plan To Fix Reputation Issues appeared first on SnowBrains .",
+      "content": "Rob Katz joined Vail Resorts\u2019 stock buyback campaign, recently purchasing $5 million worth of stock. | Image: Vail Resorts It is no secret that Vail Resorts\u2019 stock price has been struggling for years. After peaking in November 2021, the stock price is now worth roughly a third of what it was after a relentless five-year decline. Vail Daily reported that Vail Resorts CEO Rob Katz recently purchased roughly $5 million in Vail Resorts stock, bringing his holdings to almost $40 million. CEOs often buy stock in their company as a show of confidence to investors. This purchase followed a critique by Late Apex Partners in early 2025. This independent investment group pointed out that while Kirsten Lynch was CEO, she did not purchase a single share of Vail stock, and that in the last five years no board member has purchased any stock. According to MarketBeat , almost 95% of Vail\u2019s stock is owned by institutional investors and hedge funds. Related: How The Epic Pass Changed Skiing: A Data Drive",
+      "pub_date": "2026-03-19",
+      "id": "3b6dddf3bf76",
+      "prefilter_business_score": 3,
       "is_macro_relevance": false,
-      "source_boost": 2,
+      "source_boost": 0,
       "score": 10,
       "score_details": {
-        "reason": "Keyword scoring (source: +2)",
+        "reason": "Keyword scoring (source: +0)",
         "method": "keyword"
       },
       "score_method": "keyword",
       "category": "business-investment",
-      "secondary_categories": [],
-      "approved_date": "2026-02-26",
-      "display_score": 25
+      "secondary_categories": [
+        "resort-operations"
+      ],
+      "approved_date": "2026-03-19",
+      "display_score": 23
     },
     {
       "source": "SnowBrains",
@@ -559,31 +587,6 @@
       "display_score": 23
     },
     {
-      "source": "SnowBrains",
-      "title": "French Ski Resorts Invest \u20ac555 Million in 2025, Maintaining Record-Level Commitment",
-      "url": "https://snowbrains.com/french-ski-resorts-invest-e555-million-in-2025-maintaining-record-level-commitment/",
-      "description": "French ski resorts invested \u20ac555 million in 2025, maintaining a historically high level of spending and reinforcing the sector\u2019s central role in mountain economies, according to the annual investment survey conducted by Montagne Leaders magazine in partnership with Atout France and Domaines Skiables de France. The total is nearly identical to 2024 and stands 50% above the ten-year average, keeping [\u2026] The post French Ski Resorts Invest \u20ac555 Million in 2025, Maintaining Record-Level Commitment ap",
-      "content": "Ski resorts across France including Tignes (pictured) received \u20ac555 million worth of investments in 2025. | Image: SnowBrains French ski resorts invested \u20ac555 million in 2025, maintaining a historically high level of spending and reinforcing the sector\u2019s central role in mountain economies, according to the annual investment survey conducted by Montagne Leaders magazine in partnership with Atout France and Domaines Skiables de France. The total is nearly identical to 2024 and stands 50% above the ten-year average, keeping investment near record levels since the barometer was created. According to the survey, investment in 2025 represents 32% of pre-tax turnover\u2014nine percentage points above the 10-year average\u2014demonstrating how large a share of revenue operators are directing back into infrastructure and modernization. Related: Les Arcs, France, Report: Last Run of the Trip\u2026 22 Powder Days in a Row Here! Industry representatives say sustaining that level of commitment has become more com",
-      "pub_date": "2026-03-02",
-      "id": "c5cd3497277c",
-      "prefilter_business_score": 1,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "business-investment",
-      "secondary_categories": [
-        "weather-snow",
-        "ski-history"
-      ],
-      "approved_date": "2026-03-03",
-      "display_score": 23
-    },
-    {
       "source": "PlanetSKI",
       "title": "French Ski Resorts Invest for the Future",
       "url": "https://planetski.eu/2026/03/02/french-ski-resorts-invest-for-the-future/",
@@ -734,12 +737,12 @@
     },
     {
       "source": "Unofficial Networks",
-      "title": "Hardcore Skier Shares Near-Death Experience At Big Sky",
-      "url": "https://unofficialnetworks.com/2026/03/17/big-sky-near-death-experience/",
-      "description": "If you're wondering how extreme the terrain can be at Big Sky, one skier showed how he nearly died on a traverse.",
-      "content": "Big Sky, Montana \u2014 Big Sky Resort\u2019s expert terrain is no joke, as it\u2019s one of the few ski resorts that\u2019s home to triple black diamonds. Much of their double- and triple-black-diamond terrain has no fall zones, which are meant to indicate the risks of taking it on. YouTuber Ched Cant Cork found that out the hard way earlier this month while he was traversing Headwaters\u2019 Ridge . Ched is an experienced skier and had been in this terrain zone beforehand. However, the difference was that the traverse had become much firmer. It was also a windy day, increasing the risk of falling. If he fell, the end result wouldn\u2019t have been pretty. YouTube titles can be pretty dramatic sometimes, but I believe he\u2019s being truthful here. Here\u2019s his description of his taste of death: \u201cThis is one of the scariest moments of my life. The wind from the last few days had removed a majority of the snowpack along the headwaters ridge and the bootpack or what was left, had turned to pretty much ice. We were lucky to",
-      "pub_date": "2026-03-17",
-      "id": "4bf072934678",
+      "title": "This Is the Only Region Getting Real Snow Over the Next 10 Days",
+      "url": "https://unofficialnetworks.com/2026/03/18/chris-tomer-snow-forecast-march/",
+      "description": "According to meteorologist Chris Tomer, the snow forecast for most American ski resorts over the next several days is essentially zero.",
+      "content": "According to meteorologist Chris Tomer , a massive dome of high pressure is firmly in control of the western United States through at least March 25, and the snow forecast for most American ski resorts over the next several days is essentially zero. Water vapor imagery confirms the scale of the pattern. The high pressure system is producing pressure anomalies running three to four sigma above the 30-year norm, a signal Tomer described as significant. With the storm track forced well to the north, base area temperatures at Utah, Colorado, and California resorts are expected to climb to 60 degrees or warmer. At Alta, temperatures already reached 55 degrees at mid-mountain elevations on Tuesday, with readings near 60 degrees expected Wednesday and potentially warmer than that on Thursday. The 15-day snow forecast for California, Nevada, Utah, Colorado, Arizona, and New Mexico is effectively flat. Wyoming and Montana may see light accumulations over the highest peaks, but nothing meaningfu",
+      "pub_date": "2026-03-18",
+      "id": "8a549905c5aa",
       "prefilter_business_score": 1,
       "is_macro_relevance": false,
       "source_boost": 0,
@@ -750,10 +753,8 @@
       },
       "score_method": "keyword",
       "category": "weather-snow",
-      "secondary_categories": [
-        "safety-incidents"
-      ],
-      "approved_date": "2026-03-18",
+      "secondary_categories": [],
+      "approved_date": "2026-03-19",
       "display_score": 18
     },
     {
@@ -803,6 +804,30 @@
       "secondary_categories": [],
       "approved_date": "2026-03-04",
       "display_score": 12
+    },
+    {
+      "source": "PlanetSKI",
+      "title": "One Dead in Swiss Gondola Crash",
+      "url": "https://planetski.eu/2026/03/18/swiss-gondola-crash-leaves-woman-dead/",
+      "description": "A woman was killed when a gondola came off its cables in Engelberg. An investigation is underway. UPDATED The post One Dead in Swiss Gondola Crash appeared first on PlanetSKI .",
+      "content": "Police said the gondola detached from the cable \u201cfor reasons that are still unclear\u201d. The accident happened on Wednesday morning. Eyewitnesses told Swiss media that strong winds were buffeting the lift when the crash happened. Video on social media shows the gondola tumbling down Mt Titlis and flipping over several times before coming to a halt. The victim was a 61-year-old Swiss woman. The gondola could carry up to 8 people. The cause of the crash is being investigated. The cantonal police said the woman was alone in the Titlis Xpress ski gondola when it detached from the cable. The gondola had just left the Tr\u00fcbsee station and was heading up the middle section of the mountain when the accident happened. Police said air rescue service, ambulances and police officers were involved in the rescue operation. One skier said \u201cextremely strong winds\u201d had left the gondolas swaying, and police spoke of gusts of more than 80km/h (50mph). The gondola service is normally suspended when winds clim",
+      "pub_date": "2026-03-18",
+      "id": "4627b6ce8a7e",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 9,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "safety-incidents",
+      "secondary_categories": [
+        "resort-operations"
+      ],
+      "approved_date": "2026-03-19",
+      "display_score": 8
     },
     {
       "source": "Google News - Ski Industry",
