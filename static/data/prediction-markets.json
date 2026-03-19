@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-03-18T15:47:50.489732Z",
+  "fetched_at": "2026-03-19T15:12:21.873222Z",
   "kalshi": {
     "recession": [
       {
@@ -1301,71 +1301,6 @@
             "volume_24h": null,
             "open_interest": null,
             "close_time": "2026-04-29T17:59:00Z"
-          },
-          {
-            "ticker": "KXFEDDECISION-26MAR-H26",
-            "title": "Will the Federal Reserve Hike rates by >25bps at their March 2026 meeting?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-18T17:59:00Z"
-          },
-          {
-            "ticker": "KXFEDDECISION-26MAR-H25",
-            "title": "Will the Federal Reserve Hike rates by 25bps at their March 2026 meeting?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-18T17:59:00Z"
-          },
-          {
-            "ticker": "KXFEDDECISION-26MAR-H0",
-            "title": "Will the Federal Reserve Hike rates by 0bps at their March 2026 meeting?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-18T17:59:00Z"
-          },
-          {
-            "ticker": "KXFEDDECISION-26MAR-C26",
-            "title": "Will the Federal Reserve Cut rates by >25bps at their March 2026 meeting?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-18T17:59:00Z"
-          },
-          {
-            "ticker": "KXFEDDECISION-26MAR-C25",
-            "title": "Will the Federal Reserve Cut rates by 25bps at their March 2026 meeting?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-18T17:59:00Z"
           }
         ]
       },
@@ -2960,6 +2895,136 @@
         "series": "KXCPI",
         "display_name": "Monthly CPI",
         "markets": [
+          {
+            "ticker": "KXCPI-26MAY-T1.0",
+            "title": "Will CPI rise more than 1.0% in May 2026?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-06-10T12:25:00Z"
+          },
+          {
+            "ticker": "KXCPI-26MAY-T0.9",
+            "title": "Will CPI rise more than 0.9% in May 2026?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-06-10T12:25:00Z"
+          },
+          {
+            "ticker": "KXCPI-26MAY-T0.8",
+            "title": "Will CPI rise more than 0.8% in May 2026?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-06-10T12:25:00Z"
+          },
+          {
+            "ticker": "KXCPI-26MAY-T0.7",
+            "title": "Will CPI rise more than 0.7% in May 2026?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-06-10T12:25:00Z"
+          },
+          {
+            "ticker": "KXCPI-26MAY-T0.6",
+            "title": "Will CPI rise more than 0.6% in May 2026?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-06-10T12:25:00Z"
+          },
+          {
+            "ticker": "KXCPI-26APR-T1.0",
+            "title": "Will CPI rise more than 1.0% in April 2026?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-05-12T12:25:00Z"
+          },
+          {
+            "ticker": "KXCPI-26APR-T0.9",
+            "title": "Will CPI rise more than 0.9% in April 2026?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-05-12T12:25:00Z"
+          },
+          {
+            "ticker": "KXCPI-26APR-T0.8",
+            "title": "Will CPI rise more than 0.8% in April 2026?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-05-12T12:25:00Z"
+          },
+          {
+            "ticker": "KXCPI-26APR-T0.7",
+            "title": "Will CPI rise more than 0.7% in April 2026?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-05-12T12:25:00Z"
+          },
+          {
+            "ticker": "KXCPI-26APR-T0.6",
+            "title": "Will CPI rise more than 0.6% in April 2026?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-05-12T12:25:00Z"
+          },
           {
             "ticker": "KXCPI-26MAR-T1.3",
             "title": "Will CPI rise more than 1.3% in March 2026?",
@@ -4911,6 +4976,45 @@
         "display_name": "Gas Price Direction",
         "markets": [
           {
+            "ticker": "KXAAAGASW-26MAR23-4.160",
+            "title": "Will average **gas prices** be above $4.160?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-4.140",
+            "title": "Will average **gas prices** be above $4.140?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR23-4.120",
+            "title": "Will average **gas prices** be above $4.120?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-23T03:59:00Z"
+          },
+          {
             "ticker": "KXAAAGASW-26MAR23-4.100",
             "title": "Will average **gas prices** be above $4.100?",
             "yes_price": 0,
@@ -5627,6 +5731,21 @@
             "price": 4.1,
             "probability": 0.0,
             "title": "Will average **gas prices** be above $4.100?"
+          },
+          {
+            "price": 4.12,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $4.120?"
+          },
+          {
+            "price": 4.14,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $4.140?"
+          },
+          {
+            "price": 4.16,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $4.160?"
           }
         ],
         "interpretation": "lower_better",
@@ -5637,13 +5756,10 @@
     ],
     "narrative": "Energy costs are elevated with oil above $80, which may increase operating and travel expenses.",
     "previous": {
-      "date": "2026-03-11",
-      "recession_prob": 0.28,
-      "fed_outcome": "Hold",
-      "fed_prob": 0.98,
-      "rate_cuts_mode": 2,
-      "oil_price": 85,
-      "gas_price": 3.59
+      "date": "2026-03-12",
+      "rate_cuts_mode": 9,
+      "oil_price": 97,
+      "gas_price": 3.47
     }
   }
 }
