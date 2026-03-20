@@ -1294,6 +1294,29 @@
       "score_method": "keyword",
       "category": "business-investment",
       "secondary_categories": []
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Mountain Capital Partners Announces More Than $37.5 Million In Upgrades",
+      "url": "https://unofficialnetworks.com/2026/03/19/mountain-capital-partners-upgrades/",
+      "description": "Major improvements are planned at several ski resorts owned by Mountain Capital Partners, and they plan to keep season passes affordable.",
+      "content": "Durango, Colorado \u2014 It hasn\u2019t been the easiest season for Mountain Capital Partners, as they\u2019ve had to deal with the effects of a very below-average winter out West. However, they remain committed to making improvements and keeping their mountains affordable. Yesterday, Mountain Capital Partners announced $37.5 million in upgrades and updates to the Power Pass. The highlights of the $37.5 milllion in capital projects include: Lee Canyon will debut another quad chairlift in the West Bowl terrain pod. This will grow Lee Canyon\u2019s trail count. Pajarito Mountain will be the beneficiary of a pipeline connecting to a 10-million-gallon reservoir. The project between Los Alamos County and the state of New Mexico will significantly increase snowmaking capacity, expanding the ski resort\u2019s operating season. After some delays last offseason, Purgatory Resort is moving forward with the Gelande lift project. This will add a fixed-grip triple chairlift and five new expert runs to the mountain. Over $1",
+      "pub_date": "2026-03-19",
+      "id": "fe1b0d1f527b",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 5,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "resort-operations",
+        "transportation"
+      ]
     }
   ],
   "rejected": [
@@ -2758,6 +2781,52 @@
       },
       "score_method": "keyword",
       "category": "safety-incidents",
+      "secondary_categories": [
+        "resort-operations"
+      ]
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Eaglecrest, AK, Report: The Little Island Ski Area that Packs a Punch",
+      "url": "https://snowbrains.com/eaglecrest-ak-report-the-little-island-ski-area-that-packs-a-punch/",
+      "description": "Conditions report from Wednesday, March 18, 2026 Dumping at sea level. Meaning it\u2019s dumping even more at elevation. Taxi to Eaglecrest from the cute, historic gold mining-era state capital of Juneau. We wanted to fly in a helicopter but there\u2019s a storm dumping good powder snow that makes that impossible for the time being. So we opted for the next [\u2026] The post Eaglecrest, AK, Report: The Little Island Ski Area that Packs a Punch appeared first on SnowBrains .",
+      "content": "The author reveling in an Eaglecrest Powder Wednesday. | Photo: SnowBrains Conditions report from Wednesday, March 18, 2026 Dumping at sea level. Meaning it\u2019s dumping even more at elevation. Taxi to Eaglecrest from the cute, historic gold mining-era state capital of Juneau. We wanted to fly in a helicopter but there\u2019s a storm dumping good powder snow that makes that impossible for the time being. So we opted for the next best thing. Eaglecrest! It\u2019s good. | Photo: SnowBrains When we pulled up to the parking lot it was 9 a.m. and barely full. At a bigger, more destination ski area like those on mega passes found in the Lower 48, you\u2019d question if the mountain was even open, with the amount of cars in the lot. But this is just a powder day at Eaglecrest, which is having an exceptionally snowy March this year. We hopped the Ptarmigan chair, no liftline, and got to down to business. Smooth pow. | Photo: SnowBrains The independent Eaglecrest has a 1,620-foot vertical drop and every single o",
+      "pub_date": "2026-03-19",
+      "id": "0d5c222e06ad",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 3,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": [
+        "ski-history",
+        "resort-operations",
+        "transportation"
+      ]
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Spring Skiing Capital\u00ae Comes Alive at Palisades Tahoe with Iconic Events, Live Music, and Unmatched Mountain Energy",
+      "url": "https://snowbrains.com/spring-skiing-capital-comes-alive-at-palisades-tahoe-with-iconic-events-live-music-and-unmatched-mountain-energy/",
+      "description": "Spring is in full swing at Palisades Tahoe, California, where longer days, soft snow, and bluebird skies create the ultimate alpine experience. Known as the Spring Skiing Capital\u00ae, the resort comes alive this time of year with a packed calendar of events ranging from high-energy competitions and charitable fundraisers to live music, apr\u00e8s celebrations, and iconic Tahoe traditions. Related: Palisades [\u2026] The post Spring Skiing Capital\u00ae Comes Alive at Palisades Tahoe with Iconic Events, Live Music",
+      "content": "Spring Shred. | Photo: Palisades Tahoe Spring is in full swing at Palisades Tahoe , California, where longer days, soft snow, and bluebird skies create the ultimate alpine experience. Known as the Spring Skiing Capital\u00ae, the resort comes alive this time of year with a packed calendar of events ranging from high-energy competitions and charitable fundraisers to live music, apr\u00e8s celebrations, and iconic Tahoe traditions. Related: Palisades Tahoe, CA, Announces Spring Skiing Deals, Community Days Extension, and Ikon Pass Spring Access Spring Events Lineup Pain McShlonkey Classic Date: March 21, 2026 (8:00 AM \u2013 4:00 PM) Details: The Pain McShlonkey Classic is one of the most beloved and irreverent events of the season, honoring the legacy of Shane McConkey. Participants dress in outrageous costumes, grab their snowblades, and take part in the iconic Hot Dog Downhill, followed by awards and a massive raffle. The event brings together the ski community for a day of laughter and camaraderie ",
+      "pub_date": "2026-03-20",
+      "id": "d176adb9aa1c",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 1,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
       "secondary_categories": [
         "resort-operations"
       ]
