@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-02-20T15:28:06.009006Z",
+  "fetched_at": "2026-03-20T15:31:52.625276Z",
   "sources": {
     "us": "Sports Handle (sportshandle.com)",
     "ontario": "iGaming Ontario (igamingontario.ca)"
@@ -537,7 +537,7 @@
       "type": "monthly",
       "date": "2025-06-01",
       "handle_usd": 10014420335.0,
-      "revenue_usd": 283229192.0,
+      "revenue_usd": 285420941.0,
       "taxes_usd": null,
       "source": "Sports Handle"
     },
@@ -576,16 +576,16 @@
     {
       "type": "monthly",
       "date": "2025-11-01",
-      "handle_usd": 16534040188.0,
-      "revenue_usd": 436750787.0,
+      "handle_usd": 17499274033.0,
+      "revenue_usd": 442208035.0,
       "taxes_usd": null,
       "source": "Sports Handle"
     },
     {
       "type": "monthly",
       "date": "2025-12-01",
-      "handle_usd": 14666448154.0,
-      "revenue_usd": 403824858.0,
+      "handle_usd": 15578154292.0,
+      "revenue_usd": 415617109.0,
       "taxes_usd": null,
       "source": "Sports Handle"
     }
@@ -650,7 +650,7 @@
     {
       "type": "annual",
       "year": 2025,
-      "handle_usd": 148688652061.0,
+      "handle_usd": 165232040198.0,
       "revenue_usd": null,
       "taxes_usd": null,
       "source": "Sports Handle"
@@ -1106,6 +1106,16 @@
       "betting_revenue_cad": 99100000.0,
       "betting_revenue_usd": 69370000.0,
       "source": "iGaming Ontario"
+    },
+    {
+      "type": "monthly",
+      "date": "2026-01-01",
+      "region": "Ontario",
+      "betting_wagers_cad": 1180000000.0,
+      "betting_wagers_usd": 826000000.0,
+      "betting_revenue_cad": 86700000.0,
+      "betting_revenue_usd": 60689999.99999999,
+      "source": "iGaming Ontario"
     }
   ],
   "events": [
@@ -1206,29 +1216,29 @@
   "summary": {
     "us": {
       "latest_month": "2025-12-01",
-      "latest_handle_usd": 14666448154.0,
-      "latest_revenue_usd": 403824858.0,
-      "ttm_handle_usd": 163355100215.0,
-      "ttm_revenue_usd": 5122140770.0,
-      "ttm_yoy_handle_change": 0.0948460467725776,
-      "handle_per_capita_usd": 628.29,
+      "latest_handle_usd": 15578154292.0,
+      "latest_revenue_usd": 415617109.0,
+      "ttm_handle_usd": 165232040198.0,
+      "ttm_revenue_usd": 5141582018.0,
+      "ttm_yoy_handle_change": 0.10742576003351835,
+      "handle_per_capita_usd": 635.51,
       "handle_per_capita_context": "~3 lift tickets",
       "latest_annual_year": 2025,
-      "latest_annual_handle_usd": 148688652061.0,
+      "latest_annual_handle_usd": 165232040198.0,
       "latest_annual_revenue_usd": null
     },
     "ontario": {
-      "ttm_wagers_usd": 8537900000.0,
-      "ttm_revenue_usd": 570430000.0,
-      "latest_month": "2025-12-01",
-      "months_available": 45
+      "ttm_wagers_usd": 8535800000.0,
+      "ttm_revenue_usd": 566720000.0,
+      "latest_month": "2026-01-01",
+      "months_available": 46
     },
     "north_america": {},
     "payout_reference": {
       "industry_avg_pct": 93.0,
       "label": "Typical bettor payout"
     },
-    "narrative": "Since PASPA was struck down in May 2018, U.S. sports betting handle has grown from $13.1B (2019) to $163B trailing twelve months \u2014 a 9% year-over-year increase. Growth is continuing but at a more moderate pace than the early post-PASPA expansion years. That works out to roughly $628 per U.S. adult per year \u2014 equivalent to about ~3 lift tickets. Ontario, Canada's largest regulated market, has contributed $8.5B USD in trailing twelve-month betting wagers. March Madness typically drives sustained handle volume over three weeks of tournament play.",
+    "narrative": "Since PASPA was struck down in May 2018, U.S. sports betting handle has grown from $13.1B (2019) to $165B trailing twelve months \u2014 a 11% year-over-year increase. Growth is continuing but at a more moderate pace than the early post-PASPA expansion years. That works out to roughly $636 per U.S. adult per year \u2014 equivalent to about ~3 lift tickets. Ontario, Canada's largest regulated market, has contributed $8.5B USD in trailing twelve-month betting wagers. The 2026 FIFA World Cup (June 11 \u2013 July 19) \u2014 the first World Cup on U.S. soil with legal sports betting infrastructure \u2014 may drive a significant handle spike.",
     "previous": null
   }
 }
