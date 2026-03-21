@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-20 11:25:32",
+  "updated": "2026-03-21 11:17:01",
   "total_articles": 32,
   "scoring_method": "keyword",
   "articles": [
@@ -324,6 +324,31 @@
       "secondary_categories": [],
       "approved_date": "2026-03-05",
       "display_score": 25
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Billionaire\u2019s Beef With Vail Resorts Continues",
+      "url": "https://unofficialnetworks.com/2026/03/20/matthew-prince-vail-beef/",
+      "description": "Cloudflare's CEO has continued his public criticism of Vail Resorts, with an investor dinner being the latest point of contention.",
+      "content": "Park City, Utah \u2014 There\u2019s this billionaire who really doesn\u2019t like Vail Resorts. You\u2019d think maybe @Vail (dead account). @VailResorts last post was March 2025. Trying hard to find an engaged Vail corporate employee and failing. Which is especially weird because they actively disempower their local employees. Dumb. Dumb. Dumb. \u2014 Matthew Prince (@eastdakota) March 17, 2026 Matthew Prince is the co-founder and CEO of Cloudflare and an active member of the Park City community. He\u2019s Utah\u2019s richest man, as Matthew currently has a net worth of around $6.8 billion . Over the past few years, he\u2019s argued that the experience at Park City Mountain Resort sucks. In 2025, he purchased the Town Lift Plaza, which is land surrounding the fixed-grip chairlift. Since then, he\u2019s made his intentions clear: he wants to buy the ski resort. However, Vail Resorts has said they\u2019re not interested in selling one of its most valuable properties. The beef reignited last week after Vail\u2019s second-quarter earnings rep",
+      "pub_date": "2026-03-20",
+      "id": "579ff35834a6",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "resort-operations",
+        "hospitality"
+      ],
+      "approved_date": "2026-03-21",
+      "display_score": 23
     },
     {
       "source": "SnowBrains",
@@ -664,28 +689,6 @@
       ],
       "approved_date": "2026-03-05",
       "display_score": 19
-    },
-    {
-      "source": "Unofficial Networks",
-      "title": "This Is the Only Region Getting Real Snow Over the Next 10 Days",
-      "url": "https://unofficialnetworks.com/2026/03/18/chris-tomer-snow-forecast-march/",
-      "description": "According to meteorologist Chris Tomer, the snow forecast for most American ski resorts over the next several days is essentially zero.",
-      "content": "According to meteorologist Chris Tomer , a massive dome of high pressure is firmly in control of the western United States through at least March 25, and the snow forecast for most American ski resorts over the next several days is essentially zero. Water vapor imagery confirms the scale of the pattern. The high pressure system is producing pressure anomalies running three to four sigma above the 30-year norm, a signal Tomer described as significant. With the storm track forced well to the north, base area temperatures at Utah, Colorado, and California resorts are expected to climb to 60 degrees or warmer. At Alta, temperatures already reached 55 degrees at mid-mountain elevations on Tuesday, with readings near 60 degrees expected Wednesday and potentially warmer than that on Thursday. The 15-day snow forecast for California, Nevada, Utah, Colorado, Arizona, and New Mexico is effectively flat. Wyoming and Montana may see light accumulations over the highest peaks, but nothing meaningfu",
-      "pub_date": "2026-03-18",
-      "id": "8a549905c5aa",
-      "prefilter_business_score": 1,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "weather-snow",
-      "secondary_categories": [],
-      "approved_date": "2026-03-19",
-      "display_score": 18
     },
     {
       "source": "PlanetSKI",

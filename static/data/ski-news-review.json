@@ -1317,6 +1317,48 @@
         "resort-operations",
         "transportation"
       ]
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Wisconsin Ski Resort Extends Ski Season After Massive March Blizzard",
+      "url": "https://unofficialnetworks.com/2026/03/20/wisconsin-ski-resort-extends-ski-season-after-massive-march-blizzard/",
+      "description": "In Nordic Mountain\u2019s 50-year history, the ski area has only operated into April once.",
+      "content": "MOUNT MORRIS, Wis. \u2014 Nordic Mountain is extending its ski season through the weekend following a recent blizzard that brought fresh snow to the region. The resort will be open from 10 a.m. to 6 p.m. Saturday and Sunday for skiing Co-owner and general manager Bill Ringenoldus said the storm created an opportunity to keep the slopes open longer than planned. In Nordic Mountain\u2019s 50-year history, the ski area has only operated into April once: \u201cIt\u2019s always fun to have an extra weekend to get out, and it\u2019s a good time. The weather\u2019s going to be warm. You\u2019ll be able to ski in T-shirts.\u201d -Eric Schwister, Outdoor Operations Manager at Nordic Mountain Cheers to all the Wisconsin skiers and snowboarders who will cash in on this bonus weekend of skiing! Categories: Wisconsin Ski News",
+      "pub_date": "2026-03-20",
+      "id": "8a09dfd9821d",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 5,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "weather-snow",
+      "secondary_categories": []
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "Closing Date For Killington\u2019s Oldest Chairlift Announced",
+      "url": "https://unofficialnetworks.com/2026/03/20/snowdon-killington-closing-date/",
+      "description": "The Vermont ski resort is planning for one final day of operations for the chairlift that was installed in 1973.",
+      "content": "Killington, Vermont \u2014 This weekend is your final chance to ride the Snowdon Triple chairlift. Yesterday, Killington Resort announced that the Snowdon Triple chairlift will operate for the final time on Saturday, March 21st. It will operate from 9:00 a.m. to 4 p.m., with there being plans to offer donut holes at 9:30 a.m. Each rider tomorrow will be entered into a raffle to win one of the old chairs. View this post on Instagram Opened during the 1973-74 season, the Snowdon Triple wasn\u2019t the first lift at Killington, but it\u2019s the oldest operating lift at the massive ski resort. It services Snowdon Mountain, from which you can also reach the top of Snowdon Six. From the mid and top stations, there\u2019s access to intermediate, advanced, and expert trails and glades. People also loved it for the mid-station, which gives convenient access to Highline and Lower Conclusion. My favorite memory of the lift dates back a few years. I was riding up the lift on a snowy and windy day when it all of a su",
+      "pub_date": "2026-03-20",
+      "id": "d6d1db407a04",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 5,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [
+        "transportation"
+      ]
     }
   ],
   "rejected": [
@@ -2829,6 +2871,28 @@
       "category": "business-investment",
       "secondary_categories": [
         "resort-operations"
+      ]
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Mont du Lac Resort, WI, Announces Free Season Passes for Kids Under 15 in 2026\u201327",
+      "url": "https://snowbrains.com/mont-du-lac-resort-wi-announces-free-season-passes-for-kids-under-15-for-2026-27/",
+      "description": "Registration Opens March 21 During Spring Meltdown Event. Mont du Lac Resort, Wisconsin, today announced a major initiative aimed at removing financial barriers to winter sports by offering free season passes and lift tickets for all youth ages 15 and under during the 2026\u20132027 winter season. This program is expected to become one of the most accessible youth ski and [\u2026] The post Mont du Lac Resort, WI, Announces Free Season Passes for Kids Under 15 in 2026\u201327 appeared first on SnowBrains .",
+      "content": "Free season passes and lift tickets for all youth ages 15 and under. | Photo: Mont du Lac Resort Registration Opens March 21 During Spring Meltdown Event. Mont du Lac Resort , Wisconsin, today announced a major initiative aimed at removing financial barriers to winter sports by offering free season passes and lift tickets for all youth ages 15 and under during the 2026\u20132027 winter season. This program is expected to become one of the most accessible youth ski and snowboard initiatives in the Midwest, opening the door for thousands of children to experience winter sports regardless of financial background. We want to create lifelong skiers and snowboarders. By removing the cost barrier for kids , we\u2019re making it easier for families to spend time together on the mountain and introduce the next generation to winter sports. The initiative also improves overall family affordability by pairing free youth access with reduced-price season passes and lift tickets for adults, creating a more att",
+      "pub_date": "2026-03-20",
+      "id": "fd759460ab00",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 2,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [
+        "business-investment"
       ]
     }
   ]
