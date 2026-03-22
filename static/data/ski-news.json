@@ -1,6 +1,6 @@
 {
-  "updated": "2026-03-21 11:17:01",
-  "total_articles": 32,
+  "updated": "2026-03-22 11:17:30",
+  "total_articles": 33,
   "scoring_method": "keyword",
   "articles": [
     {
@@ -689,6 +689,28 @@
       ],
       "approved_date": "2026-03-05",
       "display_score": 19
+    },
+    {
+      "source": "Google News - Ski Industry",
+      "title": "Kissing Bridge Hires Matt Thomas as General Manager - Ski Area Management",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPcVlQbDN4bE52SjFPd2pRSWVsNlFtYWlOakxzU2RVcWdjWmJ6aUFMLWdFWVlGbFJIN0pMYktILUg3Ukw1V21hekRScGVfeFJnRGpxVDd5VHJXNzdGT1QxTm95TWdLVThneHp2QkN5bjV2LUhWOERVTzFZOVBxanlobng4WDhwblFWQXI4QngwZ1RFRUVueGdB?oc=5",
+      "description": "Kissing Bridge Hires Matt Thomas as General Manager Ski Area Management",
+      "content": "Kissing Bridge Hires Matt Thomas as General Manager Ski Area Management",
+      "pub_date": "2026-03-02",
+      "id": "89f506198c7b",
+      "prefilter_business_score": 2,
+      "is_macro_relevance": false,
+      "source_boost": 1,
+      "score": 8,
+      "score_details": {
+        "reason": "Keyword scoring (source: +1)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [],
+      "approved_date": "2026-03-22",
+      "display_score": 16
     },
     {
       "source": "PlanetSKI",
