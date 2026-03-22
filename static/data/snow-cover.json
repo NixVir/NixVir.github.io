@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-22 11:26 UTC",
+  "updated": "2026-03-22 23:30 UTC",
   "data_sources": {
     "usa": "NOHRSC",
     "canada": "NOAA IMS",
@@ -7,39 +7,39 @@
     "copernicus_available": false
   },
   "combined": {
-    "cover": 45.0,
-    "change": "-7.8%",
-    "context": "Approximately 45% of North American land area currently has visible snow cover",
+    "cover": 44.1,
+    "change": "-8.3%",
+    "context": "Approximately 44% of North American land area currently has visible snow cover",
     "temperature": {
-      "avg_temp_c": 7.0,
-      "avg_temp_f": 44.7,
-      "avg_anomaly_c": -0.7,
-      "avg_anomaly_f": -1.3
+      "avg_temp_c": 13.4,
+      "avg_temp_f": 56.1,
+      "avg_anomaly_c": 5.3,
+      "avg_anomaly_f": 9.5
     }
   },
   "skiMarkets": {
     "usa": {
-      "cover": 9.5,
-      "avg_temp_c": 10.7,
-      "avg_temp_f": 51.2,
-      "avg_anomaly_c": -0.7,
-      "avg_anomaly_f": -1.2,
+      "cover": 2.1,
+      "avg_temp_c": 20.0,
+      "avg_temp_f": 68.0,
+      "avg_anomaly_c": 8.5,
+      "avg_anomaly_f": 15.4,
       "metro_count": 31
     },
     "canada": {
-      "cover": 53.5,
-      "avg_temp_c": -2.3,
-      "avg_temp_f": 27.8,
-      "avg_anomaly_c": -2.7,
-      "avg_anomaly_f": -4.9,
+      "cover": 36.9,
+      "avg_temp_c": 2.9,
+      "avg_temp_f": 37.3,
+      "avg_anomaly_c": 2.1,
+      "avg_anomaly_f": 3.7,
       "metro_count": 13
     }
   },
   "usa": {
-    "cover": 9.0,
-    "change": "-7.8%",
-    "areaSqMi": 341730,
-    "areaSqKm": 885077,
+    "cover": 8.5,
+    "change": "-8.3%",
+    "areaSqMi": 322745,
+    "areaSqKm": 835906,
     "avgDepthInches": null,
     "avgDepthCm": null,
     "priorYearAvgDepthInches": 3.4,
@@ -861,17 +861,17 @@
       }
     ],
     "temperature": {
-      "avg_temp_c": 10.6,
-      "avg_temp_f": 51.1,
-      "avg_anomaly_c": -0.0,
-      "avg_anomaly_f": -0.1
+      "avg_temp_c": 17.5,
+      "avg_temp_f": 63.5,
+      "avg_anomaly_c": 6.6,
+      "avg_anomaly_f": 11.9
     }
   },
   "canada": {
-    "cover": 80.5,
-    "change": "-6.2%",
-    "areaSqMi": 3103355,
-    "areaSqKm": 8037659,
+    "cover": 79.2,
+    "change": "-7.5%",
+    "areaSqMi": 3053238,
+    "areaSqKm": 7907858,
     "avgDepthInches": null,
     "avgDepthCm": null,
     "priorYearAvgDepthInches": null,
@@ -1693,138 +1693,33 @@
       }
     ],
     "temperature": {
-      "avg_temp_c": -2.1,
-      "avg_temp_f": 28.2,
-      "avg_anomaly_c": -2.8,
-      "avg_anomaly_f": -5.0
+      "avg_temp_c": 3.0,
+      "avg_temp_f": 37.3,
+      "avg_anomaly_c": 1.8,
+      "avg_anomaly_f": 3.3
     }
   },
   "metros": [
     {
-      "city": "Calgary",
-      "region": "AB",
+      "city": "Montreal",
+      "region": "QC",
       "country": "canada",
-      "lat": 51.0447,
-      "lng": -114.0719,
-      "cover": 85,
-      "depthInches": 6.2,
-      "depthCm": 15.6,
-      "trend": "down",
-      "history": [],
-      "temperature": {
-        "temp_c": -1.1,
-        "temp_f": 30.0,
-        "normal_c": -0.8,
-        "anomaly_c": -0.3,
-        "anomaly_f": -0.5
-      },
-      "skiMarket": true,
-      "importance": 1580
-    },
-    {
-      "city": "Edmonton",
-      "region": "AB",
-      "country": "canada",
-      "lat": 53.5461,
-      "lng": -113.4938,
-      "cover": 85,
-      "depthInches": 6.2,
-      "depthCm": 15.6,
-      "trend": "down",
-      "history": [],
-      "temperature": {
-        "temp_c": -7.4,
-        "temp_f": 18.7,
-        "normal_c": -3.8,
-        "anomaly_c": -3.6,
-        "anomaly_f": -6.5
-      },
-      "skiMarket": true,
-      "importance": 1520
-    },
-    {
-      "city": "Saskatoon",
-      "region": "SK",
-      "country": "canada",
-      "lat": 52.1332,
-      "lng": -106.67,
-      "cover": 85,
-      "depthInches": 6.2,
-      "depthCm": 15.6,
-      "trend": "down",
-      "history": [],
-      "temperature": {
-        "temp_c": -5.6,
-        "temp_f": 21.9,
-        "normal_c": -5.9,
-        "anomaly_c": 0.3,
-        "anomaly_f": 0.5
-      },
-      "skiMarket": true,
-      "importance": 335
-    },
-    {
-      "city": "Regina",
-      "region": "SK",
-      "country": "canada",
-      "lat": 50.4452,
-      "lng": -104.6189,
-      "cover": 85,
-      "depthInches": 6.2,
-      "depthCm": 15.6,
-      "trend": "down",
-      "history": [],
-      "temperature": {
-        "temp_c": -1.5,
-        "temp_f": 29.3,
-        "normal_c": null,
-        "anomaly_c": null,
-        "anomaly_f": null
-      },
-      "skiMarket": true,
-      "importance": 265
-    },
-    {
-      "city": "Spokane",
-      "region": "WA",
-      "country": "usa",
-      "lat": 47.6588,
-      "lng": -117.426,
-      "cover": 65,
-      "depthInches": 8,
-      "depthCm": 20.3,
-      "trend": "down",
-      "history": [],
-      "temperature": {
-        "temp_c": null,
-        "temp_f": null,
-        "normal_c": 5.8,
-        "anomaly_c": null,
-        "anomaly_f": null
-      },
-      "skiMarket": true,
-      "importance": 600
-    },
-    {
-      "city": "Ottawa",
-      "region": "ON",
-      "country": "canada",
-      "lat": 45.4215,
-      "lng": -75.6972,
+      "lat": 45.5017,
+      "lng": -73.5673,
       "cover": 65,
       "depthInches": 5.2,
       "depthCm": 13.1,
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": -1.1,
-        "temp_f": 30.0,
-        "normal_c": -0.0,
-        "anomaly_c": -1.1,
-        "anomaly_f": -2.0
+        "temp_c": -3.9,
+        "temp_f": 25.0,
+        "normal_c": 0.9,
+        "anomaly_c": -4.8,
+        "anomaly_f": -8.6
       },
       "skiMarket": true,
-      "importance": 1490
+      "importance": 4290
     },
     {
       "city": "Winnipeg",
@@ -1838,14 +1733,77 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": -7.5,
-        "temp_f": 18.5,
+        "temp_c": -0.6,
+        "temp_f": 30.9,
         "normal_c": -3.2,
-        "anomaly_c": -4.3,
-        "anomaly_f": -7.7
+        "anomaly_c": 2.6,
+        "anomaly_f": 4.7
       },
       "skiMarket": true,
       "importance": 850
+    },
+    {
+      "city": "Edmonton",
+      "region": "AB",
+      "country": "canada",
+      "lat": 53.5461,
+      "lng": -113.4938,
+      "cover": 60,
+      "depthInches": 4.9,
+      "depthCm": 12.5,
+      "trend": "down",
+      "history": [],
+      "temperature": {
+        "temp_c": 1.5,
+        "temp_f": 34.7,
+        "normal_c": -3.8,
+        "anomaly_c": 5.3,
+        "anomaly_f": 9.5
+      },
+      "skiMarket": true,
+      "importance": 1520
+    },
+    {
+      "city": "Saskatoon",
+      "region": "SK",
+      "country": "canada",
+      "lat": 52.1332,
+      "lng": -106.67,
+      "cover": 60,
+      "depthInches": 4.9,
+      "depthCm": 12.5,
+      "trend": "down",
+      "history": [],
+      "temperature": {
+        "temp_c": 1.3,
+        "temp_f": 34.3,
+        "normal_c": -5.9,
+        "anomaly_c": 7.2,
+        "anomaly_f": 13.0
+      },
+      "skiMarket": true,
+      "importance": 335
+    },
+    {
+      "city": "Regina",
+      "region": "SK",
+      "country": "canada",
+      "lat": 50.4452,
+      "lng": -104.6189,
+      "cover": 60,
+      "depthInches": 4.9,
+      "depthCm": 12.5,
+      "trend": "down",
+      "history": [],
+      "temperature": {
+        "temp_c": 2.7,
+        "temp_f": 36.9,
+        "normal_c": -4.2,
+        "anomaly_c": 6.9,
+        "anomaly_f": 12.4
+      },
+      "skiMarket": true,
+      "importance": 265
     },
     {
       "city": "Quebec City",
@@ -1853,41 +1811,20 @@
       "country": "canada",
       "lat": 46.8139,
       "lng": -71.208,
-      "cover": 65,
-      "depthInches": 5.2,
-      "depthCm": 13.1,
-      "trend": "down",
-      "history": [],
-      "temperature": {
-        "temp_c": -7.8,
-        "temp_f": 18.0,
-        "normal_c": -2.0,
-        "anomaly_c": -5.8,
-        "anomaly_f": -10.4
-      },
-      "skiMarket": true,
-      "importance": 840
-    },
-    {
-      "city": "Montreal",
-      "region": "QC",
-      "country": "canada",
-      "lat": 45.5017,
-      "lng": -73.5673,
       "cover": 50,
       "depthInches": 4.4,
       "depthCm": 11.2,
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": -1.5,
-        "temp_f": 29.3,
-        "normal_c": 0.9,
-        "anomaly_c": -2.4,
-        "anomaly_f": -4.3
+        "temp_c": -5.0,
+        "temp_f": 23.0,
+        "normal_c": -2.0,
+        "anomaly_c": -3.0,
+        "anomaly_f": -5.4
       },
       "skiMarket": true,
-      "importance": 4290
+      "importance": 840
     },
     {
       "city": "Halifax",
@@ -1895,83 +1832,41 @@
       "country": "canada",
       "lat": 44.6488,
       "lng": -63.5752,
-      "cover": 45,
-      "depthInches": 4.2,
-      "depthCm": 10.6,
+      "cover": 50,
+      "depthInches": 4.4,
+      "depthCm": 11.2,
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": -1.3,
-        "temp_f": 29.7,
+        "temp_c": -1.9,
+        "temp_f": 28.6,
         "normal_c": 2.5,
-        "anomaly_c": -3.8,
-        "anomaly_f": -6.8
+        "anomaly_c": -4.4,
+        "anomaly_f": -7.9
       },
       "skiMarket": true,
       "importance": 465
     },
     {
-      "city": "Seattle",
-      "region": "WA",
-      "country": "usa",
-      "lat": 47.6062,
-      "lng": -122.3321,
-      "cover": 40,
-      "depthInches": 3,
-      "depthCm": 7.6,
-      "trend": "down",
-      "history": [],
-      "temperature": {
-        "temp_c": 2.5,
-        "temp_f": 36.5,
-        "normal_c": 8.6,
-        "anomaly_c": -6.1,
-        "anomaly_f": -11.0
-      },
-      "skiMarket": true,
-      "importance": 4020
-    },
-    {
-      "city": "Portland",
-      "region": "OR",
-      "country": "usa",
-      "lat": 45.5152,
-      "lng": -122.6784,
-      "cover": 40,
-      "depthInches": 3,
-      "depthCm": 7.6,
-      "trend": "down",
-      "history": [],
-      "temperature": {
-        "temp_c": 3.1,
-        "temp_f": 37.6,
-        "normal_c": 8.5,
-        "anomaly_c": -5.4,
-        "anomaly_f": -9.7
-      },
-      "skiMarket": true,
-      "importance": 2510
-    },
-    {
-      "city": "Kelowna",
-      "region": "BC",
+      "city": "Ottawa",
+      "region": "ON",
       "country": "canada",
-      "lat": 49.888,
-      "lng": -119.496,
+      "lat": 45.4215,
+      "lng": -75.6972,
       "cover": 40,
       "depthInches": 3.9,
       "depthCm": 10.0,
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": 1.4,
-        "temp_f": 34.5,
-        "normal_c": 5.1,
-        "anomaly_c": -3.7,
-        "anomaly_f": -6.7
+        "temp_c": null,
+        "temp_f": null,
+        "normal_c": -0.0,
+        "anomaly_c": null,
+        "anomaly_f": null
       },
       "skiMarket": true,
-      "importance": 225
+      "importance": 1490
     },
     {
       "city": "Hamilton",
@@ -1985,14 +1880,35 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": 0.9,
-        "temp_f": 33.6,
+        "temp_c": 3.3,
+        "temp_f": 37.9,
         "normal_c": 3.9,
-        "anomaly_c": -3.0,
-        "anomaly_f": -5.4
+        "anomaly_c": -0.6,
+        "anomaly_f": -1.1
       },
       "skiMarket": false,
       "importance": 785
+    },
+    {
+      "city": "Chicago",
+      "region": "IL",
+      "country": "usa",
+      "lat": 41.8781,
+      "lng": -87.6298,
+      "cover": 25,
+      "depthInches": 2,
+      "depthCm": 5.1,
+      "trend": "down",
+      "history": [],
+      "temperature": {
+        "temp_c": null,
+        "temp_f": null,
+        "normal_c": 7.1,
+        "anomaly_c": null,
+        "anomaly_f": null
+      },
+      "skiMarket": true,
+      "importance": 9460
     },
     {
       "city": "Minneapolis",
@@ -2006,35 +1922,14 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": null,
-        "temp_f": null,
+        "temp_c": 2.4,
+        "temp_f": 36.3,
         "normal_c": 3.3,
-        "anomaly_c": null,
-        "anomaly_f": null
+        "anomaly_c": -0.9,
+        "anomaly_f": -1.6
       },
       "skiMarket": true,
       "importance": 3690
-    },
-    {
-      "city": "Boston",
-      "region": "MA",
-      "country": "usa",
-      "lat": 42.3601,
-      "lng": -71.0589,
-      "cover": 25,
-      "depthInches": 2,
-      "depthCm": 5.1,
-      "trend": "down",
-      "history": [],
-      "temperature": {
-        "temp_c": 1.5,
-        "temp_f": 34.7,
-        "normal_c": 6.0,
-        "anomaly_c": -4.5,
-        "anomaly_f": -8.1
-      },
-      "skiMarket": true,
-      "importance": 4900
     },
     {
       "city": "Detroit",
@@ -2058,224 +1953,14 @@
       "importance": 4340
     },
     {
-      "city": "Milwaukee",
-      "region": "WI",
-      "country": "usa",
-      "lat": 43.0389,
-      "lng": -87.9065,
-      "cover": 25,
-      "depthInches": 2,
-      "depthCm": 5.1,
-      "trend": "down",
-      "history": [],
-      "temperature": {
-        "temp_c": 4.8,
-        "temp_f": 40.6,
-        "normal_c": 4.8,
-        "anomaly_c": 0.0,
-        "anomaly_f": 0.0
-      },
-      "skiMarket": false,
-      "importance": 1575
-    },
-    {
-      "city": "Boise",
-      "region": "ID",
-      "country": "usa",
-      "lat": 43.615,
-      "lng": -116.2023,
-      "cover": 25,
-      "depthInches": 2,
-      "depthCm": 5.1,
-      "trend": "down",
-      "history": [],
-      "temperature": {
-        "temp_c": 3.1,
-        "temp_f": 37.6,
-        "normal_c": 7.2,
-        "anomaly_c": -4.1,
-        "anomaly_f": -7.4
-      },
-      "skiMarket": true,
-      "importance": 810
-    },
-    {
-      "city": "Hartford",
-      "region": "CT",
-      "country": "usa",
-      "lat": 41.7658,
-      "lng": -72.6734,
-      "cover": 25,
-      "depthInches": 2,
-      "depthCm": 5.1,
-      "trend": "down",
-      "history": [],
-      "temperature": {
-        "temp_c": 5.2,
-        "temp_f": 41.4,
-        "normal_c": 6.7,
-        "anomaly_c": -1.5,
-        "anomaly_f": -2.7
-      },
-      "skiMarket": true,
-      "importance": 1210
-    },
-    {
-      "city": "Albany",
-      "region": "NY",
-      "country": "usa",
-      "lat": 42.6526,
-      "lng": -73.7562,
-      "cover": 25,
-      "depthInches": 2,
-      "depthCm": 5.1,
-      "trend": "down",
-      "history": [],
-      "temperature": {
-        "temp_c": 5.0,
-        "temp_f": 41.0,
-        "normal_c": 5.5,
-        "anomaly_c": -0.5,
-        "anomaly_f": -0.9
-      },
-      "skiMarket": true,
-      "importance": 900
-    },
-    {
-      "city": "Providence",
-      "region": "RI",
-      "country": "usa",
-      "lat": 41.824,
-      "lng": -71.4128,
-      "cover": 25,
-      "depthInches": 2,
-      "depthCm": 5.1,
-      "trend": "down",
-      "history": [],
-      "temperature": {
-        "temp_c": 2.3,
-        "temp_f": 36.1,
-        "normal_c": null,
-        "anomaly_c": null,
-        "anomaly_f": null
-      },
-      "skiMarket": true,
-      "importance": 1680
-    },
-    {
-      "city": "Toronto",
-      "region": "ON",
-      "country": "canada",
-      "lat": 43.6532,
-      "lng": -79.3832,
-      "cover": 25,
-      "depthInches": 0.2,
-      "depthCm": 0.6,
-      "trend": "down",
-      "history": [],
-      "temperature": {
-        "temp_c": 0.5,
-        "temp_f": 32.9,
-        "normal_c": 3.2,
-        "anomaly_c": -2.7,
-        "anomaly_f": -4.9
-      },
-      "skiMarket": true,
-      "importance": 6710
-    },
-    {
-      "city": "New York City",
-      "region": "NY",
-      "country": "usa",
-      "lat": 40.7128,
-      "lng": -74.006,
-      "cover": 0,
-      "depthInches": 0,
-      "depthCm": 0.0,
-      "trend": "down",
-      "history": [],
-      "temperature": {
-        "temp_c": 5.2,
-        "temp_f": 41.4,
-        "normal_c": 8.5,
-        "anomaly_c": -3.3,
-        "anomaly_f": -5.9
-      },
-      "skiMarket": true,
-      "importance": 19980
-    },
-    {
-      "city": "Chicago",
-      "region": "IL",
-      "country": "usa",
-      "lat": 41.8781,
-      "lng": -87.6298,
-      "cover": 0,
-      "depthInches": 0,
-      "depthCm": 0.0,
-      "trend": "down",
-      "history": [],
-      "temperature": {
-        "temp_c": 8.3,
-        "temp_f": 46.9,
-        "normal_c": 7.1,
-        "anomaly_c": 1.2,
-        "anomaly_f": 2.2
-      },
-      "skiMarket": true,
-      "importance": 9460
-    },
-    {
-      "city": "Denver",
-      "region": "CO",
-      "country": "usa",
-      "lat": 39.7392,
-      "lng": -104.9903,
-      "cover": 0,
-      "depthInches": 0,
-      "depthCm": 0.0,
-      "trend": "down",
-      "history": [],
-      "temperature": {
-        "temp_c": 9.1,
-        "temp_f": 48.4,
-        "normal_c": 7.3,
-        "anomaly_c": 1.8,
-        "anomaly_f": 3.2
-      },
-      "skiMarket": true,
-      "importance": 2965
-    },
-    {
-      "city": "Salt Lake City",
-      "region": "UT",
-      "country": "usa",
-      "lat": 40.7608,
-      "lng": -111.891,
-      "cover": 0,
-      "depthInches": 0,
-      "depthCm": 0.0,
-      "trend": "down",
-      "history": [],
-      "temperature": {
-        "temp_c": 9.6,
-        "temp_f": 49.3,
-        "normal_c": 5.3,
-        "anomaly_c": 4.3,
-        "anomaly_f": 7.7
-      },
-      "skiMarket": true,
-      "importance": 1340
-    },
-    {
       "city": "Buffalo",
       "region": "NY",
       "country": "usa",
       "lat": 42.8864,
       "lng": -78.8784,
-      "cover": 0,
-      "depthInches": 0,
-      "depthCm": 0.0,
+      "cover": 25,
+      "depthInches": 2,
+      "depthCm": 5.1,
       "trend": "down",
       "history": [],
       "temperature": {
@@ -2294,20 +1979,251 @@
       "country": "usa",
       "lat": 41.4993,
       "lng": -81.6944,
+      "cover": 25,
+      "depthInches": 2,
+      "depthCm": 5.1,
+      "trend": "down",
+      "history": [],
+      "temperature": {
+        "temp_c": 1.9,
+        "temp_f": 35.4,
+        "normal_c": 5.9,
+        "anomaly_c": -4.0,
+        "anomaly_f": -7.2
+      },
+      "skiMarket": false,
+      "importance": 2060
+    },
+    {
+      "city": "Milwaukee",
+      "region": "WI",
+      "country": "usa",
+      "lat": 43.0389,
+      "lng": -87.9065,
+      "cover": 25,
+      "depthInches": 2,
+      "depthCm": 5.1,
+      "trend": "down",
+      "history": [],
+      "temperature": {
+        "temp_c": 0.4,
+        "temp_f": 32.7,
+        "normal_c": 4.8,
+        "anomaly_c": -4.4,
+        "anomaly_f": -7.9
+      },
+      "skiMarket": false,
+      "importance": 1575
+    },
+    {
+      "city": "Madison",
+      "region": "WI",
+      "country": "usa",
+      "lat": 43.0731,
+      "lng": -89.4012,
+      "cover": 25,
+      "depthInches": 2,
+      "depthCm": 5.1,
+      "trend": "down",
+      "history": [],
+      "temperature": {
+        "temp_c": 2.6,
+        "temp_f": 36.7,
+        "normal_c": 5.3,
+        "anomaly_c": -2.7,
+        "anomaly_f": -4.9
+      },
+      "skiMarket": false,
+      "importance": 690
+    },
+    {
+      "city": "Toronto",
+      "region": "ON",
+      "country": "canada",
+      "lat": 43.6532,
+      "lng": -79.3832,
+      "cover": 25,
+      "depthInches": 0.2,
+      "depthCm": 0.6,
+      "trend": "down",
+      "history": [],
+      "temperature": {
+        "temp_c": 3.2,
+        "temp_f": 37.8,
+        "normal_c": null,
+        "anomaly_c": null,
+        "anomaly_f": null
+      },
+      "skiMarket": true,
+      "importance": 6710
+    },
+    {
+      "city": "Phoenix",
+      "region": "AZ",
+      "country": "usa",
+      "lat": 33.4484,
+      "lng": -112.074,
+      "cover": 15,
+      "depthInches": 0.2,
+      "depthCm": 0.6,
+      "trend": "down",
+      "history": [],
+      "temperature": {
+        "temp_c": 37.5,
+        "temp_f": 99.5,
+        "normal_c": 18.0,
+        "anomaly_c": 19.5,
+        "anomaly_f": 35.1
+      },
+      "skiMarket": true,
+      "importance": 4950
+    },
+    {
+      "city": "Calgary",
+      "region": "AB",
+      "country": "canada",
+      "lat": 51.0447,
+      "lng": -114.0719,
+      "cover": 5,
+      "depthInches": 0.2,
+      "depthCm": 0.6,
+      "trend": "down",
+      "history": [],
+      "temperature": {
+        "temp_c": 7.1,
+        "temp_f": 44.8,
+        "normal_c": -0.8,
+        "anomaly_c": 7.9,
+        "anomaly_f": 14.2
+      },
+      "skiMarket": true,
+      "importance": 1580
+    },
+    {
+      "city": "New York City",
+      "region": "NY",
+      "country": "usa",
+      "lat": 40.7128,
+      "lng": -74.006,
       "cover": 0,
       "depthInches": 0,
       "depthCm": 0.0,
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": 8.5,
-        "temp_f": 47.3,
-        "normal_c": 5.9,
-        "anomaly_c": 2.6,
-        "anomaly_f": 4.7
+        "temp_c": 10.8,
+        "temp_f": 51.4,
+        "normal_c": 8.5,
+        "anomaly_c": 2.3,
+        "anomaly_f": 4.1
       },
-      "skiMarket": false,
-      "importance": 2060
+      "skiMarket": true,
+      "importance": 19980
+    },
+    {
+      "city": "Denver",
+      "region": "CO",
+      "country": "usa",
+      "lat": 39.7392,
+      "lng": -104.9903,
+      "cover": 0,
+      "depthInches": 0,
+      "depthCm": 0.0,
+      "trend": "down",
+      "history": [],
+      "temperature": {
+        "temp_c": 17.4,
+        "temp_f": 63.3,
+        "normal_c": 7.3,
+        "anomaly_c": 10.1,
+        "anomaly_f": 18.2
+      },
+      "skiMarket": true,
+      "importance": 2965
+    },
+    {
+      "city": "Boston",
+      "region": "MA",
+      "country": "usa",
+      "lat": 42.3601,
+      "lng": -71.0589,
+      "cover": 0,
+      "depthInches": 0,
+      "depthCm": 0.0,
+      "trend": "down",
+      "history": [],
+      "temperature": {
+        "temp_c": 6.7,
+        "temp_f": 44.1,
+        "normal_c": 6.0,
+        "anomaly_c": 0.7,
+        "anomaly_f": 1.3
+      },
+      "skiMarket": true,
+      "importance": 4900
+    },
+    {
+      "city": "Seattle",
+      "region": "WA",
+      "country": "usa",
+      "lat": 47.6062,
+      "lng": -122.3321,
+      "cover": 0,
+      "depthInches": 0,
+      "depthCm": 0.0,
+      "trend": "down",
+      "history": [],
+      "temperature": {
+        "temp_c": 9.4,
+        "temp_f": 48.9,
+        "normal_c": null,
+        "anomaly_c": null,
+        "anomaly_f": null
+      },
+      "skiMarket": true,
+      "importance": 4020
+    },
+    {
+      "city": "Salt Lake City",
+      "region": "UT",
+      "country": "usa",
+      "lat": 40.7608,
+      "lng": -111.891,
+      "cover": 0,
+      "depthInches": 0,
+      "depthCm": 0.0,
+      "trend": "down",
+      "history": [],
+      "temperature": {
+        "temp_c": 19.7,
+        "temp_f": 67.5,
+        "normal_c": 5.3,
+        "anomaly_c": 14.4,
+        "anomaly_f": 25.9
+      },
+      "skiMarket": true,
+      "importance": 1340
+    },
+    {
+      "city": "Portland",
+      "region": "OR",
+      "country": "usa",
+      "lat": 45.5152,
+      "lng": -122.6784,
+      "cover": 0,
+      "depthInches": 0,
+      "depthCm": 0.0,
+      "trend": "down",
+      "history": [],
+      "temperature": {
+        "temp_c": null,
+        "temp_f": null,
+        "normal_c": 8.5,
+        "anomaly_c": null,
+        "anomaly_f": null
+      },
+      "skiMarket": true,
+      "importance": 2510
     },
     {
       "city": "Los Angeles",
@@ -2321,11 +2237,11 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": 16.2,
-        "temp_f": 61.2,
+        "temp_c": 24.5,
+        "temp_f": 76.1,
         "normal_c": 14.4,
-        "anomaly_c": 1.8,
-        "anomaly_f": 3.2
+        "anomaly_c": 10.1,
+        "anomaly_f": 18.2
       },
       "skiMarket": true,
       "importance": 12870
@@ -2342,35 +2258,14 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": 9.8,
-        "temp_f": 49.6,
+        "temp_c": 20.4,
+        "temp_f": 68.7,
         "normal_c": 12.0,
-        "anomaly_c": -2.2,
-        "anomaly_f": -4.0
+        "anomaly_c": 8.4,
+        "anomaly_f": 15.1
       },
       "skiMarket": true,
       "importance": 4565
-    },
-    {
-      "city": "Phoenix",
-      "region": "AZ",
-      "country": "usa",
-      "lat": 33.4484,
-      "lng": -112.074,
-      "cover": 0,
-      "depthInches": 0,
-      "depthCm": 0.0,
-      "trend": "down",
-      "history": [],
-      "temperature": {
-        "temp_c": 22.9,
-        "temp_f": 73.2,
-        "normal_c": 18.0,
-        "anomaly_c": 4.9,
-        "anomaly_f": 8.8
-      },
-      "skiMarket": true,
-      "importance": 4950
     },
     {
       "city": "Dallas",
@@ -2384,11 +2279,11 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": null,
-        "temp_f": null,
+        "temp_c": 31.9,
+        "temp_f": 89.4,
         "normal_c": 18.2,
-        "anomaly_c": null,
-        "anomaly_f": null
+        "anomaly_c": 13.7,
+        "anomaly_f": 24.7
       },
       "skiMarket": true,
       "importance": 7900
@@ -2405,11 +2300,11 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": 19.3,
-        "temp_f": 66.7,
+        "temp_c": 25.8,
+        "temp_f": 78.4,
         "normal_c": 21.0,
-        "anomaly_c": -1.7,
-        "anomaly_f": -3.1
+        "anomaly_c": 4.8,
+        "anomaly_f": 8.6
       },
       "skiMarket": true,
       "importance": 7340
@@ -2426,11 +2321,11 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": 15.5,
-        "temp_f": 59.9,
+        "temp_c": null,
+        "temp_f": null,
         "normal_c": 15.9,
-        "anomaly_c": -0.4,
-        "anomaly_f": -0.7
+        "anomaly_c": null,
+        "anomaly_f": null
       },
       "skiMarket": true,
       "importance": 6200
@@ -2447,11 +2342,11 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": 7.4,
-        "temp_f": 45.3,
+        "temp_c": 20.3,
+        "temp_f": 68.5,
         "normal_c": 9.9,
-        "anomaly_c": -2.5,
-        "anomaly_f": -4.5
+        "anomaly_c": 10.4,
+        "anomaly_f": 18.7
       },
       "skiMarket": true,
       "importance": 6250
@@ -2468,11 +2363,11 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": null,
-        "temp_f": null,
+        "temp_c": 24.2,
+        "temp_f": 75.6,
         "normal_c": 11.7,
-        "anomaly_c": null,
-        "anomaly_f": null
+        "anomaly_c": 12.5,
+        "anomaly_f": 22.5
       },
       "skiMarket": true,
       "importance": 6385
@@ -2489,11 +2384,11 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": 21.3,
-        "temp_f": 70.3,
-        "normal_c": 15.7,
-        "anomaly_c": 5.6,
-        "anomaly_f": 10.1
+        "temp_c": 34.1,
+        "temp_f": 93.4,
+        "normal_c": null,
+        "anomaly_c": null,
+        "anomaly_f": null
       },
       "skiMarket": true,
       "importance": 2320
@@ -2510,11 +2405,11 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": 15.9,
-        "temp_f": 60.6,
+        "temp_c": 21.9,
+        "temp_f": 71.4,
         "normal_c": 13.7,
-        "anomaly_c": 2.2,
-        "anomaly_f": 4.0
+        "anomaly_c": 8.2,
+        "anomaly_f": 14.8
       },
       "skiMarket": true,
       "importance": 3280
@@ -2531,11 +2426,11 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": 17.4,
-        "temp_f": 63.3,
+        "temp_c": 31.7,
+        "temp_f": 89.1,
         "normal_c": 20.6,
-        "anomaly_c": -3.2,
-        "anomaly_f": -5.8
+        "anomaly_c": 11.1,
+        "anomaly_f": 20.0
       },
       "skiMarket": true,
       "importance": 2475
@@ -2552,11 +2447,11 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": 13.6,
-        "temp_f": 56.5,
+        "temp_c": 26.4,
+        "temp_f": 79.5,
         "normal_c": 15.8,
-        "anomaly_c": -2.2,
-        "anomaly_f": -4.0
+        "anomaly_c": 10.6,
+        "anomaly_f": 19.1
       },
       "skiMarket": true,
       "importance": 2750
@@ -2573,11 +2468,11 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": 11.1,
-        "temp_f": 52.0,
+        "temp_c": null,
+        "temp_f": null,
         "normal_c": 15.2,
-        "anomaly_c": -4.1,
-        "anomaly_f": -7.4
+        "anomaly_c": null,
+        "anomaly_f": null
       },
       "skiMarket": true,
       "importance": 1500
@@ -2594,11 +2489,11 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": 18.8,
-        "temp_f": 65.8,
+        "temp_c": 28.6,
+        "temp_f": 83.5,
         "normal_c": 14.5,
-        "anomaly_c": 4.3,
-        "anomaly_f": 7.7
+        "anomaly_c": 14.1,
+        "anomaly_f": 25.4
       },
       "skiMarket": true,
       "importance": 2050
@@ -2615,9 +2510,9 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": null,
-        "temp_f": null,
-        "normal_c": 9.9,
+        "temp_c": 16.3,
+        "temp_f": 61.3,
+        "normal_c": null,
         "anomaly_c": null,
         "anomaly_f": null
       },
@@ -2636,11 +2531,11 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": 18.1,
-        "temp_f": 64.6,
+        "temp_c": 17.5,
+        "temp_f": 63.5,
         "normal_c": 12.2,
-        "anomaly_c": 5.9,
-        "anomaly_f": 10.6
+        "anomaly_c": 5.3,
+        "anomaly_f": 9.5
       },
       "skiMarket": false,
       "importance": 2810
@@ -2657,11 +2552,11 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": 21.5,
-        "temp_f": 70.7,
+        "temp_c": 14.8,
+        "temp_f": 58.6,
         "normal_c": 11.4,
-        "anomaly_c": 10.1,
-        "anomaly_f": 18.2
+        "anomaly_c": 3.4,
+        "anomaly_f": 6.1
       },
       "skiMarket": false,
       "importance": 2220
@@ -2699,14 +2594,56 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": 11.1,
-        "temp_f": 52.0,
+        "temp_c": 29.4,
+        "temp_f": 84.9,
         "normal_c": 11.1,
-        "anomaly_c": 0.0,
-        "anomaly_f": 0.0
+        "anomaly_c": 18.3,
+        "anomaly_f": 32.9
       },
       "skiMarket": true,
       "importance": 920
+    },
+    {
+      "city": "Boise",
+      "region": "ID",
+      "country": "usa",
+      "lat": 43.615,
+      "lng": -116.2023,
+      "cover": 0,
+      "depthInches": 0,
+      "depthCm": 0.0,
+      "trend": "down",
+      "history": [],
+      "temperature": {
+        "temp_c": 16.1,
+        "temp_f": 61.0,
+        "normal_c": 7.2,
+        "anomaly_c": 8.9,
+        "anomaly_f": 16.0
+      },
+      "skiMarket": true,
+      "importance": 810
+    },
+    {
+      "city": "Spokane",
+      "region": "WA",
+      "country": "usa",
+      "lat": 47.6588,
+      "lng": -117.426,
+      "cover": 0,
+      "depthInches": 0,
+      "depthCm": 0.0,
+      "trend": "down",
+      "history": [],
+      "temperature": {
+        "temp_c": 12.4,
+        "temp_f": 54.3,
+        "normal_c": 5.8,
+        "anomaly_c": 6.6,
+        "anomaly_f": 11.9
+      },
+      "skiMarket": true,
+      "importance": 600
     },
     {
       "city": "Sacramento",
@@ -2720,11 +2657,11 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": 13.2,
-        "temp_f": 55.8,
-        "normal_c": 12.1,
-        "anomaly_c": 1.1,
-        "anomaly_f": 2.0
+        "temp_c": 28.4,
+        "temp_f": 83.1,
+        "normal_c": null,
+        "anomaly_c": null,
+        "anomaly_f": null
       },
       "skiMarket": true,
       "importance": 2420
@@ -2741,14 +2678,77 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": 11.0,
-        "temp_f": 51.8,
+        "temp_c": 17.6,
+        "temp_f": 63.7,
         "normal_c": 9.3,
-        "anomaly_c": 1.7,
-        "anomaly_f": 3.1
+        "anomaly_c": 8.3,
+        "anomaly_f": 14.9
       },
       "skiMarket": true,
       "importance": 2370
+    },
+    {
+      "city": "Hartford",
+      "region": "CT",
+      "country": "usa",
+      "lat": 41.7658,
+      "lng": -72.6734,
+      "cover": 0,
+      "depthInches": 0,
+      "depthCm": 0.0,
+      "trend": "down",
+      "history": [],
+      "temperature": {
+        "temp_c": 8.2,
+        "temp_f": 46.8,
+        "normal_c": 6.7,
+        "anomaly_c": 1.5,
+        "anomaly_f": 2.7
+      },
+      "skiMarket": true,
+      "importance": 1210
+    },
+    {
+      "city": "Albany",
+      "region": "NY",
+      "country": "usa",
+      "lat": 42.6526,
+      "lng": -73.7562,
+      "cover": 0,
+      "depthInches": 0,
+      "depthCm": 0.0,
+      "trend": "down",
+      "history": [],
+      "temperature": {
+        "temp_c": 7.6,
+        "temp_f": 45.7,
+        "normal_c": 5.5,
+        "anomaly_c": 2.1,
+        "anomaly_f": 3.8
+      },
+      "skiMarket": true,
+      "importance": 900
+    },
+    {
+      "city": "Providence",
+      "region": "RI",
+      "country": "usa",
+      "lat": 41.824,
+      "lng": -71.4128,
+      "cover": 0,
+      "depthInches": 0,
+      "depthCm": 0.0,
+      "trend": "down",
+      "history": [],
+      "temperature": {
+        "temp_c": 7.3,
+        "temp_f": 45.1,
+        "normal_c": 6.4,
+        "anomaly_c": 0.9,
+        "anomaly_f": 1.6
+      },
+      "skiMarket": true,
+      "importance": 1680
     },
     {
       "city": "Richmond",
@@ -2762,35 +2762,14 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": 8.6,
-        "temp_f": 47.5,
+        "temp_c": null,
+        "temp_f": null,
         "normal_c": 13.4,
-        "anomaly_c": -4.8,
-        "anomaly_f": -8.6
+        "anomaly_c": null,
+        "anomaly_f": null
       },
       "skiMarket": true,
       "importance": 1340
-    },
-    {
-      "city": "Madison",
-      "region": "WI",
-      "country": "usa",
-      "lat": 43.0731,
-      "lng": -89.4012,
-      "cover": 0,
-      "depthInches": 0,
-      "depthCm": 0.0,
-      "trend": "down",
-      "history": [],
-      "temperature": {
-        "temp_c": 6.4,
-        "temp_f": 43.5,
-        "normal_c": 5.3,
-        "anomaly_c": 1.1,
-        "anomaly_f": 2.0
-      },
-      "skiMarket": false,
-      "importance": 690
     },
     {
       "city": "Vancouver",
@@ -2804,11 +2783,11 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": 4.8,
-        "temp_f": 40.6,
-        "normal_c": null,
-        "anomaly_c": null,
-        "anomaly_f": null
+        "temp_c": 8.3,
+        "temp_f": 46.9,
+        "normal_c": 6.8,
+        "anomaly_c": 1.5,
+        "anomaly_f": 2.7
       },
       "skiMarket": true,
       "importance": 2640
@@ -2825,14 +2804,35 @@
       "trend": "down",
       "history": [],
       "temperature": {
-        "temp_c": null,
-        "temp_f": null,
+        "temp_c": 8.7,
+        "temp_f": 47.7,
         "normal_c": 7.4,
+        "anomaly_c": 1.3,
+        "anomaly_f": 2.3
+      },
+      "skiMarket": true,
+      "importance": 415
+    },
+    {
+      "city": "Kelowna",
+      "region": "BC",
+      "country": "canada",
+      "lat": 49.888,
+      "lng": -119.496,
+      "cover": 0,
+      "depthInches": 0,
+      "depthCm": 0.0,
+      "trend": "down",
+      "history": [],
+      "temperature": {
+        "temp_c": 13.7,
+        "temp_f": 56.7,
+        "normal_c": null,
         "anomaly_c": null,
         "anomaly_f": null
       },
       "skiMarket": true,
-      "importance": 415
+      "importance": 225
     }
   ],
   "feederRegions": {
