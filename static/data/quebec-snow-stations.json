@@ -1,19 +1,19 @@
 {
-  "generated": "2026-03-21T18:43:25.932415+00:00",
+  "generated": "2026-03-22T06:58:26.991423+00:00",
   "source": "Hydro-Qu\u00e9bec",
   "source_url": "https://donnees.hydroquebec.com/explore/dataset/donnees-hydrometeorologiques/",
   "license": "CC BY-NC-SA 4.0",
   "note": "SWE from GMON gamma radiation sensors. Updated every 6 hours.",
-  "data_timestamp": "2026-03-21T17:00:00+00:00",
+  "data_timestamp": "2026-03-21T20:00:00+00:00",
   "statistics": {
-    "count": 92,
+    "count": 91,
     "with_swe": 91,
     "with_depth": 0,
-    "mean_swe_mm": 233.0,
+    "mean_swe_mm": 233.9,
     "regions": {
       "Outaouais": 6,
       "C\u00f4te-Nord": 33,
-      "Nord-du-Qu\u00e9bec": 28,
+      "Nord-du-Qu\u00e9bec": 27,
       "Saguenay--Lac-Saint-Jean": 8,
       "Mauricie": 10,
       "Abitibi-T\u00e9miscamingue": 4,
@@ -33,7 +33,7 @@
       "swe_inches": 3.8,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-12213",
@@ -42,11 +42,11 @@
       "lon": -63.5597,
       "elevation_m": 541.0,
       "region": "C\u00f4te-Nord",
-      "swe_mm": 264.0,
+      "swe_mm": 263.0,
       "swe_inches": 10.4,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-7292",
@@ -55,11 +55,11 @@
       "lon": -69.9135,
       "elevation_m": 423.0,
       "region": "C\u00f4te-Nord",
-      "swe_mm": 252.0,
+      "swe_mm": 251.0,
       "swe_inches": 9.9,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15672",
@@ -68,24 +68,11 @@
       "lon": -66.841829,
       "elevation_m": 641.0,
       "region": "C\u00f4te-Nord",
-      "swe_mm": 273.0,
+      "swe_mm": 272.0,
       "swe_inches": 10.7,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
-    },
-    {
-      "id": "1-15354",
-      "name": "Brouillan (CM2W)",
-      "lat": 53.8376,
-      "lon": -70.5573,
-      "elevation_m": 528.0,
-      "region": "Nord-du-Qu\u00e9bec",
-      "swe_mm": 200.0,
-      "swe_inches": 7.9,
-      "snow_depth_cm": null,
-      "snow_depth_inches": null,
-      "timestamp": "2026-03-11T14:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-14655",
@@ -98,7 +85,7 @@
       "swe_inches": 8.8,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15077",
@@ -107,11 +94,11 @@
       "lon": -74.2778,
       "elevation_m": 259.0,
       "region": "Nord-du-Qu\u00e9bec",
-      "swe_mm": 285.0,
-      "swe_inches": 11.2,
+      "swe_mm": 286.0,
+      "swe_inches": 11.3,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-10613",
@@ -124,7 +111,7 @@
       "swe_inches": 10.4,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15711",
@@ -137,7 +124,7 @@
       "swe_inches": 7.2,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15356",
@@ -150,7 +137,7 @@
       "swe_inches": 11.9,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15344",
@@ -163,7 +150,7 @@
       "swe_inches": 10.6,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-10622",
@@ -172,11 +159,11 @@
       "lon": -74.09,
       "elevation_m": 398.0,
       "region": "Mauricie",
-      "swe_mm": 158.0,
+      "swe_mm": 157.0,
       "swe_inches": 6.2,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15311",
@@ -185,11 +172,11 @@
       "lon": -77.3959,
       "elevation_m": 352.0,
       "region": "Abitibi-T\u00e9miscamingue",
-      "swe_mm": 223.0,
-      "swe_inches": 8.8,
+      "swe_mm": 221.0,
+      "swe_inches": 8.7,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15567",
@@ -198,11 +185,11 @@
       "lon": -67.94598,
       "elevation_m": 460.0,
       "region": "C\u00f4te-Nord",
-      "swe_mm": 188.0,
-      "swe_inches": 7.4,
+      "swe_mm": 186.0,
+      "swe_inches": 7.3,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15345",
@@ -211,11 +198,11 @@
       "lon": -73.3123,
       "elevation_m": 391.0,
       "region": "Nord-du-Qu\u00e9bec",
-      "swe_mm": 248.0,
-      "swe_inches": 9.8,
+      "swe_mm": 251.0,
+      "swe_inches": 9.9,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15358",
@@ -224,11 +211,11 @@
       "lon": -73.3309,
       "elevation_m": 399.0,
       "region": "Nord-du-Qu\u00e9bec",
-      "swe_mm": 247.0,
-      "swe_inches": 9.7,
+      "swe_mm": 248.0,
+      "swe_inches": 9.8,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15346",
@@ -241,7 +228,7 @@
       "swe_inches": 7.6,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15348",
@@ -250,11 +237,11 @@
       "lon": -71.7874,
       "elevation_m": 494.0,
       "region": "Nord-du-Qu\u00e9bec",
-      "swe_mm": 268.0,
-      "swe_inches": 10.6,
+      "swe_mm": 267.0,
+      "swe_inches": 10.5,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15085",
@@ -263,11 +250,11 @@
       "lon": -72.7903,
       "elevation_m": 391.0,
       "region": "Nord-du-Qu\u00e9bec",
-      "swe_mm": 318.0,
-      "swe_inches": 12.5,
+      "swe_mm": 325.0,
+      "swe_inches": 12.8,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-7722",
@@ -280,7 +267,7 @@
       "swe_inches": 9.4,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15347",
@@ -293,7 +280,7 @@
       "swe_inches": 9.5,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15023",
@@ -306,7 +293,7 @@
       "swe_inches": 8.2,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-11242",
@@ -319,7 +306,7 @@
       "swe_inches": 10.0,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-14654",
@@ -332,7 +319,7 @@
       "swe_inches": 9.6,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-7252",
@@ -345,7 +332,7 @@
       "swe_inches": 9.2,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15081",
@@ -354,11 +341,11 @@
       "lon": -75.7515,
       "elevation_m": 257.0,
       "region": "Nord-du-Qu\u00e9bec",
-      "swe_mm": 269.0,
-      "swe_inches": 10.6,
+      "swe_mm": 267.0,
+      "swe_inches": 10.5,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-12313",
@@ -367,11 +354,11 @@
       "lon": -69.5137,
       "elevation_m": 491.0,
       "region": "C\u00f4te-Nord",
-      "swe_mm": 147.0,
+      "swe_mm": 148.0,
       "swe_inches": 5.8,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15513",
@@ -384,7 +371,7 @@
       "swe_inches": 6.7,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15343",
@@ -393,11 +380,11 @@
       "lon": -74.1251,
       "elevation_m": 333.0,
       "region": "Nord-du-Qu\u00e9bec",
-      "swe_mm": 242.0,
-      "swe_inches": 9.5,
+      "swe_mm": 245.0,
+      "swe_inches": 9.6,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15514",
@@ -406,11 +393,11 @@
       "lon": -73.1831,
       "elevation_m": 373.0,
       "region": "Mauricie",
-      "swe_mm": 178.0,
-      "swe_inches": 7.0,
+      "swe_mm": 176.0,
+      "swe_inches": 6.9,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15504",
@@ -419,11 +406,11 @@
       "lon": -68.1568,
       "elevation_m": 544.0,
       "region": "C\u00f4te-Nord",
-      "swe_mm": 212.0,
+      "swe_mm": 211.0,
       "swe_inches": 8.3,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-7260",
@@ -432,11 +419,11 @@
       "lon": -74.3345,
       "elevation_m": 360.0,
       "region": "Nord-du-Qu\u00e9bec",
-      "swe_mm": 227.0,
-      "swe_inches": 8.9,
+      "swe_mm": 228.0,
+      "swe_inches": 9.0,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15082",
@@ -445,11 +432,11 @@
       "lon": -74.9105,
       "elevation_m": 275.0,
       "region": "Nord-du-Qu\u00e9bec",
-      "swe_mm": 275.0,
-      "swe_inches": 10.8,
+      "swe_mm": 276.0,
+      "swe_inches": 10.9,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15083",
@@ -458,11 +445,11 @@
       "lon": -74.9738,
       "elevation_m": 321.0,
       "region": "Nord-du-Qu\u00e9bec",
-      "swe_mm": 330.0,
-      "swe_inches": 13.0,
+      "swe_mm": 333.0,
+      "swe_inches": 13.1,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15484",
@@ -471,11 +458,11 @@
       "lon": -68.4897,
       "elevation_m": 315.0,
       "region": "C\u00f4te-Nord",
-      "swe_mm": 197.0,
+      "swe_mm": 198.0,
       "swe_inches": 7.8,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15462",
@@ -484,11 +471,11 @@
       "lon": -68.8398,
       "elevation_m": 397.0,
       "region": "C\u00f4te-Nord",
-      "swe_mm": 228.0,
-      "swe_inches": 9.0,
+      "swe_mm": 225.0,
+      "swe_inches": 8.9,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-7262",
@@ -497,11 +484,11 @@
       "lon": -69.8225,
       "elevation_m": 593.5,
       "region": "C\u00f4te-Nord",
-      "swe_mm": 270.0,
+      "swe_mm": 269.0,
       "swe_inches": 10.6,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-11133",
@@ -514,7 +501,7 @@
       "swe_inches": 8.0,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15486",
@@ -527,7 +514,7 @@
       "swe_inches": 8.5,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15515",
@@ -536,11 +523,11 @@
       "lon": -69.5224,
       "elevation_m": 485.0,
       "region": "C\u00f4te-Nord",
-      "swe_mm": 239.0,
+      "swe_mm": 238.0,
       "swe_inches": 9.4,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-7716",
@@ -549,11 +536,11 @@
       "lon": -69.9062,
       "elevation_m": 580.9,
       "region": "C\u00f4te-Nord",
-      "swe_mm": 248.0,
+      "swe_mm": 249.0,
       "swe_inches": 9.8,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15507",
@@ -566,7 +553,7 @@
       "swe_inches": 7.2,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15510",
@@ -575,11 +562,11 @@
       "lon": -70.2759,
       "elevation_m": 413.0,
       "region": "Saguenay--Lac-Saint-Jean",
-      "swe_mm": 239.0,
+      "swe_mm": 240.0,
       "swe_inches": 9.4,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-11092",
@@ -588,11 +575,11 @@
       "lon": -68.36,
       "elevation_m": 594.0,
       "region": "C\u00f4te-Nord",
-      "swe_mm": 281.0,
-      "swe_inches": 11.1,
+      "swe_mm": 276.0,
+      "swe_inches": 10.9,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15688",
@@ -605,7 +592,7 @@
       "swe_inches": 7.4,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15359",
@@ -614,11 +601,11 @@
       "lon": -74.5968,
       "elevation_m": 373.0,
       "region": "Nord-du-Qu\u00e9bec",
-      "swe_mm": 297.0,
+      "swe_mm": 296.0,
       "swe_inches": 11.7,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15512",
@@ -627,11 +614,11 @@
       "lon": -73.4412,
       "elevation_m": 565.0,
       "region": "Saguenay--Lac-Saint-Jean",
-      "swe_mm": 201.0,
-      "swe_inches": 7.9,
+      "swe_mm": 203.0,
+      "swe_inches": 8.0,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15707",
@@ -640,11 +627,11 @@
       "lon": -74.23014,
       "elevation_m": 406.0,
       "region": "Nord-du-Qu\u00e9bec",
-      "swe_mm": 246.0,
-      "swe_inches": 9.7,
+      "swe_mm": 249.0,
+      "swe_inches": 9.8,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15505",
@@ -653,11 +640,11 @@
       "lon": -70.4874,
       "elevation_m": 571.0,
       "region": "Saguenay--Lac-Saint-Jean",
-      "swe_mm": 0.0,
-      "swe_inches": 0.0,
+      "swe_mm": 272.0,
+      "swe_inches": 10.7,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15350",
@@ -666,11 +653,11 @@
       "lon": -74.0364,
       "elevation_m": 329.0,
       "region": "Nord-du-Qu\u00e9bec",
-      "swe_mm": 315.0,
-      "swe_inches": 12.4,
+      "swe_mm": 311.0,
+      "swe_inches": 12.2,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15325",
@@ -679,11 +666,11 @@
       "lon": -70.0794,
       "elevation_m": 621.0,
       "region": "Saguenay--Lac-Saint-Jean",
-      "swe_mm": 249.0,
+      "swe_mm": 248.0,
       "swe_inches": 9.8,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15749",
@@ -696,7 +683,7 @@
       "swe_inches": 7.6,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15308",
@@ -705,11 +692,11 @@
       "lon": -70.2705,
       "elevation_m": 519.0,
       "region": "Saguenay--Lac-Saint-Jean",
-      "swe_mm": 263.0,
+      "swe_mm": 264.0,
       "swe_inches": 10.4,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15712",
@@ -722,7 +709,7 @@
       "swe_inches": 4.6,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-11042",
@@ -735,7 +722,7 @@
       "swe_inches": 6.9,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T15:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15566",
@@ -748,7 +735,7 @@
       "swe_inches": 9.3,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15670",
@@ -770,11 +757,11 @@
       "lon": -78.1568,
       "elevation_m": 102.0,
       "region": "Nord-du-Qu\u00e9bec",
-      "swe_mm": 239.0,
+      "swe_mm": 240.0,
       "swe_inches": 9.4,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15171",
@@ -783,11 +770,11 @@
       "lon": -76.776,
       "elevation_m": 216.0,
       "region": "Nord-du-Qu\u00e9bec",
-      "swe_mm": 342.0,
-      "swe_inches": 13.5,
+      "swe_mm": 340.0,
+      "swe_inches": 13.4,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15533",
@@ -796,11 +783,11 @@
       "lon": -74.6236,
       "elevation_m": 442.0,
       "region": "Mauricie",
-      "swe_mm": 181.0,
-      "swe_inches": 7.1,
+      "swe_mm": 182.0,
+      "swe_inches": 7.2,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-14652",
@@ -813,7 +800,7 @@
       "swe_inches": 1.1,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15487",
@@ -822,11 +809,11 @@
       "lon": -69.7789,
       "elevation_m": 666.0,
       "region": "C\u00f4te-Nord",
-      "swe_mm": 319.0,
-      "swe_inches": 12.6,
+      "swe_mm": 324.0,
+      "swe_inches": 12.8,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-14653",
@@ -835,11 +822,11 @@
       "lon": -73.081,
       "elevation_m": 493.0,
       "region": "Saguenay--Lac-Saint-Jean",
-      "swe_mm": 249.0,
+      "swe_mm": 248.0,
       "swe_inches": 9.8,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15839",
@@ -848,11 +835,11 @@
       "lon": -69.1583,
       "elevation_m": null,
       "region": "C\u00f4te-Nord",
-      "swe_mm": 279.0,
-      "swe_inches": 11.0,
+      "swe_mm": 281.0,
+      "swe_inches": 11.1,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-6688",
@@ -861,11 +848,11 @@
       "lon": -78.2962,
       "elevation_m": 338.8,
       "region": "Abitibi-T\u00e9miscamingue",
-      "swe_mm": 266.0,
-      "swe_inches": 10.5,
+      "swe_mm": 268.0,
+      "swe_inches": 10.6,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-10496",
@@ -874,11 +861,11 @@
       "lon": -72.8856,
       "elevation_m": 305.0,
       "region": "Mauricie",
-      "swe_mm": 225.0,
+      "swe_mm": 227.0,
       "swe_inches": 8.9,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15357",
@@ -887,11 +874,11 @@
       "lon": -73.9078,
       "elevation_m": 339.0,
       "region": "Nord-du-Qu\u00e9bec",
-      "swe_mm": 293.0,
+      "swe_mm": 291.0,
       "swe_inches": 11.5,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15088",
@@ -900,11 +887,11 @@
       "lon": -76.7411,
       "elevation_m": 215.0,
       "region": "Nord-du-Qu\u00e9bec",
-      "swe_mm": 297.0,
-      "swe_inches": 11.7,
+      "swe_mm": 299.0,
+      "swe_inches": 11.8,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15671",
@@ -913,11 +900,11 @@
       "lon": -74.03929,
       "elevation_m": 380.0,
       "region": "Lanaudi\u00e8re",
-      "swe_mm": 166.0,
-      "swe_inches": 6.5,
+      "swe_mm": 167.0,
+      "swe_inches": 6.6,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15372",
@@ -930,7 +917,7 @@
       "swe_inches": 11.5,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15349",
@@ -939,11 +926,11 @@
       "lon": -69.5278,
       "elevation_m": 565.0,
       "region": "C\u00f4te-Nord",
-      "swe_mm": 309.0,
+      "swe_mm": 310.0,
       "swe_inches": 12.2,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15534",
@@ -952,11 +939,11 @@
       "lon": -67.0464,
       "elevation_m": 461.0,
       "region": "C\u00f4te-Nord",
-      "swe_mm": 192.0,
-      "swe_inches": 7.6,
+      "swe_mm": 190.0,
+      "swe_inches": 7.5,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-7288",
@@ -969,7 +956,7 @@
       "swe_inches": 3.6,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-11212",
@@ -978,11 +965,11 @@
       "lon": -63.8381,
       "elevation_m": 459.0,
       "region": "C\u00f4te-Nord",
-      "swe_mm": 215.0,
-      "swe_inches": 8.5,
+      "swe_mm": 212.0,
+      "swe_inches": 8.3,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15841",
@@ -991,11 +978,11 @@
       "lon": -63.25518,
       "elevation_m": 89.0,
       "region": "C\u00f4te-Nord",
-      "swe_mm": 177.0,
+      "swe_mm": 178.0,
       "swe_inches": 7.0,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15483",
@@ -1004,11 +991,11 @@
       "lon": -68.0944,
       "elevation_m": 456.0,
       "region": "C\u00f4te-Nord",
-      "swe_mm": 229.0,
+      "swe_mm": 228.0,
       "swe_inches": 9.0,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-7282",
@@ -1017,11 +1004,11 @@
       "lon": -77.0762,
       "elevation_m": 360.3,
       "region": "Abitibi-T\u00e9miscamingue",
-      "swe_mm": 210.0,
+      "swe_mm": 211.0,
       "swe_inches": 8.3,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-6690",
@@ -1030,11 +1017,11 @@
       "lon": -70.9152,
       "elevation_m": 566.2,
       "region": "Saguenay--Lac-Saint-Jean",
-      "swe_mm": 281.0,
-      "swe_inches": 11.1,
+      "swe_mm": 284.0,
+      "swe_inches": 11.2,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15306",
@@ -1047,7 +1034,7 @@
       "swe_inches": 5.9,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15509",
@@ -1056,11 +1043,11 @@
       "lon": -66.91,
       "elevation_m": 522.0,
       "region": "C\u00f4te-Nord",
-      "swe_mm": 279.0,
-      "swe_inches": 11.0,
+      "swe_mm": 281.0,
+      "swe_inches": 11.1,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15351",
@@ -1069,11 +1056,11 @@
       "lon": -71.9597,
       "elevation_m": 494.0,
       "region": "Nord-du-Qu\u00e9bec",
-      "swe_mm": 276.0,
-      "swe_inches": 10.9,
+      "swe_mm": 279.0,
+      "swe_inches": 11.0,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15352",
@@ -1086,7 +1073,7 @@
       "swe_inches": 10.2,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15321",
@@ -1095,11 +1082,11 @@
       "lon": -72.538,
       "elevation_m": 560.0,
       "region": "Nord-du-Qu\u00e9bec",
-      "swe_mm": 290.0,
-      "swe_inches": 11.4,
+      "swe_mm": 288.0,
+      "swe_inches": 11.3,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15353",
@@ -1108,11 +1095,11 @@
       "lon": -71.4283,
       "elevation_m": 451.0,
       "region": "Nord-du-Qu\u00e9bec",
-      "swe_mm": 232.0,
-      "swe_inches": 9.1,
+      "swe_mm": 233.0,
+      "swe_inches": 9.2,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15360",
@@ -1121,11 +1108,11 @@
       "lon": -69.1302,
       "elevation_m": 595.0,
       "region": "C\u00f4te-Nord",
-      "swe_mm": 262.0,
-      "swe_inches": 10.3,
+      "swe_mm": 263.0,
+      "swe_inches": 10.4,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15313",
@@ -1138,7 +1125,7 @@
       "swe_inches": 9.5,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15488",
@@ -1147,11 +1134,11 @@
       "lon": -67.4768,
       "elevation_m": 688.0,
       "region": "C\u00f4te-Nord",
-      "swe_mm": 323.0,
-      "swe_inches": 12.7,
+      "swe_mm": 321.0,
+      "swe_inches": 12.6,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15673",
@@ -1164,7 +1151,7 @@
       "swe_inches": 7.6,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-14651",
@@ -1173,11 +1160,11 @@
       "lon": -75.85942,
       "elevation_m": 327.0,
       "region": "Outaouais",
-      "swe_mm": 233.0,
-      "swe_inches": 9.2,
+      "swe_mm": 232.0,
+      "swe_inches": 9.1,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     },
     {
       "id": "1-15532",
@@ -1190,7 +1177,7 @@
       "swe_inches": 5.3,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15511",
@@ -1203,7 +1190,7 @@
       "swe_inches": 10.0,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T17:00:00+00:00"
+      "timestamp": "2026-03-21T20:00:00+00:00"
     },
     {
       "id": "1-15485",
@@ -1212,11 +1199,11 @@
       "lon": -68.755,
       "elevation_m": 466.0,
       "region": "C\u00f4te-Nord",
-      "swe_mm": 250.0,
-      "swe_inches": 9.8,
+      "swe_mm": 247.0,
+      "swe_inches": 9.7,
       "snow_depth_cm": null,
       "snow_depth_inches": null,
-      "timestamp": "2026-03-21T16:00:00+00:00"
+      "timestamp": "2026-03-21T19:00:00+00:00"
     }
   ]
 }
