@@ -1,15 +1,6 @@
 {
   "snapshots": [
     {
-      "date": "2026-02-09",
-      "recession_prob": 0.21,
-      "fed_outcome": "Hold",
-      "fed_prob": 0.82,
-      "rate_cuts_mode": 2,
-      "oil_price": 64,
-      "gas_price": 2.872
-    },
-    {
       "date": "2026-02-10",
       "recession_prob": 0.22,
       "fed_outcome": "Hold",
@@ -239,6 +230,12 @@
       "rate_cuts_mode": 9,
       "oil_price": 93,
       "gas_price": 3.67
+    },
+    {
+      "date": "2026-03-23",
+      "rate_cuts_mode": 9,
+      "oil_price": 92,
+      "gas_price": 3.96
     }
   ]
 }

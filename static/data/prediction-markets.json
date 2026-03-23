@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-03-20T15:11:52.697225Z",
+  "fetched_at": "2026-03-23T15:35:50.648154Z",
   "kalshi": {
     "recession": [
       {
@@ -4613,8 +4613,8 @@
         "display_name": "WTI Oil Weekly",
         "markets": [
           {
-            "ticker": "KXWTIW-26MAR20-T93.00",
-            "title": "Will the WTI front-month settle oil price  be <93.00 on Mar 20, 2026?",
+            "ticker": "KXWTIW-26MAR27-T92.00",
+            "title": "Will the WTI front-month settle oil price  be <92.00 on Mar 27, 2026?",
             "yes_price": 0,
             "no_price": 0,
             "yes_probability": 0.0,
@@ -4623,11 +4623,11 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-20T18:30:00Z"
+            "close_time": "2026-03-27T18:30:00Z"
           },
           {
-            "ticker": "KXWTIW-26MAR20-T105.99",
-            "title": "Will the WTI front-month settle oil price  be >105.99 on Mar 20, 2026?",
+            "ticker": "KXWTIW-26MAR27-T104.99",
+            "title": "Will the WTI front-month settle oil price  be >104.99 on Mar 27, 2026?",
             "yes_price": 0,
             "no_price": 0,
             "yes_probability": 0.0,
@@ -4636,11 +4636,11 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-20T18:30:00Z"
+            "close_time": "2026-03-27T18:30:00Z"
           },
           {
-            "ticker": "KXWTIW-26MAR20-B99.5",
-            "title": "Will the WTI front-month settle oil price  be Between 99.00 and 99.99 on Mar 20, 2026?",
+            "ticker": "KXWTIW-26MAR27-B99.5",
+            "title": "Will the WTI front-month settle oil price  be Between 99.00 and 99.99 on Mar 27, 2026?",
             "yes_price": 0,
             "no_price": 0,
             "yes_probability": 0.0,
@@ -4649,11 +4649,11 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-20T18:30:00Z"
+            "close_time": "2026-03-27T18:30:00Z"
           },
           {
-            "ticker": "KXWTIW-26MAR20-B98.5",
-            "title": "Will the WTI front-month settle oil price  be Between 98.00 and 98.99 on Mar 20, 2026?",
+            "ticker": "KXWTIW-26MAR27-B98.5",
+            "title": "Will the WTI front-month settle oil price  be Between 98.00 and 98.99 on Mar 27, 2026?",
             "yes_price": 0,
             "no_price": 0,
             "yes_probability": 0.0,
@@ -4662,11 +4662,11 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-20T18:30:00Z"
+            "close_time": "2026-03-27T18:30:00Z"
           },
           {
-            "ticker": "KXWTIW-26MAR20-B97.5",
-            "title": "Will the WTI front-month settle oil price  be Between 97.00 and 97.99 on Mar 20, 2026?",
+            "ticker": "KXWTIW-26MAR27-B97.5",
+            "title": "Will the WTI front-month settle oil price  be Between 97.00 and 97.99 on Mar 27, 2026?",
             "yes_price": 0,
             "no_price": 0,
             "yes_probability": 0.0,
@@ -4675,11 +4675,11 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-20T18:30:00Z"
+            "close_time": "2026-03-27T18:30:00Z"
           },
           {
-            "ticker": "KXWTIW-26MAR20-B96.5",
-            "title": "Will the WTI front-month settle oil price  be Between 96.00 and 96.99 on Mar 20, 2026?",
+            "ticker": "KXWTIW-26MAR27-B96.5",
+            "title": "Will the WTI front-month settle oil price  be Between 96.00 and 96.99 on Mar 27, 2026?",
             "yes_price": 0,
             "no_price": 0,
             "yes_probability": 0.0,
@@ -4688,11 +4688,11 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-20T18:30:00Z"
+            "close_time": "2026-03-27T18:30:00Z"
           },
           {
-            "ticker": "KXWTIW-26MAR20-B95.5",
-            "title": "Will the WTI front-month settle oil price  be Between 95.00 and 95.99 on Mar 20, 2026?",
+            "ticker": "KXWTIW-26MAR27-B95.5",
+            "title": "Will the WTI front-month settle oil price  be Between 95.00 and 95.99 on Mar 27, 2026?",
             "yes_price": 0,
             "no_price": 0,
             "yes_probability": 0.0,
@@ -4701,11 +4701,11 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-20T18:30:00Z"
+            "close_time": "2026-03-27T18:30:00Z"
           },
           {
-            "ticker": "KXWTIW-26MAR20-B94.5",
-            "title": "Will the WTI front-month settle oil price  be Between 94.00 and 94.99 on Mar 20, 2026?",
+            "ticker": "KXWTIW-26MAR27-B94.5",
+            "title": "Will the WTI front-month settle oil price  be Between 94.00 and 94.99 on Mar 27, 2026?",
             "yes_price": 0,
             "no_price": 0,
             "yes_probability": 0.0,
@@ -4714,11 +4714,11 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-20T18:30:00Z"
+            "close_time": "2026-03-27T18:30:00Z"
           },
           {
-            "ticker": "KXWTIW-26MAR20-B93.5",
-            "title": "Will the WTI front-month settle oil price  be Between 93.00 and 93.99 on Mar 20, 2026?",
+            "ticker": "KXWTIW-26MAR27-B93.5",
+            "title": "Will the WTI front-month settle oil price  be Between 93.00 and 93.99 on Mar 27, 2026?",
             "yes_price": 0,
             "no_price": 0,
             "yes_probability": 0.0,
@@ -4727,11 +4727,11 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-20T18:30:00Z"
+            "close_time": "2026-03-27T18:30:00Z"
           },
           {
-            "ticker": "KXWTIW-26MAR20-B105.5",
-            "title": "Will the WTI front-month settle oil price  be Between 105.00 and 105.99 on Mar 20, 2026?",
+            "ticker": "KXWTIW-26MAR27-B92.5",
+            "title": "Will the WTI front-month settle oil price  be Between 92.00 and 92.99 on Mar 27, 2026?",
             "yes_price": 0,
             "no_price": 0,
             "yes_probability": 0.0,
@@ -4740,11 +4740,11 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-20T18:30:00Z"
+            "close_time": "2026-03-27T18:30:00Z"
           },
           {
-            "ticker": "KXWTIW-26MAR20-B104.5",
-            "title": "Will the WTI front-month settle oil price  be Between 104.00 and 104.99 on Mar 20, 2026?",
+            "ticker": "KXWTIW-26MAR27-B104.5",
+            "title": "Will the WTI front-month settle oil price  be Between 104.00 and 104.99 on Mar 27, 2026?",
             "yes_price": 0,
             "no_price": 0,
             "yes_probability": 0.0,
@@ -4753,11 +4753,11 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-20T18:30:00Z"
+            "close_time": "2026-03-27T18:30:00Z"
           },
           {
-            "ticker": "KXWTIW-26MAR20-B103.5",
-            "title": "Will the WTI front-month settle oil price  be Between 103.00 and 103.99 on Mar 20, 2026?",
+            "ticker": "KXWTIW-26MAR27-B103.5",
+            "title": "Will the WTI front-month settle oil price  be Between 103.00 and 103.99 on Mar 27, 2026?",
             "yes_price": 0,
             "no_price": 0,
             "yes_probability": 0.0,
@@ -4766,11 +4766,11 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-20T18:30:00Z"
+            "close_time": "2026-03-27T18:30:00Z"
           },
           {
-            "ticker": "KXWTIW-26MAR20-B102.5",
-            "title": "Will the WTI front-month settle oil price  be Between 102.00 and 102.99 on Mar 20, 2026?",
+            "ticker": "KXWTIW-26MAR27-B102.5",
+            "title": "Will the WTI front-month settle oil price  be Between 102.00 and 102.99 on Mar 27, 2026?",
             "yes_price": 0,
             "no_price": 0,
             "yes_probability": 0.0,
@@ -4779,11 +4779,11 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-20T18:30:00Z"
+            "close_time": "2026-03-27T18:30:00Z"
           },
           {
-            "ticker": "KXWTIW-26MAR20-B101.5",
-            "title": "Will the WTI front-month settle oil price  be Between 101.00 and 101.99 on Mar 20, 2026?",
+            "ticker": "KXWTIW-26MAR27-B101.5",
+            "title": "Will the WTI front-month settle oil price  be Between 101.00 and 101.99 on Mar 27, 2026?",
             "yes_price": 0,
             "no_price": 0,
             "yes_probability": 0.0,
@@ -4792,11 +4792,11 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-20T18:30:00Z"
+            "close_time": "2026-03-27T18:30:00Z"
           },
           {
-            "ticker": "KXWTIW-26MAR20-B100.5",
-            "title": "Will the WTI front-month settle oil price  be Between 100.00 and 100.99 on Mar 20, 2026?",
+            "ticker": "KXWTIW-26MAR27-B100.5",
+            "title": "Will the WTI front-month settle oil price  be Between 100.00 and 100.99 on Mar 27, 2026?",
             "yes_price": 0,
             "no_price": 0,
             "yes_probability": 0.0,
@@ -4805,7 +4805,7 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-20T18:30:00Z"
+            "close_time": "2026-03-27T18:30:00Z"
           }
         ]
       },
@@ -4813,6 +4813,19 @@
         "series": "KXWTIMAX",
         "display_name": "WTI Yearly High",
         "markets": [
+          {
+            "ticker": "KXWTIMAX-26DEC31-T200",
+            "title": "Will the maximum WTI front month settle price reach $200.01 by Dec 31, 2026?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-12-31T19:30:00Z"
+          },
           {
             "ticker": "KXWTIMAX-26DEC31-T180",
             "title": "Will the maximum WTI front month settle price reach $180.01 by Dec 31, 2026?",
@@ -4976,7 +4989,72 @@
         "display_name": "Gas Price Direction",
         "markets": [
           {
-            "ticker": "KXAAAGASW-26MAR23-4.160",
+            "ticker": "KXAAAGASW-26MAR30-4.260",
+            "title": "Will average **gas prices** be above $4.260?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-30T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR30-4.240",
+            "title": "Will average **gas prices** be above $4.240?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-30T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR30-4.220",
+            "title": "Will average **gas prices** be above $4.220?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-30T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR30-4.200",
+            "title": "Will average **gas prices** be above $4.200?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-30T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR30-4.180",
+            "title": "Will average **gas prices** be above $4.180?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-30T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR30-4.160",
             "title": "Will average **gas prices** be above $4.160?",
             "yes_price": 0,
             "no_price": 0,
@@ -4986,10 +5064,10 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
+            "close_time": "2026-03-30T03:59:00Z"
           },
           {
-            "ticker": "KXAAAGASW-26MAR23-4.140",
+            "ticker": "KXAAAGASW-26MAR30-4.140",
             "title": "Will average **gas prices** be above $4.140?",
             "yes_price": 0,
             "no_price": 0,
@@ -4999,10 +5077,10 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
+            "close_time": "2026-03-30T03:59:00Z"
           },
           {
-            "ticker": "KXAAAGASW-26MAR23-4.120",
+            "ticker": "KXAAAGASW-26MAR30-4.120",
             "title": "Will average **gas prices** be above $4.120?",
             "yes_price": 0,
             "no_price": 0,
@@ -5012,10 +5090,10 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
+            "close_time": "2026-03-30T03:59:00Z"
           },
           {
-            "ticker": "KXAAAGASW-26MAR23-4.100",
+            "ticker": "KXAAAGASW-26MAR30-4.100",
             "title": "Will average **gas prices** be above $4.100?",
             "yes_price": 0,
             "no_price": 0,
@@ -5025,10 +5103,10 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
+            "close_time": "2026-03-30T03:59:00Z"
           },
           {
-            "ticker": "KXAAAGASW-26MAR23-4.080",
+            "ticker": "KXAAAGASW-26MAR30-4.080",
             "title": "Will average **gas prices** be above $4.080?",
             "yes_price": 0,
             "no_price": 0,
@@ -5038,10 +5116,10 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
+            "close_time": "2026-03-30T03:59:00Z"
           },
           {
-            "ticker": "KXAAAGASW-26MAR23-4.060",
+            "ticker": "KXAAAGASW-26MAR30-4.060",
             "title": "Will average **gas prices** be above $4.060?",
             "yes_price": 0,
             "no_price": 0,
@@ -5051,10 +5129,10 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
+            "close_time": "2026-03-30T03:59:00Z"
           },
           {
-            "ticker": "KXAAAGASW-26MAR23-4.040",
+            "ticker": "KXAAAGASW-26MAR30-4.040",
             "title": "Will average **gas prices** be above $4.040?",
             "yes_price": 0,
             "no_price": 0,
@@ -5064,10 +5142,10 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
+            "close_time": "2026-03-30T03:59:00Z"
           },
           {
-            "ticker": "KXAAAGASW-26MAR23-4.020",
+            "ticker": "KXAAAGASW-26MAR30-4.020",
             "title": "Will average **gas prices** be above $4.020?",
             "yes_price": 0,
             "no_price": 0,
@@ -5077,10 +5155,10 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
+            "close_time": "2026-03-30T03:59:00Z"
           },
           {
-            "ticker": "KXAAAGASW-26MAR23-4.000",
+            "ticker": "KXAAAGASW-26MAR30-4.000",
             "title": "Will average **gas prices** be above $4.000?",
             "yes_price": 0,
             "no_price": 0,
@@ -5090,10 +5168,10 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
+            "close_time": "2026-03-30T03:59:00Z"
           },
           {
-            "ticker": "KXAAAGASW-26MAR23-3.980",
+            "ticker": "KXAAAGASW-26MAR30-3.980",
             "title": "Will average **gas prices** be above $3.980?",
             "yes_price": 0,
             "no_price": 0,
@@ -5103,10 +5181,10 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
+            "close_time": "2026-03-30T03:59:00Z"
           },
           {
-            "ticker": "KXAAAGASW-26MAR23-3.960",
+            "ticker": "KXAAAGASW-26MAR30-3.960",
             "title": "Will average **gas prices** be above $3.960?",
             "yes_price": 0,
             "no_price": 0,
@@ -5116,293 +5194,7 @@
             "volume": null,
             "volume_24h": null,
             "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
-          },
-          {
-            "ticker": "KXAAAGASW-26MAR23-3.940",
-            "title": "Will average **gas prices** be above $3.940?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
-          },
-          {
-            "ticker": "KXAAAGASW-26MAR23-3.920",
-            "title": "Will average **gas prices** be above $3.920?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
-          },
-          {
-            "ticker": "KXAAAGASW-26MAR23-3.900",
-            "title": "Will average **gas prices** be above $3.900?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
-          },
-          {
-            "ticker": "KXAAAGASW-26MAR23-3.880",
-            "title": "Will average **gas prices** be above $3.880?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
-          },
-          {
-            "ticker": "KXAAAGASW-26MAR23-3.860",
-            "title": "Will average **gas prices** be above $3.860?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
-          },
-          {
-            "ticker": "KXAAAGASW-26MAR23-3.840",
-            "title": "Will average **gas prices** be above $3.840?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
-          },
-          {
-            "ticker": "KXAAAGASW-26MAR23-3.820",
-            "title": "Will average **gas prices** be above $3.820?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
-          },
-          {
-            "ticker": "KXAAAGASW-26MAR23-3.810",
-            "title": "Will average **gas prices** be above $3.810?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
-          },
-          {
-            "ticker": "KXAAAGASW-26MAR23-3.800",
-            "title": "Will average **gas prices** be above $3.800?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
-          },
-          {
-            "ticker": "KXAAAGASW-26MAR23-3.790",
-            "title": "Will average **gas prices** be above $3.790?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
-          },
-          {
-            "ticker": "KXAAAGASW-26MAR23-3.780",
-            "title": "Will average **gas prices** be above $3.780?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
-          },
-          {
-            "ticker": "KXAAAGASW-26MAR23-3.770",
-            "title": "Will average **gas prices** be above $3.770?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
-          },
-          {
-            "ticker": "KXAAAGASW-26MAR23-3.760",
-            "title": "Will average **gas prices** be above $3.760?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
-          },
-          {
-            "ticker": "KXAAAGASW-26MAR23-3.750",
-            "title": "Will average **gas prices** be above $3.750?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
-          },
-          {
-            "ticker": "KXAAAGASW-26MAR23-3.740",
-            "title": "Will average **gas prices** be above $3.740?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
-          },
-          {
-            "ticker": "KXAAAGASW-26MAR23-3.730",
-            "title": "Will average **gas prices** be above $3.730?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
-          },
-          {
-            "ticker": "KXAAAGASW-26MAR23-3.720",
-            "title": "Will average **gas prices** be above $3.720?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
-          },
-          {
-            "ticker": "KXAAAGASW-26MAR23-3.710",
-            "title": "Will average **gas prices** be above $3.710?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
-          },
-          {
-            "ticker": "KXAAAGASW-26MAR23-3.700",
-            "title": "Will average **gas prices** be above $3.700?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
-          },
-          {
-            "ticker": "KXAAAGASW-26MAR23-3.690",
-            "title": "Will average **gas prices** be above $3.690?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
-          },
-          {
-            "ticker": "KXAAAGASW-26MAR23-3.680",
-            "title": "Will average **gas prices** be above $3.680?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
-          },
-          {
-            "ticker": "KXAAAGASW-26MAR23-3.670",
-            "title": "Will average **gas prices** be above $3.670?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-23T03:59:00Z"
+            "close_time": "2026-03-30T03:59:00Z"
           }
         ]
       }
@@ -5510,63 +5302,63 @@
         "metric": "WTI Oil Price",
         "distribution": [
           {
-            "title": "Will the WTI front-month settle oil price  be <93.00 on Mar 20, 2026?",
+            "title": "Will the WTI front-month settle oil price  be <92.00 on Mar 27, 2026?",
             "probability": 0.0
           },
           {
-            "title": "Will the WTI front-month settle oil price  be >105.99 on Mar 20, 2026?",
+            "title": "Will the WTI front-month settle oil price  be >104.99 on Mar 27, 2026?",
             "probability": 0.0
           },
           {
-            "title": "Will the WTI front-month settle oil price  be Between 99.00 and 99.99 on Mar 20, 2026?",
+            "title": "Will the WTI front-month settle oil price  be Between 99.00 and 99.99 on Mar 27, 2026?",
             "probability": 0.0
           },
           {
-            "title": "Will the WTI front-month settle oil price  be Between 98.00 and 98.99 on Mar 20, 2026?",
+            "title": "Will the WTI front-month settle oil price  be Between 98.00 and 98.99 on Mar 27, 2026?",
             "probability": 0.0
           },
           {
-            "title": "Will the WTI front-month settle oil price  be Between 97.00 and 97.99 on Mar 20, 2026?",
+            "title": "Will the WTI front-month settle oil price  be Between 97.00 and 97.99 on Mar 27, 2026?",
             "probability": 0.0
           },
           {
-            "title": "Will the WTI front-month settle oil price  be Between 96.00 and 96.99 on Mar 20, 2026?",
+            "title": "Will the WTI front-month settle oil price  be Between 96.00 and 96.99 on Mar 27, 2026?",
             "probability": 0.0
           },
           {
-            "title": "Will the WTI front-month settle oil price  be Between 95.00 and 95.99 on Mar 20, 2026?",
+            "title": "Will the WTI front-month settle oil price  be Between 95.00 and 95.99 on Mar 27, 2026?",
             "probability": 0.0
           },
           {
-            "title": "Will the WTI front-month settle oil price  be Between 94.00 and 94.99 on Mar 20, 2026?",
+            "title": "Will the WTI front-month settle oil price  be Between 94.00 and 94.99 on Mar 27, 2026?",
             "probability": 0.0
           },
           {
-            "title": "Will the WTI front-month settle oil price  be Between 93.00 and 93.99 on Mar 20, 2026?",
+            "title": "Will the WTI front-month settle oil price  be Between 93.00 and 93.99 on Mar 27, 2026?",
             "probability": 0.0
           },
           {
-            "title": "Will the WTI front-month settle oil price  be Between 105.00 and 105.99 on Mar 20, 2026?",
+            "title": "Will the WTI front-month settle oil price  be Between 92.00 and 92.99 on Mar 27, 2026?",
             "probability": 0.0
           },
           {
-            "title": "Will the WTI front-month settle oil price  be Between 104.00 and 104.99 on Mar 20, 2026?",
+            "title": "Will the WTI front-month settle oil price  be Between 104.00 and 104.99 on Mar 27, 2026?",
             "probability": 0.0
           },
           {
-            "title": "Will the WTI front-month settle oil price  be Between 103.00 and 103.99 on Mar 20, 2026?",
+            "title": "Will the WTI front-month settle oil price  be Between 103.00 and 103.99 on Mar 27, 2026?",
             "probability": 0.0
           },
           {
-            "title": "Will the WTI front-month settle oil price  be Between 102.00 and 102.99 on Mar 20, 2026?",
+            "title": "Will the WTI front-month settle oil price  be Between 102.00 and 102.99 on Mar 27, 2026?",
             "probability": 0.0
           },
           {
-            "title": "Will the WTI front-month settle oil price  be Between 101.00 and 101.99 on Mar 20, 2026?",
+            "title": "Will the WTI front-month settle oil price  be Between 101.00 and 101.99 on Mar 27, 2026?",
             "probability": 0.0
           },
           {
-            "title": "Will the WTI front-month settle oil price  be Between 100.00 and 100.99 on Mar 20, 2026?",
+            "title": "Will the WTI front-month settle oil price  be Between 100.00 and 100.99 on Mar 27, 2026?",
             "probability": 0.0
           }
         ],
@@ -5574,124 +5366,14 @@
         "interpretation": "lower_better",
         "volume": 0,
         "open_interest": 0,
-        "resolves": "2026-03-20T18:30:00Z"
+        "resolves": "2026-03-27T18:30:00Z"
       },
       {
         "metric": "Gas Price Outlook",
-        "value": 3.67,
+        "value": 3.96,
         "probability": 0.0,
         "format": "price",
         "levels": [
-          {
-            "price": 3.67,
-            "probability": 0.0,
-            "title": "Will average **gas prices** be above $3.670?"
-          },
-          {
-            "price": 3.68,
-            "probability": 0.0,
-            "title": "Will average **gas prices** be above $3.680?"
-          },
-          {
-            "price": 3.69,
-            "probability": 0.0,
-            "title": "Will average **gas prices** be above $3.690?"
-          },
-          {
-            "price": 3.7,
-            "probability": 0.0,
-            "title": "Will average **gas prices** be above $3.700?"
-          },
-          {
-            "price": 3.71,
-            "probability": 0.0,
-            "title": "Will average **gas prices** be above $3.710?"
-          },
-          {
-            "price": 3.72,
-            "probability": 0.0,
-            "title": "Will average **gas prices** be above $3.720?"
-          },
-          {
-            "price": 3.73,
-            "probability": 0.0,
-            "title": "Will average **gas prices** be above $3.730?"
-          },
-          {
-            "price": 3.74,
-            "probability": 0.0,
-            "title": "Will average **gas prices** be above $3.740?"
-          },
-          {
-            "price": 3.75,
-            "probability": 0.0,
-            "title": "Will average **gas prices** be above $3.750?"
-          },
-          {
-            "price": 3.76,
-            "probability": 0.0,
-            "title": "Will average **gas prices** be above $3.760?"
-          },
-          {
-            "price": 3.77,
-            "probability": 0.0,
-            "title": "Will average **gas prices** be above $3.770?"
-          },
-          {
-            "price": 3.78,
-            "probability": 0.0,
-            "title": "Will average **gas prices** be above $3.780?"
-          },
-          {
-            "price": 3.79,
-            "probability": 0.0,
-            "title": "Will average **gas prices** be above $3.790?"
-          },
-          {
-            "price": 3.8,
-            "probability": 0.0,
-            "title": "Will average **gas prices** be above $3.800?"
-          },
-          {
-            "price": 3.81,
-            "probability": 0.0,
-            "title": "Will average **gas prices** be above $3.810?"
-          },
-          {
-            "price": 3.82,
-            "probability": 0.0,
-            "title": "Will average **gas prices** be above $3.820?"
-          },
-          {
-            "price": 3.84,
-            "probability": 0.0,
-            "title": "Will average **gas prices** be above $3.840?"
-          },
-          {
-            "price": 3.86,
-            "probability": 0.0,
-            "title": "Will average **gas prices** be above $3.860?"
-          },
-          {
-            "price": 3.88,
-            "probability": 0.0,
-            "title": "Will average **gas prices** be above $3.880?"
-          },
-          {
-            "price": 3.9,
-            "probability": 0.0,
-            "title": "Will average **gas prices** be above $3.900?"
-          },
-          {
-            "price": 3.92,
-            "probability": 0.0,
-            "title": "Will average **gas prices** be above $3.920?"
-          },
-          {
-            "price": 3.94,
-            "probability": 0.0,
-            "title": "Will average **gas prices** be above $3.940?"
-          },
           {
             "price": 3.96,
             "probability": 0.0,
@@ -5746,20 +5428,44 @@
             "price": 4.16,
             "probability": 0.0,
             "title": "Will average **gas prices** be above $4.160?"
+          },
+          {
+            "price": 4.18,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $4.180?"
+          },
+          {
+            "price": 4.2,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $4.200?"
+          },
+          {
+            "price": 4.22,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $4.220?"
+          },
+          {
+            "price": 4.24,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $4.240?"
+          },
+          {
+            "price": 4.26,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $4.260?"
           }
         ],
         "interpretation": "lower_better",
         "volume": 0,
         "open_interest": 0,
-        "resolves": "2026-03-23T03:59:00Z"
+        "resolves": "2026-03-30T03:59:00Z"
       }
     ],
     "narrative": "Energy costs are elevated with oil above $80, which may increase operating and travel expenses.",
     "previous": {
-      "date": "2026-03-13",
+      "date": "2026-03-16",
       "rate_cuts_mode": 9,
-      "oil_price": 97,
-      "gas_price": 3.47
+      "oil_price": 93
     }
   }
 }
