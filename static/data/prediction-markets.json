@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-03-23T15:35:50.648154Z",
+  "fetched_at": "2026-03-24T15:42:09.631495Z",
   "kalshi": {
     "recession": [
       {
@@ -39,6 +39,58 @@
             "volume_24h": null,
             "open_interest": null,
             "close_time": "2026-04-30T12:29:00Z"
+          },
+          {
+            "ticker": "KXGDP-26JUL30-T2.5",
+            "title": "Will **real GDP** increase by more than 2.5% in Q2 2026?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-07-30T12:29:00Z"
+          },
+          {
+            "ticker": "KXGDP-26JUL30-T2.0",
+            "title": "Will **real GDP** increase by more than 2.0% in Q2 2026?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-07-30T12:29:00Z"
+          },
+          {
+            "ticker": "KXGDP-26JUL30-T1.5",
+            "title": "Will **real GDP** increase by more than 1.5% in Q2 2026?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-07-30T12:29:00Z"
+          },
+          {
+            "ticker": "KXGDP-26JUL30-T1.0",
+            "title": "Will **real GDP** increase by more than 1.0% in Q2 2026?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-07-30T12:29:00Z"
           },
           {
             "ticker": "KXGDP-26APR30-T4.0",
@@ -5463,9 +5515,10 @@
     ],
     "narrative": "Energy costs are elevated with oil above $80, which may increase operating and travel expenses.",
     "previous": {
-      "date": "2026-03-16",
+      "date": "2026-03-17",
       "rate_cuts_mode": 9,
-      "oil_price": 93
+      "oil_price": 93,
+      "gas_price": 3.67
     }
   }
 }
