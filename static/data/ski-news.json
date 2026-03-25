@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-24 11:39:28",
+  "updated": "2026-03-25 11:35:56",
   "total_articles": 32,
   "scoring_method": "keyword",
   "articles": [
@@ -345,6 +345,30 @@
       "category": "business-investment",
       "secondary_categories": [],
       "approved_date": "2026-03-24",
+      "display_score": 23
+    },
+    {
+      "source": "Google News - Ski Industry",
+      "title": "Vail CEO says crowding hasn\u2019t worsened; skiers at Park City and beyond say otherwise - TownLift Park City",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOVF9iX3pDN0ZYTXJPXzNleEJZWFhIQ3FGQW81ZzZ0WERGazJEX3VPYTh4ellxX05LLXNaVlRGcUVId2VQRjI2cWJsdnNobU1RYnd5MnpCbFU2cW1sMU5xZmZGUmptd3hFaGtsZ1k1T2lDREg0aG9heWJmQ3puSGpmRXYyUmFhbUgzYVhtaWhIRlFiYkpSMGczVW9JZHhmY1VBOVdSTlFuVlFnRFZ3Rlp4aUpB?oc=5",
+      "description": "Vail CEO says crowding hasn\u2019t worsened; skiers at Park City and beyond say otherwise TownLift Park City",
+      "content": "Vail CEO says crowding hasn\u2019t worsened; skiers at Park City and beyond say otherwise TownLift Park City",
+      "pub_date": "2026-03-23",
+      "id": "d2038e1f2295",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 1,
+      "score": 9,
+      "score_details": {
+        "reason": "Keyword scoring (source: +1)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "resort-operations"
+      ],
+      "approved_date": "2026-03-25",
       "display_score": 23
     },
     {
@@ -709,28 +733,6 @@
       ],
       "approved_date": "2026-03-15",
       "display_score": 14
-    },
-    {
-      "source": "Vail Resorts Investor Relations",
-      "title": "Epic Pass Lowers Prices for Gen Z to Make Hitting the Slopes Easier for Young Skiers and Snowboarders",
-      "url": "https://investors.vailresorts.com/news-releases/news-release-details/epic-pass-lowers-prices-gen-z-make-hitting-slopes-easier-young",
-      "description": "New pricing for 13- to 30-year-olds offers a 20% discount off full-price Epic & Epic Local Passes Season-long Pass Holders who buy early get 10 Epic Friend Tickets for half-off lift tickets Skiers and snowboarders who visited on a lift ticket this season can save up to $175 on a 2026/27 Epic Pass",
-      "content": "New pricing for 13- to 30-year-olds offers a 20% discount off full-price Epic & Epic Local Passes Season-long Pass Holders who buy early get 10 Epic Friend Tickets for half-off lift tickets Skiers and snowboarders who visited on a lift ticket this season can save up to $175 on a 2026/27 Epic Pass",
-      "pub_date": "2026-03-03",
-      "id": "ddd6fdfb861d",
-      "prefilter_business_score": 0,
-      "is_macro_relevance": false,
-      "source_boost": 5,
-      "score": 6,
-      "score_details": {
-        "reason": "Keyword scoring (source: +5)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "resort-operations",
-      "secondary_categories": [],
-      "approved_date": "2026-03-04",
-      "display_score": 12
     },
     {
       "source": "PlanetSKI",
