@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-03-25T15:45:21.123851Z",
+  "fetched_at": "2026-03-26T15:51:19.971160Z",
   "kalshi": {
     "recession": [
       {
@@ -5041,6 +5041,45 @@
         "display_name": "Gas Price Direction",
         "markets": [
           {
+            "ticker": "KXAAAGASW-26MAR30-3.990",
+            "title": "Will average **gas prices** be above $3.990?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-30T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR30-3.970",
+            "title": "Will average **gas prices** be above $3.970?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-30T03:59:00Z"
+          },
+          {
+            "ticker": "KXAAAGASW-26MAR30-3.950",
+            "title": "Will average **gas prices** be above $3.950?",
+            "yes_price": 0,
+            "no_price": 0,
+            "yes_probability": 0.0,
+            "yes_bid": 0,
+            "yes_ask": 0,
+            "volume": null,
+            "volume_24h": null,
+            "open_interest": null,
+            "close_time": "2026-03-30T03:59:00Z"
+          },
+          {
             "ticker": "KXAAAGASW-26MAR30-4.260",
             "title": "Will average **gas prices** be above $4.260?",
             "yes_price": 0,
@@ -5422,19 +5461,34 @@
       },
       {
         "metric": "Gas Price Outlook",
-        "value": 3.96,
+        "value": 3.95,
         "probability": 0.0,
         "format": "price",
         "levels": [
+          {
+            "price": 3.95,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.950?"
+          },
           {
             "price": 3.96,
             "probability": 0.0,
             "title": "Will average **gas prices** be above $3.960?"
           },
           {
+            "price": 3.97,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.970?"
+          },
+          {
             "price": 3.98,
             "probability": 0.0,
             "title": "Will average **gas prices** be above $3.980?"
+          },
+          {
+            "price": 3.99,
+            "probability": 0.0,
+            "title": "Will average **gas prices** be above $3.990?"
           },
           {
             "price": 4.0,
@@ -5515,7 +5569,7 @@
     ],
     "narrative": "Energy costs are elevated with oil above $80, which may increase operating and travel expenses.",
     "previous": {
-      "date": "2026-03-18",
+      "date": "2026-03-19",
       "rate_cuts_mode": 9,
       "oil_price": 93,
       "gas_price": 3.67
