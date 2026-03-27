@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-03-26T15:51:19.971160Z",
+  "fetched_at": "2026-03-27T15:26:14.878927Z",
   "kalshi": {
     "recession": [
       {
@@ -4590,71 +4590,6 @@
             "volume_24h": null,
             "open_interest": null,
             "close_time": "2026-04-30T12:25:00Z"
-          },
-          {
-            "ticker": "KXPCECORE-26FEB-T0.4",
-            "title": "Will the rate of core PCE inflation be above 0.4% in February 2026?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-27T12:25:00Z"
-          },
-          {
-            "ticker": "KXPCECORE-26FEB-T0.3",
-            "title": "Will the rate of core PCE inflation be above 0.3% in February 2026?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-27T12:25:00Z"
-          },
-          {
-            "ticker": "KXPCECORE-26FEB-T0.2",
-            "title": "Will the rate of core PCE inflation be above 0.2% in February 2026?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-27T12:25:00Z"
-          },
-          {
-            "ticker": "KXPCECORE-26FEB-T0.1",
-            "title": "Will the rate of core PCE inflation be above 0.1% in February 2026?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-27T12:25:00Z"
-          },
-          {
-            "ticker": "KXPCECORE-26FEB-T0.0",
-            "title": "Will the rate of core PCE inflation be above 0.0% in February 2026?",
-            "yes_price": 0,
-            "no_price": 0,
-            "yes_probability": 0.0,
-            "yes_bid": 0,
-            "yes_ask": 0,
-            "volume": null,
-            "volume_24h": null,
-            "open_interest": null,
-            "close_time": "2026-03-27T12:25:00Z"
           }
         ]
       }
@@ -5569,7 +5504,7 @@
     ],
     "narrative": "Energy costs are elevated with oil above $80, which may increase operating and travel expenses.",
     "previous": {
-      "date": "2026-03-19",
+      "date": "2026-03-20",
       "rate_cuts_mode": 9,
       "oil_price": 93,
       "gas_price": 3.67
