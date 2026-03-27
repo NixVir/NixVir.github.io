@@ -1,6 +1,6 @@
 {
-  "updated": "2026-03-26 11:43:16",
-  "total_articles": 30,
+  "updated": "2026-03-27 11:36:04",
+  "total_articles": 31,
   "scoring_method": "keyword",
   "articles": [
     {
@@ -687,6 +687,28 @@
       ],
       "approved_date": "2026-03-15",
       "display_score": 14
+    },
+    {
+      "source": "Google News - Ski Resort Business",
+      "title": "Utah court limits employer liability waiver rule, revives ski resort defense - businessinsurance.com",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOY01BZElqSHBqSUxVSlUzLTI3SFZ1SzdrY25oT3ZINkEzY1NrVlE4eWlIckQ4elUySjZpbGNCMS1JVEtsM0VYMlBqTGp2V2xhRUhmY0JtODA3VmFhY2x5M3NCYmJYY3N2S1RvLVhJSXFGZnFHVjRZbzJHS2FMUlEySHJvbkZqVU9aWm5aMlE2QWdzbm1EcDEtM1g0SWRpYWs5bFJKYlhTeE5acnlUUEVGZWxQNXNHdw?oc=5",
+      "description": "Utah court limits employer liability waiver rule, revives ski resort defense businessinsurance.com",
+      "content": "Utah court limits employer liability waiver rule, revives ski resort defense businessinsurance.com",
+      "pub_date": "2026-03-26",
+      "id": "aadda620ee74",
+      "prefilter_business_score": 2,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 9,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "safety-incidents",
+      "secondary_categories": [],
+      "approved_date": "2026-03-27",
+      "display_score": 10
     },
     {
       "source": "PlanetSKI",

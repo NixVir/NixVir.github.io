@@ -1537,6 +1537,50 @@
         "business-investment",
         "hospitality"
       ]
+    },
+    {
+      "source": "Unofficial Networks",
+      "title": "The Story of The Southernmost Ski Area In America",
+      "url": "https://unofficialnetworks.com/2026/03/26/mount-lemmon-story/",
+      "description": "Get to know Mount Lemmon Ski Valley, the southernmost ski area in the country.",
+      "content": "Coronado National Forest, Arizona \u2014 Few people know about the southernmost ski area in the country. Located around 41 miles outside downtown Tucson, Mount Lemmon Ski Valley has been a community staple since the late 1940s. It sits at approximately the same latitude as Dallas, Texas, which is only about 80 miles from the border with Mexico. The ski area is known for its varied terrain and diverse food offerings, including 10 different flavors of homemade fudge . During the offseason, it remains open for scenic chairlift rides, which showcase the incredible views. This five-minute video covers Mount Lemmon Ski Valley\u2019s geographical uniqueness, the ski area\u2019s history, experience, and challenges due to its remote location. Mount Lemmon is currently closed, and it\u2019s unclear whether it operated this winter. When it operates, it operates most days except for Tuesdays and Wednesdays. If you\u2019re looking forward to a bit of fudge with your skiing, make sure to call first, as the fudge shop may be",
+      "pub_date": "2026-03-26",
+      "id": "91e3beb360ea",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 5,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [
+        "safety-incidents"
+      ]
+    },
+    {
+      "source": "PlanetSKI",
+      "title": "US Resorts Close Early After Poor Winter",
+      "url": "https://planetski.eu/2026/03/26/us-resorts-close-early-after-poor-winter/",
+      "description": "Several ski resorts are closing much earlier than planned because there isn't enough snow to keep them open. Warm temperatures also mean they are unable to make snow. The post US Resorts Close Early After Poor Winter appeared first on PlanetSKI .",
+      "content": "In Colorado several ski towns had record-breaking temperatures last week, with some having their hottest day on record in 65 years. Aspen reached a high of 75 degrees on March 21, the hottest day of the heat wave, according to the National Weather Service. The previous record of 70 degrees was set in 1959. Steamboat Springs saw a temperature of 78 degrees , which surpassed a high of 64 recorded in 2017. 68 degrees was recorded in Breckenridge and 70 degrees in Vail . The resorts of Ski Cooper and Sunlight Mountain closed last weekend. For the last five years hundreds of women have gathered at Boot Tan Fest in Sunlight Mountains to celebrate \u2018womanhood\u2019. It culminates in the famous \u2018naked lap\u2019 during which the ladies strip nude before shredding the mountain. The sixth annual ski festival will go ahead from April 10th to 12th,but will not include skiing as the resort is closed. The following closing dates have also been announced, according to Colorado Ski Country USA\u2019s website . Aspen H",
+      "pub_date": "2026-03-26",
+      "id": "37dfa4d77fcf",
+      "prefilter_business_score": 0,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 5,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [
+        "safety-incidents"
+      ]
     }
   ],
   "rejected": [
@@ -3183,6 +3227,29 @@
       "category": "transportation",
       "secondary_categories": [
         "resort-operations"
+      ]
+    },
+    {
+      "source": "PlanetSKI",
+      "title": "Epic & Ikon Passes Face Lawsuits",
+      "url": "https://planetski.eu/2026/03/27/epic-ikon-passes-face-lawsuits/",
+      "description": "Vail Resorts and Alterra Mountain Company are facing a federal antitrust class action lawsuit. NEW The post Epic & Ikon Passes Face Lawsuits appeared first on PlanetSKI .",
+      "content": "The cases alleges, they used their dominant position in the ski industry to unfairly raise prices and steer customers into expensive multi-mountain season passes. The case has been filed in the U.S. District Court for the District of Colorado. The suit alleges Vail Resorts, Inc. and Alterra Mountain Company unlawfully inflated prices and suppressed competition through \u201ctying\u201d or bundling practices linked to those passes. According to the complaint, Vail and Alterra together control access to nearly every major destination ski resort in North America and have leveraged that position to steer consumers into all-or-nothing \u201cmega pass\u201d bundles. Plaintiffs say the companies accomplished this in part by setting single-day lift-ticket prices at artificially high levels, making the Epic and Ikon passes appear to be the only economically rational option for many skiers and riders. The lawsuit focuses on Vail\u2019s Epic Pass and Alterra\u2019s Ikon Pass, which offer access to dozens of resorts across the",
+      "pub_date": "2026-03-27",
+      "id": "eb02912a0d56",
+      "prefilter_business_score": 1,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 2,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "resort-operations",
+      "secondary_categories": [
+        "safety-incidents",
+        "business-investment"
       ]
     }
   ]
