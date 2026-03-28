@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-27 11:36:04",
+  "updated": "2026-03-28 11:21:51",
   "total_articles": 31,
   "scoring_method": "keyword",
   "articles": [
@@ -148,6 +148,54 @@
       ],
       "approved_date": "2026-03-11",
       "display_score": 27
+    },
+    {
+      "source": "Ski Area Management",
+      "title": "Hansen Promoted to President and COO of Crystal Mountain (Wash.)",
+      "url": "https://www.saminfo.com/news/sam-headline-news/hansen-promoted-to-president-and-coo-of-crystal-mountain-wash",
+      "description": "SAM Magazine\u2014Pierce County, Wash., March 27, 2026\u2014 Linnea Hansen has been named the new president and COO of Washington\u2019s Crystal Mountain, effective immediately. She will report to Alterra Mountain Company regional chief operating officer and executive vice president of the Western Mountain Division Ron Cohen. \u201cLinnea is a strong leader who deeply understands Crystal Mountain and has demonstrated her dedication to Crystal\u2019s community and its people. I am confident Linnea is the right person to ",
+      "content": "SAM Magazine\u2014Pierce County, Wash., March 27, 2026\u2014 Linnea Hansen has been named the new president and COO of Washington\u2019s Crystal Mountain, effective immediately. She will report to Alterra Mountain Company regional chief operating officer and executive vice president of the Western Mountain Division Ron Cohen. \u201cLinnea is a strong leader who deeply understands Crystal Mountain and has demonstrated her dedication to Crystal\u2019s community and its people. I am confident Linnea is the right person to ",
+      "pub_date": "2026-03-27",
+      "id": "9abad59448e2",
+      "prefilter_business_score": 4,
+      "is_macro_relevance": false,
+      "source_boost": 2,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +2)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "hospitality"
+      ],
+      "approved_date": "2026-03-28",
+      "display_score": 25
+    },
+    {
+      "source": "Google News - Ski Resort Lawsuit",
+      "title": "Utah court revives ski resort's liability waiver defense after layoff crash - hcamag.com",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOVFZuanFJRlU0cDdPcDhvak1lV05BOGNPdGtQcFd1VDRGT1lCYVdNN1drVHo4R3c2bmg3R29Ec2p5d1dYRkkwWS1MN2FVTkRMMDN4NGgtZzROaFlOVnFUUmRSdGx3REx5ckc3dENLc3hkbFNxRWNLc0lzQ2dualIxZzN1dWwtdzBFNnBFUldmN0RVTTBKa3RyZmNXVkd0U1VDOUVBQTc3Y1I2aDlKbTUwMnJNMTJ6VGVTbzE1eFZQdGhURUF2c1FDN0UxYUF5UGNtSWRN?oc=5",
+      "description": "Utah court revives ski resort's liability waiver defense after layoff crash hcamag.com",
+      "content": "Utah court revives ski resort's liability waiver defense after layoff crash hcamag.com",
+      "pub_date": "2026-03-27",
+      "id": "be62578e7127",
+      "prefilter_business_score": 2,
+      "is_macro_relevance": false,
+      "source_boost": 3,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +3)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "safety-incidents"
+      ],
+      "approved_date": "2026-03-28",
+      "display_score": 25
     },
     {
       "source": "Google News - Vail Alterra Ski",
@@ -302,6 +350,30 @@
       ],
       "approved_date": "2026-03-10",
       "display_score": 25
+    },
+    {
+      "source": "SnowBrains",
+      "title": "Alterra Mountain Company Names Linnea Hansen New President & COO of Crystal Mountain, WA",
+      "url": "https://snowbrains.com/alterra-mountain-company-names-linnea-hansen-new-president-coo-of-crystal-mountain-wa/",
+      "description": "Alterra Mountain Company announced today that Linnea Hansen has been named the new President & COO of Washington\u2019s Crystal Mountain, effective immediately, and will report to Regional Chief Operating Officer & Executive Vice President Mountain Division \u2013 Western, Ron Cohen. Linnea will be responsible for overseeing all operations, enhancing the employee and guest experience, continuing to build and strengthen community [\u2026] The post Alterra Mountain Company Names Linnea Hansen New President & COO",
+      "content": "Tucked in close to Mt. Rainier, Crystal Mountain is a popular ski destination for Washingtonians. | Photo: Crystal Mountain Alterra Mountain Company announced today that Linnea Hansen has been named the new President & COO of Washington\u2019s Crystal Mountain , effective immediately, and will report to Regional Chief Operating Officer & Executive Vice President Mountain Division \u2013 Western, Ron Cohen. Linnea will be responsible for overseeing all operations, enhancing the employee and guest experience, continuing to build and strengthen community relationships, and driving the destination\u2019s profitability. \u201cLinnea is a strong leader who deeply understands Crystal Mountain and has demonstrated her dedication to Crystal\u2019s community and its people. I am confident Linnea is the right person to guide Crystal towards realizing its full potential. Her experience, authenticity, community presence, and collaborative approach make her the right choice to lead this special destination,\u201d Ron Cohen, Regi",
+      "pub_date": "2026-03-27",
+      "id": "ed7c4ba4f940",
+      "prefilter_business_score": 5,
+      "is_macro_relevance": false,
+      "source_boost": 0,
+      "score": 10,
+      "score_details": {
+        "reason": "Keyword scoring (source: +0)",
+        "method": "keyword"
+      },
+      "score_method": "keyword",
+      "category": "business-investment",
+      "secondary_categories": [
+        "hospitality"
+      ],
+      "approved_date": "2026-03-28",
+      "display_score": 23
     },
     {
       "source": "Ski Area Management",
@@ -498,28 +570,6 @@
       "display_score": 23
     },
     {
-      "source": "SnowBrains",
-      "title": "Ski Industry Giants Shake Up Continues: Alterra CEO Jared Smith to Step Down After 2025-26 Season",
-      "url": "https://snowbrains.com/ski-industry-giants-shake-up-continues-alterra-ceo-jared-smith-to-step-down-after-2025-26-season/",
-      "description": "Alterra Mountain Company announced a leadership transition Tuesday, March 10, with Chief Executive Officer Jared Smith planning to step down at the end of the current winter season. Smith said serving as CEO had been \u201can honor,\u201d noting that the company had expanded significantly during his tenure. \u201cServing as CEO of Alterra has been an honor, and I am deeply [\u2026] The post Ski Industry Giants Shake Up Continues: Alterra CEO Jared Smith to Step Down After 2025-26 Season appeared first on SnowBrains",
-      "content": "Jared Smith served as CEO at Alterra since June 2022. | Image: Alterra Mountain Company Alterra Mountain Company announced a leadership transition Tuesday, March 10, with Chief Executive Officer Jared Smith planning to step down at the end of the current winter season. Smith said serving as CEO had been \u201can honor,\u201d noting that the company had expanded significantly during his tenure. \u201cServing as CEO of Alterra has been an honor, and I am deeply proud of the incredible people, capabilities and businesses we\u2019ve added to this amazing company,\u201d Smith said in the company\u2019s press release. \u201cThe commitment of the ownership group to these mountains, and to the team members and communities they serve, is truly unique.\u201d Alterra\u2019s board will now begin a comprehensive search for a new chief executive, while an interim leadership structure will oversee operations through the end of the season. Smith will remain available over the next year to help support the transition. During the transition, an Ex",
-      "pub_date": "2026-03-11",
-      "id": "84089f123a34",
-      "prefilter_business_score": 2,
-      "is_macro_relevance": false,
-      "source_boost": 0,
-      "score": 10,
-      "score_details": {
-        "reason": "Keyword scoring (source: +0)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "business-investment",
-      "secondary_categories": [],
-      "approved_date": "2026-03-11",
-      "display_score": 23
-    },
-    {
       "source": "Unofficial Networks",
       "title": "Alterra Mountain Company Announces Departure of CEO",
       "url": "https://unofficialnetworks.com/2026/03/11/alterra-ceo-departure/",
@@ -538,30 +588,6 @@
       "score_method": "keyword",
       "category": "business-investment",
       "secondary_categories": [],
-      "approved_date": "2026-03-12",
-      "display_score": 23
-    },
-    {
-      "source": "Ski Area Management",
-      "title": "Smith to Step Down as Alterra CEO",
-      "url": "https://www.saminfo.com/news/sam-headline-news/smith-to-step-down-as-alterra-ceo",
-      "description": "SAM Magazine\u2014Denver, March 11, 2026\u2014 Jared Smith plans to step down from his role as chief executive officer of Alterra Mountain Company at the end of this season. An exact end date was not shared. Smith joined Alterra as president in June 2021, reporting to then-CEO Rusty Gregory. He previously served as president and global chairman of Ticketmaster. He succeeded Gregory as CEO on Aug. 1, 2022. During his time at Alterra, the company grew its portfolio of ski areas as well as related businesses",
-      "content": "SAM Magazine\u2014Denver, March 11, 2026\u2014 Jared Smith plans to step down from his role as chief executive officer of Alterra Mountain Company at the end of this season. An exact end date was not shared. Smith joined Alterra as president in June 2021, reporting to then-CEO Rusty Gregory. He previously served as president and global chairman of Ticketmaster. He succeeded Gregory as CEO on Aug. 1, 2022. During his time at Alterra, the company grew its portfolio of ski areas as well as related businesses",
-      "pub_date": "2026-03-11",
-      "id": "5978515105b4",
-      "prefilter_business_score": 3,
-      "is_macro_relevance": false,
-      "source_boost": 2,
-      "score": 9,
-      "score_details": {
-        "reason": "Keyword scoring (source: +2)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "business-investment",
-      "secondary_categories": [
-        "resort-operations"
-      ],
       "approved_date": "2026-03-12",
       "display_score": 23
     },
@@ -733,28 +759,6 @@
       ],
       "approved_date": "2026-03-19",
       "display_score": 8
-    },
-    {
-      "source": "Google News - Ski Industry",
-      "title": "Oregon ski resorts, recreation industry 'reasonably hopeful' about liability waiver reform - The Business Journals",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPTVJybWR1M1ZHTG9uTmtGR3VpbG5OQ0tBQ2o5Vjc3S0VEdmlhOW9KcmRuQUVvMTVhaTRzb3NMRERBMXpxRUdSblVkNk1EREg0OFVRdGRQRFJ3cXhlLXdudEVndi1oaEFIcThZRHhQQXlPcmhVeVBQaEFLc2dpN0NFOWdKTEVHdXNEUlAtbDdZVlRzc3YtMU5ma3E4NFlZeFpsRnF4Wms1WGM?oc=5",
-      "description": "Oregon ski resorts, recreation industry 'reasonably hopeful' about liability waiver reform The Business Journals",
-      "content": "Oregon ski resorts, recreation industry 'reasonably hopeful' about liability waiver reform The Business Journals",
-      "pub_date": "2026-03-06",
-      "id": "63442bca062b",
-      "prefilter_business_score": 1,
-      "is_macro_relevance": false,
-      "source_boost": 1,
-      "score": 7,
-      "score_details": {
-        "reason": "Keyword scoring (source: +1)",
-        "method": "keyword"
-      },
-      "score_method": "keyword",
-      "category": "safety-incidents",
-      "secondary_categories": [],
-      "approved_date": "2026-03-07",
-      "display_score": 6
     }
   ]
 }
